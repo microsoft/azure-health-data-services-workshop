@@ -13,7 +13,7 @@ With data systems built on standardized health APIs, organizations can focus on 
 
 In this challenge we will use Firely to represent the FHIR object model in .NET to make calls into Azure API for FHIR. We will use FhirBlaze as a starter application. It is a barebones Blazor application that enables an end user to create or delete certain resources on the FHIR server. FhirBlaze runs as a SMART on FHIR application. We will use it as a front-end user interface for interacting with the FHIR server. The ability to send Create and Delete requests to the FHIR server is a fundamental building block for more sophisticated use cases.
 
-## Learning Objectives
+## Learning Objectives for Challenge-10
 
 + Use FHIR resources like patient, practitioner, and more for real world applications.
 + Learn how Firely can accelerate development (and adherence to FHIR).
