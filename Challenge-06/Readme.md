@@ -76,7 +76,7 @@ If you get stuck, check out this article on [creating custom columns in PowerBI]
 Information on group by aggregations can be found [here](https://docs.microsoft.com/en-us/power-query/group-by#:~:text=Select%20Group%20by%20on%20the,the%20column%20used%20is%20Units)<br />
 
 
-### Challenge Success
+### What does success look like for Challenge-06?
 + Successfully load parquet data into Azure Synapse
 + Successfully explore Synapse data in PowerBi
 + Successfully produce a report of vaccination rate by postal code
