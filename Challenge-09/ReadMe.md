@@ -48,7 +48,7 @@ Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/i
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
 
 
-## Challenge Success
+## What does success look like for Challenge-09?
 
 + Successfully POST a consent record to the Azure Healthcare APIs FHIR service
 + Verify that Consent Opt-Out properly filters resources
