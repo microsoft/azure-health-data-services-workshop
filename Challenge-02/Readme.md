@@ -1,4 +1,4 @@
-# Challenge-02 - Convert HL7 and C-CDA to FHIR
+# Challenge-02 - Convert HL7v2 and C-CDA to FHIR
 
 ## Introduction
 
@@ -55,7 +55,7 @@ In today's health industry, the FHIR R4 format has become the industry standard 
 1. Get a new access token from AAD via Postman (`POST AuthorizeGetToken`).
 2. Execute the `Convert Data - HL7` request.
 
-After making the call, you should receive a FHIR bundle response with the with HL7v2 data. 
+After making the call, you should receive a FHIR bundle response with the HL7v2 data. 
 
 ## Step 4 - Convert C-CDA Data
 
