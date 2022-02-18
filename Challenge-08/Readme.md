@@ -10,7 +10,7 @@ Congratulations for almost reaching the end of this hack! Challenge-08 is a stan
 
 Research is broadening beyond text based research. These research initiatives require more resources than on-prem datacenters can provide. DICOM datasets are pushing into the 10s of Petabytes, which is pushing the limits of on-prem storage. These larger datasets need a standardized place to reside. The Microsoft Medical Imaging Service provides a DICOMweb standard method for storing these images. This challenge will give learners some hands-on experience with how Microsoft's DICOM Service ingests, stores, retrieves, and updates images.
 
-## Learning Objectives
+## Learning Objectives for Challenge-08
 
 - Setup a DICOM Service instance within Azure Healthcare APIs
 - Submit DICOM files to the service
