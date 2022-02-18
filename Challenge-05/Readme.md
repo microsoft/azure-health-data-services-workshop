@@ -9,7 +9,7 @@ In this challenge you will learn how to export anonymized data from Azure API fo
 
 Healthcare organizations and payors frequently partner with outside research groups, and the data used in these research projects generally comes from patients' medical records. If the purpose of the research is academic and not for treatment, payment, or healthcare operations, researchers are not allowed to access patients' Personal Health Information (PHI) *unless* the information has been de-identified. De-identification of PHI involves removing details from patients' medical data that could reveal the patients' identities. In the U.S., de-identification (or anonymization) of PHI is regulated under the Health Insurance Portability and Accountability Act (HIPAA).
 
-## Learning Objectives
+## Learning Objectives for Challenge-05
 By the end of this challenge you will be able to
 * Configure bulk export of FHIR data from Azure API for FHIR
 * Use the sample anonymization config file to de-identify FHIR data on export
