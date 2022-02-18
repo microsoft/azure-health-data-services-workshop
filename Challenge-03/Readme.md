@@ -12,8 +12,9 @@ Bulk FHIR data ingestion is a vital capability for managing FHIR data operations
 
 ## Learning Objectives for Challenge-03
 
-+ Practice identifying issues in bulk FHIR data
-+ Understand data constraints with FHIR bulk data loading
++ Bulk ingest FHIR data into Azure API for FHIR
++ Identify issues in bulk FHIR data
++ Understand data constraints with bulk FHIR data loading
 + Understand how to track and compare bulk FHIR imports
 
 ### Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader Relationship 
