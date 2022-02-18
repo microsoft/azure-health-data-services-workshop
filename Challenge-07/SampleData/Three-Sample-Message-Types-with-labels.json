@@ -1,0 +1,44 @@
+
+============ VITALS =============
+{
+    "type": "VITALS",
+    "data": [{"patient_id": "PatientMary",
+        "device_id": "MSFT00001",
+        "utctimestamp": "2020-10-22T01:34:56+00:00",
+        "spo2": 96, //Spo2 - Pulse Ox
+        "hr": 80, //Heart Rate
+        "bloodperfusion": 1.1399999856948853,
+        "steps": 3, //Steps per second
+        "bpw": 2.4800000190734863, //Blood Pulse wave
+        "rrate": 20, //Respiration Rate
+        "bodytemp": 33, //Skin Temp in C
+    }]
+}
+ 
+========== BP =============
+{
+    "type": "BP",
+    "data": [
+        {
+           "patient_id": "PatientMary",
+           "device_id": "MSFT00002BP",
+            "sys": "185",
+            "dia": "100",
+            "utctimestamp": "2020-11-04T08:09:02+00:00"
+        }
+    ]
+}
+ 
+=========== WEIGHT =========
+{
+    "type": "WEIGHT",
+    "data": [
+        {
+            "patient_id": "PatientMary",
+            "device_id": "MSFT00003WT",
+            "weight": "150",
+            "unit": "kg",
+            "utctimestamp": "2020-11-04T10:21:28+00:00"
+        }
+    ]
+}

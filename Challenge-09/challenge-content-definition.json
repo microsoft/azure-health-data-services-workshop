@@ -1,0 +1,37 @@
+{
+    "Title": "OpenHack - Healthcare APIs Authentication, Authorization and Consent",
+    "Description" : "OpenHack challenges for implementing Authentication, Authorization and Consent using Healthcare APIs and Secure FHIR Proxy",
+    "OverviewUrl" : "Overview.html",
+    "ContentVersion": "0.1",
+    "ContentPackage": {
+      "ContentItems": [
+        {
+          "Order": 1,
+          "Title": "Challenge 2: Implement authentication for Healthcare APIs and Secure FHIR Proxy",
+          "Description": "Establish your plan.",
+          "Url": "Challenge-Authentication.html"
+        },
+        {
+          "Order": 2,
+          "Follows": 1,
+          "Title": "Challenge 2: Implement authorization for Healthcare APIs and Secure FHIR Proxy",
+          "Description": "Implement and validate authorization rules for Healthcare APIs and Secure FHIR Proxy",
+          "Url": "Challenge-Authorization.html"
+        },
+        {
+          "Order": 3,
+          "Follows": 2,
+          "Title": "Challenge 3: Implement Consent resource processing using Secure FHIR Proxy",
+          "Description": "Deploy and configure Secure FHIR proxy to implement Consent opt-out capability using Consent resource stored in Healthcare API Fhir Service.",
+          "Url": "Challenge-Consent.html"
+        },
+        {
+            "Order": 4,
+            "Follows": 3,
+            "Title": "Challenge 3: Implement authentication, authorization and consent for SMART on FHIR applications",
+            "Description": "Deploy and configure Secure FHIR proxy to implement access controls for SMART on FHIR applications.",
+            "Url": "Challenge-Consent.html"
+          }
+      ]
+    }
+  }

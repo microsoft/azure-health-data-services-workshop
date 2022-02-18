@@ -1,0 +1,10 @@
+### Variables {work in progress}
+@fhirServiceUrl =
+@fhirServiceAudience =  
+@appClientId = 
+@appClientSecret = 
+@azureADTenantId = 
+@azureADTenantName = 
+@name fhir-Capability
+GET https://{{fhirServiceUrl}}/metadata
+@name get-AzureADToken
