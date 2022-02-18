@@ -31,7 +31,7 @@ By the end of the section you will be able to
 ### Step 1
 Clone this repo 
 
-	https://github.com/microsoft/openhack-mc4h.git
+	https://github.com/microsoft/azure-healthcare-apis-workshop
 
 ### Step 2
 Open  ***Challenge  - Research Azure Data Analytics.py***  in Azure Databricks
