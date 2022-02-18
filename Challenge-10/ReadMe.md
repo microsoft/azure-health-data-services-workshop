@@ -158,8 +158,7 @@ Expand the **Practioners** region, copy all of the code within that region, and 
 Modify the method names and parameter names to be the name of your selected FHIR resource. <br>  
 We have not setup the entire app to handle a new Fhir server resource type!    
     
-## Challenge Success
-If you completed all of the steps, you should be able to:
+## What does success look like for Challenge-10?
 + run the FhirBlaze application w/o errors
 + navigate to your selected FHIR resource’s list page
 + retrieve and search your selected FHIR resources
