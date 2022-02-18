@@ -13,7 +13,7 @@ In Azure FHIR workflows, Azure API for FHIR receives REST API requests from remo
 
 For bulk ingestion of FHIR data into Azure API for FHIR, Microsoft offers the open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) utility. With FHIR-Bulk Loader, admins can import large amounts of FHIR data with point and click ease (FHIR-Bulk Loader handles API calls to Azure API for FHIR). The FHIR-Bulk Loader can import data from FHIR Bundles (compressed and non-compressed) as well as FHIR NDJSON files. 
 
-## Learning Objectives 
+## Learning Objectives for Challenge-01
 + Understand the Azure API for FHIR - FHIR-Proxy relationship
 + Use an ARM template to deploy Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader
 + Configure AAD authentication for FHIR-Proxy
