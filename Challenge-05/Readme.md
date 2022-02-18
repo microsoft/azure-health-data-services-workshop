@@ -61,7 +61,7 @@ Set up a shared access signature (SAS) token to allow a research team to access 
 
 If you get stuck, check out [Create SAS Tokens](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers).
 
-## Challenge Success
+## What does success look like for Challenge-05?
 
 + Successfully utilize an anonymization configuration file and the $export operator to export an anonymized dataset from Azure API for FHIR
 + Successfully set up a SAS token to allow access to the anonymized dataset
