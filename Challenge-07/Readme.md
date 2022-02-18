@@ -98,6 +98,10 @@ Deploy and configure the OSS IoMT FHIR Connector for Azure. Use Azure IoT Centra
 
 Link to OSS - https://github.com/microsoft/iomt-fhir
 
+## What does success look like for Challenge-07?
++ Map IoT medical device data to FHIR
++ Output a JSON file with mapped data
+
 ## Next Steps
 
 Click [here](../Challenge-08/ReadMe.md) to proceed to the next challenge.
