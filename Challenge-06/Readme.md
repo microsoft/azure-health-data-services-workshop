@@ -15,7 +15,7 @@ To improve Flu vaccine rates, health systems need to understand what factors inf
 ## 1. Data Analysis and Statistical Modeling
 Discover if gender or age has an effect on completion of a Flu shot
 
-### Learning Objectives
+### Learning Objectives for Challenge-06
 By the end of the section you will be able to
 * Import Anonymized FHIR data into Azure Databricks
 * Flatten the data structure to a tabular format
