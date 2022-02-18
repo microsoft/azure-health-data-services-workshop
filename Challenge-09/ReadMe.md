@@ -10,7 +10,7 @@ In this challenge you will learn how to configure Consent Opt-Out filtering usin
 
 In today's rapidly changing healthcare data landscape, the FHIR R4 format is has become the HLS industry standard for storage and exchange of health data. Healthcare consumers expect that their directives related to privacy, treatment, research, and advanced care are respected.
 
-## Learning Objectives
+## Learning Objectives for Challenge-09
 
 + Configure Consent Opt-Out filtering in FHIR-Proxy
 + Add a Consent Resource to the Healthcare APIs FHIR Service
