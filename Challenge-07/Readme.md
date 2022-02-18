@@ -13,7 +13,7 @@ Challenge-07 introduces the IoT Connector for the Azure API for FHIR PaaS, with 
 
 With the rise of wearable devices, Remote Patient Monitoring (RPM) has exploded in the healthcare marketplace. Many hardware vendors have tried a proprietary approach for providing the hardware and monitoring software. Microsoft has taken an agnostic approach to Remote Patient Monitoring and wearable data ingestion. Microsoft has created a tool kit for converting the output from any wearable into FHIR resources.
 
-## Learning Objectives
+## Learning Objectives for Challenge-07
 
 - Deploy and configure the IoT Connector via Azure portal
 - Deploy and configure additional Azure services required for the IoT connector
