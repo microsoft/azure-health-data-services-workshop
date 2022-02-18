@@ -40,6 +40,8 @@ Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/i
 ## Step - 3 Configure Secure FHIR Consent Opt-Out
 
 1. Refer to the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md) for additional details.
+2. [Configure the Consent Opt Filter](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md). The FP-POST-PROCESSOR-TYPES must be updated to include FHIRProxy.postprocessors.ConsentOptOutFilter.
+3. Additionally the FP-MOD-CONSENT-OPTOUT-CATEGORY setting with a value of `http://loinc.org|59284-0` must be added if it does not exist.
 
 ## Step - 3 Verify Consent Opt-Out filtering
 
