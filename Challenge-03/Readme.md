@@ -65,7 +65,7 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 ## Troubleshooting 
 Here are some points for inspecting FHIR data ingestion results:
 
-+ Check **Container** -> **bundlesprocessed** and / or **bundleserr** for a file that you want information about.  
++ Check **Container** -> **bundlesprocessed** and / or **bundleserr** for a FHIR bulk data file that you want information about.  
 
     _Note: If you uploaded a .zip file, the names of the bundles within the .zip file are exposed (not the zip filename itself)._
 
