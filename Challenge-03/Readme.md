@@ -4,7 +4,7 @@
 
 Welcome to Challenge-03!
 
-In this challenge, you will learn how to use the [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) utility to bulk-ingest data into Azure API for FHIR.
+In this challenge, you will learn how to use the [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) utility to bulk-ingest FHIR data into Azure API for FHIR.
 
 ## Background
 
@@ -18,7 +18,7 @@ Bulk FHIR data ingestion is a vital capability for managing FHIR data operations
 + Understand how to track and compare bulk FHIR imports
 
 ### Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader Relationship 
-The open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) tool is an Azure component designed to expedite bulk import of FHIR data into Azure API for FHIR. The process involves the user uploading FHIR data to the FHIR-Bulk Loader's blob storage in Azure, from where FHIR-Bulk Loader automatically loads the data for persistence in Azure API for FHIR. For the remainder of this challenge, we assume you are using FHIR-Bulk Loader connected directly to Azure API for FHIR (bypassing FHIR-Proxy).
+The open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) tool is an Azure component designed to expedite bulk data import into Azure API for FHIR. The operation requires the user to upload FHIR data to Azure blob storage, from where FHIR-Bulk Loader automatically loads the data for persistence in Azure API for FHIR. For the remainder of this challenge, we assume you are using FHIR-Bulk Loader connected directly to Azure API for FHIR (bypassing FHIR-Proxy).
 
 Below is a component view of Azure API for FHIR with FHIR-Bulk Loader and FHIR-Proxy.  
 
@@ -31,14 +31,20 @@ Below is a component view of Azure API for FHIR with FHIR-Bulk Loader and FHIR-P
 + Access to a text editor (e.g., [VS Code](https://code.visualstudio.com/))
 
 ## Getting Started
-For this challenge, you will prepare FHIR data for importing into Azure API for FHIR with FHIR-Bulk Loader. You will need to examine some of the data for problems and determine what the issue with the data is.
+For this challenge, you will upload FHIR data for import into Azure API for FHIR with FHIR-Bulk Loader. You will need to examine some of the data for problems and determine what issues are preventing the data from being ingested.
 
 
 ## Step 1 - Download Sample Data
 
-1. Download the following files to your desktop
+1. Download the following files to your desktop:
     + [good_bundles.zip](./samples/good_bundles.zip)
     + [bad_bundles.zip](./samples/bad_bundles.zip)
+
+## Step 2 - Read about FHIR-Bulk Loader operation
+
+1. Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for instructions on how to upload bulk FHIR data into Azure API for FHIR using FHIR-Bulk Loader (the process simply involves uploading files to a blob storage container in Azure).
+
+**Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01.**
 
 ## Step 2 - Upload Sample Data
 
@@ -48,26 +54,20 @@ For this challenge, you will prepare FHIR data for importing into Azure API for 
 ![Blob Containers](./media/portal-browser-container.png)  
 
 3. Using the `good_bundles.zip` file downloaded in Step 1:
-    + Determine which container this file should be uploaded to.
+    + Determine which container this file should be uploaded to and proceed with the upload.
 
-4. Using  the `bad_bundles.zip` file downloaded in Step 1:
-    + Determine which container this file should be uploaded to.
+4. Using the `bad_bundles.zip` file downloaded in Step 1:
+    + Try uploading the file to the same container where you uploaded the `good_bundles.zip`. What happens as a result?
+    + Unzip the `bad_bundles.zip` and use a text editor to open the JSON file contained within. Look for the key piece of information that is preventing this bundle from being ingested.
 
-> Refer to the Troubleshooting section below or FHIR Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for more information.
-
-
-## What does success look like for Challenge-03?
-
-+ Successfully upload and import data from the file `good_bundles.zip`
-+ Successfully identify the problem in the `bad_bundles.zip` file.  Use the Troubleshooting tips below to help. 
-+ Identify the **most important issue to address in production**
+> Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on common issues in bulk FHIR data ingestion. 
 
 ## Troubleshooting 
-The most common issue is that files are not loaded.  Use these points to understand where something happened. 
+Here are some points for tracking down errors in FHIR data ingestion with FHIR-Bulk Loader.
 
 Check Container bundlesprocessed and / or bundleserr for your file name.  
 
-_Note: if you used a zip file the names of the bundles within the zip file are exposed, not the zip file itself_
+_Note: If you uploaded a .zip file, the names of the bundles within the .zip file are exposed (not the zip filename itself)._
 
 ![bundlesprocessed](./media/bundlesprocessed.png)
 
@@ -75,9 +75,15 @@ Click on a **.result** file, then click on Edit
 
 ![bundle-edit](./media/bundle-edit.png)
 
-In the Editor view, look for status codes, here a 201 is successful, and the logs show the FHIR Resource now containing the information. 
+In the Editor view, look for status codes. Here a 201 is successful, and the logs show the FHIR Resource now containing the information. 
 
 ![bundle-edit-status](./media/bundle-edit-status.png)
+
+## What does success look like for Challenge-03?
+
++ Successfully upload and import data from the file `good_bundles.zip`.
++ Successfully identify the problem in the `bad_bundles.zip` file. Use the Troubleshooting tips above for help. 
++ Identify the **most important issue to address in production** to avoid problems when ingesting bulk FHIR data into Azure API for FHIR. 
 
 ## Next Steps
 
