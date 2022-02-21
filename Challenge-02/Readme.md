@@ -96,4 +96,4 @@ After making the call, you should receive a FHIR bundle response with the HL7v2 
 
 ## Next Steps
 
-Click [here](../Challenge-03/Readme.md) to proceed to the next challenge.
+Click [here](../Challenge-03/Readme.md) to proceed to Challenge-03.
