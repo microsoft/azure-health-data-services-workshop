@@ -63,21 +63,21 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 > Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on common issues in bulk FHIR data ingestion. 
 
 ## Troubleshooting 
-Here are some points for tracking down errors in FHIR data ingestion with FHIR-Bulk Loader.
+Here are some points for tracking down errors in FHIR data ingestion with FHIR-Bulk Loader:
 
-Check Container bundlesprocessed and / or bundleserr for your file name.  
++ Check Container bundlesprocessed and / or bundleserr for your file name.  
 
-_Note: If you uploaded a .zip file, the names of the bundles within the .zip file are exposed (not the zip filename itself)._
+    _Note: If you uploaded a .zip file, the names of the bundles within the .zip file are exposed (not the zip filename itself)._
 
-![bundlesprocessed](./media/bundlesprocessed.png)
+    ![bundlesprocessed](./media/bundlesprocessed.png)
 
-Click on a **.result** file, then click on Edit
++ Click on a **.result** file, then click on Edit
 
-![bundle-edit](./media/bundle-edit.png)
+    ![bundle-edit](./media/bundle-edit.png)
 
-In the Editor view, look for status codes. Here a 201 is successful, and the logs show the FHIR Resource now containing the information. 
++ In the Editor view, look for status codes. Here a 201 is successful, and the logs show the FHIR Resource now containing the information. 
 
-![bundle-edit-status](./media/bundle-edit-status.png)
+    ![bundle-edit-status](./media/bundle-edit-status.png)
 
 ## What does success look like for Challenge-03?
 
