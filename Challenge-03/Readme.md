@@ -8,7 +8,7 @@ In this challenge, you will learn how to use the [FHIR-Bulk Loader](https://gith
 
 ## Background
 
-Bulk FHIR data ingestion is a vital capability for managing FHIR data operations at scale. Since there is no official `$import` operation published in the FHIR standard (yet), implementors must rely on alternative methods of getting bulk FHIR data into a FHIR server. In this challenge, we will be using the FHIR-Bulk Loader (OSS) utility, which is an Azure Function App solution for importing bulk FHIR data into Azure API for FHIR. 
+Bulk FHIR data ingestion is a vital capability for managing FHIR data operations at scale. Since there is no official `$import` operation published in the FHIR standard (yet), implementors must rely on alternative methods of getting bulk data into a FHIR server. In this challenge, we will be using the FHIR-Bulk Loader (OSS) utility, which is an Azure Function App solution for importing bulk FHIR data into Azure API for FHIR. 
 
 ## Learning Objectives for Challenge-03
 
