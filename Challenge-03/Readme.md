@@ -42,9 +42,9 @@ Download the following .zip files to your desktop:
 
 ## Step 2 - Read about FHIR-Bulk Loader operation
 
-Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for instructions on how to upload bulk FHIR data into Azure API (the process simply involves uploading files to a blob storage container in Azure).
+Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for instructions on how to upload bulk FHIR data into Azure API for FHIR (the process simply involves uploading files to a blob storage container in Azure).
 
-    **Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01.**
+**Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01.**
 
 ## Step 3 - Upload Sample Data
 
