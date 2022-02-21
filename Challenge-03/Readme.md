@@ -67,7 +67,7 @@ Here are some points for inspecting FHIR data ingestion results:
 
 + In **Storage browser (preview)**, go to **Container** -> **bundlesprocessed** and / or **bundleserr** to view info about FHIR bulk data files.  
 
-    _Note: If you uploaded a .zip file, the names of the bundles within the .zip file are exposed (not the zip filename itself)._
+    _Note: If you uploaded a .zip file, the names of the bundles within the .zip file are exposed (not the .zip filename itself)._
 
     ![bundlesprocessed](./media/bundlesprocessed.png)
 
