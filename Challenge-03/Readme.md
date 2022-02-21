@@ -71,7 +71,7 @@ Here are some points for inspecting FHIR data ingestion results:
 
     ![bundlesprocessed](./media/bundlesprocessed.png)
 
-+ Click on the **.result** file for the data file that you are interested in and then click on **Edit**.
++ Click on the **.result** file for the data file that you want information about and then click on **Edit**.
 
     ![bundle-edit](./media/bundle-edit.png)
 
