@@ -50,7 +50,7 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 
 1. In Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01.
 
-2. Click on `Storage browser (preview)` and then click on `Blob container`.
+2. Click on **Storage browser (preview)** and then click on **Blob containers**.
 ![Blob Containers](./media/portal-browser-container.png)  
 
 3. Using the `good_bundles.zip` file downloaded in Step 1:
@@ -65,17 +65,17 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 ## Troubleshooting 
 Here are some points for inspecting FHIR data ingestion results:
 
-+ Check **Container** -> **bundlesprocessed** and / or **bundleserr** for a FHIR bulk data file that you want information about.  
++ In **Storage browser (preview)**, go to **Container** -> **bundlesprocessed** and / or **bundleserr** to view info about FHIR bulk data files.  
 
     _Note: If you uploaded a .zip file, the names of the bundles within the .zip file are exposed (not the zip filename itself)._
 
     ![bundlesprocessed](./media/bundlesprocessed.png)
 
-+ Click on the **.result** file and then click on **Edit**.
++ Click on the **.result** file for the data file that you are interested in and then click on **Edit**.
 
     ![bundle-edit](./media/bundle-edit.png)
 
-+ In the Editor view, look for status codes. Here a `201` is successful, and the logs show the FHIR Resource now containing the information. 
++ In the editor view, look for status codes. In the example below, a `201` status code means success, and the logs show the FHIR Resource now containing the information. 
 
     ![bundle-edit-status](./media/bundle-edit-status.png)
 
