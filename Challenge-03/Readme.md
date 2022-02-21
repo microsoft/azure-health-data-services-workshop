@@ -54,10 +54,10 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 ![Blob Containers](./media/portal-browser-container.png)  
 
 3. Using the `good_bundles.zip` file downloaded in Step 1:
-    + Determine which container this file should be uploaded to and proceed with the upload.
+    + Determine which container this .zip file should be uploaded to and proceed with the upload.
 
 4. Using the `bad_bundles.zip` file downloaded in Step 1:
-    + Try uploading the file to the same container where you uploaded the `good_bundles.zip`. What happens as a result?
+    + Try uploading the .zip file to the same container where you uploaded `good_bundles.zip`. What happens as a result?
     + Unzip the `bad_bundles.zip` and use a text editor to open the JSON file contained within. Look for the key piece of information that is preventing this bundle from being ingested.
 
 > Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on common issues in bulk FHIR data ingestion. 
