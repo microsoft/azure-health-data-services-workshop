@@ -46,7 +46,7 @@ For this challenge, you will upload FHIR data for import into Azure API for FHIR
 
 **Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01.**
 
-## Step 2 - Upload Sample Data
+## Step 3 - Upload Sample Data
 
 1. In the Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01.
 
