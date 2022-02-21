@@ -75,7 +75,7 @@ Here are some points for inspecting FHIR data ingestion results:
 
     ![bundle-edit](./media/bundle-edit.png)
 
-+ In the editor view, look for status codes. In the example below, a `201` status code means success, and the logs show the FHIR Resource now containing the information. 
++ In the editor view, look for status codes. In the example below, a `201` status code means success, and the logs show the FHIR Resource `Organization/<ResourceID>`, indicating that this Resource (`Organization`) contains the information. 
 
     ![bundle-edit-status](./media/bundle-edit-status.png)
 
