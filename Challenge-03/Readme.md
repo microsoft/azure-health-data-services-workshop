@@ -60,7 +60,7 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
     + Try uploading the .zip file to the same container where you uploaded `good_bundles.zip`. What happens as a result?
     + Unzip the `bad_bundles.zip` and use a text editor to open the JSON file contained within. Look for the key piece of information that is preventing this bundle from being ingested.
 
-> Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on common issues in bulk FHIR data ingestion. 
+> Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on tracking issues in bulk FHIR data ingestion. 
 
 ## Troubleshooting 
 Here are some points for inspecting FHIR data ingestion results:
