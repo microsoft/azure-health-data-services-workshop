@@ -65,7 +65,7 @@ The mapper will be at this address when running: http://localhost:5000
 
 Link - https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings
 
-At the end of step 4 you will have a sample set of IoT Maps which can be used with the Azure API for FHIR and IoT Connector.
+At the end of Step 4 you will have a sample set of IoT Maps which can be used with the Azure API for FHIR and IoT Connector.
 
 For more information on the IoT Mappings visit the docs page - https://github.com/microsoft/iomt-fhir/blob/master/docs/Configuration.md.
 
