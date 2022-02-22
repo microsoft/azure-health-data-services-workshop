@@ -31,11 +31,11 @@ This hack is intended for **healthcare system integrators**, **independent healt
 
 # Where to start?
 
-Go to the Challenge-00 folder in this repo (accessible [here](./'Challenge-00 - Check prerequisites and configure environment')) and read the instructions to get started. When finished with Challenge-00, move on to Challenge-01. The challenge topics build on each other, and it is recommended to go through the challenges in the order they are presented. 
+Go to the Challenge-00 folder in this repo (accessible [here](./Challenge-00+-+Check+prerequisites+and+configure+environment)) and read the instructions to get started. When finished with Challenge-00, move on to Challenge-01. The challenge topics build on each other, and it is recommended to go through the challenges in the order they are presented. 
 
 # Ready to get started?  
 
-We wish you the best of luck on your MC4H OpenHack journey! Click [here](./'Challenge-00 - Check prerequisites and configure environment') to proceed to Challenge-00.
+We wish you the best of luck on your MC4H OpenHack journey! Click [here](./Challenge-00+-+Check+prerequisites+and+configure+environment) to proceed to Challenge-00.
 
 ## Trademarks
 
