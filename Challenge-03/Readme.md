@@ -40,7 +40,7 @@ Download the following .zip files to your desktop:
 + [good_bundles.zip](./samples/good_bundles.zip) 
 + [bad_bundles.zip](./samples/bad_bundles.zip) 
 
-## Step 2 - Read about FHIR-Bulk Loader operation
+## Step 2 - Get information about FHIR-Bulk Loader operation
 
 Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for instructions on how to upload bulk FHIR data into Azure API for FHIR (the process simply involves uploading files to a blob storage container in Azure).
 
