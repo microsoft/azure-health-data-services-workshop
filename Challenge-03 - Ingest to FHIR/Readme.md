@@ -87,4 +87,4 @@ Here are some points for inspecting FHIR data ingestion results:
 
 ## Next Steps
 
-Click [here](../Challenge-04/Readme.md) to proceed to Challenge-04.
+Click [here](<../Challenge-04 - Query and Search FHIR/Readme.md>) to proceed to Challenge-04.
