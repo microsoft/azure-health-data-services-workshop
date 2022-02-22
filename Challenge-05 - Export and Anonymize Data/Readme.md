@@ -68,4 +68,4 @@ If you get stuck, check out [Create SAS Tokens](https://docs.microsoft.com/en-us
 
 ## Next Steps
 
-Click [here](<../Challenge-06 - Research Azure Data Analytics/ReadMe.md>) to proceed to the next challenge.
+Click [here](<../Challenge-06 - Research Azure Data Analytics/Readme.md>) to proceed to the next challenge.
