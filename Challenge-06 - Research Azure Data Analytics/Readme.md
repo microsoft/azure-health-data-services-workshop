@@ -38,7 +38,7 @@ Open  ***Challenge  - Research Azure Data Analytics.py***  in Azure Databricks
 
 The remaining steps in this challenge section will be walked through in the Azure Databricks notebook.
 
-Note: Confirm the container with the anonymized data you will be using in databricks has access set to Public and allows anonymous read access for containers and blobs
+Note: Confirm the container with the anonymized data you will be using in Databricks has access set to Public and allows anonymous read access for containers and blobs.
 
 ### Challenge Success
 + Successfully load FHIR data into Azure Databricks
@@ -62,18 +62,18 @@ By the end of the section you will be able to
 ### Step 1: Load Parquet data into Azure Synapse
 
 #### 1. Open your Synapse workspace and import data from the storage account you wrote flattened parquet files to in Section 1: Data Analysis and Statistical Modeling  <br />
-You will need Patient data and Immmunizaton data to explore geographic vaccination rates <br />
+You will need Patient data and Immmunizaton data to explore geographic vaccination rates. <br />
 <br />
-If you get stuck, check out this article on the [Copy Data Tool in Azure Synapse](https://docs.microsoft.com/en-us/azure/data-factory/copy-data-tool?tabs=data-factory) <br />
+If you get stuck, check out this article on the [Copy Data Tool in Azure Synapse](https://docs.microsoft.com/en-us/azure/data-factory/copy-data-tool?tabs=data-factory). <br />
 
 
 ### Step 2: Connect PowerBI, Load Synapse data, and report of vaccination rates by postal code <br />
 Connect your PowerBI workspace to Azure Synapse, load the Patient and Immunization data into PowerBI<br />
 You are interested in the Flu vaccination rates so you will need to join the datasets and create a field in the combined dataset that can be aggregated to achieve that rate. Pay attention to any data transformation necessary to join the datasets <br/>
 <br/>
-If you get stuck, check out this article on [creating custom columns in PowerBI](https://docs.microsoft.com/en-us/power-bi/create-reports/desktop-add-custom-column#:~:text=Use%20Power%20Query%20Editor%20to%20add%20a%20custom%20column,-To%20start%20creating&text=From%20the%20Home%20tab%20on,The%20Custom%20Column%20window%20appears.) <br />
+If you get stuck, check out this article on [creating custom columns in PowerBI](https://docs.microsoft.com/en-us/power-bi/create-reports/desktop-add-custom-column#:~:text=Use%20Power%20Query%20Editor%20to%20add%20a%20custom%20column,-To%20start%20creating&text=From%20the%20Home%20tab%20on,The%20Custom%20Column%20window%20appears.). <br />
 
-Information on group by aggregations can be found [here](https://docs.microsoft.com/en-us/power-query/group-by#:~:text=Select%20Group%20by%20on%20the,the%20column%20used%20is%20Units)<br />
+Information on group by aggregations can be found [here](https://docs.microsoft.com/en-us/power-query/group-by#:~:text=Select%20Group%20by%20on%20the,the%20column%20used%20is%20Units).<br />
 
 
 ### What does success look like for Challenge-06?
