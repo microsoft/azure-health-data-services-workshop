@@ -34,7 +34,7 @@ Clone this repo
 	https://github.com/microsoft/azure-healthcare-apis-workshop
 
 ### Step 2
-Open  ***Challenge  - Research Azure Data Analytics.py***  in Azure Databricks
+Go to the 'Challenge-06 - Research Azure Data Analytics' directory in this repo and open ***Challenge - Research Azure Data Analytics.py*** in Azure Databricks.
 
 The remaining steps in this challenge section will be walked through in the Azure Databricks notebook.
 
