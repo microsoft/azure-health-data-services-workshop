@@ -104,4 +104,4 @@ Link to OSS - https://github.com/microsoft/iomt-fhir
 
 ## Next Steps
 
-Click [here](<../Challenge-08 - DICOM/Readme.md>) to proceed to the next challenge.
+Click [here](<../Challenge-10 - Optional - FhirBlaze (Blazor app dev + FHIR)/Readme.md>) to proceed to the next challenge.
