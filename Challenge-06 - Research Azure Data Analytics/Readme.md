@@ -36,7 +36,7 @@ Clone this repo:
 ### Step 2
 Go to the 'Challenge-06 - Research Azure Data Analytics' directory in this repo and open ***Challenge - Research Azure Data Analytics.py*** in Azure Databricks.
 
-The remaining steps in this challenge section will be walked through in the Azure Databricks notebook.
+The remaining steps in this challenge section will are detailed in the Azure Databricks notebook.
 
 Note: Confirm the container with the anonymized data you will be using in Databricks has access set to Public and allows anonymous read access for containers and blobs.
 
