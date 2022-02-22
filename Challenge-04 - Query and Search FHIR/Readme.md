@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge you will learn how to use the search operations in Azure API for FHIR.
 
 ## Background
-The FHIR specification defines the fundamentals of search for FHIR resources. This hack will guide you through some key aspects of searching resources in FHIR. 
+The FHIR specification defines the fundamentals of search for FHIR resources. This challenge will guide you through some key aspects of searching resources in FHIR. 
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
