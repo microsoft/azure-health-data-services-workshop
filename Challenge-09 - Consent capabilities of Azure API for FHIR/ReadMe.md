@@ -25,7 +25,7 @@ In today's rapidly changing healthcare data landscape, the FHIR R4 format is has
 
 ## Step - 1 Configure Postman
 
-1. Configure postman using the guidance provided in [Challenge 1](../Challenge-01/Readme.md).
+1. Configure postman using the guidance provided in [Challenge 1](<../Challenge-01 - Deploy Azure API for FHIR (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)/Readme.md>).
 2. Confirm that the FHIR service contains Patient resources.
 ![Patient Resources](./images/patient-count-postman.png)
 3. Select a Patient resource and record the patient identifier. This will be used to create the Consent resource.
@@ -57,4 +57,4 @@ Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/i
 
 ## Next Steps
 
-Click [here](../Challenge-10/ReadMe.md) to proceed to the next challenge.
+Click [here](<../Challenge-10 - FhirBlaze (Blazor app dev + FHIR)/ReadMe.md>) to proceed to the next challenge.
