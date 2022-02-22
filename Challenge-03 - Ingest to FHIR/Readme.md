@@ -53,10 +53,10 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 2. Click on **Storage browser (preview)** and then click on **Blob containers**.
 ![Blob Containers](./media/portal-browser-container.png)  
 
-3. Using the `good_bundles.zip` file downloaded in Step 1:
+3. Using the `good_bundles.zip` file downloaded in Step 1 of this challenge:
     + Determine which container this .zip file should be uploaded to and proceed with the upload.
 
-4. Using the `bad_bundles.zip` file downloaded in Step 1:
+4. Using the `bad_bundles.zip` file downloaded in Step 1 of this challenge:
     + Try uploading the .zip file to the same container where you uploaded `good_bundles.zip`. What happens as a result?
     + Unzip the `bad_bundles.zip` and use a text editor to open the JSON file contained within. Look for clues as to why this bundle cannot be ingested into Azure API for FHIR.
 
