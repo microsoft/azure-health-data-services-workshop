@@ -111,4 +111,4 @@ Tip - The GitHub repo site has a Deploy to Azure button built in.
 
 ## Next Steps
 
-Click [here](<../Challenge-09 - Consent capabilities of Azure API for FHIR/ReadMe.md>) to proceed to the next challenge.
+Click [here](<../Challenge-09 - IoT Connector for FHIR/Readme.md>) to proceed to the next challenge.
