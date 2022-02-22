@@ -38,7 +38,7 @@ Go to the 'Challenge-06 - Research Azure Data Analytics' directory in this repo 
 
 The remaining steps in this challenge section will are detailed in the Azure Databricks notebook.
 
-Note: Confirm the container with the anonymized data you will be using in Databricks has access set to Public and allows anonymous read access for containers and blobs.
+__Note:__ Confirm the container with the anonymized data you will be using in Databricks has access set to Public and allows anonymous read access for containers and blobs.
 
 ### Challenge Success
 + Successfully load FHIR data into Azure Databricks
