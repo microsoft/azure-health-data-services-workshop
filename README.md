@@ -1,10 +1,10 @@
-# Microsoft Cloud for Healthcare OpenHack
+# Microsoft Azure Healthcare APIs Workshop
 
 # Introduction
-Hello and welcome to the Microsoft Cloud for Healthcare (MC4H) OpenHack! This hack presents a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) tools and architectures. 
+Hello and welcome to the Microsoft Healthcare APIs Workshop! In this workshop repo, we present a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) tools and architectures. 
 
-# Who is the MC4H OpenHack for?
-This hack is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Participants are expected to have the following experience before beginning the OpenHack:
+# Who is the Microsoft Healthcare APIs Workshop for?
+This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Participants are expected to have the following experience before beginning with the activities:
 
 1. A solid foundation in [MS Azure fundamentals](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)
 2. A working knowledge of the [Fast Healthcare Interoperability Resources R4](https://hl7.org/fhir/R4/) (FHIR R4) data standard
@@ -12,7 +12,7 @@ This hack is intended for **healthcare system integrators**, **independent healt
 
 # What topics are covered?
 
-+ In the first portion of the hack (Challenges 00-04), you'll get direct experience deploying and configuring the Azure components used in real-world health data production environments.  
++ In the first portion of the workshop (Challenges 00-04), you'll get direct experience deploying and configuring the Azure components used in real-world health data production environments.  
 
     + Challenge-00 - Check prerequisites and configure environment
     + Challenge-01 - Deploy Azure API for FHIR (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)
@@ -20,7 +20,7 @@ This hack is intended for **healthcare system integrators**, **independent healt
     + Challenge-03 - Ingest to FHIR
     + Challenge-04 - Query and Search FHIR
     
-+ In the second part of the hack (Challenges 05-10), you'll get exposure to real-world applications through hands-on activities in a variety of topic areas.
++ In the second part of the workshop (Challenges 05-10), you'll get exposure to real-world applications through hands-on activities in a variety of topic areas.
 
     + Challenge-05 - Export and Anonymize Data
     + Challenge-06 - Research Azure Data Analytics
@@ -35,7 +35,7 @@ Go to the Challenge-00 folder in this repo (accessible [here](<./Challenge-00 - 
 
 # Ready to get started?  
 
-We wish you the best of luck on your MC4H OpenHack journey! Click [here](<./Challenge-00 - Check prerequisites and configure environment>) to proceed to Challenge-00.
+We wish you the best in your learning journey ahead! Click [here](<./Challenge-00 - Check prerequisites and configure environment>) to proceed to Challenge-00.
 
 ## Trademarks
 
