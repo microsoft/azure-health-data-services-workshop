@@ -83,4 +83,4 @@ Information on group by aggregations can be found [here](https://docs.microsoft.
 
 ## Next Steps
 
-Click [here](../Challenge-07/ReadMe.md) to proceed to the next challenge.
+Click [here](<../Challenge-07 - IoT Connector for FHIR/Readme.md>) to proceed to the next challenge.
