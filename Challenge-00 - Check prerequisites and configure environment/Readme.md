@@ -4,19 +4,19 @@
 In this preliminary challenge, you will be checking your Azure Subscription and other pieces of your environment to make sure that all prerequisites are met before deploying the Azure components used in this hack. Please make certain that everything is in place before proceeding to Challenge-01.
 
 ## Background 
-The MC4H OpenHack presents a series of challenges to help learners build skills in deploying and configuring [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and supporting tools. After completing the MC4H OpenHack, learners will be able to build the system architectures featured on __[Microsoft Health Architectures](https://microsoft.github.io/health-architectures/)__.
+The Azure Healthcare APIs Workshop presents a series of challenges to help learners build skills in deploying and configuring [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and supporting tools. After completing the Azure Healthcare APIs Workshop, learners will be able to build the system architectures featured on __[Microsoft Health Architectures](https://microsoft.github.io/health-architectures/)__.
  
 ## Learning Objectives for Challenge-00
-+ Understand the learner goals of the MC4H OpenHack
-+ Understand the prerequisites for the MC4H OpenHack
++ Understand the learner goals of the Azure Healthcare APIs Workshop
++ Understand the prerequisites for the Azure Healthcare APIs Workshop
 + Check environment to make sure that all prerequisites are met
 
-## What are the general learner goals of the MC4H OpenHack?
-In general, we want learners to walk away from this hack with a sense of confidence in deploying, configuring, and applying Microsoft health data solutions.
+## What are the general learner goals of the Azure Healthcare APIs Workshop?
+In general, we want learners to walk away from this workshop with a sense of confidence in deploying, configuring, and applying Microsoft health data solutions.
 
-+ In doing this hack, learners will know how to **ingest**, **transform**, and **connect health data** using the Microsoft Azure health data platform.
++ In doing the workshop, learners will know how to **ingest**, **transform**, and **connect health data** using the Microsoft Azure health data platform.
 
-+ The tasks in this hack require learners to locate information in technical documentation and **resolve issues independently**.
++ The tasks in this workshop require learners to locate information in technical documentation and **resolve issues independently**.
 
 + The challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be ready to **use Microsoft Health & Life Sciences (HLS) tools in real-world production environments**.  
 
