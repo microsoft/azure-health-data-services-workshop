@@ -95,4 +95,4 @@ FHIR-Bulk Loader
 
 ## Next Steps
 
-Click [here](../Challenge-02/Readme.md) to proceed to Challenge-02.
+Click [here](<../Challenge-02 - Convert HL7v2 and C-CDA to FHIR/Readme.md>) to proceed to Challenge-02.
