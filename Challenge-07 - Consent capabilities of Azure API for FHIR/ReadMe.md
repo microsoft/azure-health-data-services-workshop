@@ -57,4 +57,4 @@ Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/i
 
 ## Next Steps
 
-Click [here](<../Challenge-10 - FhirBlaze (Blazor app dev + FHIR)/ReadMe.md>) to proceed to the next challenge.
+Click [here](<../Challenge-08 - DICOM/Readme.md>) to proceed to the next challenge.
