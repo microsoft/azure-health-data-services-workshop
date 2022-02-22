@@ -41,6 +41,6 @@ __Note:__ Free Postman cloud accounts require a login via email or a Google acco
 
 ## Next Steps
 
-Click [here](../Challenge-01/Readme.md) to proceed to Challenge-01.
+Click [here](<../Challenge-01 - Deploy Azure API for FHIR (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)>) to proceed to Challenge-01.
 
 
