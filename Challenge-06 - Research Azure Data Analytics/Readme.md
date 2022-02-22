@@ -29,7 +29,7 @@ By the end of the section you will be able to
 * Completed Challenge - Export and Anonymize Data
 
 ### Step 1
-Clone this repo 
+Clone this repo: 
 
 	https://github.com/microsoft/azure-healthcare-apis-workshop
 
