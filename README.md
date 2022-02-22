@@ -4,7 +4,7 @@
 Hello and welcome to the Microsoft Healthcare APIs Workshop! In this workshop, we present a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) tools and architectures. 
 
 # Who is the Microsoft Healthcare APIs Workshop for?
-This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Participants are expected to have the following experience before beginning with the workshop:
+This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Participants are expected to have the following experience before beginning the workshop challenges:
 
 1. A solid foundation in [MS Azure fundamentals](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)
 2. A working knowledge of the [Fast Healthcare Interoperability Resources R4](https://hl7.org/fhir/R4/) (FHIR R4) data standard
