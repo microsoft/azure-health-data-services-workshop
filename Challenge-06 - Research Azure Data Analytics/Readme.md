@@ -46,7 +46,7 @@ Note: Confirm the container with the anonymized data you will be using in Databr
 + Successfully perform statistical analyses on the data 
  
 ## 2. Data Visualization and BI
-Given the dataset exported in Challenge 9, what geographic areas have the lowest Flu vaccination rates?
+Given the dataset exported in Challenge-05, what geographic areas have the lowest Flu vaccination rates?
 ### Learning Objectives
 By the end of the section you will be able to 
 * Write Anonymized FHIR data to Azure Synapse Analytics
