@@ -55,7 +55,7 @@ Using the Postman file provided, search for Patients using the following: ```_id
 
 Q: In what field does "name" work?  What is FHIR matching against?
 
-Azure API for FHIR supports _almost_ all resource-specific search parameters defined by the FHIR specification. The only search parameters not supported are listed here: [R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
+Azure API for FHIR supports _almost_ all resource-specific search parameters defined by the FHIR specification. The only search parameters not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
 
   
 ## Step 2 - Perform both Common and Composite Searches 
@@ -98,4 +98,4 @@ To create a new search parameter, you need to POST the SearchParameter resource 
 
 ## Next Steps
 
-Click [here](../Challenge-05/Readme.md) to proceed to the next challenge.
+Click [here](<../Challenge-05 - Export and Anonymize Data/Readme.md>) to proceed to the next challenge.
