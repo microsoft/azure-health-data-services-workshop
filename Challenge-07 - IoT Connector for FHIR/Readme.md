@@ -40,13 +40,13 @@ Now let's go a step forward. This time let's create our own mappings using sampl
 &nbsp;&nbsp;&nbsp;&nbsp; This hackathon repo (If not already complete)
 
 ```azurecli
-git clone https://github.com/microsoft/openhack-mc4h
+git clone https://github.com/microsoft/azure-healthcare-apis-workshop.git
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp; IoMT FHIR Connector for Azure
 
 ```azurecli
-git clone https://github.com/microsoft/iomt-fhir
+git clone https://github.com/microsoft/iomt-fhir.git
 ```
 
 ### Step 2 - Install Node.js (If not already complete)
@@ -83,7 +83,7 @@ Upload your newly created sample mappings to the IoT Connector via the portal.
 
 This is the most difficult challenge. However, this could be one of the most crucial to the success of an IoMT/ RPM project.
 
-Use the IoT Mapper from Challenge 11b to create maps for the sample messages in the SampleData folder. There are three sample messages in one file - vitals, BP, and weight. Vitals is an array of data while BP & weight are single entry messages. The SampleData folder has two files. Both files are the same data. Three-Sample-Message-Types-with-labels.json is the message data with data descriptions and/or units of measure.
+Use the IoT Mapper from Challenge-07b to create maps for the sample messages in the SampleData folder. There are three sample messages in one file - vitals, BP, and weight. Vitals is an array of data while BP & weight are single entry messages. The SampleData folder has two files. Both files are the same data. Three-Sample-Message-Types-with-labels.json is the message data with data descriptions and/or units of measure.
 
 When you get to the FHIR mapping you can make up values for the 'Code'. For example - Code: A1235, System: https://loinc.org, Text: Heart Rate
 
@@ -104,4 +104,4 @@ Link to OSS - https://github.com/microsoft/iomt-fhir
 
 ## Next Steps
 
-Click [here](../Challenge-08/ReadMe.md) to proceed to the next challenge.
+Click [here](<../Challenge-08 - DICOM/Readme.md>) to proceed to the next challenge.
