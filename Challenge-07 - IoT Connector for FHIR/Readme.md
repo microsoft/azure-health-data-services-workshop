@@ -37,7 +37,7 @@ Now let's go a step forward. This time let's create our own mappings using sampl
 
 ### Step 1 - Clone these repos
 
-&nbsp;&nbsp;&nbsp;&nbsp; This hackathon repo (If not already complete)
+&nbsp;&nbsp;&nbsp;&nbsp; This workshop repo (If not already complete)
 
 ```azurecli
 git clone https://github.com/microsoft/azure-healthcare-apis-workshop.git
