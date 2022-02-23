@@ -20,7 +20,7 @@ In general, we want learners to walk away with a sense of confidence in deployin
 
 + The challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be ready to **use Microsoft Health & Life Sciences (HLS) tools in real-world production environments**.  
 
-## Prerequisite Knowledge for the MC4H OpenHack
+## Prerequisite Knowledge for the Azure Healthcare APIs Workshop
 
 + A solid foundation in **Azure fundamentals**. If you are new to Microsoft Azure, please visit [here](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/) to learn more about the platform.
 
