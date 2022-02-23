@@ -8,7 +8,7 @@ In this challenge you will learn how to configure Consent Opt-Out filtering usin
 
 ## Background
 
-In today's digital healthcare landscape, the HLS industry has adopted FHIR R4 as the standard format for storage and exchange of health data. The wide adoption of FHIR R4 has opened new possibilities for health data interoperability; however, the availability of health data has also brought up concerns about protecting patients' privacy. Health institutions are required by law to guard patient's Personal Health Information (PHI) from disclosure, and one of the ways this is managed is by giving patients the option to consent to the use of their medical records for research and/or other purposes. In this challenge, we will be getting hands-on experience with the Role-Based Consent capabilities of the Azure health data platform.
+In today's digital healthcare landscape, the HLS industry has adopted FHIR R4 as the standard format for storage and exchange of health data. The wide adoption of FHIR R4 has opened new possibilities for health data interoperability; however, the availability of health data has also brought up concerns about protecting patients' privacy. Health institutions are required by law to guard patient's Personal Health Information (PHI) from disclosure, and one of the ways this is managed is by giving patients the option to consent to the use of their medical records for research and/or other purposes. In this challenge, we will be exploring the Role-Based Consent capabilities of the Azure health data platform.
 
 ## Learning Objectives for Challenge-07
 
