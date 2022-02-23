@@ -22,29 +22,29 @@ By the end of this challenge you will be able to
 * Azure Data Lake Storage Gen2 deployed in your Azure environment.
 
 ## Step 1: Review sample anonymization configuration and customize if needed
-Microsoft provides a sample configuration file to anonymize data according to HIPAA Safe Harbor specifications. It's important to review the sample configuration and the HIPAA Safe Harbor rules to determine if the sample configuration will work for your organization. If the sample configuration doesn't meet your organization's requirements for PHI de-identification, you will need to implement your own anonymization rules in the configuration file.
+Microsoft provides a sample configuration file for anonymizing data according to HIPAA Safe Harbor specifications. It's important to review the sample configuration and the HIPAA Safe Harbor rules to determine if the sample configuration will work for your organization. If the sample configuration doesn't meet your organization's requirements for PHI de-identification, you will need to implement your own anonymization rules in the configuration file.
 
 More information on HIPAA de-identification rules can be found [here](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html).
 
 **Task:**  
 Configure your Azure API for FHIR for export to a storage account following the instructions [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/configure-export-data). <br>
 
-Note: You are enabling a managed identity on the Azure API for FHIR resource. That managed identity is what needs to be added to the storage account with Storage Blob Data Contributor privledges. Be careful not to add the service client or a service principle by mistake. <br>
+Note: You are enabling a managed identity on the Azure API for FHIR resource. That managed identity is what needs to be added to the storage account with Storage Blob Data Contributor privledges. Be careful not to add a service client or a service principle by mistake. <br>
 
 For more information on the sample anonymization file, check out [de-identified-export-operation-on-the-fhir-server](https://github.com/microsoft/Tools-for-Health-Data-Anonymization/blob/master/docs/FHIR-anonymization.md#how-to-perform-de-identified-export-operation-on-the-fhir-server).
 
-For a general overview of the $export operation's query parameters for de-identification, check out [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/de-identified-export).
+For a general overview of the `$export` operation's query parameters for de-identification, check out [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/de-identified-export).
 
 
 ## Step 2: Export anonymized data to a storage account
 
 **Task:**  
-Perform a de-identified $export on Azure API for FHIR. If you get stuck, refer to the documentation in Step 1. <br>
+Perform a de-identified `$export` from Azure API for FHIR. If you get stuck, refer to the documentation in Step 1. <br>
 
 The general format of the query will be <br>
 `https://<<FHIR service base URL>>/$export?_container=<<container_name>>&_anonymizationConfig=<<config file name>>&_anonymizationConfigEtag=<<ETag on storage>>`
 
-The $export operation has required headers 
+The `$export` operation has required headers 
 * Accept: application/fhir+json
 * Authorization: Bearer{{bearerToken}}
 * Prefer: respond-async. <br>
