@@ -45,7 +45,7 @@ In the first part of this challenge, you will
 - Go to the Azure Portal and deploy Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader
 
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the quickstarts folder in the FHIR-Starter repo in a new browser tab. 
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Starter quickstarts folder in a new browser tab. 
 
 https://github.com/microsoft/fhir-starter/tree/main/quickstarts 
 
