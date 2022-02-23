@@ -1,19 +1,19 @@
-# Challenge-07 - IoT Connector for FHIR
+# Challenge-09 - IoT Connector for FHIR
 
 ## Introduction
 
-Welcome to Challenge-07!
+Welcome to Challenge-09!
 
-Challenge-07 and Challenge-08 are designed to introduce you to the upcoming PaaS release of the Azure API for FHIR IoT Connector and the Azure Healthcare APIs DICOM Service. These challenges can be performed in any subscription and are not dependent on the work from prior challenges.
+Challenge-09 is designed to introduce you to the Azure API for FHIR IoT Connector. This challenges can be performed in any subscription and is not dependent on the work from prior challenges.
 
-Challenge-07 introduces the IoT Connector for the Azure API for FHIR PaaS, with the OSS deployments offered as a bonus challenge. This will help you become familiar with the data flow for IoT to FHIR and will broaden your knowledge of Remote Patient Monitoring scenarios.
+Challenge-09 introduces the IoT Connector for the Azure API for FHIR PaaS, with the OSS deployments offered as a bonus challenge. This will help you become familiar with the data flow for IoT to FHIR and will broaden your knowledge of Remote Patient Monitoring scenarios.
 
 
 ## Background
 
-With the rise of wearable devices, Remote Patient Monitoring (RPM) has exploded in the healthcare marketplace. Many hardware vendors have tried a proprietary approach for providing the hardware and monitoring software. Microsoft has taken an agnostic approach to Remote Patient Monitoring and wearable data ingestion. Microsoft has created a tool kit for converting the output from any wearable into FHIR resources.
+With the rise of wearable devices, Remote Patient Monitoring (RPM) has exploded in the healthcare marketplace. Many hardware vendors have tried a proprietary approach for providing the hardware and monitoring software. Microsoft has taken an agnostic approach to Remote Patient Monitoring and wearable data ingestion by offering a tool kit for converting output from wearable devices into FHIR resources.
 
-## Learning Objectives for Challenge-07
+## Learning Objectives for Challenge-09
 
 - Deploy and configure the IoT Connector via Azure portal
 - Deploy and configure additional Azure services required for the IoT connector
@@ -23,15 +23,15 @@ With the rise of wearable devices, Remote Patient Monitoring (RPM) has exploded 
 
 ## Challenges
 
-### Challenge-07a
+### Challenge-09a
 
-Let us begin with a basic walk through, performing the steps in this [IoT Quickstart](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/iot-fhir-portal-quickstart). Success for Challenge-07a means you can query the IoT FHIR Observation resource via Postman.
+Let us begin with a basic walk through, performing the steps in this [IoT Quickstart](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/iot-fhir-portal-quickstart). Success for Challenge-09a means you can query the IoT FHIR Observation resource via Postman.
 
 Link - https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/iot-fhir-portal-quickstart
 
 __Note:__ Azure IoT Central is no longer needed. Please delete your Azure IoT Central instance prior to moving forward.
 
-### Challenge-07b - Building Mappings from Sample Data
+### Challenge-09b - Building Mappings from Sample Data
 
 Now let's go a step forward. This time let's create our own mappings using sample data.
 
@@ -79,11 +79,11 @@ Upload your newly created sample mappings to the IoT Connector via the portal.
 - Figure out the steps for uploading a device mapping.
 - Repeat for FHIR mapping.
 
-## Challenge-07c
+## Challenge-09c
 
 This is the most difficult challenge. However, this could be one of the most crucial to the success of an IoMT/ RPM project.
 
-Use the IoT Mapper from Challenge-07b to create maps for the sample messages in the SampleData folder. There are three sample messages in one file - vitals, BP, and weight. Vitals is an array of data while BP & weight are single entry messages. The SampleData folder has two files. Both files are the same data. Three-Sample-Message-Types-with-labels.json is the message data with data descriptions and/or units of measure.
+Use the IoT Mapper from Challenge-09b to create maps for the sample messages in the SampleData folder. There are three sample messages in one file - vitals, BP, and weight. Vitals is an array of data while BP & weight are single entry messages. The SampleData folder has two files. Both files are the same data. Three-Sample-Message-Types-with-labels.json is the message data with data descriptions and/or units of measure.
 
 When you get to the FHIR mapping you can make up values for the 'Code'. For example - Code: A1235, System: https://loinc.org, Text: Heart Rate
 
@@ -91,17 +91,17 @@ Answers are in the 'Answer' folder if you get stuck. Final mappings may vary fro
 
 Hint - You may need to create multiple maps and combine the output into a single JSON file.
 
-## [BONUS] Challenge-07d
+## [BONUS] Challenge-09d
 
-This challenge is a variation of Challenge-07a.  
+This challenge is a variation of Challenge-09a.  
 Deploy and configure the OSS IoMT FHIR Connector for Azure. Use Azure IoT Central as the source and the mappings from the Quickstart.
 
 Link to OSS - https://github.com/microsoft/iomt-fhir
 
-## What does success look like for Challenge-07?
+## What does success look like for Challenge-09?
 + Map IoT medical device data to FHIR
 + Output a JSON file with mapped data
 
 ## Next Steps
 
-Click [here](<../Challenge-10 - Optional - FhirBlaze (Blazor app dev + FHIR)/Readme.md>) to proceed to the next challenge.
+Click [here](<../Challenge-10 - Optional - FhirBlaze (Blazor app dev + FHIR)/ReadMe.md>) to proceed to the next challenge.
