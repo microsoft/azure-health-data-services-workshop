@@ -35,7 +35,7 @@ Go to the Challenge-00 folder in this repo (accessible [here](<./Challenge-00 - 
 
 # Ready to get started?  
 
-We wish you the best in your learning journey ahead! Click [here](<./Challenge-00 - Check prerequisites and configure environment>) to proceed to Challenge-00.
+Best of luck in your learning journey ahead! Click [here](<./Challenge-00 - Check prerequisites and configure environment>) to proceed to Challenge-00.
 
 ## Trademarks
 
