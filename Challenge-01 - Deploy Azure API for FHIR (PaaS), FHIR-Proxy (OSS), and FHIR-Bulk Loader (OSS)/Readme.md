@@ -45,9 +45,11 @@ In the first part of this challenge, you will
 - Go to the Azure Portal and deploy Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader
 
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to visit the FHIR-Starter Quickstart repo (https://github.com/microsoft/fhir-starter/tree/main/quickstarts) in a new browser tab.
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the quickstarts folder in the FHIR-Starter repo in a new browser tab. 
 
-Follow the instructions in the repo and return here when finished.
+https://github.com/microsoft/fhir-starter/tree/main/quickstarts 
+
+Follow the instructions and return here when finished.
 
 
 ## Step 2 - Set up Postman and test Azure API for FHIR
@@ -55,9 +57,11 @@ In the next part of this challenge, you will
 - Visit another repo and read the instructions on setting up Postman
 - Make API calls to test Azure API for FHIR using Postman
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to visit the Postman tutorial repo (https://github.com/microsoft/health-architectures/tree/main/Postman) in a new browser tab.
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab. 
 
-Follow the instructions in the repo and return here when finished.
+https://github.com/microsoft/health-architectures/tree/main/Postman 
+
+Follow the instructions and return here when finished.
 
 ## What does success look like for Challenge-01?
 + Azure API for FHIR (PaaS) deployed and available
