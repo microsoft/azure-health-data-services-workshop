@@ -8,7 +8,7 @@ In this challenge you will learn how to configure Consent Opt-Out filtering usin
 
 ## Background
 
-In the digital transformation of healthcare, the HLS industry has adopted FHIR R4 as the standard format for storage and exchange of health data. The wide adoption of FHIR R4 has opened new possibilities for health data interoperability; however, the increased availability of health data has prompted concerns over the protection of patients' privacy. Health institutions are required by law to guard patient's Personal Health Information (PHI) from unauthorized disclosure, and one way this is managed is by only allowing the use of a patient's medical records if direct consent is given by the patient. In this challenge, we will be exploring the capabilities in the Azure health data platform that make it possible for users (i.e., patients) to opt out of sharing their FHIR records.
+In the digital transformation of healthcare, the HLS industry has adopted FHIR R4 as the standard format for storage and exchange of health data. The wide adoption of FHIR R4 has opened new possibilities for health data interoperability; however, the increased availability of health data has prompted concerns over the protection of patients' privacy. Health institutions are required by law to guard patient's Personal Health Information (PHI) from unauthorized disclosure, and one way this is managed is by only allowing access to a patient's medical records if direct consent is given by the patient. In this challenge, we will be exploring the capabilities in the Azure health data platform that make it possible for users (i.e., patients) to opt out of sharing their FHIR records.
 
 ## Learning Objectives for Challenge-07
 
