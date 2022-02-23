@@ -83,7 +83,7 @@ Here are some points for inspecting FHIR data ingestion results:
 
 + Successfully upload and import data from the file `good_bundles.zip`.
 + Successfully identify the problem in the `bad_bundles.zip` file. Use the Troubleshooting tips above for help. 
-+ Identify the **most important issue to address in production** to avoid problems when ingesting bulk FHIR data into Azure API for FHIR. 
++ Identify **issues to address in production** to avoid problems when ingesting bulk FHIR data into Azure API for FHIR. 
 
 ## Next Steps
 
