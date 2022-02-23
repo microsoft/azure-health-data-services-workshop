@@ -16,7 +16,7 @@ For bulk ingestion of FHIR data into Azure API for FHIR, Microsoft offers the op
 ## Learning Objectives for Challenge-01
 + Understand the Azure API for FHIR - FHIR-Proxy relationship
 + Use an ARM template to deploy Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader
-+ Configure AAD authentication for FHIR-Proxy
++ Configure AAD authentication for FHIR-Proxy and assign app roles
 + Configure Postman for testing FHIR API calls
 + Make FHIR API calls to Azure API for FHIR
 
