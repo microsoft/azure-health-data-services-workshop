@@ -36,7 +36,7 @@ Before deploying Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader, please ma
 
 + **Azure Active Directory (AAD):** You must have [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure Subscription.
 
-For **Step 2** in this challenge, you will need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
+You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
 
 
 ## Step 1 - Deploy Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader
