@@ -63,7 +63,7 @@ Follow the instructions in the repo and return here when finished.
 + Azure API for FHIR (PaaS) deployed and available
 + FHIR-Proxy (OSS) deployed and able to communicate with Azure API for FHIR
 + FHIR-Bulk Loader (OSS) deployed and available
-+ Postman set up and able to connect with Azure API for FHIR
++ Postman set up and able to connect with Azure API for FHIR (directly or via FHIR-Proxy)
     + Capabilities Statement from the Azure API for FHIR server - received
     ```
     {
