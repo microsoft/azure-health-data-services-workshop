@@ -36,7 +36,7 @@ For this challenge, you will upload FHIR data for import into Azure API for FHIR
 
 ## Step 1 - Download Sample Data
 
-Download the following .zip files to your desktop: 
+Download the following .zip files to your desktop (click the link and you will see a `download` button on the right): 
 + [good_bundles.zip](./samples/good_bundles.zip) 
 + [bad_bundles.zip](./samples/bad_bundles.zip) 
 
