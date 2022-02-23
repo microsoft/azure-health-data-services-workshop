@@ -24,10 +24,10 @@ This workshop is intended for **healthcare system integrators**, **independent h
 
     + Challenge-05 - Export and Anonymize Data
     + Challenge-06 - Research Azure Data Analytics
-    + Challenge-07 - IoT Connector for FHIR
+    + Challenge-07 - Consent capabilities of Azure API for FHIR
     + Challenge-08 - DICOM
-    + Challenge-09 - Consent capabilities of Azure API for FHIR
-    + Challenge-10 - FhirBlaze (Blazor app dev + FHIR)
+    + Challenge-09 - IoT Connector for FHIR
+    + Challenge-10 - Optional - FhirBlaze (Blazor app dev + FHIR)
 
 # Where to start?
 
