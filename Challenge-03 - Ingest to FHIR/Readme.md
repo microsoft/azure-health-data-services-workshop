@@ -42,7 +42,7 @@ Download the following .zip files to your desktop:
 
 ## Step 2 - Get information about FHIR-Bulk Loader operation
 
-Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for info on how the FHIR-Bulk Loader operates.
+Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on how the FHIR-Bulk Loader operates.
 
 *Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01.*
 
