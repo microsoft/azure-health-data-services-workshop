@@ -23,7 +23,7 @@ The FHIR specification defines the fundamentals of search for FHIR resources. Th
 ---
 
 ## Search basics 
-Each FHIR Resource has specific Search parameters in addition to the [common parameters](https://www.hl7.org/fhir/search.html#all) which also apply. See [Searching](https://www.hl7.org/fhir/search.html) for more information about searching in REST, messaging, and services.  
+Each FHIR Resource has specific Search parameters in addition to the [common parameters](https://www.hl7.org/fhir/search.html#all) which also apply. See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about searching in REST, messaging, and services.  
 
 + [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search)
 
