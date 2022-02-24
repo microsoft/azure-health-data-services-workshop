@@ -28,7 +28,7 @@ Each FHIR Resource has specific Search parameters in addition to the [common par
 + [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search)
 
 
-FHIR searches can be against a specific resource type, a specified compartment, or all resources. The simplest way to execute a search in FHIR is to use a GET request. For example, if you want to pull all patients in the database, you could use the following request:
+FHIR searches can be against a specific resource type, a specified compartment, or all resources. The simplest way to execute a search in FHIR is to use a GET request. For example, if you want to pull all patients in the FHIR server database, you could use the following request:
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
