@@ -18,7 +18,7 @@ The FHIR specification defines the fundamentals of search for FHIR resources. Th
 
 ## Prerequisites
 + Successful completion of Challenge 1
-+ Ensure you have loaded into Postman the `FHIR_Search.postman_collection.json` file from Challenge-01 [located here](./samples/FHIR_Search.postman_collection.zip).  
++ Ensure you have loaded into Postman the `FHIR_Search.postman_collection.json` file from Challenge-01 [located here](https://github.com/microsoft/health-architectures/blob/main/Postman/api-for-fhir/FHIR_Search.postman_collection.json).  
 
 ---
 
