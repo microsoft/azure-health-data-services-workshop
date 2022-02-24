@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge you will learn how to use the search operations in Azure API for FHIR.
 
 ## Background
-The FHIR specification defines the fundamentals of search for FHIR resources. This challenge will guide you through some key aspects of searching resources in FHIR. 
+The FHIR specification defines the fundamentals of search for FHIR resources. This challenge will guide you through some key aspects of searching Resources in FHIR. 
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -39,15 +39,15 @@ You can also search using POST, which is useful if the query string is too long 
 If the search request is successful, you’ll receive a FHIR bundle response with a `type: searchset` element at the top. If the search fails, you’ll find the error details in the `OperationOutcome` to help you understand what went wrong.
 
 ## Common Search Parameters 
-The following parameters apply to all resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` (documented below) also apply to all resources (as do the search result parameters).
+The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` (documented below) also apply to all Resources (as do the search result parameters).
 
-The search parameter ```_id``` refers to the logical id of the resource, and can be used when the search context specifies a resource type:
+The search parameter ```_id``` refers to the logical id of the Resource, and can be used when the search context specifies a resource type:
 
 ```azurecli
  GET {{FHIR_URL}}/Patient?_id=23
 ```
 
-This search finds the patient resource with the given id (there can only be one resource for a given id). 
+This search finds the Patient Resource with the given id (there can only be one Resource for a given id). 
   
 
 ## Step 1 - Understand the basic concepts of FHIR Search
@@ -59,7 +59,7 @@ Azure API for FHIR supports _almost_ all resource-specific search parameters def
 
   
 ## Step 2 - Perform both Common and Composite Searches 
-Composite search allows you to search against value pairs. For example, if you were searching for a height observation where the person was 60 inches, you would want to make sure that a single component of the observation contained the code ```bodyheight``` and the value of 60. 
+Composite search allows you to search against value pairs. For example, if you were searching for a height observation where the person was 60 inches, you would want to make sure that a single component of the observation contained the code ```bodyheight``` and the value of `60`. 
 
 Azure API for FHIR supports the following search parameter type pairings:
 + Reference, Token
