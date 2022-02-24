@@ -36,7 +36,7 @@ GET {{FHIR_URL}}/Patient
 
 You can also search using POST, which is useful if the query string is too long for a single line. To search using POST, the search parameters can be submitted as a form body. This allows for longer, more complex series of query parameters that might be difficult to see and understand in a query string.
 
-If the search request is successful, you’ll receive a FHIR bundle response with the type searchset. If the search fails, you’ll find the error details in the OperationOutcome to help you understand why the search failed.
+If the search request is successful, you’ll receive a FHIR bundle response with a `type: searchset` element. If the search fails, you’ll find the error details in the `OperationOutcome` to help you understand what went wrong.
 
 ## Common Search Parameters 
 The following parameters apply to all resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` (documented below) also apply to all resources (as do the search result parameters).
