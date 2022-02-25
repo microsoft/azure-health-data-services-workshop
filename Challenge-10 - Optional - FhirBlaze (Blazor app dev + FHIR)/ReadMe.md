@@ -24,7 +24,11 @@ In this challenge we will use Firely to represent the FHIR object model in .NET 
 + Visual Studio or Visual Studio Code installed on your local machine. The instructions are written for Visual Studio so you will have to map the equivalent in Visual Studio Code yourself.
 + Working instance of Azure API for FHIR - no data is required, but it's ok if there is data present on the server.
 ---
-## Step 1 – Intro to FhirBlaze base solution
+## Step 1 – Configure service and client application
+1. Relax the CORS configuration of FHIR service as per [the documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/configure-cross-origin-resource-sharing).<br>
+2. In the Azure AD, **App Registration** for **Postman** application, under **Authentication**, **Add a platform** of type **Single-page application** with redirect URI set to **https://localhost:44321/authentication/login-callback**
+
+## Step 2 – Intro to FhirBlaze base solution
 We created FhirBlaze to accelerate web app development on top of the FHIR server. It lays the foundation for sending Reads and Writes to the FHIR server, freeing you up to build your unique workflows that meet endusers' needs. <br>
 1. Clone FhirBlaze solution from [here]( https://github.com/microsoft/FhirBlaze)<br>
 2. Open FhirBlaze in **Visual Studio**.<br>
@@ -51,7 +55,7 @@ Modify the **Authority** and **ClientId** values to match your FHIR API instance
 
 ```  "AzureAd": {
     "Authority": "https://login.microsoftonline.com/[your tenant id]",
-    "ClientId": "[your Client secret]",
+    "ClientId": "[your Client ID]",
     "ValidateAuthority": true
   },
 Modify the **Scope** and **FhirServerUri** values to match your FHIR API instance.
@@ -77,7 +81,7 @@ Let's see how to add a new module. This adds a new Fhir resource type that we ca
 
 Open **Solution Explorer** pane and continue on to Step 2. <br> 
 
-## Step 2 – Create a new module
+## Step 3 – Create a new module
 Select a resource from [FHIR.org] (https://www.hl7.org/fhir/resourcelist.html) that is not already included as a module in the FhirBlaze solution. <br> 
 In **Solution Explorer**, right-click the **FhirBlaze** solution, select **Add**, and then select **New Project…**  <br> 
 In the **Add a new project** dialog, set the language filter to **C#**, and then select **Class Library** in the list of project templates. <br> 
@@ -143,7 +147,7 @@ Change the
 <br>
 We have now set up the front end of the application for the new Fhir resource. Our last step is to set up the backend to interact with the Fhir server. <br>
     
-## Step 3 – Implement the code to get, create, edit, and delete a FHIR resource
+## Step 4 – Implement the code to get, create, edit, and delete a FHIR resource
     
 In **Solution Explorer**, expand the **FhirBlaze.PractitionerModule** project.  
 Copy all of the files within that project into your new project. <br>
