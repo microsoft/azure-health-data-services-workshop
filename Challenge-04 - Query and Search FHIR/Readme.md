@@ -13,8 +13,8 @@ The FHIR specification defines the fundamentals of search for FHIR Resources. Th
 + Understand the basic concepts of FHIR Search
 + Perform both Common and Composite Searches 
 + Use Modifiers in Search 
-+ Use a Chained & Reverse Chained Search 
-+ Defining a Custom Search parameter 
++ Use Chained & Reverse Chained Search 
++ Define a Custom Search parameter 
 
 ## Prerequisites
 + Successful completion of Challenge-01
