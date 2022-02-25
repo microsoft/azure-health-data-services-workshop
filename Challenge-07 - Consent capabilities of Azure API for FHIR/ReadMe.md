@@ -4,7 +4,7 @@
 
 Welcome to Challenge-07!
 
-In this challenge, you will learn how to configure Consent Opt-Out filtering using the FHIR-Proxy (OSS) solution.
+In this challenge, you will learn how to configure Consent Opt-Out filtering using FHIR-Proxy (OSS).
 
 ## Background
 
