@@ -5,7 +5,7 @@ Welcome to Challenge-06!
 
 Data shared and aggregated using the FHIR standard offers rich analytics potential.
 
-In this challenge we will utilize FHIR data for analytics. The lesson will be broken into two sections
+In this challenge we will utilize FHIR data for analytics. The lesson will be broken into two sections:
 + Data Analysis & Statistical Modeling
 + Data Visualization and BI
 
