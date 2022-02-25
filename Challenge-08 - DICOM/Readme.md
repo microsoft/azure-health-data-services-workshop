@@ -4,7 +4,7 @@
 
 Welcome to Challenge-08!
 
-Congratulations for almost reaching the end of this workshop! Challenge-08 is a standalone challenge. This challenge is designed to help you become familiar with Medical Imaging basics. This challenge can be performed in either your personal/organization Azure subscription or the subscription provided for the live workshop event.
+Congratulations for almost reaching the end of this workshop! This challenge is designed to help you become familiar with Medical Imaging basics. This challenge can be performed either in your personal/organization Azure subscription or the subscription provided for the live workshop event.
 
 ## Background
 
