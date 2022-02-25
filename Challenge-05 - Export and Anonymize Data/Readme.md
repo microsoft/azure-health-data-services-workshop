@@ -51,7 +51,7 @@ The `$export` operation has required headers
 
 ![export-header](./media/Export_Headers.png) <br>
 
-For more information on headers check out this [documentation] (https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers)
+For more information on headers check out this [documentation](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers)
 
 ## Step 3: Securely transfer the file to the research team
 Researchers from outside organizations cannot have direct access to Healthcare or Payor organizations' Azure tennants. You will need to set up a way to securely transfer the anonymized datasets to these external groups.
