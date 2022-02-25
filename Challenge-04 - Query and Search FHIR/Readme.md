@@ -4,7 +4,7 @@
 
 Welcome to Challenge-04!
 
-In this challenge you will learn how to use the search operations in Azure API for FHIR.
+In this challenge, you will learn how to use FHIR Search operations to perform queries in Azure API for FHIR.
 
 ## Background
 The FHIR specification defines the fundamentals of search for FHIR Resources. This challenge will guide you through some key aspects of searching Resources in FHIR. 
