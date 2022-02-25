@@ -44,6 +44,10 @@ git clone https://github.com/microsoft/dicom-server.git
 
 [Deploy DICOM service using the Azure portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure)
 
+Add **DICOM Data Owner** role to the hackathon user as well as to the Postman client application [documentation here](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)
+
+Generate access token for user or Postman client application to resource https://dicom.healthcareapis.azure.com Check *hints* folder, if you need to find out how to generate the token.
+
 ### Step 4 - Choose a path for the rest of the Challenge
 
 Here you need to choose a path for completing the challenge. There are two paths:
