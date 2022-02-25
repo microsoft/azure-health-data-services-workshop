@@ -46,7 +46,7 @@ The general format of the query will be <br>
 
 The `$export` operation has required headers 
 * Accept: application/fhir+json
-* Authorization: Bearer{{bearerToken}}
+* Authorization: Bearer {{bearerToken}}
 * Prefer: respond-async. <br>
 
 ![export-header](./media/Export_Headers.png) <br>
