@@ -3,7 +3,7 @@
 
 Welcome to Challenge-05!
 
-In this challenge you will learn how to export anonymized data from Azure API for FHIR.
+In this challenge, you will learn how to export anonymized data from Azure API for FHIR.
 
 ## Background
 
