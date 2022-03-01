@@ -82,7 +82,7 @@ After making the call, you should receive a FHIR bundle response containing the 
 
 4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
 
-    __Hint:__ Look closely at the `""` quotation marks. All JSON keys and values must be surrounded by double quotes. Quotes *within* these surrounding quotes must be escaped, however.
+    __Hint:__ Look closely at the `""` quotation marks. All JSON keys and values must be surrounded by double quotes. Double quotes *within* these surrounding quotes must be escaped, however.
 
 5. When ready, copy and paste the C-CDA data into the body of the `Convert Data - CCDA` request in Postman.
 
