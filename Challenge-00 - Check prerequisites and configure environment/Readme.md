@@ -8,10 +8,10 @@ The Azure Healthcare APIs Workshop presents a series of challenges to help learn
  
 ## Learning Objectives for Challenge-00
 + Understand the learner goals of the Azure Healthcare APIs Workshop
-+ Understand the prerequisites for the Azure Healthcare APIs Workshop
++ Understand the prerequisites for Challenge-01
 + Check environment to make sure that all prerequisites are met
 
-## What are the general learner goals of the Azure Healthcare APIs Workshop?
+## What are the learner goals of the Azure Healthcare APIs Workshop?
 In general, we want learners to walk away with a sense of confidence in deploying, configuring, and applying Microsoft health data solutions.
 
 + In completing this workshop, learners will know how to **ingest**, **transform**, and **connect health data** using the Azure health data platform.
