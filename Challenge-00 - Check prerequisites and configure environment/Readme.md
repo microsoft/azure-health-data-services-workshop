@@ -7,11 +7,11 @@ In this preliminary challenge, you will be checking your Azure Subscription and 
 The Azure Healthcare APIs Workshop presents a series of challenges to help learners build skills in deploying and configuring [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and supporting tools. After completing the workshop challenges, learners will be ready to start building the system architectures featured on __[Microsoft Health Architectures](https://microsoft.github.io/health-architectures/)__.
  
 ## Learning Objectives for Challenge-00
-+ Understand the learner goals of the Azure Healthcare APIs Workshop
++ Understand general learner goals
 + Understand the prerequisites for Challenge-01
 + Check environment to make sure that all prerequisites are met
 
-## What are the learner goals of the Azure Healthcare APIs Workshop?
+## What do we want learners to gain from the Azure Healthcare APIs Workshop?
 In general, we want learners to walk away with a sense of confidence in deploying, configuring, and applying Microsoft health data solutions.
 
 + In completing this workshop, learners will know how to **ingest**, **transform**, and **connect health data** using the Azure health data platform.
