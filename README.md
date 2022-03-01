@@ -12,7 +12,7 @@ This workshop is intended for **healthcare system integrators**, **independent h
 
 # What topics are covered?
 
-+ In the first portion of the workshop (Challenges 00-04), you'll get direct experience deploying and configuring the Azure components used in real-world health data production environments.  
++ In the first portion of the workshop (Challenges 00-04), you'll get direct experience deploying and configuring Azure components used in real-world health data production environments.  
 
     + Challenge-00 - Check prerequisites and configure environment
     + Challenge-01 - Deploy Azure API for FHIR (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)
