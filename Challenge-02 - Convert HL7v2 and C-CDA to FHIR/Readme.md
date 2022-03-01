@@ -50,7 +50,7 @@ In today's health industry, the FHIR R4 format has become the industry standard 
 
     __Hint:__ Pay close attention to the escaping of white space characters.
 
-*Optional – prepare the HL7v2 message in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
+    *Optional – prepare the HL7v2 message in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
 
 ## Step 3 - Convert Data
 
