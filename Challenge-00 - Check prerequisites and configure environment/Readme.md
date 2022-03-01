@@ -1,7 +1,7 @@
 # Challenge-00 - Welcome!
 
 ## Introduction 
-In this preliminary challenge, you will be checking your Azure Subscription and other pieces of your environment to make sure that all prerequisites are met before deploying the Azure components used in this workshop.
+In this preliminary challenge, you will be checking your Azure Subscription and other pieces of your environment to make sure that all prerequisites are met before starting Challenge-01.
 
 ## Background 
 The Azure Healthcare APIs Workshop presents a series of challenges to help learners build skills in deploying and configuring [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and supporting tools. After completing the workshop challenges, learners will be ready to start building the system architectures featured on __[Microsoft Health Architectures](https://microsoft.github.io/health-architectures/)__.
