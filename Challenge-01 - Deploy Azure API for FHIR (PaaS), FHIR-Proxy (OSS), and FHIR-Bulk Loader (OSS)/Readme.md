@@ -90,7 +90,7 @@ Follow the instructions and return here when finished.
 
 Azure API for FHIR and FHIR-Proxy
 
-![proxy-deployment](./media/component-view-small.png)
+<img src="./media/Postman_FHIR-Proxy_API-FHIR_deploy.png" height="328">
 
 FHIR-Bulk Loader
 
