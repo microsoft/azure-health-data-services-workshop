@@ -46,7 +46,7 @@ In today's health industry, the FHIR R4 format has become the industry standard 
 
 3.	Copy and paste the HL7v2 message into the body of the `Convert Data – HL7` request that you created in Postman*.
 
-4.	After you paste the HL7v2 message, you will need to make some changes so that the formatting of the message follows the sample request given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/convert-data). 
+4.	After you paste the HL7v2 message, you will need to make some changes so that the formatting of the message follows the sample request included in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/convert-data). 
 
     __Hint:__ In the sample request in the documentation (midway through page), look at how `\n` newline characters are used in the HL7v2 payload. 
 
