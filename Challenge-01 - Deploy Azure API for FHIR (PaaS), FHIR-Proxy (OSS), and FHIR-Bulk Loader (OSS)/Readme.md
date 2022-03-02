@@ -25,7 +25,7 @@ In the Azure health data platform, FHIR-Proxy acts as a pre- and post- processor
 
 Component View of FHIR-Proxy and Azure API for FHIR with Postman set up to call the FHIR-Proxy endpoint.
 
-![component-view](./media/Postman_FHIR-Proxy_API-FHIR_deploy.png)
+<img src="./media/Postman_FHIR-Proxy_API-FHIR_deploy.png" height="528">
 
 
 ## Prerequisites 
