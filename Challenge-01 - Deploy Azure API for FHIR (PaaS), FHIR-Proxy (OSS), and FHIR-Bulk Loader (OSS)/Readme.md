@@ -25,7 +25,7 @@ In the Azure health data platform, FHIR-Proxy acts as a pre- and post- processor
 
 Component View of FHIR-Proxy and Azure API for FHIR with three AAD [confidential clients](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/register-confidential-azure-ad-client-app): one registered for Postman, one for FHIR-Proxy, and another for Azure API for FHIR*. *Registering a confidential client for Azure API for FHIR is done only for testing purposes. In this challenge, we will not be registering a confidential client for Azure API for FHIR.
 
-![component-view](./media/Postman_FHIR-Proxy_ARM_template_deploy_resize.png)
+![component-view](./media/Postman_FHIR-Proxy_ARM_template_deployment_resize.png)
 
 
 ## Prerequisites 
