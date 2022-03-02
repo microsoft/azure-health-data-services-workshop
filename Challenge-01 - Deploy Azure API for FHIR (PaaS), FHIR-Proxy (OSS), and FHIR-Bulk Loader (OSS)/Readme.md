@@ -23,7 +23,7 @@ For bulk ingestion of FHIR data into Azure API for FHIR, Microsoft offers the op
 ### Azure API for FHIR and FHIR-Proxy Relationship
 In the Azure health data platform, FHIR-Proxy acts as a pre- and post- processor, selectively filtering FHIR data on its way into and out of Azure API for FHIR. Admins can set up FHIR-Proxy to listen to the stream of I/O data and trigger custom workflows based on specific FHIR events. FHIR-Proxy also brings enhanced Role-Based Access Control (RBAC) to Azure API for FHIR, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (i.e., patients) can authorize or deny access to certain FHIR data.
 
-Component View of FHIR-Proxy and Azure API for FHIR with three AAD [confidential clients](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/register-confidential-azure-ad-client-app): one registered for Postman, one for FHIR-Proxy, and another for Azure API for FHIR*. *Registering a confidential client for Azure API for FHIR is done only for testing purposes. In this challenge, we will not be registering a confidential client for Azure API for FHIR.
+Component View of FHIR-Proxy and Azure API for FHIR with Postman connected to the FHIR-Proxy endpoint.
 
 ![component-view](./media/Postman_FHIR-Proxy_API-FHIR_deploy.png)
 
