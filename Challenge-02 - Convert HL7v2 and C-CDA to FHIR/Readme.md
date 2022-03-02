@@ -46,9 +46,9 @@ In today's health industry, the FHIR R4 format has become the industry standard 
 
 3.	Copy and paste the HL7v2 message into the body of the `Convert Data – HL7` request that you created in Postman*.
 
-4.	After you paste the HL7v2 message, you will need to make some changes so that the formatting of the message follows the example given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/convert-data). 
+4.	After you paste the HL7v2 message, you will need to make some changes so that the formatting of the message follows the sample request given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/convert-data). 
 
-    __Hint:__ In the example, pay close attention to how `\n` newline characters are used in the `valueString` carrying the HL7v2 payload.
+    __Hint:__ In the sample request in the documentation (midway through page), look for `\n` newline characters in the HL7v2 payload. 
 
     *Optional – prepare the HL7v2 message in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
 
@@ -82,7 +82,7 @@ After making the call, you should receive a FHIR bundle response containing the 
 
 4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
 
-    __Hint:__ Look closely at the `""` quotation marks. All JSON keys and values must be surrounded by double quotes. Double quotes *within* these surrounding quotes must be escaped, however.
+    __Hint:__ Look closely at the `""` quotation marks. All JSON keys and values must be surrounded by double quotes. Any double quotes *within* these surrounding quotes must be escaped, however.
 
 5. When ready, copy and paste the C-CDA data into the body of the `Convert Data - CCDA` request in Postman.
 
