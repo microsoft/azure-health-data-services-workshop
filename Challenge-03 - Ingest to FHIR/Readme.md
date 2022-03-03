@@ -44,7 +44,7 @@ Download the following .zip files to your desktop (click the link and you will s
 
 Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on how the FHIR-Bulk Loader operates.
 
-*Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01. In that deployment, the ARM template took care of configuring FHIR-Bulk Loader to connect with Azure API for FHIR.*
+*Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01. In that deployment, the ARM template set up FHIR-Bulk Loader to connect with Azure API for FHIR.*
 
 ## Step 3 - Upload Sample Data
 
