@@ -8,7 +8,7 @@ In this challenge, you will learn how to configure Consent Opt-Out filtering usi
 
 ## Background
 
-In the digital transformation of healthcare, the wide adoption of FHIR R4 has opened new possibilities for health data interoperability. The traditional barriers preventing the exchange of health data are disappearing, and new channels have opened for health data to reach practitioners, researchers, and patients. Health institutions are required by law to guard patients' Personal Health Information (PHI), and one way this is enforced is by requiring consent from a patient (either "broad" or "direct" consent) before practitioners or researchers may access the patient's medical records. In this challenge, we will be exploring capabilities in the Azure health data platform that make it possible for users (i.e., patients) to opt out of sharing their FHIR records with certain parties.
+In the digital transformation of healthcare, the wide adoption of FHIR R4 has opened new channels for health data to travel between point-of-care and research settings. Health institutions are required by law to guard patients' Personal Health Information (PHI), and one way this is managed is by requiring patient consent (either "broad" or "direct" consent) before practitioners or researchers may access the patient's medical records. In this challenge, we will be exploring capabilities in the Azure health data platform that make it possible for users (i.e., patients) to opt out of sharing their FHIR records with certain parties.
 
 ## Learning Objectives for Challenge-07
 
