@@ -4,10 +4,10 @@
 
 Welcome to Challenge-04!
 
-In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
+In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query an Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines the fundamentals of search for FHIR Resources. This challenge will guide you through some key aspects of searching Resources in FHIR. 
+The FHIR specification defines a RESTful syntax for searching through FHIR data held in a FHIR server's data store. This challenge will guide you through some key aspects of searching for FHIR Resrouces in Azure API for FHIR. 
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -19,7 +19,7 @@ The FHIR specification defines the fundamentals of search for FHIR Resources. Th
 ## Prerequisites
 + Successful completion of Challenge-01
 + Successful completion of Challenge-03 (Patient and other Resources should be loaded into Azure API for FHIR)
-+ Ensure you have loaded the `FHIR_Search.postman_collection.json` file into Postman from Challenge-01 - [located here](https://github.com/microsoft/health-architectures/blob/main/Postman/api-for-fhir/FHIR_Search.postman_collection.json).  
++ Ensure you have loaded the `FHIR_Search.postman_collection.json` file from Challenge-01 into Postman - [located here](https://github.com/microsoft/health-architectures/blob/main/Postman/api-for-fhir/FHIR_Search.postman_collection.json).  
 
 ---
 
@@ -42,7 +42,7 @@ If the search request is successful, you’ll receive a FHIR bundle response wit
 ## Common Search Parameters 
 The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` (documented below) also apply to all Resources (as do the search result parameters).
 
-The search parameter ```_id``` refers to the logical id of the Resource, and can be used when the search context specifies a resource type:
+The search parameter ```_id``` refers to the logical id of the Resource and can be used when the search context specifies a Resource type:
 
 ```azurecli
  GET {{FHIR_URL}}/Patient?_id=23
@@ -52,9 +52,9 @@ This search finds the Patient Resource with the given id (there can only be one 
   
 
 ## Step 1 - Understand the basic concepts of FHIR Search
-Using the Postman file provided, search for Patients using the following: ```_id```, ```name```, and more.
+Using the FHIR Search Postman collection provided, search for Patients using the following: ```_id```, ```name```, and more.
 
-Q: In what field does "name" work?  What is FHIR matching against?
+Q: In what field does ```name``` work? What is FHIR matching against?
 
 Azure API for FHIR supports _almost_ all resource-specific search parameters defined by the FHIR specification. The only search parameters not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
 
@@ -70,25 +70,25 @@ Azure API for FHIR supports the following search parameter type pairings:
 + Token, String
 + Token, Token
 
-Using the Postman file provided, search for Patients using the following: ```date```, ```lastmodified```, ```identifier```, ```value-quantity```, ```component-code-value-quantity``` and more.  
+Using the FHIR Search Postman collection provided, search for Patients using the following: ```date```, ```lastmodified```, ```identifier```, ```value-quantity```, ```component-code-value-quantity``` and more.  
 
-Ref: Learn more about date search in FHIR https://www.hl7.org/fhir/search.html#date 
+Ref: Learn more about date search in FHIR at https://www.hl7.org/fhir/search.html#date. 
   
 
 ## Step 3 - Using Search Result Parameters  
-Using the Postman file provided, search for Patients using the following search results parameters: ```_summary=count```, ```_total=accurate```  
+Using the FHIR Search Postman collection provided, search for Patients using the following search results parameters: ```_summary=count```, ```_total=accurate```  
   
 
 ## Step 4 - Use the Chained & Reverse Chained Search Results Parameters 
-Using the Postman file provided, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+Using the FHIR Search Postman collection provided, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
 
 
 ## Step 5 - Use the Include & Reverse Include Search Results Parameters  
-Using the Postman file provided, search for PractitionerRole including the Practitioner resource in the result to reduce calls to the server. Discover all PractitionerRoles for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+Using the FHIR Search Postman collection provided, search for PractitionerRole including the Practitioner resource in the result to reduce calls to the server. Discover all PractitionerRoles for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
   
 
 ## Step 6 - Defining a Custom Search parameter 
-To create a new search parameter, you need to POST the SearchParameter resource to the database.  See the Postman file provided for an example.  Read through the full example at https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/how-to-do-custom-search.
+To create a new search parameter, you need to POST the `SearchParameter` resource to the database. See the FHIR Search Postman collection provided for an example.  Read through the full example at https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/how-to-do-custom-search.
 
 ## What does success look like for Challenge-04?
 
