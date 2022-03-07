@@ -22,7 +22,7 @@ The open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) is 
 
 Below is a component view of Azure API for FHIR with FHIR-Bulk Loader and FHIR-Proxy.  
 
-![components](./media/components.png)
+<img src="./media/Deployed_Components_ARM_template4.png" height="528">
 
 
 ## Prerequisites
