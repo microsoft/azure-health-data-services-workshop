@@ -88,14 +88,9 @@ Follow the instructions and return here when finished.
 
 ## Deployed Components 
 
-Azure API for FHIR and FHIR-Proxy
+Azure API for FHIR, FHIR-Proxy, and FHIR-Bulk Loader
 
-<img src="./media/Postman_FHIR-Proxy_API-FHIR_deploy.png" height="528">
-
-FHIR-Bulk Loader
-
-![fhir-bulk](./media/install-components-small.png)
-
+<img src="./media/Deployed_Components_ARM_template3.png" height="528">
 
 ## Next Steps
 
