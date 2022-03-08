@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines a RESTful syntax for querying Resources in a FHIR server's data store. When a client app needs to retrieve Resources from a FHIR server, the app sends a query using the Search syntax, and the server sends a response containing the results. The FHIR standard allows for much flexibility in setting search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR. 
+The FHIR specification defines a RESTful syntax for querying Resources in a FHIR server's data store. When a client app retrieves Resources from a FHIR server, the app sends a query for data within certain parameters, and the server returns a response containing the results. The FHIR standard allows for much flexibility in setting search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR. 
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -24,7 +24,10 @@ The FHIR specification defines a RESTful syntax for querying Resources in a FHIR
 ---
 
 ## FHIR Search basics 
-Each FHIR Resource is defined with specific Search parameters in addition to the [common parameters](https://www.hl7.org/fhir/search.html#all) which apply to all FHIR Resources. See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about searching in REST, messaging, and services.  
+Each FHIR Resource is defined with specific Search parameters in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
+
+
+See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about searching in REST, messaging, and services.  
 
 + [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search)
 
