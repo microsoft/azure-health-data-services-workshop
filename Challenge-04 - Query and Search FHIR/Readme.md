@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines a RESTful syntax for searching through FHIR data held in a FHIR server's data store. This challenge will guide you through some key aspects of searching for FHIR Resrouces in Azure API for FHIR. 
+The FHIR specification defines a RESTful syntax for querying FHIR data held in a FHIR server's data store. Query operations for retrieving FHIR data must follow the standard syntax. This challenge will guide you through some key aspects of searching for FHIR Resources in Azure API for FHIR. 
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -18,8 +18,8 @@ The FHIR specification defines a RESTful syntax for searching through FHIR data 
 
 ## Prerequisites
 + Successful completion of Challenge-01
-+ Successful completion of Challenge-03 (Patient and other Resources should be loaded into Azure API for FHIR)
-+ Ensure you have loaded the `FHIR_Search.postman_collection.json` file from Challenge-01 into Postman - [located here](https://github.com/microsoft/health-architectures/blob/main/Postman/api-for-fhir/FHIR_Search.postman_collection.json).  
++ Successful completion of Challenge-03 (Patient and other FHIR Resources should be loaded into Azure API for FHIR)
++ In Postman, make sure that you have loaded the `FHIR_Search.postman_collection.json` file - from Challenge-01 [located here](https://github.com/microsoft/health-architectures/blob/main/Postman/api-for-fhir/FHIR_Search.postman_collection.json).  
 
 ---
 
