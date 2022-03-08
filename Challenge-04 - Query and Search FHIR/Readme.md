@@ -25,10 +25,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## FHIR Search basics 
 
-When we send 
-
-Each FHIR Resource is defined with specific Search parameters in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
-
+When we search for information on a FHIR server, the information is always contained within a FHIR Resource of one kind or another. Some of the most well-known FHIR Resources include Patient, Observation, and Encounter. Each FHIR Resource is defined with specific Search parameters in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
 
 See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about searching in REST, messaging, and services.  
 
