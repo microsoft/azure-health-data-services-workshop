@@ -19,7 +19,7 @@ The FHIR specification defines a RESTful syntax for querying Resources in a FHIR
 ## Prerequisites
 + Successful completion of Challenge-01
 + Successful completion of Challenge-03 (Patient and other FHIR Resources should be loaded into Azure API for FHIR)
-+ In Postman, make sure that you have loaded the `FHIR_Search.postman_collection.json` file - from Challenge-01 [located here](https://github.com/microsoft/health-architectures/blob/main/Postman/api-for-fhir/FHIR_Search.postman_collection.json).  
++ In Postman, make sure that you have loaded the `FHIR_Search.postman_collection.json` file from Challenge-01 [located here](https://github.com/microsoft/health-architectures/blob/main/Postman/api-for-fhir/FHIR_Search.postman_collection.json).  
 
 ---
 
