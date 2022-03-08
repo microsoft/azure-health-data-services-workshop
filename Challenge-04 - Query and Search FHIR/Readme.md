@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines a RESTful syntax for querying Resources in a FHIR server's data store. When a client app needs to retrieve Resources from a FHIR server, the app sends a query using the Search syntax, and the server's response contains the results. The FHIR standard allows for much flexibility in defining search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR. 
+The FHIR specification defines a RESTful syntax for querying Resources in a FHIR server's data store. When a client app needs to retrieve Resources from a FHIR server, the app sends a query using the Search syntax, and the server's response contains the results. The FHIR standard allows for much flexibility in setting search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR. 
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
