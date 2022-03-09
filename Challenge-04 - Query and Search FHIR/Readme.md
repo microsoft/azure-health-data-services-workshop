@@ -25,7 +25,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## FHIR Search basics 
 
-At the top level, the FHIR data model is made up of a collection of Resources for structuring information as it arises in real-world healthcare settings. The FHIR model's 145 Resources are built to capture the details of healthcare interactions, supporting data entities that represent the people involved (Patient, Practitioner, etc.), the events that occured (e.g., Encounter, Observation, Procedure, etc.), and many other pieces of information surrounding healthcare situations.
+At the top level, the FHIR data model is made up of a collection of Resources for structuring information as it arises in real-world healthcare settings. The FHIR model's 145 Resources are built to capture the details of healthcare interactions, supporting data entities that represent the people involved (Patient, Practitioner, etc.), the events that occured (e.g., Encounter, Observation, Procedure, etc.), and many other pieces of information that follow healthcare situations.
 
 Within each Resource, FHIR defines a set of Elements for storing detailed information. There are several Elements that all Resources carry (like `"id"` and `"meta"`), but most Elements are defined for carrying data specific to the real-world healthcare context in which the Resource appears. 
 
