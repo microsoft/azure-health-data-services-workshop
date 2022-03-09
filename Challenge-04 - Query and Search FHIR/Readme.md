@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app sends the FHIR server a query for information within the specified search parameters, and if that information (e.g., PHI) is within the scope of access granted to the app, the server carries out the search and returns the results. The FHIR standard allows for much flexibility in setting search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR.   
+The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app sends the FHIR server a query for information within search parameters specified in the request, and if that information (e.g., PHI) is within the scope of access granted to the app, the server carries out the search and returns the results. The FHIR standard allows for much flexibility in setting search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR.   
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -25,7 +25,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## FHIR Search basics 
 
-When we search for information on a FHIR server, the information is always contained within a FHIR Resource of one kind or another. Some of the most well-known FHIR Resources include Patient, Observation, and Encounter. Each FHIR Resource is defined with specific Search parameters in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
+Health data stored in a FHIR server database     is always contained within a FHIR Resource of one kind or another. Some of the most well-known FHIR Resources include Patient, Observation, and Encounter. Each FHIR Resource is defined with specific Search parameters in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
 
 See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about searching in REST, messaging, and services.  
 
