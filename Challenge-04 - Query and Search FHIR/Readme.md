@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app requests access to Personal Health Information (PHI) on a FHIR server (e.g., on behalf of a patient or care provider), the app sends a query for data within certain parameters, and if the app is permitted access, the server performs the search and returns the results. The FHIR standard allows for much flexibility in setting search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR. 
+The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resrouces (e.g., on behalf of a patient or care provider), the app sends the FHIR server a query for information within the specified search parameters, and if that information (e.g., PHI) is within the scope of the app's permitted access, the server carries out the search and returns the results. The FHIR standard allows for much flexibility in setting search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR.   
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
