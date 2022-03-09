@@ -25,7 +25,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## FHIR Search basics 
 
-Health data stored in a FHIR server database     is always contained within a FHIR Resource of one kind or another. Some of the most well-known FHIR Resources include Patient, Observation, and Encounter. Each FHIR Resource is defined with specific Search parameters in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
+At the top level, the FHIR data model is made up of a collection of Resources for structuring information as it flows in real-world healthcare settings. The FHIR model's 145 Resources are built to capture the details of healthcare interactions, representing everything from who was involved (Patient, Practitioner, etc.) to what activities took place (e.g., Encounter, Observation, Procedure, etc.), and beyond. Each FHIR Resource is defined with specific Search parameters in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
 
 See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about searching in REST, messaging, and services.  
 
