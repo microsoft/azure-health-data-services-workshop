@@ -25,11 +25,13 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## FHIR Search basics 
 
-At the top level, the FHIR data model is made up of a collection of Resources for structuring information as it flows in real-world healthcare settings. The FHIR model's 145 Resources are built to capture the details of healthcare interactions, supporting data entities for who was involved (Patient, Practitioner, etc.), what activities took place (e.g., Encounter, Observation, Procedure, etc.), and many other aspects of the healthcare context. 
+At the top level, the FHIR data model is made up of a collection of Resources for structuring information as it arises in real-world healthcare settings. The FHIR model's 145 Resources are built to capture the details of healthcare interactions, supporting data entities that represent the people involved (Patient, Practitioner, etc.), the events that occured (e.g., Encounter, Observation, Procedure, etc.), and many other pieces of information surrounding healthcare situations.
 
-Each FHIR Resource is defined with specific Search parameters in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
+Within each Resource, FHIR defines a set of Elements for storing detailed information. There are several Elements that all Resources carry (like `"id"` and `"meta"`), but most Elements are defined for carrying data specific to the real-world healthcare context in which the Resource appears. 
 
-See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about searching in REST, messaging, and services.  
+Each FHIR Resource is also defined with a set of search parameters. There are search parameters specific to each Resource type in addition to the [common search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources.  
+
+See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information.  
 
 + [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search)
 
