@@ -43,7 +43,7 @@ FHIR searches can be against a specific Resource type, a specified [compartment]
 GET {{FHIR_URL}}/Patient
 ```
 
-You can also search using POST, which is useful if the query string is too long for a single line. To search using POST, the search parameters can be submitted as a form body. This allows for longer, more complex series of query parameters that might be difficult to see and understand in a query string.
+You can also search using `POST`, which is useful if the query string is too long for a single line. To search using POST, the search parameters can be submitted as a form body. This allows for longer, more complex series of query parameters that might be difficult to see and understand in a query string.
 
 If the search request is successful, you’ll receive a FHIR bundle response with a `type: searchset` element at the top. If the search fails, you’ll find the error details in the `OperationOutcome` to help you understand what went wrong.
 
@@ -59,7 +59,7 @@ The search parameter ```_id``` refers to the logical id of the Resource and can 
 This search finds the Patient Resource with the given id (there can only be one Resource for a given id). 
   
 
-## Step 1 - Understand the basic concepts of FHIR Search
+## Step 1 - Making API Calls with Search Parameters
 Using the FHIR Search Postman collection provided, search for Patients using the following: ```_id```, ```name```, and more.
 
 Q: In what field does ```name``` work? What is FHIR matching against?
