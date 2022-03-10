@@ -33,7 +33,7 @@ Along with Elements, each FHIR Resource is defined with a set of **search parame
 
 See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about the different types of search parameters.  
 
-## FHIR Search Methods
+## FHIR Search methods
 FHIR searches can be against a specific resource type, a specified compartment, or all resources. The simplest way to execute a search in FHIR is to use a GET request. For example, if you want to pull all patients in the FHIR server database, you could use the following request:
 
 ```azurecli
