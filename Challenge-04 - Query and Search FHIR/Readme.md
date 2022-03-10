@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app calls the FHIR server with a request to query the database for information, and if that information is within the app's permitted access, the server carries out the search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with the various methods of searching for FHIR Resources in Azure API for FHIR.   
+The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app calls the FHIR server with a request to query the database for information, and if that information is within the app's permitted access, the server carries out the search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with the various methods of retrieving information from FHIR Resources in Azure API for FHIR.   
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -25,7 +25,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## FHIR Search basics 
 
-At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the entities present in healthcare interactions. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Observation`, `Procedure`, `Encounter`, etc.), and many other aspects surrounding healthcare scenarios. 
+At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities that have to do with healthcare interactions. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Observation`, `Procedure`, `Encounter`, etc.), and many other aspects surrounding healthcare scenarios. 
 
 Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR. There are many other Elements that are specific to certain Resources (e.g., `Patient` is the only Resource with a `gender` Element). 
 
