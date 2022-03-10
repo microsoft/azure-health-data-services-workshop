@@ -29,12 +29,11 @@ At the top level, the FHIR data model is made up of a collection of Resources fo
 
 Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR. There are many other Elements that are specific to certain Resources (e.g., `Patient` is the only Resource with a `gender` Element). 
 
-Along with Elements, each FHIR Resource is defined with a set of **search parameters**. Search parameters in FHIR allow client apps to perform fine-grained data retrieval from Resources stored on a FHIR server. There are [standard search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources (e.g., `_id`, `_lastUpdated`), and there are also Resource-specific search parameters for finding information stored in the Elements of a particular Resource (e.g., `gender` for the `Patient` Resource).
-
-+ [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search)
+Along with Elements, each FHIR Resource is defined with a set of **search parameters**. Search parameters in FHIR allow client apps to perform fine-grained data retrieval from Resources stored on a FHIR server. There are [standard search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources (e.g., `_id`, `_lastUpdated`), and there are also Resource-specific search parameters for finding information stored in the Elements of a particular Resource (e.g., `gender` is one of the [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search)).
 
 See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about the different types of search parameters.  
 
+## FHIR Search Methods
 FHIR searches can be against a specific resource type, a specified compartment, or all resources. The simplest way to execute a search in FHIR is to use a GET request. For example, if you want to pull all patients in the FHIR server database, you could use the following request:
 
 ```azurecli
