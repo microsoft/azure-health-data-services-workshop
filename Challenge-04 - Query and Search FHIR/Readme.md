@@ -29,7 +29,7 @@ At the top level, the FHIR data model is made up of a collection of Resources fo
 
 Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR, while many other Elements are specific to certain Resources (e.g., `Patient` is the only Resource with a `gender` Element). 
 
-Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes API calls, search parameters allow fine-grained data retrieval from Resources stored on a FHIR server. There are standard search parameters that apply to all FHIR Resources (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a search parameter defined for the `Patient` Resource). 
+Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes API calls, search parameters allow fine-grained data retrieval from Resources stored on a FHIR server. There are standard search parameters that apply to all Resources in FHIR (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a search parameter defined for the `Patient` Resource). 
 
 + [Standard Search Parameters](https://www.hl7.org/fhir/search.html#all)
 + [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search)
