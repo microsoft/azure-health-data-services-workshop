@@ -27,7 +27,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the entities present in healthcare interactions. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Observation`, `Procedure`, `Encounter`, etc.), and many other aspects surrounding healthcare scenarios. 
 
-Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources. There are many other Elements that only apply to their parent Resource (e.g., `Patient` is the only Resource with a `gender` Element). 
+Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR. There are many other Elements that only apply to their parent Resource (e.g., `Patient` is the only Resource with a `gender` Element). 
 
 Along with Elements, each FHIR Resource is defined with a set of **search parameters**. Search parameters in FHIR allow client apps to perform fine-grained data retrieval from Resources stored on a FHIR server. There are [standard search parameters](https://www.hl7.org/fhir/search.html#all) that apply to all FHIR Resources (e.g., `_id`, `_lastUpdated`), and there are also Resource-specific search parameters for finding information stored in Elements specific to a particular Resource (e.g., `gender` for the `Patient` Resource).
 
