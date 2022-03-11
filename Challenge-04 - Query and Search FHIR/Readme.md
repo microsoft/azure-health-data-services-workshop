@@ -43,7 +43,7 @@ FHIR searches can be against a specific Resource type, a specified [compartment]
 GET {{FHIR_URL}}/Patient
 ```
 
-You can also search using `POST`, which is useful if the query string is too long for a single line. To search using `POST`, the search parameters can be submitted in the body of the request. This makes it easier to form a longer, more complex series of query parameters in the request.
+You can also search using `POST`, which is useful if the query string is too long for a single line. To search using `POST`, the search parameters can be submitted in the body of the request. This makes it easier to form a longer, more complex series of query parameters.
 
 If the search request is successful, you’ll receive a FHIR bundle response with a `type: searchset` element at the top. If the search fails, you’ll find the error details in the `OperationOutcome` to help you understand what went wrong.
 
