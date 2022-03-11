@@ -18,7 +18,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## Prerequisites
 + Successful completion of Challenge-01
-+ Successful completion of Challenge-03 (Patient and other FHIR Resources should be loaded into Azure API for FHIR)
++ Successful completion of Challenge-03 (`Patient` and other FHIR Resources should be loaded into Azure API for FHIR)
 + In Postman, make sure that you have loaded the `FHIR_Search.postman_collection.json` from Challenge-01 ([located here](https://github.com/microsoft/health-architectures/blob/main/Postman/api-for-fhir/FHIR_Search.postman_collection.json)).  
 
 ---
