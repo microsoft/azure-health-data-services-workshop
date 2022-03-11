@@ -27,9 +27,9 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities tied to healthcare interactions. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Observation`, `Encounter`, `Procedure`, etc.), and many other aspects surrounding healthcare scenarios. 
 
-Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR, while many other Elements are specific to certain Resources (e.g., `Patient` is the only Resource with a `gender` Element). 
+Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR, while many other Elements are specific to certain Resources (e.g., `Patient`, `Person`, `Practitioner`, and `RelatedPerson` are the only Resources with a `gender` Element). 
 
-Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes API calls, adding search parameters to the request enables fine-grained Element data retrieval from Resources stored on a FHIR server. There are standard search parameters that apply to all Resources (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a Resource-specific search parameter defined for `Patient`). The links below go into detail about the standard search parameters and `Patient` Resource-specific search parameters. 
+Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes FHIR API calls, adding search parameters to the request enables fine-grained data retrieval from Elements within FHIR Resources. There are standard search parameters that apply to all Resources (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a Resource-specific search parameter defined for `Patient`). Visit the links below for more information about the standard search parameters and `Patient` Resource-specific search parameters. 
 
 + [Standard Search Parameters](https://www.hl7.org/fhir/search.html#all)
 + [Patient Resource-specific Search Parameters](https://www.hl7.org/fhir/patient.html#search) (note that Resource-specific search parameters are always listed at the bottom of the "Content" tab in FHIR R4 Resource documentation)
@@ -59,7 +59,7 @@ The search parameter ```_id``` refers to the logical id of a Resource instance (
 This search returns the `Patient` Resource with the given `id` (there can only be one Resource for a given `id` on a FHIR server). 
   
 
-## Step 1 - Making API Calls with Search Parameters
+## Step 1 - Make FHIR API Calls with Search Parameters
 Using the FHIR Search Postman collection provided in Challenge-01, search for patients using the following parameters: ```_id```, ```name```, and others.
 
 **Q:** _What Element does Azure API for FHIR automatically search against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
@@ -68,7 +68,12 @@ __Note:__ Azure API for FHIR supports _almost_ all Resource-specific search para
 
   
 ## Step 2 - Perform Composite Searches 
-Composite search allows you to search against value pairs. For example, if you were searching for a height observation where the person was 60 inches, you would want to make sure that a single component of the observation contained the code ```bodyheight``` and the value of `60`. 
+In cases where you want to narrow the scope of a query by specifying more than one search parameter, this is often done by using a combination of the comparison operators such as `eq`   
+
+```GET {{FHIRURL}}/Observation?_lastUpdated=gt2021-10-01```
+
+
+Composite search allows you to specify search criteria . For example, if you were searching for a height in an `Observation` Resource where the person was 60 inches, you would want to make sure that a single component of the observation contained the code ```bodyheight``` and the value of `60`. 
 
 Azure API for FHIR supports the following search parameter type pairings:
 + Reference, Token
@@ -82,9 +87,8 @@ Using the FHIR Search Postman collection provided, search for Patients using the
 
 Learn more about date search in FHIR at https://www.hl7.org/fhir/search.html#date. 
   
-
 ## Step 3 - Using Search Result Parameters  
-Using the FHIR Search Postman collection provided, search for Patients using the following search results parameters: ```_summary=count```, ```_total=accurate```  
+Using the FHIR Search Postman collection provided, search for Patients using the following search results parameters: ```_summary=count```, ```_total=accurate```.  
   
 
 ## Step 4 - Use the Chained & Reverse Chained Search Results Parameters 
@@ -92,11 +96,11 @@ Using the FHIR Search Postman collection provided, search for Patients using ```
 
 
 ## Step 5 - Use the Include & Reverse Include Search Results Parameters  
-Using the FHIR Search Postman collection provided, search for PractitionerRole including the Practitioner resource in the result to reduce calls to the server. Discover all PractitionerRoles for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+Using the FHIR Search Postman collection provided, search for `PractitionerRole` including the `Practitioner` Resource in the result to reduce calls to the server. Discover all `PractitionerRoles` for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
   
 
 ## Step 6 - Defining a Custom Search parameter 
-To create a new search parameter, you need to POST the `SearchParameter` resource to the database. See the FHIR Search Postman collection provided for an example.  Read through the full example at https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/how-to-do-custom-search.
+To create a new search parameter, you need to `POST` the `SearchParameter` Resource to the database. See the FHIR Search Postman collection provided for an example. Read through the full example at https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/how-to-do-custom-search.
 
 ## What does success look like for Challenge-04?
 
