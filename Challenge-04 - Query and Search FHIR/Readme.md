@@ -67,7 +67,7 @@ Using the FHIR Search Postman collection provided in Challenge-01, search for pa
 __Note:__ Azure API for FHIR supports _almost_ all Resource-specific search parameters defined by the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
 
   
-## Step 2 - Perform both Common and Composite Searches 
+## Step 2 - Perform Composite Searches 
 Composite search allows you to search against value pairs. For example, if you were searching for a height observation where the person was 60 inches, you would want to make sure that a single component of the observation contained the code ```bodyheight``` and the value of `60`. 
 
 Azure API for FHIR supports the following search parameter type pairings:
