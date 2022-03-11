@@ -60,7 +60,7 @@ This search returns the `Patient` Resource with the given `id` (there can only b
   
 
 ## Step 1 - Making API Calls with Search Parameters
-Using the FHIR Search Postman collection provided in Challenge-01, search for Patients using the following parameters: ```_id```, ```name```, and others.
+Using the FHIR Search Postman collection provided in Challenge-01, search for patients using the following parameters: ```_id```, ```name```, and others.
 
 **Q:** _What Element does Azure API for FHIR automatically search against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
 
