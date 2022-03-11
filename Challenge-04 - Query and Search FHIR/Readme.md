@@ -80,7 +80,7 @@ Azure API for FHIR supports the following search parameter type pairings:
 
 Using the FHIR Search Postman collection provided, search for Patients using the following: ```date```, ```lastmodified```, ```identifier```, ```value-quantity```, ```component-code-value-quantity``` and more.  
 
-Ref: Learn more about date search in FHIR at https://www.hl7.org/fhir/search.html#date. 
+Learn more about date search in FHIR at https://www.hl7.org/fhir/search.html#date. 
   
 
 ## Step 3 - Using Search Result Parameters  
