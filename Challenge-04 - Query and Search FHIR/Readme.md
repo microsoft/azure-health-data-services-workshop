@@ -56,7 +56,7 @@ The search parameter ```_id``` refers to the logical id of the Resource and can 
  GET {{FHIR_URL}}/Patient?_id=23
 ```
 
-This search returns the `Patient` Resource with the given id (there can only be one Resource for a given `id` on a FHIR server). 
+This search returns the `Patient` Resource with the given `id` (there can only be one Resource for a given `id` on a FHIR server). 
   
 
 ## Step 1 - Making API Calls with Search Parameters
