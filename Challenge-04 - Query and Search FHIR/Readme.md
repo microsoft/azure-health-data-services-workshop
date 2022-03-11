@@ -34,9 +34,7 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Standard Search Parameters](https://www.hl7.org/fhir/search.html#all)
 + [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search) (note that Resource-specific search parameters are always listed at the bottom of the "Content" tab in FHIR R4 Resource documentation)
 
-See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about different types of search parameters.
-
-For a list of all available search parameters in FHIR R4 (standard and Resource-specific), please visit [here](https://build.fhir.org/searchparameter-registry.html).
+See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about different types of search parameters. 
 
 ## FHIR Search methods
 FHIR searches can be against a specific Resource type, a specified [compartment](https://www.hl7.org/fhir/compartmentdefinition.html), or all Resources on a FHIR server. The simplest way to execute a search in FHIR is to use a `GET` request. For example, if you want to pull all patients in the FHIR server database, you could use the following request:
@@ -45,7 +43,7 @@ FHIR searches can be against a specific Resource type, a specified [compartment]
 GET {{FHIR_URL}}/Patient
 ```
 
-You can also search using `POST`, which is useful if the query string is too long for a single line. To search using `POST`, the search parameters can be submitted as a form body. This allows for a longer, more complex series of query parameters that might be difficult to read or understand in a query string.
+You can also search using `POST`, which is useful if the query string is too long for a single line. To search using `POST`, the search parameters can be submitted in the body of the request. This makes it easier to form a longer, more complex series of query parameters in the request.
 
 If the search request is successful, you’ll receive a FHIR bundle response with a `type: searchset` element at the top. If the search fails, you’ll find the error details in the `OperationOutcome` to help you understand what went wrong.
 
