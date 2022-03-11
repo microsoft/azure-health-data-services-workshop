@@ -48,7 +48,7 @@ You can also search using `POST`, which is useful if the query string is too lon
 If the search request is successful, you’ll receive a FHIR bundle response with a `type: searchset` element at the top. If the search fails, you’ll find the error details in the `OperationOutcome` to help you understand what went wrong.
 
 ## Common Search Parameters 
-The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` (documented below) also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
+The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
 
 The search parameter ```_id``` refers to the logical id of the Resource and can be used when the search context specifies a Resource type:
 
