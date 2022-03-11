@@ -34,7 +34,9 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Standard Search Parameters](https://www.hl7.org/fhir/search.html#all)
 + [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search) (note that Resource-specific search parameters are always listed at the bottom of the "Content" tab in FHIR R4 Resource documentation)
 
-See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about different types of search parameters.  
+See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about different types of search parameters.
+
+For a list of all available search parameters in FHIR R4 (standard and Resource-specific), please visit [here](https://build.fhir.org/searchparameter-registry.html).
 
 ## FHIR Search methods
 FHIR searches can be against a specific Resource type, a specified [compartment](https://www.hl7.org/fhir/compartmentdefinition.html), or all Resources on a FHIR server. The simplest way to execute a search in FHIR is to use a `GET` request. For example, if you want to pull all patients in the FHIR server database, you could use the following request:
@@ -43,12 +45,12 @@ FHIR searches can be against a specific Resource type, a specified [compartment]
 GET {{FHIR_URL}}/Patient
 ```
 
-You can also search using `POST`, which is useful if the query string is too long for a single line. To search using POST, the search parameters can be submitted as a form body. This allows for longer, more complex series of query parameters that might be difficult to see and understand in a query string.
+You can also search using `POST`, which is useful if the query string is too long for a single line. To search using `POST`, the search parameters can be submitted as a form body. This allows for a longer, more complex series of query parameters that might be difficult to read or understand in a query string.
 
 If the search request is successful, you’ll receive a FHIR bundle response with a `type: searchset` element at the top. If the search fails, you’ll find the error details in the `OperationOutcome` to help you understand what went wrong.
 
 ## Common Search Parameters 
-The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` (documented below) also apply to all Resources (as do the search result parameters).
+The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` (documented below) also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
 
 The search parameter ```_id``` refers to the logical id of the Resource and can be used when the search context specifies a Resource type:
 
@@ -56,11 +58,11 @@ The search parameter ```_id``` refers to the logical id of the Resource and can 
  GET {{FHIR_URL}}/Patient?_id=23
 ```
 
-This search finds the Patient Resource with the given id (there can only be one Resource for a given id). 
+This search returns the `Patient` Resource with the given id (there can only be one Resource for a given `id` on a FHIR server). 
   
 
 ## Step 1 - Making API Calls with Search Parameters
-Using the FHIR Search Postman collection provided, search for Patients using the following: ```_id```, ```name```, and more.
+Using the FHIR Search Postman collection provided in Challenge-01, search for Patients using the following parameters: ```_id```, ```name```, and others.
 
 Q: In what field does ```name``` work? What is FHIR matching against?
 
