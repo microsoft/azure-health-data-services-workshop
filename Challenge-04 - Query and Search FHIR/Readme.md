@@ -29,10 +29,10 @@ At the top level, the FHIR data model is made up of a collection of Resources fo
 
 Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR, while many other Elements are specific to certain Resources (e.g., `Patient` is the only Resource with a `gender` Element). 
 
-Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes API calls, adding search parameters to the request allows fine-grained data retrieval from Resources (and their Elements) stored on a FHIR server. There are standard search parameters that apply to all Resources in FHIR (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a search parameter defined for the `Patient` Resource). The links below go into detail about the standard and `Patient` search parameters.
+Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes API calls, adding search parameters to the request allows fine-grained data retrieval from Resources (and their Elements) stored on a FHIR server. There are standard search parameters that apply to all Resources in FHIR (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a search parameter defined for the `Patient` Resource). The links below go into detail about the standard search parameters and `Patient` search parameters. 
 
 + [Standard Search Parameters](https://www.hl7.org/fhir/search.html#all)
-+ [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search)
++ [Patient Resource Search Parameters](https://www.hl7.org/fhir/patient.html#search) (note that Resource-specific search parameters are always listed at the bottom of the "Content" tab in the FHIR R4 documentation for each Resource)
 
 See the official FHIR R4 [Search](https://www.hl7.org/fhir/search.html) documentation for more information about different types of search parameters.  
 
