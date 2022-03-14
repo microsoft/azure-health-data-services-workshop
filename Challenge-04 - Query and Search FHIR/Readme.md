@@ -36,12 +36,12 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Defining Custom Search Parameters](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
 ## FHIR Search methods
-When you do a search in FHIR, you need to set the scope of information that you wish to query. The scope of a FHIR search can be limited to 
+When you do a search in FHIR, you need to set the scope of information that you wish to query. You can narrow the range of a FHIR search to be within 
 
-+ A Resource type
-+ A specific Resource instance
-+ A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
-+ All Resources on a FHIR server (e.g., searching all Resources for a common parameter) 
++ a Resource type
++ a specific Resource instance
++ a specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
++ all Resources on a FHIR server (e.g., searching all Resources for a common parameter) 
 
 The simplest way to execute a search in FHIR is to use a `GET` request. 
 
