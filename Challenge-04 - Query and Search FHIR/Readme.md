@@ -36,7 +36,7 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Defining Custom Search Parameters](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
 ## FHIR Search methods
-When you do a search in FHIR, you need to set the scope of information that you wish to query. You can begin your search by setting any of these as the starting point:
+When you do a search in FHIR, you need to set the scope of information that you wish to query. You can begin your query with any of these set as the search domain:
 
 + a Resource type
 + a specific Resource instance
