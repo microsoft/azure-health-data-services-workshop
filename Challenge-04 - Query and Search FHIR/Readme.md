@@ -36,7 +36,7 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Defining Custom Search Parameters](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
 ## FHIR Search methods
-A FHIR search is always within a range set by
+The range of a FHIR search can be defined by 
 
 + Resource type
 + A specific Resource instance
