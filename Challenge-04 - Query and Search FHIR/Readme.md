@@ -36,12 +36,12 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Defining Custom Search Parameters](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
 ## FHIR Search methods
-When you do a search in FHIR, you need to set the scope of information that you wish to query. You can begin by specifying any of these search domains as the starting point:
+When you do a search in FHIR, the starting point for where to begin can be any of these contexts:
 
-+ a Resource type
-+ a specific Resource instance
-+ a specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
-+ all Resources on a FHIR server (e.g., searching all Resources for a common parameter) 
++ A Resource type
++ A specific Resource instance
++ A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
++ All Resources on a FHIR server (e.g., searching all Resources for a common parameter) 
 
 The simplest way to execute a search in FHIR is to use a `GET` request. For example, if you want to pull all Patient Resources in the FHIR server database, you would query for the `Patient` Resource type: 
 
@@ -80,7 +80,7 @@ __Note:__ Azure API for FHIR supports _almost_ all Resource-specific search para
 
   
 ## Step 2 - Perform Composite Searches 
-In cases where you want to narrow the scope of a query by specifying more than one search parameter, this is often done by using the logical `&` operator for combining multiple search criteria.  
+In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is by using the logical `&` operator for combining multiple search criteria.  
 
 ```GET {{FHIRURL}}/Observation?_lastUpdated=gt2021-10-01```
 
