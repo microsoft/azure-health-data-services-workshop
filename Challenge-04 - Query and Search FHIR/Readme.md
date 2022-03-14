@@ -43,7 +43,7 @@ When you do a search in FHIR, the starting point for where to begin can be in an
 + A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + All Resources on a FHIR server (e.g., searching all Resources for a common parameter) 
 
-The simplest way to execute a search in FHIR is to use a `GET` request. For example, if you want to pull all Patient Resources in the FHIR server database, you would query for the `Patient` Resource type: 
+The simplest way to execute a search in FHIR is to send a `GET` request. For example, if you want to pull all Patient Resources in the FHIR server database, you would query for the `Patient` Resource type: 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
