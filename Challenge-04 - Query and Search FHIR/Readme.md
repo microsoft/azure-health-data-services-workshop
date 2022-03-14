@@ -43,7 +43,7 @@ When you do a search in FHIR, you need to set the scope of information that you 
 + a specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + all Resources on a FHIR server (e.g., searching all Resources for a common parameter) 
 
-The simplest way to execute a search in FHIR is to use a `GET` request. For example, if you want to pull all patients in a FHIR server database, you could send a request with the search criteria narrowed only by the `Patient` Resource type:
+The simplest way to execute a search in FHIR is to use a `GET` request. For example, if you want to pull all patients in a FHIR server database, you could send a request with the search criteria narrowed by the Resource type (in this case, `Patient`): 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
