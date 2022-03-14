@@ -36,7 +36,9 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Defining Custom Search Parameters](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
 ## FHIR Search methods
-A FHIR search query is always defined within a scope narrowed by Resource type, a specific Resource instance, a specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html), or all Resources on a FHIR server. The simplest way to execute a search in FHIR is to use a `GET` request. For example, if you want to pull all patients in the FHIR server database, you could send a request narrowed only by the `Patient` Resource type:
+A FHIR search query is always defined within a scope narrowed by Resource type, a specific Resource instance, a specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html), or all Resources on a FHIR server. The simplest way to execute a search in FHIR is to use a `GET` request. 
+
+For example, if you want to pull all patients in the FHIR server database, you could send a request narrowed only by the `Patient` Resource type:
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
