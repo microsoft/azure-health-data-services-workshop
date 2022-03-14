@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app calls the FHIR server with a request to query the database for information, and if that information is within the app's permitted access, the server carries out the search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with different methods of searching Resources in Azure API for FHIR.   
+The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app querries the FHIR server database for information, and if that information is within the app's permitted access, the server carries out the search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with different methods of searching Resources in Azure API for FHIR.   
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -36,9 +36,16 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Defining Custom Search Parameters](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
 ## FHIR Search methods
-A FHIR search is always defined within a scope narrowed by Resource type, a specific Resource instance, a specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html), or all Resources on a FHIR server. The simplest way to execute a search in FHIR is to use a `GET` request. 
+A FHIR search is always within a range set by
 
-For example, if you want to pull all patients in a FHIR server database, you could send a request with search criteria narrowed only by the `Patient` Resource type:
++ Resource type
++ A specific Resource instance
++ A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
++ All Resources on a FHIR server (e.g., searching all Resources for a common parameter) 
+
+The simplest way to execute a search in FHIR is to use a `GET` request. 
+
+For example, if you want to pull all patients in a FHIR server database, you could send a request with the search criteria narrowed only by the `Patient` Resource type:
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
