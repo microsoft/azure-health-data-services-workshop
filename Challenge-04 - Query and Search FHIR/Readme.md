@@ -55,7 +55,7 @@ If you want to retrieve the Resource for a specific patient, you could narrow yo
 GET {{FHIR_URL}}/Patient?_id=123
 ```
 
-You can also search using `POST`, which is useful if the query string becomes too long or complex for a single line. To search using `POST`, the search parameters are included in the body of the request in JSON format.
+You can also search using `POST`, which is useful if the query string becomes too long or complex for a single line. To search using `POST`, the search parameters are delivered in the body of the request in JSON format.
 
 If the search request is successful, you’ll receive a FHIR bundle response with a `type: searchset` element at the top. If the search fails, you’ll find the error details in the `OperationOutcome` portion of the response.
 
