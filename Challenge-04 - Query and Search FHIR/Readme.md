@@ -49,7 +49,7 @@ The simplest way to execute a search in FHIR is to use a `GET` request. For exam
 GET {{FHIR_URL}}/Patient
 ```
 
-If you want to retrieve the Resource for a specific patient, you could narrow your search to the specific Patient instance by including the `_id` search parameter: 
+If you want to retrieve the Resource instance for a specific patient, you could narrow your search within the Resource type by including the `_id` search parameter: 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient?_id=123
