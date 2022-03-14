@@ -41,7 +41,7 @@ When you do a search in FHIR, the starting point can be any of these contexts:
 + A Resource type
 + A specific Resource instance
 + A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
-+ All Resources on a FHIR server (e.g., searching all Resources for a common parameter) 
++ All Resources on a FHIR server (e.g., querying against a search parameter shared by all Resources) 
 
 The simplest way to execute a search in FHIR is to send a `GET` request. For example, if you want to pull all Patient Resources in the FHIR server database, you could query for the `Patient` Resource type: 
 
