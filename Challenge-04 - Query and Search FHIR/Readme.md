@@ -44,7 +44,7 @@ For example, if you want to pull all patients in the FHIR server database, you c
 GET {{FHIR_URL}}/Patient
 ```
 
-If you want to retrieve information on a specific patient, you could send a request narrowed down to a specific Patient Resource instance by including the `_id` search parameter: 
+If you want to retrieve information on a specific patient, you could send a request narrowed down to a specific Patient instance by including the `_id` search parameter: 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient?_id=123
