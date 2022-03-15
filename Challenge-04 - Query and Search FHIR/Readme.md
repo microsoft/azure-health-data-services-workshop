@@ -98,7 +98,7 @@ To remedy this, some Resources are defined with composite search parameters, whi
 GET [base]/Group?characteristic-value=gender$mixed
 ```
 
-For composite search parameters, Azure API for FHIR supports the following search parameter type pairings (the request above is an example of a Token, String pairing):
+For composite searches, Azure API for FHIR supports the following search parameter type pairings (the request above is an example of a Token, String pairing):
 + Reference, Token
 + Token, Date
 + Token, Number, Number
@@ -110,7 +110,7 @@ For composite search parameters, Azure API for FHIR supports the following searc
 
 2. In Postman, make an API call with the `GET List Patient Observations by Results Composite Copy` request. Then modify the value of the `http://loinc.org|8462-4` (diastolic blood pressure) and see if you can get different search results.
 
-Learn more about date search in FHIR at https://www.hl7.org/fhir/search.html#date. 
+To learn more about composite searches in FHIR, please visit [here](https://build.fhir.org/search.html#combining).
   
 ## Step 3 - Using Search Result Parameters  
 1. Using the FHIR Search Postman collection provided, search for Patients using the following search results parameters: ```_summary=count```, ```_total=accurate```.  
