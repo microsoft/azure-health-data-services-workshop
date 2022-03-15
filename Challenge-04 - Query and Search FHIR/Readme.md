@@ -80,7 +80,7 @@ __Note:__ Azure API for FHIR supports _almost_ all Resource-specific search para
 
   
 ## Step 2 - Perform Composite Searches 
-In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is by using the logical `&` operator. 
+In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is by using the logical AND (`&`) and/or OR (`,`) operators. 
 
 ```azurecli
 GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
