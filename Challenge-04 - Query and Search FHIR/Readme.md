@@ -106,7 +106,7 @@ For composite searches, Azure API for FHIR supports the following search paramet
 + Token, String
 + Token, Token
 
-1. Using the FHIR Search Postman collection provided, search for `Patient` Resource instances by the following search parameters: ```date```, ```lastmodified```, ```identifier```, and more. Then, modify the included API calls with the `&` operator to combine different search parameters.
+1. Using the FHIR Search Postman collection provided, search for `Patient` Resource instances narrowed down by the following search parameters: ```date```, ```lastmodified```, ```identifier```, and more. Then, modify the included API calls with the `&` operator to combine different search parameters and see what results you get.
 
 2. In Postman, make an API call with the `GET List Patient Observations by Results Composite Copy` request. Then modify the value of the `http://loinc.org|8462-4` (diastolic blood pressure) and see if you can get different search results.
 
