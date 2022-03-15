@@ -84,9 +84,7 @@ In cases where you want to narrow the scope of a query by specifying more than o
 
 ```GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female```
 
-This method with `&` often works for combining different search criteria, but there are certain situations where the same value will be assigned to multiple search parameters, and isolating one parameter/value pair is not possible with `&`. 
-
-For example, say we try to perform a search for `Group` Resources with `characteristic=gender` and `value=mixed`.
+This method with `&` often works for combining different search criteria, but there are certain situations where the same value will be assigned to multiple search parameters, and isolating one parameter/value pair is not possible with `&`. For example, say we try to perform a search for `Group` Resources with `characteristic=gender` and `value=mixed`.
 
 ```GET [base]/Group?characteristic=gender&value=mixed```
 
