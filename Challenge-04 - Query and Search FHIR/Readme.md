@@ -25,7 +25,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## FHIR Search basics 
 
-At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities tied to healthcare interactions. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Observation`, `Encounter`, `Procedure`, etc.), and many other aspects surrounding healthcare scenarios. 
+At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities tied to healthcare interactions. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Observation`, `Encounter`, `Procedure`, etc.), and many other aspects to do with healthcare scenarios. 
 
 Within every Resource, FHIR defines a set of Elements for storing the details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR, while many other Elements are only used in specific Resources (e.g., `Patient`, `Person`, `Practitioner`, and `RelatedPerson` are the only Resources with a `gender` Element). Furthermore, the FHIR model is designed to allow users to add Elements to Resources through extensions.
 
