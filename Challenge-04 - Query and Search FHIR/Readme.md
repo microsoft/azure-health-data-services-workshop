@@ -80,13 +80,17 @@ __Note:__ Azure API for FHIR supports _almost_ all Resource-specific search para
 
   
 ## Step 2 - Perform Composite Searches 
-In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is by using the logical `&` operator. For example, in the following search request, the query is for Patient Resources that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) and whose `gender` Element value is `female` (`gender=female`). 
+In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is by using the logical `&` operator. For example, in the following search request, the query is for Patient Resources that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) and whose `gender` Element value is `female` (`gender=female`).
 
-```GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female```
+```azurecli
+GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
+```
 
 This method with `&` often works for combining different search criteria, but there are certain situations where the same value will be assigned to multiple search parameters, and isolating one parameter/value pair is not possible with `&`. For example, say we try to perform a search for `Group` Resources with `characteristic=gender` and `value=mixed`.
 
-```GET [base]/Group?characteristic=gender&value=mixed```
+```azurecli
+GET [base]/Group?characteristic=gender&value=mixed
+```
 
 If a Group Resource has a `characteristic=gender` Element in addition to, for example, a `characteristic=age` Element, and if the `characteristic=age` Element has `value=mixed`, while `characteristic=gender` has, for example, `value=male`, the search request above will return a positive match for the Group, even though this is not what we want. This is because the `&` operator triggers whenever the criteria is met in *any* combination of Elements.
 
