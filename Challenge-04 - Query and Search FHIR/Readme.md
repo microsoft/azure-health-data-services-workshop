@@ -36,7 +36,7 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Defining Custom Search Parameters](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
 ## FHIR Search methods
-When you do a search in FHIR, the starting point for the query can be any of the following:
+When doing a search in FHIR, the starting point for the query can be any of the following:
 
 + A Resource type
 + A specific Resource instance
