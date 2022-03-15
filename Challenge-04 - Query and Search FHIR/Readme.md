@@ -88,11 +88,15 @@ GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
 
 In the example above, the query is for Patient Resources that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) and whose `gender` Element value is `female` (`gender=female`).
 
-This method with `&` works as expected when the queried Elements are all single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator fails to distinguish which Elements are paired together vs which ones should be treated as independent. 
+This method with `&` works as expected when the queried Elements are all single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator fails to distinguish which Elements are paired together vs which ones should be treated independently. 
 
-For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we see the search results, we are surprised to find a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we find this was due to the Resource instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator detected `"characteristic": "gender"` and `"value": "mixed"` and returned a positive match, despite these Elements not being paired together. Hence, the search returned the unexpected result.
+For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we see the search results, we are surprised to find that the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we find this was due to the Resource instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements not being paired together. Hence, the search returned the unexpected result.
 
-Composite search allows you to specify search criteria for value pairs. For example, if you were searching for a height in an `Observation` Resource where the person was 60 inches, you would want to make sure that a single component of the observation contained the code ```bodyheight``` and the value of `60`. 
+To remedy this, some Resources are defined with composite search parameters, which allow searching for Element pairs as logically connected units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic-value" : "gender"` and `"value": "mixed"` as paired Elements. Note the use of the `$` operator to specify the combination of search parameter values.
+
+```azurecli
+GET [base]/Group?characteristic-value=gender$mixed
+```
 
 Azure API for FHIR supports the following search parameter type pairings:
 + Reference, Token
@@ -102,7 +106,7 @@ Azure API for FHIR supports the following search parameter type pairings:
 + Token, String
 + Token, Token
 
-Using the FHIR Search Postman collection provided, search for Patients using the following: ```date```, ```lastmodified```, ```identifier```, ```value-quantity```, ```component-code-value-quantity``` and more.  
+Using the FHIR Search Postman collection provided, search for `Observation` Resource instances using the following: ```date```, ```lastmodified```, ```identifier```, ```value-quantity```, ```component-code-value-quantity``` and more.  
 
 Learn more about date search in FHIR at https://www.hl7.org/fhir/search.html#date. 
   
