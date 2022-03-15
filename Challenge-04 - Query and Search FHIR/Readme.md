@@ -80,19 +80,15 @@ __Note:__ Azure API for FHIR supports _almost_ all Resource-specific search para
 
   
 ## Step 2 - Perform Composite Searches 
-In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is by using the logical `&` operator. For example, in the following search request, the query is for Patient Resources that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) and whose `gender` Element value is `female` (`gender=female`).
+In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is by using the logical `&` operator. 
 
 ```azurecli
 GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
 ```
 
-This method with `&` often works for combining different search criteria, but there are certain situations where the same value will be assigned to multiple search parameters, and isolating one parameter/value pair is not possible with `&`. For example, say we try to perform a search for `Group` Resources with `characteristic=gender` and `value=mixed`.
+In the example above, the query is for Patient Resources that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) and whose `gender` Element value is `female` (`gender=female`).
 
-```azurecli
-GET [base]/Group?characteristic=gender&value=mixed
-```
-
-If a Group Resource has a `characteristic=gender` Element in addition to, for example, a `characteristic=age` Element, and if the `characteristic=age` Element has `value=mixed`, while `characteristic=gender` has, for example, `value=male`, the search request above will return a positive match for the Group, even though this is not what we want. This is because the `&` operator triggers whenever the criteria is met in *any* combination of Elements.
+This method with `&` works as expected when the querried Elements are all single attributes (e.g., `gender`), but in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator cannot distinguish which Elements are paired together vs which ones should be treated as independent from each other. With the `&` operator, this can lead to unexpected results when, for example, we are searching for Group Resource instances with `characteristic=gender&value=mixed`, but the search returns some Group instances with `characteristic=gender` and `value=male`. This can happen if, for example, a Group instance has `characteristic=gender` `value=male` *and* `characteristic=age` `value=mixed`. The `&` operator incorrectly associated the `characteristic=gender` with the `value=mixed`.
 
 Composite search allows you to specify search criteria for value pairs. For example, if you were searching for a height in an `Observation` Resource where the person was 60 inches, you would want to make sure that a single component of the observation contained the code ```bodyheight``` and the value of `60`. 
 
