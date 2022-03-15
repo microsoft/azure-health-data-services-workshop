@@ -92,7 +92,7 @@ This method with `&` works as expected when the queried Elements are all single 
 
 For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we see the search results, we are surprised to find that the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we find this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements not being paired together.
 
-To remedy this, some Resources are defined with composite search parameters, which allow searching for Element pairs as logically connected units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic-value" : "gender"` and `"value": "mixed"` as paired Elements. Note the use of the `$` operator to specify the combination of search parameter values.
+To remedy this type of situation, some Resources are defined with composite search parameters, which allow searching for Element pairs as logically connected units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic-value" : "gender"` and `"value": "mixed"` as paired Elements. Note the use of the `$` operator to specify the combination of search parameter values.
 
 ```azurecli
 GET [base]/Group?characteristic-value=gender$mixed
