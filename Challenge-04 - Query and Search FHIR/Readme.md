@@ -74,7 +74,7 @@ This search returns the `Patient` Resource instance with the given `id` (there c
 ## Step 1 - Make FHIR API Calls with Search Parameters
 1. Go to Postman, open the FHIR Search collection provided in Challenge-01, and search for patients using the following parameters: ```_id```, ```name```, and others.
 
-**Q:** _What Element does Azure API for FHIR automatically search against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
++ **Q:** _What Element does Azure API for FHIR automatically search against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
 
 __Note:__ Azure API for FHIR supports _almost_ all Resource-specific search parameters defined by the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
 
