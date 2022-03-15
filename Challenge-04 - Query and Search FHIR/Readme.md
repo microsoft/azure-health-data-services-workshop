@@ -95,7 +95,7 @@ For example, let's imagine we are searching for `Group` Resource instances with 
 To remedy this type of situation, some Resources are defined with composite search parameters, which allow searching for Element pairs as logically connected units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic-value" : "gender"` and `"value": "mixed"` as paired Elements. Note the use of the `$` operator to specify the combination of search parameter values.
 
 ```azurecli
-GET [base]/Group?characteristic-value=gender$mixed
+GET {{FHIR_URL}}/Group?characteristic-value=gender$mixed
 ```
 
 For composite searches, Azure API for FHIR supports the following search parameter type pairings (the request above is an example of a Token, Token pairing):
