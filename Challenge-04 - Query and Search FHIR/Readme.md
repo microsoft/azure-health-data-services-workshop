@@ -88,7 +88,7 @@ GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
 
 In the example above, the query is for Patient Resources that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) and whose `gender` Element value is `female` (`gender=female`).
 
-This method with `&` works as expected when the queried Elements are all single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator cannot distinguish which Elements are paired together vs which ones should be treated as independent from each other. 
+This method with `&` works as expected when the queried Elements are all single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator fails to distinguish which Elements are paired together vs which ones should be treated as independent from each other. 
 
 For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we see the response, we are surprised to find a `Group` instance with `characteristic=gender` and `value=male` in the results. Taking a closer look, we find this was due to the Resource instance having `characteristic=gender` `value=male` *and* `characteristic=age` `value=mixed`. As it turns out, the `&` operator couldn't dissassociate `characteristic=gender` from `value=mixed`. Hence, the search returned the unexpected result.
 
