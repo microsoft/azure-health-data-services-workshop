@@ -98,7 +98,7 @@ To remedy this, some Resources are defined with composite search parameters, whi
 GET [base]/Group?characteristic-value=gender$mixed
 ```
 
-Azure API for FHIR supports the following search parameter type pairings:
+For composite search parameters, Azure API for FHIR supports the following search parameter type pairings (the request above is an example of a Token, String pairing):
 + Reference, Token
 + Token, Date
 + Token, Number, Number
