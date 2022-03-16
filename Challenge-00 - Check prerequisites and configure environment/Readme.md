@@ -31,7 +31,7 @@ In general, we want learners to walk away with a sense of confidence in deployin
 ## Environment Prerequisites
 Please be sure to have the following ready in your environment before proceeding to Challenge-01.
 
-+ [Azure Subscription](https://azure.microsoft.com/) with [Contributor/Co-Owner rights](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles)
++ [Azure Subscription](https://azure.microsoft.com/) with [Owner rights](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner)
 + [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your [Azure Active Directory (AAD) tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis#:~:text=Azure%20tenant,tenant%20represents%20a%20single%20organization.)
 + [Postman](https://www.postman.com/) installed - either desktop or web client ([link](https://www.getpostman.com/))
 + GitHub account ([link](https://github.com/))
