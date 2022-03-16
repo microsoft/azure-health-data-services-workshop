@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
 
 ## Background
-The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app querries the FHIR server database for information, and if that information is within the app's permitted access, the server carries out the search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with different methods of searching Resources in Azure API for FHIR.   
+The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app querries the FHIR server for information, and if that information is within the app's permitted access, the server carries out the search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with different methods of searching Resources in Azure API for FHIR.   
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -29,27 +29,27 @@ At the top level, the FHIR data model is made up of a collection of Resources fo
 
 Within every Resource, FHIR defines a set of Elements for storing details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR, while many other Elements are only used in specific Resources (e.g., the `gender` Element is only found in `Patient`, `Person`, `Practitioner`, and `RelatedPerson` Resources). Furthermore, the FHIR model is designed to allow users to add Elements to Resources through extensions.
 
-Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes FHIR API calls, search parameters enable fine-grained data retrieval from Elements within Resources. There are standard search parameters that apply to all Resources (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a Resource-specific search parameter defined for `Patient`). Additionally, FHIR provides a framework for creating custom search parameters. See the links below for more information. 
+Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes FHIR API calls, setting search parameters enables targeted data retrieval from Elements within Resources. There are standard search parameters that apply to all Resources (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a Resource-specific search parameter defined for `Patient`). Additionally, FHIR provides a framework for creating custom search parameters. See the links below for more information. 
 
 + [Standard Search Parameters](https://www.hl7.org/fhir/search.html#all)
 + [Patient Resource-specific Search Parameters](https://www.hl7.org/fhir/patient.html#search) (note that Resource-specific search parameters are always listed at the bottom of the "Content" tab in FHIR R4 Resource documentation)
 + [Defining Custom Search Parameters](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
 ## FHIR Search methods
-When doing a search in FHIR, the starting point for the query can be any of the following:
+When doing a search on a FHIR server, the initial target for the query can be any of the following:
 
 + A Resource type
 + A specific Resource instance
 + A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + All Resources on a FHIR server (e.g., querying against a search parameter shared by all Resources) 
 
-The simplest way to execute a search in FHIR is to send a `GET` request. For example, if you want to pull all Patient Resources in the FHIR server database, you could query for the `Patient` Resource type: 
+The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you want to pull all Patient Resources in the FHIR server database, you could query for the `Patient` Resource type: 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
 ```
 
-If you want to retrieve the Resource instance for a specific patient, you could narrow your search by adding the `_id` search parameter and the `id` Element value for the Resource: 
+If you want to retrieve the Resource instance for a specific patient, you could narrow your search with the `_id` search parameter: 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient?_id=123
@@ -68,13 +68,13 @@ The search parameter ```_id``` refers to the logical id of a Resource instance a
  GET {{FHIR_URL}}/Patient?_id=123
 ```
 
-This search returns the `Patient` Resource instance with the given `id` (there can only be one Resource for a given `id` on a FHIR server). 
+This search returns the `Patient` Resource instance with the given `id` (there can only be one Resource instance for a given `id` on a FHIR server). 
   
 
 ## Step 1 - Make FHIR API Calls with Search Parameters
 1. Go to Postman, open the FHIR Search collection provided in Challenge-01, and search for patients using the following parameters: ```_id```, ```name```, and others.
 
-+ **Q:** _What Element does Azure API for FHIR automatically search against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
++ **Q:** _What Element are you searching against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
 
 __Note:__ Azure API for FHIR supports most Resource-specific search parameters defined by the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
 
@@ -88,11 +88,11 @@ GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
 
 In the example above, the query is for `Patient` Resource instances that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) *and* whose `gender` Element value is `female` (`gender=female`).
 
-This method with `&` works as expected when the queried Elements are all single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator fails to distinguish which Elements are paired together vs which ones should be treated independently. 
+This method with `&` works as expected when the queried Elements are all single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator fails to distinguish which Elements are paired together vs which ones should be treated separately. 
 
-For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we see the search results, we are surprised to find that the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we find this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements not being paired together.
+For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we see the search results, we are surprised to find that the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we find this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements being unrelated to each other.
 
-To remedy this type of situation, some Resources are defined with composite search parameters, which allow searching for Element pairs as logically connected units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic-value" : "gender"` and `"value": "mixed"` as paired Elements. Note the use of the `$` operator to specify the combination of search parameter values.
+To remedy this, some Resources are defined with composite search parameters, which make it possible to search for Element pairs as logically connected units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic-value" : "gender"` and `"value": "mixed"` as paired Elements. Note the use of the `$` operator to specify the paired search parameter value.
 
 ```azurecli
 GET {{FHIR_URL}}/Group?characteristic-value=gender$mixed
