@@ -57,7 +57,7 @@ GET {{FHIR_URL}}/Patient?_id=123
 
 You can also call the FHIR search API with `POST`, which is useful if the query string is too long or complex for a single line. To search using `POST`, the search parameters are delivered in JSON format in the body of the request.
 
-Whenever a search request is successful, you’ll receive a JSON FHIR bundle response with a `"type": "searchset"` entry at the top. If the search fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
+Whenever a search request is successful, you’ll receive a JSON FHIR bundle response with a `"type": "searchset"` entry at the top and the results included below. If the search fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
 ## Common Search Parameters 
 The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
