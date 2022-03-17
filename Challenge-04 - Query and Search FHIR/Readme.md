@@ -43,7 +43,7 @@ When doing a search on a FHIR server, the initial target for the query can be an
 + A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + All Resources on a FHIR server (e.g., querying against a search parameter shared by all Resources) 
 
-The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you want to pull all Patient Resources in the FHIR server database, you could query for the `Patient` Resource type: 
+The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you want to pull all Patient Resource instances in the FHIR server database, you could query for the `Patient` Resource type: 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
@@ -55,9 +55,9 @@ If you want to retrieve the Resource instance for a specific patient, you could 
 GET {{FHIR_URL}}/Patient?_id=123
 ```
 
-You can also search using `POST`, which is useful if the query string is too long or complex for a single line. To search using `POST`, the search parameters are delivered in JSON format in the body of the request.
+You can also begin a search call with `POST`, which is useful if the query string is too long or complex for a single line. To search using `POST`, the search parameters are delivered in JSON format in the body of the request.
 
-If the search request is successful, you’ll receive a FHIR bundle response in JSON with a `"type": "searchset"` entry at the top. If the search fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
+If the search request is successful, you’ll receive a JSON FHIR bundle response with a `"type": "searchset"` entry at the top. If the search fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
 ## Common Search Parameters 
 The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
@@ -88,9 +88,9 @@ GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
 
 In the example above, the query is for `Patient` Resource instances that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) *and* whose `gender` Element value is `female` (`gender=female`).
 
-This method with `&` works as expected when the queried Elements are all single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator fails to distinguish which Elements are paired together vs which ones should be treated separately. 
+This method with `&` works as expected when the queried Elements are all single-valued attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator fails to distinguish which Elements are paired together vs which ones should be treated separately. 
 
-For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we see the search results, we are surprised to find that the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we find this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements having no connection.
+For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we inspect the search results, we are surprised to find that the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we find this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements having no connection with each other.
 
 To remedy this, some Resources are defined with composite search parameters, which make it possible to search for Element pairs as logically connected units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic-value" : "gender"` and `"value": "mixed"` as paired Elements. Note the use of the `$` operator to specify the value of the paired search parameter.
 
