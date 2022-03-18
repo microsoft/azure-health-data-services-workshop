@@ -45,7 +45,7 @@ In today's health industry, the FHIR R4 format has become the industry standard 
 
 2. 	Click on [ADT_A01.hl7](./samples/ADT_A01.hl7) to view a sample HL7v2 message. 
 
-3.	Copy and paste the HL7v2 message into the body of the `Convert Data – HL7` request that you created in Postman*.
+3.	Copy and paste the HL7v2 message into the `Body` of the `Convert Data – HL7` request that you created in Postman*.
 
 4.	After you paste the HL7v2 message, you will need to make some changes so that the formatting of the message follows the sample request featured in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/convert-data). 
 
