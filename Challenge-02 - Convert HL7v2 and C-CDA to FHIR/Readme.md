@@ -37,7 +37,7 @@ In today's health industry, the FHIR R4 format has become the industry standard 
     + Add `{{bearerToken}}` as the **Access Token**
 
     + ![Request Authorization Tab](./media/request-auth.jpg)
-6. Be sure to `Save` your new request.
+6. Be sure to `Save` the `Convert Data - HL7` request.
 
 ## Step 2 - Set up Request Parameters
 
