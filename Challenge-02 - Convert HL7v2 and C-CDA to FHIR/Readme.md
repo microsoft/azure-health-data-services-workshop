@@ -53,10 +53,12 @@ In today's health industry, the FHIR R4 format has become the industry standard 
 
     *Optional – prepare the HL7v2 message in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
 
+5. Make sure to `Save` the `Convert Data - HL7` request.
+
 ## Step 3 - Convert Data
 
 1. Get a new access token from AAD via Postman (`POST AuthorizeGetToken`).
-2. Execute the `Convert Data - HL7` request.
+2. Go back to the `Convert Data - HL7` request and press `Send`.
 
 After making the call, you should receive a FHIR bundle response containing the HL7v2 message converted into FHIR. 
 
