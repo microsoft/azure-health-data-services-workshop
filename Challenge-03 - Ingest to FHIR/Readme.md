@@ -36,19 +36,21 @@ For this challenge, you will upload FHIR data to be imported into Azure API for 
 
 ## Step 1 - Download Sample Data
 
-Download the following .zip files to your desktop (click the link and you will see a `download` button on the right): 
+Download the .zip files to your desktop (click the link and you will see a `download` button on the right): 
 + [good_bundles.zip](./samples/good_bundles.zip) 
 + [bad_bundles.zip](./samples/bad_bundles.zip) 
 
 ## Step 2 - Get information about FHIR-Bulk Loader operation
 
-Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on how the FHIR-Bulk Loader operates.
+Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on how the FHIR-Bulk Loader works.
 
 *Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01. In that deployment, the ARM template set up FHIR-Bulk Loader to connect with Azure API for FHIR.*
 
 ## Step 3 - Upload Sample Data
 
-1. In Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01.
+1. In Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01. Go to Portal -> Resource Group -> Storage account (the resource name will end in "fssa").
+
+<img src="./media/FHIR-Bulk_Loader_Blob_Storage_edit.png" height="528">
 
 2. Click on **Storage browser (preview)** and then click on **Blob containers**.
 ![Blob Containers](./media/portal-browser-container.png)  
