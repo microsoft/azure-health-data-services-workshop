@@ -49,7 +49,7 @@ The simplest way to execute a search in FHIR is to send a `GET` API request. For
 GET {{FHIR_URL}}/Patient
 ```
 
-If you want to retrieve a specific Patient Resource instance, you could narrow your search with the `_id` search parameter: 
+If you want to retrieve a specific `Patient` Resource instance, you could narrow your search with the `_id` search parameter: 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient?_id=123
@@ -62,7 +62,7 @@ Whenever a search request is successful, you’ll receive a JSON FHIR bundle res
 ## Common Search Parameters 
 The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
 
-The search parameter ```_id``` refers to the logical id of a Resource instance and can be used when the query specifies a Resource type (`Patient` is just one possibility):
+The search parameter ```_id``` refers to the logical id of a Resource instance and can be used when the query specifies a Resource type (`Patient` is used as an example):
 
 ```azurecli
  GET {{FHIR_URL}}/Patient?_id=123
@@ -80,7 +80,7 @@ __Note:__ Azure API for FHIR supports most Resource-specific search parameters d
 
   
 ## Step 2 - Perform Composite Searches 
-In cases where we want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is with the logical AND (`&`) operator. 
+In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is with the logical AND (`&`) operator. 
 
 ```azurecli
 GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
