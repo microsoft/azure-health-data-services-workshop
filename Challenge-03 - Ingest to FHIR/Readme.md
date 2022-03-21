@@ -85,7 +85,7 @@ Here are some points for inspecting FHIR-Bulk Loader results:
 
     What is the reason given for the error?
 
-+ In comparison, you can go to **bundlesprocessed** and look in the `.result` files for bulk ingest operations that succeeded. For example, in the image below there is a `201` status code, meaning success. The log shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in Azure API for FHIR from the bulk ingest operation. 
++ In comparison, you can go to **bundlesprocessed** and look in the `.result` files for bulk ingest operations that succeeded. For example, in the image below there is a `201` status code, meaning success. The response shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in Azure API for FHIR from the bulk ingest operation. 
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_Result_Edit_Edit.png" height="428">
 
