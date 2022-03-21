@@ -66,7 +66,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 
 ## Step 3 - Debug issues with importing bulk FHIR data 
 
-1. Try uploading the `bad_bundles.zip` file downloaded in Step 1 of this challenge to the same container where you uploaded the `good_bundles.zip` file.
+1. Now try importing the `bad_bundles.zip` file that you downloaded in Step 1 of this challenge. Upload the file to the same container where you uploaded the `good_bundles.zip` file.
 
 2. What happens as a result?
 
