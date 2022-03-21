@@ -12,9 +12,10 @@ In today's health industry, the FHIR R4 format has become the industry standard 
 
 ## Learning Objectives for Challenge-02
 
++ Convert HL7v2 and C-CDA data into FHIR
 + Specify API request parameters for converting data into FHIR
 + Prepare/clean data for conversion into FHIR
-+ Make API calls to convert HL7v2 and C-CDA data into FHIR
++ Make API calls using the `$convert-data` operation
 
 ## Prerequisites
 
