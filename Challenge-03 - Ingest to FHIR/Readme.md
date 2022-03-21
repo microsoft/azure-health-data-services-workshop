@@ -31,7 +31,7 @@ Below is a component view of Azure API for FHIR with FHIR-Bulk Loader and FHIR-P
 + Access to a text editor (e.g., [VS Code](https://code.visualstudio.com/))
 
 ## Getting Started
-For this challenge, you will upload FHIR data for import into Azure API for FHIR. You will need to examine some error logs and determine what is preventing a FHIR bundle from being ingested.
+For this challenge, you will upload FHIR data for import into Azure API for FHIR. You will need to examine error logs and determine what is preventing a FHIR bundle from being ingested.
 
 
 ## Step 1 - Download Sample Data
