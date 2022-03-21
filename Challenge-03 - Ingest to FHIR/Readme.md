@@ -85,7 +85,7 @@ Here are some points for inspecting FHIR data ingestion results:
 
 + In the editor view, look for status codes. For example, in the image below we see a `201` status code, meaning success. The log shows an endpoint for a FHIR Resource `Organization/<resourceId>`, indicating that this Resource (`Organization/<resourceId>`) has been successfully persisted in Azure API for FHIR from the bulk ingest operation. 
 
-    ![bundle-edit-status](./media/bundle-edit-status.png)
+    <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_Result_Edit_Edit.png" height="428">
 
 ## What does success look like for Challenge-03?
 
