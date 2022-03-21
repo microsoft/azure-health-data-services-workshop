@@ -56,7 +56,7 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 
 <img src="./media/FHIR-Bulk_Loader_Zip_Upload_Edit.png" height="428"> 
 
-Once you click **Upload**, the FHIR-Bulk Loader will automatically load the bulk data from the .zip file and store it in the Azure API for FHIR database.
+Once you click **Upload**, the FHIR-Bulk Loader will automatically import the bulk data from the .zip file into the Azure API for FHIR database.
 
 4. Now, when you do a refresh and click on **bundlesprocessed**, you should see six files as shown below.
 
