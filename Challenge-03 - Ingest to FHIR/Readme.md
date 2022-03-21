@@ -48,9 +48,9 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 
 ## Step 3 - Upload Sample Data
 
-1. In Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01. Go to Portal -> Resource Group -> Storage account (the resource name will end in "fssa").
+1. In Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the resource name will end in "fssa").
 
-<img src="./media/FHIR-Bulk_Loader_Blob_Storage_edit.png" height="528">
+<img src="./media/FHIR-Bulk_Loader_Blob_Storage_edit.png" height="428">
 
 2. Click on **Storage browser (preview)** and then click on **Blob containers**.
 ![Blob Containers](./media/portal-browser-container.png)  
