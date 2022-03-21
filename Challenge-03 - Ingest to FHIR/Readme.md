@@ -64,7 +64,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 
 <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_edit.png" height="428"> 
 
-## Step 3 - Debug issues with loading FHIR bulk data 
+## Step 3 - Debug issues with loading bulk FHIR data 
 
 1. Try uploading the `bad_bundles.zip` file downloaded in Step 1 of this challenge to the same container where you uploaded the `good_bundles.zip` file.
 
@@ -75,7 +75,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 ## Troubleshooting 
 Here are some points for inspecting FHIR data ingestion results:
 
-+ In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about any errors that occurred with FHIR bulk data files.  
++ In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors that occurred with FHIR bulk data files.  
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit.png" height="428"> 
 
@@ -83,7 +83,7 @@ Here are some points for inspecting FHIR data ingestion results:
 
     <img src="./media/FHIR-Bulk_Loader_Error_Response_Edit.png" height="428">
 
-+ In the editor view, look for status codes. For example, in the image below we see a `201` status code, meaning success. The log shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in Azure API for FHIR from the bulk ingest operation. 
++ , look for status codes. For example, in the image below we see a `201` status code, meaning success. The log shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in Azure API for FHIR from the bulk ingest operation. 
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_Result_Edit_Edit.png" height="428">
 
