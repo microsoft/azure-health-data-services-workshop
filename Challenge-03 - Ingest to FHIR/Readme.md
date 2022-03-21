@@ -75,7 +75,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 ## Troubleshooting 
 Here are some points for inspecting FHIR data ingestion results:
 
-+ In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors that occurred with FHIR bulk data files.  
++ In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors with FHIR bulk data files.  
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit.png" height="428"> 
 
