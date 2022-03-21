@@ -64,8 +64,11 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 
 <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_edit.png" height="428"> 
 
-5. Using the `bad_bundles.zip` file downloaded in Step 1 of this challenge:
-    + Try uploading the .zip file to the same container where you uploaded `good_bundles.zip`. What happens as a result?
+## Step 3 - Debug issues with FHIR bulk data loading
+
+1. Try uploading the `bad_bundles.zip` file downloaded in Step 1 of this challenge to the same container where you uploaded the `good_bundles.zip` file.
+
+2. What happened as a result?
 
 > Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on tracking issues in bulk FHIR data ingestion. 
 
