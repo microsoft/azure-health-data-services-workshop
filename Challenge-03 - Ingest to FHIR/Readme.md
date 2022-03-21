@@ -68,7 +68,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 
 1. Try uploading the `bad_bundles.zip` file downloaded in Step 1 of this challenge to the same container where you uploaded the `good_bundles.zip` file.
 
-2. What happened as a result?
+2. What happens as a result?
 
 > Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on tracking issues in bulk FHIR data ingestion. 
 
