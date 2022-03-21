@@ -44,16 +44,13 @@ Download the .zip files to your desktop (click the link and you will see a `down
 
 Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on how the FHIR-Bulk Loader works.
 
-*Keep in mind that you already deployed an instance of FHIR-Bulk Loader in Challenge-01. In that deployment, the ARM template set up FHIR-Bulk Loader to connect with Azure API for FHIR.*
-
-## Step 3 - Upload Sample Data
-
-1. In Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the resource name will end in "fssa").
+1. In Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name will end in "fssa").
 
 <img src="./media/FHIR-Bulk_Loader_Blob_Storage_edit.png" height="428">
 
-2. Click on **Storage browser (preview)** and then click on **Blob containers**.
-![Blob Containers](./media/portal-browser-container.png)  
+2. Click on the **Storage browser (preview)** blade and then click on **Blob containers**. 
+
+<img src="./media/FHIR-Bulk_Loader_Blob_Containers_edit.png" height="428">
 
 3. Using the `good_bundles.zip` file downloaded in Step 1 of this challenge:
     + Determine which container this .zip file should be uploaded to and proceed with the upload.
