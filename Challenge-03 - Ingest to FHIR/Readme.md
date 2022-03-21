@@ -44,7 +44,7 @@ Download the .zip files to your desktop (click the link and you will see a `down
 
 Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on how the FHIR-Bulk Loader works.
 
-1. In Azure Portal, navigate to the FHIR-Bulk Loader Blob Storage resource that was created in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name will end in "fssa").
+1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR-Bulk Loader in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name will end in "fssa").
 
 <img src="./media/FHIR-Bulk_Loader_Blob_Storage_edit.png" height="428">
 
@@ -52,27 +52,33 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 
 <img src="./media/FHIR-Bulk_Loader_Blob_Containers_edit.png" height="428">
 
-3. Using the `good_bundles.zip` file downloaded in Step 1 of this challenge:
-    + Determine which container this .zip file should be uploaded to and proceed with the upload.
+3. Click on the **zip** container and upload the `good_bundles.zip` file downloaded in Step 1 of this challenge.
 
-4. Using the `bad_bundles.zip` file downloaded in Step 1 of this challenge:
+<img src="./media/FHIR-Bulk_Loader_Zip_Upload_Edit.png" height="428"> 
+
+Once you click **Upload**, the FHIR-Bulk Loader will automatically store the data in the Azure API for FHIR database.
+
+4. Now, when you do a refresh and click on **bundlesprocessed**, you should see six files as shown below.
+
+_Note: If you upload a .zip file, the names of the bundles within the .zip file are exposed (not the .zip filename itself)._
+
+<img src="./media/FHIR-Bulk_Loader_Bundles_Processed_edit.png" height="428"> 
+
+5. Using the `bad_bundles.zip` file downloaded in Step 1 of this challenge:
     + Try uploading the .zip file to the same container where you uploaded `good_bundles.zip`. What happens as a result?
-    + Unzip the `bad_bundles.zip` and use a text editor to open the JSON file contained within. Look for clues as to why this bundle cannot be ingested into Azure API for FHIR.
 
 > Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on tracking issues in bulk FHIR data ingestion. 
 
 ## Troubleshooting 
 Here are some points for inspecting FHIR data ingestion results:
 
-+ In **Storage browser (preview)**, go to **Container** -> **bundlesprocessed** and / or **bundleserr** to view info about FHIR bulk data files.  
++ In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about any errors that occurred with FHIR bulk data files.  
 
-    _Note: If you uploaded a .zip file, the names of the bundles within the .zip file are exposed (not the .zip filename itself)._
+    <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit.png" height="428"> 
 
-    ![bundlesprocessed](./media/bundlesprocessed.png)
++ Click on the **.response** file for the data file that you want information about and then click on **Edit**.
 
-+ Click on the **.result** file for the data file that you want information about and then click on **Edit**.
-
-    ![bundle-edit](./media/bundle-edit.png)
+    <img src="./media/FHIR-Bulk_Loader_Error_Response_Edit.png" height="428">
 
 + In the editor view, look for status codes. For example, in the image below we see a `201` status code, meaning success. The log shows an endpoint for a FHIR Resource `Organization/<resourceId>`, indicating that this Resource (`Organization/<resourceId>`) has been successfully persisted in Azure API for FHIR from the bulk ingest operation. 
 
