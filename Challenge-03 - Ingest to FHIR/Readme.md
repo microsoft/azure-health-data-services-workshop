@@ -48,7 +48,7 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 
 <img src="./media/FHIR-Bulk_Loader_Blob_Storage_edit.png" height="428">
 
-2. Click on the **Storage browser (preview)** blade and then click on **Blob containers**. 
+2. In the Storage account, click on the **Storage browser (preview)** blade and then click on **Blob containers**. 
 
 <img src="./media/FHIR-Bulk_Loader_Blob_Containers_edit.png" height="428">
 
