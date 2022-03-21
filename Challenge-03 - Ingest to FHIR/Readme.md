@@ -79,7 +79,7 @@ Here are some points for inspecting FHIR data ingestion results:
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit.png" height="428"> 
 
-+ Click on the **.response** file for the data file that you want information about and then click on **Edit**.
++ Click on the **.response** file for the data that you want information about and then click on **Edit**.
 
     <img src="./media/FHIR-Bulk_Loader_Error_Response_Edit.png" height="428">
 
