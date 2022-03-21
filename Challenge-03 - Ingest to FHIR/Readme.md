@@ -42,7 +42,7 @@ Download the .zip files to your desktop (click the link and you will see a `down
 
 ## Step 2 - Use FHIR-Bulk Loader to upload data
 
-Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on how the FHIR-Bulk Loader works.
+Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on how the FHIR-Bulk Loader operates.
 
 1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR-Bulk Loader in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name will end in "fssa").
 
