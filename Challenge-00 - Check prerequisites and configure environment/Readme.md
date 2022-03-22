@@ -18,7 +18,7 @@ In general, we want learners to walk away with a sense of confidence in deployin
 
 + The tasks require learners to locate information in technical documentation and **resolve issues independently**.
 
-+ Working on the challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be ready to **use Microsoft Health & Life Sciences (HLS) tools in real-world production environments**.  
++ Working on the challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be ready to **deploy Microsoft Health & Life Sciences (HLS) tools in real-world production environments**.  
 
 ## Prerequisite Knowledge for the Azure Healthcare APIs Workshop
 
