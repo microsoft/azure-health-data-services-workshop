@@ -44,7 +44,7 @@ Download the .zip files to your desktop (click the link and you will see a `down
 
 Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on the operating principles of the FHIR Bulk Loader. 
 
-1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR-Bulk Loader in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name will end in "fssa").
+1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR-Bulk Loader in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name of the Storage account will end in "fssa").
 
 <img src="./media/FHIR-Bulk_Loader_Blob_Storage_edit.png" height="428">
 
