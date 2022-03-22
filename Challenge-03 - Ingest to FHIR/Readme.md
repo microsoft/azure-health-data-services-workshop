@@ -73,7 +73,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 > Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on tracking issues in bulk FHIR data ingestion. 
 
 ## Troubleshooting 
-Here are some points for inspecting FHIR-Bulk Loader results:
+Here are some points for inspecting FHIR-Bulk Loader operations:
 
 + In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors in importing FHIR bulk data files.  
 
