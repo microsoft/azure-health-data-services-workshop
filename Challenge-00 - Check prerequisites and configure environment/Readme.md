@@ -29,7 +29,7 @@ In general, we want learners to walk away with a sense of confidence in deployin
 + Experience with making **REST API calls** using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing utility.
 
 ## Environment Prerequisites
-Please make sure that you have the following before proceeding to Challenge-01.
+Please make sure you have the following before proceeding to Challenge-01.
 
 + [Azure Subscription](https://azure.microsoft.com/) with [Owner rights](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner)
 + [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your [Azure Active Directory (AAD) tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-whatis#:~:text=Azure%20tenant,tenant%20represents%20a%20single%20organization.)
