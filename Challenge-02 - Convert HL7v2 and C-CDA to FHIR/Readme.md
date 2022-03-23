@@ -27,7 +27,7 @@ In today's health industry, the FHIR R4 format has become the standard medium fo
 ---
 
 ## Step 1 - Prepare an API request to convert HL7v2 into FHIR
-To convert data into FHIR, first you must prepare a `$convert-data` API request.
+To convert data into FHIR, first you must set up a `$convert-data` API request.
 
 1. Go to Postman and create a new API request by clicking `Add request` in the `FHIR CALLS` collection imported in Challenge-01.
 <img src="./media/Postman_Add_Request.png" height="328"> 
