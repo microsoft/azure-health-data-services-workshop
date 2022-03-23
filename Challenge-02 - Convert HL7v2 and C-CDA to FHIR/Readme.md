@@ -70,6 +70,24 @@ To convert data into FHIR, you must call FHIR service with a `$convert-data` API
 
 After making the call, you should receive a FHIR bundle response containing the HL7v2 message converted into FHIR. 
 
+    {
+    "resourceType": "Bundle",
+    "type": "batch",
+    "timestamp": "2021-11-05T13:13:28",
+    "identifier": {
+        "value": "TST5150"
+    },
+    "id": "b6356bc1-0175-b82e-a98c-b094a16d4bb9",
+    "entry": [
+        {
+        "fullUrl": "urn:uuid:cf0a2d6b-21e6-48c0-70a9-2b8ae1f57e70",
+        "resource": {
+            "resourceType": "MessageHeader",
+            "id": "cf0a2d6b-21e6-48c0-70a9-2b8ae1f57e70"
+        ...
+        }
+    }    
+
 ## Step 4 - Convert C-CDA Data
 
 1. Click on `Add request` again to create another API request in the `FHIR CALLS` collection imported in Challenge-01. 
