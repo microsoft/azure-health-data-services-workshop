@@ -106,7 +106,7 @@ After making the call, you should receive a FHIR bundle response containing the 
 ## Step 6 - Convert Data
 
 1. Get a new access token from AAD via Postman (`POST AuthorizeGetToken`).
-2. Execute the `Convert Data - CCDA` request.
+2. Go to the `Convert Data - CCDA` request and press `Send`.
 
 > Note: If it doesn't work, you may want to check to make sure that characters are properly escaped in the C-CDA text.
 
