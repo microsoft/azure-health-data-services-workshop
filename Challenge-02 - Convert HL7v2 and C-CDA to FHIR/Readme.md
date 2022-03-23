@@ -29,7 +29,7 @@ In today's health industry, the FHIR R4 format has become the standard medium fo
 ## Step 1 - Prepare an API request to convert HL7v2 into FHIR
 To convert data into FHIR, you must call Azure API for FHIR with a `$convert-data` API request.
 
-1. Go to Postman and create a new API request by clicking `Add request` in the `FHIR CALLS` Postman collection imported in Challenge-01.
+1. Go to Postman and create a new API request by clicking `Add request` in the `FHIR CALLS` collection imported in Challenge-01.
 ![New Postman Request Image](./media/add_request.jpg)
 2. Rename the new request to `Convert Data - HL7`.
 3. Change the HTTP operation type from **GET** to **POST**.
