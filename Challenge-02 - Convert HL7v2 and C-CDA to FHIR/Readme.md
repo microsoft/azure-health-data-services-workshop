@@ -94,14 +94,14 @@ After making the call, you should receive a FHIR bundle response containing the 
 
 3. Refer back to the FHIR service [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) for ```$convert-data``` on how to include parameters in the API request. 
 
-4. Select the `raw` button and choose `JSON` from the dropdown menu on the right.
-<img src="./media/Postman_JSON_Body.png" height="328"> 
-
-5. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
+4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
 
     __Hint:__ Look closely at the `""` quotation marks. All JSON keys and values must be surrounded by double quotes. Any double quotes *within* these surrounding quotes must be escaped, however.
 
-6. When ready, copy and paste the C-CDA data into the body of the `Convert Data - CCDA` request in Postman.
+6. When ready, copy and paste the C-CDA data into the `Body` of the `Convert Data - CCDA` request in Postman.
+
+5. Select the `raw` button and choose `JSON` from the dropdown menu on the right.
+<img src="./media/Postman_JSON_Body.png" height="328"> 
 
 ## Step 6 - Convert Data
 
