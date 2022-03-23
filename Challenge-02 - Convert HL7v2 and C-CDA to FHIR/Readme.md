@@ -33,7 +33,7 @@ To convert data into FHIR, first you must arrange to make a `$convert-data` API 
 <img src="./media/Postman_Add_Request.png" height="328"> 
 
 2. Rename the new request to `Convert Data - HL7`. 
-3. Fill in the URL of this request with `{{fhirurl}}/$convert-data`. 
+3. Fill in the URL of the request with `{{fhirurl}}/$convert-data`. 
 4. Change the HTTP operation type from **GET** to **POST**.
 <img src="./media/Postman_POST.png" height="328">  
 
@@ -94,7 +94,7 @@ After making the call, you should receive a FHIR bundle response containing the 
 <img src="./media/Postman_Add_Request.png" height="328"> 
 
 2. Rename the new request to `Convert Data - CCDA`. 
-3. Fill in the URL of this request as before with `{{fhirurl}}/$convert-data`. 
+3. Fill in the URL of the request as before with `{{fhirurl}}/$convert-data`. 
 4. Change the HTTP operation type from **GET** to **POST**. 
 5. Go to the **Authorization** tab of the request and change:
     + **Type** to **OAuth 2.0**
