@@ -21,7 +21,7 @@ In today's health industry, the FHIR R4 format has become the standard medium fo
 
 + Successful completion of Challenge-01
 + Postman installed
-+ A text editor - [VS Code](https://code.visualstudio.com/) or [7Edit](http://7edit.com/home/) (recommended)
++ A text editor - [VS Code](https://code.visualstudio.com/) or [7Edit](http://7edit.com/home/)
 + [VS Code HL7 Language Support](https://marketplace.visualstudio.com/items?itemName=pbrooks.hl7) (optional)
 
 ---
