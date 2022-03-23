@@ -123,6 +123,25 @@ After making the call, you should receive a FHIR bundle response containing the 
 1. Get a new access token from AAD via Postman (`POST AuthorizeGetToken`).
 2. Go to the `Convert Data - CCDA` request and press `Send`.
 
+After making the call, you should receive a FHIR bundle response containing the C-CDA data converted into FHIR. 
+
+    {
+    "resourceType": "Bundle",
+    "type": "batch",
+    "entry": [
+        {
+        "fullUrl": "urn:uuid:0990ecf3-327d-4194-1aae-00724d4cba22",
+        "resource": {
+            "resourceType": "Composition",
+            "id": "0990ecf3-327d-4194-1aae-00724d4cba22",
+            "identifier": {
+            "use": "official",
+            "value": "2.16.840.1.113883.19.5.99999.1"
+            },
+            ...}
+        ...}
+    ...}
+
 > Note: If it doesn't work, you may want to check to make sure that characters are properly escaped in the C-CDA text.
 
 ## What does success look like for Challenge-02?
