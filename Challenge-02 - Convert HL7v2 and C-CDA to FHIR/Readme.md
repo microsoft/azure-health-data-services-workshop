@@ -57,7 +57,7 @@ To convert data into FHIR, you must call FHIR service with a `$convert-data` API
 
 5.	You will need to make some changes to the the HL7v2 message so that the formatting follows the sample request featured in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data). 
 
-    __Hint:__ In the sample request in the documentation (midway through page), look at the `\n` newline characters included in the HL7v2 payload. 
+    __Hint:__ In the sample request in the documentation (midway through page), look at the `\n` newline characters included in the HL7v2 payload. Add newline characters like these where needed in the HL7v2 message in the `Convert Data - HL7` request. 
 
     *Optional – prepare the HL7v2 message in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
 
