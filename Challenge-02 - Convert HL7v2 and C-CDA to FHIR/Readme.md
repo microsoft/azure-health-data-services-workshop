@@ -108,7 +108,7 @@ After making the call, you should receive a FHIR bundle response containing the 
 
 2. Copy and paste the C-CDA data into VS Code or a text editor of your choice. 
 
-3. Refer back to the FHIR service [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) for ```$convert-data``` on how to include parameters in the API request. 
+3. Refer back to the FHIR service [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to include parameters in the API request. 
 
 4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
 
