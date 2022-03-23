@@ -55,7 +55,7 @@ To convert data into FHIR, first you must arrange to make a `$convert-data` API 
 4.  In the `Body`, select the `raw` button and choose `JSON` from the dropdown menu on the right.
 <img src="./media/Postman_JSON_Body.png" height="328"> 
 
-5.	You will need to make some changes to the the HL7v2 message so that the formatting of the HL7v2 payload follows the sample request featured in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data). 
+5.	You will need to make some changes in the HL7v2 payload so that the formatting follows the sample request featured in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data). 
 
     __Hint:__ In the sample request in the documentation (midway through page), look at the `\n` newline characters included in the HL7v2 payload. Add newline characters like these where needed in the HL7v2 message in the `Convert Data - HL7` request. 
 
