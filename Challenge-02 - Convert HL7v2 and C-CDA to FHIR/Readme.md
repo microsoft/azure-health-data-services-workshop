@@ -53,7 +53,7 @@ To convert data into FHIR, you must call Azure API for FHIR with a `$convert-dat
 3.	Copy and paste the HL7v2 message into the `Body` of the `Convert Data – HL7` request that you created in Postman*.
 
 4.  Select the `raw` button and choose `JSON` from the dropdown menu on the right.
-<img src="./media/Postman_JSON_Body.png" height="428"> 
+<img src="./media/Postman_JSON_Body.png" height="328"> 
 
 5.	You will need to make some changes to the the HL7v2 message so that the formatting follows the sample request featured in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/convert-data). 
 
@@ -95,7 +95,7 @@ After making the call, you should receive a FHIR bundle response containing the 
 3. Refer back to the Azure API for FHIR [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/convert-data#parameter-resource) for ```$convert-data``` on how to include parameters in the API request. 
 
 4. Select the `raw` button and choose `JSON` from the dropdown menu on the right.
-<img src="./media/Postman_JSON_Body.png" height="428"> 
+<img src="./media/Postman_JSON_Body.png" height="328"> 
 
 5. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
 
