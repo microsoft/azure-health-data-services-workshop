@@ -30,7 +30,7 @@ In today's health industry, the FHIR R4 format has become the standard medium fo
 To convert data into FHIR, you must call FHIR service with a `$convert-data` API request.
 
 1. Go to Postman and create a new API request by clicking `Add request` in the `FHIR CALLS` collection imported in Challenge-01.
-<img src="./media/Postman_Add_Request.png" height="428"> 
+<img src="./media/Postman_Add_Request.png" height="328"> 
 
 2. Rename the new request to `Convert Data - HL7`.
 3. Change the HTTP operation type from **GET** to **POST**.
@@ -73,7 +73,7 @@ After making the call, you should receive a FHIR bundle response containing the 
 ## Step 4 - Convert C-CDA Data
 
 1. Click on `Add request` again to create another API request in the `FHIR CALLS` collection imported in Challenge-01. 
-<img src="./media/Postman_Add_Request.png" height="428"> 
+<img src="./media/Postman_Add_Request.png" height="328"> 
 
 2. Rename the new request to `Convert Data - CCDA`.
 3. Change the HTTP operation type from **GET** to **POST**.
