@@ -101,7 +101,6 @@ After making the call, you should receive a FHIR bundle response containing the 
 6. When ready, copy and paste the C-CDA data into the `Body` of the `Convert Data - CCDA` request in Postman.
 
 5. Select the `raw` button and choose `JSON` from the dropdown menu on the right.
-<img src="./media/Postman_JSON_Body.png" height="328"> 
 
 ## Step 6 - Convert Data
 
