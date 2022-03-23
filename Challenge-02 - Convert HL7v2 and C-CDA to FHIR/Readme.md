@@ -66,10 +66,13 @@ After making the call, you should receive a FHIR bundle response containing the 
 
 ## Step 4 - Convert C-CDA Data
 
-1. Click on `Add request` again to create another API request in the `FHIR CALLS` collection imported in Challenge-01.
-![New Postman Request Image](./media/add_request.jpg)
+1. Click on `Add request` again to create another API request in the `FHIR CALLS` collection imported in Challenge-01. 
+<img src="./media/Postman_Add_Request.png" height="428"> 
+
 2. Rename the new request to `Convert Data - CCDA`.
 3. Change the HTTP operation type from **GET** to **POST**.
+<img src="./media/Postman_POST.png" height="428"> 
+
 4. Fill in the URL of this request with `{{fhirurl}}/$convert-data`.
 5. Go to the **Authorization** tab of the request and change:
     + **Type** to **OAuth 2.0**
