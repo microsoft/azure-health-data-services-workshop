@@ -4,14 +4,14 @@
 In this preliminary challenge, you will be checking your Azure Subscription and other pieces of your environment to make sure that all prerequisites are met before starting Challenge-01.
 
 ## Background 
-The Azure Healthcare APIs Workshop presents a series of challenges to help learners build skills in deploying and configuring [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and supporting tools. After completing the workshop challenges, learners will be ready to start building the system architectures featured on __[Microsoft Health Architectures](https://microsoft.github.io/health-architectures/)__.
+The Azure Health Data Services Workshop presents a series of challenges to help learners build skills in deploying and configuring [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and supporting tools. After completing the workshop challenges, learners will be ready to start building the system architectures featured on __[Microsoft Health Architectures](https://microsoft.github.io/health-architectures/)__.
  
 ## Learning Objectives for Challenge-00
 + Understand the general learner goals of this workshop
 + Understand the prerequisites for Challenge-01
 + Check environment to make sure that all prerequisites are met
 
-## What do we want learners to gain from the Azure Healthcare APIs Workshop?
+## What do we want learners to gain from the Azure Health Data Services Workshop?
 In general, we want learners to walk away with a sense of confidence in deploying, configuring, and applying Microsoft health data solutions.
 
 + In completing this workshop, learners will know how to **ingest**, **transform**, and **connect health data** using the Azure health data platform.
@@ -20,7 +20,7 @@ In general, we want learners to walk away with a sense of confidence in deployin
 
 + Working on the challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be ready to **deploy Microsoft Health & Life Sciences (HLS) tools in real-world production environments**.  
 
-## Prerequisite Knowledge for the Azure Healthcare APIs Workshop
+## Prerequisite Knowledge for the Azure Health Data Services Workshop
 
 + A solid foundation in **Azure fundamentals**. If you are new to Microsoft Azure, please visit [here](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/) to learn more about the platform.
 
