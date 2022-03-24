@@ -1,4 +1,4 @@
-# Challenge-07 - Deploy and demonstrate the consent capabilities of Azure API for FHIR
+# Challenge-07 - Deploy and demonstrate FHIR service consent capabilities
 
 ## Introduction
 
@@ -25,7 +25,7 @@ In the digital transformation of healthcare, the wide adoption of FHIR R4 has re
 
 ## Step - 1 Configure Postman
 
-1. Configure postman using the guidance provided in [Challenge 1](<../Challenge-01 - Deploy Azure API for FHIR (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)/Readme.md>).
+1. Configure postman using the guidance provided in [Challenge 1](<../Challenge-01 - Deploy FHIR service (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)/Readme.md>).
 2. Confirm that the FHIR service contains Patient resources.
 ![Patient Resources](./images/patient-count-postman.png)
 3. Select a Patient Resource and record the patient identifier. This will be used to create the Consent Resource.
