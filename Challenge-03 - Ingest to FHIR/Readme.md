@@ -22,7 +22,7 @@ The open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) is 
 
 Below is a component view of FHIR service with FHIR-Bulk Loader and FHIR-Proxy.  
 
-<img src="./media/Deployed_Components_ARM_template4.png" height="528">
+<img src="./media/FHIR Bulk Loader_ARM_template_deploy_AHDS_edit_PB.png" height="528">
 
 
 ## Prerequisites
