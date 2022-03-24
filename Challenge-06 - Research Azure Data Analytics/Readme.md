@@ -83,4 +83,4 @@ Information on group by aggregations can be found [here](https://docs.microsoft.
 
 ## Next Steps
 
-Click [here](<../Challenge-07 - Consent capabilities of Azure API for FHIR/ReadMe.md>) to proceed to the next challenge.
+Click [here](<../Challenge-07 - FHIR service consent capabilities/ReadMe.md>) to proceed to the next challenge.
