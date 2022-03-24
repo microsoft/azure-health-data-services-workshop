@@ -39,7 +39,7 @@ To convert HL7v2 data into FHIR, first you must arrange to make a `$convert-data
 
 5. Go to the **Authorization** tab of the request and make the following changes:
     + For **Type**, choose **OAuth 2.0**.
-    + Add `{{bearerToken}}` as the **Access Token**.
+    + Add `{{bearerToken}}` below the **Available Tokens** menu.
     + Make sure that `Bearer` is in the **Header Prefix** field.
 
     + ![Request Authorization Tab](./media/request-auth.jpg)
