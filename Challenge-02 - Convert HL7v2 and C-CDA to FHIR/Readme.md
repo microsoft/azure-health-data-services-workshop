@@ -89,7 +89,7 @@ After making the API call, you should receive a JSON FHIR bundle response contai
         }
     }    
 
-> Note: If it doesn't work, you may want to check to make sure that `\n` characters have been properly added.
+> Note: If it doesn't work, you may want to check to make sure that `\n` characters have been properly added to the HL7v2 payload.
 
 ## Step 4 - Convert C-CDA Data
 Now you will make another API request similar to the last one, except this time you will be converting C-CDA data into FHIR.
