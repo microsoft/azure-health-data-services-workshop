@@ -4,10 +4,10 @@
 
 Welcome to Challenge-04!
 
-In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the Azure API for FHIR database.
+In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the FHIR service database.
 
 ## Background
-The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app querries the FHIR server for information, and if that information is within the app's permitted access, the server carries out the search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with different methods of searching Resources in Azure API for FHIR.   
+The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app queries the FHIR server for information, and if that information is within the app's permitted access, the server carries out the search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with different methods of searching Resources in the FHIR service.   
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
@@ -18,7 +18,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 ## Prerequisites
 + Successful completion of Challenge-01
-+ Successful completion of Challenge-03 (`Patient` and other FHIR Resources should be loaded into Azure API for FHIR)
++ Successful completion of Challenge-03 (`Patient` and other FHIR Resources should be loaded into FHIR service)
 + In Postman, make sure that you have loaded the `FHIR_Search.postman_collection.json` from Challenge-01 ([located here](https://github.com/microsoft/health-architectures/blob/main/Postman/samples/FHIR_Search.postman_collection.json)).  
 
 ---
@@ -76,7 +76,7 @@ This search returns the `Patient` Resource instance with the given `id` (there c
 
 + **Q:** _What Element are you searching against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
 
-__Note:__ Azure API for FHIR supports most Resource-specific search parameters defined in the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
+__Note:__ The FHIR service supports most Resource-specific search parameters defined in the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
 
   
 ## Step 2 - Perform Composite Searches 
@@ -88,9 +88,9 @@ GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
 
 In the example above, the query is for `Patient` Resource instances that were updated after October 1st, 2021 (`_lastUpdated=gt2021-10-01`) *and* whose `gender` Element value is `female` (`gender=female`).
 
-This method with `&` works as expected when the queried Elements are single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator may return incorrect results because it cannot distinguish which Elements are paired together vs which ones should be treated separately. 
+This method with `&` works as expected when the queried Elements are single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator may return incorrect results if it cannot distinguish which Elements are paired together vs which ones are separate from each other. 
 
-For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we inspect the search results, we are surprised to find the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we discover this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements having no connection with each other in this particular Resource instance.
+For example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we inspect the search results, to our surprise we find the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we discover this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements having no connection with each other.
 
 To remedy this, some Resources are defined with composite search parameters, which make it possible to search for Element pairs as logically connected units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic" : "gender"` paired with `"value": "mixed"`. Note the use of the `$` operator to specify the value of the paired search parameter.
 
@@ -98,7 +98,7 @@ To remedy this, some Resources are defined with composite search parameters, whi
 GET {{FHIR_URL}}/Group?characteristic-value=gender$mixed
 ```
 
-For composite searches, Azure API for FHIR supports the following search parameter type pairings (the request directly above is an example of a Token, Token pairing):
+For composite searches, FHIR service supports the following search parameter type pairings (the request directly above is an example of a Token, Token pairing):
 + Reference, Token
 + Token, Date
 + Token, Number, Number
@@ -129,7 +129,7 @@ To learn more about composite searches in FHIR, please visit [here](https://buil
 
 ## What does success look like for Challenge-04?
 
-+ Developed a basic understanding of how to perform FHIR search operations in Azure API for FHIR
++ Developed a basic understanding of how to perform FHIR search operations in FHIR service
 + Performed several FHIR search queries using paired/multiple parameters for Common and Composite Search
 + Completed at least one Chained and Reverse Chained FHIR search query
 + Completed at least one Include and Reverse Include FHIR search query
