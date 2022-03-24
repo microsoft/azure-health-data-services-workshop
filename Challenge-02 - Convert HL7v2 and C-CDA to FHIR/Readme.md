@@ -127,7 +127,7 @@ Now you will make another API request similar to the last one, except this time 
 1. Get a new access token from AAD via Postman (`POST AuthorizeGetToken`) (this is not strictly necessary unless it has been over 60 minutes since the last access token was issued).
 2. Go to the `Convert Data - CCDA` request and press `Send`.
 
-After making the call, you should receive a FHIR bundle response containing the C-CDA data converted into FHIR. The top of the response will be like shown below. 
+After making the call, you should receive a FHIR bundle response containing the C-CDA data converted into FHIR R4. The top of the response will be like shown below. 
 
     {
     "resourceType": "Bundle",
