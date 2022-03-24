@@ -112,11 +112,11 @@ Now you will make another API request similar to the last one, except this time 
 
 2. Copy and paste the C-CDA data into VS Code or a text editor of your choice. 
 
-3. Refer back to the FHIR service [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the API request. 
+3. Refer back to the FHIR service `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the API request. 
 
 4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
 
-    __Hint:__ Look closely at the `""` quotation marks. All JSON keys and values must be surrounded by double quotes. Any double quotes *within* these surrounding quotes must be escaped, however.
+    __Hint:__ Look closely at the `""` quotation marks. All JSON keys and values must be surrounded by double quotes. Any double quotes *within* these surrounding quotes must be `\` escaped, however.
 
 6. When ready, copy and paste the JSON-formatted request parameters into the `Body` of the `Convert Data - CCDA` request in Postman.
 
