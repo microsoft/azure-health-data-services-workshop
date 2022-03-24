@@ -90,7 +90,7 @@ Follow the instructions and return here when finished.
 
 FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
 
-<img src="./media/Deployed_Components_ARM_template4.png" height="528">
+<img src="./media/Deployed_Components_ARM_template5.png" height="528">
 
 ## Next Steps
 
