@@ -146,7 +146,7 @@ After making the call, you should receive a FHIR bundle response containing the 
         ...}
     ...}
 
-> Note: If it doesn't work, you may want to check to make sure that characters are properly escaped in the C-CDA text.
+> Note: If you get an error, you may want to check to make sure that characters are properly escaped in the C-CDA payload.
 
 ## What does success look like for Challenge-02?
 
