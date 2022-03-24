@@ -53,7 +53,7 @@ To convert HL7v2 data into FHIR, first you must arrange to make a `$convert-data
 
 3.	Copy and paste the HL7v2 message into the `Body` of the `Convert Data – HL7` request in Postman. Format the JSON request parameters following the example in the documentation.
 
-4.  In the `Body`, select the `raw` button and choose `JSON` from the dropdown menu on the right.
+4.  In the `Body` tab, select the `raw` button and choose `JSON` from the dropdown menu on the right.
 <img src="./media/Postman_JSON_Body.png" height="328"> 
 
 5.	You will need to make some changes in the HL7v2 payload so that the formatting follows the sample request featured in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data). 
