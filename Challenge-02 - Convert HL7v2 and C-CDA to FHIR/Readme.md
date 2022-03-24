@@ -66,9 +66,9 @@ To convert data into FHIR, first you must arrange to make a `$convert-data` API 
 ## Step 3 - Convert Data
 
 1. Get a new access token from AAD via Postman (`POST AuthorizeGetToken`).
-2. Go back to the `Convert Data - HL7` request and press `Send`.
+2. Go back to the `Convert Data - HL7` request and press `Send` to initiate the `$convert-data` operation.
 
-After making the call, you should receive a FHIR bundle response containing the HL7v2 message converted into FHIR. 
+After making the API call, you should receive a JSON FHIR bundle response containing the HL7v2 message converted into FHIR R4. The top of the response should be as shown below. 
 
     {
     "resourceType": "Bundle",
