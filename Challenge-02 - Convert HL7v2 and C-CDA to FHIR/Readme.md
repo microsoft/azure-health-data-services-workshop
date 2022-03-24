@@ -37,9 +37,10 @@ To convert HL7v2 data into FHIR, first you must arrange to make a `$convert-data
 4. Change the HTTP operation type from **GET** to **POST**.
 <img src="./media/Postman_POST.png" height="328">  
 
-5. Go to the **Authorization** tab of the request and change:
-    + **Type** to **OAuth 2.0**
+5. Go to the **Authorization** tab of the request and make the following changes:
+    + For **Type**, choose **OAuth 2.0**
     + Add `{{bearerToken}}` as the **Access Token**
+    + Make sure that `Bearer` is in the **Header Prefix** field
 
     + ![Request Authorization Tab](./media/request-auth.jpg)
 6. Be sure to `Save` the `Convert Data - HL7` request.
