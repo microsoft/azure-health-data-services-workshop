@@ -101,8 +101,8 @@ Now you will make another API request similar to the one above, except this time
 3. Fill in the URL of the request as before with `{{fhirurl}}/$convert-data`. 
 4. Change the HTTP operation type from **GET** to **POST**. 
 5. Go to the **Authorization** tab of the request and make the following changes:
-    + Switch the **Type** to **OAuth 2.0**
-    + Add `{{bearerToken}}` as the **Access Token**
+    + Switch the **Type** to **OAuth 2.0**.
+    + Add `{{bearerToken}}` as the **Access Token**.
 
     + ![Request Authorization Tab](./media/request-auth.jpg)
 
