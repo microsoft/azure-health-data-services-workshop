@@ -92,7 +92,7 @@ After making the `$convert-data` request, you should receive a JSON FHIR bundle 
 > Note: If you get an error, check to make sure that `\n` characters have been properly added to the HL7v2 payload.
 
 ## Step 4 - Prepare a request to convert C-CDA data into FHIR
-Now you will make another API request similar to the last one, except this time you will be converting C-CDA data into FHIR.
+Now you will make another API request similar to the one above, except this time you will be converting C-CDA data into FHIR.
 
 1. In Postman, click on `Add request` again to create another API request in the `FHIR CALLS` collection imported in Challenge-01. 
 <img src="./media/Postman_Add_Request.png" height="328"> 
