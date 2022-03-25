@@ -42,7 +42,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
     + Add `{{bearerToken}}` below the **Available Tokens** menu.
     + Put `Bearer` in the **Header Prefix** field (if it is not already there).
 
-    + ![Request Authorization Tab](./media/request-auth.jpg)
+    ![Request Authorization Tab](./media/request-auth.jpg)
 6. Be sure to `Save` the `Convert Data - HL7` request.
 
 ## Step 2 - Set up Request Parameters
