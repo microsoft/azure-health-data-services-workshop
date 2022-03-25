@@ -150,8 +150,8 @@ After making the `$convert-data` request, you should receive a FHIR bundle respo
 
 ## What does success look like for Challenge-02?
 
-+ Successfully receive a FHIR bundle response after calling ```$convert-data``` with HL7v2 data.
-+ Successfully receive a FHIR bundle response after calling ```$convert-data``` with C-CDA data.
++ A FHIR `"resourceType": "Bundle"` response after calling ```$convert-data``` with an HL7v2 payload.
++ A FHIR `"resourceType": "Bundle"` response after calling ```$convert-data``` with a C-CDA payload.
 
 ## Next Steps
 
