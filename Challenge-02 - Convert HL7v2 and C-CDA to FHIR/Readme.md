@@ -112,7 +112,7 @@ Now you will make another API request similar to the one above, except this time
 
 2. Copy and paste the C-CDA data into VS Code or a text editor of your choice. 
 
-3. Refer back to the FHIR service `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the JSON `Body` of the request. Be aware that the parameter values are now in reference to C-CDA data.  
+3. Refer back to the FHIR service `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the JSON `Body` of the request. Be aware that the parameter values now need to be in reference to C-CDA data.  
 
 4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
 
