@@ -27,7 +27,7 @@ In today's health industry, the FHIR R4 format has become the standard medium fo
 ---
 
 ## Step 1 - Prepare an API request to convert HL7v2 into FHIR
-To convert HL7v2 data into FHIR, first you must arrange to make a `$convert-data` API request.
+To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API request.
 
 1. Go to Postman and create a new API request by clicking `Add request` in the `FHIR CALLS` collection imported in Challenge-01.
 <img src="./media/Postman_Add_Request.png" height="328"> 
@@ -40,25 +40,25 @@ To convert HL7v2 data into FHIR, first you must arrange to make a `$convert-data
 5. Go to the **Authorization** tab of the request and make the following changes:
     + For **Type**, choose **OAuth 2.0**.
     + Add `{{bearerToken}}` below the **Available Tokens** menu.
-    + Make sure that `Bearer` is in the **Header Prefix** field.
+    + Put `Bearer` in the **Header Prefix** field (if it is not already there).
 
     + ![Request Authorization Tab](./media/request-auth.jpg)
 6. Be sure to `Save` the `Convert Data - HL7` request.
 
 ## Step 2 - Set up Request Parameters
 
-1.	Review the instructions for the ```$convert-data``` operation in the FHIR service [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data). 
+1.	Review the FHIR service [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) for an overview of the ```$convert-data``` operation with examples.  
 
-2. 	Click on [ADT_A01.hl7](./samples/ADT_A01.hl7) to view a sample HL7v2 message. 
+2. 	Click on [ADT_A01.hl7](./samples/ADT_A01.hl7) to view a sample HL7v2 message (you may want to click on the `Raw` button on the right to copy the data). 
 
-3.	Copy and paste the HL7v2 message into the `Body` of the `Convert Data – HL7` request in Postman. Format the JSON request parameters following the example in the `$convert-data` documentation.
+3.	Copy and paste the HL7v2 message into the `Body` of the `Convert Data – HL7` request in Postman. Format the JSON request parameters following the example given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request).
 
 4.  In the `Body` tab in Postman, select the `raw` button and choose `JSON` from the dropdown menu on the right.
 <img src="./media/Postman_JSON_Body.png" height="328"> 
 
-5.	You will need to make some changes in the HL7v2 payload so that the formatting follows the sample request featured in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data). 
+5.	You will need to make some changes in the HL7v2 payload so that the formatting follows the sample request given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request). 
 
-    __Hint:__ In the sample request in the documentation (midway through page), look at the `\n` newline characters included in the HL7v2 payload. Add newline characters like these where needed in the HL7v2 message in the `Convert Data - HL7` request. 
+    __Hint:__ In the sample request in the documentation (link above), look at the `\n` newline characters included in the HL7v2 payload. Add newline characters like these where needed in the HL7v2 message in the `Convert Data - HL7` request. 
 
     *Optional – prepare the HL7v2 message in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
 
@@ -66,10 +66,10 @@ To convert HL7v2 data into FHIR, first you must arrange to make a `$convert-data
 
 ## Step 3 - Convert Data
 
-1. Get a new access token from AAD via Postman (`POST AuthorizeGetToken`).
-2. Go back to the `Convert Data - HL7` request and press `Send` to initiate the `$convert-data` operation.
+1. In Postman, get a new access token from AAD with the `POST AuthorizeGetToken` call.
+2. Go to the `Convert Data - HL7` request and press `Send` to initiate the `$convert-data` operation.
 
-After making the API call, you should receive a JSON FHIR bundle response containing the HL7v2 message converted into FHIR R4. The top of the response should be as shown below. 
+After making the `$convert-data` API call, you should receive a JSON FHIR bundle response containing the HL7v2 message converted into FHIR R4. The top of the response should be as shown below. 
 
     {
     "resourceType": "Bundle",
@@ -89,7 +89,7 @@ After making the API call, you should receive a JSON FHIR bundle response contai
         }
     }    
 
-> Note: If it doesn't work, you may want to check to make sure that `\n` characters have been properly added to the HL7v2 payload.
+> Note: If you get an error, check to make sure that `\n` characters have been properly added to the HL7v2 payload.
 
 ## Step 4 - Prepare a request to convert C-CDA data into FHIR
 Now you will make another API request similar to the last one, except this time you will be converting C-CDA data into FHIR.
