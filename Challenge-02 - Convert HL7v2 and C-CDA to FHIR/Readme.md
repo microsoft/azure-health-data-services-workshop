@@ -62,7 +62,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
     *Optional – prepare the JSON request parameters and HL7v2 payload in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
 
-6. Make sure to `Save` the `Convert Data - HL7` request in Postman.
+6. Make sure to `Save` the `Convert Data - HL7` request.
 
 ## Step 3 - Convert Data
 
