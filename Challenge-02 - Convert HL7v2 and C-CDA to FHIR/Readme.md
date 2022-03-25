@@ -104,7 +104,7 @@ Now you will make another API request similar to the one above, except this time
     + Switch the **Type** to **OAuth 2.0**.
     + Add `{{bearerToken}}` as the **Access Token**.
 
-    + ![Request Authorization Tab](./media/request-auth.jpg)
+    ![Request Authorization Tab](./media/request-auth.jpg)
 
 ## Step 5 - Set up Request Parameters
 
