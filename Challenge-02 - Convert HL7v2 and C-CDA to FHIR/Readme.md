@@ -108,7 +108,7 @@ Now you will make another API request similar to the one above, except this time
 
 ## Step 5 - Set up Request Parameters
 
-1. Click on [CCDA_Ford_Elaine.xml](./samples/CCDA_Ford_Elaine.xml) to view a sample C-CDA data file (click on `Raw` on the right side to see the full data string in your browser window).
+1. Click on [CCDA_Ford_Elaine.xml](./samples/CCDA_Ford_Elaine.xml) to view a sample C-CDA data file (click on `Raw` on the right side to view the entire data string in your browser window).
 
 2. Copy and paste the C-CDA data into VS Code or a text editor of your choice. 
 
