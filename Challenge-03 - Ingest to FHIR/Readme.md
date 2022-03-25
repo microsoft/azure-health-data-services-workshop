@@ -36,7 +36,7 @@ For this challenge, you will upload bulk FHIR data for import into FHIR service.
 
 ## Step 1 - Download Sample Data
 
-Download the .zip files to your desktop (click the link and you will see a `download` button on the right): 
+Start by downloading these two .zip files to your desktop (when you click the links, you will see a `download` button on the right): 
 + [good_bundles.zip](./samples/good_bundles.zip) 
 + [bad_bundles.zip](./samples/bad_bundles.zip) 
 
