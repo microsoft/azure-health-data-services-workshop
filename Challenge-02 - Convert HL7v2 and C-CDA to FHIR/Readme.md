@@ -60,9 +60,9 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
     __Hint:__ In the sample request in the documentation (link above), look at how the `\n` newline characters are placed in the HL7v2 payload. Add newline characters like these where needed in the HL7v2 message in the `Convert Data - HL7` request. 
 
-    *Optional – prepare the HL7v2 message in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
+    *Optional – prepare the JSON request parameters and HL7v2 payload in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
 
-6. Make sure to `Save` the `Convert Data - HL7` request.
+6. Make sure to `Save` the `Convert Data - HL7` request in Postman.
 
 ## Step 3 - Convert Data
 
@@ -94,13 +94,13 @@ After making the `$convert-data` API call, you should receive a JSON FHIR bundle
 ## Step 4 - Prepare a request to convert C-CDA data into FHIR
 Now you will make another API request similar to the last one, except this time you will be converting C-CDA data into FHIR.
 
-1. Click on `Add request` again to create another API request in the `FHIR CALLS` collection imported in Challenge-01. 
+1. In Postman, click on `Add request` again to create another API request in the `FHIR CALLS` collection imported in Challenge-01. 
 <img src="./media/Postman_Add_Request.png" height="328"> 
 
 2. Rename the new request to `Convert Data - CCDA`. 
 3. Fill in the URL of the request as before with `{{fhirurl}}/$convert-data`. 
 4. Change the HTTP operation type from **GET** to **POST**. 
-5. Go to the **Authorization** tab of the request and change:
+5. Go to the **Authorization** tab of the request and make the following changes:
     + **Type** to **OAuth 2.0**
     + Add `{{bearerToken}}` as the **Access Token**
 
@@ -108,26 +108,26 @@ Now you will make another API request similar to the last one, except this time 
 
 ## Step 5 - Set up Request Parameters
 
-1. Click on [CCDA_Ford_Elaine.xml](./samples/CCDA_Ford_Elaine.xml) to view a sample C-CDA data file.
+1. Click on [CCDA_Ford_Elaine.xml](./samples/CCDA_Ford_Elaine.xml) to view a sample C-CDA data file (click on `Raw` on the right side to see the full data string in your browser window).
 
 2. Copy and paste the C-CDA data into VS Code or a text editor of your choice. 
 
-3. Refer back to the FHIR service `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the API request. 
+3. Refer back to the FHIR service `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the JSON `Body` of the request. Be aware that the parameter values are now in reference to C-CDA data.  
 
 4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
 
-    __Hint:__ Look closely at the `""` quotation marks. All JSON keys and values must be surrounded by double quotes. Any double quotes *within* these surrounding quotes must be `\` escaped, however.
+    __Hint:__ Look closely at the `""` quotation marks in the C-CDA data. All JSON keys and values must be surrounded by double quotes. Any double quotes *within* these surrounding quotes must be `\` escaped, however.
 
-6. When ready, copy and paste the JSON-formatted request parameters into the `Body` of the `Convert Data - CCDA` request in Postman.
+6. When ready, copy and paste the JSON-formatted request parameters with the C-CDA payload into the `Body` of the `Convert Data - CCDA` request in Postman.
 
 5. Select the `raw` button and choose `JSON` from the dropdown menu on the right.
 
 ## Step 6 - Convert Data
 
-1. Get a new access token from AAD via Postman (`POST AuthorizeGetToken`) (this is not strictly necessary unless it has been over 60 minutes since the last access token was issued).
+1. Get a new access token from AAD with `POST AuthorizeGetToken` (this is not strictly necessary unless it has been over 60 minutes since the last access token was issued).
 2. Go to the `Convert Data - CCDA` request and press `Send`.
 
-After making the call, you should receive a FHIR bundle response containing the C-CDA data converted into FHIR R4. The top of the response will be like shown below. 
+After making the `$convert-data` call, you should receive a FHIR bundle response containing the C-CDA data converted into FHIR R4. The top of the response will be as shown below. 
 
     {
     "resourceType": "Bundle",
@@ -146,7 +146,7 @@ After making the call, you should receive a FHIR bundle response containing the 
         ...}
     ...}
 
-> Note: If you get an error, you may want to check to make sure that characters are properly escaped in the C-CDA payload.
+> Note: If you get an error, check that the `""` characters are properly escaped in the C-CDA payload.
 
 ## What does success look like for Challenge-02?
 
