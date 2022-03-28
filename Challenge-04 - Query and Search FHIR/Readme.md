@@ -115,11 +115,11 @@ To learn more about composite searches in FHIR, please visit [here](https://buil
 ## Step 3 - Using Search Result Parameters  
 The FHIR standard offers a comprehensive set of parameters for filtering search results. Listed below are some of the Search result parameters in FHIR. 
 
-`_summary` - for specifying subsets of information to be returned when querying a Resource. For example, including the `_summary=true` search parameter only returns Elements marked with `ElementDefinition.isSummary` in their base definition.
+`_summary` - for specifying subsets of information to be returned when querying a Resource. For example, including the `_summary=true` search parameter only returns Elements that are marked with `ElementDefinition.isSummary` in their base definition.
 
-`_total` - 
+`_total` - for reporting the number of Resources that match the given search parameters.
 
-`_sort` 
+`_sort` - 
 
 
 1. Using the FHIR Search collection in Postman, search for Patients using the following search results parameters: ```_summary=count```, ```_total=accurate```.  
