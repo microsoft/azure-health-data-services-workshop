@@ -7,7 +7,7 @@ Welcome to Challenge-04!
 In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query the FHIR service database.
 
 ## Background
-The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app queries the FHIR server for information, and if that information is within the app's permitted access, the server carries out the search and returns the results in a FHIR [Bundle](http://hl7.org/fhir/bundle.html). The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with different methods of finding and retrieving information in the FHIR service database. 
+The FHIR specification defines a REST API with syntax for querying Resources in a FHIR server's data store. When a client app seeks access to FHIR Resources (e.g., on behalf of a patient or care provider), the app queries the FHIR server for information, and if that information is within the app's permitted access, the server carries out the search and returns the results in a [FHIR Resource Bundle](http://hl7.org/fhir/bundle.html). The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge we will get practice with different methods of finding and retrieving information in the FHIR service database. 
 
 ## Learning Objectives for Challenge-04
 + Understand the basic concepts of FHIR Search
