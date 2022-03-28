@@ -34,7 +34,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
 2. Rename the new request to `Convert Data - HL7`. 
 3. Fill in the URL of the request with `{{fhirurl}}/$convert-data`. 
-4. Change the HTTP operation type from **GET** to **POST**.
+4. Change the HTTP operation from **GET** to **POST**.
 <img src="./media/Postman_POST.png" height="328">  
 
 5. Go to the **Authorization** tab of the request and make the following changes:
