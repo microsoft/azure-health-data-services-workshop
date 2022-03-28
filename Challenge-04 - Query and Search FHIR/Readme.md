@@ -122,7 +122,7 @@ The FHIR standard offers a comprehensive set of parameters for filtering search 
 `_sort` - for setting the sorting hierarchy of search parameter results. For example, `_sort=status,date,category`.
 
 
-1. Using the FHIR Search collection in Postman, perform a Patient query using the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```, `_sort=gender`.  
+1. Using the FHIR Search collection in Postman, perform several Patient queries with the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```, `_sort=gender`.  
   
 ## Step 4 - Use the Chained & Reverse Chained Search Result Parameters 
 1. Using the FHIR Search collection in Postman, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
