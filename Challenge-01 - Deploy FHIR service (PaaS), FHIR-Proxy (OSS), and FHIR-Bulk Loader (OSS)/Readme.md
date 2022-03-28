@@ -31,7 +31,7 @@ FHIR-Proxy will only exert control as a Pre- or Post- filter if an admin sets it
 
 ## Prerequisites 
 
-Before deploying FHIR service, FHIR-Proxy, and FHIR-Bulk Loader, please make sure that you have the following permissions in your Azure environment.
+Before deploying **FHIR service**, **FHIR-Proxy**, and **FHIR-Bulk Loader**, please make sure that you have the following permissions in your Azure environment.
 
 + **Azure Subscription:** You must have rights to deploy resources at the Resource Group scope in your Azure Subscription (i.e. [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) role).
 
