@@ -113,9 +113,7 @@ For composite searches, FHIR service supports the following search parameter typ
 To learn more about composite searches in FHIR, please visit [here](https://build.fhir.org/search.html#combining).
   
 ## Step 3 - Using Search Result Parameters  
-The FHIR standard offers a comprehensive set of parameters for filtering search results. These parameters enable fine-grained data retrieval from a FHIR server. 
-
-Listed below are some of the Search result parameters in FHIR.
+The FHIR standard offers a comprehensive set of parameters for filtering search results. Listed below are some of the Search result parameters in FHIR. 
 
 `_summary` - for specifying subsets of information to be returned when querying a Resource. For example, including the `_summary=true` search parameter only returns Elements marked with `ElementDefinition.isSummary` in their base definition.
 
