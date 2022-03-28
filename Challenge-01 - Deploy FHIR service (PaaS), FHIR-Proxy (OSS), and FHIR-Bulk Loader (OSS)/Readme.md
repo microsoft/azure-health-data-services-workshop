@@ -7,7 +7,7 @@ Welcome to Challenge-01!
 In this challenge, you will use an Azure Resource Manager (ARM) template to deploy **FHIR service** (PaaS), **FHIR-Proxy** (OSS), and **FHIR-Bulk Loader** (OSS). In addition, you will set up a **Postman** environment to make REST API calls to FHIR service.
 
 ## Background
-FHIR (Fast Healthcare Interoperability Resources) is the standard format for data storage and exchange in Microsoft's health data platform. Microsoft's FHIR infrastructure rests on two Azure components: [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) and [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview). For this training, we will be focusing on FHIR service.
+FHIR (Fast Healthcare Interoperability Resources) is the standard format for data storage and exchange in Microsoft's health data platform. Microsoft's FHIR infrastructure rests on two Azure components: [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) (PaaS) and [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview) (PaaS). For this training, we will be focusing on the FHIR service, which is part of the [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/) platform.
 
 In Azure FHIR workflows, FHIR service receives REST API requests from remote client apps and manages all FHIR data persistance and retrieval tasks. Meanwhile, the open-source [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) acts as a checkpoint surrounding FHIR service, filtering the incoming and outgoing FHIR data according to a set of admin-defined rules.
 
@@ -18,10 +18,10 @@ For bulk ingestion of FHIR data into FHIR service, Microsoft offers the open-sou
 + Use an ARM template to deploy FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
 + Configure AAD authentication for FHIR-Proxy and assign app roles
 + Configure Postman for testing FHIR API calls
-+ Make FHIR API calls to FHIR service
++ Use Postman to make FHIR API calls to FHIR service
 
 ### FHIR service and FHIR-Proxy Relationship
-In the Azure health data platform, FHIR-Proxy acts as a pre- and post-processor, selectively filtering FHIR data on its way into and out of FHIR service. Admins can set up FHIR-Proxy to listen to the stream of I/O data and trigger custom workflows based on specific FHIR events. FHIR-Proxy also brings enhanced Role-Based Access Control (RBAC) to FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (i.e., patients) can authorize or deny access to certain FHIR data.
+In the Azure health data platform with FHIR service at the center, FHIR-Proxy acts as a pre- and post-processor, selectively filtering FHIR data on its way into and out of the FHIR service. Admins can set up FHIR-Proxy to listen to the stream of I/O data and trigger custom workflows based on specific FHIR events. FHIR-Proxy also brings enhanced Role-Based Access Control (RBAC) to FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (i.e., patients) can authorize or deny access to certain FHIR data.
 
 Component View of FHIR-Proxy and FHIR service, with Postman set up to call the FHIR-Proxy endpoint.
 
@@ -42,7 +42,7 @@ You will also need to have [Postman](https://www.getpostman.com/) installed - ei
 ## Step 1 - Deploy FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
 In the first part of this challenge, you will
 - Visit another repo and read the deployment instructions
-- Go to the Azure Portal and deploy FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
+- Go to the Azure Portal and deploy **FHIR service** (PaaS), **FHIR-Proxy** (OSS), and **FHIR-Bulk Loader** (OSS)
 
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Starter quickstarts folder in a new browser tab. 
