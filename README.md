@@ -1,7 +1,7 @@
 # Microsoft Azure Healthcare APIs Workshop
 
 # Introduction
-Hello and welcome to the Azure Healthcare APIs Workshop! In this workshop, we present a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) tools and architectures. 
+Hello User and welcome to the Azure Healthcare APIs Workshop! In this workshop, we present a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) tools and architectures. 
 
 # Who is the Azure Healthcare APIs Workshop for?
 This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Before beginning in the workshop challenges, participants are expected to have the following:
