@@ -27,7 +27,7 @@ Component View of FHIR-Proxy and FHIR service, with Postman set up to call the F
 
 <img src="./media/Postman_FHIR-Proxy_ARM_template_deploy_AHDS.png" height="528">
 
-FHIR-Proxy will only exert control as a Pre- or Post- filter if an admin sets it up this way. Otherwise, API calls made to the FHIR-Proxy endpoint will go straight through to the FHIR service, and responses will go directly back to the remote client app (e.g., Postman) as though FHIR-Proxy is not there. 
+FHIR-Proxy will only exert control as a Pre- or Post- filter if an admin sets it up this way. Otherwise, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses go directly back to the remote client app (e.g., Postman) as though FHIR-Proxy is not there. 
 
 ## Prerequisites 
 
