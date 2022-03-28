@@ -21,12 +21,13 @@ For bulk ingestion of FHIR data into FHIR service, Microsoft offers the open-sou
 + Use Postman to make FHIR API calls to FHIR service
 
 ### FHIR service and FHIR-Proxy Relationship
-In the Azure health data platform, FHIR service and FHIR-Proxy operate as a team. FHIR-Proxy acts as a pre- and post-processor, selectively filtering FHIR data on the way into and out of the FHIR service. Admins can set up FHIR-Proxy to listen to the stream of I/O data and trigger custom workflows based on specific FHIR events. FHIR-Proxy also brings enhanced Role-Based Access Control (RBAC) to FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (i.e., patients) can authorize or deny access to certain FHIR data.
+In the Azure health data platform, FHIR service and FHIR-Proxy operate as a team. FHIR service sits at the center, and FHIR-Proxy acts as a pre- and post-processor, selectively filtering FHIR data on the way into and out of the FHIR service. Admins can set up FHIR-Proxy to listen to the stream of I/O data and trigger custom workflows based on specific FHIR events. FHIR-Proxy also brings enhanced Role-Based Access Control (RBAC) to FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (i.e., patients) can authorize or deny access to certain FHIR data.
 
 Component View of FHIR-Proxy and FHIR service, with Postman set up to call the FHIR-Proxy endpoint.
 
 <img src="./media/Postman_FHIR-Proxy_ARM_template_deploy_AHDS.png" height="528">
 
+FHIR-Proxy will only exert control as a Pre- or Post- filter if an admin sets it up this way. Otherwise, API calls made to the FHIR-Proxy endpoint will go straight through to the FHIR service as though made directly to the FHIR service endpoint. 
 
 ## Prerequisites 
 
