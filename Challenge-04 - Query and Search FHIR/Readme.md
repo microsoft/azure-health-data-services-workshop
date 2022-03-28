@@ -80,7 +80,7 @@ __Note:__ The FHIR service supports most Resource-specific search parameters def
 
   
 ## Step 2 - Perform Composite Searches 
-In cases where you want to narrow the scope of a query by specifying more than one search parameter, one way of doing this is with the logical AND (`&`) operator. 
+In cases where you want to modify the scope of a query by specifying more than one search parameter, one way of doing this is with the logical AND (`&`) operator. 
 
 ```azurecli
 GET {{FHIRURL}}/Patient?_lastUpdated=gt2021-10-01&gender=female
@@ -106,22 +106,33 @@ For composite searches, FHIR service supports the following search parameter typ
 + Token, String
 + Token, Token
 
-1. Using the FHIR Search Postman collection provided, search for `Patient` Resource instances narrowed down by the following search parameters: ```date```, ```lastmodified```, ```identifier```, and more. Then, modify the included API calls with the `&` operator to combine different search parameters and see what results you get.
+1. Using the FHIR Search collection in Postman, search for `Patient` Resource instances narrowed down by the following search parameters: ```date```, ```lastmodified```, ```identifier```, and more. Then, modify the included API calls with the `&` operator to combine different search parameters and see what results you get.
 
 2. In Postman, make an API call with the `GET List Patient Observations by Results Composite` request. Then modify the `http://loinc.org|8462-4` (diastolic blood pressure) value and see if you can get different search results.
 
 To learn more about composite searches in FHIR, please visit [here](https://build.fhir.org/search.html#combining).
   
 ## Step 3 - Using Search Result Parameters  
-1. Using the FHIR Search Postman collection provided, search for Patients using the following search results parameters: ```_summary=count```, ```_total=accurate```.  
+The FHIR standard offers a comprehensive set of parameters for filtering search results, allowing for fine-grained data retrieval from a FHIR server. 
+
+Below are some of the Search result parameters in FHIR.
+
+`_summary`
+
+`_total`
+
+`_sort` 
+
+
+1. Using the FHIR Search collection in Postman, search for Patients using the following search results parameters: ```_summary=count```, ```_total=accurate```.  
   
 
 ## Step 4 - Use the Chained & Reverse Chained Search Results Parameters 
-1. Using the FHIR Search Postman collection provided, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+1. Using the FHIR Search collection in Postman, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
 
 
 ## Step 5 - Use the Include & Reverse Include Search Results Parameters  
-1. Using the FHIR Search Postman collection provided, search for `PractitionerRole` including the `Practitioner` Resource in the result to reduce calls to the server. Discover all `PractitionerRoles` for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+1. Using the FHIR Search collection in Postman, search for `PractitionerRole` including the `Practitioner` Resource in the result to reduce calls to the server. Discover all `PractitionerRoles` for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
   
 
 ## Step 6 - Defining a Custom Search parameter 
