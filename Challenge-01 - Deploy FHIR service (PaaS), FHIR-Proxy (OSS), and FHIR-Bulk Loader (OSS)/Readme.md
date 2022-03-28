@@ -68,7 +68,7 @@ Follow the instructions and return here when finished.
 + FHIR service (PaaS) deployed and available
 + FHIR-Proxy (OSS) deployed and able to communicate with FHIR service
 + FHIR-Bulk Loader (OSS) deployed and available
-+ Postman set up and able to connect with FHIR service (directly or via FHIR-Proxy)
++ Postman set up and able to connect with FHIR service (via FHIR-Proxy)
     + Capability Statement from the FHIR service server - received
     ```
     {
