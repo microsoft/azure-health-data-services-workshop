@@ -83,7 +83,7 @@ Here are some points for inspecting FHIR-Bulk Loader operations:
 
     <img src="./media/FHIR-Bulk_Loader_Error_Response_Edit.png" height="428"> 
 
-    What is the reason given for the error?
++ What is the reason given for the error?
 
 + In comparison, you can go to **bundlesprocessed** and look in the `.result` files for bulk ingest operations that succeeded. For example, in the image below there is a `201` status code, meaning success. The response shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in FHIR service from the bulk ingest operation. 
 
