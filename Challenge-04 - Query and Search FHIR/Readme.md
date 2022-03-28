@@ -117,7 +117,7 @@ The FHIR standard offers a comprehensive set of parameters for filtering search 
 
 `_summary` - for specifying subsets of information to be returned when querying a Resource. For example, including the `_summary=true` parameter causes the search to only return Elements that are marked with `ElementDefinition.isSummary` in their base definition.
 
-`_total` - for reporting the number of Resources that match the given search parameters. For example, `_total=estimate`, `_total=accurate`.
+`_total` - for returning the number of Resources that match the given search parameters. For example, `_total=estimate`, `_total=accurate`.
 
 `_sort` - for setting the hierarchy of search parameters in sorting the results. For example, `_sort=status,date,category`.
 
