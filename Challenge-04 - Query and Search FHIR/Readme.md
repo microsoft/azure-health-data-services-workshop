@@ -119,12 +119,11 @@ The FHIR standard offers a comprehensive set of parameters for filtering search 
 
 `_total` - for reporting the number of Resources that match the given search parameters. For example, `_total=estimate`, `_total=accurate`.
 
-`_sort` - for setting the hierarchy of search parameters for ordering search results. For example, `_sort=status,date,category`.
+`_sort` - for setting the hierarchy of search parameters in sorting the results. For example, `_sort=status,date,category`.
 
 
 1. Using the FHIR Search collection in Postman, perform a query for Patients using the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```.  
   
-
 ## Step 4 - Use the Chained & Reverse Chained Search Result Parameters 
 1. Using the FHIR Search collection in Postman, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
 
