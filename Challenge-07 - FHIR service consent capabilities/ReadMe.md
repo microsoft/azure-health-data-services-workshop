@@ -1,14 +1,14 @@
-# Challenge-07 - Deploy and demonstrate FHIR service consent capabilities
+# Challenge-07 - FHIR service consent capabilities
 
 ## Introduction
 
 Welcome to Challenge-07!
 
-In this challenge, you will learn how to configure Consent Opt-Out filtering using FHIR-Proxy (OSS).
+In this challenge, you will learn how to configure Consent Opt-Out filtering for the FHIR service using FHIR-Proxy (OSS).
 
 ## Background
 
-In the digital transformation of healthcare, the wide adoption of FHIR R4 has removed certain barriers of access to patient health data. With this increased access to data, FHIR R4 also brings an increased measure of control over who is allowed to access certain data. Health institutions are required by law to guard patients' Personal Health Information (PHI), and one way this is managed is by requiring patient consent (either "broad" or "direct" consent) before practitioners or researchers may access a patient's medical records. In this challenge, we will be exploring capabilities in the Azure health data platform that make it possible for users (i.e., patients) to opt out of sharing their FHIR records with certain parties.
+In the digital transformation of healthcare, the wide adoption of FHIR R4 has removed certain barriers of access to patient health data. With this increased access to data, FHIR R4 also brings an increased measure of control over who is allowed to access the data. Health institutions are required by law to guard patients' Personal Health Information (PHI), and one way this is managed is by requiring patient consent (either "broad" or "direct" consent) before practitioners or researchers may access a patient's medical records. In this challenge, we will be exploring capabilities in the Azure health data platform that make it possible for users (i.e., patients) to opt out of sharing their FHIR records with certain parties.
 
 ## Learning Objectives for Challenge-07
 
