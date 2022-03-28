@@ -60,7 +60,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
     __Hint:__ In the sample request in the documentation (link above), look at how the `\n` newline characters are placed in the HL7v2 payload. Add newline characters like these where needed in the HL7v2 message in the `Convert Data - HL7` request. 
 
-    *Optional – prepare the JSON request parameters and HL7v2 payload in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
+    *Optional – prepare the JSON request parameters and HL7v2 payload in VS Code (with the HL7 extension installed) first before pasting into the body of the Postman request.
 
 6. Make sure to `Save` the `Convert Data - HL7` request.
 
