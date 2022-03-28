@@ -114,7 +114,7 @@ Now you will make another API request similar to the one above, except this time
 
 3. Refer back to the FHIR service `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the JSON body of the request. Be aware that the parameter values now need to work for C-CDA data.  
 
-4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
+4. You will need to format the C-CDA data payload so that it sits correctly in the JSON request body.
 
     __Hint:__ The JSON spec requires all keys and values to be surrounded by double quotes. Any double quotes *within* the JSON data payload must be `\` escaped, however. Look at the `"` quotation marks in the C-CDA data string. These `"` quotes all need to be `\` escaped in order for the `$convert-data` request to work. 
 
