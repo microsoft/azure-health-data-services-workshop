@@ -69,7 +69,7 @@ Follow the instructions and return here when finished.
 + FHIR-Proxy (OSS) deployed and able to communicate with FHIR service
 + FHIR-Bulk Loader (OSS) deployed and available
 + Postman set up and able to connect with FHIR service (via FHIR-Proxy)
-    + Capability Statement from the FHIR service server - received
+    + Capability Statement from the FHIR service - received
     ```
     {
     "resourceType": "CapabilityStatement",
