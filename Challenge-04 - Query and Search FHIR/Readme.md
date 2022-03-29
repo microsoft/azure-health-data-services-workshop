@@ -118,7 +118,7 @@ The FHIR standard defines parameters for filtering search results. Below are sev
 |Parameter| Functionality|
 ----------|--------------------------------------------------------------------------------------------------------------------
 |`_summary`| For returning pre-selected Elements when querying a Resource. For example, searching with the `_summary=true` parameter causes the server to only return Elements marked with `ElementDefinition.isSummary` in their base definition.
-|`_total` | For returning the number of Resources that match the given search parameters. For example, `_total=estimate`, `_total=accurate`.
+|`_total` | For returning the number of Resources that match the given search criteria. For example, `_total=estimate`, `_total=accurate`.
 |`_sort`  | For setting the sorting hierarchy of search parameter results. For example, `_sort=status,date,category`.
 
 1. Using the FHIR Search collection in Postman, perform several Patient queries with the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```, `_sort=gender`.  
