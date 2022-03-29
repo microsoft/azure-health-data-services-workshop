@@ -112,8 +112,8 @@ For composite searches, FHIR service supports the following search parameter typ
 
 To learn more about composite searches in FHIR, please visit [here](https://build.fhir.org/search.html#combining).
   
-## Step 3 - Use Search Result Parameters  
-The FHIR standard offers a comprehensive set of parameters for filtering search results. 
+## Step 3 - Add Search Result Parameters  
+The FHIR standard offers a comprehensive set of parameters for filtering search results. Below are several examples.
 
 |Parameter| Functionality|
 ----------|--------------------------------------------------------------------------------------------------------------------
@@ -124,6 +124,10 @@ The FHIR standard offers a comprehensive set of parameters for filtering search 
 1. Using the FHIR Search collection in Postman, perform several Patient queries with the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```, `_sort=gender`.  
   
 ## Step 4 - Use the Chained & Reverse Chained Search Result Parameters 
+As Resources in FHIR 
+
+
+
 1. Using the FHIR Search collection in Postman, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
 
 
