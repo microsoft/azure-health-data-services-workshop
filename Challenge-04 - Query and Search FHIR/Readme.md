@@ -124,7 +124,7 @@ FHIR specifies a variety of parameters for filtering search results. Below are s
 1. Using the FHIR Search collection in Postman, perform several Patient queries with the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```, `_sort=gender`.  
   
 ## Step 4 - Use the Chained & Reverse Chained Search Result Parameters 
-Resources in FHIR are equipped with `Reference`-type Elements for capturing relationships between the people, activities, and items associated in real-world healthcare settings. For example, the `DiagnosticReport` Resource contains a `subject` Element, and the value given to the `subject` of a `DiagnosticReport` is a reference to another Resource - most often a `Patient`.   
+Resources in FHIR are equipped with `reference`-type Elements for capturing relationships between the people, activities, and items associated in real-world healthcare settings. For example, the `DiagnosticReport` Resource contains a `subject` Element, and the value given to the `subject` is a reference to another Resource - most often a `Patient`.    
 
 
 
