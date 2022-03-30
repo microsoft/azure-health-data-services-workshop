@@ -124,7 +124,7 @@ FHIR specifies a variety of parameters for filtering search results. Below are s
 1. Using the FHIR Search collection in Postman, perform several Patient queries with the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```, `_sort=gender`.  
   
 ## Step 4 - Use the Chained & Reverse Chained Search Result Parameters 
-Many Resources in FHIR are equipped with `reference` Elements for capturing the natural associations between entities in real-world healthcare settings.    
+Resources in FHIR are equipped with `reference` Elements for capturing associations between the people, activities, and items connected in real-world healthcare settings.    
 
 
 
