@@ -145,6 +145,7 @@ Below is an excerpt from a `DiagnosticReport` Resource. Notice how `Patient/f201
     ...}
     }
 
+In connection with `reference` Elements, the FHIR specification defines `reference` search parameters that allow retrieving Resources as referenced by other Resources. 
 
 
 1. Using the FHIR Search collection in Postman, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
