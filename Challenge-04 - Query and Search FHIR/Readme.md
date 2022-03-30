@@ -147,9 +147,11 @@ Below is an excerpt from a `DiagnosticReport` Resource. Notice how `Patient/f201
 
 In connection with `reference` Elements, FHIR Resources are defined with search parameters that allow querying for references from one Resource to another. 
 
-For example, we could perform a search for all `DiagnosticReport` Resource instances that reference `Patient/f201`:
+For example, the following search would query for all `DiagnosticReport` Resource instances that reference `Patient/f201`: 
 
-```GET {{fhirurl}}/DiagnosticReport?subject=Patient/f201```
+```azurecli
+GET {{fhirurl}}/DiagnosticReport?subject=Patient/f201
+```
 
 
 
