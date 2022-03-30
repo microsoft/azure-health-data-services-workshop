@@ -126,7 +126,7 @@ FHIR specifies a group of parameters for filtering search results. Below are sev
 ## Step 4 - Use the Chained & Reverse Chained Search Result Parameters 
 Resources in FHIR are equipped with `reference` Elements for capturing relationships between the people, activities, and items associated in real-world healthcare interactions. A reference in FHIR is created by populating a `reference` Element in one Resource with another Resource's [Logical ID](https://www.hl7.org/fhir/resource.html#id), [Business Identifier](https://www.hl7.org/fhir/resource.html#identifiers), or [Canonical URL](https://www.hl7.org/fhir/resource.html#canonical).
 
-Below is an excerpt from a `DiagnosticReport` Resource. Notice how `Patient/f201` is referenced as the `subject` of the report.
+Below is an excerpt from a `DiagnosticReport` Resource with a reference to a `Patient` Resource. Notice how `Patient/f201` is referenced as the `subject` of the report.
 
     {
     ...
