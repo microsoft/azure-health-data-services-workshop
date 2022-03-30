@@ -113,7 +113,7 @@ For composite searches, FHIR service supports the following search parameter typ
 To learn more about composite searches in FHIR, please visit [here](https://build.fhir.org/search.html#combining).
   
 ## Step 3 - Add Search Result Parameters  
-FHIR specifies a variety of parameters for filtering search results. Below are several examples.
+FHIR specifies a group of parameters for filtering search results. Below are several examples.
 
 |Parameter| Functionality|
 ----------|--------------------------------------------------------------------------------------------------------------------
