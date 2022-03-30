@@ -145,7 +145,7 @@ Below is an excerpt from a `DiagnosticReport` Resource. Notice how `Patient/f201
     ...}
     }
 
-In connection with `reference` Elements, FHIR Resources are defined with `reference` search parameters that allow querying Resources by searching for references to other Resources.
+In connection with `reference` Elements, FHIR Resources are defined with `reference` search parameters that allow querying Resources for references to other Resources.
 
 
 
