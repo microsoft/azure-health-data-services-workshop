@@ -106,7 +106,7 @@ For composite searches, FHIR service supports the following search parameter typ
 + Token, String
 + Token, Token
 
-1. Using the FHIR Search collection in Postman, search for `Patient` Resource instances narrowed down by the following search parameters: ```date```, ```lastmodified```, ```identifier```, and more. Then, modify the included API calls with the `&` operator to combine different search parameters.
+1. Using the FHIR Search collection in Postman, search for `Patient` Resource instances narrowed by the following search parameters: ```date```, ```lastmodified```, ```identifier```, and more. Then, modify the included API calls with the `&` operator to combine different search parameters.
 
 2. In Postman, make an API call with the `GET List Patient Observations by Results Composite` request. Then modify the `http://loinc.org|8462-4` (diastolic blood pressure) value and see if you can get different search results.
 
