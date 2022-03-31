@@ -142,7 +142,7 @@ Below is an excerpt from a `DiagnosticReport` Resource with a reference to a `Pa
             "display": "Roel"
             }
         ...}
-    ...}
+    ...}]
     }
 
 In connection with `reference` Elements, Resources also have `reference` search parameters which allow querying for Resources that contain references to other Resources. 
