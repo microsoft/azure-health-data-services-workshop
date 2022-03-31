@@ -159,7 +159,7 @@ To simplify using multiple search parameters in a reference-based query, the FHI
 GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
 ```
 
-The FHIR data model's `reference` associations are one-directional, meaning that structurally references are always formed in the direction from a "parent" Resource to a "child" Resource (and not vice-versa). For this reason, a chained search in FHIR as shown above is always in the direction from the referring Resource to the referred Resource.
+The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always in the direction from "parent" Resource to "child" Resource (and not vice-versa). As demonstrated in the chained search above, `Patient` is positioned as the "child" Resource with `DiagnosticReport` as its "parent".
 
 However, FHIR does specify a method of reverse-chain searching with the `_has` parameter.  
 
