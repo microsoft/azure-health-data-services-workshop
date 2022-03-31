@@ -68,7 +68,7 @@ The search parameter ```_id``` refers to the Logical ID of a Resource instance a
  GET {{FHIR_URL}}/Patient?_id=123
 ```
 
-This search returns the `Patient` Resource instance with the given `id` (there can only be one Resource instance for a given `id` on a FHIR server). 
+This search returns the `Patient` Resource instance with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server). 
   
 
 ## Step 1 - Make FHIR API Calls with Search Parameters
