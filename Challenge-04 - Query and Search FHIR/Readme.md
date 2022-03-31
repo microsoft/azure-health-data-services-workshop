@@ -153,7 +153,7 @@ For example, the following API call queries a FHIR server for all `DiagnosticRep
 GET {{fhirurl}}/DiagnosticReport?subject=Patient/f201
 ```
 
-The FHIR standard also defines syntax for chaining search parameters together with `.` to simplify using multiple search parameters in a query. Below is a chained search for all `DiagnosticReport` instances that reference a `subject` (i.e., `Patient`) with the name of `Roel`.
+The FHIR standard also defines syntax for chaining search parameters together with `.` to simplify the use of multiple search parameters in a query. Below is a chained search for all `DiagnosticReport` instances that reference a `subject` (i.e., `Patient`) with the name of `Roel`.
 
 ```azurecli
 GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
