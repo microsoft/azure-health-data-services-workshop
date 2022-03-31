@@ -153,8 +153,11 @@ For example, the following API call queries a FHIR server for all `DiagnosticRep
 GET {{fhirurl}}/DiagnosticReport?subject=Patient/f201
 ```
 
+The FHIR standard also defines syntax for chaining search parameters together with `.` to simplify using multiple search parameters in a query. Below is a chained search for all `DiagnosticReport` instances that reference a `subject` (i.e., `Patient`) with the name of `Roel`.
 
-
+```azurecli
+GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
+```
 
 
 1. Using the FHIR Search collection in Postman, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
