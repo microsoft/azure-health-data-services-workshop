@@ -147,7 +147,7 @@ Below is an excerpt from a `DiagnosticReport` Resource with a reference to a `Pa
 
 In connection with `reference` Elements, Resources also have `reference` search parameters, which narrow Resources returned by looking at any contained references to other Resources. 
 
-For example, the following API call queries a FHIR server for all `DiagnosticReport` instances that reference `Patient/f201`. The `subject` parameter in the request is a `reference` type search parameter.
+For example, the following queries a FHIR server for all `DiagnosticReport` instances that reference `Patient/f201`. The `subject` parameter in the request is a `reference` type search parameter.
 
 ```azurecli
 GET {{fhirurl}}/DiagnosticReport?subject=Patient/f201
