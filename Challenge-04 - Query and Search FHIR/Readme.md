@@ -161,7 +161,7 @@ GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
 
 The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always from "parent" Resource to "child" Resource (without a reverse reference in the opposite direction). As demonstrated in the chained search above, `Patient` is the "child" with `DiagnosticReport` as the "parent".
 
-Despite references being one-directional, FHIR does specify a method of reverse-chain searching with the `_has` parameter. This allows searching for a "child" Resource based on a reference pointing to it from a "parent" Resource. This is demonstrated in the request below, which searches a FHIR server for a `Patient` Resource referenced in the `patient` search parameter of a `DiagnosticReport` with code `1234-5`. 
+Despite references being one-directional, FHIR does specify a method of reverse-chain searching with the `_has` parameter. This allows searching for a "child" Resource based on a reference from a "parent" Resource. This is demonstrated in the request below, which searches a FHIR server for a `Patient` Resource referenced in the `patient` search parameter of a `DiagnosticReport` with code `1234-5`. 
 
 ```azurecli
 GET [base]/Patient?_has:DiagnosticReport:patient:code=1234-5
