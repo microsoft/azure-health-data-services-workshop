@@ -153,13 +153,13 @@ For example, the following request queries a FHIR server for all `DiagnosticRepo
 GET {{fhirurl}}/DiagnosticReport?subject=Patient/f201
 ```
 
-To simplify using multiple search parameters in a reference-based query, the FHIR standard also defines syntax for chaining parameters together with `.` to pinpoint results based on a referenced Resource type. Below is a chained search for all `DiagnosticReport` instances that reference a `subject` (i.e., `Patient`) with the name of `Roel` (note the `:` after `subject`, which makes `Patient` into a [type modifier](https://www.hl7.org/fhir/codesystem-search-modifier-code.html#search-modifier-code-type)).
+To simplify using multiple search parameters in a reference-based query, the FHIR standard also defines syntax for chaining parameters together with `.` to pinpoint results. Below is a chained search for all `DiagnosticReport` instances that reference a `subject` (i.e., `Patient`) with the name of `Roel` (note the `:` after `subject`, which makes `Patient` into a [type modifier](https://www.hl7.org/fhir/codesystem-search-modifier-code.html#search-modifier-code-type)).
 
 ```azurecli
 GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
 ```
 
-The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always from "parent" Resource to "child" Resource (and without a reverse reference in the opposite direction). As demonstrated in the chained search above, `Patient` is the "child" with `DiagnosticReport` as the "parent".
+The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always from "parent" Resource to "child" Resource (without a reverse reference in the opposite direction). As demonstrated in the chained search above, `Patient` is the "child" with `DiagnosticReport` as the "parent".
 
 Nonetheless, FHIR does specify a method of reverse-chain searching with the `_has` parameter. 
 
