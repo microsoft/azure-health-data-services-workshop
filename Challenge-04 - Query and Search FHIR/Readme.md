@@ -145,7 +145,7 @@ Below is an excerpt from a `DiagnosticReport` Resource with a reference to a `Pa
     ...}]
     }
 
-In connection with `reference` Elements, Resources also have `reference` search parameters, which narrow Resources by looking at any references they contain to other Resources. 
+In connection with `reference` Elements, Resources also have `reference` search parameters, which serve to query Resources by looking at any contained references to other Resources. 
 
 For example, the following request queries a FHIR server for all `DiagnosticReport` instances that reference `Patient/f201`. The `subject` parameter in the request is a `reference` type search parameter.
 
@@ -161,7 +161,7 @@ GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
 
 The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always from "parent" Resource to "child" Resource (and without a reverse reference in the opposite direction). As demonstrated in the chained search above, `Patient` is the "child" with `DiagnosticReport` as the "parent".
 
-However, FHIR does specify a method of reverse-chain searching with the `_has` parameter.  
+Nonetheless, FHIR does specify a method of reverse-chain searching with the `_has` parameter. 
 
 
 
