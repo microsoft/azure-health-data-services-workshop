@@ -161,15 +161,13 @@ GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
 
 The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always from "parent" Resource to "child" Resource (without a reverse reference in the opposite direction). As demonstrated in the chained search above, `Patient` is the "child" with `DiagnosticReport` as the "parent".
 
-Despite references being one-directional, FHIR does specify a method of reverse-chain searching with the `_has` parameter. This allows searching for a "child" Resource based on a reference from a "parent" Resource. This is demonstrated in the request below, which searches a FHIR server for a `Patient` Resource referenced in the `patient` search parameter of a `DiagnosticReport` with code `1234-5`. 
+Despite references being one-directional, FHIR does specify a method of reverse-chained searching with the `_has` parameter. This allows searching for a "child" Resource as identified by a reference from a "parent" Resource. This is demonstrated in the request below, which searches a FHIR server for a `Patient` Resource referenced in the `patient` search parameter of a `DiagnosticReport` with a code of `1234-5`. The `patient` search parameter functions in some Resources (`Observation`, `DiagnosticReport`, etc.) as a shortened form of `subject:Patient`.
 
 ```azurecli
 GET {{fhirurl}}/Patient?_has:DiagnosticReport:patient:code=1234-5
 ```
 
-
-
-1. Using the FHIR Search collection in Postman, search for Patients using ```_has```.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+1. Using the FHIR Search collection in Postman, conduct a reverse-chained search for Patients using the ```_has``` parameter.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
 
 
 ## Step 5 - Use the Include & Reverse Include Search Result Parameters  
