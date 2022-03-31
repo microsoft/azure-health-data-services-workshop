@@ -145,7 +145,7 @@ Below is an excerpt from a `DiagnosticReport` Resource with a reference to a `Pa
     ...}
     }
 
-In connection with `reference` Elements, Resources are defined with `reference` search parameters which allow querying for Resource instances that contain references to other Resources. 
+In connection with `reference` Elements, Resources also have `reference` search parameters which allow querying for Resource instances that contain references to other Resources. 
 
 For example, the following search is for all `DiagnosticReport` Resource instances that reference `Patient/f201`. 
 
