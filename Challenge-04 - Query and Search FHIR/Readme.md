@@ -43,13 +43,13 @@ When doing a search on a FHIR server, the initial target for the query can be an
 + A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + All Resources on a FHIR server (e.g., querying against a search parameter shared by all Resources) 
 
-The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you want to pull all `Patient` Resource instances in the FHIR server database, you could query for the `Patient` Resource type: 
+The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you want to pull all `Patient` Resource instances in the FHIR server database, you could query for the `Patient` Resource type. 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
 ```
 
-If you want to retrieve a specific `Patient` Resource instance, you could narrow your search with the `_id` search parameter: 
+If you want to retrieve a specific `Patient` Resource instance, you could narrow your search with the `_id` search parameter. 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient?_id=123
