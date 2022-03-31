@@ -153,7 +153,7 @@ For example, the following queries a FHIR server for all `DiagnosticReport` inst
 GET {{fhirurl}}/DiagnosticReport?subject=Patient/f201
 ```
 
-To simplify using multiple search parameters in a reference-based query, the FHIR standard also defines syntax for chaining search parameters together with `.`. Below is a chained search for all `DiagnosticReport` instances that reference a `subject` (i.e., `Patient`) with the name of `Roel`. Note the `:` after `subject`, which makes `Patient` into a [type modifier](https://www.hl7.org/fhir/codesystem-search-modifier-code.html#search-modifier-code-type).
+To simplify using multiple search parameters in a reference-based query, the FHIR standard also defines syntax for chaining search parameters together with `.`. Below is a chained search for all `DiagnosticReport` instances that reference a `subject` (i.e., `Patient`) with the name of `Roel` (note the `:` after `subject`, which makes `Patient` into a [type modifier](https://www.hl7.org/fhir/codesystem-search-modifier-code.html#search-modifier-code-type)).
 
 ```azurecli
 GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
