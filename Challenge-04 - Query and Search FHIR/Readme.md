@@ -172,12 +172,15 @@ GET {{fhirurl}}/Patient?_has:DiagnosticReport:patient:code=12345
 
 
 ## Step 5 - Use the Include & Reverse Include Search Result Parameters  
-As discussed in Step 4, a `reference` in FHIR forms a connection from one Resource to another. FHIR enables querying for and traversing `reference` connections in order to narrow search results. In some situations, you may also want to use `reference` associations between Resources to cast a wider net to explore information spread throughout a FHIR server's database.
+As discussed in Step 4, a `reference` in FHIR forms a connection from one Resource to another. FHIR enables querying for and traversing `reference` connections in order to narrow search results. In some situations, you may also want to use `reference` associations between Resources to cast a wider net to explore a FHIR server's database.
 
-As an example, say you want to 
+As an example, say you are interested in retrieving all `AllergyIntolerance` instances with a specific code, and you would also like to retrieve all `Patient` instances on the FHIR server that are referenced by this type of `AllergyIntolerance`. You could do this in two searches by first querying with `AllergyIntolerance?_code=` and then querying for referenced `Patient` instances using `_has:AllergyIntolerance:patient:code=`.
 
+But it would be more efficient (and convenient) to retrieve all of this information in a single query. The FHIR standard provides for this type of "open ended" search capability in the `_include` and `_revinclude` parameters.
 
-
+```azurecli
+GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
+```
 
 
 
