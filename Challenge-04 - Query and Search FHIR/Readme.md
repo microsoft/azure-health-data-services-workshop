@@ -161,11 +161,13 @@ GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
 
 The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always from "parent" Resource to "child" Resource (without a reverse reference in the opposite direction). As demonstrated in the chained search above, `Patient` is the "child" with `DiagnosticReport` as the "parent" Resource.
 
-Despite this, the FHIR specification does make room for reverse-chained searching through the `_has` parameter. This makes it possible to search for a "child" Resource as referenced by a "parent" Resource. This is demonstrated in the request below, which searches a FHIR server for any `Patient` (the "child") with a `DiagnosticReport` (as the "parent") containing the code `1234-5` (the `patient` search parameter functions as a shortened form of `subject:Patient`).
+Despite this, the FHIR specification does make room for reverse-chained searching through the `_has` parameter. This makes it possible to search for a "child" Resource as referenced by a "parent" Resource. This is demonstrated in the request below, which searches a FHIR server for any `Patient` (the "child") with a `DiagnosticReport` (as the "parent") containing the code `1234-5`. You can think of this as searching for a `Patient` that has this type of `DiagnosticReport` as its "parent". 
 
 ```azurecli
 GET {{fhirurl}}/Patient?_has:DiagnosticReport:patient:code=1234-5
 ```
+
+In the request above, the `patient` search parameter functions as a shortened form of `subject:Patient`.
 
 1. Using the FHIR Search collection in Postman, conduct a reverse-chained search for Patients using the ```_has``` parameter.  For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
 
