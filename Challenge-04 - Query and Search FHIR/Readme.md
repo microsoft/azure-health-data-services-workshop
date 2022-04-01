@@ -98,7 +98,7 @@ To remedy this shortcoming of the `&` operator, some Resources are defined with 
 GET {{FHIR_URL}}/Group?characteristic-value=gender$mixed
 ```
 
-For composite searches, FHIR service supports the following data type pairings (the request directly above is an example of a Token, Token pairing):
+For composite searches, FHIR service supports the following parameter type pairings (the request directly above is an example of a Token, Token pairing):
 + Reference, Token
 + Token, Date
 + Token, Number, Number
