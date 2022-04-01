@@ -117,7 +117,7 @@ FHIR specifies a group of parameters for filtering search results. Below are sev
 
 |Parameter| Functionality|
 ----------|--------------------------------------------------------------------------------------------------------------------
-|`_elements`| For limiting search results to a list of Elements as specified by their corresponding search parameters. For example, `_elements=identifier,birthdate,language` for a `Patient` Resource.
+|`_elements`| For limiting search results to a list of Elements specified as search parameters. For example, `_elements=identifier,birthdate,language` for a `Patient` Resource.
 |`_summary`| For returning pre-selected Elements when querying a Resource. For example, searching with the `_summary=true` parameter causes the server to only return Elements marked with `ElementDefinition.isSummary` in their base definition.
 |`_total` | For returning the number of Resources that match the given search criteria. For example, `_total=accurate` returns the exact number of Resources found.
 |`_sort`  | For setting the sorting hierarchy of search parameter results. For example, `_sort=status,date,category`.
