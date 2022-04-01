@@ -171,7 +171,7 @@ GET {{fhirurl}}/Patient?_has:DiagnosticReport:patient:code=1234-5
 
 
 ## Step 5 - Use the Include & Reverse Include Search Result Parameters  
-As discussed in Step 4, a `reference` in FHIR forms a connection from one Resource to another. FHIR enables querying for and traversing `reference` connections in order to pinpoint search results. In some situations, you may also want to use `reference` associations between Resources to cast a wider net to explore information spread throughout a FHIR server's database.
+As discussed in Step 4, a `reference` in FHIR forms a connection from one Resource to another. FHIR enables querying for and traversing `reference` connections in order to narrow search results. In some situations, you may also want to use `reference` associations between Resources to cast a wider net to explore information spread throughout a FHIR server's database.
 
 As an example, say you want to 
 
