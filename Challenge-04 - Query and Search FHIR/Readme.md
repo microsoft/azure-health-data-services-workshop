@@ -176,7 +176,7 @@ As discussed in Step 4, a `reference` in FHIR forms a connection from one Resour
 
 To illustrate, say you are interested in retrieving all `AllergyIntolerance` instances with a specific code, and you would also like to retrieve all `Patient` instances on the FHIR server that are referenced by this type of `AllergyIntolerance`. You could do this in two searches by first querying with `AllergyIntolerance?_code=` and then searching for referenced `Patient` instances using `_has:AllergyIntolerance:patient:code=`.
 
-But it would be more efficient to retrieve all of this information in a single query. This capability is provided in the `_include` and `_revinclude` parameters. The example below illustrates how `_include=` expands the main search (`AllergyIntolerance?_code=`) by specifying what referenced Resource should also be returned (`patient` is short for `subject:Patient`). 
+But it would be more efficient to retrieve all of this information in a single query. This capability is provided in the `_include` and `_revinclude` parameters. The example below illustrates how `_include=` expands the main search (`AllergyIntolerance?_code=`) by specifying what referenced Resource to return also (`patient` is short for `subject:Patient`). 
 
 ```azurecli
 GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
