@@ -27,7 +27,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 
 At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities tied to healthcare interactions. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Observation`, `Encounter`, `Procedure`, etc.), and many other aspects to do with healthcare scenarios. 
 
-Within every Resource, FHIR defines a set of Elements for storing details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR, while many other Elements are only used in specific Resources (e.g., the `gender` Element is only found in `Patient`, `Person`, `Practitioner`, and `RelatedPerson` Resources). Furthermore, the FHIR model is designed to allow users to add Elements to Resources through extensions.
+Within every Resource, FHIR defines a set of Elements for storing details that uniquely identify each Resource *instance*. Elements such as `id` and `meta` apply to all Resources in FHIR, while other Elements are attached to specific Resources (e.g., the `gender` Element is only found in `Patient`, `Person`, `Practitioner`, and `RelatedPerson` Resources). Furthermore, the FHIR model is designed to allow users to add Elements to Resources through extensions.
 
 Along with Elements, each FHIR Resource is defined with a set of search parameters. When a client app makes FHIR API calls, search parameters are used to focus the data retrieved from the FHIR server. There are standard search parameters that apply to all Resources (e.g., `_id`, `_lastUpdated`), and there are Resource-specific search parameters (e.g., `gender` is a Resource-specific search parameter defined for `Patient`). Additionally, FHIR provides a framework for creating custom search parameters. See the links below for more information. 
 
@@ -38,12 +38,12 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 ## FHIR Search methods
 When doing a search on a FHIR server, the initial target for the query can be any of the following:
 
-+ A Resource type
 + A specific Resource instance
++ A set of Resource instances
 + A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + All Resources on a FHIR server (e.g., querying against a search parameter shared by all Resources) 
 
-The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you want to pull all `Patient` Resource instances in the FHIR server database, you could query for the `Patient` Resource type. 
+The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you query for the `Patient` Resource type alone, you will retrieve all `Patient` Resource instances in the FHIR server database. 
 
 ```azurecli
 GET {{FHIR_URL}}/Patient
@@ -55,14 +55,14 @@ If you want to retrieve a specific `Patient` Resource instance, you could narrow
 GET {{FHIR_URL}}/Patient?_id=123
 ```
 
-You can also call the FHIR search API with `POST`, which is useful if the query string is too long or complex for a single line. To search using `POST`, the search parameters are delivered in JSON format in the body of the request.
+You can also call the FHIR search API with `POST`, which is useful if the query string is too long for a single line. To search using `POST`, the search parameters are delivered in JSON format in the body of the request.
 
 Whenever a search request is successful, you’ll receive a JSON FHIR bundle response with a `"type": "searchset"` entry followed by the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
 ## Common Search Parameters 
 The following parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
 
-The search parameter ```_id``` refers to the Logical ID of a Resource instance and can be used when the query specifies a Resource type (`Patient` is used as an example):
+The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance and can be used when the query specifies a Resource type (`Patient` is used as an example here):
 
 ```azurecli
  GET {{FHIR_URL}}/Patient?_id=123
@@ -92,7 +92,7 @@ This method with `&` works as expected when the queried Elements are single attr
 
 As an example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we inspect the search results, to our surprise we find that the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we discover this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements having no connection with each other.
 
-To remedy this shortcoming of the `&` operator, some Resources are defined with composite search parameters, which make it possible to search using Element pairs as logically inter-related units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic" : "gender"` paired with `"value": "mixed"`. Note the use of the `$` operator to specify the value of the paired search parameter.
+To remedy this shortcoming of the `&` operator, some Resources are defined with composite search parameters, which make it possible to search against Element pairs as logically inter-related units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic" : "gender"` paired with `"value": "mixed"`. Note the use of the `$` operator to specify the value of the paired search parameter.
 
 ```azurecli
 GET {{FHIR_URL}}/Group?characteristic-value=gender$mixed
@@ -172,11 +172,11 @@ GET {{fhirurl}}/Patient?_has:DiagnosticReport:patient:code=12345
 
 
 ## Step 5 - Use the Include & Reverse Include Search Result Parameters  
-As discussed in Step 4, a `reference` in FHIR forms a connection from one Resource to another. FHIR enables querying for and traversing `reference` connections in order to narrow search results. In some situations, you may also want to use `reference` associations between Resources to cast a wider net for doing an exploratory search in a FHIR server's database.
+As discussed in Step 4, a `reference` in FHIR forms a connection from one Resource to another. FHIR enables querying for and traversing `reference` connections in order to narrow search results. In some situations, you may also want to use `reference` associations between Resources to cast a wider net for exploratory searches in a FHIR server's database.
 
-As an example, say you are interested in retrieving all `AllergyIntolerance` instances with a specific code, and you would also like to retrieve all `Patient` instances on the FHIR server that are referenced by this type of `AllergyIntolerance`. You could do this in two searches by first querying with `AllergyIntolerance?_code=` and then querying for referenced `Patient` instances using `_has:AllergyIntolerance:patient:code=`.
+Say you are interested in retrieving all `AllergyIntolerance` instances with a specific code, and you would also like to retrieve all `Patient` instances on the FHIR server that are referenced by this type of `AllergyIntolerance`. You could do this in two searches by first querying with `AllergyIntolerance?_code=` and then querying for referenced `Patient` instances using `_has:AllergyIntolerance:patient:code=`.
 
-But it would be more efficient (and convenient) to retrieve all of this information in a single query. The FHIR standard provides for this type of "open ended" search capability with the `_include` and `_revinclude` parameters.
+But it would be more efficient to retrieve all of this information in a single query. The FHIR standard provides for this type of "open ended" search capability with the `_include` and `_revinclude` parameters.
 
 ```azurecli
 GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
