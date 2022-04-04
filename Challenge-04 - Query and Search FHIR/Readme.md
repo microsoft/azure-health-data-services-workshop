@@ -182,10 +182,10 @@ But it would be more efficient to retrieve all of this information in a single q
 GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
 ```
 
-Likewise but in the opposite direction, you can use `_revinclude` to retrieve Resources along with other Resources that refer to them. Below is an example where `MedicationRequest` Resource instances (e.g., for an allergy medication) are returned along with a `Patient` Resource that they reference. Changing the search criteria for the `Patient` Resource could return multiple `Patient` instances, each with a set of `MedicationRequest` instances.
+Likewise but in the opposite direction, you can use `_revinclude` to retrieve Resources along with other Resources that refer to them. Below is an example where `MedicationRequest` Resource instances (e.g., for an allergy medication) are returned along with the `Patient` Resource instances that they reference. The `Patient` search is limited to patients who live in the city specified in the `_address-city` parameter.
 
 ```azurecli
-GET {{fhirurl}}/Patient?_id=f201&_revinclude=MedicationRequest:patient:medication.code=1234567
+GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:patient:medication.code=1234567
 ```
 
 1. Using the FHIR Search collection in Postman, search for `PractitionerRole` including the `Practitioner` Resource in the result to reduce calls to the server. Discover all `PractitionerRoles` for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
