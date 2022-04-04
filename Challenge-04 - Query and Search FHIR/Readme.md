@@ -146,7 +146,7 @@ Below is an excerpt from a `DiagnosticReport` Resource with a reference to a pat
     ...}]
     }
 
-In connection with `reference` Elements, Resources also have `reference` search parameters, which allow querying Resources by scoping out any references pointing to other Resources. 
+In connection with `reference` Elements, Resources also have `reference` search parameters, which allow querying Resources by scoping out any references they have to other Resources. 
 
 For example, the following request queries a FHIR server for all `DiagnosticReport` instances that reference `Patient/f201`. The `subject` parameter in the request is a `reference` type search parameter.
 
