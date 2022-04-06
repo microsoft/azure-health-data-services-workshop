@@ -4,7 +4,7 @@
 
 Welcome to Challenge-02!
 
-In this challenge, you will learn how to use Azure API for FHIR's custom `$convert-data` operation to convert HL7v2 and C-CDA files into FHIR.
+In this challenge, you will learn how to use the FHIR service's custom `$convert-data` operation to convert HL7v2 and C-CDA files into FHIR.
 
 ## Background
 
@@ -34,7 +34,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
 2. Rename the new request to `Convert Data - HL7`. 
 3. Fill in the URL of the request with `{{fhirurl}}/$convert-data`. 
-4. Change the HTTP operation type from **GET** to **POST**.
+4. Change the HTTP operation from **GET** to **POST**.
 <img src="./media/Postman_POST.png" height="328">  
 
 5. Go to the **Authorization** tab of the request and make the following changes:
@@ -60,7 +60,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
     __Hint:__ In the sample request in the documentation (link above), look at how the `\n` newline characters are placed in the HL7v2 payload. Add newline characters like these where needed in the HL7v2 message in the `Convert Data - HL7` request. 
 
-    *Optional – prepare the JSON request parameters and HL7v2 payload in VS Code (with the HL7 extension installed) or in 7Edit first before pasting into the body of the Postman request.
+    *Optional – prepare the JSON request parameters and HL7v2 payload in VS Code (with the HL7 extension installed) first before pasting into the body of the Postman request.
 
 6. Make sure to `Save` the `Convert Data - HL7` request.
 
@@ -114,13 +114,15 @@ Now you will make another API request similar to the one above, except this time
 
 3. Refer back to the FHIR service `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the JSON body of the request. Be aware that the parameter values now need to work for C-CDA data.  
 
-4. You will need to format the C-CDA data so that it sits correctly in the JSON request body.
+4. You will need to format the C-CDA data payload so that it sits correctly in the JSON request body.
 
-    __Hint:__ The JSON spec requires all keys and values to be surrounded by double quotes. Aside from the surrounding quotes, however, any double quotes *within* JSON-transported data must be `\` escaped. Look at the `"` quotation marks in the C-CDA data. These `"` quotes all need to be `\` escaped in order for the request body to be valid JSON. 
+    __Hint:__ The JSON spec requires all keys and values to be surrounded by double quotes. Any double quotes *within* the JSON data payload must be `\` escaped, however. Look at the `"` quotation marks in the C-CDA data string. These `"` quotes all need to be `\` escaped in order for the `$convert-data` request to work. 
 
-6. When ready, copy and paste the JSON-formatted request parameters with the C-CDA payload into the `Body` of the `Convert Data - CCDA` request in Postman.
+5. When ready, copy and paste the JSON-formatted request parameters with the C-CDA payload into the `Body` of the `Convert Data - CCDA` request in Postman.
 
-5. Select the `raw` button and choose `JSON` from the dropdown menu on the right.
+6. Select the `raw` button and choose `JSON` from the dropdown menu on the right.
+
+7. Make sure to `Save` the `Convert Data - CCDA` request.
 
 ## Step 6 - Convert Data
 

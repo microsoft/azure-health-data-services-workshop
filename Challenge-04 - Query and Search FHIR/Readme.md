@@ -70,14 +70,12 @@ The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fh
 
 This search returns the `Patient` Resource instance with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server). 
   
-
 ## Step 1 - Make FHIR API Calls with Search Parameters
 1. Go to Postman, open the FHIR Search collection provided in Challenge-01, and search for patients using the following parameters: ```_id```, ```name```, and others.
 
 + **Q:** _What Element are you searching against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
 
-__Note:__ The FHIR service supports most Resource-specific search parameters defined in the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
-
+__Note:__ The FHIR service supports most Resource-specific search parameters defined in the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json). 
   
 ## Step 2 - Perform Composite Searches 
 In cases where you want to modify the scope of a query by specifying more than one search parameter, one way of doing this is with the logical AND (`&`) operator. 
@@ -92,7 +90,7 @@ This method with `&` works as expected when the queried Elements are single attr
 
 As an example, let's imagine we are searching for `Group` Resource instances with `characteristic=gender&value=mixed`. When we inspect the search results, to our surprise we find that the search has returned a `Group` instance with `"characteristic": "gender"` and `"value": "male"`. Taking a closer look, we discover this was due to the `Group` instance having `"characteristic" : "gender"`, `"value": "male"` *and* `"characteristic": "age"`, `"value": "mixed"`. As it turns out, the `&` operator returned a positive match on `"characteristic": "gender"` and `"value": "mixed"` despite these Elements having no connection with each other.
 
-To remedy this shortcoming of the `&` operator, some Resources are defined with composite search parameters, which make it possible to search against Element pairs as logically inter-related units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic" : "gender"` paired with `"value": "mixed"`. Note the use of the `$` operator to specify the value of the paired search parameter.
+To remedy this shortcoming of the `&` operator, some Resources are defined with composite search parameters, which make it possible to search against Element pairs as logically inter-related units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic" : "gender"` paired with `"value": "mixed"`. Note the use of the `$` operator to specify the value of the paired search parameter. 
 
 ```azurecli
 GET {{FHIR_URL}}/Group?characteristic-value=gender$mixed
@@ -117,7 +115,7 @@ FHIR specifies a set of parameters for filtering search results. Below are sever
 
 |Parameter| Functionality|
 ----------|--------------------------------------------------------------------------------------------------------------------
-|`_elements`| For limiting search results to a list of Elements. For example, `_elements=identifier,birthdate,language` for a `Patient` Resource.
+|`_elements`| For limiting the information returned to a list of Elements. For example, `_elements=identifier,birthdate,language` for a `Patient` Resource.
 |`_summary`| For returning pre-selected Elements when querying a Resource. For example, searching with the `_summary=true` parameter causes the server to only return Elements marked with `ElementDefinition.isSummary` in their base definition.
 |`_total` | For returning the number of Resources that match the given search criteria. For example, `_total=accurate` returns the exact number of Resources found.
 |`_sort`  | For setting the sorting hierarchy of search parameter results. For example, `_sort=status,date,category`.
@@ -187,6 +185,8 @@ Likewise but in the opposite direction, you can use `_revinclude` to retrieve Re
 ```azurecli
 GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:patient:medication.code=1234567
 ```
+
+**Note:** Because of the potential for "open-ended" searches with `_include` and `_revinclude`, the number of returned results with these search parameters is limited to 100 items on the FHIR service. 
 
 1. Using the FHIR Search collection in Postman, search for `PractitionerRole` including the `Practitioner` Resource in the result to reduce calls to the server. Discover all `PractitionerRoles` for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
   

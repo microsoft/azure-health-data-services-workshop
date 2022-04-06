@@ -24,7 +24,7 @@ By the end of the section you will be able to
 * Perform a Chi-Square test to determine the effect of one variable on another
 
 ### Prerequisites 
-* Deployed Azure API for FHIR
+* Deployed FHIR service
 * Azure Databricks
 * Completed Challenge - Export and Anonymize Data
 
@@ -53,7 +53,7 @@ By the end of the section you will be able to
 * Create a Power BI report with a widget summarizing Flu vaccination rates geographically
 
 ### Prerequisites 
-* Deployed Azure API for FHIR
+* Deployed FHIR service
 * Power BI
 * Azure Synapse Analytics
 * Completed Challenge - Export and Anonymize Data
@@ -83,4 +83,4 @@ Information on group by aggregations can be found [here](https://docs.microsoft.
 
 ## Next Steps
 
-Click [here](<../Challenge-07 - Consent capabilities of Azure API for FHIR/ReadMe.md>) to proceed to the next challenge.
+Click [here](<../Challenge-07 - FHIR service consent capabilities/ReadMe.md>) to proceed to the next challenge.

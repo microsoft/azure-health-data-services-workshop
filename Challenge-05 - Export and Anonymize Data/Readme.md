@@ -3,7 +3,7 @@
 
 Welcome to Challenge-05!
 
-In this challenge, you will learn how to export anonymized data from Azure API for FHIR.
+In this challenge, you will learn how to export de-identified data from the FHIR service.
 
 ## Background
 
@@ -11,14 +11,14 @@ Healthcare organizations and payors frequently partner with outside research gro
 
 ## Learning Objectives for Challenge-05
 By the end of this challenge you will be able to
-* Configure bulk export of FHIR data from Azure API for FHIR
+* Configure bulk export of FHIR data from FHIR service
 * Use the sample anonymization config file to de-identify FHIR data on export
 * Export anonymized data to an ADLS Gen2 account
 * Share anonymized data with a group not affiliated with your organization
 
 ## Prerequisites 
-* An Azure environment with a working instance of Azure API for FHIR. 
-* FHIR data loaded into Azure API for FHIR. If the data you have loaded does not include Immunization or Patient Resources, go ahead and [load this bundle](https://github.com/kamoclav/openhack-mc4h-2/blob/main/Challenge-9/synthea_sample_data_fhir_r4%20OpenHack.zip) for a small dataset or check out [Synthea](https://synthetichealth.github.io/synthea/) for a larger dataset.
+* An Azure environment with a working FHIR service instance. 
+* FHIR data loaded into FHIR service. If the data you have loaded does not include Immunization or Patient Resources, go ahead and [load this bundle](https://github.com/kamoclav/openhack-mc4h-2/blob/main/Challenge-9/synthea_sample_data_fhir_r4%20OpenHack.zip) for a small dataset or check out [Synthea](https://synthetichealth.github.io/synthea/) for a larger dataset.
 * Azure Data Lake Storage Gen2 deployed in your Azure environment.
 
 ## Step 1: Review sample anonymization configuration and customize if needed
@@ -27,9 +27,9 @@ Microsoft provides a sample configuration file for anonymizing data according to
 More information on HIPAA de-identification rules can be found [here](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html).
 
 **Task:**  
-Configure your Azure API for FHIR for export to a storage account following the instructions [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/configure-export-data). <br>
+Configure your FHIR service for export to a storage account following the instructions [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/configure-export-data). <br>
 
-Note: You are enabling a managed identity on the Azure API for FHIR resource. That managed identity is what needs to be added to the storage account with Storage Blob Data Contributor privledges. Be careful not to add a service client or a service principle by mistake. <br>
+Note: You are enabling a managed identity on the FHIR service resource. That managed identity is what needs to be added to the storage account with Storage Blob Data Contributor privledges. Be careful not to add a service client or a service principle by mistake. <br>
 
 For more information on the sample anonymization file, check out [de-identified-export-operation-on-the-fhir-server](https://github.com/microsoft/Tools-for-Health-Data-Anonymization/blob/master/docs/FHIR-anonymization.md#how-to-perform-de-identified-export-operation-on-the-fhir-server).
 
@@ -39,7 +39,7 @@ For a general overview of the `$export` operation's query parameters for de-iden
 ## Step 2: Export anonymized data to a storage account
 
 **Task:**  
-Perform a de-identified `$export` from Azure API for FHIR. If you get stuck, refer to the documentation in Step 1. <br>
+Perform a de-identified `$export` from the FHIR service. If you get stuck, refer to the documentation in Step 1. <br>
 
 The general format of the query will be <br>
 `https://<<FHIR service base URL>>/$export?_container=<<container_name>>&_anonymizationConfig=<<config file name>>&_anonymizationConfigEtag=<<ETag on storage>>`
@@ -63,7 +63,7 @@ If you get stuck, check out [Create SAS Tokens](https://docs.microsoft.com/en-us
 
 ## What does success look like for Challenge-05?
 
-+ Successfully utilize an anonymization configuration file and the $export operator to export an anonymized dataset from Azure API for FHIR
++ Successfully utilize an anonymization configuration file and the $export operator to export an anonymized dataset from the FHIR service
 + Successfully set up a SAS token to allow access to the anonymized dataset
 
 ## Next Steps

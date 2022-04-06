@@ -1,9 +1,9 @@
-# Microsoft Azure Healthcare APIs Workshop
+# Microsoft Azure Health Data Services Workshop
 
 # Introduction
-Hello and welcome to the Azure Healthcare APIs Workshop! In this workshop, we present a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) tools and architectures. 
+Hello and welcome to the Azure Health Data Services Workshop! In this workshop, we present a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) tools and architectures. 
 
-# Who is the Azure Healthcare APIs Workshop for?
+# Who is the Azure Health Data Services Workshop for?
 This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Before beginning in the workshop challenges, participants are expected to have the following:
 
 1. A solid foundation in [MS Azure fundamentals](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)
@@ -15,7 +15,7 @@ This workshop is intended for **healthcare system integrators**, **independent h
 + In the first portion of the workshop (Challenges 00-04), you'll get direct experience deploying and configuring Azure components used in real-world health data production environments.  
 
     + Challenge-00 - Check prerequisites and configure environment
-    + Challenge-01 - Deploy Azure API for FHIR (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)
+    + Challenge-01 - Deploy AHDS FHIR service (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)
     + Challenge-02 - Convert HL7v2 and C-CDA to FHIR
     + Challenge-03 - Ingest to FHIR
     + Challenge-04 - Query and Search FHIR
@@ -24,7 +24,7 @@ This workshop is intended for **healthcare system integrators**, **independent h
 
     + Challenge-05 - Export and Anonymize Data
     + Challenge-06 - Research Azure Data Analytics
-    + Challenge-07 - Consent capabilities of Azure API for FHIR
+    + Challenge-07 - Consent capabilities of AHDS FHIR service
     + Challenge-08 - DICOM
     + Challenge-09 - IoT Connector for FHIR
     + Challenge-10 - Optional - FhirBlaze (Blazor app dev + FHIR)

@@ -4,9 +4,9 @@
 
 Welcome to Challenge-09!
 
-Challenge-09 is designed to introduce you to the Azure API for FHIR IoT Connector. This challenges can be performed in any subscription and is not dependent on the work from prior challenges.
+Challenge-09 is designed to introduce you to the FHIR service IoT Connector. This challenges can be performed in any subscription and is not dependent on the work from prior challenges.
 
-Challenge-09 introduces the IoT Connector for the Azure API for FHIR PaaS, with the OSS deployments offered as a bonus challenge. This will help you become familiar with the data flow for IoT to FHIR and will broaden your knowledge of Remote Patient Monitoring scenarios.
+Challenge-09 introduces the IoT Connector for the FHIR service PaaS, with the OSS deployments offered as a bonus challenge. This will help you become familiar with the data flow for IoT to FHIR and will broaden your knowledge of Remote Patient Monitoring scenarios.
 
 
 ## Background
@@ -17,7 +17,7 @@ With the rise of wearable devices, Remote Patient Monitoring (RPM) has exploded 
 
 - Deploy and configure the IoT Connector via Azure portal
 - Deploy and configure additional Azure services required for the IoT connector
-- Connect the IoT Connector to Azure API for FHIR
+- Connect the IoT Connector to FHIR service
 - Create a map for incoming device data through to FHIR
 - Understand the data flow for medical IoT data
 
@@ -65,7 +65,7 @@ The mapper will be at this address when running: http://localhost:5000
 
 Link - https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings
 
-At the end of Step 4 you will have a sample set of IoT Maps which can be used with the Azure API for FHIR and IoT Connector.
+At the end of Step 4 you will have a sample set of IoT Maps which can be used with the FHIR service and IoT Connector.
 
 For more information on the IoT Mappings visit the docs page - https://github.com/microsoft/iomt-fhir/blob/master/docs/Configuration.md.
 
