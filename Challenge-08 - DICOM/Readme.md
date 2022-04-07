@@ -12,11 +12,9 @@ Secondary-use research is broadening beyond text based research. These secondary
 
 ## Learning Objectives for Challenge-08
 
-- Setup a DICOM Service instance within Azure Healthcare APIs
+- Setup a DICOM Service instance within Azure Health Data Services (AHDS)
 - Submit DICOM files to the service
-- Successfully view the files with a DICOM Viewer connected to the Azure Healthcare APIs
-
-*Note: Azure Healthcare APIs is still in Public Preview. For customers looking to move to production prior to GA please use the OSS Imaging Service or contact this team.*
+- Successfully view the files with a DICOM Viewer connected to the AHDS FHIR service
 
 ## Initial Setup
 
@@ -25,7 +23,7 @@ Secondary-use research is broadening beyond text based research. These secondary
 &nbsp;&nbsp;&nbsp;&nbsp; This workshop repo (If not already complete)
 
 ```azurecli
-git clone https://github.com/microsoft/azure-healthcare-apis-workshop.git
+git clone https://github.com/microsoft/azure-api-for-fhir-workshop.git
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp; The Medical Imaging Server for Azure
@@ -35,9 +33,9 @@ git clone https://github.com/microsoft/dicom-server.git
 ```
 
 
-### Step 2 - Setup an Azure Healthcare APIs Workspace using Azure Portal
+### Step 2 - Setup an Azure Health Data Services Workspace using Azure Portal
  
- [Deploy workspace in the Azure portal - Azure Healthcare APIs | Microsoft Docs](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-quickstart)
+ [Deploy workspace in the Azure portal - Azure Health Data Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-quickstart)
 
 
 ### Step 3 - Setup DICOM Service using Azure Portal
