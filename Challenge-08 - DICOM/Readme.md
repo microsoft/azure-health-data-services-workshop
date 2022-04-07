@@ -4,7 +4,7 @@
 
 Welcome to Challenge-08!
 
-Congratulations for almost reaching the end of this workshop! This challenge is designed to help you become familiar with Medical Imaging basics. This challenge can be performed either in your personal/organization Azure subscription or the subscription provided for the live workshop event.
+In this challenge, you will become familiar with medical imaging basics working with the DICOM service in Azure Health Data Services. 
 
 ## Background
 
