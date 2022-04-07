@@ -44,7 +44,7 @@ git clone https://github.com/microsoft/dicom-server.git
 
 Add **DICOM Data Owner** role to the hackathon user as well as to the Postman client application [documentation here](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)
 
-Generate access token for user or Postman client application to resource https://dicom.healthcareapis.azure.com Check *hints* folder, if you need to find out how to generate the token.
+Generate access token for user or Postman client application to resource https://dicom.healthcareapis.azure.com Check the *hints* folder if you need to find out how to generate the token.
 
 ### Step 4 - Choose a path for the rest of the Challenge
 
