@@ -27,7 +27,7 @@ Component View of FHIR-Proxy and FHIR service with Postman set up to call the FH
 
 <img src="./media/Postman_FHIR-Proxy_ARM_template_deploy_AHDS.png" height="528">
 
-FHIR-Proxy asserts control over I/O data only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled. Otherwise, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back to the remote client app (e.g., Postman). 
+FHIR-Proxy asserts control over I/O data only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled and configured. Otherwise, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back to the remote client app (e.g., Postman). 
 
 ## Prerequisites 
 
