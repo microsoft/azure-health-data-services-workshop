@@ -4,14 +4,11 @@
 
 Welcome to Challenge-09!
 
-Challenge-09 is designed to introduce you to the FHIR service IoT Connector. This challenges can be performed in any subscription and is not dependent on the work from prior challenges.
-
-Challenge-09 introduces the IoT Connector for the FHIR service PaaS, with the OSS deployments offered as a bonus challenge. This will help you become familiar with the data flow for IoT to FHIR and will broaden your knowledge of Remote Patient Monitoring scenarios.
-
+In this challenge, you will get experience ingesting data via the IoT Connector in Azure Health Data Services.
 
 ## Background
 
-With the rise of wearable devices, Remote Patient Monitoring (RPM) has exploded in the healthcare marketplace. Many vendors have tried a proprietary approach to the hardware and software underneath their wearable technologies. Microsoft has taken an agnostic approach to Remote Patient Monitoring and wearable data ingestion by offering a tool kit for converting output from any wearable device into FHIR resources.
+With the rise of wearable technologies, Remote Patient Monitoring (RPM) devices and other IoT systems have exploded in the healthcare marketplace. While many vendors use proprietary data models for the hardware and software underneath their IoT devices, Microsoft has taken a platform agnostic approach by offering a tool kit for converting output from any medical IoT device into FHIR resources.
 
 ## Learning Objectives for Challenge-09
 
