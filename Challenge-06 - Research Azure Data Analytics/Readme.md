@@ -46,7 +46,7 @@ __Note:__ Confirm the container with the anonymized data you will be using in Da
 + Successfully perform statistical analyses on the data 
  
 ## BONUS - Data Visualization and BI
-If you are up for an added challenge in data visualization, continue on here.
+If you are in possession of a [Power BI license](https://docs.microsoft.com/en-us/power-bi/fundamentals/service-features-license-type), proceed into this bonus part of the challenge.
 
 Given the dataset exported in Challenge-05, what geographic areas have the lowest Flu vaccination rates?
 ### Learning Objectives
