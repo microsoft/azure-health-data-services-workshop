@@ -180,7 +180,7 @@ But it would be more efficient to retrieve all of this information in a single q
 GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
 ```
 
-Likewise but in the opposite direction, you can use `_revinclude` to retrieve Resources along with other Resources that refer to them. Below is an example where `Patient` Resource instances are retrieved along with `MedicationRequest` Resource instances (e.g., for an allergy medication) that reference the `Patient` instances. The `Patient` search is limited to patients who live in the city specified in the `_address-city` parameter.
+Likewise but in the opposite direction, you can use `_revinclude` to retrieve Resources along with other Resources that refer to them. Below is an example where `Patient` instances are retrieved along with `MedicationRequest` instances that reference the `Patient` instances. The `Patient` search is limited to patients who live in the city specified in the `_address-city` parameter.
 
 ```azurecli
 GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:patient:medication.code=1234567
