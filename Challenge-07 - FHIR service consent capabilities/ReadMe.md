@@ -8,7 +8,7 @@ In this challenge, you will learn how to configure Consent Opt-Out filtering for
 
 ## Background
 
-In the digital transformation of healthcare, the wide adoption of FHIR R4 has removed certain barriers of access to patient health data. With this increased access, FHIR R4 also brings more control over what parties may gain access to patient data. Health institutions are required by law to guard patients' Personal Health Information (PHI), and one way this is managed is by requiring patient consent (either "broad" or "direct" consent) before practitioners or researchers may access a patient's medical records. In this challenge, we will be exploring capabilities in the Azure health data platform that make it possible for users (i.e., patients) to opt out of sharing their FHIR records with certain parties.
+In the digital transformation of healthcare, the wide adoption of FHIR R4 has removed certain barriers of access to patient health data. With this increased access, FHIR R4 also brings more control over what parties may gain access to patient data. Health institutions are required by law to guard patients' Personal Health Information (PHI), and one way this is managed is by requiring patient consent (either "broad" or "direct" consent) before practitioners or researchers may access a patient's medical records. In this challenge, we will be exploring capabilities in the Azure health data platform that make it possible for patients to opt out of sharing their FHIR records with certain parties.
 
 ## Learning Objectives for Challenge-07
 
@@ -18,7 +18,7 @@ In the digital transformation of healthcare, the wide adoption of FHIR R4 has re
 
 ## Prerequisites
 
-+ Azure Healthcare APIs FHIR service instance with patient data
++ Azure Health Data Services FHIR service instance with patient data
 + FHIR-Proxy successfully deployed
 + Postman (https://www.postman.com/downloads/) or Visual Studio Code with the REST Client extension (https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 + Multiple Azure AD users to simulate user and or administrator access to the FHIR service. 
@@ -30,12 +30,12 @@ In the digital transformation of healthcare, the wide adoption of FHIR R4 has re
 ![Patient Resources](./images/patient-count-postman.png)
 3. Select a Patient Resource and record the patient identifier. This will be used to create the Consent Resource.
 
-Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension may also be used to complete this challenge. See the walkthrough [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/using-rest-client) for details on how to use REST Client to access Azure Healthcare APIs. Be sure to note that in all cases you will be using the FHIR-Proxy endpoint to complete this challenge.
+Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension may also be used to complete this challenge. See the walkthrough [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/using-rest-client) for details on how to use REST Client to access Azure Health Data Services FHIR service. Be sure to note that in all cases you will be using the FHIR-Proxy endpoint to complete this challenge.
 
 ## Step - 2 Post Consent Record to FHIR Service
 
-1. Review and update (as needed) the sample Consent resource, which may be found [here](./sample-data/consent-resource.json). Be sure to use the Patient Resource obtained in Step 1.
-2. Create a new request in Postman and post the consent resource.
+1. Review and update (as needed) the sample Consent Resource, which may be found [here](./sample-data/consent-resource.json). Be sure to use the Patient Resource obtained in Step 1.
+2. Create a new request in Postman and post the Consent Resource.
 
 ## Step - 3 Configure Secure FHIR Consent Opt-Out
 
@@ -52,7 +52,7 @@ Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/i
 
 ## What does success look like for Challenge-07?
 
-+ Successfully POST a consent record to the Azure Healthcare APIs FHIR service
++ Successfully POST a consent record to the Azure Health Data Services FHIR service
 + Verify that Consent Opt-Out properly filters resources
 
 ## Next Steps
