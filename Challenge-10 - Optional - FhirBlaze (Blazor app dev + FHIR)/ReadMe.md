@@ -5,7 +5,7 @@
 
 Welcome to Challenge-10!
 
-In this challenge you will practice using the FHIR service to read and write data – as from an app developer's perspective.
+In this challenge, you will practice using the FHIR service to read and write FHIR data – as from an app developer's perspective.
 
 ## Background
 
