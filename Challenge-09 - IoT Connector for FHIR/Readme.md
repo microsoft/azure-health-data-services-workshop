@@ -8,7 +8,7 @@ In this challenge, you will get experience interfacing between sensor data input
 
 ## Background
 
-With the rise of wearable technologies, Remote Patient Monitoring (RPM) devices and other IoT systems have exploded in the healthcare marketplace. While many vendors use proprietary data models for the hardware and software underneath their IoT devices, Microsoft has taken a platform agnostic approach by offering a tool kit for converting output from any medical IoT device into FHIR resources.
+With the rise of wearable technologies, Remote Patient Monitoring (RPM) and other IoT devices have exploded in the healthcare marketplace. While many vendors use proprietary data models for the hardware and software underneath their IoT devices, Microsoft has taken a platform agnostic approach by offering a tool kit for converting output from any medical IoT device into FHIR data.
 
 ## Learning Objectives for Challenge-09
 
