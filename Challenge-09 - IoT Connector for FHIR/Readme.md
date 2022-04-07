@@ -4,7 +4,7 @@
 
 Welcome to Challenge-09!
 
-In this challenge, you will get experience ingesting data via the IoT Connector in Azure Health Data Services.
+In this challenge, you will get experience interfacing between sensor data input streams and the FHIR service using the IoT Connector in Azure Health Data Services.
 
 ## Background
 
