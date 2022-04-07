@@ -10,7 +10,7 @@ In this challenge we will utilize FHIR data for analytics. The lesson will be br
 + Data Visualization and BI
 
 ## Background
-To improve Flu vaccine rates, health systems need to understand what factors influence the Flu vaccination rates. In this challenge you will explore the effect of gender or age on patients' recieving the Flu shot or not and visually explore geographic vaccination rates.
+To improve Flu vaccine rates, health systems need to understand what factors influence the Flu vaccination rates. In this challenge you will explore the effect of gender or age on patients' receiving the Flu shot or not and visually explore geographic vaccination rates.
 
 ## 1. Data Analysis and Statistical Modeling
 Discover if gender or age has an effect on completion of a Flu shot
@@ -31,7 +31,7 @@ By the end of the section you will be able to
 ### Step 1
 Clone this repo: 
 
-	https://github.com/microsoft/azure-healthcare-apis-workshop
+	https://github.com/microsoft/azure-api-for-fhir-workshop
 
 ### Step 2
 Go to the 'Challenge-06 - Research Azure Data Analytics' directory in this repo and open ***Challenge - Research Azure Data Analytics.py*** in Azure Databricks.
@@ -42,10 +42,12 @@ __Note:__ Confirm the container with the anonymized data you will be using in Da
 
 ### Challenge Success
 + Successfully load FHIR data into Azure Databricks
-+ Sucessfully convert the data to tabular format
++ Successfully convert the data to tabular format
 + Successfully perform statistical analyses on the data 
  
-## 2. Data Visualization and BI
+## BONUS - Data Visualization and BI
+If you are up for an added challenge in data visualization, continue on here.
+
 Given the dataset exported in Challenge-05, what geographic areas have the lowest Flu vaccination rates?
 ### Learning Objectives
 By the end of the section you will be able to 
