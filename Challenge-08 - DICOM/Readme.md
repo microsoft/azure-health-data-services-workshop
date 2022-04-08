@@ -12,7 +12,7 @@ The [DICOMweb™](https://www.dicomstandard.org/using/dicomweb) standard is the 
 
 ## Learning Objectives for Challenge-08
 
-- Set up a DICOM Service instance within Azure Health Data Services (AHDS)
+- Set up a DICOM service instance within an Azure Health Data Services (AHDS) Workspace
 - Submit DICOM files to the service
 - Successfully view the files with a DICOM Viewer connected to the AHDS FHIR service
 
@@ -42,7 +42,7 @@ git clone https://github.com/microsoft/dicom-server.git
 
 [Deploy DICOM service using the Azure portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure)
 
-Add **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as to the Postman client application [documentation here](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)
+Add **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as for the Postman client application [documentation here](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)
 
 Generate access token for user or Postman client application to resource https://dicom.healthcareapis.azure.com Check the *hints* folder if you need to find out how to generate the token.
 
