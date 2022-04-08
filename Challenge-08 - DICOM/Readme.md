@@ -4,11 +4,11 @@
 
 Welcome to Challenge-08!
 
-In this challenge, you will become familiar with medical imaging basics working with the DICOM service in Azure Health Data Services. 
+In this challenge, you will get experience working with medical images using the DICOM service in Azure Health Data Services (AHDS). 
 
 ## Background
 
-Secondary-use research is broadening beyond text based research. These secondary-use research initiatives require more resources than on-prem datacenters can provide. DICOM datasets are pushing into the 10s of Petabytes, which is pushing the limits of on-prem storage. These larger datasets need a standardized place to reside. The Microsoft Medical Imaging Service provides a DICOMweb standard method for storing these images. This challenge will give learners some hands-on experience with how Microsoft's DICOM Service ingests, stores, retrieves, and updates images.
+The DICOMweb™ standard is the RESTful API protocol used throughout the health industry for medical image storage, querying, and exchange, and in Azure Health Data Services, the DICOM service coupled with FHIR service via Microsoft's OSS [DICOMcast](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-cast-overview) presents new opportunities for combined text and medical image-based studies. In this challenge we will be looking at how to ingest, store, and retrieve images with DICOM Service, and we will get some hands-on experience synchronizing DICOM service and FHIR service with DICOMcast. 
 
 ## Learning Objectives for Challenge-08
 
