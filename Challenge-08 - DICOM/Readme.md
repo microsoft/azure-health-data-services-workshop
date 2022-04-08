@@ -4,7 +4,7 @@
 
 Welcome to Challenge-08!
 
-In this challenge, you will get experience working with medical images using the DICOM service in Azure Health Data Services (AHDS). 
+In this challenge, you will get experience working with medical images using the DICOM service in Azure Health Data Services. 
 
 ## Background
 
