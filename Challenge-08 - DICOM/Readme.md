@@ -51,13 +51,13 @@ Generate access token for user or Postman client application to resource https:/
 Here you need to choose a path for completing the challenge. There are two paths:
 Basic Path and Advanced Path.
 
-**Basic Path** - GUI-based operations for uploading Images to the DICOM Service
+**Basic Path** - GUI-based operations for uploading Images to the DICOM service
 
-**Advanced Path** - Programmatic method for uploading images to DICOM Service
+**Advanced Path** - Programmatic method for uploading images to DICOM service
 
 ## Basic Path
 
-This path will use a tool to upload images to the DICOM Service. You will need to setup the upload tool. Configure with the URL you created Step 3. Then upload the image studies.
+This path will use a tool to upload images to the DICOM service. You will need to setup the upload tool. Configure with the URL you created Step 3. Then upload the image studies.
 
 ### Step 1 - Install upload tool
 
@@ -71,7 +71,7 @@ Once the tool in the prior step is set up and configured, follow the steps to up
 
 ### Step 3 - Open Viewer and View images
 
-The DICOM service has a built in DICOM Viewer. By copying and pasting the main URL for the DICOM Service into a web browser, you can see the list of uploaded Studies.
+The DICOM service has a built in DICOM viewer. By copying and pasting the main URL for the DICOM Service into a web browser, you can see the list of uploaded Studies.
 
 If you see three studies listed and if they open, then you have successfully completed this part of the challenge. Move to Part 2 of the challenge.
 
@@ -91,7 +91,7 @@ Note: The sample files for the link above were downloaded via the second repo cl
 
 ### Step 3 - View Images in Browser
 
-The DICOM service has a built in DICOM Viewer. By copying and pasting the main URL for the DICOM service into a web browser, you can see the list of uploaded studies.
+The DICOM service has a built in DICOM viewer. By copying and pasting the main URL for the DICOM service into a web browser, you can see the list of uploaded studies.
 
 If you see three studies listed. If they open, then you have successfully completed this part of the challenge.
 
@@ -108,8 +108,8 @@ The bonus part of the challenge is to repeat your path but this time deploy the 
 Tip - The GitHub repo site has a Deploy to Azure button built in.
 
 ## What does success look like for Challenge-08?
-+ Upload two DICOM studies into the DICOM Service
-+ View human images in the DICOM Service
++ Upload two DICOM studies into the DICOM service
++ View human images in the DICOM service
 
 ## Next Steps
 
