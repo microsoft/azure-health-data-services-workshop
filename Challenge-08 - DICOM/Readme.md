@@ -4,7 +4,7 @@
 
 Welcome to Challenge-08!
 
-In this challenge, you will get experience working with medical images using the DICOM service in Azure Health Data Services. 
+In this challenge, you will get experience working with medical images using the [DICOM service](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/) in Azure Health Data Services. 
 
 ## Background
 
