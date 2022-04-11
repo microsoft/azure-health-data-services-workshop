@@ -44,7 +44,7 @@ git clone https://github.com/microsoft/dicom-server.git
 
 Add the **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as for the Postman client application ([documentation available here](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)).
 
-Generate an access token for yourself (username) or the Postman client application to resource https://dicom.healthcareapis.azure.com. Check the *hints* folder if you need to find out how to generate the token.
+Generate an access token for yourself (username) or the Postman client application to [resource](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-services-). Check the *hints* folder if you need to find out how to generate the token.
 
 ### Step 4 - Choose a path for the rest of the Challenge
 
