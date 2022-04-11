@@ -59,7 +59,7 @@ Researchers from outside organizations cannot have direct access to Healthcare o
 **Task:**  
 Set up a shared access signature (SAS) token to allow a research team to access the anonymized datasets that you exported.
 
-If you get stuck, check out [Create SAS Tokens](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers).
+If you get stuck, please review [Create SAS Tokens](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers).
 
 ## What does success look like for Challenge-05?
 
