@@ -18,7 +18,7 @@ By the end of this challenge you will be able to
 
 ## Prerequisites 
 * An Azure environment with a working FHIR service instance. 
-* FHIR data loaded into FHIR service. If the data you have loaded does not include Immunization or Patient Resources, go ahead and [load this bundle](https://github.com/kamoclav/openhack-mc4h-2/blob/main/Challenge-9/synthea_sample_data_fhir_r4%20OpenHack.zip) for a small dataset or check out [Synthea](https://synthetichealth.github.io/synthea/) for a larger dataset.
+* FHIR data loaded into FHIR service. If the data you have loaded does not include Immunization or Patient Resources, go ahead and [load this bundle](./synthea_sample_data_fhir_r4%20OpenHack.zip) for a small dataset or check out [Synthea](https://synthetichealth.github.io/synthea/) for a larger dataset.
 * Azure Data Lake Storage Gen2 deployed in your Azure environment.
 
 ## Step 1: Review sample anonymization configuration and customize if needed
