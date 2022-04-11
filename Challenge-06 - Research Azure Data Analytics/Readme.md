@@ -6,7 +6,7 @@ Welcome to Challenge-06!
 In this challenge, we will be doing some basic statistical analysis on a FHIR dataset. Additionally, there is a bonus data visualization step for learners with access to Power BI.
 
 ## Background
-Data aggregated in FHIR offers rich analytics potential for all kinds of medical research, including public health research. Take, as an example, a public health campaign to increase Flu vaccination rates. In order to boost public awareness of the Flu vaccine, public health officials first need to understand what factors are behind the population's current Flu vaccination rates. In this challenge, we will be taking a look at how gender and/or age correspond with patients' Flu vaccine rates, and as a bonus we will be using Power BI to visualize vaccination rates across a geographic area.
+Data aggregated in FHIR offers rich analytics potential for all kinds of medical research, including public health research. Take, as an example, a public health campaign to increase Flu vaccination rates. In order to boost public awareness of the Flu vaccine, public health officials first need to understand what factors may be behind the population's current Flu vaccination rates. In this challenge, we will be using Azure Databricks to take a look at how gender and/or age correspond with patients' Flu vaccine rates, and as a bonus we will be connecting Power BI to visualize vaccination rates across a geographic area.
 
 ## 1. Data Analysis and Statistical Modeling
 Discover if gender or age has an effect on completion of a Flu shot
