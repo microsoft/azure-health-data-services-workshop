@@ -19,7 +19,7 @@ By the end of this challenge you will be able to
 ## Prerequisites 
 * An Azure environment with a working FHIR service instance. 
 * FHIR data loaded into FHIR service. If the data you have loaded does not include Immunization or Patient Resources, go ahead and [load this bundle](./synthea_sample_data_fhir_r4%20OpenHack.zip) for a small dataset or check out [Synthea](https://synthetichealth.github.io/synthea/) for a larger dataset.
-* Azure Data Lake Storage Gen2 deployed in your Azure environment.
+* [Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) deployed in your Azure environment.
 
 ## Step 1: Review sample anonymization configuration and customize if needed
 Microsoft provides a sample configuration file for anonymizing data according to HIPAA Safe Harbor specifications. It's important to review the sample configuration and the HIPAA Safe Harbor rules to determine if the sample configuration will work for your organization. If the sample configuration doesn't meet your organization's requirements for PHI de-identification, you will need to implement your own anonymization rules in the configuration file.
