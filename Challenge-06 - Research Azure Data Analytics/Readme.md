@@ -3,14 +3,10 @@
 ## Introduction
 Welcome to Challenge-06!
 
-Data shared and aggregated using the FHIR standard offers rich analytics potential.
-
-In this challenge we will utilize FHIR data for analytics. The lesson will be broken into two sections:
-+ Data Analysis & Statistical Modeling
-+ Data Visualization and BI
+In this challenge, we will utilize FHIR data for analytics as well as provide an optional data visualization step for learners with access to Power BI.
 
 ## Background
-To improve Flu vaccine rates, health systems need to understand what factors influence the Flu vaccination rates. In this challenge you will explore the effect of gender or age on patients' receiving the Flu shot or not and visually explore geographic vaccination rates.
+Data aggregated using the FHIR standard offers rich analytics potential for all kinds of medical research, including public health research. Take, as an example, a public health campaign to increase Flu vaccination rates. In order to boost public interest in the Flu vaccine, public health officials first need to understand what factors are influencing the population's current Flu vaccination rates. In this challenge, we will be taking a look at how gender and/or age correspond with patients' Flu vaccination rates, and as a bonus we will be using Power BI to visualize vaccination rates across a geographic area.
 
 ## 1. Data Analysis and Statistical Modeling
 Discover if gender or age has an effect on completion of a Flu shot
