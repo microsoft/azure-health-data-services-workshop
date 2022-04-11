@@ -33,7 +33,7 @@ Open a Bash command line environment (e.g., [Azure Cloud Shell](https://docs.mic
 Alternatively, you can use the [GitHub Desktop Client](https://desktop.github.com/) to clone the repo.
 
 ### Step 2
-Go to the 'Challenge-06 - Research Azure Data Analytics' directory in the repo and open ***Challenge - Research Azure Data Analytics.py*** in Azure Databricks.
+Go to the 'Challenge-06 - Research Azure Data Analytics' directory in the repo and open `Challenge - Research Azure Data Analytics.py` in Azure Databricks.
 
 	
 The remaining steps in this part of the challenge are all detailed in the Azure Databricks notebook.
