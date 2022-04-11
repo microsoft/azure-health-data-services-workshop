@@ -27,11 +27,11 @@ Microsoft provides a sample configuration file for anonymizing data according to
 More information on HIPAA de-identification rules can be found [here](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html).
 
 **Task:**  
-Configure your FHIR service for export to a storage account following the instructions [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/configure-export-data). <br>
+Configure your FHIR service for export to a storage account following the instructions [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/configure-export-data). <br>
 
-Note: You are enabling a managed identity on the FHIR service resource. That managed identity is what needs to be added to the storage account with Storage Blob Data Contributor privledges. Be careful not to add a service client or a service principle by mistake. <br>
+> Note: You are enabling a managed identity on the FHIR service resource. That managed identity is what needs to be added to the storage account with Storage Blob Data Contributor privileges. Be careful not to add a service client or a service principle by mistake. <br>
 
-For more information on the sample anonymization file, check out [de-identified-export-operation-on-the-fhir-server](https://github.com/microsoft/Tools-for-Health-Data-Anonymization/blob/master/docs/FHIR-anonymization.md#how-to-perform-de-identified-export-operation-on-the-fhir-server).
+For more information on the sample anonymization file, please refer to [Exporting de-identified data](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data).
 
 For a general overview of the `$export` operation's query parameters for de-identification, check out [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/de-identified-export).
 
