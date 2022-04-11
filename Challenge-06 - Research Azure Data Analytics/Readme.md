@@ -17,7 +17,7 @@ In the first part of this challenge, we will discover if gender and/or age are g
 * Produce descriptive statistics on the dataset
 * Perform a Chi-Square test to determine the effect of one variable on another
 
-Bonus
+**Bonus**
 * Use Power BI to visualize elements within the dataset
 
 ### Prerequisites 
