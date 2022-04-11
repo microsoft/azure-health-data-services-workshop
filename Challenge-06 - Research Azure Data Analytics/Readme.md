@@ -6,10 +6,10 @@ Welcome to Challenge-06!
 In this challenge, we will be doing some basic statistical analysis on a FHIR dataset. Additionally, there is a bonus data visualization step for learners with access to Power BI.
 
 ## Background
-Data aggregated in FHIR offers rich analytics potential for all kinds of medical research, including public health research. Take, as an example, a public health campaign to increase Flu vaccination rates. In order to boost public awareness of the Flu vaccine, public health officials first need to understand what factors may be behind the population's current Flu vaccination rates. In this challenge, we will be using Azure Databricks to investigate how gender and/or age correspond with patients' Flu vaccine rates, and as a bonus we will be connecting Power BI to visualize vaccination rates across a geographic area.
+Data aggregated in FHIR offers rich analytics potential for all kinds of medical research, including public health research. Take, as an example, a public health campaign to increase Flu vaccination rates among a population. In order to boost public awareness of the Flu vaccine, public health officials first need to understand what factors may be behind the population's current Flu vaccination rates. In this challenge, we will be importing FHIR data into Azure Databricks to investigate how gender and/or age correspond with patients' Flu vaccine rates, and as a bonus we will be connecting Power BI to visualize vaccination rates across a geographic area.
 
-## 1. Data Analysis and Statistical Modeling
-Discover if gender or age has an effect on completion of a Flu shot
+## Part 1. Data Analysis and Statistical Modeling
+In this part of the challenge, we will discover to what extent gender and/or age are predictors of Flu vaccination rates.
 
 ### Learning Objectives for Challenge-06
 By the end of the section you will be able to
@@ -45,7 +45,8 @@ __Note:__ Confirm the container with the anonymized data you will be using in Da
 
 ## BONUS - Data Visualization and Business Intelligence
 
-Given the dataset exported in Challenge-05, what geographic areas have the lowest Flu vaccination rates?
+Given the dataset exported in Challenge-05, what geographic areas have the lowest Flu vaccination rates? 
+
 ### Learning Objectives
 By the end of the section you will be able to 
 * Write Anonymized FHIR data to Azure Synapse Analytics
