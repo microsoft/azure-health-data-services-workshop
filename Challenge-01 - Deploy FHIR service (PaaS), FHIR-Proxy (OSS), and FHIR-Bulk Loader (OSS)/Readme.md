@@ -55,7 +55,7 @@ Follow the instructions and return here when finished.
 
 ## Step 2 - Set up Postman and test FHIR service
 In the next part of this challenge, you will
-- Visit another repo and read the instructions on setting up Postman
+- Visit another repo and follow the instructions on setting up Postman
 - Make API calls to test FHIR service using Postman
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab. 
