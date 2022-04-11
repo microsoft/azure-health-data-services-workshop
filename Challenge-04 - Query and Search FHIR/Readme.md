@@ -160,7 +160,7 @@ GET {{fhirurl}}/DiagnosticReport?subject:Patient.name=Roel
 
 The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always from "parent" Resource to "child" Resource (without a reference pointing in the opposite direction). As demonstrated in the chained search above, `Patient` is the "child" with `DiagnosticReport` as the "parent" Resource.
 
-Despite this, the FHIR specification does make room for reverse-chained searching with the `_has` parameter. The `_has` parameter effectively allows searching for a "child" Resource as referenced by a "parent" Resource. This is demonstrated in the reverse-chained search request below, which queries a FHIR server for any `Patient` referenced by a `DiagnosticReport` containing the code `12345`. Note that the `patient` search parameter functions as a shortened form of `subject:Patient`. 
+Despite this, the FHIR specification does make room for reverse-chained searching with the `_has` parameter. The `_has` parameter effectively allows searching for a "child" Resource as referenced by a "parent" Resource. This is demonstrated in the reverse-chained search request below, which queries a FHIR server for any `Patient` referenced by a `DiagnosticReport` containing the code `12345`. Note that the `patient` search parameter towards the end functions as a shortened form of `subject:Patient`. 
 
 ```azurecli
 GET {{fhirurl}}/Patient?_has:DiagnosticReport:patient:code=12345
@@ -174,7 +174,7 @@ As discussed in Step 4, a `reference` in FHIR forms a connection from one Resour
 
 To illustrate, let's imagine you are interested in retrieving all `AllergyIntolerance` instances with a specific code, and you would also like to retrieve all `Patient` instances on the FHIR server that are referenced by this type of `AllergyIntolerance`. You could do this in two searches by first querying with `AllergyIntolerance?_code=` and then searching for referenced `Patient` instances using `_has:AllergyIntolerance:patient:code=`.
 
-But it would be more efficient to retrieve all of this information in a single query. This capability is provided in the `_include` and `_revinclude` parameters. The example below illustrates how `_include=` expands the main search (`AllergyIntolerance?_code=`) to return the referenced Resource instances as well (`patient` is short for `subject:Patient`). 
+But it would be more efficient to retrieve all of this information in a single query. This capability is provided in the `_include` and `_revinclude` parameters. The example below illustrates how `_include=` expands the main search (`AllergyIntolerance?_code=`) to return the referenced Resource instances as well (`patient` at the end is short for `subject:Patient`). 
 
 ```azurecli
 GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
