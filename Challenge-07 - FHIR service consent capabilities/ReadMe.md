@@ -13,7 +13,7 @@ In the digital transformation of healthcare, the wide adoption of FHIR R4 has re
 ## Learning Objectives for Challenge-07
 
 + Configure Consent Opt-Out filtering in FHIR-Proxy
-+ Add a Consent Resource to the Healthcare APIs FHIR Service
++ Add a Consent Resource to the Azure Health Data Services FHIR Service
 + Verify that Consent Opt-Out filtering performs as expected
 
 ## Prerequisites
@@ -26,7 +26,7 @@ In the digital transformation of healthcare, the wide adoption of FHIR R4 has re
 ## Step - 1 Configure Postman
 
 1. Configure postman using the guidance provided in [Challenge 1](<../Challenge-01 - Deploy FHIR service (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)/Readme.md>).
-2. Confirm that the FHIR service contains Patient resources.
+2. Confirm that the FHIR service contains Patient Resources.
 ![Patient Resources](./images/patient-count-postman.png)
 3. Select a Patient Resource and record the patient identifier. This will be used to create the Consent Resource.
 
@@ -53,7 +53,7 @@ Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/i
 ## What does success look like for Challenge-07?
 
 + Successfully POST a consent record to the Azure Health Data Services FHIR service
-+ Verify that Consent Opt-Out properly filters resources
++ Verify that Consent Opt-Out properly filters Resources
 
 ## Next Steps
 
