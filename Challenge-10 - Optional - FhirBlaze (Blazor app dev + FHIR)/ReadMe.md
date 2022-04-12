@@ -5,7 +5,7 @@
 
 Welcome to Challenge-10!
 
-In this challenge, you will practice reading from and writing to the FHIR service with a remote application called FhirBlaze.
+In this challenge, you will practice reading and writing data in the FHIR service with a remote application called FhirBlaze.
 
 ## Background
 
