@@ -9,7 +9,7 @@ In this challenge, you will practice reading from and writing to the FHIR servic
 
 ## Background
 
-With health data systems built on the FHIR standard API, organizations can use the FHIR data model as the basis for developing custom applications to meet their unique needs. In this challenge, we will use [Firely](https://fire.ly/) to represent the FHIR object model in [.NET](https://dotnet.microsoft.com/en-us/) to make calls into the FHIR service. We will use FhirBlaze as a starter application. It is a bare-bones Blazor application that enables an end user to create or delete certain resources on the FHIR server. FhirBlaze runs as a remote client application making API calls to the FHIR server. We will use FhirBlaze as a front-end interface for connecting with the FHIR server. The ability to send Create and Delete requests to the FHIR server is a fundamental building block for more sophisticated use cases.
+With health data systems built on the FHIR standard API, organizations can use the FHIR data model as the basis for developing custom applications to meet their unique needs. In this challenge, we will use [Firely](https://fire.ly/) to represent the FHIR object model in [.NET](https://dotnet.microsoft.com/en-us/). We will use FhirBlaze as a starter application and set it up to make API calls. FhirBlaze is a bare-bones Blazor app that enables an end user to create or delete certain resources on the FHIR server. FhirBlaze runs as a remote client application, and we will use it as a front-end interface for making FHIR API calls. The ability to send Create and Delete requests to the FHIR server is a fundamental building block for more sophisticated use cases.
 
 ## Learning Objectives for Challenge-10
 
