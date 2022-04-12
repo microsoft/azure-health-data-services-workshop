@@ -8,7 +8,7 @@ In this challenge, you will get experience interfacing between IoT input streams
 
 ## Background
 
-With the rise of wearables and other connected sensor technologies, IoT devices have exploded in the healthcare marketplace. Currently, there is no single data standard that applies to medical IoT devices, and this has resulted in many different proprietary data models across the medical IoT landscape. Microsoft has taken an agnostic approach to IoT connectivity, offering a tool kit for converting output from any medical IoT device into FHIR data. In this challenge, we will be using MedTech service in Azure Health Data Services to ingest IoT input data into FHIR service.
+With the rise of wearables and other connected sensor technologies, IoT devices have exploded in the healthcare marketplace. Currently, there is no single data standard for medical IoT device I/O, and this has resulted in many different proprietary data models in use across the medical IoT landscape. To provide a centralized platform for IoT data processing and storage, Microsoft has taken an agnostic approach to IoT connectivity, offering the MedTech service toolkit with IoT Connector for converting output from any medical IoT device into FHIR data. In this challenge, we will be using MedTech service in Azure Health Data Services to ingest IoT data into the FHIR service.
 
 ## Learning Objectives for Challenge-09
 
