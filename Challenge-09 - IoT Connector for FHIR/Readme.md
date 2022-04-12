@@ -4,11 +4,11 @@
 
 Welcome to Challenge-09!
 
-In this challenge, you will get experience interfacing between sensor data input streams and the FHIR service using the IoT Connector in Azure Health Data Services.
+In this challenge, you will get experience interfacing between IoT input streams and the FHIR service using the IoT Connector in Azure Health Data Services.
 
 ## Background
 
-With the rise of wearable technologies, Remote Patient Monitoring (RPM) and other IoT devices have exploded in the healthcare marketplace. While many vendors use proprietary data models for the hardware and software underneath their IoT devices, Microsoft has taken a platform agnostic approach by offering a tool kit for converting output from any medical IoT device into FHIR data.
+With the rise of wearables and other connected sensor technologies, IoT devices have exploded in the healthcare marketplace. Currently, there is no single data standard that applies to medical IoT devices, and this has resulted in many different proprietary data models across the medical IoT landscape. Microsoft has taken an agnostic approach to IoT connectivity, offering a tool kit for converting output from any medical IoT device into FHIR data. In this challenge, we will be using MedTech service in Azure Health Data Services to ingest IoT input data into FHIR service.
 
 ## Learning Objectives for Challenge-09
 
