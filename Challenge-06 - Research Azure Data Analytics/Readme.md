@@ -72,8 +72,8 @@ If you get stuck, check out this article on the [Copy Data Tool in Azure Synapse
 
 
 ### Step 2: Connect Power BI, Load Synapse data, and report on vaccination rates by postal code <br />
-Connect your Power BI workspace to Azure Synapse, load the Patient and Immunization data into Power BI<br />
-You are interested in the Flu vaccination rates so you will need to join the datasets and create a field in the combined dataset that can be aggregated to achieve that rate. Pay attention to any data transformation necessary to join the datasets <br/>
+Connect your Power BI workspace to Azure Synapse, load the Patient and Immunization data into Power BI.<br />
+You are interested in the Flu vaccination rates so you will need to join the datasets and create a field in the combined dataset that can be aggregated to discover that rate. Pay attention to any data transformation necessary to join the datasets. <br/>
 <br/>
 If you get stuck, review this article on [creating custom columns in Power BI](https://docs.microsoft.com/en-us/power-bi/create-reports/desktop-add-custom-column#:~:text=Use%20Power%20Query%20Editor%20to%20add%20a%20custom%20column,-To%20start%20creating&text=From%20the%20Home%20tab%20on,The%20Custom%20Column%20window%20appears.). <br />
 
