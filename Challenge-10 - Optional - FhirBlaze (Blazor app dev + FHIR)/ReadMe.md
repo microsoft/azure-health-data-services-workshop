@@ -5,7 +5,7 @@
 
 Welcome to Challenge-10!
 
-In this challenge, you will practice reading and writing data in the FHIR service with a remote application called FhirBlaze.
+In this challenge, you will practice setting up an application to interact with FHIR data on the FHIR service.
 
 ## Background
 
@@ -13,43 +13,42 @@ With health data systems built on the FHIR standard API, organizations can use t
 
 ## Learning Objectives for Challenge-10
 
-+ Use FHIR resources like patient, practitioner, and more for real world applications.
++ Use FHIR Resources like Patient, Practitioner, and more for real world applications.
 + Learn how Firely can accelerate development (and adherence to FHIR).
-+ Learn some Blazor web development.
++ Learn about Blazor web development.
 
 ## Prerequisites
 
 + Visual Studio or Visual Studio Code installed on your local machine. The instructions are written for Visual Studio so you will have to map the equivalent in Visual Studio Code yourself.
-+ Working FHIR service instance - no data is required, but it's ok if there is data present on the server.
++ Working FHIR service instance - no data is required, but it's fine if there is data present on the server.
 ---
 ## Step 1 – Configure service and client application
 1. Relax the CORS configuration of FHIR service as per [the documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/configure-cross-origin-resource-sharing).<br>
-2. In the Azure AD, **App Registration** for **Postman** application, under **Authentication**, **Add a platform** of type **Single-page application** with redirect URI set to **https://localhost:44321/authentication/login-callback**
+2. In the Azure AD, **App Registration** for the **Postman** application, under **Authentication**, **Add a platform** of type **Single-page application** with redirect URI set to **https://localhost:44321/authentication/login-callback**.
 
 ## Step 2 – Intro to FhirBlaze base solution
-We created FhirBlaze to accelerate web app development on top of the FHIR server. It lays the foundation for sending Reads and Writes to the FHIR server, freeing you up to build your unique workflows that meet endusers' needs. <br>
-1. Clone FhirBlaze solution from [here]( https://github.com/microsoft/FhirBlaze)<br>
+We created FhirBlaze to accelerate web app development on top of the FHIR server. It lays the foundation for sending Read and Write requests to the FHIR server, freeing you up to build your unique workflows that meet end users' needs. <br>
+1. Clone the FhirBlaze solution from [here]( https://github.com/microsoft/FhirBlaze)<br>
 2. Open FhirBlaze in **Visual Studio**.<br>
 <br>
 A quick tour of FhirBlaze <br> 
 <br>
 
-+ FhirBlaze is a web application, specifically a Blazor Web Assembly project.
-+ Blazor applications allow you to run .NET instead of – or in addition to – JavaScript. <br> Blazor Web Assembly is an application that runs on the user’s client machine,
-and manages the user authentication.
-+ The other projects in the solution are suffixed with the name ‘Module’. We implemented a form of a micro-frontend pattern that encourages independent and parallel development.
++ FhirBlaze is a web application - specifically a Blazor Web Assembly project.
++ Blazor applications allow you to run .NET instead of – or in addition to – JavaScript. <br> Blazor Web Assembly is an application that runs on the user’s client machine and manages the user authentication.
++ The other projects in the solution are suffixed with the name "Module". We implemented a form of a micro-frontend pattern that encourages independent and parallel development.
 
 <br>
-Let's set up FhirBlaze for your Fhir Server  <br>
+Let's set up FhirBlaze for your FHIR service  <br>
 <br>
 
 In **Solution Explorer** , right-click the **FhirBlaze** project, and select **Select as Startup Project**.<br> 
 <br>
-_We have to configure the FhirBlaze application to point to your FHIR API (since you won’t have access to ours. 😊). <br> 
+_We have to configure the FhirBlaze application to point to your FHIR API. <br> 
 Blazor application settings are stored in an appsettings.json file._ <br> 
 <br> 
 In **Solution Explorer**, expand the **FhirBlaze** project, expand the **wwwroot** folder, and open **appsettings.json**. <br> 
-Modify the **Authority** and **ClientId** values to match your FHIR API instance. <br> 
+Modify the **Authority** and **ClientId** values to match your FHIR service instance. <br> 
 
 ```  "AzureAd": {
     "Authority": "https://login.microsoftonline.com/[your tenant id]",
@@ -65,19 +64,19 @@ Modify the **Scope** and **FhirServerUri** values to match your FHIR API instanc
   ```
   
 If you want to see where the application reads these values from the appsettings.json file
-+ Look in the Program.cs file._Build and run FhirBlaze  <br> 
-+ Log in with your Active Directory account. <br> 
++ Look in the Program.cs file _Build and run FhirBlaze_<br> 
++ Log in with your Azure Active Directory account <br> 
 _The navigation menu items in the left-hand pane are some of the core entities we’ve already developed._ 
 + Click on any navigation menu items in the left-hand pane (e.g. Patients or Practitioners)  <br> 
 + Stop running FhirBlaze
 <br>
-FhirBlaze out of the box is set up to interact with the Patient, Practitioner, and Questionaire Fhir resources. As you build solutions, you will likely need to add resource types.
+FhirBlaze out of the box is set up to interact with the Patient, Practitioner, and Questionaire FHIR Resources. As you build solutions, you will likely need to add Resource types.
 <br>
 <br>
-Let's see how to add a new module. This adds a new Fhir resource type that we can create or delete using FhirBlaze. <br>
+Let's see how to add a new module. This adds a new FHIR Resource type that we can create or delete using FhirBlaze. <br>
 <br>
 
-Open **Solution Explorer** pane and continue on to Step 2. <br> 
+Open the **Solution Explorer** pane and continue on to Step 2. <br> 
 
 ## Step 3 – Create a new module
 Select a resource from [FHIR.org] (https://www.hl7.org/fhir/resourcelist.html) that is not already included as a module in the FhirBlaze solution. <br> 
@@ -106,12 +105,12 @@ In **Solution Explorer**, open **App.razor** and add your new module to the list
 _Adding your assembly here means the assembly will lazy-load – or only load when it’s needed. By lazy-loading assemblies, we keep the application size smaller for end users that may only use a small number of our application’s pages._  <br>  
 <br>
 
-Now let's add it to the UI. <br>
+Now let's add the code to the UI. <br>
 <br>
 
 In **Solution Explorer**, expand the **Shared** folder, and open **NavMenu.razor**.
 Highlight and copy the last of the list items and paste it within the unordered list. 
-Change the **NavLink** element’s **href** property to the plural name of your selected FHIR resource (e.g. practioners).  <br>  
+Change the **NavLink** element’s **href** property to the plural name of your selected FHIR resource (e.g. Practioners).  <br>  
 Change the text after the <span> element to the plural name of your FHIR resource. (e.g. Practitioners)  <br>  
 Change the 
     
@@ -143,27 +142,27 @@ Change the
 </div>
 ```     
 <br>
-We have now set up the front end of the application for the new Fhir resource. Our last step is to set up the backend to interact with the Fhir server. <br>
+We have now set up the front end of the application for the new FHIR Resource. Our last step is to set up the backend to interact with the FHIR service. <br>
     
-## Step 4 – Implement the code to get, create, edit, and delete a FHIR resource
+## Step 4 – Implement the code to get, create, edit, and delete a FHIR Resource
     
 In **Solution Explorer**, expand the **FhirBlaze.PractitionerModule** project.  
 Copy all of the files within that project into your new project. <br>
-_You’ll have to change the razor UI to match the fields you want to implement for your selected FHIR resource. For this challenge, you only need to implement the required fields so you can create a new instance in the FHIR repository._ <br>  
-You’ll also have to change the code-behind files to implement the needs of your selected FHIR resource.<br>
+_You’ll have to change the razor UI to match the fields you want to implement for your selected FHIR Resource. For this challenge, you only need to implement the required fields so you can create a new instance in the FHIR repository._ <br>  
+You’ll also have to change the code-behind files to implement the needs of your selected FHIR Resource.<br>
 In **Solution Explorer**, expand the **FhirBlaze.Shared** project, and then expand the **Shared** folder. <br>
 Open **IFhirService.cs**. <br>
-Expand the **Practioners** region, copy all of the code within that region, and paste into a new region named after your selected FHIR resource.<br>
-Modify the method names and parameter names to be the name of your selected FHIR resource. <br>  
+Expand the **Practioners** region, copy all of the code within that region, and paste into a new region named after your selected FHIR Resource.<br>
+Modify the method names and parameter names to be the name of your selected FHIR Resource. <br>  
 Open **FirelyService.cs**. <br>  
-Expand the **Practioners** region, copy all of the code within that region, and paste into a new region named after your selected FHIR resource. <br>  
-Modify the method names and parameter names to be the name of your selected FHIR resource. <br>  
-We have not setup the entire app to handle a new Fhir server resource type!    
+Expand the **Practioners** region, copy all of the code within that region, and paste into a new region named after your selected FHIR Resource. <br>  
+Modify the method names and parameter names to be the name of your selected FHIR Resource. <br>  
+We have not setup the entire app to handle a new FHIR service Resource type!    
     
 ## What does success look like for Challenge-10?
-+ run the FhirBlaze application w/o errors
-+ navigate to your selected FHIR resource’s list page
-+ retrieve and search your selected FHIR resources
-+ create and save a new resource to your FHIR repository
-+ edit and save a new resource in your FHIR repository
-+ delete a resource from your FHIR repository
++ Run the FhirBlaze application w/o errors
++ Navigate to your selected FHIR Resource’s list page
++ Retrieve and search your selected FHIR Resources
++ Create and save a new Resource to your FHIR repository
++ Edit and save a new Resource in your FHIR repository
++ Delete a Resource from your FHIR repository
