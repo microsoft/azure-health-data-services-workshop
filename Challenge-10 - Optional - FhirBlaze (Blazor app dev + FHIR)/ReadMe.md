@@ -19,8 +19,8 @@ With health data systems built on the FHIR standard API, organizations can use t
 
 ## Prerequisites
 
-+ Visual Studio or Visual Studio Code installed on your local machine. The instructions are written for Visual Studio so you will have to map the equivalent in Visual Studio Code yourself.
-+ Working FHIR service instance - no data is required, but it's fine if there is data present on the server.
++ [Visual Studio](https://visualstudio.microsoft.com/) or [Visual Studio Code](https://code.visualstudio.com/) installed on your local machine. The instructions are written for Visual Studio so you will have to map the equivalent in Visual Studio Code yourself.
++ Working FHIR service instance
 ---
 ## Step 1 – Configure service and client application
 1. Relax the CORS configuration of FHIR service as per [the documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/configure-cross-origin-resource-sharing).<br>
