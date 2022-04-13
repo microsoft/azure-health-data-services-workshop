@@ -22,7 +22,7 @@ With the rise of wearables and other connected sensor technologies, IoT devices 
 
 ### Challenge-09a
 
-Let us begin with a basic walk through, performing the steps in this [IoT Quickstart](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/iot-fhir-portal-quickstart). Success for Challenge-09a means you can query the IoT FHIR Observation resource via Postman.
+Let us begin with a basic walk through of the steps in this [IoT Quickstart](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/iot-fhir-portal-quickstart). Success for Challenge-09a means you can query the IoT FHIR Observation Resource via Postman.
 
 Link - https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/iot-fhir-portal-quickstart
 
@@ -37,10 +37,10 @@ Now let's go a step forward. This time let's create our own mappings using sampl
 &nbsp;&nbsp;&nbsp;&nbsp; This workshop repo (If not already complete)
 
 ```azurecli
-git clone https://github.com/microsoft/azure-healthcare-apis-workshop.git
+git clone https://github.com/microsoft/azure-api-for-fhir-workshop.git
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp; IoMT FHIR Connector for Azure
+&nbsp;&nbsp;&nbsp;&nbsp; IoT FHIR Connector for Azure
 
 ```azurecli
 git clone https://github.com/microsoft/iomt-fhir.git
