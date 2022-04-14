@@ -17,9 +17,9 @@ By the end of this challenge you will be able to
 * Share anonymized data with a group not affiliated with your organization
 
 ## Prerequisites 
-* An Azure environment with a working FHIR service instance (completed in Challenge-01).
+* An Azure environment with a working FHIR service instance (as deployed in Challenge-01).
 * FHIR data loaded into FHIR service. If the data you have loaded does not include `Immunization` or `Patient` Resources, go ahead and [load this bundle](./synthea_sample_data_fhir_r4%20OpenHack.zip) for a small dataset or use [Synthea](https://synthetichealth.github.io/synthea/) to generate a larger dataset.
-* [Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) (ADLS Gen2) deployed in your Azure environment (also completed in Challenge-01).
+* [Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) (ADLS Gen2) deployed in your Azure environment (also taken care of in Challenge-01).
 
 ## Getting started
 
