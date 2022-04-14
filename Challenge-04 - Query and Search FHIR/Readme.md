@@ -12,7 +12,7 @@ The FHIR specification defines a REST API with syntax for querying Resources in 
 ## Learning Objectives for Challenge-04
 By the end of this challenge you will be able to 
 
-+ Understand the basic concepts of FHIR Search
++ Explain the basic concepts of FHIR Search
 + Perform both Common and Composite Searches 
 + Use Modifiers in Search 
 + Use Chained & Reverse Chained Search 
