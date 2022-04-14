@@ -13,7 +13,7 @@ Healthcare organizations frequently conduct research studies with patient medica
 By the end of this challenge you will be able to
 * Configure bulk export of FHIR data from FHIR service
 * Use the sample anonymization config file to de-identify FHIR data on export
-* Export anonymized data to an ADLS Gen2 account
+* Export anonymized data to an [Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) account
 * Share anonymized data with a group not affiliated with your organization
 
 ## Prerequisites 
