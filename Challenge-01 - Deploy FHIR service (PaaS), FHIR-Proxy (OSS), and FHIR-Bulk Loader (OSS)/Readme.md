@@ -16,7 +16,7 @@ For bulk ingestion of FHIR data into FHIR service, Microsoft offers the open-sou
 ## Learning Objectives for Challenge-01
 By the end of this challenge you will be able to 
 
-+ Explain how FHIR service and FHIR-Proxy operate together
++ Explain the FHIR service - FHIR-Proxy relationship
 + Use an ARM template to deploy FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
 + Configure AAD authentication for FHIR-Proxy and assign app roles
 + Configure Postman for testing FHIR API calls
