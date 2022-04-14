@@ -44,7 +44,7 @@ Perform a de-identified `$export` from the FHIR service. If you get stuck, refer
 The general format of the query will be <br>
 `https://<<FHIR service base URL>>/$export?_container=<<container_name>>&_anonymizationConfig=<<config file name>>&_anonymizationConfigEtag=<<ETag on storage>>`
 
-The `$export` operation has these required headers. Below there is a **Headers** tab screenshot from Postman. 
+The `$export` operation has these required headers. Below there is a screenshot of the **Headers** tab in Postman. 
 * `Accept: application/fhir+json`
 * `Authorization: Bearer {{bearerToken}}`
 * `Prefer: respond-async.` <br>
