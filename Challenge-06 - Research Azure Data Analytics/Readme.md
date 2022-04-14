@@ -12,6 +12,8 @@ Data aggregated in FHIR offers rich analytics potential for medical research of 
 **Research question:** Are gender and/or age good predictors of Flu vaccination rates?
 
 ### Learning Objectives for Challenge-06
+By the end of this challenge you will be able to 
+
 * Import Anonymized FHIR data into Azure Databricks
 * Flatten the data into a tabular format
 * Produce descriptive statistics on the dataset
