@@ -38,10 +38,8 @@ Configure your FHIR service for export to a storage account following the instru
 
 For more information on bulk export from the FHIR service, please see [How to export FHIR data](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data).
 
-## Step 2: Export anonymized data to a storage account
-
-**Task:**  
-Perform a de-identified `$export` from the FHIR service. If you get stuck, refer to the documentation in Step 1. <br>
+## Step 3: Export anonymized data to a storage account
+Perform a de-identified `$export` from the FHIR service. If you get stuck, refer to the documentation in Step 2. <br>
 
 The general format of the query will be <br>
 `https://<<FHIR service base URL>>/$export?_container=<<container_name>>&_anonymizationConfig=<<config file name>>&_anonymizationConfigEtag=<<ETag on storage>>`
@@ -53,13 +51,13 @@ The `$export` operation has required headers
 
 ![export-header](./media/Export_Headers.png) <br>
 
-For more information on headers, check out this [documentation](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers).
+For more information on headers, please see this [documentation](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers).
 
-## Step 3: Securely transfer the file to the research team
+## Step 4: Securely transfer the file to the research team
 Researchers from outside organizations cannot have direct access to Healthcare or Payor organizations' Azure tennants. You will need to set up a way to securely transfer the anonymized datasets to these external groups.
 
 **Task:**  
-Set up a shared access signature (SAS) token to allow a research team to access the anonymized datasets that you exported.
+Set up a Shared Access Signature (SAS) token to allow a research team to access the anonymized datasets that you exported.
 
 If you get stuck, please review [Create SAS Tokens](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers).
 
