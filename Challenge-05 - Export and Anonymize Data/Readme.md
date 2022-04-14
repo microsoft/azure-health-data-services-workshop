@@ -34,7 +34,7 @@ More information on HIPAA de-identification rules can be found [here](https://ww
 ## Step 2: Configure FHIR service for export  
 Configure your FHIR service for export to a storage account following the instructions [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/configure-export-data). Return here when finished.<br>
 
-> Note: When you deployed FHIR service in Challenge-01, a [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) was automatically enabled on the FHIR service resource. That managed identity is what needs to be added to the ADLS Gen2 storage account with **Storage Blob Data Contributor** privileges. The storage account (also deployed in Challenge-01) is in your resource group and has a name ending with "expsa". Be careful not to add a service client or a service principle by mistake! <br>
+> Note: When you deployed FHIR service in Challenge-01, a [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) was automatically enabled on the FHIR service resource. That managed identity is what needs to be added to the ADLS Gen2 storage account with **Storage Blob Data Contributor** role. The storage account (also deployed in Challenge-01) is in your resource group and has a name ending with "expsa". Be careful not to add a service client or a service principle by mistake! <br>
 
 For more information on bulk export from the FHIR service, please see [How to export FHIR data](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data).
 
