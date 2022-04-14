@@ -19,7 +19,12 @@ By the end of this challenge you will be able to
 ## Prerequisites 
 * An Azure environment with a working FHIR service instance. 
 * FHIR data loaded into FHIR service. If the data you have loaded does not include Immunization or Patient Resources, go ahead and [load this bundle](./synthea_sample_data_fhir_r4%20OpenHack.zip) for a small dataset or check out [Synthea](https://synthetichealth.github.io/synthea/) for a larger dataset.
-* [Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) deployed in your Azure environment.
+* [Azure Data Lake Storage Gen2](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) (ADLS Gen2) deployed in your Azure environment.
+
+## Getting started
+
+In this challenge, you will be using the `$export` command in FHIR service to export de-identified FHIR data into an ADLS Gen2 blob storage container. The `$export` command in FHIR service is an implementation of the bulk export functionality detailed in the [FHIR R4 specification](https://hl7.org/fhir/uv/bulkdata/export/index.html). To familiarize yourself with the `$export` operation's query parameters for de-identification, please read [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/de-identified-export) and return here when finished.
+
 
 ## Step 1: Review sample anonymization configuration and customize if needed
 Microsoft provides a sample configuration file for anonymizing data according to HIPAA Safe Harbor specifications. It's important to review the sample configuration and the HIPAA Safe Harbor rules to determine if the sample configuration will work for your organization. If the sample configuration doesn't meet your organization's requirements for PHI de-identification, you will need to implement your own anonymization rules in the configuration file.
@@ -29,12 +34,9 @@ More information on HIPAA de-identification rules can be found [here](https://ww
 **Task:**  
 Configure your FHIR service for export to a storage account following the instructions [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/configure-export-data). <br>
 
-> Note: You are enabling a managed identity on the FHIR service resource. That managed identity is what needs to be added to the storage account with Storage Blob Data Contributor privileges. Be careful not to add a service client or a service principle by mistake. <br>
+> Note: When you deployed FHIR service in Challenge-01, a [managed identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) was automatically enabled on the FHIR service resource. That managed identity is what needs to be added to the ADLS Gen2 storage account with Storage Blob Data Contributor privileges. The name of this storage account (also deployed in Challenge-01) ends with "expsa". Be careful not to add a service client or a service principle by mistake! <br>
 
 For more information on the sample anonymization file, please refer to [Exporting de-identified data](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data).
-
-For a general overview of the `$export` operation's query parameters for de-identification, check out [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/data-transformation/de-identified-export).
-
 
 ## Step 2: Export anonymized data to a storage account
 
