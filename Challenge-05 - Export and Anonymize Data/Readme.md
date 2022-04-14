@@ -27,7 +27,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 
 ## Step 1: Review sample anonymization configuration and customize if needed
-Microsoft provides a sample configuration file for de-identifying data according to HIPAA Safe Harbor specifications. In real-world use, you would need to review the sample configuration and the HIPAA Safe Harbor rules to determine if the sample configuration is appropriate for your or your organization's needs. If the sample configuration doesn't meet your requirements for PHI de-identification, you would need to customize the configuration file with additional anonymization rules.
+Microsoft provides a [sample configuration file](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/de-identified-export#configuration-file) for de-identifying data according to HIPAA Safe Harbor specifications. In real-world use, you would need to review the sample configuration and the HIPAA Safe Harbor rules to determine if the sample configuration is appropriate for your or your organization's needs. If the sample configuration doesn't meet your requirements for PHI de-identification, you would need to customize the configuration file with additional anonymization rules.
 
 More information on HIPAA de-identification rules can be found [here](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html).
 
