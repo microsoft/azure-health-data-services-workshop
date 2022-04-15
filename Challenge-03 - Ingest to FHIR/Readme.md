@@ -16,7 +16,7 @@ By the end of this challenge you will be able to
 + Bulk ingest FHIR data into FHIR service with FHIR-Bulk Loader
 + Identify issues in bulk FHIR data
 + Recognize data constraints with bulk FHIR data loading
-+ Recognize how to track and compare bulk FHIR imports
++ Track and compare bulk FHIR imports
 
 ### FHIR service and FHIR-Bulk Loader Relationship 
 The open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) is an Azure component designed to ease the process of bulk FHIR data import into the FHIR service. The operation simply involves uploading FHIR data files to Azure blob storage, and from there the FHIR-Bulk Loader automatically loads the data for persistence in the FHIR service database. The user may upload FHIR Bundles in regular JSON format (.zip compressed or non-compressed) or NDJSON format (non-compressed). Operationally, FHIR-Bulk Loader works by making parallel asynchronous API calls - either directly to a FHIR service endpoint or via FHIR-Proxy. In this challenge, we will be using FHIR-Bulk Loader making direct calls to FHIR service (bypassing FHIR-Proxy).
