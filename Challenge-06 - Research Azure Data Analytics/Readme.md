@@ -11,10 +11,10 @@ Data aggregated in FHIR offers rich analytics potential for medical research of 
 ### Learning Objectives for Challenge-06
 By the end of this challenge you will be able to 
 
-* Import Anonymized FHIR data into Azure Databricks
+* Import anonymized FHIR data into Azure Databricks
 * Flatten the data into a tabular format
 * Produce descriptive statistics on the dataset
-* Perform a Chi-Square test to determine the effect of one variable on another
+* Perform a Chi-Square test to investigate the effect of one variable on another
 * BONUS - Use Power BI to visualize elements within the dataset 
 
 ### Prerequisites 
