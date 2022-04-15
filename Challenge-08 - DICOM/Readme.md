@@ -11,6 +11,7 @@ In this challenge, you will get experience working with medical images using the
 The [DICOMweb™](https://www.dicomstandard.org/using/dicomweb) standard is the RESTful API protocol used throughout the health industry for medical image storage, querying, and exchange. In Azure Health Data Services, the DICOM service coupled with FHIR service via Microsoft's OSS [DICOMcast](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-cast-overview) presents new opportunities for combined text and medical image-based studies. In this challenge, we will be looking at how to use DICOM service to ingest, store, and retrieve images, and we will get some hands-on experience using DICOMcast to synchronize data between DICOM service and FHIR service. 
 
 ## Learning Objectives for Challenge-08
+By the end of this challenge you will be able to 
 
 - Set up a DICOM service instance within an Azure Health Data Services (AHDS) Workspace
 - Submit DICOM files to the service
