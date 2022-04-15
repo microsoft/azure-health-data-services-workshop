@@ -8,9 +8,6 @@ In this challenge, you will be doing some basic statistical analysis on a FHIR d
 ## Background
 Data aggregated in FHIR offers rich analytics potential for medical research of all sorts. Public health research is no exception. Take, as an example, a public health campaign to increase Flu vaccination rates among a population. In order to boost public acceptance of the Flu vaccine, public health officials first need to understand what factors may be behind the population's current Flu vaccination rates. In this challenge, we will be importing FHIR data into [Azure Databricks](https://docs.microsoft.com/en-us/azure/databricks/scenarios/what-is-azure-databricks) to investigate how a population's Flu vaccine rates may be correlated with gender and/or age. As a bonus, we will be connecting [Power BI](https://docs.microsoft.com/en-us/power-bi/) to visualize vaccination rates across a geographic area.
 
-## Part 1. Data Analysis and Statistical Modeling
-**Research question:** Are gender and/or age good predictors of Flu vaccination rates?
-
 ### Learning Objectives for Challenge-06
 By the end of this challenge you will be able to 
 
@@ -18,14 +15,15 @@ By the end of this challenge you will be able to
 * Flatten the data into a tabular format
 * Produce descriptive statistics on the dataset
 * Perform a Chi-Square test to determine the effect of one variable on another
-
-**Bonus**
-* Use Power BI to visualize elements within the dataset
+* BONUS - Use Power BI to visualize elements within the dataset 
 
 ### Prerequisites 
 * Deployed FHIR service
 * Azure Databricks
 * Completed Challenge-05 - Export and Anonymize Data
+
+## Part 1. Data Analysis and Statistical Modeling
+**Research question:** Are gender and/or age good predictors of Flu vaccination rates?
 
 ### Step 1
 Open a Bash command line environment (e.g., [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)) and clone this repo: 
