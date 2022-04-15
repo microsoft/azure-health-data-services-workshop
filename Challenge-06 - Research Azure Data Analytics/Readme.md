@@ -18,7 +18,7 @@ By the end of this challenge you will be able to
 * BONUS - Use Power BI to visualize elements within the dataset 
 
 ### Prerequisites 
-* Deployed FHIR service
+* Deployed FHIR service (Challenge-01)
 * Azure Databricks
 * Completed Challenge-05 - Export and Anonymize Data
 
