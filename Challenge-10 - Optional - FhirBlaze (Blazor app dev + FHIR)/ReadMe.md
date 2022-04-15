@@ -12,10 +12,11 @@ In this challenge, you will practice setting up a user-facing remote application
 With health data systems built on the FHIR standard API, organizations can use the FHIR data model as the basis for developing custom applications to meet their unique needs. In this challenge, we will work with a simple [Blazor](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) app called FhirBlaze as a starter application and set it up to make FHIR API calls. FhirBlaze is a bare-bones app that enables end users to create or delete certain Resources on the FHIR service. The ability to send Create and Delete requests is a fundamental building block for more sophisticated use cases. We will be using the [Firely](https://fire.ly/) SDK to represent the FHIR object model in [.NET](https://dotnet.microsoft.com/en-us/).
 
 ## Learning Objectives for Challenge-10
+By the end of this challenge you will be able to 
 
 + Use FHIR Resources like Patient, Practitioner, and more for real world applications.
-+ Learn how Firely can accelerate development (and adherence to FHIR).
-+ Learn about Blazor web development.
++ Use Firely to accelerate FHIR application development.
++ Use Blazor for web development.
 
 ## Prerequisites
 
