@@ -77,7 +77,7 @@ This search returns the `Patient` Resource instance with the given `id` (there c
 
 + **Q:** _What Element are you searching against when you assign a value to the_ `name` _parameter in a_ `Patient` _search?_
 
-__Note:__ The FHIR service supports most Resource-specific search parameters defined in the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json). 
+__Note:__ The FHIR service in Azure Health Data Services supports most Resource-specific search parameters defined in the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json). 
   
 ## Step 2 - Perform Composite Searches 
 In cases where you want to modify the scope of a query by specifying more than one search parameter, one way of doing this is with the logical AND (`&`) operator. 
