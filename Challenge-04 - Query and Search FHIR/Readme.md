@@ -190,7 +190,9 @@ GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:pa
 
 **Note:** Because of the potential for "open-ended" searches with `_include` and `_revinclude`, the number of returned results with these search parameters is limited to 100 items on the FHIR service. 
 
-1. Using the FHIR Search collection imported into Postman in Challenge-01, search for `PractitionerRole` including the `Practitioner` Resource in the result to reduce calls to the server. Discover all `PractitionerRoles` for an Organization using `_revinclude`. For more examples of searches with the `_include` and `_revinclude` parameters, please see the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+1. Using the FHIR Search collection imported into Postman in Challenge-01, search for `PractitionerRole` Resources and include the associated `Practitioner` Resources in the results. 
+
+2. Do a search using `_revinclude` to discover all `PractitionerRole` Resources for an Organization. For more examples of searches with the `_include` and `_revinclude` parameters, please see the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
   
 
 ## Step 6 - Defining a Custom Search parameter 
