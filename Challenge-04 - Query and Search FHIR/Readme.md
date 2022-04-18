@@ -176,7 +176,7 @@ As discussed in Step 4, a `reference` in FHIR forms a connection from one Resour
 
 To illustrate, let's imagine you are interested in retrieving all `AllergyIntolerance` instances with a specific code, and you would also like to retrieve all `Patient` instances on the FHIR server that are referenced by this type of `AllergyIntolerance`. You could do this in two searches by first querying with `AllergyIntolerance?_code=` and then searching for referenced `Patient` instances using `_has:AllergyIntolerance:patient:code=`.
 
-But it would be more efficient to retrieve all of this information in a single query. This capability is provided in the `_include` and `_revinclude` parameters. The example below illustrates how `_include=` expands the main search (`AllergyIntolerance?_code=`) to return the referenced Resource instances as well (`patient` at the end is short for `subject:Patient`). 
+But it would be more efficient to retrieve all of this information in a single query. This capability is provided in the `_include` and `_revinclude` parameters. The example below illustrates how `_include` expands the main search (`AllergyIntolerance?_code=`) to return the referenced Resource instances as well (`patient` at the end is short for `subject:Patient`). 
 
 ```azurecli
 GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
@@ -190,7 +190,7 @@ GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:pa
 
 **Note:** Because of the potential for "open-ended" searches with `_include` and `_revinclude`, the number of returned results with these search parameters is limited to 100 items on the FHIR service. 
 
-1. Using the FHIR Search collection in Postman, search for `PractitionerRole` including the `Practitioner` Resource in the result to reduce calls to the server. Discover all `PractitionerRoles` for an Organization using reverse include. For more examples of include and reverse include search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+1. Using the FHIR Search collection imported into Postman in Challenge-01, search for `PractitionerRole` including the `Practitioner` Resource in the result to reduce calls to the server. Discover all `PractitionerRoles` for an Organization using `_revinclude`. For more examples of searches with the `_include` and `_revinclude` parameters, please see the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
   
 
 ## Step 6 - Defining a Custom Search parameter 
