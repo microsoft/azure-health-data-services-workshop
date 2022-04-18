@@ -168,7 +168,7 @@ Despite this, the FHIR specification does make room for reverse-chained searchin
 GET {{fhirurl}}/Patient?_has:DiagnosticReport:patient:code=12345
 ```
 
-1. Using the FHIR Search collection in Postman, conduct a reverse-chained search for patients using the ```_has``` parameter. For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/search-samples)** page.
+1. Using the FHIR Search collection in Postman, conduct a reverse-chained search for patients using the ```_has``` parameter. For more examples of chained and reverse chained search, refer to the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/search-samples)** page.
 
 
 ## Step 5 - Use the Include & Reverse Include Search Result Parameters  
