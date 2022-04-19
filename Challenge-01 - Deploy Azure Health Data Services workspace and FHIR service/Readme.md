@@ -4,15 +4,13 @@
 
 Welcome to Challenge-01!
 
-In this challenge, you will use an Azure Health Data Services **workspace** with a **FHIR service**. In addition, you will set up a **Postman** environment to make application programming interface (API) calls to the FHIR service.
+In this challenge, you will use an **Azure Health Data Services workspace** with a **FHIR service**. In addition, you will set up a **Postman** environment to make application programming interface (API) calls to the FHIR service.
 
 ## Background
 
 FHIR (Fast Healthcare Interoperability Resources) is the standard format for data storage and exchange in Microsoft's health data platform. Microsoft currently has two FHIR offerings: [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) (PaaS) and [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview) (PaaS). For this training, we will be focusing on the new FHIR service, which is a core component of [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/). This new service offers additional technologies and advantages over the Azure API for FHIR. Check out [this page](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/fhir-faq#what-is-the-difference-between-azure-api-for-fhir-and-the-fhir-service-in-the-azure-health-data-services) for more comparison information.
 
-In Azure FHIR workflows, the FHIR service receives REST API requests from remote client apps and manages all FHIR data persistance and retrieval tasks. Meanwhile, the open-source [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) acts as a checkpoint surrounding FHIR service, filtering the incoming and outgoing FHIR data according to a set of admin-defined rules.
-
-For bulk ingestion of FHIR data into FHIR service, Microsoft offers the open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) utility. With FHIR-Bulk Loader, admins can import large amounts of FHIR data with point and click ease. We will be working with FHIR-Bulk Loader in Challenge-03.
+**#TODO:** fill out more background
 
 ## Learning Objectives for Challenge-01
 
@@ -42,7 +40,7 @@ Before deploying **Azure Health Data Services workspace** and **FHIR service**, 
 
 + **Azure Subscription:** You must have rights to deploy resources and assign roles at the resource group scope in your Azure subscription (e.g. [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) role or [Contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#contributor) and [User Access Administrator](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator)).
   
-+ **Azure Active Directory (AAD):** You must have the ability to create applications and service principals in your Azure Active Directory (AAD) tenant. You will need the [Application Developer](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your tenant or your tenant needs to have the `Users can register applications` setting is enabled.
++ **Azure Active Directory (AAD):** You must have the ability to create application registrations and service principals in your Azure Active Directory (AAD) tenant. You will need the [Application Developer](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your tenant or your tenant needs to have the `Users can register applications` setting is enabled.
   
 You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
 
@@ -64,7 +62,7 @@ In the next part of this challenge, you will
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay2022-challenge-01%2Fdeploy-ahds-with-fhir.bicep)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay2022-challenge-01%2FChallenge-01%2520-%2520Deploy%2520Azure%2520Health%2520Data%2520Services%2520workspace%2520and%2520FHIR%2520service%2Fdeploy-ahds-with-fhir.bicep)
 
 The ARM/Bicep template will deploy the following components:
 
@@ -77,33 +75,36 @@ __Important:__ In order to successfully deploy resources with this ARM template,
 __Note:__  Before running the ARM template, it is recommended to create a new resource group first and check to make sure that you have Owner rights. Once you confirm that you have Owner rights for the resource group, then proceed to run the template and deploy into that resource group.
 
 ## What does success look like for Challenge-01?
-+ FHIR service (PaaS) deployed and available
-+ FHIR-Proxy (OSS) deployed and able to communicate with FHIR service
-+ FHIR-Bulk Loader (OSS) deployed and available
-+ Postman set up and able to connect with FHIR service (via FHIR-Proxy)
-    + Capability Statement from the FHIR service - received
-    ```
+
++ Azure Health Data Services workspace deployed and available
++ FHIR service deployed and available
++ Client application created in Azure Active Directory for use with FHIR service
++ Postman set up and able to connect with FHIR service
+  + Successful `GET /metadata` request response to show FHIR capability statement.
+
+    ```json
     {
-    "resourceType": "CapabilityStatement",
-    "url": "/metadata",
-    "version": "1.0.0.0",
-    "name": "Microsoft FHIR service 2.2.61 Capability Statement",
-    "status": "draft",
-    "experimental": true,
-    "date": "2022-02-18T00:06:47.9408665+00:00",
-    "publisher": "Microsoft",
-    ...
+        "resourceType": "CapabilityStatement",
+        "url": "/metadata",
+        "version": "1.0.0.0",
+        "name": "Microsoft FHIR service 2.2.61 Capability Statement",
+        "status": "draft",
+        "experimental": true,
+        "date": "2022-02-18T00:06:47.9408665+00:00",
+        "publisher": "Microsoft",
+        "more below ..." : "..."
     }
     ```
-    + `POST AuthorizeGetToken` call in Postman to obtain an AAD access token - succeeded
-    + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource - succeeded
-    + `GET List Patients` call in Postman to retrieve a bundle of all Patient Resources stored in FHIR service - succeeded
+
+  + Successful `POST` call to get an AAD access token in Postman.
+  + Successful `POST Save Patient` call in Postman to populate FHIR service with a Patient resource.
+  + Successful `GET List Patients` call in Postman to retrieve a bundle of all Patient resources stored in FHIR service.
 
 ## Deployed Components 
 
-FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
+Azure Health Data Services workspace and FHIR service.
 
-<img src="./media/Deployed_Components_ARM_template5.png" height="528">
+<img src="https://thumbs.dreamstime.com/b/orange-post-note-isolated-white-7874325.jpg" height="528">
 
 ## Next Steps
 
