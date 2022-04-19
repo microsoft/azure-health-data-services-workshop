@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.5.6.12127",
-      "templateHash": "13587584913286622826"
+      "templateHash": "13930724203055597573"
     }
   },
   "parameters": {
@@ -45,10 +45,7 @@
   "variables": {
     "uniqueId": "[toLower(take(uniqueString(subscription().id, resourceGroup().id, parameters('deploymentPrefix')), 6))]",
     "ahdsWorkspaceName": "[format('{0}{1}hdsws', parameters('deploymentPrefix'), variables('uniqueId'))]",
-    "fhirServiceName": "fhirtrn",
-    "loginURL": "[environment().authentication.loginEndpoint]",
-    "authority": "[format('{0}{1}', variables('loginURL'), subscription().tenantId)]",
-    "audience": "[format('https://{0}-{1}.fhir.azurehealthcareapis.com', variables('ahdsWorkspaceName'), variables('fhirServiceName'))]"
+    "fhirServiceName": "fhirtrn"
   },
   "resources": [
     {
@@ -76,8 +73,8 @@
       },
       "properties": {
         "authenticationConfiguration": {
-          "authority": "[variables('authority')]",
-          "audience": "[variables('audience')]",
+          "audience": "[format('https://{0}}}-{1}.fhir.azurehealthcareapis.com', variables('ahdsWorkspaceName'), variables('fhirServiceName'))]",
+          "authority": "[uri(environment().authentication.loginEndpoint, subscription().tenantId)]",
           "smartProxyEnabled": false
         }
       },

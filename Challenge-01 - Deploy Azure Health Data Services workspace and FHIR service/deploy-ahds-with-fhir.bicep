@@ -27,11 +27,6 @@ var uniqueId = toLower(take(uniqueString(subscription().id, resourceGroup().id, 
 var ahdsWorkspaceName        = '${deploymentPrefix}${uniqueId}hdsws'
 var fhirServiceName          = 'fhirtrn'
 
-// -- fhir config vales
-var loginURL = environment().authentication.loginEndpoint
-var authority = '${loginURL}${subscription().tenantId}'
-var audience = 'https://${ahdsWorkspaceName}-${fhirServiceName}.fhir.azurehealthcareapis.com'
-
 // -- Resources
 @description('This is the Azure Health Data Services workspace for use in this workshop')
 resource healthDataWorkspace 'Microsoft.HealthcareApis/workspaces@2021-11-01' = {
@@ -56,8 +51,8 @@ resource fhirService 'Microsoft.HealthcareApis/workspaces/fhirservices@2021-11-0
 
   properties: {
     authenticationConfiguration: {
-      authority: authority
-      audience: audience
+      audience: 'https://${ahdsWorkspaceName}}-${fhirServiceName}.fhir.azurehealthcareapis.com'
+      authority: uri(environment().authentication.loginEndpoint,subscription().tenantId)
       smartProxyEnabled: false
     }
   }
