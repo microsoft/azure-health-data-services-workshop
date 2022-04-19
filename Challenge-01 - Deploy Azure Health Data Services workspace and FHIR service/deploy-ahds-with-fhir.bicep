@@ -41,6 +41,7 @@ resource healthDataWorkspace 'Microsoft.HealthcareApis/workspaces@2021-11-01' = 
 @description('This is the FHIR Service under the Azure Health Data Services workspace for use in this workshop')
 resource fhirService 'Microsoft.HealthcareApis/workspaces/fhirservices@2021-11-01' = {
   name: fhirServiceName
+  parent: healthDataWorkspace
   tags: resourceTags
   location: resourceLocation
   kind: 'fhir-R4'

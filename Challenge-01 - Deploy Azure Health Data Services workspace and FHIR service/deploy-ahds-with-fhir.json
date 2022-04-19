@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.5.6.12127",
-      "templateHash": "13930724203055597573"
+      "templateHash": "12202032432532501129"
     }
   },
   "parameters": {
@@ -64,7 +64,7 @@
     {
       "type": "Microsoft.HealthcareApis/workspaces/fhirservices",
       "apiVersion": "2021-11-01",
-      "name": "[variables('fhirServiceName')]",
+      "name": "[format('{0}/{1}', variables('ahdsWorkspaceName'), variables('fhirServiceName'))]",
       "tags": "[parameters('resourceTags')]",
       "location": "[parameters('resourceLocation')]",
       "kind": "fhir-R4",
@@ -78,6 +78,9 @@
           "smartProxyEnabled": false
         }
       },
+      "dependsOn": [
+        "[resourceId('Microsoft.HealthcareApis/workspaces', variables('ahdsWorkspaceName'))]"
+      ],
       "metadata": {
         "description": "This is the FHIR Service under the Azure Health Data Services workspace for use in this workshop"
       }
@@ -85,15 +88,15 @@
     {
       "type": "Microsoft.Authorization/roleAssignments",
       "apiVersion": "2020-04-01-preview",
-      "scope": "[format('Microsoft.HealthcareApis/workspaces/{0}/fhirservices/{1}', split(variables('fhirServiceName'), '/')[0], split(variables('fhirServiceName'), '/')[1])]",
-      "name": "[guid(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', split(variables('fhirServiceName'), '/')[0], split(variables('fhirServiceName'), '/')[1]), parameters('postmanClientId'), subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '5a1fc7df-4bf1-4951-a576-89034ee01acd'))]",
+      "scope": "[format('Microsoft.HealthcareApis/workspaces/{0}/fhirservices/{1}', variables('ahdsWorkspaceName'), variables('fhirServiceName'))]",
+      "name": "[guid(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('ahdsWorkspaceName'), variables('fhirServiceName')), parameters('postmanClientId'), subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '5a1fc7df-4bf1-4951-a576-89034ee01acd'))]",
       "properties": {
         "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '5a1fc7df-4bf1-4951-a576-89034ee01acd')]",
         "principalId": "[parameters('postmanClientId')]",
         "principalType": "ServicePrincipal"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', split(variables('fhirServiceName'), '/')[0], split(variables('fhirServiceName'), '/')[1])]"
+        "[resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('ahdsWorkspaceName'), variables('fhirServiceName'))]"
       ],
       "metadata": {
         "description": "This is the role assignment to give access to the Postman Client to the FHIR Service"
