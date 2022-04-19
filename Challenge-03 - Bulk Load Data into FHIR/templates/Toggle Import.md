@@ -1,6 +1,6 @@
 # Toggle `$import`
 
-This template will allow you to toggle the `[$import operation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/import-data)` on a FHIR service inside a Azure Health Data Services workspace. 
+This template will allow you to toggle the [$import operation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/import-data) on a FHIR service inside a Azure Health Data Services workspace. Read [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/configure-import-data) for more details on `$import`.
 
 ## Deployment via portal
 
