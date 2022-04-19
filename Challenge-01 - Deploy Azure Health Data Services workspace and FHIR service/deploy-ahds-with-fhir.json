@@ -1,0 +1,99 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.5.6.12127",
+      "templateHash": "3399141169974302637"
+    }
+  },
+  "parameters": {
+    "resourceTags": {
+      "type": "object",
+      "defaultValue": {
+        "environmentName": "Azure Health Data Services OpenHack",
+        "challengeTitle": "Deploy Core Training Environment",
+        "expirationDate": "06/30/2022"
+      },
+      "metadata": {
+        "description": "Tags to be applied to resources that are deployed in this template"
+      }
+    },
+    "deploymentPrefix": {
+      "type": "string",
+      "maxLength": 7,
+      "minLength": 3,
+      "metadata": {
+        "description": "Deployment Prefix - all resources that are created in this workshop will start with this prefix"
+      }
+    },
+    "resourceLocation": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Azure Region where the resources will be deployed. Default Value:  the resource group region"
+      }
+    },
+    "postmanClientId": {
+      "type": "string",
+      "metadata": {
+        "description": "Client Id of Postman Applicaton Registration"
+      }
+    }
+  },
+  "variables": {
+    "uniqueId": "[toLower(take(uniqueString(subscription().id, resourceGroup().id, parameters('deploymentPrefix')), 6))]",
+    "ahdsWorkspaceName": "[format('{0}{1}hdsws', parameters('deploymentPrefix'), variables('uniqueId'))]",
+    "fhirServiceName": "fhirtrn"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.HealthcareApis/workspaces",
+      "apiVersion": "2021-11-01",
+      "name": "[variables('ahdsWorkspaceName')]",
+      "tags": "[parameters('resourceTags')]",
+      "location": "[parameters('resourceLocation')]",
+      "properties": {
+        "publicNetworkAccess": "Enabled"
+      },
+      "metadata": {
+        "description": "This is the Azure Health Data Services workspace for use in this workshop"
+      }
+    },
+    {
+      "type": "Microsoft.HealthcareApis/workspaces/fhirservices",
+      "apiVersion": "2021-11-01",
+      "name": "[format('{0}/{1}', variables('ahdsWorkspaceName'), variables('fhirServiceName'))]",
+      "tags": "[parameters('resourceTags')]",
+      "location": "[parameters('resourceLocation')]",
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "kind": "fhir-R4",
+      "dependsOn": [
+        "[resourceId('Microsoft.HealthcareApis/workspaces', variables('ahdsWorkspaceName'))]"
+      ],
+      "metadata": {
+        "description": "This is the FHIR Service under the Azure Health Data Services workspace for use in this workshop"
+      }
+    },
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "apiVersion": "2020-04-01-preview",
+      "scope": "[format('Microsoft.HealthcareApis/workspaces/{0}/fhirservices/{1}', variables('ahdsWorkspaceName'), variables('fhirServiceName'))]",
+      "name": "[guid(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('ahdsWorkspaceName'), variables('fhirServiceName')), parameters('postmanClientId'), subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '5a1fc7df-4bf1-4951-a576-89034ee01acd'))]",
+      "properties": {
+        "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '5a1fc7df-4bf1-4951-a576-89034ee01acd')]",
+        "principalId": "[parameters('postmanClientId')]",
+        "principalType": "ServicePrincipal"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('ahdsWorkspaceName'), variables('fhirServiceName'))]"
+      ],
+      "metadata": {
+        "description": "This is the role assignment to give access to the Postman Client to the FHIR Service"
+      }
+    }
+  ]
+}
