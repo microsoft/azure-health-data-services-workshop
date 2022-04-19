@@ -1,0 +1,175 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.5.6.12127",
+      "templateHash": "9823687586454963946"
+    }
+  },
+  "parameters": {
+    "deploymentPrefix": {
+      "type": "string",
+      "maxLength": 7,
+      "minLength": 3,
+      "metadata": {
+        "description": "Deployment prefix used in Challenge-01"
+      }
+    },
+    "resourceLocation": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Azure gegion where your FHIR service is deployed. Default Value: the resource group region"
+      }
+    },
+    "toggleImport": {
+      "type": "bool",
+      "metadata": {
+        "description": "Flag to enable or disable $import"
+      }
+    }
+  },
+  "variables": {
+    "uniqueId": "[toLower(take(uniqueString(subscription().id, resourceGroup().id, parameters('deploymentPrefix')), 6))]",
+    "workspaceName": "[format('{0}{1}hdsws', parameters('deploymentPrefix'), variables('uniqueId'))]",
+    "fhirName": "data",
+    "storageName": "[format('{0}{1}stor', parameters('deploymentPrefix'), variables('uniqueId'))]",
+    "containerName": "import"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.HealthcareApis/workspaces/fhirservices",
+      "apiVersion": "2021-11-01",
+      "name": "[format('{0}/{1}', variables('workspaceName'), variables('fhirName'))]",
+      "location": "[parameters('resourceLocation')]",
+      "kind": "fhir-R4",
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "acrConfiguration": "[reference(resourceId('Microsoft.Resources/deployments', variables('fhirName'))).outputs.acrConfiguration.value]",
+        "accessPolicies": "[reference(resourceId('Microsoft.Resources/deployments', variables('fhirName'))).outputs.accessPolicies.value]",
+        "corsConfiguration": "[reference(resourceId('Microsoft.Resources/deployments', variables('fhirName'))).outputs.corsConfiguration.value]",
+        "authenticationConfiguration": "[reference(resourceId('Microsoft.Resources/deployments', variables('fhirName'))).outputs.authenticationConfiguration.value]",
+        "importConfiguration": "[if(parameters('toggleImport'), createObject('enabled', true(), 'initialImportMode', true(), 'integrationDataStore', variables('storageName')), createObject('enabled', false()))]",
+        "exportConfiguration": "[reference(resourceId('Microsoft.Resources/deployments', variables('fhirName'))).outputs.exportConfiguration.value]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', variables('fhirName'))]"
+      ],
+      "metadata": {
+        "description": "Updated FHIR Service used to enable import"
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2021-06-01",
+      "name": "[variables('storageName')]",
+      "location": "[parameters('resourceLocation')]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "metadata": {
+        "description": "Storage account used by FHIR service for $import"
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+      "apiVersion": "2021-06-01",
+      "name": "[format('{0}/default/{1}', variables('storageName'), variables('containerName'))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))]"
+      ],
+      "metadata": {
+        "description": "Blob container used by FHIR service for $import"
+      }
+    },
+    {
+      "type": "Microsoft.Authorization/roleAssignments",
+      "apiVersion": "2020-04-01-preview",
+      "scope": "[format('Microsoft.Storage/storageAccounts/{0}/blobServices/{1}/containers/{2}', split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[0], split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[1], split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[2])]",
+      "name": "[guid(resourceId('Microsoft.Storage/storageAccounts/blobServices/containers', split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[0], split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[1], split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[2]), resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('workspaceName'), variables('fhirName')), subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe'))]",
+      "properties": {
+        "roleDefinitionId": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]",
+        "principalId": "[reference(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('workspaceName'), variables('fhirName')), '2021-11-01', 'full').identity.principalId]"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('workspaceName'), variables('fhirName'))]",
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices/containers', split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[0], split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[1], split(format('{0}/default/{1}', variables('storageName'), variables('containerName')), '/')[2])]"
+      ],
+      "metadata": {
+        "description": "This is the role assignment to give access to the Postman Client to the FHIR Service"
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "[variables('fhirName')]",
+      "properties": {
+        "expressionEvaluationOptions": {
+          "scope": "inner"
+        },
+        "mode": "Incremental",
+        "parameters": {
+          "fhirName": {
+            "value": "[variables('fhirName')]"
+          },
+          "workspaceName": {
+            "value": "[variables('workspaceName')]"
+          }
+        },
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "metadata": {
+            "_generator": {
+              "name": "bicep",
+              "version": "0.5.6.12127",
+              "templateHash": "1840105785416631653"
+            }
+          },
+          "parameters": {
+            "workspaceName": {
+              "type": "string",
+              "metadata": {
+                "description": "Name of the existing AHDS workspace"
+              }
+            },
+            "fhirName": {
+              "type": "string",
+              "metadata": {
+                "description": "Name of the existing FHIR service"
+              }
+            }
+          },
+          "resources": [],
+          "outputs": {
+            "acrConfiguration": {
+              "type": "object",
+              "value": "[reference(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', parameters('workspaceName'), parameters('fhirName')), '2021-11-01').acrConfiguration]"
+            },
+            "accessPolicies": {
+              "type": "array",
+              "value": "[reference(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', parameters('workspaceName'), parameters('fhirName')), '2021-11-01').accessPolicies]"
+            },
+            "authenticationConfiguration": {
+              "type": "object",
+              "value": "[reference(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', parameters('workspaceName'), parameters('fhirName')), '2021-11-01').authenticationConfiguration]"
+            },
+            "corsConfiguration": {
+              "type": "object",
+              "value": "[reference(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', parameters('workspaceName'), parameters('fhirName')), '2021-11-01').corsConfiguration]"
+            },
+            "exportConfiguration": {
+              "type": "object",
+              "value": "[reference(resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', parameters('workspaceName'), parameters('fhirName')), '2021-11-01').exportConfiguration]"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
