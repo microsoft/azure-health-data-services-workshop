@@ -17,9 +17,6 @@ param deploymentPrefix string
 @description('Azure Region where the resources will be deployed. Default Value: the resource group region')
 param resourceLocation string = resourceGroup().location
 
-@description('Client Id (GUID) of Postman Applicaton Registration.')
-param postmanClientId string
-
 // -- variables
 var uniqueId = toLower(take(uniqueString(subscription().id, resourceGroup().id, deploymentPrefix),6))
 
@@ -32,6 +29,14 @@ var authority     = '${loginURL}${tenantId}'
 var audience      = 'https://${workspaceName}-${fhirName}.fhir.azurehealthcareapis.com'
 
 // -- Resources
+@description('Tags at the resource group level')
+resource symbolicname 'Microsoft.Resources/tags@2021-04-01' = {
+  name: 'default'
+  properties: {
+    tags: resourceTags
+  }
+}
+
 @description('This is the Azure Health Data Services workspace for use in this workshop')
 resource healthWorkspace 'Microsoft.HealthcareApis/workspaces@2021-11-01' = {
   name: workspaceName
@@ -60,22 +65,5 @@ resource fhir 'Microsoft.HealthcareApis/workspaces/fhirservices@2021-11-01' = {
       audience: audience
       smartProxyEnabled: false
     }
-  }
-}
-
-@description('This is the built-in FHIR Data Contributor role. See https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#fhir-data-contributor')
-resource fhirContributorRoleDefinition 'Microsoft.Authorization/roleDefinitions@2018-01-01-preview' existing = {
-  scope: subscription()
-  name: '5a1fc7df-4bf1-4951-a576-89034ee01acd'
-}
-
-@description('This is the role assignment to give access to the Postman Client to the FHIR Service')
-resource fhirDataContributorAccess 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
-  scope: fhir
-  name: guid(fhir.id, postmanClientId, fhirContributorRoleDefinition.id)
-  properties: {
-    roleDefinitionId: fhirContributorRoleDefinition.id
-    principalId: postmanClientId
-    principalType: 'ServicePrincipal'
   }
 }

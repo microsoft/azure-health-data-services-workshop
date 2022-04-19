@@ -32,7 +32,7 @@ The workspace also creates a compliance boundary (HIPAA, HITRUST) within which p
 
 Component View of Azure Health Data Services workspace containing FHIR service, DICOM service, MedTech service.
 
-<img src="https://thumbs.dreamstime.com/b/orange-post-note-isolated-white-7874325.jpg" height="528">
+<img src="https://thumbs.dreamstime.com/b/orange-post-note-isolated-white-7874325.jpg" height="100">
 
 ## Prerequisites 
 
@@ -44,26 +44,15 @@ Before deploying **Azure Health Data Services workspace** and **FHIR service**, 
   
 You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
 
-## Step 1 - Create an App Registration for Accessing FHIR Service with Postman
+## Step 1 - Deploy Azure Health Data Services workspace and FHIR Service
 
 In the first part of this challenge, you will
-
-+ Visit another repo and read the deployment instructions
-+ Go to the Azure Portal and create an App Registration
-
-Follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application). You can skip the **API permissions** and **Authentication setting: confidential vs. public** sections as they are not needed. Make sure to save your new application's `client id`, `client secret`, and the `tenant id` for the next steps and exercises.
-
-**#TODO:** Should we embed the instructions in this page or a different page? 
-
-## Step 2 - Deploy FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
-
-In the next part of this challenge, you will
 
 + Go to the Azure Portal and deploy an Azure Health Data Services **workspace** and a **FHIR Service**.
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay2022-challenge-01%2FChallenge-01%2520-%2520Deploy%2520Azure%2520Health%2520Data%2520Services%2520workspace%2520and%2520FHIR%2520service%2Fdeploy-ahds-with-fhir.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay2022-challenge-01%2FChallenge-01%2520-%2520Deploy%2520Azure%2520Health%2520Data%2520Services%2520workspace%2520and%2520FHIR%2520service%2templates%2FFdeploy-ahds-with-fhir.json)
 
 The ARM/Bicep template will deploy the following components:
 
@@ -75,13 +64,43 @@ __Important:__ In order to successfully deploy resources with this ARM template,
 
 __Note:__  Before running the ARM template, it is recommended to create a new resource group first and check to make sure that you have Owner rights. Once you confirm that you have Owner rights for the resource group, then proceed to run the template and deploy into that resource group.
 
-__Note:__ Deployment of **Azure Health Data Services workspace** and **FHIR service** typically takes 8 minutes.
+__Note:__ Deployment of **Azure Health Data Services workspace** and **FHIR service** typically takes 8 minutes. You can start the next step in the meantime.
+
+
+## Step 2 - Create an App Registration for Accessing FHIR Service with Postman
+
+In the next part of this challenge, you will
+
++ Go to the Azure Portal and create an App Registration
++ Assign your App Registration access to the Azure Health Data Services workspace
+
+1. Follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application). You can skip the **API permissions** and **Authentication setting: confidential vs. public** sections as they are not needed. Make sure to save your new application's`name`, `client id`, `client secret`, and the `tenant id` for the next steps and exercises.
+
+2. Next, follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac) to assign `FHIR Contributor` access to the App Registration you just created. Try this procedure on your **workspace** to test this concept of Azure Health Data Services.
+
+## Step 3 - Setup Postman and test connecting to FHIR service
+
+In this final step, you will setup Postman for interacting with the FHIR service via API calls. Then you will use Postman to make API calls to test the FHIR service.
+
+1. Open Postman on your computer. If you are unfamiliar with Postman, look at the documentation below (now or later if you get stuck).
+    + [Installing and updating Postman](https://learning.postman.com/docs/getting-started/installation-and-updates/)
+    + [Navigating Postman](https://learning.postman.com/docs/getting-started/navigating-postman/)
+    + [Sending your first request](https://learning.postman.com/docs/getting-started/sending-the-first-request/)
+    + [Creating a workspace](https://learning.postman.com/docs/getting-started/creating-your-first-workspace/)
+    + [Creating your first collection](https://learning.postman.com/docs/getting-started/creating-the-first-collection/)
+    + [Managing environments](https://learning.postman.com/docs/sending-requests/managing-environments/)
+
+
+2. Follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/use-postman). Skip the **Export FHIR data** section at the end as exporting is covered in challenge 5.
+
+3. Run the `GET /Patient` request again in Postman to show you successfully created a patient in the FHIR service.
 
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace deployed and available
 + FHIR service deployed and available
 + Client application created in Azure Active Directory for use with FHIR service
++ `FHIR Contributor` role assigned to your App Registration on the workspace
 + Postman set up and able to connect with FHIR service
   + Successful `GET /metadata` request response to show FHIR capability statement.
 
@@ -107,7 +126,7 @@ __Note:__ Deployment of **Azure Health Data Services workspace** and **FHIR serv
 
 Azure Health Data Services workspace and FHIR service.
 
-<img src="https://thumbs.dreamstime.com/b/orange-post-note-isolated-white-7874325.jpg" height="528">
+<img src="https://thumbs.dreamstime.com/b/orange-post-note-isolated-white-7874325.jpg" height="100">
 
 ## Next Steps
 
