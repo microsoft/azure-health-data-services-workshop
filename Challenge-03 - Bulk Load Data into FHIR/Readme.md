@@ -36,7 +36,9 @@ Firstly, the FHIR service needs to be configured to enable `$import`. Since this
 
 1. To begin, CTRL+click (Windows or Linux) or CMD+click (Mac) on the Deploy to Azure button below to open the deployment form in a new browser tab. This ARM template will enable `$import` in the FHIR service and setup the associated storage account.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay2022-challenge-03%2FChallenge-03%2520-%Bulk%2520Load2520Data2520into2520FHIR%2Fdeploy-ahds-with-fhir.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay22-challenge-03%2FChallenge-03%2520-%2520Bulk%2520Load%2520Data%2520into%2520FHIR%2Ftemplates%2Ftoggle_import.json)
+
+*Note: This configuration change generally takes about 20 minutes. You can do steps 2 and 3 in the meantime.***
 
 ## Step 2 - Download Sample Data
 
@@ -68,13 +70,21 @@ Use Postman to follow the instructions to craft the request.
 **#TODO - fill out**
 
 
-## Step 3 - Debug issues with importing bulk FHIR data 
+## Step 5 - Debug issues with importing bulk FHIR data 
 
 1. Now try importing one or more of the bundle file that you downloaded in Step 2 of this challenge. Upload the files to the same container where you uploaded the `ndjson` files. Start an `$import` operation with one or more of the bundles.
 
 2. What happens as a result?
 
 **#TODO - retool with ndjson with same IDs?**
+
+## Step 6 - Disable `$import` in the FHIR service
+
+Before moving on to the next steps, you need to disable the `$import` operation to continue future challenges. 
+
+1. Use the `Deploy to Azure` button from step 1 to re-run the same operation with "Toggle Import" set to false.
+
+*Note: This configuration change generally takes about 20 minutes. This will not block you from working on the next challenge as you can still read data from the FHIR service.***
 
 ## Troubleshooting 
 
