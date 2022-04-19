@@ -15,6 +15,7 @@ resource existingFhir 'Microsoft.HealthcareApis/workspaces/fhirservices@2021-11-
   parent: existingWorkspace
 }
 
+output properties object = existingFhir.properties
 output acrConfiguration object = existingFhir.properties.acrConfiguration
 output accessPolicies array = existingFhir.properties.accessPolicies
 output authenticationConfiguration object = existingFhir.properties.authenticationConfiguration
