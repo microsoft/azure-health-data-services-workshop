@@ -49,10 +49,11 @@ You will also need to have [Postman](https://www.getpostman.com/) installed - ei
 In the first part of this challenge, you will
 
 + Visit another repo and read the deployment instructions
-+ Go to the Azure Portal and create an Application Registration
++ Go to the Azure Portal and create an App Registration
 
 Follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application). You can skip the **API permissions** and **Authentication setting: confidential vs. public** sections as they are not needed. Make sure to save your new application's `client id`, `client secret`, and the `tenant id` for the next steps and exercises.
 
+**#TODO:** Should we embed the instructions in this page or a different page? 
 
 ## Step 2 - Deploy FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
 

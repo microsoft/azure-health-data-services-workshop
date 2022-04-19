@@ -22,13 +22,15 @@ param postmanClientId string
 
 // -- variables
 var uniqueId = toLower(take(uniqueString(subscription().id, resourceGroup().id, deploymentPrefix),6))
-//var loginURL = environment().authentication.loginEndpoint
-//var authority = '${loginURL}${tenantId}'
-//var audience = 'https://${workspaceName}-${fhirName}.fhir.azurehealthcareapis.com'
 
 // -- resource names
 var ahdsWorkspaceName        = '${deploymentPrefix}${uniqueId}hdsws'
 var fhirServiceName          = 'fhirtrn'
+
+// -- fhir config vales
+var loginURL = environment().authentication.loginEndpoint
+var authority = '${loginURL}${subscription().tenantId}'
+var audience = 'https://${ahdsWorkspaceName}-${fhirServiceName}.fhir.azurehealthcareapis.com'
 
 // -- Resources
 @description('This is the Azure Health Data Services workspace for use in this workshop')
@@ -46,11 +48,19 @@ resource fhirService 'Microsoft.HealthcareApis/workspaces/fhirservices@2021-11-0
   name: fhirServiceName
   tags: resourceTags
   location: resourceLocation
-  parent: healthDataWorkspace
+  kind: 'fhir-R4'
+
   identity: {
     type: 'SystemAssigned'
   }
-  kind: 'fhir-R4'
+
+  properties: {
+    authenticationConfiguration: {
+      authority: authority
+      audience: audience
+      smartProxyEnabled: false
+    }
+  }
 }
 
 @description('This is the built-in FHIR Data Contributor role. See https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#fhir-data-contributor')
