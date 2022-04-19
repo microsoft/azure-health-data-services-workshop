@@ -75,6 +75,8 @@ __Important:__ In order to successfully deploy resources with this ARM template,
 
 __Note:__  Before running the ARM template, it is recommended to create a new resource group first and check to make sure that you have Owner rights. Once you confirm that you have Owner rights for the resource group, then proceed to run the template and deploy into that resource group.
 
+__Note:__ Deployment of **Azure Health Data Services workspace** and **FHIR service** typically takes 8 minutes.
+
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace deployed and available
