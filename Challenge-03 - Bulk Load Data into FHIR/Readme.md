@@ -36,7 +36,7 @@ Firstly, the FHIR service needs to be configured to enable `$import`. Since this
 
 1. To begin, CTRL+click (Windows or Linux) or CMD+click (Mac) on the Deploy to Azure button below to open the deployment form in a new browser tab. This ARM template will enable `$import` in the FHIR service and setup the associated storage account.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay22-challenge-03%2FChallenge-03%2520-%2520Bulk%2520Load%2520Data%2520into%2520FHIR%2Ftemplates%2Ftoggle_import.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay2022-challenge-01%2FChallenge-01%2520-%2520Deploy%2520Azure%2520Health%2520Data%2520Services%2520workspace%2520and%2520FHIR%2520service%2Ftemplates%2Fdeploy-ahds-with-fhir.json
 
 *Note: This configuration change generally takes about 20 minutes. You can do steps 2 and 3 in the meantime.***
 
