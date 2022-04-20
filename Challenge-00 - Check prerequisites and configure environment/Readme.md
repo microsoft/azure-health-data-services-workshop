@@ -3,16 +3,16 @@
 ## Introduction
 
 In this preliminary challenge, you will be checking your basic knowledge, Azure environment, and other prerequisites of the workshop to ensure you are ready for Challenge-01 and beyond.
-
-## Background
-
-The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with Azure Health Data Services, including the FHIR, DICOM, and MedTech services. This workshop contains common solutions and techniques that Microsoft has observed and built our healthcare products around. After this workshop, you will have a better understanding on how to build your own solutions using the latest healthcare focused solutions from Microsoft.
  
 ## Learning Objectives for Challenge-00
 
 + Understand the general learner goals of this workshop
 + Check the knowledge prerequisites for this workshop
 + Check that your Azure environment is ready for this workshop
+
+## Background
+
+The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with Azure Health Data Services, including the FHIR, DICOM, and MedTech services. This workshop contains common solutions and techniques that Microsoft has observed and built our healthcare products around. After this workshop, you will have a better understanding on how to build your own solutions using the latest healthcare focused solutions from Microsoft.
 
 ## What do we want learners to gain from the Azure Health Data Services Workshop?
 
