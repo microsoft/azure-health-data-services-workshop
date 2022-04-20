@@ -2,13 +2,13 @@
 
 ## Introduction
 
-In this preliminary challenge, you will be checking your basic knowledge, Azure environment, and other prerequisites of the workshop to ensure you are ready for Challenge-01 and beyond.
+In this preliminary challenge, you will be checking your Azure environment and other prerequisites of the workshop to ensure you are ready for Challenge-01 and beyond.
  
 ## Learning Objectives for Challenge-00
 
-+ Understand the general learner goals of this workshop
-+ Check the knowledge prerequisites for this workshop
-+ Check that your Azure environment is ready for this workshop
++ Understand the general learner goals of this workshop.
++ Check the knowledge prerequisites for this workshop.
++ Check that your Azure environment is ready for this workshop.
 
 ## Background
 
@@ -18,18 +18,20 @@ The Azure Health Data Services Workshop presents a series of challenges to help 
 
 In general, we want learners to walk away with a sense of confidence in deploying, configuring, and implementing Microsoft's health data solutions.
 
-+ In completing this workshop, learners will know the role of Microsoft's health data services.
++ In completing this workshop, learners will know the capabilities of Microsoft's health data services.
 + Learners will know how to **deploy**, **ingest**, **transform**, and **connect health data** using the Azure health data platform.
-+ The tasks require learners to locate information in technical documentation and **resolve issues independently**. This workshop is meant to have some challenge to ensure you learn about Microsoft's healthcare platform.
-+ Working on the challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will setup to **use Microsoft Health & Life Sciences (HLS) tools in real-world solutions**.
++ The tasks require learners to locate information in technical documentation and **resolve issues independently**. This workshop is meant to give learners practice retrieving information from Microsoft documentation resources.
++ Working on the challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be set up to **use Microsoft Health & Life Sciences (HLS) tools in real-world solutions**.
 
 ## Prerequisite Knowledge for the Azure Health Data Services Workshop
 
-These concepts will be necessary to understanding and completing the challenges in this workshop. If you are unfamiliar with any of these areas, review the [More Resources section](#more-resources). Time spent upfront ensuring you have some base knowledge about the technologies used in this workshop will ensure you will be able to gain *actionable experience* for real-world scenarios you will face.
+These concepts will be necessary for completing the challenges in this workshop. If you are unfamiliar with any of these areas, review the [More Resources section](#more-resources). Time spent upfront ensuring you have some basic knowledge about the technologies used in this workshop will ensure you will be able to gain *actionable experience* for real-world scenarios you will face.
 
 + A solid foundation in **Azure fundamentals** and basic knowledge of **Azure Active Directory**.
-+ Familiarity with **FHIR®**  and the solutions it solves versus legacy health data formats.
++ Familiarity with **FHIR®** and the solutions it provides versus legacy health data formats.
 + Experience with making **REST API** requests using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing tool (like cURL or Fiddler).
+
+**Note:** For the rest of the workshop, instructions will be geared towards using Postman as your API testing tool. Please use Postman unless you have a strong preference and deep knowledge of another tool.
 
 ## Environment Prerequisites
 
