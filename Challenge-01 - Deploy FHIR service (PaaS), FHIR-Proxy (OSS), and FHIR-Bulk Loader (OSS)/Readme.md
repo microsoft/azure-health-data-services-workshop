@@ -10,15 +10,14 @@ In this challenge, you will deploy and use an **Azure Health Data Services works
 
 By the end of this challenge you will be able to:
 
-+ Explain the difference between workspaces and FHIR services in Azure Health Data Services.
++ Explain the difference between workspaces and services in Azure Health Data Services.
 + Use a template to deploy a FHIR service inside of an Azure Health Data Services workspace.
 + Create a client application for Postman and grant it access to your FHIR service.
-+ Configure Postman for sending web API request to your FHIR service.
-+ Use your API testing tool to make FHIR API calls to your FHIR service.
++ Configure and use Postman for sending web API request to your FHIR service.
 
 ## Background
 
-**FHIR service** is the core component for reading, writing, and querying structured healthcare data inside of Azure Health Data Services. You may have also heard of the Azure API for FHIR, which is Microsoft first generally available product for FHIR. For this training, we will be focusing on the new FHIR service, which has some big advantages over its predecessor (like transactions, Azure Health Data Services workspace level configuration, performance improvements for search, import, and export). Many of these exercises will work with the Azure API for FHIR, but some will not. Please use the FHIR service for this workshop.
+**FHIR service** is the core component for reading, writing, and querying structured healthcare data inside of Azure Health Data Services. You may have also heard of the Azure API for FHIR, which is Microsoft first generally available product for FHIR. For this training, we will be focusing on the new FHIR service, which has some big advantages over its predecessor (like transactions, Azure Health Data Services workspace level configuration, and performance improvements for search, import, and export). Many of these exercises will work with the Azure API for FHIR, but some will not. We will be using the FHIR service for this workshop.
 
 ### Azure Health Data Services Workspace Relationship with FHIR, DICOM, and MedTech Services
 
@@ -30,28 +29,28 @@ The workspace also creates a compliance boundary (HIPAA, HITRUST) within which p
 
 ## Prerequisites
 
-Before deploying an **Azure Health Data Services workspace** and a **FHIR service**, please make sure that you have the following permissions in your Azure environment.
+Before deploying to your Azure environment, please make sure that you have the following permissions.
 
-+ **Azure Subscription:** You must have rights to deploy resources at the Resource Group scope in your Azure Subscription (i.e. [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) role).
++ **Azure Subscription:** You must have rights to deploy resources at the resource group scope in your Azure subscription (i.e. [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) role).
 
-+ **Azure Active Directory (AAD):** You must have [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure Subscription.
++ **Azure Active Directory (AAD):** You must have [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure subscription.
 
 You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
 
-## Step 1: Deploy FHIR Service, Azure Health Data Services workspace, and Workshop Dependencies
+## Step 1: Deploy to your Azure Environment
 
 In the first part of this challenge, you will:
 
-+ Visit another repo and read the deployment instructions
-+ Use a template to deploy resources to the Azure Portal. You're going to deploy *more* than what is needed in this challenge to prepare you for future challenges. This template will deploy:
++ Visit another GitHub repository and read the deployment instructions.
++ Use a template there to deploy resources with the Azure Portal. You're going to deploy *more* than what is needed in this challenge to prepare you for future challenges. This template will deploy:
   + Azure Health Data Services workspace
   + FHIR service
   + FHIR Loader (for Challenge-03)
   + FHIR Proxy (for Challenge-07)
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Starter quickstarts folder in a new browser tab.
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR Starter quickstarts folder in a new browser tab.
 
-https://github.com/microsoft/fhir-starter/tree/main/quickstarts 
+[https://github.com/microsoft/fhir-starter/tree/main/quickstarts](https://github.com/microsoft/fhir-starter/tree/main/quickstarts)
 
 Follow the instructions and return here when finished.
 
@@ -59,8 +58,8 @@ Follow the instructions and return here when finished.
 
 In the next part of this challenge, you will:
 
-+ Visit another repo and follow the instructions on setting up Postman
-+ Make API calls to test FHIR service using Postman
++ Visit another GitHub repository and follow the instructions on setting up Postman.
++ Make API calls to test FHIR service using Postman.
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
 
@@ -71,7 +70,7 @@ Follow the instructions and return here when finished.
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace and FHIR service deployed and available in Azure.
-+ FHIR Proxy and Bulk Loader deployed in Azure for future challenges.
++ FHIR Proxy and FHIR Loader deployed in Azure for future challenges.
 + Client application created in Azure Active Directory for use with Postman and your FHIR service.
 + Postman set up and able to connect with you FHIR service.
   + Capability Statement from your FHIR service - received.
