@@ -51,25 +51,25 @@ Click [here](<../Challenge-01 - Deploy FHIR service (PaaS), FHIR-Proxy (OSS), an
 
 ## More Resources
 
-If you are unfamiliar with any of the above concepts, check out the resources below for some basic knowledge to help you get the most value of the time you are spending in this workshop.
+If you are unfamiliar with any of the above concepts, have a look at the resources below. These are starting points to help you get the most value out of this workshop.
 
 ### Azure
 
-Microsoft Azure is a cloud computing platform that enables on-demand, highly scalable computing for organizations and individuals all over the world. It's the core of every challenge and step in this workshop.
+Microsoft Azure is a cloud computing platform that enables on-demand, highly scalable computing for organizations and individuals all over the world. It is the core of every challenge and step in this workshop.
 
 + [Azure Cloud Concepts](https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/)
 + [Azure Active Directory App Registrations and Auth Tokens](https://docs.microsoft.com/learn/modules/implement-app-registration/)
 
 ### FHIR
 
-FHIR® (Fast Healthcare Interoperability Resources) is a new data standard created by HL7 (Health Level Seven) for anyone working with health data to ingest, manage, and persist health information.
+FHIR® (Fast Healthcare Interoperability Resources) is a data standard created by HL7 (Health Level Seven) for ingesting, managing, and persisting health data.
 
 + [HL7 FHIR Introduction](https://www.hl7.org/fhir/summary.html)
 + [FHIR Architect's Introduction](https://www.hl7.org/fhir/overview-arch.html)
 
 ### REST APIs
 
-REST (representational state transfer) APIs (application programming interfaces) or web APIs is a software architectural style that was created for internet services. Every internet user makes thousands of REST API requests a day, usually without knowing this since requests are handled by applications and not seen by users.
+REST (Representational State Transfer) APIs (Application Programming Interfaces) or web APIs are a software architectural style created for internet services. Every internet user makes thousands of REST API requests a day, usually without knowing this since requests are handled by applications and generally not seen by users.
 
 + [RESTful Web API design](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
 + [Representational state transfer](https://wikipedia.org/wiki/Representational_state_transfer)
