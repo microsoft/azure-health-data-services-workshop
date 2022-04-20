@@ -4,104 +4,96 @@
 
 Welcome to Challenge-01!
 
-In this challenge, you will use an **Azure Health Data Services workspace** with a **FHIR service**. In addition, you will set up a **Postman** environment to make application programming interface (API) calls to the FHIR service.
-
-## Background
-
-FHIR (Fast Healthcare Interoperability Resources) is the standard format for data storage and exchange in Microsoft's health data platform. Microsoft currently has two FHIR offerings: [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) (PaaS) and [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview) (PaaS). For this training, we will be focusing on the new FHIR service, which is a core component of [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/). This new service offers additional technologies and advantages over the Azure API for FHIR. Check out [this page](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/fhir-faq#what-is-the-difference-between-azure-api-for-fhir-and-the-fhir-service-in-the-azure-health-data-services) for more comparison information.
-
-**#TODO:** fill out more background
+In this challenge, you will deploy and use an **Azure Health Data Services workspace** with a child **FHIR service**. In addition, you will setup your API testing tool (like **Postman**) and start reading and writing data to FHIR service.
 
 ## Learning Objectives for Challenge-01
 
-By the end of this challenge you will be able to 
+By the end of this challenge you will be able to:
 
-+ Explain the difference between workspaces and FHIR service in Azure Health Data Services
-+ Use the Azure Portal to deploy Azure an Health Data Services workspace and a FHIR service 
-+ Create a client application and assign access for accessing FHIR service
-+ Configure Postman for testing FHIR API calls
-+ Use Postman to make FHIR API calls to FHIR service
++ Explain the difference between workspaces and FHIR services in Azure Health Data Services.
++ Use the Azure Portal to deploy Azure an Health Data Services workspace and a FHIR service.
++ Create a client application for you API testing tool and grant it access to your FHIR service.
++ Configure your API testing tool for sending web API request to FHIR service.
++ Use your API testing tool to make FHIR API calls to your FHIR service.
+
+## Background
+
+**FHIR service** is the core component for reading, writing, and querying structured healthcare data inside of Azure Health Data Services. You may have also heard of the Azure API for FHIR, which is Microsoft first generally available product for FHIR. For this training, we will be focusing on the new FHIR service, which has some big advantages over its predecessor (like transactions, Azure Health Data Services workspace level configuration, performance improvements for search, import, and export). Many of these exercises will work with the Azure API for FHIR, but some will not. Please use the FHIR service for this workshop.
 
 ### Azure Health Data Services Workspace Relationship with FHIR, DICOM, and MedTech Services
 
-In the Azure health data platform, the Azure Health Data Services workspace is a logical container for all your healthcare service instances such as Fast Healthcare Interoperability Resources (FHIR) services, Digital Imaging and Communications in Medicine (DICOM) services, and MedTech service. You can provision multiple data services in a single workspace - you can have multiple FHIR, DICOM, and MedTech services in a workspace to meet your needs.
+In the Azure health ecosystem, the Azure Health Data Services workspace is a logical container for associated healthcare service instances such as FHIR services, DICOM (Digital Imaging and Communications in Medicine) services, and MedTech services. You can provision multiple data services in a single workspace - you can have multiple FHIR, DICOM, and MedTech services in a single workspace to meet your solution needs.
 
-<img src="https://docs.microsoft.com/en-us/azure/healthcare-apis/media/azure-resource-group.png" height="528">
+![Relationship between resource groups, Azure Health Data Services, and child services](./resources/azure-health-data-services-workspace-overview.png)
 
-The workspace also creates a compliance boundary (HIPAA, HITRUST) within which protected health information can travel. This means that configuration such as [Role-Based Access Control (RBAC)](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac), private networking with [Private Link](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-configure-private-link), and [event messages](https://docs.microsoft.com/en-us/azure/healthcare-apis/events/events-deploy-portal) can all be configured at the workspace level, reducing your configuration and management complexity.
+The workspace also creates a compliance boundary (HIPAA, HITRUST) within which protected health information can travel. This means that configuration such as [Role-Based Access Control (RBAC)](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac), private network data transit with [Private Link](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-configure-private-link), and [event messages](https://docs.microsoft.com/azure/healthcare-apis/events/events-deploy-portal) can all be configured at the workspace level, reducing your configuration and management complexity.
 
-Component View of Azure Health Data Services workspace containing FHIR service, DICOM service, MedTech service.
+## Prerequisites
 
-<img src="https://thumbs.dreamstime.com/b/orange-post-note-isolated-white-7874325.jpg" height="100">
+Before deploying an **Azure Health Data Services workspace** and a **FHIR service**, please make sure that you have the following permissions in your Azure environment.
 
-## Prerequisites 
-
-Before deploying **Azure Health Data Services workspace** and **FHIR service**, please make sure that you have the following permissions in your Azure environment.
-
-+ **Azure Subscription:** You must have rights to deploy resources and assign roles at the resource group scope in your Azure subscription (e.g. [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) role or [Contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#contributor) and [User Access Administrator](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator)).
++ **Azure Subscription:** You must have rights to deploy resources and assign roles at the resource group scope in your Azure subscription (e.g. [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) role or [Contributor](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) and [User Access Administrator](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator)).
   
-+ **Azure Active Directory (AAD):** You must have the ability to create application registrations and service principals in your Azure Active Directory (AAD) tenant. You will need the [Application Developer](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your tenant or your tenant needs to have the `Users can register applications` setting is enabled.
++ **Azure Active Directory (AAD):** You must have the ability to create application registrations and service principals in your Azure Active Directory (AAD) tenant. You will need the [Application Developer](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#all-roles) role in your tenant or your tenant needs to have the `Users can register applications` setting is enabled.
   
-You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
+You will also need to have an API testing tool you are familiar with installed and ready to use (like [Postman](https://www.getpostman.com/) - either the desktop or web client).
 
 ## Step 1 - Deploy Azure Health Data Services workspace and FHIR Service
 
-In the first part of this challenge, you will
+In the first part of this challenge, you will:
 
-+ Go to the Azure Portal and deploy an Azure Health Data Services **workspace** and a **FHIR Service**.
++ Use a template to deploy an Azure Health Data Services **workspace** and a **FHIR Service**.
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
+The easiest way to deploy this template is to use the Azure Portal. Please **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay2022-challenge-01%2FChallenge-01%2520-%2520Deploy%2520Azure%2520Health%2520Data%2520Services%2520workspace%2520and%2520FHIR%2520service%2Ftemplates%2Fdeploy-ahds-with-fhir.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmay2022-challenge-01%2FChallenge-01%2520-%2520Deploy%2520Azure%2520Health%2520Data%2520Services%2520workspace%2520and%2520FHIR%2520service%2Fresources%2Fdeploy-ahds-with-fhir.json)
 
-The ARM/Bicep template will deploy the following components:
+The ARM (Azure Resource Manager) template will deploy the following components:
 
-+ [Azure Health Data Services workspace](https://docs.microsoft.com/en-us/azure/healthcare-apis/workspace-overview)
-+ [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview)
-+ [Role assignment for Postman client](https://docs.microsoft.com/en-us/azure/role-based-access-control/)
++ [Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview)
++ [FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)
 
-__Important:__ In order to successfully deploy resources with this ARM template, the user must have [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) rights for the [Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) where the components are deployed. Additionally, the user must have the [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#application-administrator) role in AAD in order to create application registrations.
+**Important:** Again, in order to successfully deploy resources in this workshop, you must have [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) rights for the Azure subscription. 
 
-__Note:__  Before running the ARM template, it is recommended to create a new resource group first and check to make sure that you have Owner rights. Once you confirm that you have Owner rights for the resource group, then proceed to run the template and deploy into that resource group.
+**Note:**  Before running the ARM template, you should create a new resource group first and check to make sure that you have Owner rights. Once you confirm that you have Owner rights for the resource group, then proceed to run the template and deploy into that resource group.
 
-__Note:__ Deployment of **Azure Health Data Services workspace** and **FHIR service** typically takes 8 minutes. You can start the next step in the meantime.
+**Note:** Deployment of **Azure Health Data Services workspace** and **FHIR service** with this template typically takes 8 minutes. You can start reading the next step in the meantime.
 
+## Step 2 - Create an App Registration for Accessing FHIR Service with your API Testing Tool
 
-## Step 2 - Create an App Registration for Accessing FHIR Service with Postman
+In the next part of this challenge, you will:
 
-In the next part of this challenge, you will
++ Go to the Azure Portal and create an App Registration.
++ Assign your App Registration access to the Azure Health Data Services workspace.
 
-+ Go to the Azure Portal and create an App Registration
-+ Assign your App Registration access to the Azure Health Data Services workspace
+1. Follow the instructions on [this documentation page](https://docs.microsoft.com/azure/healthcare-apis/register-application). You can skip the **API permissions** and **Authentication setting: confidential vs. public** sections as they are not needed. Make sure to save your new application's `name`, `client id`, `client secret`, and the `tenant id` for the next steps and exercises.
 
-1. Follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application). You can skip the **API permissions** and **Authentication setting: confidential vs. public** sections as they are not needed. Make sure to save your new application's`name`, `client id`, `client secret`, and the `tenant id` for the next steps and exercises.
+2. Next, follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac) to assign `FHIR Contributor` access to the App Registration you just created. Try this on your **workspace instead** of the FHIR service to test this concept of Azure Health Data Services workspace hierarchy over child services.
 
-2. Next, follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac) to assign `FHIR Contributor` access to the App Registration you just created. Try this procedure on your **workspace** to test this concept of Azure Health Data Services.
+**Important:** Again, in order to interact with Azure Active Directory (AAD) for this workshop, you must be able to create application registrations. You will probably need the [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#application-administrator) role in AAD.
 
-## Step 3 - Setup Postman and test connecting to FHIR service
+## Step 3 - Setup API Testing Tool (Postman) and Send Requests to FHIR Service
 
-In this final step, you will setup Postman for interacting with the FHIR service via API calls. Then you will use Postman to make API calls to test the FHIR service.
+In this final step, you will:
 
-1. Open Postman on your computer. If you are unfamiliar with Postman, look at the documentation below (now or later if you get stuck).
-    + [Installing and updating Postman](https://learning.postman.com/docs/getting-started/installation-and-updates/)
-    + [Navigating Postman](https://learning.postman.com/docs/getting-started/navigating-postman/)
-    + [Sending your first request](https://learning.postman.com/docs/getting-started/sending-the-first-request/)
-    + [Creating a workspace](https://learning.postman.com/docs/getting-started/creating-your-first-workspace/)
-    + [Creating your first collection](https://learning.postman.com/docs/getting-started/creating-the-first-collection/)
-    + [Managing environments](https://learning.postman.com/docs/sending-requests/managing-environments/)
++ Setup your API testing tool (like Postman) for interacting with the FHIR service via API requests and responses.
++ Use your API testing tool to make web API calls to test the FHIR service.
 
+**Note:** The rest of the instructions in this challenge and workshop will assume you are using Postman, as it's the recommended API testing tool. If you prefer another tool, please use it!
 
-2. Follow the instructions on [this documentation page](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/use-postman). Skip the **Export FHIR data** section at the end as exporting is covered in challenge 5.
+1. Open Postman on your computer. If you get stuck using Postman, review at the resources at the bottom of [Challenge-00](<../Challenge-00 - Check Prerequisites and Configure Environment>).
 
-3. Run the `GET /Patient` request again in Postman to show you successfully created a patient in the FHIR service.
+2. Follow the instructions on [this documentation page](https://docs.microsoft.com/azure/healthcare-apis/fhir/use-postman) to create a Postman environment and create and get a FHIR resource from the FHIR service. Skip the **Export FHIR data** section at the end as exporting is covered in Challenge-05.
+
+3. Run the `GET /Patient` request again in Postman to show you successfully created a patient resource in the FHIR service.
 
 ## What does success look like for Challenge-01?
 
-+ Azure Health Data Services workspace deployed and available
-+ FHIR service deployed and available
-+ Client application created in Azure Active Directory for use with FHIR service
-+ `FHIR Contributor` role assigned to your App Registration on the workspace
-+ Postman set up and able to connect with FHIR service
++ Azure Health Data Services workspace deployed and available in Azure.
++ FHIR service deployed and available in Azure.
++ Client application created in Azure Active Directory for use with FHIR service.
++ `FHIR Contributor` role assigned to your App Registration at the workspace level.
++ Postman set up and able to connect with FHIR service.
   + Successful `GET /metadata` request response to show FHIR capability statement.
 
     ```json
@@ -122,12 +114,12 @@ In this final step, you will setup Postman for interacting with the FHIR service
   + Successful `POST Save Patient` call in Postman to populate FHIR service with a Patient resource.
   + Successful `GET List Patients` call in Postman to retrieve a bundle of all Patient resources stored in FHIR service.
 
-## Deployed Components 
-
-Azure Health Data Services workspace and FHIR service.
-
-<img src="https://thumbs.dreamstime.com/b/orange-post-note-isolated-white-7874325.jpg" height="100">
-
 ## Next Steps
 
 Click [here](<../Challenge-02 - Convert HL7v2 and C-CDA to FHIR/Readme.md>) to proceed to Challenge-02.
+
+## More Resources
+
++ [FHIR Service Overview](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)
++ [Differences between FHIR service and Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis/fhir/fhir-faq#what-is-the-difference-between-azure-api-for-fhir-and-the-fhir-service-in-the-azure-health-data-services)
++ [Azure API for FHIR Overview](https://docs.microsoft.com/azure/healthcare-apis/azure-api-for-fhir/overview)
