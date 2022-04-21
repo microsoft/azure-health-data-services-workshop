@@ -41,16 +41,19 @@ You will also need to have [Postman](https://www.getpostman.com/) installed - ei
 
 In the first part of this challenge, you will:
 
-+ Visit another GitHub repository and read the deployment instructions.
-+ Use a template there to deploy resources with the Azure Portal. You're going to deploy *more* than what is needed in this challenge to prepare you for future challenges. This template will deploy:
++ Use a template to deploy resources with the Azure Portal. This template will deploy:
   + Azure Health Data Services workspace
   + FHIR service
-  + FHIR Loader (for Challenge-03)
+  + FHIR Bulk Loader (for Challenge-03)
   + FHIR Proxy (for Challenge-07)
 
 1. To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
 
-    + [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Ffhir-starter%2Fmain%2Fquickstarts%2Fdeployfhirtrain.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmain%2Fresources%2Fdeploy%2Fdeployfhirtrain.json)
+
+__Important:__ In order to successfully deploy resources with this ARM template, the user must have [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) rights for the [Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) where the components are deployed. Additionally, the user must have the [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#application-administrator) role in AAD in order to create application registrations.
+
+__Note:__  Before running the ARM template, it is recommended to create a new resource group first and check to make sure that you have Owner rights for the resource group. Once you confirm that you have Owner rights for the resource group, then proceed to run the template and deploy into that resource group.
 
 2. Select or fill in the parameter values (see image below).
 
@@ -64,7 +67,7 @@ In the first part of this challenge, you will:
 
 **Note:** This deployment typically takes 20 minutes.
 
-Review [Step 1 in this repo](https://github.com/microsoft/fhir-starter/tree/main/quickstarts) to learn more about what you just deployed.
+Review [Step 1 in these instructions](../resources/) to learn more about the resources deployed with this ARM template.
 
 ## Step 2 - Set up Postman and test FHIR service
 
