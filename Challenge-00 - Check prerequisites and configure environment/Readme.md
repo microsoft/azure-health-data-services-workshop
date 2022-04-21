@@ -25,7 +25,7 @@ In general, we want learners to walk away with a sense of confidence in deployin
 
 ## Prerequisite Knowledge for the Azure Health Data Services Workshop
 
-Familiarity with these concepts will be necessary for completing the challenges in this workshop. If you are unfamiliar with any of these topics, review the [More Resources section](#more-resources). Time spent upfront building some basic knowledge about the technologies used in this workshop will help you gain *actionable experience* in preparation for the real-world scenarios you will face.
+Familiarity with these concepts will be necessary for completing the challenges in this workshop. If you feel uncertain about any of the topics below, please review the [More Resources section](#more-resources). Time spent upfront building some basic knowledge about the technologies used in this workshop will help you gain *actionable experience* in preparation for the real-world scenarios you will face.
 
 + A solid foundation in **Azure fundamentals** and basic knowledge of **Azure Active Directory**.
 + Familiarity with **FHIR®** and the solutions it provides versus legacy health data formats.
