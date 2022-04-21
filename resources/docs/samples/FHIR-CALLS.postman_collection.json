@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "c597062b-475e-44ab-b5cc-fc5c4a301577",
+		"name": "FHIR CALLS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Metadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{fhirurl}}/Metadata",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AuthorizeGetToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"bearerToken\", jsonData.access_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "{{resource}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/{{tenantId}}/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"{{tenantId}}",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Donald Duck</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"M\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"system\": \"http://va.gov/fhir/NamingSystem/identifier\",\r\n            \"value\": \"VA-103\"\r\n        },\r\n        {\r\n            \"system\": \"http://fhirbot.org\",\r\n            \"value\": \"555121\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Donald Duck\",\r\n            \"family\": \"Duck\",\r\n            \"given\": [\r\n                \"Donald\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"dd@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1966-10-07\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Patients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Patient",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient/<Id>",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient",
+						"<Id>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"resourceType\": \"Device\",\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://azure/device/registration\",\r\n      \"value\": \"12345\"\r\n    }\r\n  ],\r\n  \"patient\":{\r\n  \t\"reference\":\"Patient/\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Device",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Devices",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"resourceType\": \"Device\",\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://azure/device/registration\",\r\n      \"value\": \"12345\"\r\n    }\r\n  ],\r\n  \"patient\":{\r\n  \t\"reference\":\"Patient/\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Device",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Schedule",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Schedule",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"bearerToken\", jsonData.access_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"active\": true,\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"family\": \"familyname\",\r\n            \"given\": [\r\n                \"givenname\",\r\n                \"middlename\"\r\n            ]\r\n        },\r\n        {\r\n            \"use\": \"usual\",\r\n            \"given\": [\r\n                \"nickname\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"use\": \"home\"\r\n        },\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"123456789\",\r\n            \"use\": \"home\",\r\n            \"rank\": 1\r\n        },\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"098765432\",\r\n            \"use\": \"mobile\",\r\n            \"rank\": 2\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1970-01-22\",\r\n    \"deceasedBoolean\": false,\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"type\": \"both\",\r\n            \"text\": \"123 bookcase ave\",\r\n            \"line\": [\r\n                \"bookcase ave\"\r\n            ],\r\n            \"city\": \"city\",\r\n            \"district\": \"district\",\r\n            \"state\": \"va\",\r\n            \"postalCode\": \"09876\",\r\n            \"period\": {\r\n                \"start\": \"1980-01-31\"\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "{{fhirurl}}/$validate",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"$validate"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
