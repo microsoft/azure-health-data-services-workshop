@@ -4,7 +4,7 @@
 
 Welcome to Challenge-01!
 
-In this challenge, you will deploy and use an **Azure Health Data Services workspace** containing a **FHIR service**. In addition, you will setup **Postman** as your API testing tool for reading and writing data to your FHIR service.
+In this challenge, you will deploy and use an **Azure Health Data Services workspace** containing a **FHIR service** instance. In addition, you will set up **Postman** as your API testing tool for reading and writing data to and from your FHIR service.
 
 ## Learning Objectives for Challenge-01
 
@@ -13,15 +13,15 @@ By the end of this challenge you will be able to:
 + Explain the difference between workspaces and services in Azure Health Data Services.
 + Use a template to deploy a FHIR service inside of an Azure Health Data Services workspace.
 + Create a client application for Postman and grant it access to your FHIR service.
-+ Configure and use Postman for sending web API request to your FHIR service.
++ Configure and use Postman for sending web API requests to your FHIR service.
 
 ## Background
 
-**FHIR service** is the core component for reading, writing, and querying structured healthcare data inside of Azure Health Data Services. You may have also heard of the Azure API for FHIR, which is Microsoft first generally available product for FHIR. For this training, we will be focusing on the new FHIR service, which has some big advantages over its predecessor (like transactions, Azure Health Data Services workspace level configuration, and performance improvements for search, import, and export). Many of these exercises will work with the Azure API for FHIR, but some will not. We will be using the FHIR service for this workshop.
+**FHIR service** is the core component for reading, writing, and querying structured health data stored in Azure Health Data Services (AHDS). You may have also heard of Azure API for FHIR, which was Microsoft's first generally available product for FHIR. For this training, we will be focusing on the new AHDS FHIR service, which has some big advantages over its predecessor (like transaction bundles, AHDS workspace level configuration, and performance improvements for search, import, and export). Many of the exercises in these challenges will work with Azure API for FHIR, but some will not. To feature the latest health data products from Microsoft, we will be using the AHDS FHIR service for this workshop.
 
-### Azure Health Data Services Workspace Relationship with FHIR, DICOM, and MedTech Services
+### Azure Health Data Services Workspace relationship with FHIR, DICOM, and MedTech Services
 
-In the Azure health ecosystem, the Azure Health Data Services workspace is a logical container for associated healthcare service instances such as FHIR services, DICOM (Digital Imaging and Communications in Medicine) services, and MedTech services. You can provision multiple data services in a single workspace - you can have multiple FHIR, DICOM, and MedTech services in a single workspace to meet your solution needs.
+In the Azure health ecosystem, the Azure Health Data Services workspace is a logical container for associated healthcare service instances such as FHIR services, DICOM (Digital Imaging and Communications in Medicine) services, and MedTech services. You can provision multiple data services in a single workspace - as in, you can have multiple FHIR, DICOM, and MedTech services in a single workspace to meet your solution needs.
 
 ![Relationship between resource groups, Azure Health Data Services, and child services](./media/azure-health-data-services-workspace-overview.png)
 
@@ -37,7 +37,7 @@ Before deploying to your Azure environment, please make sure that you have the f
 
 You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
 
-## Step 1: Deploy to your Azure Environment
+## Step 1: Deploy AHDS FHIR service to your Azure Environment
 
 In the first part of this challenge, you will:
 
