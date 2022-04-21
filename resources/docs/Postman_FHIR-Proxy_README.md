@@ -98,7 +98,7 @@ To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through th
 <img src="./images/Screenshot_2022-02-16_095625_edit2.png" height="228">
 
 ## Step 4 - Configure Postman FHIR-Proxy environment
-Now you will configure your two Postman environments (`api-fhir` and `fhir-proxy`).
+Now you will configure your Postman environment for FHIR-Proxy (`fhir-proxy`).
 
 1. For the `fhir-proxy` Postman environment, you will need to retrieve the following values: 
 
