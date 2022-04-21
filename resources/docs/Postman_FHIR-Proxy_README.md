@@ -70,37 +70,37 @@ To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through th
 
 ## Step 2 - Configure AAD roles for Postman
 
-11. Now go to **Azure Active Directory** -> **Enterprise applications**. Search for your FHIR-Proxy function app name and click on it in the list. It might be easiest to search by the **Created on** date. 
+1. Now go to **Azure Active Directory** -> **Enterprise applications**. Search for your FHIR-Proxy function app name and click on it in the list. It might be easiest to search by the **Created on** date. 
 <img src="./images/Screenshot_2022-02-15_144433_edit2.png" height="328">
 
-12. You will be taken to the FHIR-Proxy **Overview** blade in Enterprise Applications. Click on **Users and groups**. 
+2. You will be taken to the FHIR-Proxy **Overview** blade in Enterprise Applications. Click on **Users and groups**. 
 <img src="./images/Screenshot_2022-02-15_144621_edit2.png" height="328">
 
-13. Click on **+Add user/group**. 
+3. Click on **+Add user/group**. 
 <img src="./images/Screenshot_2022-02-15_151041_edit2.png" height="328">
 
-14. In **Add Assignment**, on the left under **Users**, click **None Selected**. Then under **Users** on the right side, type in your name or username in the search field. Click on your name, and then click **Select**. 
+4. In **Add Assignment**, on the left under **Users**, click **None Selected**. Then under **Users** on the right side, type in your name or username in the search field. Click on your name, and then click **Select**. 
 <img src="./images/Screenshot_2022-02-15_151408_edit2.png" height="328">
 
-15. In **Add Assignment**, under **Select a role**, click **None Selected**. On the right side, click on **Resource Writer** and then click **Select**. 
+5. In **Add Assignment**, under **Select a role**, click **None Selected**. On the right side, click on **Resource Writer** and then click **Select**. 
 <img src="./images/Screenshot_2022-02-15_151625_edit2.png" height="328">
 
-16. Back in **Add Assignment**, click **Assign**. 
+6. Back in **Add Assignment**, click **Assign**. 
 <img src="./images/Screenshot_2022-02-15_151738_edit2.png" height="328">
 
 
 ## Step 3 - Import environment and collection files into Postman
 
-2. Access the Postman environment template for FHIR-Proxy [here](./samples/fhir-proxy.postman_environment.json). Save the file locally (click on `Raw` and then do a **Save as** from your browser).
+1. Access the Postman environment template for FHIR-Proxy [here](./samples/fhir-proxy.postman_environment.json). Save the file locally (click on `Raw` and then do a **Save as** from your browser).
 
-5. Import the ```fhir-proxy.postman_environment.json``` file that you just saved locally.
+2. Import the ```fhir-proxy.postman_environment.json``` file that you just saved locally.
     + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
 <img src="./images/Screenshot_2022-02-16_095625_edit2.png" height="228">
 
 ## Step 4 - Configure Postman FHIR-Proxy environment
 Now you will configure your two Postman environments (`api-fhir` and `fhir-proxy`).
 
-2. For the `fhir-proxy` Postman environment, you will need to retrieve the following values: 
+1. For the `fhir-proxy` Postman environment, you will need to retrieve the following values: 
 
 - `tenantId` - AAD tenant ID (go to **AAD** -> **Overview** -> **Tenant ID**) 
 - `clientId` - Application (client) ID for Postman client app (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
