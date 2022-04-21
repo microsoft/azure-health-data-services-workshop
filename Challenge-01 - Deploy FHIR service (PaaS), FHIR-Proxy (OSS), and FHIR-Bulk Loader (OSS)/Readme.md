@@ -1,100 +1,116 @@
-# Challenge-01 - Deploy FHIR service (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)
+# Challenge-01 - Deploy FHIR Service and Azure Health Data Services Workspace
 
 ## Introduction
 
 Welcome to Challenge-01!
 
-In this challenge, you will use an Azure Resource Manager (ARM) template to deploy **FHIR service** (PaaS), **FHIR-Proxy** (OSS), and **FHIR-Bulk Loader** (OSS). In addition, you will set up a **Postman** environment to make REST API calls to FHIR service.
-
-## Background
-FHIR (Fast Healthcare Interoperability Resources) is the standard format for data storage and exchange in Microsoft's health data platform. Microsoft's FHIR infrastructure rests on two Azure components: [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) (PaaS) and [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview) (PaaS). For this training, we will be focusing on the FHIR service, which is provisioned as part of [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/).
-
-In Azure FHIR workflows, the FHIR service receives REST API requests from remote client apps and manages all FHIR data persistance and retrieval tasks. Meanwhile, the open-source [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) acts as a checkpoint surrounding FHIR service, filtering the incoming and outgoing FHIR data according to a set of admin-defined rules.
-
-For bulk ingestion of FHIR data into FHIR service, Microsoft offers the open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) utility. With FHIR-Bulk Loader, admins can import large amounts of FHIR data with point and click ease. We will be working with FHIR-Bulk Loader in Challenge-03.
+In this challenge, you will deploy and use an **Azure Health Data Services workspace** containing a **FHIR service**. In addition, you will setup **Postman** as your API testing tool for reading and writing data to your FHIR service.
 
 ## Learning Objectives for Challenge-01
-By the end of this challenge you will be able to 
 
-+ Explain the FHIR service - FHIR-Proxy relationship
-+ Use an ARM template to deploy FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
-+ Configure AAD authentication for FHIR-Proxy and assign app roles
-+ Configure Postman for testing FHIR API calls
-+ Use Postman to make FHIR API calls to FHIR service
+By the end of this challenge you will be able to:
 
-### FHIR service and FHIR-Proxy Relationship
-In the Azure health data platform, FHIR service and FHIR-Proxy operate as a team. FHIR service is at the center of activity, and FHIR-Proxy acts as a pre- and post-processor, selectively filtering FHIR data on the way into and out of the FHIR service. Admins can set up FHIR-Proxy to listen to the stream of I/O data and trigger custom workflows based on specific FHIR events. FHIR-Proxy also brings enhanced Role-Based Access Control (RBAC) to FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (i.e., patients) can authorize or deny access to certain FHIR data.
++ Explain the difference between workspaces and services in Azure Health Data Services.
++ Use a template to deploy a FHIR service inside of an Azure Health Data Services workspace.
++ Create a client application for Postman and grant it access to your FHIR service.
++ Configure and use Postman for sending web API request to your FHIR service.
 
-Component View of FHIR-Proxy and FHIR service with Postman set up to call the FHIR-Proxy endpoint.
+## Background
 
-<img src="./media/Postman_FHIR-Proxy_ARM_template_deploy_AHDS.png" height="528">
+**FHIR service** is the core component for reading, writing, and querying structured healthcare data inside of Azure Health Data Services. You may have also heard of the Azure API for FHIR, which is Microsoft first generally available product for FHIR. For this training, we will be focusing on the new FHIR service, which has some big advantages over its predecessor (like transactions, Azure Health Data Services workspace level configuration, and performance improvements for search, import, and export). Many of these exercises will work with the Azure API for FHIR, but some will not. We will be using the FHIR service for this workshop.
 
-FHIR-Proxy asserts control over I/O data only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled and configured. Otherwise, with no special configuration, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back unfiltered to the remote client app (e.g., Postman). 
+### Azure Health Data Services Workspace Relationship with FHIR, DICOM, and MedTech Services
 
-## Prerequisites 
+In the Azure health ecosystem, the Azure Health Data Services workspace is a logical container for associated healthcare service instances such as FHIR services, DICOM (Digital Imaging and Communications in Medicine) services, and MedTech services. You can provision multiple data services in a single workspace - you can have multiple FHIR, DICOM, and MedTech services in a single workspace to meet your solution needs.
 
-Before deploying **FHIR service**, **FHIR-Proxy**, and **FHIR-Bulk Loader**, please make sure that you have the following permissions in your Azure environment.
+![Relationship between resource groups, Azure Health Data Services, and child services](./media/azure-health-data-services-workspace-overview.png)
 
-+ **Azure Subscription:** You must have rights to deploy resources at the Resource Group scope in your Azure Subscription (i.e. [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) role).
+The workspace also creates a compliance boundary (HIPAA, HITRUST) within which protected health information can travel. This means that configuration such as [Role-Based Access Control (RBAC)](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac), private network data transit with [Private Link](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-configure-private-link), and [event messages](https://docs.microsoft.com/azure/healthcare-apis/events/events-deploy-portal) can all be configured at the workspace level, reducing your configuration and management complexity.
 
-+ **Azure Active Directory (AAD):** You must have [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure Subscription.
+## Prerequisites
+
+Before deploying to your Azure environment, please make sure that you have the following permissions.
+
++ **Azure Subscription:** You must have rights to deploy resources at the resource group scope in your Azure subscription (i.e. [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) role).
+
++ **Azure Active Directory (AAD):** You must have [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure subscription.
 
 You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
 
+## Step 1: Deploy to your Azure Environment
 
-## Step 1 - Deploy FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
-In the first part of this challenge, you will
-- Visit another repo and read the deployment instructions
-- Go to the Azure Portal and deploy **FHIR service** (PaaS), **FHIR-Proxy** (OSS), and **FHIR-Bulk Loader** (OSS)
+In the first part of this challenge, you will:
 
++ Visit another GitHub repository and read the deployment instructions.
++ Use a template there to deploy resources with the Azure Portal. You're going to deploy *more* than what is needed in this challenge to prepare you for future challenges. This template will deploy:
+  + Azure Health Data Services workspace
+  + FHIR service
+  + FHIR Loader (for Challenge-03)
+  + FHIR Proxy (for Challenge-07)
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Starter quickstarts folder in a new browser tab. 
+1. To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
 
-https://github.com/microsoft/fhir-starter/tree/main/quickstarts 
+    + [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Ffhir-starter%2Fmain%2Fquickstarts%2Fdeployfhirtrain.json)
 
-Follow the instructions and return here when finished.
+2. Select or fill in the parameter values (see image below).
 
+    + Enter a custom **Deployment Prefix**. This prefix will be prepended to the names of all created resources ("trn05" is shown as an example prefix).
+
+    + Make sure to select the "true" values as shown.
+
+3. Click **Review + create** when ready, and then click **Create** on the next page. 
+
+<img src="https://github.com/microsoft/fhir-starter/raw/main/quickstarts/images/ARM_template_config2.png" height="420"> 
+
+**Note:** This deployment typically takes 20 minutes.
+
+Review [Step 1 in this repo](https://github.com/microsoft/fhir-starter/tree/main/quickstarts) to learn more about what you just deployed.
 
 ## Step 2 - Set up Postman and test FHIR service
-In the next part of this challenge, you will
-- Visit another repo and follow the instructions on setting up Postman
-- Make API calls to test FHIR service using Postman
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab. 
+In the next part of this challenge, you will:
 
-https://github.com/microsoft/health-architectures/tree/main/Postman 
++ Visit another GitHub repository and follow the instructions on setting up Postman.
++ Make API calls to test FHIR service using Postman.
+
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
+
+[https://github.com/microsoft/health-architectures/tree/main/Postman](https://github.com/microsoft/health-architectures/tree/main/Postman)
 
 Follow the instructions and return here when finished.
 
 ## What does success look like for Challenge-01?
-+ FHIR service (PaaS) deployed and available
-+ FHIR-Proxy (OSS) deployed and able to communicate with FHIR service
-+ FHIR-Bulk Loader (OSS) deployed and available
-+ Postman set up and able to connect with FHIR service (via FHIR-Proxy)
-    + Capability Statement from the FHIR service - received
-    ```
+
++ Azure Health Data Services workspace and FHIR service deployed and available in Azure.
++ FHIR Proxy and FHIR Loader deployed in Azure for future challenges.
++ Client application created in Azure Active Directory for use with Postman and your FHIR service.
++ Postman set up and able to connect with you FHIR service.
+  + Capability Statement from your FHIR service - received.
+
+    ```json
     {
-    "resourceType": "CapabilityStatement",
-    "url": "/metadata",
-    "version": "1.0.0.0",
-    "name": "Microsoft FHIR service 2.2.61 Capability Statement",
-    "status": "draft",
-    "experimental": true,
-    "date": "2022-02-18T00:06:47.9408665+00:00",
-    "publisher": "Microsoft",
-    ...
+        "resourceType": "CapabilityStatement",
+        "url": "/metadata",
+        "version": "1.0.0.0",
+        "name": "Microsoft FHIR service 2.2.61 Capability Statement",
+        "status": "draft",
+        "experimental": true,
+        "date": "2022-02-18T00:06:47.9408665+00:00",
+        "publisher": "Microsoft",
+        "more below ..." : "..."
     }
     ```
-    + `POST AuthorizeGetToken` call in Postman to obtain an AAD access token - succeeded
-    + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource - succeeded
-    + `GET List Patients` call in Postman to retrieve a bundle of all Patient Resources stored in FHIR service - succeeded
 
-## Deployed Components 
-
-FHIR service, FHIR-Proxy, and FHIR-Bulk Loader
-
-<img src="./media/Deployed_Components_ARM_template5.png" height="528">
+  + `POST AuthorizeGetToken` call in Postman to obtain an AAD access token - succeeded.
+  + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource - succeeded.
+  + `GET List Patients` call in Postman to retrieve a bundle of all Patient Resources stored in FHIR service - succeeded.
 
 ## Next Steps
 
 Click [here](<../Challenge-02 - Convert HL7v2 and C-CDA to FHIR/Readme.md>) to proceed to Challenge-02.
+
+## More Resources
+
++ [FHIR Service Overview](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)
++ [Differences between FHIR service and Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis/fhir/fhir-faq#what-is-the-difference-between-azure-api-for-fhir-and-the-fhir-service-in-the-azure-health-data-services)
++ [Azure API for FHIR Overview](https://docs.microsoft.com/azure/healthcare-apis/azure-api-for-fhir/overview)
