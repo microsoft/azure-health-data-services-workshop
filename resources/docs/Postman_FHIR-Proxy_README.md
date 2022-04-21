@@ -2,7 +2,7 @@
 # Postman setup for FHIR-Proxy
 
 ## Overview 
-For testing the FHIR service in Azure Health Data Services, Postman is often configured to call the FHIR service's endpoint directly. In some circumstances, however, users may choose to deploy Microsoft's OSS [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) to supplement the FHIR service with additional FHIR data filtering capabilities. When FHIR service is paired with FHIR-Proxy, testing the FHIR service with Postman requires setting up Postman to call the FHIR-Proxy endpoint rather than the FHIR service endpoint. In this guide, we will take you through the configuration steps for Postman to call a FHIR-Proxy endpoint.
+For testing the FHIR service in Azure Health Data Services, Postman is often configured to call the FHIR service's endpoint directly. In some circumstances, however, users may choose to deploy Microsoft's OSS [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) to supplement the FHIR service with additional FHIR data filtering capabilities. When FHIR service is paired with FHIR-Proxy, testing the FHIR service with Postman requires setting up Postman to call the FHIR-Proxy endpoint rather than the FHIR service endpoint. In this guide, we will take you through the steps needed to configure Postman to call a FHIR-Proxy endpoint.
 
 ## Prerequisites
 + [Contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles) role in your Azure Subscription
