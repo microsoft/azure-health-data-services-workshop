@@ -13,13 +13,13 @@ For testing the FHIR service in Azure Health Data Services, Postman is often con
 
 ## Getting started
 To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through these steps:
- 
-**Step 1:** Configure API permissions for Postman to connect with FHIR-Proxy
+
+**Step 1:** Configure API permissions for Postman to connect with FHIR-Proxy  
 **Step 2:** Configure AAD roles for Postman  
 **Step 3:** Import environment template and collection files into Postman  
-**Step 4:** Enter parameter values for a Postman environment
+**Step 4:** Enter parameter values for a Postman environment  
 **Step 5:** Get an authorization token from AAD  
-**Step 6:** Test FHIR service with Postman
+**Step 6:** Test FHIR service with Postman 
 
 
 ## Step 1 - Configure API permissions for Postman to connect with FHIR-Proxy
