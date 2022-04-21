@@ -12,7 +12,7 @@ In this preliminary challenge, you will be checking your Azure environment and o
 
 ## Background
 
-The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with Azure Health Data Services, including the FHIR, DICOM, and MedTech services. This workshop contains common solutions and techniques that Microsoft has observed and built our healthcare products around. After this workshop, you will have a better understanding on how to build your own solutions using the latest healthcare focused solutions from Microsoft.
+The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with Azure Health Data Services, including the FHIR, DICOM, and MedTech services. This workshop features solutions that Microsoft has observed a need for in real-world health data production environments. After this workshop, you will have a better understanding of how to build your own solutions using the latest healthcare-focused tools from Microsoft.
 
 ## What do we want learners to gain from the Azure Health Data Services Workshop?
 
@@ -21,17 +21,17 @@ In general, we want learners to walk away with a sense of confidence in deployin
 + In completing this workshop, learners will know the capabilities of Microsoft's health data services.
 + Learners will know how to **deploy**, **ingest**, **transform**, and **connect health data** using the Azure health data platform.
 + The tasks require learners to locate information in technical documentation and **resolve issues independently**. This workshop is meant to give learners practice retrieving information from Microsoft documentation resources.
-+ Working on the challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be set up to **use Microsoft Health & Life Sciences (HLS) tools in real-world solutions**.
++ Working on the challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be prepared to **use Microsoft Health & Life Sciences (HLS) tools in real-world solutions**.
 
 ## Prerequisite Knowledge for the Azure Health Data Services Workshop
 
-These concepts will be necessary for completing the challenges in this workshop. If you are unfamiliar with any of these areas, review the [More Resources section](#more-resources). Time spent upfront ensuring you have some basic knowledge about the technologies used in this workshop will ensure you will be able to gain *actionable experience* for real-world scenarios you will face.
+Familiarity with these concepts will be necessary for completing the challenges in this workshop. If you feel uncertain about any of the topics below, please review the [More Resources section](#more-resources). Time spent upfront building some basic knowledge about the technologies used in this workshop will help you gain *actionable experience* in preparation for the real-world scenarios you will face.
 
 + A solid foundation in **Azure fundamentals** and basic knowledge of **Azure Active Directory**.
 + Familiarity with **FHIR®** and the solutions it provides versus legacy health data formats.
 + Experience with making **REST API** requests using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing tool (like cURL or Fiddler).
 
-**Note:** For the rest of the workshop, instructions will be geared towards using Postman as your API testing tool. Please use Postman unless you have a strong preference and deep knowledge of another tool.
+**Note:** For the rest of the workshop, instructions will be geared towards using Postman as your API testing tool. Please use Postman unless you have a strong preference for another tool.
 
 ## Environment Prerequisites
 
@@ -51,32 +51,32 @@ Click [here](<../Challenge-01 - Deploy FHIR service (PaaS), FHIR-Proxy (OSS), an
 
 ## More Resources
 
-If you are unfamiliar with any of the above concepts, check out the resources below for some basic knowledge to help you get the most value of the time you are spending in this workshop.
+If you are unfamiliar with any of the above concepts, have a look at the resources below. These are starting points to help you get the most out of this workshop.
 
 ### Azure
 
-Microsoft Azure is a cloud computing platform that enables on-demand, highly scalable computing for organizations and individuals all over the world. It's the core of every challenge and step in this workshop.
+Microsoft Azure is a cloud computing platform that enables on-demand, highly scalable computing for organizations and individuals all over the world. It is the core of every challenge and step in this workshop.
 
 + [Azure Cloud Concepts](https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/)
 + [Azure Active Directory App Registrations and Auth Tokens](https://docs.microsoft.com/learn/modules/implement-app-registration/)
 
 ### FHIR
 
-FHIR® (Fast Healthcare Interoperability Resources) is a new data standard created by HL7 (Health Level Seven) for anyone working with health data to ingest, manage, and persist health information.
+FHIR® (Fast Healthcare Interoperability Resources) is a data standard created by HL7 (Health Level Seven) for ingesting, managing, and persisting health data.
 
 + [HL7 FHIR Introduction](https://www.hl7.org/fhir/summary.html)
 + [FHIR Architect's Introduction](https://www.hl7.org/fhir/overview-arch.html)
 
 ### REST APIs
 
-REST (representational state transfer) APIs (application programming interfaces) or web APIs is a software architectural style that was created for internet services. Every internet user makes thousands of REST API requests a day, usually without knowing this since requests are handled by applications and not seen by users.
+REST (Representational State Transfer) APIs (Application Programming Interfaces) or web APIs are a software architectural style created for internet services. Every internet user makes thousands of REST API requests a day, usually without knowing this since requests are handled by applications and generally not seen by users.
 
 + [RESTful Web API design](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
 + [Representational state transfer](https://wikipedia.org/wiki/Representational_state_transfer)
 
 ### API Testing Tools (Postman)
 
-Since REST API requests and responses are abstracted from users, developers use an API testing tool to interact with web services prior to building applications and integrations. Postman the most popular and approachable of this types of tools and the recommended tool for learners who don't have a preference. If you are new to Postman, review these resources below to install and get familiar with Postman. FHIR must be tested with an API testing tool and you will need to know how to craft REST requests and interpret the results in this workshop.
+Since REST API requests and responses are abstracted from users, developers use an API testing tool to interact with web services prior to building applications and integrations. Postman is the most popular and approachable of these types of tools and the recommended one for learners. If you are new to Postman, review these resources below to install and get familiar with the application. FHIR must be tested with an API testing tool, and in this workshop, you will need to know how to craft REST requests and interpret the results.
 
 + [Installing and updating Postman](https://learning.postman.com/docs/getting-started/installation-and-updates/)
 + [Navigating Postman](https://learning.postman.com/docs/getting-started/navigating-postman/)
