@@ -48,11 +48,23 @@ In the first part of this challenge, you will:
   + FHIR Loader (for Challenge-03)
   + FHIR Proxy (for Challenge-07)
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR Starter quickstarts folder in a new browser tab.
+1. To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
 
-[https://github.com/microsoft/fhir-starter/tree/main/quickstarts](https://github.com/microsoft/fhir-starter/tree/main/quickstarts)
+    + [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Ffhir-starter%2Fmain%2Fquickstarts%2Fdeployfhirtrain.json)
 
-Follow the instructions and return here when finished.
+2. Select or fill in the parameter values (see image below).
+
+    + Enter a custom **Deployment Prefix**. This prefix will be prepended to the names of all created resources ("trn05" is shown as an example prefix).
+
+    + Make sure to select the "true" values as shown.
+
+3. Click **Review + create** when ready, and then click **Create** on the next page. 
+
+<img src="https://github.com/microsoft/fhir-starter/raw/main/quickstarts/images/ARM_template_config2.png" height="420"> 
+
+**Note:** This deployment typically takes 20 minutes.
+
+Review [Step 1 in this repo](https://github.com/microsoft/fhir-starter/tree/main/quickstarts) to learn more about what you just deployed.
 
 ## Step 2 - Set up Postman and test FHIR service
 
