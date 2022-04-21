@@ -15,9 +15,9 @@ To set up Postman for testing FHIR service, we'll walk through these steps:
 **Step 1:** Create an App Registration for Postman in AAD  
 **Step 2:** Assign Azure RBAC roles for Postman  
 **Step 3:** Import environment template and collection files into Postman  
-**Step 4:** Enter parameter values for a Postman environment
+**Step 4:** Enter parameter values for a Postman environment  
 **Step 5:** Get an authorization token from AAD  
-**Step 6:** Test FHIR service with Postman
+**Step 6:** Test FHIR service with Postman  
 
 ## Step 1 - Create an App Registration for Postman in AAD 
 
@@ -140,7 +140,7 @@ On clicking ```Send```, you should receive a response in the **Body** tab like s
 }
 ```
 
-You now have a valid access token in your Postman environment and can use the token in subsequent API calls to FHIR service - passing through FHIR-Proxy on the way in. For more information about access tokens in AAD, see [Microsoft identity platform access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens).
+You now have a valid access token in your Postman environment and can use the token in subsequent API calls to FHIR service. For more information about access tokens in AAD, see [Microsoft identity platform access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens).
 
 __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simply make another ```POST AuthorizeGetToken``` call and you will receive a new token valid for another 60 minutes.
 
@@ -150,7 +150,7 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 <img src="./images/Screenshot_2022-02-17_101024_edit2.png" height="328">
 
-2. Click `Send` to test that FHIR service and FHIR-Proxy are functioning on a basic level. The `GET List Metadata` call returns the FHIR service server's Capability Statement. If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
+2. Click `Send` to test that FHIR service is functioning on a basic level. The `GET List Metadata` call returns the FHIR service server's Capability Statement. If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
 
 <img src="./images/Screenshot_2022-02-17_101116_edit2.png" height="328">
 
