@@ -17,7 +17,7 @@ By the end of this challenge you will be able to:
 
 ## Background
 
-**FHIR service** is the core component for reading, writing, and querying structured health data stored in Azure Health Data Services (AHDS). You may have also heard of Azure API for FHIR, which was Microsoft's first generally available product for FHIR. For this training, we will be focusing on the new AHDS FHIR service, which has some big advantages over its predecessor (like transaction bundles, AHDS workspace level configuration, and performance improvements for search, import, and export). Many of the exercises in these challenges will work with Azure API for FHIR, but some will not. To take advantage of the latest health data products from Microsoft, we will be using the AHDS FHIR service for this workshop.
+**FHIR service** is the core component for reading, writing, and querying structured health data in Azure Health Data Services (AHDS). You may have also heard of Azure API for FHIR, which was Microsoft's first generally available product for FHIR. For this training, we will be focusing on the new AHDS FHIR service, which has some big advantages over its predecessor (like transaction bundles, AHDS workspace level configuration, and performance improvements for search, import, and export). Many of the exercises in these challenges will work with Azure API for FHIR, but some will not. To take advantage of the latest health data products from Microsoft, we will be using the AHDS FHIR service for this workshop.
 
 ### Azure Health Data Services Workspace relationship with FHIR, DICOM, and MedTech Services
 
