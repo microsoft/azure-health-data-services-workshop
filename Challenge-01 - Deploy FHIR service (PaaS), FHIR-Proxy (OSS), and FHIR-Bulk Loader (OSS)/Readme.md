@@ -63,11 +63,11 @@ __Note:__  Before running the ARM template, it is recommended to create a new re
 
 3. Click **Review + create** when ready, and then click **Create** on the next page. 
 
-<img src="https://github.com/microsoft/fhir-starter/raw/main/quickstarts/images/ARM_template_config2.png" height="420"> 
+<img src="../resources/docs/images/ARM_template_config2.png" height="420"> 
 
 **Note:** This deployment typically takes 20 minutes.
 
-Review [Step 1 in these instructions](../resources/) to learn more about the resources deployed with this ARM template.
+Review [Step 1 in these instructions](../resources/docs/FHIR-Starter_ARM_template_README.md) to learn more about the resources deployed with this ARM template.
 
 ## Step 2 - Set up Postman and test FHIR service
 
@@ -78,7 +78,7 @@ In the next part of this challenge, you will:
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
 
-[https://github.com/microsoft/health-architectures/tree/main/Postman](https://github.com/microsoft/health-architectures/tree/main/Postman)
+[Postman Setup Tutorial](../resources/docs/Postman_FHIR_service_README.md)
 
 Follow the instructions and return here when finished.
 
