@@ -24,59 +24,59 @@ To set up Postman for testing FHIR service, we'll walk through these steps:
 Before you can use Postman to make API calls to FHIR service, you will need to create a registered [client application](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application) to represent Postman in Azure Active Directory.
 
 1. In Azure Portal, go to **Azure Active Directory** -> **App registrations** and click **New registration**. 
-<img src="./docs/images/Screenshot_2022-02-11_065619_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-11_065619_edit2.png" height="328">
 
 2. Type in a name for your Postman client app in the **Name** field. 
-<img src="./docs/images/Screenshot_2022-02-15_141049_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141049_edit2.png" height="328">
 
 3. Scroll down, and under **Redirect URI (optional)**, select **Web** and then enter https://www.getpostman.com/oauth2/callback. Click **Register**. 
-<img src="./docs/images/Screenshot_2022-02-15_141049_edit2_next.png" height="328"> 
+<img src="./images/Screenshot_2022-02-15_141049_edit2_next.png" height="328"> 
 
 4. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
-<img src="./docs/images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
+<img src="./images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
 
 5. Click on **Certificates and secrets**. Click **+New client secret**. 
-<img src="./docs/images/Screenshot_2022-02-15_141926_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141926_edit2.png" height="328">
 
 6. Under **Add a client secret**, enter a name for the secret in the **Description** field. Click **Add**. 
-<img src="./docs/images/Screenshot_2022-02-15_142102_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_142102_edit2.png" height="328">
 
 7. Copy the secret **Value** and securely store it somewhere (you will need this when you configure your Postman environment). 
-<img src="./docs/images/Screenshot_2022-02-15_142159_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_142159_edit2.png" height="328">
 
 For more information on registering client applications in AAD for Azure Health Data Services, please see the [Authentication and Authorization for Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/authentication-authorization) documentation. 
 
 ## Step 2 - Assign Azure RBAC roles for Postman
 
 1. In Azure Portal, go to **Home** -> **Resource groups** and find the resource group containing your FHIR service instance. When in the resource group **Overview**, click on your FHIR service app name in the list. 
-<img src="./docs/images/Screenshot_2022-02-15_142434_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_142434_edit2.png" height="328">
 
 2. Go to the **Access Control (IAM)** blade. Click on the **Roles** tab.
-<img src="./docs/images/Screenshot_2022-02-15_142519_edit2_next.png" height="328">
+<img src="./images/Screenshot_2022-02-15_142519_edit2_next.png" height="328">
 
 3. Click on **+Add** -> **Add role assignment**. 
-<img src="./docs/images/Screenshot_2022-02-15_142726_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_142726_edit2.png" height="328">
 
 4. In **Add role assignment** under the **Role** tab, scroll down in the list and select **FHIR Data Contributor**. Then click **Next**. 
-<img src="./docs/images/Screenshot_2022-02-15_143124_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_143124_edit2.png" height="328">
 
 5. Under the **Members** tab, click on **+Select members**. Type in the name of your Postman client app in the **Select** field on the right. Highlight the name and click **Select**. Then click **Next**. 
-<img src="./docs/images/Screenshot_2022-02-15_143459_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_143459_edit2.png" height="328">
 
 6. Under the **Review + assign** tab, click **Review + assign**. 
-<img src="./docs/images/Screenshot_2022-02-15_143643_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_143643_edit2.png" height="328">
 
 7. When back in the **Access Control (IAM)** blade, click **+Add** -> **Add role assignment** (again). 
-<img src="./docs/images/Screenshot_2022-02-15_143643_edit2_next.png" height="328">
+<img src="./images/Screenshot_2022-02-15_143643_edit2_next.png" height="328">
 
 8. In **Add role assignment** under the **Role** tab, select **FHIR Data Contributor** (again) and click **Next**. 
-<img src="./docs/images/Screenshot_2022-02-15_143643_edit2_next2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_143643_edit2_next2.png" height="328">
 
 9. Under the **Members** tab, click on **+Select members**. Type in your name or username in the **Select** field on the right. Highlight your name, click **Select**, and then click **Next**. 
-<img src="./docs/images/Screenshot_2022-02-15_144144_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_144144_edit2.png" height="328">
 
 10. Under the **Review + assign** tab, click **Review + assign**. 
-<img src="./docs/images/Screenshot_2022-02-15_144245_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_144245_edit2.png" height="328">
 
 For more information on assigning user/app roles, see [Configure Azure RBAC for Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac).
 
@@ -87,19 +87,19 @@ For more information on assigning user/app roles, see [Configure Azure RBAC for 
 2. In Postman, create a new Workspace (or select an existing one if already created).
 
 3. Click the ```Import``` button next to the workspace name. 
-<img src="./docs/images/Screenshot_2022-02-16_095332_edit2.png" height="228">
+<img src="./images/Screenshot_2022-02-16_095332_edit2.png" height="228">
 
 4. Import the ```api-for-fhir.postman_environment.json``` file that you just saved locally.
     + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
-<img src="./docs/images/Screenshot_2022-02-16_095516_edit2.png" height="228">
+<img src="./images/Screenshot_2022-02-16_095516_edit2.png" height="228">
 
 5. Access the ```FHIR-CALLS.postman-collection.json``` file available in this repo [here](./samples/FHIR-CALLS.postman_collection.json) and save the file locally. Then import the file into Postman.
     + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
-<img src="./docs/images/Screenshot_2022-02-16_104345_edit2.png" height="228">
+<img src="./images/Screenshot_2022-02-16_104345_edit2.png" height="228">
 
 6. Access the ```FHIR_Search.postman_collection.json``` file available in this repo [here](./samples/FHIR_Search.postman_collection.json) and save the file locally. Then import the file into Postman.
     + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
-<img src="./docs/images/Screenshot_2022-02-16_104427_edit2.png" height="228"> 
+<img src="./images/Screenshot_2022-02-16_104427_edit2.png" height="228"> 
 
 
 ## Step 4 - Configure Postman environments
@@ -115,7 +115,7 @@ Now you will configure your two Postman environments (`api-fhir` and `fhir-proxy
 
 Populate the above parameter values in your `api-fhir` Postman environment as shown below. Leave `bearerToken` blank. Make sure to click `Save` to retain the `api-fhir` environment values.  
 
-<img src="./docs/images/Screenshot_2022-02-16_104920_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-16_104920_edit2.png" height="328">
 
 ## Step 5 - Get an access token from AAD
 In order to connect to FHIR service, you will need to get an access token first. To obtain an access token from AAD via Postman, you can send a ```POST AuthorizeGetToken``` request. The ```POST AuthorizeGetToken``` call comes pre-configured as part of the `FHIR CALLS` collection that you imported earlier. 
@@ -124,7 +124,7 @@ In Postman, click on `Collections` on the left, select the `FHIR CALLS` collecti
 
 __Important:__ Be sure to make the `fhir-proxy` environment active by selecting from the dropdown menu above the `Send` button. In the image below, `fhir-proxy` is shown as the active environment.
 
-<img src="./docs/images/Screenshot_2022-02-16_171631_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-16_171631_edit2.png" height="328">
 
 On clicking ```Send```, you should receive a response in the **Body** tab like shown below. The `access_token` value is automatically saved to the ```bearerToken``` variable in the Postman environment. 
 
@@ -148,19 +148,19 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 1. In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
 
-<img src="./docs/images/Screenshot_2022-02-17_101024_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-17_101024_edit2.png" height="328">
 
 2. Click `Send` to test that FHIR service and FHIR-Proxy are functioning on a basic level. The `GET List Metadata` call returns the FHIR service server's Capability Statement. If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
 
-<img src="./docs/images/Screenshot_2022-02-17_101116_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-17_101116_edit2.png" height="328">
 
 3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press `Send`. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
 
-<img src="./docs/images/Screenshot_2022-02-17_101224_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-17_101224_edit2.png" height="328">
 
 4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored on the FHIR server. This means your setup is fully functional.
 
-<img src="./docs/images/Screenshot_2022-02-17_101255_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-17_101255_edit2.png" height="328">
 
 5. Now you can experiment with other sample calls or your own FHIR API calls.
 

@@ -25,45 +25,45 @@ To set up Postman for testing FHIR service, we'll walk through these steps:
 ## Step 1 - Configure API permissions for Postman 
  
 1. Go to the **Overview** blade for your Postman client app in Azure Active Directory (go to **Azure Portal** -> **AAD** -> **App registrations** -> **Postman**).  
-<img src="./docs/images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
+<img src="./images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
 
 2. Click on **API Permissions** and then click on **+Add a permission**.  
-<img src="./docs/images/Screenshot_2022-02-15_141418_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141418_edit2.png" height="328">
 
 3. Select the **My APIs** tab and you will see a list containing the FHIR-Proxy instance that you deployed and registered earlier (see the Prerequisites section). Click on the FHIR-Proxy app name.
-<img src="./docs/images/Screenshot_2022-02-15_141517_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141517_edit2.png" height="328">
 
 4. Under **Request API permissions**, click on **Delegated permissions**. 
-<img src="./docs/images/Screenshot_2022-02-15_141624_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141624_edit2.png" height="328">
 
 5. Scroll down and select **user_impersonation**. Then click **Add permissions**. 
-<img src="./docs/images/Screenshot_2022-02-15_141706_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141706_edit2.png" height="328">
 
 6. When back in the **API permissions** blade, make sure to click **Grant admin consent** (blue checkmark). 
-<img src="./docs/images/Screenshot_2022-02-15_141810_edit2.png" height="328">  
-<img src="./docs/images/Screenshot_2022-02-15_141828_edit2.png" height="328">  
+<img src="./images/Screenshot_2022-02-15_141810_edit2.png" height="328">  
+<img src="./images/Screenshot_2022-02-15_141828_edit2.png" height="328">  
 
 7. Now, in the **API permissions** blade, click on **+Add a permission** (again). 
 
 8. Select the **My APIs** tab (again). Click on the FHIR-Proxy app name.
-<img src="./docs/images/Screenshot_2022-02-15_141517_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141517_edit2.png" height="328">
 
 9. Under **Request API permissions**, click on the **Application permissions** box on the right. 
-<img src="./docs/images/Screenshot_2022-02-15_141828_edit2_next.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141828_edit2_next.png" height="328">
 
 10. Select **Resource Reader** and **Resource Writer**. Click **Add permissions**. 
-<img src="./docs/images/Screenshot_2022-02-15_141828_edit2_next2a.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141828_edit2_next2a.png" height="328">
 
 11. When back in the **API permissions** blade, make sure to click **Grant admin consent** again (blue checkmark).
-<img src="./docs/images/Screenshot_2022-02-15_141828_edit2_next3b.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141828_edit2_next3b.png" height="328">
 
 12. Now, in the **API permissions** blade, click **+Add a permission** (again). 
 
 13. Under **Request API permissions**, select the **APIs my organization uses** tab. Type in "Azure Healthcare APIs" and select the item in the list. 
-<img src="./docs/images/Screenshot_2022-02-15_141828_edit2_next4.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141828_edit2_next4.png" height="328">
 
 14. Scroll down and select **user_impersonation**. Then click **Add permissions**. 
-<img src="./docs/images/Screenshot_2022-02-15_141828_edit2_next5.png" height="328">
+<img src="./images/Screenshot_2022-02-15_141828_edit2_next5.png" height="328">
 
 15. When back in the **API permissions** blade, make sure to click **Grant admin consent** again (blue checkmark). 
 
@@ -71,22 +71,22 @@ To set up Postman for testing FHIR service, we'll walk through these steps:
 ## Step 2 - Configure AAD roles for Postman
 
 11. Now go to **Azure Active Directory** -> **Enterprise applications**. Search for your FHIR-Proxy function app name and click on it in the list. It might be easiest to search by the **Created on** date. 
-<img src="./docs/images/Screenshot_2022-02-15_144433_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_144433_edit2.png" height="328">
 
 12. You will be taken to the FHIR-Proxy **Overview** blade in Enterprise Applications. Click on **Users and groups**. 
-<img src="./docs/images/Screenshot_2022-02-15_144621_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_144621_edit2.png" height="328">
 
 13. Click on **+Add user/group**. 
-<img src="./docs/images/Screenshot_2022-02-15_151041_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_151041_edit2.png" height="328">
 
 14. In **Add Assignment**, on the left under **Users**, click **None Selected**. Then under **Users** on the right side, type in your name or username in the search field. Click on your name, and then click **Select**. 
-<img src="./docs/images/Screenshot_2022-02-15_151408_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_151408_edit2.png" height="328">
 
 15. In **Add Assignment**, under **Select a role**, click **None Selected**. On the right side, click on **Resource Writer** and then click **Select**. 
-<img src="./docs/images/Screenshot_2022-02-15_151625_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_151625_edit2.png" height="328">
 
 16. Back in **Add Assignment**, click **Assign**. 
-<img src="./docs/images/Screenshot_2022-02-15_151738_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-15_151738_edit2.png" height="328">
 
 
 ## Step 3 - Import environment and collection files into Postman
@@ -95,7 +95,7 @@ To set up Postman for testing FHIR service, we'll walk through these steps:
 
 5. Import the ```fhir-proxy.postman_environment.json``` file that you just saved locally.
     + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
-<img src="./docs/images/Screenshot_2022-02-16_095625_edit2.png" height="228">
+<img src="./images/Screenshot_2022-02-16_095625_edit2.png" height="228">
 
 ## Step 4 - Configure Postman FHIR-Proxy environment
 Now you will configure your two Postman environments (`api-fhir` and `fhir-proxy`).
@@ -110,7 +110,7 @@ Now you will configure your two Postman environments (`api-fhir` and `fhir-proxy
 
 Populate the above parameter values in your `fhir-proxy` Postman environment as shown below. Leave `bearerToken` blank. Make sure to click `Save` to retain the `fhir-proxy` environment values.  
 
-<img src="./docs/images/Screenshot_2022-02-16_105208_edit2.png" height="328"> 
+<img src="./images/Screenshot_2022-02-16_105208_edit2.png" height="328"> 
 
 ## Step 5 - Get an access token from AAD
 In order to connect to FHIR service, you will need to get an access token first. To obtain an access token from AAD via Postman, you can send a ```POST AuthorizeGetToken``` request. The ```POST AuthorizeGetToken``` call comes pre-configured as part of the `FHIR CALLS` collection that you imported earlier. 
@@ -119,7 +119,7 @@ In Postman, click on `Collections` on the left, select the `FHIR CALLS` collecti
 
 __Important:__ Be sure to make the `fhir-proxy` environment active by selecting from the dropdown menu above the `Send` button. In the image below, `fhir-proxy` is shown as the active environment.
 
-<img src="./docs/images/Screenshot_2022-02-16_171631_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-16_171631_edit2.png" height="328">
 
 On clicking ```Send```, you should receive a response in the **Body** tab like shown below. The `access_token` value is automatically saved to the ```bearerToken``` variable in the Postman environment. 
 
@@ -143,19 +143,19 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 1. In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
 
-<img src="./docs/images/Screenshot_2022-02-17_101024_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-17_101024_edit2.png" height="328">
 
 2. Click `Send` to test that FHIR service and FHIR-Proxy are functioning on a basic level. The `GET List Metadata` call returns the FHIR service server's Capability Statement. If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
 
-<img src="./docs/images/Screenshot_2022-02-17_101116_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-17_101116_edit2.png" height="328">
 
 3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press `Send`. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
 
-<img src="./docs/images/Screenshot_2022-02-17_101224_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-17_101224_edit2.png" height="328">
 
 4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored on the FHIR server. This means your setup is fully functional.
 
-<img src="./docs/images/Screenshot_2022-02-17_101255_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-17_101255_edit2.png" height="328">
 
 5. Now you can experiment with other sample calls or your own FHIR API calls.
 
