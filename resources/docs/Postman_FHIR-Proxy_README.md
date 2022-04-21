@@ -24,7 +24,7 @@ To set up Postman for testing FHIR service, we'll walk through these steps:
 
 ## Step 1 - Configure API permissions for Postman 
  
-1. Go to the **Overview** blade for your Postman client app in Azure Active Directory (go to **Azure Portal** -> **AAD** -> **App registrations** -> **Postman**).  
+1. Navigate to the **Overview** blade for your Postman client app in Azure Active Directory (go to **Azure Portal** -> **AAD** -> **App registrations** -> **Postman**).  
 <img src="./images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
 
 2. Click on **API Permissions** and then click on **+Add a permission**.  
