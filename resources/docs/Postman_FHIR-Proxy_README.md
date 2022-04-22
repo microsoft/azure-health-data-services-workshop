@@ -8,7 +8,7 @@ For testing the FHIR service in Azure Health Data Services, Postman is often con
 + [Contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles) role in your Azure Subscription 
 + [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your Azure Active Directory (AAD) tenant 
 + **FHIR service** deployed. More information about FHIR service can be found [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview). 
-+ **FHIR-Proxy** deployed and set up with AAD authentication and app roles for connecting to FHIR service. See [here](FHIR-Starter_ARM_template_README.md) for information about configuring FHIR-Proxy AAD authentication. 
++ **FHIR-Proxy** deployed and set up with AAD authentication and app roles for connecting to FHIR service. See [here](FHIR-Starter_ARM_template_README.md#step-2---complete-fhir-proxy-authentication) for information about configuring FHIR-Proxy AAD authentication. 
 + **Postman** installed - desktop or web client. Postman should already be registered in AAD and set up with a `fhir-service` environment as detailed in [this guide](./Postman_FHIR_service_README.md). Information about installing Postman is available [here](https://www.getpostman.com/). 
 
 ## Getting started
@@ -104,7 +104,7 @@ Now you will configure your Postman environment for FHIR-Proxy (`fhir-proxy`).
 
 - `tenantId` - AAD tenant ID (go to **AAD** -> **Overview** -> **Tenant ID**) 
 - `clientId` - Application (client) ID for Postman client app (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
-- `clientSecret` - Client secret stored in your existing `fhir-service` Postman environment (obtained previously when you [set up Postman to connect with FHIR service](Postman_FHIR_service_README.md)) 
+- `clientSecret` - Client secret stored in your existing `fhir-service` Postman environment (obtained previously when you [set up Postman to connect with FHIR service](Postman_FHIR_service_README.md#step-4---configure-postman-environments)) 
 - `resource` - Application (client) ID in the AAD client app for FHIR-Proxy (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
 - `fhirurl` - FHIR-Proxy endpoint appended with `/fhir` - e.g. `https://<fhir_proxy_app_name>.azurewebsites.net/fhir` (go to **Resource Group** -> **Overview** -> **Name** -> **URL**; make sure to append `/fhir` on the end when inputting into the Postman environment)
 
