@@ -40,22 +40,33 @@ Component View of FHIR-Proxy and FHIR service with Postman set up to call the FH
 
 FHIR-Proxy asserts control over I/O data only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled and configured. Otherwise, with no special configuration, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back unfiltered to the remote client app (e.g., Postman). 
 
-## Step 1 - Configure FHIR-Proxy authentication
-For the first part of this challenge, you will access another document and follow the instructions to configure FHIR-Proxy authentication settings. 
+## Step 1 - Configure FHIR-Proxy authentication settings
+For the first part of this challenge, you will view another document and follow the instructions on configuring FHIR-Proxy authentication settings. 
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Proxy authentication configuration instructions in a new browser tab. When you go to the page, you will be following the instructions in Step 2 and Step 3 (you do not need to do the instructions in Step 1).
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Proxy authentication setup instructions in a new browser tab. When you go to the page, you will be following the instructions in Step 2 and Step 3 (you already completed the instructions in Step 1 when you deployed resources in Challenge-01).
 
-(.)
+[FHIR-Proxy Authentication Setup Instructions](../resources/docs/FHIR-Starter_ARM_template_README.md#step-2---complete-fhir-proxy-authentication)
 
+## Step 2 - Configure Postman to connect with the FHIR-Proxy endpoint
+In the next part of this challenge, you will be setting up Postman so that API calls made from Postman go through the FHIR-Proxy endpoint rather than the FHIR service endpoint.
 
-## Step 2 - Configure Postman
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the Postman setup instructions for FHIR-Proxy in a new browser tab.
 
-1. Configure postman using the guidance provided in [Challenge 1](<../Challenge-01 - Deploy FHIR service (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)/Readme.md>).
-2. Confirm that the FHIR service contains Patient Resources.
-![Patient Resources](./images/patient-count-postman.png)
-3. Select a Patient Resource and record the patient identifier. This will be used to create the Consent Resource.
+[Postman Tutorial for FHIR-Proxy](../resources/docs/Postman_FHIR-Proxy_README.md)
 
-Visual Studio Code with the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension may also be used to complete this challenge. See the walkthrough [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/using-rest-client) for details on how to use REST Client to access Azure Health Data Services FHIR service. Be sure to note that in all cases you will be using the FHIR-Proxy endpoint to complete this challenge.
+## Step 3 - Confirm Postman configuration
+
+1. Now you will confirm that the FHIR service contains `Patient` Resources. Go ahead and enter this API call into Postman.
+
+```
+GET {{fhirurl}}/Patient?_summary=count
+```
+
+Press **Send** and you should receive a bundle as shown below.
+
+![Patient Resources](./images/patient-count-postman.png) 
+
+2. Select a Patient Resource of your choosing and record the [patient identifier](https://www.hl7.org/fhir/patient.html#ids). This will be used to create the Consent Resource.
 
 ## Step 3 - Post Consent Record to FHIR Service
 
