@@ -6,7 +6,7 @@ Hello and welcome to the Azure Health Data Services Workshop! In this workshop, 
 
 ## Who is the Azure Health Data Services Workshop for?
 
-This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Before beginning in this workshop, you should have some experience in the areas listed below. If you need to brush up in any of these areas, there are resources at the bottom of Challenge-00. The general expectation is that learners will come to the workshop with the following:
+This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Before beginning in this workshop, you should have some experience in the areas listed below. If you need to brush up in any of these areas, there are resources at the bottom of [Challenge-00](<./Challenge-00 - Check prerequisites and configure environment>). The general expectation is that learners will come to the workshop with the following:
 
 + A solid foundation in Microsoft Azure and Azure Active Directory.
 + Some basic knowledge of healthcare data, especially FHIR.
