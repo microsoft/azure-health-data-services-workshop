@@ -1,22 +1,25 @@
 {
 	"info": {
-		"_postman_id": "bdd532ff-78f8-4d77-bce0-6fff69a690fc",
+		"_postman_id": "52663121-5df8-4540-ae95-726e4a19b58d",
 		"name": "FHIR Search",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "List Metadata",
+			"name": "Get Metadata",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{fhirurl}}/Metadata",
+					"raw": "{{fhirurl}}/metadata",
 					"host": [
 						"{{fhirurl}}"
 					],
 					"path": [
-						"Metadata"
+						"metadata"
 					]
 				}
 			},
@@ -39,24 +42,7 @@
 			],
 			"request": {
 				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "accessToken",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSIsImtpZCI6IkN0VHVoTUptRDVNN0RMZHpEMnYyeDNRS1NSWSJ9.eyJhdWQiOiJodHRwczovL3BhYzJmaGlyLmF6dXJlaGVhbHRoY2FyZWFwaXMuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNmE3MTQ1NzktYWIyYS00ZDk4LTliMzktOTNhMjFlZjRlYmYyLyIsImlhdCI6MTU4ODc4NjU2MywibmJmIjoxNTg4Nzg2NTYzLCJleHAiOjE1ODg3OTA0NjMsImFjciI6IjEiLCJhaW8iOiI0MmRnWUtoaVpsUTcrS250VUtYUUttWE93THJEb2JOVXVSTFAxYjFlT0xVcmRwcEw2VllBIiwiYW1yIjpbInB3ZCJdLCJhcHBpZCI6IjcxZjU1ZDI3LWU5NzUtNDc4Mi05YWE3LTMyMGNlZWIwNDJhZiIsImFwcGlkYWNyIjoiMSIsImZhbWlseV9uYW1lIjoiQ29ubmVjdG9yIiwiZ2l2ZW5fbmFtZSI6IlB3ckFwcCIsImlwYWRkciI6IjI0LjEyNi4xNzUuMTk4IiwibmFtZSI6IlB3ckFwcCBDb25uZWN0b3IiLCJvaWQiOiI3NzA3MTJmMS0wNDA2LTQ5MmUtYTNhNC0yYmY5OTAyYWQxMGIiLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzdWIiOiJDMkhIUlBYNkllYUo1Z0twOEZNTEFNTkVrT2k3bUtRZWdyOGdYeldnaHBrIiwidGlkIjoiNmE3MTQ1NzktYWIyYS00ZDk4LTliMzktOTNhMjFlZjRlYmYyIiwidW5pcXVlX25hbWUiOiJQd3JBcHBDb25uZWN0b3JAZGVuZXh0Lm9ubWljcm9zb2Z0LmNvbSIsInVwbiI6IlB3ckFwcENvbm5lY3RvckBkZW5leHQub25taWNyb3NvZnQuY29tIiwidXRpIjoiZWo2WlF5aGY4a0t6Uk5fbFRrUnNBQSIsInZlciI6IjEuMCJ9.X_qZuyv5Pmtjgc83WkR14ks140bwIPoYOTE9JF5MFx5TG8FINByq019WfXTRyKGiMo91heJkQgOQJ46Wo9Mo4OFg_Cr_RgoP4eENuZlGa8lBUckJiZ4BY0APjfVRO7icgbSYir-5UI_--3pabudDcW0BD2eS6GBCG4efKyZScTyshMhrhTXPv0RB8aKo20SCXtVnGrK6oa_LGjwq6Dwrx_LmrMrqTw60MUHCqKs0RooIc9QaLNrvqC9O1AdptrdX8zJU-PauKzCaUCdkQLI2HYtHVSqo7yQp1AU-LHuRKwISYgOw2x1G7DIAcATF9O0mUV3Vq_-VvbwNJQsiDyiCzQ",
-							"type": "string"
-						},
-						{
-							"key": "tokenType",
-							"value": "Bearer",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "POST",
 				"header": [
@@ -108,510 +94,40 @@
 			"response": []
 		},
 		{
-			"name": "Save Patient - Kim Possible",
+			"name": "Step 1 - Save Sample Resources Bundle",
 			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"WDT000000001\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\r\n        ]\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Minnie Mouse</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"F\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PI\",\r\n                        \"display\": \"Patient internal identifier\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"https://disney.fandom.com/wiki/Kim_Possible\",\r\n            \"value\": \"WDT000000001\",\r\n            \"period\": {\r\n                \"start\": \"2002-06-07\"\r\n            },\r\n            \"assigner\": {\r\n                \"display\": \"EMPI - Enterprise ID system\"\r\n            }\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Kim Possible\",\r\n            \"family\": \"Possible\",\r\n            \"given\": [\r\n                \"Kim\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"kimP@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"female\",\r\n    \"birthDate\": \"2002-06-07\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
+					"raw": "{\n    \"resourceType\": \"Bundle\",\n    \"type\": \"batch\",\n    \"entry\": [\n        {\n            \"resource\": {\n                \"resourceType\": \"Patient\",\n                \"id\": \"WDT000000001\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\n                    ]\n                },\n                \"text\": {\n                    \"status\": \"generated\",\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Minnie Mouse</div>\"\n                },\n                \"extension\": [\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2106-3\",\n                                    \"display\": \"White\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2186-5\",\n                                    \"display\": \"Not Hispanic or Latino\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\n                        \"valueCode\": \"F\"\n                    }\n                ],\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"PI\",\n                                    \"display\": \"Patient internal identifier\"\n                                }\n                            ]\n                        },\n                        \"system\": \"https://disney.fandom.com/wiki/Kim_Possible\",\n                        \"value\": \"WDT000000001\",\n                        \"period\": {\n                            \"start\": \"2002-06-07\"\n                        },\n                        \"assigner\": {\n                            \"display\": \"EMPI - Enterprise ID system\"\n                        }\n                    }\n                ],\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"text\": \"Kim Possible\",\n                        \"family\": \"Possible\",\n                        \"given\": [\n                            \"Kim\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"615-871-6779\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"kimP@disney.com\"\n                    }\n                ],\n                \"gender\": \"female\",\n                \"birthDate\": \"2002-06-07\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Patient/WDT000000001\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Patient\",\n                \"id\": \"WDT000000002\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\n                    ]\n                },\n                \"text\": {\n                    \"status\": \"generated\",\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Minnie Mouse</div>\"\n                },\n                \"extension\": [\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2106-3\",\n                                    \"display\": \"White\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2186-5\",\n                                    \"display\": \"Not Hispanic or Latino\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\n                        \"valueCode\": \"M\"\n                    }\n                ],\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"PI\",\n                                    \"display\": \"Patient internal identifier\"\n                                }\n                            ]\n                        },\n                        \"system\": \"https://disney.fandom.com/wiki/Ron_Stoppable\",\n                        \"value\": \"WDT000000002\",\n                        \"period\": {\n                            \"start\": \"2002-06-07\"\n                        },\n                        \"assigner\": {\n                            \"display\": \"EMPI - Enterprise ID system\"\n                        }\n                    }\n                ],\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"text\": \"Ron Stoppable\",\n                        \"family\": \"Stoppable\",\n                        \"given\": [\n                            \"Ron\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"615-871-6779\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"ronS@disney.com\"\n                    }\n                ],\n                \"gender\": \"male\",\n                \"birthDate\": \"2002-06-07\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Patient/WDT000000002\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Patient\",\n                \"id\": \"D000000003\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\n                    ]\n                },\n                \"text\": {\n                    \"status\": \"generated\",\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Donald Duck</div>\"\n                },\n                \"extension\": [\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2106-3\",\n                                    \"display\": \"White\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2186-5\",\n                                    \"display\": \"Not Hispanic or Latino\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\n                        \"valueCode\": \"M\"\n                    }\n                ],\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"MI\",\n                                    \"display\": \"Military ID number\"\n                                }\n                            ]\n                        },\n                        \"system\": \"http://va.gov/fhir/NamingSystem/identifier\",\n                        \"value\": \"VA-103\",\n                        \"assigner\": {\n                            \"display\": \"Veterans Affairs\"\n                        },\n                        \"period\": {\n                            \"start\": \"2012-01-01\"\n                        }\n                    },\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"PI\",\n                                    \"display\": \"Patient internal identifier\"\n                                }\n                            ]\n                        },\n                        \"system\": \"http://mickey.disney.com/donald\",\n                        \"value\": \"D000000003\",\n                        \"period\": {\n                            \"start\": \"1931-06-09\"\n                        },\n                        \"assigner\": {\n                            \"display\": \"EMPI - Enterprise ID system\"\n                        }\n                    }\n                ],\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"text\": \"Donald Duck\",\n                        \"family\": \"Duck\",\n                        \"given\": [\n                            \"Donald\"\n                        ],\n                        \"prefix\": [\n                            \"Mr.\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"615-871-6779\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"dd@disney.com\"\n                    }\n                ],\n                \"gender\": \"male\",\n                \"birthDate\": \"1931-06-09\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ],\n                \"maritalStatus\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\n                            \"code\": \"M\",\n                            \"display\": \"M\"\n                        }\n                    ],\n                    \"text\": \"M\"\n                },\n                \"multipleBirthBoolean\": false,\n                \"communication\": [\n                    {\n                        \"language\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"urn:ietf:bcp:47\",\n                                    \"code\": \"en-US\",\n                                    \"display\": \"English\"\n                                }\n                            ],\n                            \"text\": \"English\"\n                        }\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Patient/D000000003\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Patient\",\n                \"id\": \"D000000004\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\n                    ]\n                },\n                \"text\": {\n                    \"status\": \"generated\",\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Daisy Duck</div>\"\n                },\n                \"extension\": [\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2106-3\",\n                                    \"display\": \"White\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2186-5\",\n                                    \"display\": \"Not Hispanic or Latino\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\n                        \"valueCode\": \"F\"\n                    }\n                ],\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"PI\",\n                                    \"display\": \"Patient internal identifier\"\n                                }\n                            ]\n                        },\n                        \"system\": \"http://mickey.disney.com/daisy\",\n                        \"value\": \"D000000004\",\n                        \"period\": {\n                            \"start\": \"1940-06-07\"\n                        },\n                        \"assigner\": {\n                            \"display\": \"EMPI - Enterprise ID system\"\n                        }\n                    }\n                ],\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"text\": \"Daisy Duck\",\n                        \"family\": \"Duck\",\n                        \"given\": [\n                            \"Daisy\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"615-871-6779\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"dd2@disney.com\"\n                    }\n                ],\n                \"gender\": \"female\",\n                \"birthDate\": \"1940-06-07\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Patient/D000000004\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Patient\",\n                \"id\": \"D000000002\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\n                    ]\n                },\n                \"text\": {\n                    \"status\": \"generated\",\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Minnie Mouse</div>\"\n                },\n                \"extension\": [\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2028-9\",\n                                    \"display\": \"Asian\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2186-5\",\n                                    \"display\": \"Not Hispanic or Latino\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\n                        \"valueCode\": \"F\"\n                    }\n                ],\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"PI\",\n                                    \"display\": \"Patient internal identifier\"\n                                }\n                            ]\n                        },\n                        \"system\": \"http://mickey.disney.com/daisy\",\n                        \"value\": \"D000000002\",\n                        \"period\": {\n                            \"start\": \"1928-05-15\"\n                        },\n                        \"assigner\": {\n                            \"display\": \"EMPI - Enterprise ID system\"\n                        }\n                    }\n                ],\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"text\": \"Minnie Mouse\",\n                        \"family\": \"Mouse\",\n                        \"given\": [\n                            \"Minnie\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"615-871-6779\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"mm2@disney.com\"\n                    }\n                ],\n                \"gender\": \"female\",\n                \"birthDate\": \"1928-05-15\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Patient/D000000002\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Patient\",\n                \"id\": \"D000000001\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\n                    ]\n                },\n                \"text\": {\n                    \"status\": \"generated\",\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Mickey Mouse</div>\"\n                },\n                \"extension\": [\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2028-9\",\n                                    \"display\": \"Asian\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2186-5\",\n                                    \"display\": \"Not Hispanic or Latino\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\n                        \"valueCode\": \"M\"\n                    }\n                ],\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"PI\",\n                                    \"display\": \"Patient internal identifier\"\n                                }\n                            ]\n                        },\n                        \"system\": \"http://mickey.disney.com/mickey\",\n                        \"value\": \"D000000001\",\n                        \"period\": {\n                            \"start\": \"1928-05-15\"\n                        },\n                        \"assigner\": {\n                            \"display\": \"EMPI - Enterprise ID system\"\n                        }\n                    }\n                ],\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"text\": \"Mickey Mouse\",\n                        \"family\": \"Mouse\",\n                        \"given\": [\n                            \"Mickey\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"615-871-6779\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"mm@disney.com\"\n                    }\n                ],\n                \"gender\": \"male\",\n                \"birthDate\": \"1928-05-15\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Patient/D000000001\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Patient\",\n                \"id\": \"D000000001-1\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\n                    ]\n                },\n                \"text\": {\n                    \"status\": \"generated\",\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Mortimer Mouse</div>\"\n                },\n                \"extension\": [\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2028-9\",\n                                    \"display\": \"Asian\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2186-5\",\n                                    \"display\": \"Not Hispanic or Latino\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\n                        \"valueCode\": \"M\"\n                    }\n                ],\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"PI\",\n                                    \"display\": \"Patient internal identifier\"\n                                }\n                            ]\n                        },\n                        \"system\": \"http://mickey.disney.com/mickey\",\n                        \"value\": \"D000000001-1\",\n                        \"period\": {\n                            \"start\": \"1928-05-15\"\n                        },\n                        \"assigner\": {\n                            \"display\": \"EMPI - Enterprise ID system\"\n                        }\n                    }\n                ],\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"text\": \"Mortimer Mouse\",\n                        \"family\": \"Mouse\",\n                        \"given\": [\n                            \"Mortimer\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"615-871-6779\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"mm@disney.com\"\n                    }\n                ],\n                \"gender\": \"male\",\n                \"birthDate\": \"1928-05-15\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ],\n                \"link\": [\n                    {\n                        \"other\": {\n                            \"reference\": \"Patient/D000000001\"\n                        },\n                        \"type\": \"replaced-by\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Patient/D000000001-1\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Practitioner\",\n                \"id\": \"WDT000000003\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\n                    ]\n                },\n                \"text\": {\n                    \"status\": \"generated\",\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Heinz Doofenshmirtz</div>\"\n                },\n                \"extension\": [\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2106-3\",\n                                    \"display\": \"White\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n                        \"extension\": [\n                            {\n                                \"url\": \"ombCategory\",\n                                \"valueCoding\": {\n                                    \"system\": \"urn:oid:2.16.840.1.113883.6.238\",\n                                    \"code\": \"2186-5\",\n                                    \"display\": \"Not Hispanic or Latino\"\n                                }\n                            }\n                        ]\n                    },\n                    {\n                        \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\n                        \"valueCode\": \"M\"\n                    }\n                ],\n                \"identifier\": [\n                    {\n                        \"use\": \"official\",\n                        \"type\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\n                                    \"code\": \"PI\",\n                                    \"display\": \"Patient internal identifier\"\n                                }\n                            ]\n                        },\n                        \"system\": \"https://disney.fandom.com/wiki/Phineas_and_Ferb\",\n                        \"value\": \"WDT000000003\",\n                        \"period\": {\n                            \"start\": \"2008-02-01\"\n                        },\n                        \"assigner\": {\n                            \"display\": \"EMPI - Enterprise ID system\"\n                        }\n                    }\n                ],\n                \"name\": [\n                    {\n                        \"use\": \"official\",\n                        \"text\": \"Heinz Doofenshmirtz\",\n                        \"family\": \"Doofenshmirtz\",\n                        \"given\": [\n                            \"Heinz\"\n                        ],\n                        \"prefix\": [\n                            \"Dr.\"\n                        ]\n                    }\n                ],\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"615-871-6779\",\n                        \"use\": \"mobile\"\n                    },\n                    {\n                        \"system\": \"email\",\n                        \"value\": \"doof@disney.com\"\n                    }\n                ],\n                \"gender\": \"male\",\n                \"birthDate\": \"1967-05-15\",\n                \"address\": [\n                    {\n                        \"use\": \"home\",\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Practitioner/WDT000000003\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Organization\",\n                \"id\": \"Disney02\",\n                \"meta\": {\n                    \"profile\": [\n                        \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization\"\n                    ]\n                },\n                \"active\": true,\n                \"type\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/organization-type\",\n                                \"code\": \"bus\",\n                                \"display\": \"Non-Healthcare Business or Corporation\"\n                            }\n                        ],\n                        \"text\": \"Non-Healthcare Business or Corporation\"\n                    }\n                ],\n                \"name\": \"Walt Disney World\",\n                \"telecom\": [\n                    {\n                        \"system\": \"phone\",\n                        \"value\": \"4079395277\"\n                    }\n                ],\n                \"address\": [\n                    {\n                        \"line\": [\n                            \"1500 Epcot Resorts Blvd\"\n                        ],\n                        \"city\": \"Bay Lake\",\n                        \"state\": \"FL\",\n                        \"postalCode\": \"32830\",\n                        \"country\": \"US\"\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Organization/Disney02\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"PractitionerRole\",\n                \"id\": \"role000000123\",\n                \"practitioner\": {\n                    \"reference\": \"Practitioner/WDT000000003\",\n                    \"display\": \"Dr Heinz Doofenshmirtz\"\n                },\n                \"organization\": {\n                    \"reference\": \"Organization/Disney02\"\n                },\n                \"code\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0286\",\n                                \"code\": \"RP\"\n                            }\n                        ]\n                    }\n                ],\n                \"specialty\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://snomed.info/sct\",\n                                \"code\": \"408443003\",\n                                \"display\": \"General medical practice\"\n                            }\n                        ]\n                    }\n                ],\n                \"availableTime\": [\n                    {\n                        \"daysOfWeek\": [\n                            \"mon\",\n                            \"tue\",\n                            \"wed\"\n                        ],\n                        \"availableStartTime\": \"09:00:00\",\n                        \"availableEndTime\": \"16:30:00\"\n                    },\n                    {\n                        \"daysOfWeek\": [\n                            \"thu\",\n                            \"fri\"\n                        ],\n                        \"availableStartTime\": \"09:00:00\",\n                        \"availableEndTime\": \"12:00:00\"\n                    }\n                ],\n                \"availabilityExceptions\": \"Heinz is generally unavailable on public holidays and during the Christmas/New Year break\"\n            },\n            \"request\": {\n                \"url\": \"PractitionerRole/role000000123\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Encounter\",\n                \"id\": \"2088aef5-89d0-4876-82d8-2594f3d737bc\",\n                \"status\": \"finished\",\n                \"class\": {\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\n                    \"code\": \"AMB\"\n                },\n                \"type\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://snomed.info/sct\",\n                                \"code\": \"185347001\",\n                                \"display\": \"Encounter for problem\"\n                            }\n                        ],\n                        \"text\": \"Encounter for problem\"\n                    }\n                ],\n                \"subject\": {\n                    \"reference\": \"Patient/WDT000000002\",\n                    \"display\": \"Ron Stoppable\"\n                },\n                \"participant\": [\n                    {\n                        \"individual\": {\n                            \"reference\": \"Practitioner/WDT000000003\",\n                            \"display\": \"Dr. Heinz Doofenshmirtz\"\n                        }\n                    }\n                ],\n                \"period\": {\n                    \"start\": \"2013-03-24T10:13:00-05:00\",\n                    \"end\": \"2013-03-24T10:28:00-05:00\"\n                },\n                \"serviceProvider\": {\n                    \"reference\": \"Organization/Disney02\",\n                    \"display\": \"Walt Disney World\"\n                }\n            },\n            \"request\": {\n                \"url\": \"Encounter/2088aef5-89d0-4876-82d8-2594f3d737bc\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Observation\",\n                \"id\": \"6e788072-ee1a-483b-8a95-f7f3cc8300a5\",\n                \"status\": \"final\",\n                \"category\": [\n                    {\n                        \"coding\": [\n                            {\n                                \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n                                \"code\": \"vital-signs\",\n                                \"display\": \"vital-signs\"\n                            }\n                        ]\n                    }\n                ],\n                \"code\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://loinc.org\",\n                            \"code\": \"55284-4\",\n                            \"display\": \"Blood Pressure\"\n                        }\n                    ],\n                    \"text\": \"Blood Pressure\"\n                },\n                \"subject\": {\n                    \"reference\": \"Patient/WDT000000002\",\n                    \"display\": \"Ron Stoppable\"\n                },\n                \"encounter\": {\n                    \"reference\": \"Encounter/2088aef5-89d0-4876-82d8-2594f3d737bc\"\n                },\n                \"effectiveDateTime\": \"2013-11-09T10:13:00-05:00\",\n                \"issued\": \"2013-11-09T10:13:00.450-05:00\",\n                \"component\": [\n                    {\n                        \"code\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://loinc.org\",\n                                    \"code\": \"8462-4\",\n                                    \"display\": \"Diastolic Blood Pressure\"\n                                }\n                            ],\n                            \"text\": \"Diastolic Blood Pressure\"\n                        },\n                        \"valueQuantity\": {\n                            \"value\": 75.17592808854378,\n                            \"unit\": \"mm[Hg]\",\n                            \"system\": \"http://unitsofmeasure.org\",\n                            \"code\": \"mm[Hg]\"\n                        }\n                    },\n                    {\n                        \"code\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://loinc.org\",\n                                    \"code\": \"8480-6\",\n                                    \"display\": \"Systolic Blood Pressure\"\n                                }\n                            ],\n                            \"text\": \"Systolic Blood Pressure\"\n                        },\n                        \"valueQuantity\": {\n                            \"value\": 117.5527357056336,\n                            \"unit\": \"mm[Hg]\",\n                            \"system\": \"http://unitsofmeasure.org\",\n                            \"code\": \"mm[Hg]\"\n                        }\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Observation/6e788072-ee1a-483b-8a95-f7f3cc8300a5\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Group\",\n                \"id\": \"111\",\n                \"type\": \"person\",\n                \"actual\": \"true\",\n                \"name\": \"Mixed Gender Group\",\n                \"characteristic\": [\n                    {\n                        \"code\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://example.org\",\n                                    \"code\": \"gender\"\n                                }\n                            ]\n                        },\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://example.org\",\n                                    \"code\": \"mixed\"\n                                }\n                            ]\n                        },\n                        \"exclude\": false\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Group/111\",\n                \"method\": \"PUT\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Group\",\n                \"id\": \"222\",\n                \"type\": \"person\",\n                \"actual\": true,\n                \"name\": \"Male Mixed Age Group\",\n                \"characteristic\": [\n                    {\n                        \"code\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://example.org\",\n                                    \"code\": \"gender\"\n                                }\n                            ]\n                        },\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://example.org\",\n                                    \"code\": \"male\"\n                                }\n                            ]\n                        },\n                        \"exclude\": false\n                    },\n                    {\n                        \"code\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://example.org\",\n                                    \"code\": \"age\"\n                                }\n                            ]\n                        },\n                        \"valueCodeableConcept\": {\n                            \"coding\": [\n                                {\n                                    \"system\": \"http://example.org\",\n                                    \"code\": \"mixed\"\n                                }\n                            ]\n                        },\n                        \"exclude\": false\n                    }\n                ]\n            },\n            \"request\": {\n                \"url\": \"Group/222\",\n                \"method\": \"PUT\"\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "{{fhirurl}}/Patient/WDT000000001",
+					"raw": "{{fhirurl}}",
 					"host": [
 						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"WDT000000001"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Save Patient - Ron Stoppable",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"WDT000000002\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\r\n        ]\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Minnie Mouse</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"M\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PI\",\r\n                        \"display\": \"Patient internal identifier\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"https://disney.fandom.com/wiki/Ron_Stoppable\",\r\n            \"value\": \"WDT000000002\",\r\n            \"period\": {\r\n                \"start\": \"2002-06-07\"\r\n            },\r\n            \"assigner\": {\r\n                \"display\": \"EMPI - Enterprise ID system\"\r\n            }\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Ron Stoppable\",\r\n            \"family\": \"Stoppable\",\r\n            \"given\": [\r\n                \"Ron\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"ronS@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"2002-06-07\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient/WDT000000002",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"WDT000000002"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Patient - Donald Duck",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"D000000003\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\r\n        ]\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Donald Duck</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"M\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"MI\",\r\n                        \"display\": \"Military ID number\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://va.gov/fhir/NamingSystem/identifier\",\r\n            \"value\": \"VA-103\",\r\n            \"assigner\": {\r\n                \"display\": \"Veterans Affairs\"\r\n            },\r\n            \"period\": {\r\n                \"start\": \"2012-01-01\"\r\n            }\r\n        },\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PI\",\r\n                        \"display\": \"Patient internal identifier\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://mickey.disney.com/donald\",\r\n            \"value\": \"D000000003\",\r\n            \"period\": {\r\n                \"start\": \"1931-06-09\"\r\n            },\r\n            \"assigner\": {\r\n                \"display\": \"EMPI - Enterprise ID system\"\r\n            }\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Donald Duck\",\r\n            \"family\": \"Duck\",\r\n            \"given\": [\r\n                \"Donald\"\r\n            ],\r\n            \"prefix\": [\r\n                \"Mr.\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"dd@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1931-06-09\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ],\r\n    \"maritalStatus\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                \"code\": \"M\",\r\n                \"display\": \"M\"\r\n            }\r\n        ],\r\n        \"text\": \"M\"\r\n    },\r\n    \"multipleBirthBoolean\": false,\r\n    \"communication\": [\r\n        {\r\n            \"language\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"urn:ietf:bcp:47\",\r\n                        \"code\": \"en-US\",\r\n                        \"display\": \"English\"\r\n                    }\r\n                ],\r\n                \"text\": \"English\"\r\n            }\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient/D000000003",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"D000000003"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Patient - Daisy Duck",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"D000000004\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\r\n        ]\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Daisy Duck</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"F\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PI\",\r\n                        \"display\": \"Patient internal identifier\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://mickey.disney.com/daisy\",\r\n            \"value\": \"D000000004\",\r\n            \"period\": {\r\n                \"start\": \"1940-06-07\"\r\n            },\r\n            \"assigner\": {\r\n                \"display\": \"EMPI - Enterprise ID system\"\r\n            }\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Daisy Duck\",\r\n            \"family\": \"Duck\",\r\n            \"given\": [\r\n                \"Daisy\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"dd2@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"female\",\r\n    \"birthDate\": \"1940-06-07\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient/D000000004",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"D000000004"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Patient - Minnie Mouse",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"D000000002\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\r\n        ]\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Minnie Mouse</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"F\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PI\",\r\n                        \"display\": \"Patient internal identifier\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://mickey.disney.com/daisy\",\r\n            \"value\": \"D000000002\",\r\n            \"period\": {\r\n                \"start\": \"1928-05-15\"\r\n            },\r\n            \"assigner\": {\r\n                \"display\": \"EMPI - Enterprise ID system\"\r\n            }\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Minnie Mouse\",\r\n            \"family\": \"Mouse\",\r\n            \"given\": [\r\n                \"Minnie\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"mm2@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"female\",\r\n    \"birthDate\": \"1928-05-15\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient/D000000002",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"D000000002"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Patient - Mickey Mouse",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"D000000001\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\r\n        ]\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Mickey Mouse</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"M\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PI\",\r\n                        \"display\": \"Patient internal identifier\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://mickey.disney.com/mickey\",\r\n            \"value\": \"D000000001\",\r\n            \"period\": {\r\n                \"start\": \"1928-05-15\"\r\n            },\r\n            \"assigner\": {\r\n                \"display\": \"EMPI - Enterprise ID system\"\r\n            }\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Mickey Mouse\",\r\n            \"family\": \"Mouse\",\r\n            \"given\": [\r\n                \"Mickey\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"mm@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1928-05-15\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient/D000000001",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"D000000001"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Patient - Mortimer Mouse",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"D000000001-1\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\r\n        ]\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Mortimer Mouse</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"M\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PI\",\r\n                        \"display\": \"Patient internal identifier\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"http://mickey.disney.com/mickey\",\r\n            \"value\": \"D000000001-1\",\r\n            \"period\": {\r\n                \"start\": \"1928-05-15\"\r\n            },\r\n            \"assigner\": {\r\n                \"display\": \"EMPI - Enterprise ID system\"\r\n            }\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Mortimer Mouse\",\r\n            \"family\": \"Mouse\",\r\n            \"given\": [\r\n                \"Mortimer\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"mm@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1928-05-15\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ],\r\n    \"link\": [\r\n        {\r\n            \"other\": {\r\n                \"reference\": \"Patient/D000000001\"\r\n            },\r\n            \"type\": \"replaced-by\"\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient/D000000001-1",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"D000000001-1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Practitioner - Heinz Doofenshmirtz",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Practitioner\",\r\n    \"id\": \"WDT000000003\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\"\r\n        ]\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Heinz Doofenshmirtz</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"M\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PI\",\r\n                        \"display\": \"Patient internal identifier\"\r\n                    }\r\n                ]\r\n            },\r\n            \"system\": \"https://disney.fandom.com/wiki/Phineas_and_Ferb\",\r\n            \"value\": \"WDT000000003\",\r\n            \"period\": {\r\n                \"start\": \"2008-02-01\"\r\n            },\r\n            \"assigner\": {\r\n                \"display\": \"EMPI - Enterprise ID system\"\r\n            }\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Heinz Doofenshmirtz\",\r\n            \"family\": \"Doofenshmirtz\",\r\n            \"given\": [\r\n                \"Heinz\"\r\n            ],\r\n            \"prefix\": [\r\n                \"Dr.\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"doof@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1967-05-15\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Practitioner/WDT000000003",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Practitioner",
-						"WDT000000003"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Organization Disney",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Organization\",\r\n    \"id\": \"Disney02\",\r\n    \"meta\": {\r\n        \"profile\": [\r\n            \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization\"\r\n        ]\r\n    },\r\n    \"active\": true,\r\n    \"type\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/organization-type\",\r\n                    \"code\": \"bus\",\r\n                    \"display\": \"Non-Healthcare Business or Corporation\"\r\n                }\r\n            ],\r\n            \"text\": \"Non-Healthcare Business or Corporation\"\r\n        }\r\n    ],\r\n    \"name\": \"Walt Disney World\",\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"4079395277\"\r\n        }\r\n    ],\r\n    \"address\": [\r\n        {\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"US\"\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Organization/Disney02",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Organization",
-						"Disney02"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save PractitionerRole",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"role000000123\",\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/WDT000000003\",\r\n    \"display\": \"Dr Heinz Doofenshmirtz\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/Disney02\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0286\",\r\n          \"code\": \"RP\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"408443003\",\r\n          \"display\": \"General medical practice\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Heinz is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n  \r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/PractitionerRole/role000000123",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"PractitionerRole",
-						"role000000123"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Organization",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Organization",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Organization"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Encounter - Ron Stoppable",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Encounter\",\r\n    \"id\": \"2088aef5-89d0-4876-82d8-2594f3d737bc\",\r\n    \"status\": \"finished\",\r\n    \"class\": {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n        \"code\": \"AMB\"\r\n    },\r\n    \"type\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://snomed.info/sct\",\r\n                    \"code\": \"185347001\",\r\n                    \"display\": \"Encounter for problem\"\r\n                }\r\n            ],\r\n            \"text\": \"Encounter for problem\"\r\n        }\r\n    ],\r\n    \"subject\": {\r\n        \"reference\": \"Patient/WDT000000002\",\r\n        \"display\": \"Ron Stoppable\"\r\n    },\r\n    \"participant\": [\r\n        {\r\n            \"individual\": {\r\n                \"reference\": \"Practitioner/WDT000000003\",\r\n                \"display\": \"Dr. Heinz Doofenshmirtz\"\r\n            }\r\n        }\r\n    ],\r\n    \"period\": {\r\n        \"start\": \"2013-03-24T10:13:00-05:00\",\r\n        \"end\": \"2013-03-24T10:28:00-05:00\"\r\n    },\r\n    \"serviceProvider\": {\r\n        \"reference\": \"Organization/Disney02\",\r\n        \"display\": \"Walt Disney World\"\r\n    }\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Encounter/2088aef5-89d0-4876-82d8-2594f3d737bc",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Encounter",
-						"2088aef5-89d0-4876-82d8-2594f3d737bc"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Save Observation (BP) - Ron Stoppable",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Observation\",\r\n    \"id\": \"6e788072-ee1a-483b-8a95-f7f3cc8300a5\",\r\n    \"status\": \"final\",\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n                    \"code\": \"vital-signs\",\r\n                    \"display\": \"vital-signs\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"code\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://loinc.org\",\r\n                \"code\": \"55284-4\",\r\n                \"display\": \"Blood Pressure\"\r\n            }\r\n        ],\r\n        \"text\": \"Blood Pressure\"\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/WDT000000002\"\r\n    },\r\n    \"encounter\": {\r\n        \"reference\": \"Encounter/2088aef5-89d0-4876-82d8-2594f3d737bc\"\r\n    },\r\n    \"effectiveDateTime\": \"2013-11-09T10:13:00-05:00\",\r\n    \"issued\": \"2013-11-09T10:13:00.450-05:00\",\r\n    \"component\": [\r\n        {\r\n            \"code\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://loinc.org\",\r\n                        \"code\": \"8462-4\",\r\n                        \"display\": \"Diastolic Blood Pressure\"\r\n                    }\r\n                ],\r\n                \"text\": \"Diastolic Blood Pressure\"\r\n            },\r\n            \"valueQuantity\": {\r\n                \"value\": 75.17592808854378,\r\n                \"unit\": \"mm[Hg]\",\r\n                \"system\": \"http://unitsofmeasure.org\",\r\n                \"code\": \"mm[Hg]\"\r\n            }\r\n        },\r\n        {\r\n            \"code\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://loinc.org\",\r\n                        \"code\": \"8480-6\",\r\n                        \"display\": \"Systolic Blood Pressure\"\r\n                    }\r\n                ],\r\n                \"text\": \"Systolic Blood Pressure\"\r\n            },\r\n            \"valueQuantity\": {\r\n                \"value\": 117.5527357056336,\r\n                \"unit\": \"mm[Hg]\",\r\n                \"system\": \"http://unitsofmeasure.org\",\r\n                \"code\": \"mm[Hg]\"\r\n            }\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Observation/6e788072-ee1a-483b-8a95-f7f3cc8300a5",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Observation",
-						"6e788072-ee1a-483b-8a95-f7f3cc8300a5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List All Patients",
+			"name": "Step 2 - List All Patients",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -658,60 +174,7 @@
 			"response": []
 		},
 		{
-			"name": "List All Patients (Name,Birthdate and Gender Elements only)",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient?_elements=name[0],gender,birthDate",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient"
-					],
-					"query": [
-						{
-							"key": "_elements",
-							"value": "name[0],gender,birthDate"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Patient by ID",
+			"name": "Step 2 - List Patient by ID",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -764,7 +227,7 @@
 			"response": []
 		},
 		{
-			"name": "List Patients by IDs",
+			"name": "Step 2 - List Patients by IDs",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -817,7 +280,7 @@
 			"response": []
 		},
 		{
-			"name": "List Patient by ID using POST",
+			"name": "Step 2 - List Patient by ID using POST",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {}
 			},
@@ -865,7 +328,325 @@
 			"response": []
 		},
 		{
-			"name": "List Patient by Name",
+			"name": "Step 2 - List Patient by Identifier",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient?identifier=D000000001",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "D000000001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 2 - List Patient by Identifier (System Specific)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient?identifier=http://va.gov/fhir/NamingSystem/identifier|VA-103",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "identifier",
+							"value": "http://va.gov/fhir/NamingSystem/identifier|VA-103"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 2 - List Patient by Name Contains",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient?name=mickey",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "mickey"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 2 - List Patient by Date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient?birthdate=eq1928-05-15",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "birthdate",
+							"value": "eq1928-05-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 2 - List Patient by Gender",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient?gender:not=male",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "gender:not",
+							"value": "male"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 2 - List Patient by Date after",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient?birthdate=gt1928-05-15",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "birthdate",
+							"value": "gt1928-05-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 3: List Patient by First and Last Name",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -922,10 +703,7 @@
 			"response": []
 		},
 		{
-			"name": "List Patient by Name contains",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Step 3 - List All Groups",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -952,33 +730,20 @@
 						"disabled": true
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "{{fhirurl}}/Patient?name=mickey",
+					"raw": "{{fhirurl}}/Group",
 					"host": [
 						"{{fhirurl}}"
 					],
 					"path": [
-						"Patient"
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": "mickey"
-						}
+						"Group"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "List Patient by Gender",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Step 3 - List MIxed Gender Groups with &",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -1005,22 +770,22 @@
 						"disabled": true
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "{{fhirurl}}/Patient?gender:not=male",
+					"raw": "{{fhirurl}}/Group?characteristic=gender&value=mixed",
 					"host": [
 						"{{fhirurl}}"
 					],
 					"path": [
-						"Patient"
+						"Group"
 					],
 					"query": [
 						{
-							"key": "gender:not",
-							"value": "male"
+							"key": "characteristic",
+							"value": "gender"
+						},
+						{
+							"key": "value",
+							"value": "mixed"
 						}
 					]
 				}
@@ -1028,10 +793,7 @@
 			"response": []
 		},
 		{
-			"name": "List Patient by Date",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "Step 3 - List MIxed Gender Groups with Composite",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -1058,22 +820,18 @@
 						"disabled": true
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "{{fhirurl}}/Patient?birthdate=eq1928-05-15",
+					"raw": "{{fhirurl}}/Group?characteristic-value=gender$mixed",
 					"host": [
 						"{{fhirurl}}"
 					],
 					"path": [
-						"Patient"
+						"Group"
 					],
 					"query": [
 						{
-							"key": "birthdate",
-							"value": "eq1928-05-15"
+							"key": "characteristic-value",
+							"value": "gender$mixed"
 						}
 					]
 				}
@@ -1081,272 +839,7 @@
 			"response": []
 		},
 		{
-			"name": "List Patient by Date after",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient?birthdate=gt1928-05-15",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient"
-					],
-					"query": [
-						{
-							"key": "birthdate",
-							"value": "gt1928-05-15"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Patient by Identifier",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient?identifier=D000000001",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient"
-					],
-					"query": [
-						{
-							"key": "identifier",
-							"value": "D000000001"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Patient by Identifier - VA",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient?identifier=http://va.gov/fhir/NamingSystem/identifier|VA-103",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient"
-					],
-					"query": [
-						{
-							"key": "identifier",
-							"value": "http://va.gov/fhir/NamingSystem/identifier|VA-103"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Patient by Encounter",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Encounter?patient=Patient/WDT000000002",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Encounter"
-					],
-					"query": [
-						{
-							"key": "patient",
-							"value": "Patient/WDT000000002"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Patient by Encounter Chained Search",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Encounter?subject:Patient.name=Donald",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Encounter"
-					],
-					"query": [
-						{
-							"key": "subject:Patient.name",
-							"value": "Donald"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Patient Observations by Results",
+			"name": "Step 3 - List Patient Observations by Results",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1399,60 +892,7 @@
 			"response": []
 		},
 		{
-			"name": "List Patient with Observations of BP (Reverse Chain)",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient?_has:Observation:patient:code=55284-4",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient"
-					],
-					"query": [
-						{
-							"key": "_has:Observation:patient:code",
-							"value": "55284-4"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Patient Observations by Results Composite",
+			"name": "Step 3 - List Patient Observations by Results Composite",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1505,7 +945,7 @@
 			"response": []
 		},
 		{
-			"name": "List Patient History",
+			"name": "Step 4 - List All Patients (Name,Birthdate and Gender Elements only)",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1540,21 +980,25 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{fhirurl}}/Patient/D000000001/_history",
+					"raw": "{{fhirurl}}/Patient?_elements=name[0],gender,birthDate",
 					"host": [
 						"{{fhirurl}}"
 					],
 					"path": [
-						"Patient",
-						"D000000001",
-						"_history"
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "_elements",
+							"value": "name[0],gender,birthDate"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Count All Patients and Start Paging Resources",
+			"name": "Step 4 - Count All Patients and Start Paging Resources",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1607,7 +1051,7 @@
 			"response": []
 		},
 		{
-			"name": "Count All Patients",
+			"name": "Step 4 - Count All Patients",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1660,7 +1104,7 @@
 			"response": []
 		},
 		{
-			"name": "Count All Male Patients",
+			"name": "Step 4 - Count All Male Patients",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1717,7 +1161,166 @@
 			"response": []
 		},
 		{
-			"name": "List Practitioner From PracititionerRole (Include)",
+			"name": "Step 5 - List Patient by Encounter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Encounter?patient=Patient/WDT000000002",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Encounter"
+					],
+					"query": [
+						{
+							"key": "patient",
+							"value": "Patient/WDT000000002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 5 - List Patient by Encounter Chained Search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Encounter?subject:Patient.name=Ron",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Encounter"
+					],
+					"query": [
+						{
+							"key": "subject:Patient.name",
+							"value": "Ron"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 5 - List Patient with Observations of BP (Reverse Chain)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient?_has:Observation:patient:code=55284-4",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient"
+					],
+					"query": [
+						{
+							"key": "_has:Observation:patient:code",
+							"value": "55284-4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 6 - List Practitioner From PracititionerRole (Include)",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1770,182 +1373,7 @@
 			"response": []
 		},
 		{
-			"name": "List Organization and all  PractionerRoles assigned (rev-include)",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Organization",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Organization"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List MedicationRequest",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/MedicationRequest",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"MedicationRequest"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List Devices",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"resourceType\": \"Device\",\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://azure/device/registration\",\r\n      \"value\": \"12345\"\r\n    }\r\n  ],\r\n  \"patient\":{\r\n  \t\"reference\":\"Patient/\"\r\n  }\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Device",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Device"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Schedule",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Schedule",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Schedule"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Creat New Search Parameter",
+			"name": "Step 7 - Create New Search Parameter",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -1989,7 +1417,7 @@
 			"response": []
 		},
 		{
-			"name": "Reindex",
+			"name": "Step 7 - Reindex",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -2033,7 +1461,7 @@
 			"response": []
 		},
 		{
-			"name": "Search by Custom Search Parameter",
+			"name": "Step 7 - Search by Custom Search Parameter",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -2086,7 +1514,56 @@
 			"response": []
 		},
 		{
-			"name": "Delete Patient",
+			"name": "Extra - List Patient History",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient/D000000001/_history",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient",
+						"D000000001",
+						"_history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Extra - Delete Patient",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -2122,59 +1599,6 @@
 					"path": [
 						"Patient",
 						"<Id>"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Validate",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"bearerToken\", jsonData.access_token);\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"content-type": true
-				}
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"active\": true,\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"family\": \"familyname\",\r\n            \"given\": [\r\n                \"givenname\",\r\n                \"middlename\"\r\n            ]\r\n        },\r\n        {\r\n            \"use\": \"usual\",\r\n            \"given\": [\r\n                \"nickname\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"use\": \"home\"\r\n        },\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"123456789\",\r\n            \"use\": \"home\",\r\n            \"rank\": 1\r\n        },\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"098765432\",\r\n            \"use\": \"mobile\",\r\n            \"rank\": 2\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1970-01-22\",\r\n    \"deceasedBoolean\": false,\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"type\": \"both\",\r\n            \"text\": \"123 bookcase ave\",\r\n            \"line\": [\r\n                \"bookcase ave\"\r\n            ],\r\n            \"city\": \"city\",\r\n            \"district\": \"district\",\r\n            \"state\": \"va\",\r\n            \"postalCode\": \"09876\",\r\n            \"period\": {\r\n                \"start\": \"1980-01-31\"\r\n            }\r\n        }\r\n    ]\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient/$validate",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"$validate"
 					]
 				}
 			},
