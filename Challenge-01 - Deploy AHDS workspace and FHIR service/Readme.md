@@ -71,7 +71,7 @@ Review [Step 1 in these instructions](../resources/docs/FHIR-Starter_ARM_templat
 
 In the next part of this challenge, you will
 
-+ View another document and follow the instructions on setting up Postman.
++ Visit another page and follow the instructions on setting up Postman.
 + Make API calls to test FHIR service using Postman.
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
