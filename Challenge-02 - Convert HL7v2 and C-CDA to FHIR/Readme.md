@@ -156,6 +156,12 @@ After making the `$convert-data` request, you should receive a FHIR bundle respo
 + A FHIR `"resourceType": "Bundle"` response after calling ```$convert-data``` with an HL7v2 payload.
 + A FHIR `"resourceType": "Bundle"` response after calling ```$convert-data``` with a C-CDA payload.
 
+## Some additional resources ##
+
+[Caristix HL7v2 ADT_A01 Reference](https://hl7-definition.caristix.com/v2/HL7v2.6/TriggerEvents/ADT_A01)
+[HL7v2 main page](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185)
+[Consolidated-Clinical Documentation Architecture page](https://www.healthit.gov/topic/standards-technology/consolidated-cda-overview) 
+
 ## Next Steps
 
 Click [here](<../Challenge-03 - Ingest to FHIR/Readme.md>) to proceed to Challenge-03.
