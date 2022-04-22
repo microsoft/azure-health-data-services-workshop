@@ -5,11 +5,11 @@
 For testing the FHIR service in Azure Health Data Services, Postman is often configured to call the FHIR service's endpoint directly. In some circumstances, however, users may choose to deploy Microsoft's OSS [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) to supplement the FHIR service with additional FHIR data filtering capabilities. When FHIR service is paired with FHIR-Proxy, testing the FHIR service with Postman requires setting up Postman to call the FHIR-Proxy endpoint rather than the FHIR service endpoint. In this guide, we will take you through the steps needed to configure Postman to call a FHIR-Proxy endpoint.
 
 ## Prerequisites
-+ [Contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles) role in your Azure Subscription
-+ [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your Azure Active Directory (AAD) tenant
-+ **FHIR service** deployed. More information about FHIR service can be found [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview).
-+ **FHIR-Proxy** deployed and set up with AAD authentication and app roles for connecting to FHIR service. 
-+ **Postman** installed - desktop or web client. Information about installing Postman is available [here](https://www.getpostman.com/). 
++ [Contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles) role in your Azure Subscription 
++ [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your Azure Active Directory (AAD) tenant 
++ **FHIR service** deployed. More information about FHIR service can be found [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview). 
++ **FHIR-Proxy** deployed and set up with AAD authentication and app roles for connecting to FHIR service. See [here](FHIR-Starter_ARM_template_README.md) for information about configuring FHIR-Proxy AAD authentication. 
++ **Postman** installed - desktop or web client. Postman should already be set up with a `fhir-service` environment as detailed in [this guide](./Postman_FHIR_service_README.md). Information about installing Postman is available [here](https://www.getpostman.com/). 
 
 ## Getting started
 To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through these steps:
@@ -17,12 +17,12 @@ To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through th
 **Step 1:** Configure API permissions for Postman to connect with FHIR-Proxy  
 **Step 2:** Configure AAD roles for Postman  
 **Step 3:** Import an environment template into Postman  
-**Step 4:** Enter parameter values for a Postman environment  
+**Step 4:** Enter parameter values for the Postman environment  
 **Step 5:** Get an authorization token from AAD  
-**Step 6:** Test FHIR service with Postman 
+**Step 6:** Test FHIR service with Postman connected to the FHIR-Proxy endpoint
 
 
-## Step 1 - Configure API permissions for Postman to connect with FHIR-Proxy
+## Step 1 - Configure API permissions for Postman
  
 1. Navigate to the **Overview** blade for your Postman client app in Azure Active Directory (go to **Azure Portal** -> **AAD** -> **App registrations** -> **Postman**).  
 <img src="./images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
@@ -104,7 +104,7 @@ Now you will configure your Postman environment for FHIR-Proxy (`fhir-proxy`).
 
 - `tenantId` - AAD tenant ID (go to **AAD** -> **Overview** -> **Tenant ID**) 
 - `clientId` - Application (client) ID for Postman client app (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
-- `clientSecret` - Client secret stored for Postman (see Step 1 number 21 above) 
+- `clientSecret` - Client secret stored for Postman in your existing `fhir-service` Postman environment 
 - `resource` - Application (client) ID in the AAD client app for FHIR-Proxy (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
 - `fhirurl` - FHIR-Proxy endpoint appended with `/fhir` - e.g. `https://<fhir_proxy_app_name>.azurewebsites.net/fhir` (go to **Resource Group** -> **Overview** -> **Name** -> **URL**; make sure to append `/fhir` on the end when inputting into the Postman environment)
 
@@ -145,7 +145,7 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 <img src="./images/Screenshot_2022-02-17_101024_edit2.png" height="328">
 
-2. Click `Send` to test that FHIR service and FHIR-Proxy are functioning on a basic level. The `GET List Metadata` call returns the FHIR service server's Capability Statement. If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
+2. Click `Send` to test that FHIR service and FHIR-Proxy are functioning on a basic level. The `GET List Metadata` call returns the FHIR service server's [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html). If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
 
 <img src="./images/Screenshot_2022-02-17_101116_edit2.png" height="328">
 
@@ -153,7 +153,7 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 <img src="./images/Screenshot_2022-02-17_101224_edit2.png" height="328">
 
-4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored on the FHIR server. This means your setup is fully functional.
+4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored on the FHIR server. This means your setup with FHIR-Proxy connected to FHIR service is fully functional.
 
 <img src="./images/Screenshot_2022-02-17_101255_edit2.png" height="328">
 
