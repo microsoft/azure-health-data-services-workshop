@@ -22,7 +22,7 @@ By the end of this challenge you will be able to
 
 + Successful completion of Challenge-01
 + Postman installed
-+ A text editor - [VS Code](https://code.visualstudio.com/) or [7Edit](http://7edit.com/home/)
++ A text editor - [Visual Studio Code](https://code.visualstudio.com/) or [7Edit](http://7edit.com/home/)
 + [VS Code HL7 Language Support](https://marketplace.visualstudio.com/items?itemName=pbrooks.hl7) (optional)
 
 ---
