@@ -52,14 +52,16 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
 2. 	Click on [ADT_A01.hl7](./samples/ADT_A01.hl7) to view a sample HL7v2 message (you may want to click on the `Raw` button on the right for ease of viewing). 
 
-3.	Copy and paste the HL7v2 message into the `Body` of the `Convert Data – HL7` request in Postman. Format the JSON request parameters following the example given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request).
+3.	Copy and paste the HL7v2 message into the **Body** of the `Convert Data – HL7` request in Postman. Format the JSON request parameters following the example given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request).
 
-4.  In the `Body` tab in Postman, select the `raw` button and choose `JSON` from the dropdown menu on the right.
+4.  In the **Body** tab in Postman, select the **raw** button and choose `JSON` from the dropdown menu on the right.
 <img src="./media/Postman_JSON_Body.png" height="328"> 
 
 5.	You will need to make some changes in the HL7v2 payload so that the formatting follows the sample request given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request). 
 
-    __Hint:__ In the sample request in the documentation (link above), look at how the `\n` newline characters are placed in the HL7v2 payload. Add newline characters like these where needed in the HL7v2 message in the `Convert Data - HL7` request. 
+    __Hint:__ In the sample request in the documentation (link above), look at how the `\` escape character is used to escape the `\&` in the HL7v2 payload. Also pay attention to the way `\n` newline characters are used. You will need to add `\` escape characters and newline `\n` characters in the HL7v2 message in the `Convert Data - HL7` request. 
+
+    If you would rather not prepare the HL7v2 message manually, there is an [online tool](https://www.freeformatter.com/json-escape.html) that will help with this. 
 
     *Optional – prepare the JSON request parameters and HL7v2 payload in VS Code (with the HL7 extension installed) first before pasting into the body of the Postman request.
 
