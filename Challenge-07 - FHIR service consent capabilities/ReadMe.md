@@ -41,6 +41,12 @@ Component View of FHIR-Proxy and FHIR service with Postman set up to call the FH
 FHIR-Proxy asserts control over I/O data only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled and configured. Otherwise, with no special configuration, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back unfiltered to the remote client app (e.g., Postman). 
 
 ## Step 1 - Configure FHIR-Proxy authentication
+For the first part of this challenge, you will access another document and follow the instructions to configure FHIR-Proxy authentication settings. 
+
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Proxy authentication configuration instructions in a new browser tab. When you go to the page, you will be following the instructions in Step 2 and Step 3 (you do not need to do the instructions in Step 1).
+
+(.)
+
 
 ## Step 2 - Configure Postman
 
