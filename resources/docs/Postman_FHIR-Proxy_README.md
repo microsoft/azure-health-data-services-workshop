@@ -9,7 +9,7 @@ For testing the FHIR service in Azure Health Data Services, Postman is often con
 + [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your Azure Active Directory (AAD) tenant 
 + **FHIR service** deployed. More information about FHIR service can be found [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview). 
 + **FHIR-Proxy** deployed and set up with AAD authentication and app roles for connecting to FHIR service. See [here](FHIR-Starter_ARM_template_README.md) for information about configuring FHIR-Proxy AAD authentication. 
-+ **Postman** installed - desktop or web client. Postman should already be set up with a `fhir-service` environment as detailed in [this guide](./Postman_FHIR_service_README.md). Information about installing Postman is available [here](https://www.getpostman.com/). 
++ **Postman** installed - desktop or web client. Postman should already be registered in AAD and set up with a `fhir-service` environment as detailed in [this guide](./Postman_FHIR_service_README.md). Information about installing Postman is available [here](https://www.getpostman.com/). 
 
 ## Getting started
 To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through these steps:
