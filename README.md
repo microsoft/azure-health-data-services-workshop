@@ -2,19 +2,19 @@
 
 ## Introduction
 
-Hello and welcome to the Azure Health Data Services Workshop! In this workshop, we present a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) services and features.
+Hello and welcome to the Azure Health Data Services Workshop! In this workshop, we present a series of hands-on activities to help you gain new skills working with Microsoft Health and Life Sciences (HLS) products and services.
 
 ## Who is the Azure Health Data Services Workshop for?
 
-This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Before beginning in the challenges in this workshop, you should have some knowledge of the concepts below. If you need to brush up on any of these, there are some helpful resources at the bottom of Challenge-00.
+This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Before beginning in this workshop, you should have some experience in the areas listed below. If you need to brush up in any of these areas, there are resources at the bottom of Challenge-00. To begin this workshop, you will need to have:
 
 + A solid foundation in Microsoft Azure and Azure Active Directory.
 + Some basic knowledge of healthcare data, especially FHIR.
-+ Familiarity of working with REST API requests and responses.
++ Familiarity working with REST API requests and responses.
 
 ## What topics are covered?
 
-+ In the first part of the workshop (Challenges 00-04), you'll get direct experience deploying, configuring, and working with FHIR inside of Azure Health Data Services.
++ In the first part of the workshop (Challenges 00-04), you'll get direct experience deploying and configuring resources for FHIR data operations inside Azure Health Data Services.
 
   + Challenge-00 - Check Prerequisites and Configure Environment
   + Challenge-01 - Deploy AHDS FHIR service (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)
@@ -22,7 +22,7 @@ This workshop is intended for **healthcare system integrators**, **independent h
   + Challenge-03 - Ingest to FHIR
   + Challenge-04 - Query and Search FHIR
 
-+ In the second part of the workshop (Challenges 05-10), you'll get exposure to the DICOM and MedTech services in Azure Health Data Services. You will also work with exporting FHIR data for analytics and also how to use FHIR inside of applications.
++ In the second part of the workshop (Challenges 05-10), you'll get exposure to the DICOM and MedTech services in Azure Health Data Services. You will also work with exporting FHIR data for analytics, and you will set up a user-facing application to connect with the FHIR service.
 
   + Challenge-05 - Export and Anonymize Data
   + Challenge-06 - Research Azure Data Analytics
@@ -33,7 +33,7 @@ This workshop is intended for **healthcare system integrators**, **independent h
 
 ## Where to start?
 
-Go to the [Challenge-00](<./Challenge-00 - Check Prerequisites and Configure Environment>) and read the instructions to start the workshop! When you are finished with each challenge, you'll move on to the next (Challenge-00, Challenge-01, etc.). The challenge topics build on each other, and you will run into issues if you go through the challenges out of order.
+Go to [Challenge-00](<./Challenge-00 - Check Prerequisites and Configure Environment>) and read the instructions to begin the workshop! When you are finished with a challenge, you'll move on to the next (Challenge-00, Challenge-01, etc.). The challenge topics build on each other, and you will get the most out of the workshop if you do the challenges in order.
 
 ## Ready to get started?  
 
