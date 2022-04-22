@@ -70,7 +70,7 @@ Press **Send** and you should receive a bundle as shown below.
 
 ## Step 4 - Post Consent Record to FHIR Service
 
-1. Review and update (as needed) the sample Consent Resource, which may be found [here](./sample-data/consent-resource.json). Be sure to use the Patient Resource obtained in Step 1.
+1. Review and update (as needed) the sample Consent Resource, which may be found [here](./sample-data/consent-resource.json). Be sure to use the Patient Resource obtained in Step 3.
 2. Create a new request in Postman and post the Consent Resource.
 
 ## Step 5 - Configure Secure FHIR Consent Opt-Out
