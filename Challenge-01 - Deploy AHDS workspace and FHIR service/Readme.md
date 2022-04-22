@@ -37,7 +37,7 @@ Before deploying to your Azure environment, please make sure that you have the f
 
 You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
 
-## Step 1: Deploy AHDS FHIR service and workspace to your Azure environment
+## Step 1: Deploy AHDS workspace and FHIR service to your Azure environment
 
 In the first part of this challenge, you will
 
