@@ -47,7 +47,7 @@ The automated deployment from Challenge-01 only deployed an Azure Health Data Se
 
 3. Generate an access token for yourself (username) or the Postman client application your DICOM service. 
  
-**Not:** Look at the *hints* folder or read [this page](https://docs.microsoft.com/azure/healthcare-apis/get-access-token?tabs=azure-cli#obtain-and-use-an-access-token-for-the-dicom-service) if you need help generating the token.
+**Note:** Look at the *hints* folder or read [this page](https://docs.microsoft.com/azure/healthcare-apis/get-access-token?tabs=azure-cli#obtain-and-use-an-access-token-for-the-dicom-service) if you need help generating the token.
 
 ### Step 3 - Choose a path for the rest of the Challenge
 
