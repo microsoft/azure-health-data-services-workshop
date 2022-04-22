@@ -27,10 +27,12 @@ By the end of this challenge you will be able to
 ## Step 1 – Configure service and client application
 
 1. Change the CORS configuration of FHIR service as per the first screenshot in [this documentation](https://docs.microsoft.com/azure/healthcare-apis/fhir/configure-cross-origin-resource-sharing).
-
-2. In the Azure AD, **App Registration** for the **Postman** application, under **Authentication**, **Add a platform** of type **Single-page application** with redirect URI set to **https://localhost:44321/authentication/login-callback**.
  
-3. In your same **Postman App Registration**, under **API Permissions**, click **Add a permission**. If you do not see the `user_impersonation` permission for Azure Healthcare APIs, follow the instructions in the line below.
+2.Ensure your personal Azure Active Directory user account has the **FHIR Data Contributor** role assigned for your FHIR service.
+
+3. In the Azure AD, **App Registration** for the **Postman** application, under **Authentication**, **Add a platform** of type **Single-page application** with redirect URI set to `https://localhost:44321/authentication/login-callback`. 
+ 
+4. In your same **Postman App Registration**, under **API Permissions**, click **Add a permission**. If you do not see the `user_impersonation` permission for Azure Healthcare APIs, follow the instructions in the line below.
     + Go to the **APIs my organization uses** tab and find **Azure Healthcare APIs**. Add the `user_impersonation` permission.
 
 ## Step 2 – Introduction to FhirBlaze base solution
@@ -82,9 +84,10 @@ A quick tour of FhirBlaze:
     ...
     ```
   
-6. If you want to see where the application reads these values from the appsettings.json file:
+6. If you want to see where the application reads these values from the `appsettings.json` file:
 
-    + Look in the Program.cs file *Build and run FhirBlaze*
+    + Look in the Program.cs file
+    + Build and run FhirBlaze (the debug button is the easiest way)
     + Log in with your Azure Active Directory account
       + *The navigation menu items in the left-hand pane are some of the core entities we’ve already developed.*
     + Click on any navigation menu items in the left-hand pane (e.g. Patients or Practitioners)
@@ -96,12 +99,12 @@ A quick tour of FhirBlaze:
 
 Let's see how to add a new module. This will add a new FHIR Resource type that we can create or delete using FhirBlaze.
 
-1. Select a resource from [FHIR.org](https://www.hl7.org/fhir/resourcelist.html) that is not already included as a module in the FhirBlaze solution.
+1. Select a resource from [FHIR.org](https://www.hl7.org/fhir/resourcelist.html) that is not already included as a module in the FhirBlaze solution. Choose one that you have data for in your FHIR service.
 
-2. In **Solution Explorer**, right-click the **FhirBlaze** solution, select **Add**, and then select **New Project…** .
+2. In **Solution Explorer**, right-click the **FhirBlaze** solution, select **Add**, and then select **New Project**.
 
-3. In the **Add a new project** dialog, set the language filter to **C#**, and then select **Class Library** in the list of project templates.
-    + *Be sure it is a C# Class Library and doesn’t say Universal Windows or .NET Framework behind Class Library.* 
+3. In the **Add a new project** dialog, set the language filter to **C#**, and then select **Class Library** (or **Library** depending on your Visual Studio version) in the list of project templates.
+    + *Be sure it is a C# Class Library or .NET Standard Library and doesn’t say Universal Windows or .NET Framework behind Class Library.*
 
 4. Click the **Next** button.
 
@@ -109,22 +112,22 @@ Let's see how to add a new module. This will add a new FHIR Resource type that w
 
 6. Click the **Next** button.
 
-7. Confirm **.NET 5.0** is selected and click the **Create** button.
+7. Confirm **.NET 5.0** or **.NET Standard 2.1** is selected and click the **Create** button.
 
 8. Right-click the **FhirBlaze** project, select **Add**, and then select **Project Reference**.
 
 9. Select the name of the module you just added to the solution.
 
-10. In **Solution Explorer**, open **App.razor** and add your new module to the list of assemblies.
+10. In **Solution Explorer**, open **App.razor** in the FhirBlaze project and add your new module to the list of assemblies.
 
     ```c#
     @code {
         private IList<Assembly> AdditionalAssemblies = new[]
         {
             typeof(FhirBlaze.PatientModule.PatientList).Assembly,
-            typeof(FhirBlaze.PractitionerModule.PractitionerList).Assembly, 
-            // add the type of your new project here!
-            typeof(FhirBlaze.QuestionnaireModule.QuestionnaireList).Assembly
+            typeof(FhirBlaze.PractitionerModule.Pages.PractitionerList).Assembly, 
+            // add the type of your new project here! This will show as an error until you create the proper page in the next step.
+            typeof(FhirBlaze.QuestionnaireModule.Pages.QuestionnaireList).Assembly
         };
     }
     ```
@@ -181,7 +184,7 @@ Let's see how to add a new module. This will add a new FHIR Resource type that w
     + *You’ll have to change the razor UI to match the fields you want to implement for your selected FHIR Resource. For this challenge, you only need to implement the required fields so you can create a new instance in the FHIR repository.*
     + *You’ll also have to change the code-behind files to implement the needs of your selected FHIR Resource.*
 
-3. In **Solution Explorer**, expand the **FhirBlaze.Shared** project, and then expand the **Shared** folder.
+3. In **Solution Explorer**, expand the **FhirBlaze.SharedComponents** project, and then expand the **Services** folder.
 
 4. Open **IFhirService.cs**.
 
