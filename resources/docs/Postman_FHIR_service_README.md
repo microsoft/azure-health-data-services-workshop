@@ -15,7 +15,7 @@ To set up Postman for testing FHIR service, we'll walk through these steps:
 **Step 1:** Create an App Registration for Postman in AAD  
 **Step 2:** Assign Azure RBAC roles for Postman  
 **Step 3:** Import environment template and collection files into Postman  
-**Step 4:** Enter parameter values for a Postman environment  
+**Step 4:** Enter parameter values for the Postman environment  
 **Step 5:** Get an authorization token from AAD  
 **Step 6:** Test FHIR service with Postman  
 
@@ -109,7 +109,7 @@ Now you will configure your Postman environment (`fhir-service`).
 
 - `tenantId` - AAD tenant ID (go to **AAD** -> **Overview** -> **Tenant ID**)
 - `clientId` - Application (client) ID for Postman client app (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
-- `clientSecret` - Client secret stored for Postman (see Step 1 #21 above) 
+- `clientSecret` - Client secret stored for Postman (see Step 1 #7 above) 
 - `fhirurl` - Azure API for FHIR endpoint - e.g. `https://<azure_api_for_fhir_app_name>.azurehealthcareapis.com` (go to **Resource Group** -> **Overview** -> **Name** -> **FHIR metadata endpoint** and copy *without* "/metadata" on the end)
 - `resource` - Azure API for FHIR endpoint - e.g. `https://<azure_api_for_fhir_app_name>.azurehealthcareapis.com` (same as `fhirurl`)
 
