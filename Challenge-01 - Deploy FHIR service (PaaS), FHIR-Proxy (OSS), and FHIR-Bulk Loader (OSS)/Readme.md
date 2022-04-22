@@ -43,7 +43,7 @@ In the first part of this challenge, you will
 
 + Use a template to deploy resources with the Azure Portal. This template will deploy
   + [Azure Health Data Services workspace](https://docs.microsoft.com/en-us/azure/healthcare-apis/workspace-overview)
-  + [FHIR service]((https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview)
+  + [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview)
   + [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) (for Challenge-03)
   + [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) (for Challenge-07)
 
