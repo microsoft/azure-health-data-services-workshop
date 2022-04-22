@@ -44,7 +44,7 @@ In the first part of this challenge, you will
 + Use a template to deploy resources with the Azure Portal. This template will deploy
   + [Azure Health Data Services workspace](https://docs.microsoft.com/en-us/azure/healthcare-apis/workspace-overview)
   + [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview)
-  + [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) (for Challenge-03)
+  + [FHIR Loader](https://github.com/microsoft/fhir-loader) (for Challenge-03)
   + [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) (for Challenge-07)
 
 1. To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
@@ -83,7 +83,7 @@ Follow the instructions and return here when finished.
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace and FHIR service deployed and available in Azure.
-+ FHIR-Proxy and FHIR-Bulk Loader deployed in Azure for future challenges.
++ FHIR-Proxy and FHIR Loader deployed in Azure for future challenges.
 + Client application created in Azure Active Directory for use with Postman and your FHIR service.
 + Postman set up and able to connect with the FHIR service.
   + Capability Statement from your FHIR service - received.
