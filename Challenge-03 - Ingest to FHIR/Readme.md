@@ -4,24 +4,24 @@
 
 Welcome to Challenge-03!
 
-In this challenge, you will learn how to use the [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) utility to bulk-ingest FHIR data into the FHIR service.
+In this challenge, you will learn how to use the [FHIR Loader](https://github.com/microsoft/fhir-loader) utility to ingest FHIR data into the FHIR service.
 
 ## Background
 
-Bulk FHIR data ingestion is a vital capability for managing FHIR data operations at scale. Since there is no official `$import` operation published in the FHIR standard (yet), implementors must rely on alternative methods of ingesting bulk data into a FHIR server. In this challenge, we will be using Microsoft's FHIR-Bulk Loader (OSS) utility, which is an Azure Function App for importing bulk data into the FHIR service. 
+Data ingestion into FHIR is a vital capability for a healthcare organization's integration with multiple healthcare systems. While there is a newly released `$import` operation that is part of the FHIR service, it is only recommended for the initial load of data into FHIR at high speeds. Alternate approaches can be used for the ongoing, transactional loading of data into the FHIR Service. In this challenge, we will be using Microsoft's FHIR Loader (OSS) utility, which is an Azure Function App for importing data into the FHIR service. 
 
 ## Learning Objectives for Challenge-03
 By the end of this challenge you will be able to 
 
-+ Bulk ingest FHIR data into FHIR service with FHIR-Bulk Loader
-+ Identify issues in bulk FHIR data
-+ Recognize data constraints with bulk FHIR data loading
-+ Track and compare bulk FHIR imports
++ Ingest FHIR data into FHIR service with FHIR Loader
++ Identify issues in loading FHIR bundles
++ Recognize data constraints with FHIR Loader
++ Track and compare FHIR Loader operations
 
-### FHIR service and FHIR-Bulk Loader Relationship 
-The open-source [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) is an Azure component designed to ease the process of bulk FHIR data import into the FHIR service. The operation simply involves uploading FHIR data files to Azure blob storage, and from there the FHIR-Bulk Loader automatically loads the data for persistence in the FHIR service database. The user may upload FHIR Bundles in regular JSON format (.zip compressed or non-compressed) or NDJSON format (non-compressed). Operationally, FHIR-Bulk Loader works by making parallel asynchronous API calls - either directly to a FHIR service endpoint or via FHIR-Proxy. In this challenge, we will be using FHIR-Bulk Loader making direct calls to FHIR service (bypassing FHIR-Proxy).
+### FHIR service and FHIR Loader Relationship 
+The open-source [FHIR Loader](https://github.com/microsoft/fhir-loader) is designed to ease the process of FHIR data import into the FHIR service. The operation simply involves uploading FHIR data files to Azure blob storage, and from there the FHIR Loader automatically transfers the data for persistence in the FHIR service database. The user may upload FHIR Bundles in regular JSON format (.zip compressed or non-compressed) or NDJSON format (non-compressed). Operationally, FHIR Loader works by making parallel asynchronous API calls to the FHIR service.
 
-Below is a component view of FHIR service with FHIR-Bulk Loader and FHIR-Proxy.  
+Below is a component view of FHIR service with FHIR Loader and FHIR-Proxy.  
 
 <img src="./media/FHIR Bulk Loader_ARM_template_deploy_AHDS_edit_PB.png" height="528">
 
@@ -29,10 +29,10 @@ Below is a component view of FHIR service with FHIR-Bulk Loader and FHIR-Proxy.
 ## Prerequisites
 + Successful completion of Challenge-01
 + Postman installed
-+ Access to a text editor (e.g., [VS Code](https://code.visualstudio.com/))
++ Access to a text editor (e.g., [Visual Studio Code](https://code.visualstudio.com/))
 
 ## Getting Started
-For this challenge, you will upload bulk FHIR data for import into FHIR service. You will need to examine error logs and determine what is preventing the data in one of the bundles from being ingested.
+For this challenge, you will upload FHIR data bundles for import into FHIR service. You will need to examine error logs and determine what is preventing the data in one of the bundles from being ingested.
 
 
 ## Step 1 - Download Sample Data
@@ -41,11 +41,11 @@ Start by downloading these two .zip files to your desktop (when you click the li
 + [good_bundles.zip](./samples/good_bundles.zip) 
 + [bad_bundles.zip](./samples/bad_bundles.zip) 
 
-## Step 2 - Use FHIR-Bulk Loader to upload data
+## Step 2 - Use FHIR Loader to upload data
 
-Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on the operating principles of the application. 
+Visit the FHIR Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on the operating principles of the application. 
 
-1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR-Bulk Loader in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name of the Storage account will end in "fssa").
+1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR Loader in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name of the Storage account will end in "fssa").
 
 <img src="./media/FHIR-Bulk_Loader_Blob_Storage_edit.png" height="428">
 
@@ -57,7 +57,7 @@ Visit the FHIR-Bulk Loader (OSS) repository [here](https://github.com/microsoft/
 
 <img src="./media/FHIR-Bulk_Loader_Zip_Upload_Edit.png" height="428"> 
 
-+ Once you click **Upload**, the FHIR-Bulk Loader will automatically import the data from the .zip file into the FHIR service database.
++ Once you click **Upload**, the FHIR Loader will automatically import the data from the .zip file into the FHIR service database.
 
 4. Now, when you do a refresh and click on **bundlesprocessed**, you should see six files as shown below.
 
@@ -65,18 +65,18 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 
 <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_edit.png" height="428"> 
 
-## Step 3 - Debug issues with importing bulk FHIR data 
+## Step 3 - Debug issues with importing FHIR data 
 
 1. Now try importing the `bad_bundles.zip` file that you downloaded in Step 1 of this challenge. Upload the file to the same container where you uploaded the `good_bundles.zip` file.
 
 2. What happens as a result?
 
-> Refer to the Troubleshooting section below or the FHIR-Bulk Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on tracking issues in bulk FHIR data ingestion. 
+> Refer to the Troubleshooting section below or the FHIR Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on tracking issues in FHIR data ingestion. 
 
 ## Troubleshooting 
-Here are some points for inspecting FHIR-Bulk Loader operations:
+Here are some points for inspecting FHIR Loader operations:
 
-+ In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors in importing FHIR bulk data files.  
++ In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors in importing FHIR bundles.  
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit.png" height="428"> 
 
@@ -86,7 +86,7 @@ Here are some points for inspecting FHIR-Bulk Loader operations:
 
 + What is the reason given for the error?
 
-+ In comparison, you can go to **bundlesprocessed** and look in the `.result` files for bulk ingest operations that succeeded. For example, in the image below there is a `201` status code, meaning success. The response shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in FHIR service from the bulk ingest operation. 
++ In comparison, you can go to **bundlesprocessed** and look in the `.result` files for ingest operations that succeeded. For example, in the image below there is a `201` status code, meaning success. The response shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in FHIR service from the ingest operation. 
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_Result_Edit_Edit.png" height="428">
 
@@ -94,7 +94,7 @@ Here are some points for inspecting FHIR-Bulk Loader operations:
 
 + Successfully upload and import data from the file `good_bundles.zip`.
 + Successfully identify the problem in the `bad_bundles.zip` file. Use the Troubleshooting tips above for help. 
-+ Identify **issues to address in production** to avoid problems when ingesting bulk FHIR data into FHIR service. 
++ Identify **issues to address in production** to avoid problems when ingesting FHIR data into FHIR service. 
 
 ## Next Steps
 
