@@ -8,69 +8,70 @@ In this challenge, you will get experience working with medical images using the
 
 ## Background
 
-The [DICOMweb™](https://www.dicomstandard.org/using/dicomweb) standard is the RESTful API protocol used throughout the health industry for medical image storage, querying, and exchange. In Azure Health Data Services, the DICOM service coupled with FHIR service via Microsoft's OSS [DICOMcast](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-cast-overview) presents new opportunities for combined text and medical image-based studies. In this challenge, we will be looking at how to use DICOM service to ingest, store, and retrieve images, and we will get some hands-on experience using DICOMcast to synchronize data between DICOM service and FHIR service. 
+The [DICOMweb™](https://www.dicomstandard.org/using/dicomweb) standard is the RESTful API protocol used throughout the health industry for medical image storage, querying, and exchange. In Azure Health Data Services, the DICOM service coupled with FHIR service via Microsoft's [DICOMcast](https://docs.microsoft.com/azure/healthcare-apis/dicom/dicom-cast-overview) presents new opportunities for combined text and medical image-based studies. In this challenge, we will be looking at how to use DICOM service to ingest, store, and retrieve images, and we will get some hands-on experience using DICOMcast to synchronize data between DICOM service and FHIR service.
 
 ## Learning Objectives for Challenge-08
+
 By the end of this challenge you will be able to 
 
-- Set up a DICOM service instance within an Azure Health Data Services (AHDS) Workspace
-- Submit DICOM files to the service
-- Successfully view the files with a DICOM Viewer connected to the AHDS FHIR service
++ Set up a DICOM service instance within an Azure Health Data Services workspace
++ Submit DICOM files to the service
++ Successfully view the files with a DICOM Viewer connected to a FHIR service
+
+## Prerequisites
+
++ An Azure environment with a working Azure Health Data Services workspace (completed in Challenge-01).
 
 ## Initial Setup
 
-### Step 1 - Clone these repos
+### Step 1 - Download Challenge Dependencies
 
-&nbsp;&nbsp;&nbsp;&nbsp; This workshop repo (If not already complete)
+You will need to download some DICOM files and a DICOM viewer from the open source Microsoft Medical Imaging Server repository for use in this challenge.
 
-```azurecli
-git clone https://github.com/microsoft/azure-api-for-fhir-workshop.git
-```
+1. Download the sample `.DCM` files from the `samples` folder for this challenge.
 
-&nbsp;&nbsp;&nbsp;&nbsp; The Medical Imaging Server for Azure
+2. Download the whole [Microsoft Medical Imaging Server](https://github.com/microsoft/dicom-server) repository from GitHub.
 
-```azurecli
-git clone https://github.com/microsoft/dicom-server.git
-```
+**Note**: You can either use the "Download Zip" button that appears after clicking the green `Code` button on GitHub or the `git clone` command.
 
+### Step 2 - Set up DICOM Service using Azure Portal
 
-### Step 2 - Set up an Azure Health Data Services Workspace using Azure Portal
+The automated deployment from Challenge-01 only deployed an Azure Health Data Service workspace and FHIR service. In this challenge, you will be creating a DICOM service manually.
+
+1. Follow [this quickstart](https://docs.microsoft.com/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure) to deploy a DICOM service into your existing Azure Health Data Services workspace with the Azure Portal.
+
+    + **Note:** The deployment of DICOM service usually takes 6 minutes.
+    + **Note:** Once the deployment is done, make sure to copy the `Service URL` from the Azure Portal.
+
+2. Add the **DICOM Data Owner** role for yourself (e.g.., your username in Azure) as well as for the **Postman client application** from previous challenges ([documentation available here](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)).
+
+3. Generate an access token for yourself (username) or the Postman client application your DICOM service. 
  
- [Deploy workspace in the Azure portal - Azure Health Data Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-quickstart)
+**Not:** Look at the *hints* folder or read [this page](https://docs.microsoft.com/azure/healthcare-apis/get-access-token?tabs=azure-cli#obtain-and-use-an-access-token-for-the-dicom-service) if you need help generating the token.
 
-
-### Step 3 - Set up DICOM Service using Azure Portal
-
-[Deploy DICOM service using the Azure portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure)
-
-Add the **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as for the Postman client application ([documentation available here](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)).
-
-Generate an access token for yourself (username) or the Postman client application to [resource](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-services-). Check the *hints* folder if you need to find out how to generate the token.
-
-### Step 4 - Choose a path for the rest of the Challenge
+### Step 3 - Choose a path for the rest of the Challenge
 
 Here you need to choose a path for completing the challenge. There are two paths:
-Basic Path and Advanced Path.
 
-**Basic Path** - GUI-based operations for uploading Images to the DICOM service
++ **Basic Path** - GUI-based operations for uploading Images to the DICOM service
 
-**Advanced Path** - Programmatic method for uploading images to DICOM service
++ **Advanced Path** - Programmatic method for uploading images to DICOM service
 
 ## Basic Path
 
-This path will use a tool to upload images to the DICOM service. You will need to setup the upload tool. Configure with the URL you created Step 3. Then upload the image studies.
+This path will use a tool to upload images to the DICOM service. You will need to setup the upload tool. Configure with the URL of the DICOM service you created Step 2. Then you will upload the image studies you downloaded from the `samples` folder.
 
 ### Step 1 - Install upload tool
 
-The upload tool is part of the OSS Medical Imaging Service for DICOM. You cloned the repo for this tool in Step 2. Follow the instructions [here](https://github.com/microsoft/dicom-server/tree/main/tools/dicom-web-electron) to install and configure the tool. Where you see `localhost`, replace with the URL from the DICOM service created in Step 3.
+The upload tool is part of the open source Medical Imaging Service for DICOM you downloaded from GitHub. Follow the instructions [here](https://github.com/microsoft/dicom-server/tree/main/tools/dicom-web-electron) to install and configure the tool. Where you see `localhost`, replace with the URL from the DICOM service created in Step 2.
 
 You will need to install Node.js in your environment. Go to [nodejs.org](https://nodejs.org/) and install the latest version.
 
 ### Step 2 - Upload images
 
-Once the tool in the prior step is set up and configured, follow the steps to upload the same images from the [dicom-server repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms). There should be three images.
+Once the tool in the prior step is set up and configured, follow the steps to upload the samples images from the [Microsoft Medical Imaging Service for DICOM](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) GitHub repository.
 
-### Step 3 - Open Viewer and View images
+### Step 3 - Open Viewer and View images -#FIXME
 
 The DICOM service has a built in DICOM viewer. By copying and pasting the main URL for the DICOM Service into a web browser, you can see the list of uploaded Studies.
 
@@ -80,17 +81,17 @@ If you see three studies listed and if they open, then you have successfully com
 
 ### Step 1 - Choose a method for uploading images (C#, cURL, or Python)
 
-C# - https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicomweb-standard-apis-c-sharp
+C# - [https://docs.microsoft.com/azure/healthcare-apis/dicom/dicomweb-standard-apis-c-sharp](https://docs.microsoft.com/azure/healthcare-apis/dicom/dicomweb-standard-apis-c-sharp)
 
-cURL - https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicomweb-standard-apis-curl
+cURL - [https://docs.microsoft.com/azure/healthcare-apis/dicom/dicomweb-standard-apis-curl](https://docs.microsoft.com/azure/healthcare-apis/dicom/dicomweb-standard-apis-curl)
 
-Python - https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicomweb-standard-apis-python
+Python - [https://docs.microsoft.com/azure/healthcare-apis/dicom/dicomweb-standard-apis-python](https://docs.microsoft.com/azure/healthcare-apis/dicom/dicomweb-standard-apis-python)
 
 ### Step 2 - Perform the sample tasks of uploading the files from the link(s) above
 
-Note: The sample files for the link above were downloaded via the second repo clone in Step 1. 
+Once the tool in the prior step is set up and configured, follow the steps to upload the samples images from the [Microsoft Medical Imaging Service for DICOM](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) GitHub repository.
 
-### Step 3 - View Images in Browser
+### Step 3 - View Images in Browser - #FIXME
 
 The DICOM service has a built in DICOM viewer. By copying and pasting the main URL for the DICOM service into a web browser, you can see the list of uploaded studies.
 
@@ -98,18 +99,13 @@ If you see three studies listed. If they open, then you have successfully comple
 
 ## Part 2
 
-Depending on the path you took (Basic or Advanced), repeat your path using the image studies provided in the SampleData folder of this Challenge's repo.
+Depending on the path you took (Basic or Advanced), repeat your path using the image studies provided in the `samples` folder of this Challenge's repo.
 
 Success is seeing actual human images in your studies in the DICOM service.
 
-## Part 3 - BONUS Challenge
-
-The bonus part of the challenge is to repeat your path but this time deploy the OSS Medical Imaging Server for DICOM. You have already cloned the repo for the tools.
-
-Tip - The GitHub repo site has a Deploy to Azure button built in.
-
 ## What does success look like for Challenge-08?
-+ Upload two DICOM studies into the DICOM service
+
++ Upload DICOM studies into the DICOM service
 + View human images in the DICOM service
 
 ## Next Steps
