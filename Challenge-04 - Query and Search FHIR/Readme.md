@@ -53,7 +53,7 @@ When doing a search on a FHIR server, the initial target for the query can be an
 + A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions  (e.g., querying against a search parameter shared by all Resources)
 
-The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you query for the `Patient` Resource with no search parameters specified, you will retrieve all `Patient` Resource instances in the FHIR sirvoci/
+The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you query for the `Patient` Resource with no search parameters specified, you will retrieve all `Patient` Resource instances in the FHIR service.
 
 ```http
 GET {{fhirurl}}/Patient
@@ -81,7 +81,7 @@ The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fh
 
 This search returns the `Patient` Resource instance inside a bundle with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server).
 
-Compare this to a resource instance query, which uses the RESTful API pattern of putting the resource id in the URL path instead of search query parameters with `_id`. This will return only single Resource as the result versus a single Resource inside of a bundle.
+Compare this to a resource instance query, which uses the RESTful API pattern of putting the Resource `id` in the URL path instead of search query parameters with `_id`. This will return only single Resource as the result versus a single Resource inside of a bundle.
 
 ```http
 GET {{fhirurl}}/Patient/123
@@ -89,7 +89,7 @@ GET {{fhirurl}}/Patient/123
 
 ## Step 1 - Save Sample Resources
 
-1. Go to Postman, open the FHIR Search collection provided in Challenge-01. There is a request titled "Step 1 - Save Sample Resource Bundle". Send this bundle to your FHIR service using your `fhir` environment you created in Challenge-01. This will save some resources that future requests in this challenge require.
+1. Go to Postman, open the FHIR Search collection provided in Challenge-01. There is a request titled "Step 1 - Save Sample Resource Bundle". Send this bundle to your FHIR service using the `fhir-service` Postman environment that you created in Challenge-01. This will save some Resources that future requests in this challenge require.
 
 **Note:** Make sure your access token is not expired.
 
@@ -97,7 +97,7 @@ GET {{fhirurl}}/Patient/123
 
 ## Step 2 - Make FHIR API Calls with Search Parameters
 
-On top of common search parameters, it's possible to add modifiers right after the element name which makes these searches more powerful. Some examples are `:not`, `:exact`, `:contains`, `:gt`, and `:lt`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation for more details.
+On top of common search parameters, it's possible to add modifiers right after the element name, which makes these searches more powerful. Some examples are `:not`, `:exact`, `:contains`, `:gt`, and `:lt`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation for more details.
 
 1. Go to Postman, open the FHIR Search collection provided in Challenge-01, and search for patients using the following parameters: ```_id```, ```name```, and others following the examples for Step 2.
 
@@ -238,11 +238,11 @@ GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:pa
 
 1. Using the FHIR Search collection imported into Postman in Challenge-01, search for `PractitionerRole` Resources and include the associated `Practitioner` Resources in the results.
 
-2. Do a search using `_revinclude` to discover all `PractitionerRole` Resources for an Organization. For more examples of searches with the `_include` and `_revinclude` parameters, please see the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/search-samples)** page.
+2. Do a search using `_revinclude` to discover all `PractitionerRole` Resources for an `Organization`. For more examples of searches with the `_include` and `_revinclude` parameters, please see the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/search-samples)** page.
 
 ## Step 7 - Defining a Custom Search parameter
 
-At some point, there will be a business use case to search by a search parameter that is not defined in the FHIR service defaults. FHIR allows a way to define your own custom search parameters. 
+At some point, there will be a business use case to search by a search parameter that is not defined in the FHIR service defaults. FHIR provides a way to define your own custom search parameters. 
 
 1. To create a new search parameter, you need to `POST` the `SearchParameter` Resource to the database. See the FHIR Search Postman collection provided for an example. Read through the full example at [https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search](https://docs.microsoft.com/azure/healthcare-apis/fhir/how-to-do-custom-search).
 
