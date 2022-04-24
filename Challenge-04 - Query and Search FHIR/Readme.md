@@ -8,11 +8,11 @@ In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/f
 
 ## Background
 
-The FHIR specification defines a RESTful API framework with a set of operations for resources either on the **resource instance** level or the **resource type** level. Resource instance interactions are focused on reading or modifying a specific, single resource while resource type interactions are focused on searching for a resource of a type based on some filter criteria.
+The FHIR specification defines a RESTful API framework with a set of operations for Resources either on the **Resource instance** level or the **Resource type** level. Resource instance interactions are focused on reading or modifying a specific, single Resource while Resource type interactions are focused on searching for a Resource of a type based on some filter criteria.
 
-When a client app is looking for FHIR resources per some filter criteria (e.g., on behalf of a patient or care provider), the app queries the FHIR server, and if the app has the required permissions, the server carries out the search and returns the results in a [FHIR Resource Bundle](http://hl7.org/fhir/bundle.html). The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the FHIR service. 
+When a client app is looking for FHIR Resources per some filter criteria (e.g., on behalf of a patient or care provider), the app queries the FHIR server, and if the app has the required permissions, the server carries out the search and returns the results in a [FHIR Resource Bundle](http://hl7.org/fhir/bundle.html). The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the FHIR service. 
 
-Think of these FHIR searches in user terms – a doctor may want to find all their patients or all encounters for a specific patient. These queries are focused on finding multiple resources in a single request versus working with a specific resource where the `id` is known.
+Think of these FHIR searches in user terms – a doctor may want to find all their patients or all encounters for a specific patient. These queries are focused on finding multiple Resources in a single request versus working with a specific Resource where the `id` is known.
 
 ## Learning Objectives for Challenge-04
 
