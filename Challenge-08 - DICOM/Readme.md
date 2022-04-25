@@ -29,7 +29,7 @@ By the end of this challenge you will be able to
     - Delete extended query tags
 
 ## Prerequisites
-Azure Health Data Services workspace deployed (completed in Challenge-01) 
+Azure Health Data Services workspace (deployed in Challenge-01) 
 
 ## Initial Setup
 
