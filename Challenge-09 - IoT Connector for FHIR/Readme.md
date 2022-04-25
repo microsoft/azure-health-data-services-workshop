@@ -30,13 +30,13 @@ In this challenge, you will be deploying and configuring the MedTech service wit
 ## Step 1
 Let us begin with a basic walk through of the steps to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure). 
 
-### Step 2
+## Step 2
 
 Now let's go a step forward. This time let's create our own mappings using sample data.
 
-### Step 3 - Install Node.js (If not already complete)
+## Step 3 - Install Node.js (If not already complete)
 
-### Step 4 - Setup IoT Mapping Tool
+## Step 4 - Setup IoT Mapping Tool
 
 Follow the instructions for running the mapper [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started)
 
@@ -46,7 +46,7 @@ Skip the optional steps on this page.
 
 The mapper will be at this address when running: http://localhost:5000
 
-### Step 5 - Continue through making sample maps
+## Step 5 - Continue through making sample maps
 
 Link - https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings
 
@@ -56,7 +56,7 @@ For more information on the IoT Mappings visit the docs page - https://github.co
 
 __Note:__ When creating a new mapping, you must click the 'Confirm' button. Pressing ENTER after typing will not work.
 
-### Step 6 (Optional)
+## Step 6 (Optional)
 
 Upload your newly created sample mappings to the MedTech service via the portal.
 
