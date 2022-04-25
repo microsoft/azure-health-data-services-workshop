@@ -41,11 +41,11 @@ In the first part of this challenge, you will use the Azure Portal to deploy an 
 
 1. To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below and follow the instructions for creating an Event Hubs namespace.
 
-[Create an Event Hubs namespace](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)
+    [Create an Event Hubs namespace](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)
 
 2. Continue on to the next section in the link below to create your own Event Hub.
 
-[Create an Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)
+    [Create an Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)
 
 ## Step 2 - 
 
