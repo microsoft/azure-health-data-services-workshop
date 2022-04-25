@@ -17,11 +17,11 @@ By the end of this challenge you will be able to
 - Configure DICOM service settings for usage
     - Add role assignment
     - Obtain an access token
-- Store DICOM files to the service 
+- Ingest DICOM files into the service 
 - Search among the flies that are stored within the DICOM service
-- Retrieve DICOM instance 
+- Retrieve DICOM files 
 - Check logs of changes in DICOM service via Change Feed
-- Manage supportaed tags in your DICOM service instance
+- Manage supported tags in your DICOM service instance
     - Add extended query tags
     - List extended query tags
     - Get extended query tags
