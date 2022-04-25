@@ -54,9 +54,11 @@ Now you will use Azure Portal to deploy and configure MedTech service within you
 
 ## Step 3 - Import data mappings for converting medical IoT device data into FHIR
 
-In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-device-mapping-properties) section, you will be going to [another GitHub repository](https://github.com/microsoft/iomt-fhir/blob/main/docs/Configuration.md#device-content-mapping) and copying/pasting a sample data mapping template into the MedTech service **Device Mapping** tab. Likewise, you will be copying/pasting a sample data mapping destination template into the MedTech service **Destination** tab in Azure Portal. 
+1. In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-device-mapping-properties) section, you will be going to [another GitHub repository](https://github.com/microsoft/iomt-fhir/blob/main/docs/Configuration.md#device-content-mapping) and copying/pasting a sample data mapping template into the MedTech service **Device Mapping** tab. Likewise, you will be copying/pasting a sample data mapping destination template into the MedTech service **Destination** tab in Azure Portal. 
 
-## Step 4 
+## Step 4 Configure Azure roles for MedTech service access
+
+1. Now you will configure permissions so that MedTech service can securely connect with FHIR service and the Event Hub from Step 1. Continue with [the instructions for granting access](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#granting-medtech-service-access) through to the end and then return here when finished.
 
 ## Step 5 - Setup IoT Mapping Tool
 
@@ -64,15 +66,13 @@ Follow the instructions for running the mapper [here](https://github.com/microso
 
 Link - https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started
 
-Skip the optional steps on this page.
-
 The mapper will be at this address when running: http://localhost:5000
 
-## Step 6 - Continue through making sample maps
+## Step 6 - Make sample maps
 
 Link - https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings
 
-At the end of Step 4 you will have a sample set of IoT Maps which can be used with the FHIR service and MedTech service.
+At the end of Step 5 you will have a sample set of IoT Maps which can be used with the FHIR service and MedTech service.
 
 For more information on the IoT Mappings visit the docs page - https://github.com/microsoft/iomt-fhir/blob/master/docs/Configuration.md.
 
