@@ -28,10 +28,14 @@ By the end of this challenge you will be able to
     - Update extended query tags
     - Delete extended query tags
 
+## Prerequisites
+Azure Health Data Services workspace deployed (completed in Challenge-01) 
+
 ## Initial Setup
 
-### Step 1 - Set up an Azure Health Data Services Workspace using Azure Portal
- 
+### Step 1 - Set up DICOM service in an Azure Health Data Services workspace using Azure Portal
+In Challenge-01 of this workshop, you deployed an Azure Health Data Services 
+
 [Deploy workspace in the Azure portal - Azure Health Data Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-quickstart)
 
 
