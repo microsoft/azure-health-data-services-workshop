@@ -67,7 +67,7 @@ You can follow the provided articles that go over how to programmatically commun
 
 ### Step 1 - Configure Postman to connect with DICOM service
 
-You already installed Postman in Challenge-01 of this workshop. Now you will configure Postman to connect with DICOM service 
+You already installed Postman in Challenge-01 of this workshop. Now you will configure Postman to connect with DICOM service. 
 
 Import the conformance-as-postman-collection:
 - Copy the raw content [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json)
