@@ -77,9 +77,9 @@ Create a new Postman environment called `DICOM-service` and add the access token
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
-Once Postman is set up and configured, follow the steps to download DICOM instances (.dcm) as samples from the [dicom-server repository](https://github.com/microsoft/dicom-server/tree/main/docs/dcms). 
+Once Postman is set up and configured, follow the steps to download DICOM instances (.dcm) as samples from the [dicom-server repository](https://github.com/microsoft/dicom-server/tree/main/docs/dcms). You can save these samples in your local desktop environment.
 
-The conformance-as-postman-collection will have a complete set of a API calls that you can execute one by one. See the list below for details. Be sure to store the Service URL, `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`, in the your `service-url` in your `DICOM-service` Postman environment. Then begin each call with the `{{service-url}}` placeholder in the address field in Postman.
+The conformance-as-postman-collection has a complete set of a API calls that you can execute one by one. See the list below for details. Be sure to create a `service-url` parameter in your `DICOM-service` Postman environment for storing the Service URL, `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. When ready to start making API calls, put the `{{service-url}}` placeholder in the address field for each call in the conformance-as-postman-collection.
 
 - Store DICOM files to the service 
 - Search among the flies that are stored within the DICOM service
@@ -94,9 +94,9 @@ The conformance-as-postman-collection will have a complete set of a API calls th
 
 ## Advanced Path
 
-### Step 1 - Choose and follow a method for uploading, searching, retrieving images (C#, cURL, or Python)
+### Step 1 - Choose your preferred method for uploading, searching, and retrieving DICOM images (C#, cURL, or Python)
 
-Each method comes with set of prerequisites and instructions to follow:
+Each method comes with a set of prerequisites and instructions for getting started:
 
 C# - https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicomweb-standard-apis-c-sharp
 
