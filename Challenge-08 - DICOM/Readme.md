@@ -116,7 +116,7 @@ You can follow the instructions given in this [Extended Query Tag Overview artic
 
 ## [BONUS] Challenge for DICOM service
 
-Register a DICOM viewer app by following these [instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application). Configure the DICOM viewer that you just registered by adding your newly deployed DICOM service as its backend. Then, start reviewing images!. 
+Register a DICOM viewer app by following these [instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application). Configure the DICOM viewer that you just registered by adding your newly deployed DICOM service as its backend. Then, start reviewing images! 
 
 ## What does success look like for Challenge-08?
 + Provisoning and configuring DICOM service for ingestion and storage of DICOM studies
