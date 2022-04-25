@@ -13,11 +13,11 @@ With the rise of wearables and other connected sensor technologies, IoT devices 
 ## Learning Objectives for Challenge-09
 By the end of this challenge you will be able to
 
-- Deploy and configure the IoT Connector via Azure portal
-- Deploy and configure additional Azure services required for the IoT connector
-- Connect the IoT Connector to FHIR service
+- Deploy and configure the MedTech service via Azure portal
+- Deploy and configure additional Azure services required for the MedTech service
+- Connect the MedTech service to FHIR service
 - Create a map for incoming device data through to FHIR
-- Inspect the data flow for medical IoT data
+- Inspect medical IoT data flow
 
 ## Challenges
 
