@@ -60,7 +60,7 @@ In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/az
 
 Now you will configure permissions so that MedTech service can securely connect with FHIR service and the Event Hub from Step 1. Continue with [the instructions for granting access](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#granting-medtech-service-access) through to the end and then return here when finished.
 
-## Step 5 - Setup IoT Mapping Tool
+## Step 5 [BONUS] - Setup IoT Mapping Tool
 
 Follow the instructions for running the mapper [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started)
 
