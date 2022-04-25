@@ -25,15 +25,16 @@ By the end of this challenge you will be able to
 + Postman installed (completed in Challenge-01)
 
 ## Getting Started 
-In this challenge, you will be deploying and configuring the MedTech service within your AHDS workspace to receive medical IoT data and transform the data for persistence in the FHIR service.
+In this challenge, you will be deploying MedTech service within your AHDS workspace configured to receive and transform medical IoT data for persistence in FHIR.
 
-The steps you will take are outlined below.
+The general steps in this challenge are outlined below.
 
+Step 1 - Deploy and configure [Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about). 
+Step 2 - Deploy a MedTech service instance in your Azure Health Data Services workspace. 
+Step 3 - Import data mappings for converting medical IoT device data into FHIR
+Step 4 - Configure Azure Roles for MedTech Service to securely connect to the FHIR service. 
 
-
-
-
-## Step 1
+## Step 1 - Deploy and configure Azure Event Hubs
 Let us begin with a basic walk through of the steps to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure). 
 
 ## Step 2
