@@ -60,7 +60,7 @@ You can use an already configured Postman collection to execute the tasks mentio
 Or
 
 **Advanced Path**  
-You can follow the provided articles that go over how to programmatically call the DICOM service API using C#, Python, or cURL.
+You can follow the provided articles that go over how to programmatically communicate with the DICOM service using C#, Python, or cURL.
 
 ## Basic Path
 
