@@ -58,7 +58,7 @@ From here, you will be using the DICOM service for the features outlined in the 
 
 Or
 
-**Advanced Path** You can follow the provided articles for completing tasks in DICOM service using C#, Python, or cURL. 
+**Advanced Path** You can follow the provided articles for using C#, Python, or cURL to communicate with DICOM service and complete tasks that way.
 
 ## Basic Path
 
