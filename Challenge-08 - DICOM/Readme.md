@@ -65,7 +65,7 @@ You can follow the provided articles that go over how to programmatically commun
 
 ## Basic Path
 
-### Step 1 - Install & Configure Postman tool
+### Step 1 - Configure Postman to connect with DICOM service
 
 You already installed Postman in Challenge-01 of this workshop. Now you will configure Postman to connect with DICOM service 
 
