@@ -29,7 +29,7 @@ In this challenge, you will be deploying MedTech service within your AHDS worksp
 
 **Step 1** - Deploy and configure [Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).  
 **Step 2** - Deploy a MedTech service instance in your Azure Health Data Services workspace.  
-**Step 3** - Import data mappings for converting medical IoT device data into FHIR  
+**Step 3** - Import data mappings for converting medical IoT device data into FHIR.  
 **Step 4** - Configure Azure Roles for MedTech Service to securely connect to the FHIR service.  
 
 Have a look at [this document](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/get-started-with-iot) for an overview of the MedTech service deployment and configuration process (you already deployed an AHDS workspace and FHIR service in Challenge-01).
