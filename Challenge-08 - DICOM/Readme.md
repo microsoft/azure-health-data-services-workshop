@@ -73,7 +73,7 @@ Import the `conformance-as-postman-collection`:
 - Copy the raw content of the `conformance-as-postman-collection` available [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json).
 - Import the copied raw content into Postman via the **Import** button - click on the **Raw text** tab and paste where it says **Paste raw text**.
 
-Create a new Postman environment called `DICOM-service` and add the access token that you obtained earlier as the `bearerToken` in your new Postman environment.
+Create a new Postman environment called `DICOM-service` and add the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` in your new Postman environment.
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
