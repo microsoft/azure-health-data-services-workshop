@@ -47,7 +47,7 @@ Please make sure you have the following before moving on to Challenge-01.
 
 ## Next Steps
 
-Click [here](<../Challenge-01 - Deploy FHIR service (PaaS), FHIR-Proxy (OSS), and FHIR-Bulk Loader (OSS)/Readme.md>) to start Challenge-01.
+Click [here](<../Challenge-01 - Deploy AHDS workspace and FHIR service/Readme.md>) to start Challenge-01.
 
 ## More Resources
 
