@@ -16,7 +16,7 @@ By the end of this challenge you will be able to
 - Deploy and configure the MedTech service via Azure portal
 - Deploy and configure additional Azure services required for the MedTech service
 - Connect the MedTech service to FHIR service
-- Create a map for incoming device data through to FHIR
+- Import a data mapping file for transforming incoming device data into FHIR
 - Inspect medical IoT data flow
 
 ## Prerequisites 
@@ -25,7 +25,13 @@ By the end of this challenge you will be able to
 + Postman installed (completed in Challenge-01)
 
 ## Getting Started 
-In this challenge, you will be deploying and configuring the MedTech service within your AHDS workspace to receive medical IoT data and transform it into FHIR for persistance in the FHIR service.
+In this challenge, you will be deploying and configuring the MedTech service within your AHDS workspace to receive medical IoT data and transform the data for persistence in the FHIR service.
+
+The steps you will take are outlined below.
+
+
+
+
 
 ## Step 1
 Let us begin with a basic walk through of the steps to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure). 
