@@ -40,7 +40,7 @@ In Challenge-01 of this workshop, you deployed an Azure Health Data Services wor
 
 Click on the item in the list. Then, scroll down and click on the **DICOM services** blade. Once there, click on the **+Add DICOM service** button and proceed to the next step.
 
-### Step 2 - Set up DICOM Service using Azure Portal
+### Step 2 - Set up DICOM service using Azure Portal
 
 Now you will visit a another page and follow the instructions to [Deploy DICOM service using the Azure portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure). Go directly to #3 in the instructions and begin from there. Then return here when finished.
 
