@@ -25,10 +25,10 @@ By the end of this challenge you will be able to
 + Postman installed (completed in Challenge-01)
 
 ## Getting Started 
-In this challenge, you will be deploying and configuring MedTech service within your AHDS workspace to receive medical IoT data and transform it into FHIR for persistance in the FHIR service.
+In this challenge, you will be deploying and configuring the MedTech service within your AHDS workspace to receive medical IoT data and transform it into FHIR for persistance in the FHIR service.
 
 ## Step 1
-Let us begin with a basic walk through of the steps to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure). Success for Challenge-09a means you can query the IoT FHIR Observation Resource via Postman. 
+Let us begin with a basic walk through of the steps to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure). 
 
 ### Step 2
 
