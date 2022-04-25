@@ -54,7 +54,7 @@ Now you will use Azure Portal to deploy and configure MedTech service within you
 
 ## Step 3 - Import data mappings for converting medical IoT device data into FHIR
 
-In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-device-mapping-properties) section, you will be going to [another GitHub repository](https://github.com/microsoft/iomt-fhir/blob/main/docs/Configuration.md#device-content-mapping) and copying/pasting a sample data mapping template into the MedTech service **Device Mapping** tab. Likewise, you will be copying/pasting sample data mapping destination templates into the MedTech service **Destination** tab in Azure Portal. 
+In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-device-mapping-properties) section, you will be going to [another GitHub repository](https://github.com/microsoft/iomt-fhir/blob/main/docs/Configuration.md#device-content-mapping) and copying/pasting a sample data mapping template into the MedTech service **Device Mapping** tab. Likewise, you will be copying/pasting a sample data mapping destination template into the MedTech service **Destination** tab in Azure Portal. 
 
 ## Step 4 
 
