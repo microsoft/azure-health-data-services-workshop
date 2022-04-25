@@ -30,20 +30,12 @@ By the end of this challenge you will be able to
 
 ## Initial Setup
 
-### Step 1 - Clone these repos
-
-&nbsp;&nbsp;&nbsp;&nbsp; This workshop repo (If not already complete)
-
-```azurecli
-git clone https://github.com/microsoft/azure-api-for-fhir-workshop.git
-```
-
-### Step 2 - Set up an Azure Health Data Services Workspace using Azure Portal
+### Step 1 - Set up an Azure Health Data Services Workspace using Azure Portal
  
 [Deploy workspace in the Azure portal - Azure Health Data Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-quickstart)
 
 
-### Step 3 - Set up DICOM Service using Azure Portal
+### Step 2 - Set up DICOM Service using Azure Portal
 
 [Deploy DICOM service using the Azure portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure)
 
@@ -51,7 +43,7 @@ Add the **DICOM Data Owner** role for yourself (i.e., your username in Azure) as
 
 Generate an access token by following [instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/get-access-token?tabs=azure-powershell#obtain-and-use-an-access-token-for-the-dicom-service).
 
-### Step 4 - Choose a path for the rest of the Challenge
+### Step 3 - Choose a path for the rest of the Challenge
 
 From here, you will be using the service for the outlined features as part of this session. 
 
