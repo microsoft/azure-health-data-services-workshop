@@ -33,25 +33,26 @@ Azure Health Data Services workspace (deployed in Challenge-01)
 
 ## Initial Setup
 
-### Step 1 - Set up DICOM service in an Azure Health Data Services workspace using Azure Portal
+### Step 1 - Find your Azure Health Data Services workspace using Azure Portal
 In Challenge-01 of this workshop, you deployed an Azure Health Data Services workspace in your resource group. You can view your AHDS workspace settings by navigating to **Portal** -> **Resource Group** and finding the resource with a name ending in "ws" (see image below).
 
 <img src="./images/Screenshot 2022-04-25 110347.png" height="420">
 
-[Deploy workspace in the Azure portal - Azure Health Data Services | Microsoft Docs](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-quickstart)
-
+Click on the item in the list. Then, scroll down and find the **DICOM services** blade. Once there, click on the **+Add DICOM service** button and proceed to the next step.
 
 ### Step 2 - Set up DICOM Service using Azure Portal
 
-[Deploy DICOM service using the Azure portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure)
+Now you will visit a another page and follow the instructions to [Deploy DICOM service using the Azure portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure). Go directly to #3 in the instructions and begin from there. Then return here when finished.
 
-Add the **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as for the Postman client application ([documentation available here](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)).
+### Step 3 - Configure Azure roles for access to DICOM data
 
-Generate an access token by following [instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/get-access-token?tabs=azure-powershell#obtain-and-use-an-access-token-for-the-dicom-service).
+You will need to add the **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as for the Postman client application ([documentation available here](https://docs.microsoft.com/en-us/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)).
 
-### Step 3 - Choose a path for the rest of the Challenge
+Generate an access token by following these [instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/get-access-token?tabs=azure-powershell#obtain-and-use-an-access-token-for-the-dicom-service).
 
-From here, you will be using the service for the outlined features as part of this session. 
+### Step 4 - Choose a path for the rest of the challenge
+
+From here, you will be using the DICOM service for the features outlined in the beginning of this challenge. 
 
 **Basic Path** You can use already configured postman collection to execute mentioned steps.
 
