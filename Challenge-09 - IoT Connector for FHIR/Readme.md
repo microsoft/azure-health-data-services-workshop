@@ -19,9 +19,11 @@ By the end of this challenge you will be able to
 - Create a map for incoming device data through to FHIR
 - Inspect medical IoT data flow
 
-## Challenges
+## Prerequisites 
 
-### Challenge-09a
+
+
+
 
 Let us begin with a basic walk through of the steps to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure). Success for Challenge-09a means you can query the IoT FHIR Observation Resource via Postman. 
 
