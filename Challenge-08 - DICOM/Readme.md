@@ -54,11 +54,11 @@ When finished setting up the Azure RBAC roles for yourself and your Postman serv
 
 From here, you will be using the DICOM service for the features outlined in the beginning of this challenge. You have the option to follow either of these paths:
 
-**Basic Path** You can use an already configured Postman collection to execute the tasks mentioned in the beginning of the challenge.
+**Basic Path** You can use an already configured Postman collection to execute the tasks mentioned in the [beginning of the challenge](#learning-objectives-for-challenge-08).
 
 Or
 
-**Advanced Path** You can follow provided articles corresponding with the tasks and complete them with DICOMweb™ API calls using C#, Python, or cURL. 
+**Advanced Path** You can follow the provided articles for completing tasks using C#, Python, or cURL. 
 
 ## Basic Path
 
