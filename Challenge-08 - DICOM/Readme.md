@@ -52,13 +52,13 @@ Generate an access token by following these [instructions](https://docs.microsof
 
 ### Step 4 - Choose a path for the rest of the challenge
 
-From here, you will be using the DICOM service for the features outlined in the beginning of this challenge. 
+From here, you will be using the DICOM service for the features outlined in the beginning of this challenge. You have the option to follow either of these paths:
 
-**Basic Path** You can use already configured postman collection to execute mentioned steps.
+**Basic Path** You can use an already configured Postman collection to execute the tasks mentioned in the beginning of the challenge.
 
 Or
 
-**Advanced Path** You can follow provided articles (advanced path) in corresponding step for programmatic method. 
+**Advanced Path** You can follow provided articles corresponding with the tasks and complete them with DICOMweb™ API calls using C#, Python, or cURL. 
 
 ## Basic Path
 
