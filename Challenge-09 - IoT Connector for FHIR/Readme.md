@@ -23,11 +23,7 @@ By the end of this challenge you will be able to
 
 ### Challenge-09a
 
-Let us begin with a basic walk through of the steps in this [IoT Quickstart](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/iot-fhir-portal-quickstart). Success for Challenge-09a means you can query the IoT FHIR Observation Resource via Postman.
-
-Link - https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/iot-fhir-portal-quickstart
-
-__Note:__ Azure IoT Central is no longer needed. Please delete your Azure IoT Central instance prior to moving forward.
+Let us begin with a basic walk through of the steps in this guide to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure). Success for Challenge-09a means you can query the IoT FHIR Observation Resource via Postman. 
 
 ### Challenge-09b - Building Mappings from Sample Data
 
