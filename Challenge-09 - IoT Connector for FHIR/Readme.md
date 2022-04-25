@@ -1,4 +1,4 @@
-# Challenge-09 - IoT Connector for FHIR
+# Challenge-09 - MedTech service
 
 ## Introduction
 
