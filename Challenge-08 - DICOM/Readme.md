@@ -30,6 +30,7 @@ By the end of this challenge you will be able to
 
 ## Prerequisites
 Azure Health Data Services workspace (deployed in Challenge-01) 
+Postman installed (completed in Challenge-01)
 
 ## Initial Setup
 
@@ -66,15 +67,13 @@ You can follow the provided articles that go over how to programmatically commun
 
 ### Step 1 - Install & Configure Postman tool
 
-To install Postman tool go to [Download Postman](https://www.postman.com/downloads/).
+You already installed Postman in Challenge-01 of this workshop. Now you will configure Postman to connect with DICOM service 
 
-To configure Postman tool, execute following steps:
+Import the conformance-as-postman-collection:
+- Copy the raw content [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json)
+- Import the copied raw content into Postman via the **Import** button - click on the **Raw text** tab and paste where it says **Paste raw text**.
 
-Import conformance-as-postman-collection:
-- Copy raw content [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json)
-- Import copied raw content into installed Postman via import - raw text path.
-
-Add access token that you have obtained earlier as bearer token into Postman.
+Create a new Postman environment called `DICOM-service` and add the access token that you obtained earlier as the `bearerToken` in your new Postman environment.
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
