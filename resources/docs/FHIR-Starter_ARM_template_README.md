@@ -1,26 +1,22 @@
-# FHIR-Starter Quickstart   
+# FHIR-Starter Quickstart Bicep/ARM template  
 
 ## Introduction 
 
-The quickstart [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) (ARM) template is intended to replicate, where possible, the `deployFhirStarter.bash` script hosted in [another folder](https://github.com/microsoft/fhir-starter/tree/main/scripts) in this repo (please see the note below about the intended environment for ARM template deployment). Unlike the `deployFhirStarter.bash` script, the quickstart ARM template deploys [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader) (the `deployFhirStarter.bash` script only deploys [Azure API for FHIR](https://docs.microsoft.com/en-us/azure/healthcare-apis/azure-api-for-fhir/overview)). 
+The FHIR-Starter Quickstart [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) (ARM) template deploys an [Azure Health Data Services workspace](https://docs.microsoft.com/en-us/azure/healthcare-apis/workspace-overview), [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and [FHIR Loader](https://github.com/microsoft/fhir-loader) for the [Azure Health Data Services Workshop](https://github.com/microsoft/azure-health-data-services-workshop).
 
-__Note:__ This quickstart ARM template is not intended for deploying resources in a production environment. The intended use is for an Azure [training environment](https://github.com/microsoft/azure-healthcare-apis-workshop). Please proceed accordingly.
-
-## Deploy FHIR service, FHIR-Proxy, FHIR-Bulk Loader, and FHIR-Synapse Link
+## Deploy AHDS workspace, FHIR service, FHIR-Proxy and FHIR Loader
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Ffhir-starter%2Fmain%2Fquickstarts%2Fdeployfhirtrain.json)
 
 The ARM/Bicep template will deploy the following components:
++ [AHDS workspace](https://docs.microsoft.com/en-us/azure/healthcare-apis/workspace-overview)
 + [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview)
 + [FHIR-Proxy](https://github.com/microsoft/fhir-proxy)
-+ [FHIR-Bulk Loader](https://github.com/microsoft/fhir-loader)
-+ [FHIR-Analytics-Pipelines FHIR to Datalake](https://github.com/microsoft/FHIR-Analytics-Pipelines)
++ [FHIR Loader](https://github.com/microsoft/fhir-loader)
 
-__Important:__ In order to successfully deploy resources with this ARM template, the user must have [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) rights for the [Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) where the components are deployed. Additionally, the user must have the [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#application-administrator) role in AAD in order to create application registrations.
-
-__Note:__  Before running the ARM template, it is recommended to create a new resource group first and check to make sure that you have Owner rights. Once you confirm that you have Owner rights for the resource group, then proceed to run the template and deploy into that resource group.
+> __Important:__ In order to successfully deploy resources with this ARM template, the user must have [Owner](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) rights for the [Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) where the components are deployed. Before running the ARM template, it is recommended to create a new resource group first and check to make sure that you have Owner rights for that resource group. Once you confirm that you have Owner rights, then choose that resource group in the dropdown menu when you fill out the deployment form (see #3 below).
 
 ## Step 1 - Initial deployment 
 
@@ -34,7 +30,7 @@ __Note:__  Before running the ARM template, it is recommended to create a new re
 
 <img src="./images/ARM_template_config2.png" height="420"> 
 
-__Note:__ Deployment of **FHIR service**, **FHIR-Proxy**, and **FHIR-Bulk Loader** typically takes 20 minutes.
+__Note:__ Deployment of **FHIR service**, **FHIR-Proxy**, and **FHIR Loader** typically takes 20 minutes.
 
 ### Deployed Components
 When the deployment finishes, you should see these components in your resource group. 
@@ -45,16 +41,16 @@ Name              | Type                 |  Purpose
 [prefix]**hdsws**  | PaaS | **AHDS Workspace** - managed FHIR service
 [prefix]**hdsws/fhirtrn**  | PaaS | **FHIR service** - managed FHIR service
 [prefix]**pxyfa** | Function App | **FHIR-Proxy** - filters FHIR data input/output 
-[prefix]**ldrfa** | Function App | **FHIR-Bulk Loader** - bulk ingest FHIR data
+[prefix]**ldrfa** | Function App | **FHIR Loader** - bulk ingest FHIR data
 [prefix]**synfa** | Function App | **FHIR Synapse Link** - export FHIR data to ADLS Gen2 every 5 minutes
-[prefix]**asp**   | App Service Plan | Shared by FHIR-Proxy and FHIR-Bulk Loader function apps
+[prefix]**asp**   | App Service Plan | Shared by FHIR-Proxy and FHIR Loader function apps
 [prefix]**cr**    | Container Registry   | Supports FHIR service `$convert-data` operation
-[prefix]**expsa** | Storage account      | Blob storage for FHIR service `$export` operation and FHIR-Bulk Loader
+[prefix]**expsa** | Storage account      | Blob storage for FHIR service `$export` operation
 [prefix]**funsa** | Storage account      | Storage for FHIR-Proxy and Synapse Link Loader function apps
-[prefix]**impsa** | Storage account      | Storage account for FHIR-Bulk Loader
+[prefix]**impsa** | Storage account      | Storage account for FHIR Loader
 [prefix]**kv**    | Key Vault            | Stores secrets and configuration settings
 [prefix]**la**    | Log Analytics Workspace  | Logs the activity of deployed components
-[prefix]**ldrai** | Application Insights | Monitors FHIR-Bulk Loader
+[prefix]**ldrai** | Application Insights | Monitors FHIR Loader
 [prefix]**pxyai** | Application Insights | Monitors FHIR-Proxy application
 [prefix]**synai** | Application Insights | Monitors FHIR Synapse Link application
 [prefix]**ldrtopic** | Event Grid System Topic | Triggers processing of FHIR bundles placed in the fssa storage account
