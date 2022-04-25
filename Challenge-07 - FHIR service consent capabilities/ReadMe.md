@@ -27,7 +27,7 @@ By the end of this challenge you will be able to
 + Multiple Azure AD users to simulate user and/or administrator access to the FHIR service 
 
 ## Getting Started 
-Before setting up FHIR-Proxy for Consent Opt Out filtering, you will need to configure FHIR-Proxy authentication to securely connect with the FHIR service. For a general overview of the role that FHIR-Proxy plays with FHIR service, review the section below.
+Before setting up FHIR-Proxy for Consent Opt Out filtering, you will need to configure FHIR-Proxy authentication to securely connect with the FHIR service. Read the section below for a general overview of the role that FHIR-Proxy plays with FHIR service.
 
 > Note: Within the 2023 fiscal year, the FHIR-Proxy Function App in its current form will be deprecated. The app’s features and functionality will be integrated into AHDS FHIR service and other Azure resources. 
 
