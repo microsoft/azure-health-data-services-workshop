@@ -106,23 +106,22 @@ Python - https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicomweb-s
 
 ### Step 2 - Check the logs of the changes in the DICOM service via Change Feed 
 
-The Change Feed provides logs of all the changes that occur in DICOM service. You can follow instructions at [Change Feed Overview article](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-change-feed-overview) to consume change feed.
+The Change Feed provides logs of all the changes that occur in DICOM service. You can view instructions in this [Change Feed Overview article](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-change-feed-overview).
 
 ### Step 3 - Manage Extended Query tags in your DICOM service instance
 
 By default, the DICOM service supports querying on the DICOM tags specified in the [conformance statement](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-services-conformance-statement#searchable-attributes). By enabling extended query tags, the list of tags can easily be expanded based on the application's needs.
 
-You can follow instructions at [Extended Query Tag Overview article](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-extended-query-tags-overview) to manage query tags.
+You can follow the instructions given in this [Extended Query Tag Overview article](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-extended-query-tags-overview) to manage query tags.
 
 ## [BONUS] Challenge for DICOM service
 
-Register a DICOM viewer app that you are already familiar with by following [instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application).
-Configure registered DICOM viewer that you just registered with by adding the DICOM service from this exercise as its back end and review images. 
+Register a DICOM viewer app that you are already familiar with by following these [instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/register-application). Configure the DICOM viewer that you just registered by adding your newly deployed DICOM service as its backend. Then, start reviewing images!. 
 
 ## What does success look like for Challenge-08?
-+ Provisoning and configuring DICOM service for consumption
-+ Upload, search and retrieve DICOM studies into the DICOM service
-+ Check log of changes
++ Provisoning and configuring DICOM service for ingestion and storage of DICOM studies
++ Use DICOM service to upload, search, and retrieve DICOM studies
++ Check changes log (Change Feed)
 + Add/remove additional query tags
 
 ## Next Steps
