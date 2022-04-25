@@ -25,9 +25,7 @@ By the end of this challenge you will be able to
 + Postman installed (completed in Challenge-01)
 
 ## Getting Started 
-In this challenge, you will be deploying MedTech service within your AHDS workspace configured to receive and transform medical IoT data for persistence in FHIR.
-
-The general steps in this challenge are outlined below.
+In this challenge, you will be deploying MedTech service within your AHDS workspace configured to receive and transform medical IoT data for persistence in FHIR. The general steps in this challenge are outlined below.
 
 **Step 1** - Deploy and configure [Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).  
 **Step 2** - Deploy a MedTech service instance in your Azure Health Data Services workspace.  
@@ -54,13 +52,13 @@ Now you will use Azure Portal to deploy and configure MedTech service within you
 
 2. When you get to the part of the instructions to [Configure MedTech service to ingest data](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-medtech-service-to-ingest-data), for this training it is recommended to use the default [Consumer group](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#consumer-groups) that was assigned to you when you deployed your Event Hub in the previous step. 
 
-## Step 2
+## Step 3
 
-Now let's go a step forward. This time let's create our own mappings using sample data.
 
-## Step 3 - Install Node.js (If not already complete)
 
-## Step 4 - Setup IoT Mapping Tool
+## Step 4 
+
+## Step 5 - Setup IoT Mapping Tool
 
 Follow the instructions for running the mapper [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started)
 
@@ -70,7 +68,7 @@ Skip the optional steps on this page.
 
 The mapper will be at this address when running: http://localhost:5000
 
-## Step 5 - Continue through making sample maps
+## Step 6 - Continue through making sample maps
 
 Link - https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings
 
@@ -80,7 +78,7 @@ For more information on the IoT Mappings visit the docs page - https://github.co
 
 __Note:__ When creating a new mapping, you must click the 'Confirm' button. Pressing ENTER after typing will not work.
 
-## Step 6 (Optional)
+## Step 7 (Optional)
 
 Upload your newly created sample mappings to the MedTech service via the portal.
 
@@ -88,7 +86,7 @@ Upload your newly created sample mappings to the MedTech service via the portal.
 - Figure out the steps for uploading a device mapping.
 - Repeat for FHIR mapping.
 
-## Step 7 (Optional)
+## Step 8 (Optional)
 
 This is the most difficult part of the challenge. However, this could be one of the most crucial to the success of an medical IoT/RPM project.
 
