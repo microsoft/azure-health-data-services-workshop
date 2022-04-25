@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-The FHIR-Starter Quickstart [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) (ARM) template deploys an [Azure Health Data Services workspace](https://docs.microsoft.com/en-us/azure/healthcare-apis/workspace-overview), [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and [FHIR Loader](https://github.com/microsoft/fhir-loader) for the [Azure Health Data Services Workshop](https://github.com/microsoft/azure-health-data-services-workshop).
+The FHIR-Starter Quickstart [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/overview) (ARM) template deploys an [Azure Health Data Services workspace](https://docs.microsoft.com/en-us/azure/healthcare-apis/workspace-overview), [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview), [FHIR-Proxy](https://github.com/microsoft/fhir-proxy), and [FHIR Loader](https://github.com/microsoft/fhir-loader) for learner environments in the [Azure Health Data Services Workshop](https://github.com/microsoft/azure-health-data-services-workshop).
 
 ## Deploy AHDS workspace, FHIR service, FHIR-Proxy and FHIR Loader
 
