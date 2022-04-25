@@ -68,7 +68,7 @@ Link - https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#gett
 
 The mapper will be at this address when running: http://localhost:5000
 
-## Step 6 - Make sample maps
+## Step 6 [BONUS] - Make sample maps
 
 Link - https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings
 
