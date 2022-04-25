@@ -79,7 +79,7 @@ Create a new Postman environment called `DICOM-service` and add the access token
 
 Once Postman is set up and configured, follow the steps to download DICOM instances (.dcm) as samples from the [dicom-server repository](https://github.com/microsoft/dicom-server/tree/main/docs/dcms). 
 
-The conformance-as-postman-collection will have a complete set of a API calls that you can execute following the steps below. Be sure to place your service URL and required data input:
+The conformance-as-postman-collection will have a complete set of a API calls that you can execute one by one. See the list below for details. Be sure to store the Service URL, `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`, in the your `service-url` in your `DICOM-service` Postman environment. Then begin each call with the `{{service-url}}` placeholder in the address field in Postman.
 
 - Store DICOM files to the service 
 - Search among the flies that are stored within the DICOM service
