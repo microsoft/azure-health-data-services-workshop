@@ -45,11 +45,7 @@ Please make sure you have the following before moving on to Challenge-01.
 
 **Note:** Free Postman cloud accounts require a login via email or a Google account. Additionally, Postman recommends that if you choose to use the web client, you should also download the desktop application. You can read more and download the Postman desktop client [here](https://www.postman.com/downloads).
 
-## Next Steps
-
-Click [here](<../Challenge-01 - Deploy AHDS workspace and FHIR service/Readme.md>) to start Challenge-01.
-
-## More Resources
+## More Resources 
 
 If you are unfamiliar with any of the above concepts, have a look at the resources below. These are starting points to help you get the most out of this workshop.
 
@@ -84,3 +80,7 @@ Since REST API requests and responses are abstracted from users, developers use 
 + [Creating a workspace](https://learning.postman.com/docs/getting-started/creating-your-first-workspace/)
 + [Creating your first collection](https://learning.postman.com/docs/getting-started/creating-the-first-collection/)
 + [Managing environments](https://learning.postman.com/docs/sending-requests/managing-environments/)
+
+## Next Steps
+
+Click [here](<../Challenge-01 - Deploy AHDS workspace and FHIR service/Readme.md>) to start Challenge-01.
