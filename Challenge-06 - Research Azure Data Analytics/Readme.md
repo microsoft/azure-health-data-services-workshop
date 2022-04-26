@@ -6,7 +6,7 @@ Welcome to Challenge-06!
 In this challenge, you will be doing some basic statistical analysis on a FHIR dataset. Additionally, there is a bonus data visualization step for learners with access to Power BI.
 
 ## Background
-Data aggregated in FHIR offers rich analytics potential for medical research of all sorts. Public health research is no exception. Take, as an example, a public health campaign to increase Flu vaccination rates among a population. In order to boost public acceptance of the Flu vaccine, public health officials first need to understand what factors may be behind the population's current Flu vaccination rates. In this challenge, we will be importing FHIR data into [Azure Databricks](https://docs.microsoft.com/en-us/azure/databricks/scenarios/what-is-azure-databricks) to investigate how a population's Flu vaccine rates may be correlated with gender and/or age. As a bonus, we will be connecting [Power BI](https://docs.microsoft.com/en-us/power-bi/) to visualize vaccination rates across a geographic area.
+Data aggregated in FHIR offers rich analytics potential for medical research of all sorts. Public health research is no exception. Take, as an example, a public health campaign to increase flu vaccination rates among a population. In order to boost public acceptance of the flu vaccine, public health officials first need to understand what factors may be behind the population's current flu vaccination rates. In this challenge, we will be importing FHIR data into [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) to investigate how a population's flu vaccine rates may be correlated with gender and/or age. As a bonus, we will be connecting [Power BI](https://docs.microsoft.com/power-bi/) to visualize vaccination rates across a geographic area.
 
 ### Learning Objectives for Challenge-06
 By the end of this challenge you will be able to 
@@ -19,33 +19,28 @@ By the end of this challenge you will be able to
 
 ### Prerequisites 
 * Deployed FHIR service (Challenge-01)
-* Azure Databricks
 * Completed Challenge-05 - Export and Anonymize Data
 
 ## Part 1. Data Analysis and Statistical Modeling
 **Research question:** Are gender and/or age good predictors of Flu vaccination rates?
 
 ### Step 1
-Open a Bash command line environment (e.g., [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)) and clone this repo: 
-
-	https://github.com/microsoft/azure-api-for-fhir-workshop
-
-Alternatively, you can use the [GitHub Desktop Client](https://desktop.github.com/) to clone the repo.
+#TODO - Deploy Azure Databricks
+#TODO - Launch workspace
+#TODO - Create Cluster - tell users to spin down after to not incur costs
+#TODO - Import notebook
 
 ### Step 2
-Go to the 'Challenge-06 - Research Azure Data Analytics' directory in the repo and open `Challenge - Research Azure Data Analytics.py` in Azure Databricks.
-
-	
-The remaining steps in this part of the challenge are all detailed in the Azure Databricks notebook.
-
-__Note:__ Confirm that the container with the anonymized data you will be using in Databricks has access set to Public and allows anonymous read access for containers and blobs.
+#TODO - Explain how to run commands in Azure Databricks
+#TODO - Explain configuration
+#TODO - Explain what is going on.
 
 ### Part 1 Challenge Success
 + Successfully load FHIR data into Azure Databricks
 + Successfully convert the data to tabular format
 + Successfully perform statistical analysis on the data 
 
-> If you are in possession of a [Power BI license](https://docs.microsoft.com/en-us/power-bi/fundamentals/service-features-license-type), proceed into the next part of this challenge.
+> If you are in possession of a [Power BI license](https://docs.microsoft.com/power-bi/fundamentals/service-features-license-type), proceed into the next part of this challenge.
 
 ## BONUS - Part 2 - Data Visualization and Business Intelligence
 
@@ -68,16 +63,16 @@ By the end of the section you will be able to
 #### 1. Open your Synapse workspace and import data from the storage account with the flattened parquet files you created in Part 1: Data Analysis and Statistical Modeling  <br />
 You will need Patient data and Immmunizaton data to explore geographic vaccination rates. <br />
 <br />
-If you get stuck, check out this article on the [Copy Data Tool in Azure Synapse](https://docs.microsoft.com/en-us/azure/data-factory/copy-data-tool?tabs=data-factory). <br />
+If you get stuck, check out this article on the [Copy Data Tool in Azure Synapse](https://docs.microsoft.com/azure/data-factory/copy-data-tool?tabs=data-factory). <br />
 
 
 ### Step 2: Connect Power BI, Load Synapse data, and report on vaccination rates by postal code <br />
 Connect your Power BI workspace to Azure Synapse, load the Patient and Immunization data into Power BI.<br />
 You are interested in the Flu vaccination rates so you will need to join the datasets and create a field in the combined dataset that can be aggregated to discover that rate. Pay attention to any data transformation necessary to join the datasets. <br/>
 <br/>
-If you get stuck, review this article on [creating custom columns in Power BI](https://docs.microsoft.com/en-us/power-bi/create-reports/desktop-add-custom-column#:~:text=Use%20Power%20Query%20Editor%20to%20add%20a%20custom%20column,-To%20start%20creating&text=From%20the%20Home%20tab%20on,The%20Custom%20Column%20window%20appears.). <br />
+If you get stuck, review this article on [creating custom columns in Power BI](https://docs.microsoft.com/power-bi/create-reports/desktop-add-custom-column#:~:text=Use%20Power%20Query%20Editor%20to%20add%20a%20custom%20column,-To%20start%20creating&text=From%20the%20Home%20tab%20on,The%20Custom%20Column%20window%20appears.). <br />
 
-Information on group by aggregations can be found [here](https://docs.microsoft.com/en-us/power-query/group-by#:~:text=Select%20Group%20by%20on%20the,the%20column%20used%20is%20Units).<br />
+Information on group by aggregations can be found [here](https://docs.microsoft.com/power-query/group-by#:~:text=Select%20Group%20by%20on%20the,the%20column%20used%20is%20Units).<br />
 
 
 ### What does success look like for Challenge-06?

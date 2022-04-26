@@ -34,26 +34,27 @@ from scipy.stats import chi2_contingency
 #Options for mounting the blob storage account to Azure DataBricks
 dbutils.widgets.combobox("InputContainerName", "<Container>", ["<Container>"])
 dbutils.widgets.combobox("InputFolderName", "<Container>", ["<FolderName>"])
-dbutils.widgets.combobox("InputMountPoint", "<MountPoint>", ["<MountPoint>"])
 dbutils.widgets.combobox("SasKey", "N/A", ["N/A","<SasKey>"])
 dbutils.widgets.combobox("InputStorageAccount",  "<Blob Storage Account>", [ "<Blob Storage Account>"])
 
 def mount_storage(container, storage, mountpoint):
   '''Take a container name and mount point input and mounts the mountpoint to the storageaccount container'''
-  configs = {
-    "fs.azure.account.auth.type": "CustomAccessToken",
-    "fs.azure.account.custom.token.provider.class":   spark.conf.get("spark.databricks.passthrough.adls.gen2.tokenProviderClassName")
-  }
  
+  str_path = '/mnt/' + mountpoint
+  if any(mount.mountPoint == str_path for mount in dbutils.fs.mounts()):
+        dbutils.fs.unmount(str_path)
+
   #Only mount storage if it not already mounted
-  if not any(mount.mountPoint == '/mnt/' + mountpoint for mount in dbutils.fs.mounts()):
-    dbutils.fs.mount(
-      source = "wasbs://%s@%s.blob.core.windows.net/" % (container, storage),
-      mount_point = '/mnt/' + mountpoint,
-      extra_configs = {"fs.azure.sas.%s.%s.blob.core.windows.net" % (container, storage) : "%s" % dbutils.widgets.get("SasKey")})
+  dbutils.fs.mount(
+    source = "wasbs://%s@%s.blob.core.windows.net" % (container, storage),
+    mount_point = str_path,
+    extra_configs = {"fs.azure.sas.%s.%s.blob.core.windows.net" % (container, storage) : "%s" % dbutils.widgets.get("SasKey")})
       
- #Mounting the blob storage account to Azure DataBricks
-mount_storage(dbutils.widgets.get("InputContainerName"), dbutils.widgets.get("InputStorageAccount"), dbutils.widgets.get("InputMountPoint"))
+# Mount the blob storage account to Azure DataBricks
+mount_storage(dbutils.widgets.get("InputContainerName"), dbutils.widgets.get("InputStorageAccount"), "export")
+
+# List the mounted files
+dbutils.fs.ls('/mnt/export/' + dbutils.widgets.get("InputFolderName"))
 
 
 # COMMAND ----------
@@ -97,8 +98,8 @@ def flatten_df(dfflat):
 #Loop through the FHIR source and generate parquet, ddl, or both outputs based on output parameter
 
 try:
-  dir = dbutils.fs.ls('mnt/' + dbutils.widgets.get("InputMountPoint"))
-  dirdf = pd.DataFrame(dir,columns=['path','name','size'])
+  dir = dbutils.fs.ls('/mnt/export/' + dbutils.widgets.get("InputFolderName"))
+  dirdf = pd.DataFrame(dir,columns=['path','name','size','modificationTime'])
   resources = set([name.split("-")[0] for name in dirdf.name])
   print(resources)
   resource_dataframes = {}
@@ -111,10 +112,7 @@ try:
     df = spark.read.json(path=file_list)
     dfflat = flatten_df(df)
     resource_dataframes[resource] = dfflat
-except:  
-  #Unmount if fails
-  dbutils.fs.unmount(dbutils.widgets.get("InputMountPoint"))
-  dbutils.fs.unmount(dbutils.widgets.get("OutputMountPoint"))
+except:
   raise
 
 # COMMAND ----------
@@ -166,7 +164,7 @@ patient_immunization_dataframe_pd.hist()
 patient_immunization_dataframe_chi = patient_immunization_dataframe.toPandas()
 patient_immunization_dataframe_chi['gender'] = patient_immunization_dataframe_chi['gender'].astype("category").cat.codes
 
-patient_immunization_dataframe_chi_cross = pd.crosstab(patient_immunization_dataframe_anova['gender'],patient_immunization_dataframe_anova['Flu_Yes_No'], margins = True)
+patient_immunization_dataframe_chi_cross = pd.crosstab(patient_immunization_dataframe_chi['gender'],patient_immunization_dataframe_chi['Flu_Yes_No'], margins = True)
 
 stat, p, dof, expected = chi2_contingency(patient_immunization_dataframe_chi_cross)
 
