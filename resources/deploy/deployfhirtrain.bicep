@@ -21,7 +21,7 @@ param fhirServerTenantName string = subscription().tenantId
 @description('Azure Region where the resources will be deployed. Default Value:  the resource group region')
 param resourceLocation string = resourceGroup().location
 @description('Enable the Consent Opt Out module in FHIR PROXY')
-param enableConsentOptOut bool = false
+param enableConsentOptOut bool = true
 @description('Enable the Date Sort module in FHIR PROXY')
 param enableDateSort bool = false
 @description('Enable the Participant Filter module in FHIR PROXY')

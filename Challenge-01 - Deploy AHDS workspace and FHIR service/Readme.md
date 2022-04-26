@@ -63,7 +63,7 @@ In the first part of this challenge, you will
 
 <img src="../resources/docs/images/ARM_template_config2.png" height="420"> 
 
-**Note:** This deployment typically takes 20 minutes.
+**Note:** This deployment typically takes 20 minutes. You can work on step 2 during the deployment.
 
 Review [Step 1 in these instructions](../resources/docs/FHIR-Starter_ARM_template_README.md#step-1---initial-deployment) to learn more about the resources deployed with this ARM template.
 
@@ -83,9 +83,9 @@ Follow the instructions and return here when finished.
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace and FHIR service deployed and available in Azure.
-+ FHIR-Proxy and FHIR Loader deployed in Azure for future challenges.
-+ Client application created in Azure Active Directory for use with Postman and your FHIR service.
-+ Postman set up and able to connect with the FHIR service.
++ Other Azure resources for future challenges successfully deployed. Template deployment must have no errors.
++ App registration created in Azure Active Directory for use with Postman and your FHIR service.
++ Postman set up and able to connect with your FHIR service.
   + Capability Statement from your FHIR service - received.
 
     ```json
@@ -104,7 +104,7 @@ Follow the instructions and return here when finished.
 
   + `POST AuthorizeGetToken` call in Postman to obtain an AAD access token - succeeded.
   + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource - succeeded.
-  + `GET List Patients` call in Postman to retrieve a bundle of all Patient Resources stored in FHIR service - succeeded.
+  + `GET List Patients` call in Postman to retrieve a bundle with at least one Patient Resource from your FHIR service - succeeded.
 
 ## Next Steps
 
