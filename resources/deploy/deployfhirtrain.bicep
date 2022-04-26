@@ -51,7 +51,7 @@ var proxyAppInsightName      = '${deploymentPrefix}${uniqueId}pxyai'
 var loaderAppInsightName     = '${deploymentPrefix}${uniqueId}ldrai'
 var loaderEventGridTopicName = '${deploymentPrefix}${uniqueId}ldrtopic'
 
-// API for FHIR artifact container registry name
+// FHIR service artifact container registry name
 var containerRegistryName   = '${deploymentPrefix}${uniqueId}cr'
 // -- containers to be created in export storage account
 var dataLakeContainerName = 'fhirdatalake'
