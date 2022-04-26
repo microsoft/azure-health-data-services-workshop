@@ -32,7 +32,7 @@ This workshop is intended for **healthcare system integrators**, **independent h
 
 ## Where to start?
 
-Go to [Challenge-00](<./Challenge-00 - Check Prerequisites and Configure Environment>) and read the instructions to begin the workshop! When you are finished with a challenge, you'll move on to the next (Challenge-00, Challenge-01, etc.). The challenge topics build on each other, and you will get the most out of the workshop if you do the challenges in order.
+Go to [Challenge-00](<./Challenge-00 - Check prerequisites and configure environment>) and read the instructions to begin the workshop! When you are finished with a challenge, you'll move on to the next (Challenge-00, Challenge-01, etc.). The challenge topics build on each other, and you will get the most out of the workshop if you do the challenges in order.
 
 ## Ready to get started?  
 
