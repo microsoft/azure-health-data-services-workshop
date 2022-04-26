@@ -66,7 +66,7 @@ As a bonus, follow the instructions for running the IoT mapper tool [here](https
 
 Follow this [link](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started) to get started.
 
-The mapper will be at this address when running: http://localhost:5000
+The mapper will be at this address when running: http://localhost:5000.
 
 ## Step 6 [BONUS] - Make sample maps
 
