@@ -53,14 +53,14 @@ Name              | Type                 |  Purpose
 [prefix]**ldrai** | Application Insights | Monitors FHIR Loader
 [prefix]**pxyai** | Application Insights | Monitors FHIR-Proxy application
 [prefix]**synai** | Application Insights | Monitors FHIR Synapse Link application
-[prefix]**ldrtopic** | Event Grid System Topic | Triggers processing of FHIR bundles placed in the fssa storage account
+[prefix]**ldrtopic** | Event Grid System Topic | Triggers processing of FHIR bundles placed in the impsa storage account
 [prefix]**rc**    | Redis Cache  | Required by FHIR-Proxy modules, Consent Opt Out
 
 ### Data Flow
 
 <img src="./images/FHIR-TRAINING-ARM-DIAGRAM-FS.png" height="410">
 
-__Note:__ [Postman](https://www.getpostman.com/) is shown as an example REST client. If you are interested in setting up Postman to connect with FHIR service, please see [here](https://github.com/microsoft/health-architectures/tree/main/Postman) after completing steps 2 and 3 below. 
+__Note:__ [Postman](https://www.getpostman.com/) is shown as an example REST client. If you are interested in setting up Postman to connect with FHIR service, please see [here](./Postman_FHIR_service_README.md) after completing steps 2 and 3 below. 
 
 ## Step 2 - Complete FHIR-Proxy Authentication 
 Once initial deployment is finished, additional steps are necessary to complete the authentication configuration of the FHIR-Proxy function app. 
