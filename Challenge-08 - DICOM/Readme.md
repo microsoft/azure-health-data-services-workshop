@@ -51,7 +51,7 @@ You will need to add the **DICOM Data Owner** role for yourself (i.e., your user
 
 When finished setting up the Azure role assignment for yourself and your Postman service client, you must generate an access token. Listed below are several ways to accomplish this. Choose the method that works best for you.
 - Create a new Postman environment and use it to generate a token. 
-  - Consult the images in the [hints](./hints) folder if you need help. 
+  - View the images in the [hints](./hints) folder if you need help. 
 - Use an [Azure PowerShell](https://docs.microsoft.com/azure/healthcare-apis/get-access-token?tabs=azure-powershell#obtain-and-use-an-access-token-for-the-dicom-service) command.
 - Use an [Azure CLI](https://docs.microsoft.com/azure/healthcare-apis/get-access-token?tabs=azure-cli#obtain-and-use-an-access-token-for-the-dicom-service) command.
 
