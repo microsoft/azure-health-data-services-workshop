@@ -27,9 +27,9 @@ In general, we want learners to walk away with a sense of confidence in deployin
 
 Familiarity with these concepts will be necessary for completing the challenges in this workshop. If you feel uncertain about any of the topics below, please review the [More Resources section](#more-resources). Time spent upfront building some basic knowledge about the technologies used in this workshop will help you gain *actionable experience* as you prep for real-world scenarios.
 
-+ A solid foundation in **Azure fundamentals** and basic knowledge of **Azure Active Directory**.
-+ Familiarity with **FHIR®** and the solutions it provides versus legacy health data formats.
-+ Experience with making **REST API** requests using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing tool (like cURL or Fiddler).
++ A solid foundation in **Azure fundamentals** and basic knowledge of **Azure Active Directory**
++ Familiarity with **FHIR®** and the solutions it provides versus legacy health data formats
++ Experience with making **REST API** requests using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing tool (like cURL or Fiddler)
 
 **Note:** For the rest of the workshop, instructions will be geared towards using Postman as your API testing tool. Please use Postman unless you have a strong preference for another tool.
 
