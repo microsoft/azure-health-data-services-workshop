@@ -14,7 +14,7 @@ This workshop is intended for **healthcare system integrators**, **independent h
 
 ## What topics are covered?
 
-+ In the first part of the workshop (Challenges 00-04), you'll get direct experience deploying, configuring, and using components for FHIR data operations in Azure Health Data Servicesk.
++ In the first part of the workshop (Challenges 00-04), you'll get direct experience deploying, configuring, and using components for FHIR data operations in Azure Health Data Services.
 
   + Challenge-00 - Check Prerequisites and Configure Environment
   + Challenge-01 - Deploy FHIR service and AHDS workspace
