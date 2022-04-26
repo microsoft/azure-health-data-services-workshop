@@ -127,7 +127,7 @@ resource fhirWorkspaceRoleAssignment 'Microsoft.Authorization/roleAssignments@20
 }
 
 
-// API for FHIR
+// FHIR Service
 resource myApiforFhir 'Microsoft.HealthcareApis/services@2021-06-01-preview' existing = if (resourceType == 'FHIR') {
   name: resourceName
 }
