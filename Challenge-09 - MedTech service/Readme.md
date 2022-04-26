@@ -25,14 +25,14 @@ By the end of this challenge you will be able to
 + Postman installed (completed in Challenge-01)
 
 ## Getting Started 
-In this challenge, you will be deploying MedTech service within your AHDS workspace configured to receive and transform medical IoT data for persistence in FHIR. The general steps in this challenge are outlined below.
+In this challenge, you will be deploying MedTech service within your Azure Health Data Services workspace configured to receive and transform medical IoT data for persistence in FHIR. The general steps in this challenge are outlined below.
 
 **Step 1** - Deploy and configure [Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).  
 **Step 2** - Deploy a MedTech service instance in your Azure Health Data Services workspace.  
 **Step 3** - Import data mappings for converting medical IoT device data into FHIR.  
 **Step 4** - Configure Azure Roles for MedTech Service to securely connect to the FHIR service.  
 
-Have a look at [this document](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/get-started-with-iot) for an overview of the MedTech service deployment and configuration process (you already deployed an AHDS workspace and FHIR service in Challenge-01).
+Have a look at [this document](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/get-started-with-iot) for an overview of the MedTech service deployment and configuration process (you already deployed an Azure Health Data Services workspace and FHIR service in Challenge-01).
 
 ## Step 1 - Deploy and configure Azure Event Hubs
 In the first part of this challenge, you will use the Azure Portal to deploy an Event Hubs namespace in preparation to create your own Event Hub.
@@ -58,7 +58,7 @@ In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/az
 
 ## Step 4 Configure Azure roles for MedTech service access
 
-Now you will configure permissions so that MedTech service can securely connect with FHIR service and the Event Hub from Step 1. Continue with [the instructions for granting access](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#granting-medtech-service-access) through to the end and then return here when finished.
+Now you will configure permissions so that MedTech service can securely connect with FHIR service and the Event Hub from Step 1 in this challenge. Continue with [the instructions for granting access](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#granting-medtech-service-access) through to the end of the page and then return here when finished.
 
 ## Step 5 [BONUS] - Set up IoT Mapping Tool
 
