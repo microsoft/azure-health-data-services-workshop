@@ -79,4 +79,4 @@ Researchers from outside organizations cannot have direct access to healthcare o
 
 ## Next Steps
 
-Click [here](<../Challenge-06 - Research Azure Data Analytics/Readme.md>) to proceed to the next challenge.
+Click [here](<../Challenge-07 - FHIR service consent capabilities/ReadMe.md>) to proceed to the next challenge.
