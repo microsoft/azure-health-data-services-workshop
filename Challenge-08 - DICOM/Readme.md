@@ -49,7 +49,7 @@ Now you will visit a another page and follow the instructions to [Deploy DICOM s
 
 You will need to add the **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as for the Postman service client that you created in Challenge-01 ([documentation available here](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)).
 
-When finished setting up the Azure role assignment for yourself and your Postman service client, you must generate an access token. Listed below are several methods of generating an access token. Choose the one that works best for you.
+When finished setting up the Azure role assignment for yourself and your Postman service client, you must generate an access token. Listed below are several ways to accomplish this. Choose the method that works best for you.
 - Create a new Postman environment and use it to generate a token. 
   - Use the images in the [hints](./hints) folder if you need help. 
 - Use an [Azure PowerShell](https://docs.microsoft.com/azure/healthcare-apis/get-access-token?tabs=azure-powershell#obtain-and-use-an-access-token-for-the-dicom-service) command.
