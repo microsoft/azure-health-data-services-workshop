@@ -106,12 +106,13 @@ Follow the instructions and return here when finished.
   + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource - succeeded.
   + `GET List Patients` call in Postman to retrieve a bundle with at least one Patient Resource from your FHIR service - succeeded.
 
-## Next Steps
-
-Click [here](<../Challenge-02 - Convert HL7v2 and C-CDA to FHIR/Readme.md>) to proceed to Challenge-02.
-
 ## More Resources
 
 + [FHIR Service Overview](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)
 + [Differences between FHIR service and Azure API for FHIR](https://docs.microsoft.com/azure/healthcare-apis/fhir/fhir-faq#what-is-the-difference-between-azure-api-for-fhir-and-the-fhir-service-in-the-azure-health-data-services)
 + [Azure API for FHIR Overview](https://docs.microsoft.com/azure/healthcare-apis/azure-api-for-fhir/overview)
+
+## Next Steps
+
+Click [here](<../Challenge-02 - Convert HL7v2 and C-CDA to FHIR/Readme.md>) to proceed to Challenge-02.
+
