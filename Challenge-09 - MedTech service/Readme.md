@@ -58,17 +58,17 @@ In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/az
 
 ## Step 4 Configure Azure roles for MedTech service access
 
-Now you will configure permissions so that MedTech service can securely connect with FHIR service and the Event Hub from Step 1 in this challenge. Continue with [the instructions for granting access](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#granting-medtech-service-access) through to the end of the page and then return here when finished.
+Now you will configure permissions so that MedTech service can securely connect with FHIR service and the Event Hub that you deployed in Step 1 of this challenge. Continue with [the instructions for granting access](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#granting-medtech-service-access) through to the end of the page and then return here when finished.
 
-## Step 5 [BONUS] - Set up IoT Mapping Tool
+## Step 5 - Set up IoT Mapping Tool
 
-As a bonus, follow the instructions for running the IoT mapper tool [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started).
+Going a step further, you can learn about creating a custom device mapping template for running Microsoft's OSS IoT mapper tool [here](https://github.com/microsoft/iomt-fhir/tree/main/tools/data-mapper).
 
-Follow this [link](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started) to get started.
+Follow this [link](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started) to get started with the IoT Mapper tool.
 
-The mapper will be at this address when running: http://localhost:5000.
+When you launch the tool on your machine, the app will be at this address when running: http://localhost:5000.
 
-## Step 6 [BONUS] - Make sample maps
+## Step 6 - Make sample maps
 
 Now you can explore making a sample set of IoT Maps which can be used with the FHIR service and MedTech service.
 
