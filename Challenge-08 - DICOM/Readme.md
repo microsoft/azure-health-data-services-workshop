@@ -60,7 +60,7 @@ When finished setting up the Azure role assignment for yourself and your Postman
 From here, you will be using the DICOM service for the features outlined in the [beginning of this challenge](#learning-objectives-for-challenge-08). You have the option to follow either of these paths:
 
 **Basic Path**  
-You can use an already configured Postman collection to execute the tasks mentioned in the beginning of the challenge.
+You can use an already configured Postman collection to execute the series of tasks.
 
 Or
 
