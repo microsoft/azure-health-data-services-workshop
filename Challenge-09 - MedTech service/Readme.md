@@ -33,6 +33,8 @@ In this challenge, you will be deploying MedTech service within your Azure Healt
 **Step 2** - Deploy a MedTech service instance in your Azure Health Data Services workspace.  
 **Step 3** - Import data mappings for converting medical IoT device data into FHIR.  
 **Step 4** - Configure Azure Roles for MedTech Service to securely connect to the FHIR service.  
+**Step 5** - Install tools for creating custom IoT data mappings for FHIR ingestion
+**Step 6** - Create custom IoT data maps
 
 Have a look at [this document](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/get-started-with-iot) for an overview of the MedTech service deployment and configuration process (you already deployed an Azure Health Data Services workspace and FHIR service in Challenge-01).
 
@@ -58,7 +60,7 @@ Now you will use Azure Portal to deploy and configure MedTech service within you
 
 In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-device-mapping-properties) section, you will be going to [another GitHub repository](https://github.com/microsoft/iomt-fhir/blob/main/docs/Configuration.md#device-content-mapping) and copying/pasting a sample data mapping template into the MedTech service **Device Mapping** tab in Azure Portal. Likewise, you will be copying/pasting a sample data mapping destination template into the MedTech service **Destination** tab in Azure Portal. 
 
-## Step 4 Configure Azure roles for MedTech service access
+## Step 4 - Configure Azure roles for MedTech service access
 
 Now you will configure permissions so that MedTech service can securely connect with FHIR service and the Event Hub that you deployed in Step 1 of this challenge. Continue with [the instructions for granting access](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#granting-medtech-service-access) through to the end of the page and then return here when finished.
 
