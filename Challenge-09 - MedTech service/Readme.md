@@ -64,7 +64,7 @@ Now you will configure permissions so that MedTech service can securely connect 
 
 ## Step 5 - Set up IoT Mapping Tool
 
-Going a step further, you can visit [another GitHub repository](https://github.com/microsoft/iomt-fhir/tree/main/tools/data-mapper) and read about creating custom device mapping templates with Microsoft's OSS IoT mapper tool. Follow this [link](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started) to get started with the IoT Mapper tool.
+Going a step further, you can visit [another GitHub repository](https://github.com/microsoft/iomt-fhir/tree/main/tools/data-mapper) and read about creating custom device mapping templates with Microsoft's OSS IoT mapper tool. Follow this [link](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started) to get started with the IoT mapper tool.
 
 Once you have gone through the instructions and installed the packages, when you launch the IoT mapper tool, the web app will be running at this address: http://localhost:5000. Input the address into your browser to access the IoT mapper tool interface.
 
