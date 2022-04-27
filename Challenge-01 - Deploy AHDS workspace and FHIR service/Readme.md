@@ -83,7 +83,7 @@ Follow the instructions and return here when finished.
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace and FHIR service deployed and available in Azure.
-+ Other Azure resources for future challenges successfully deployed. Template deployment must have no errors.
++ Other Azure resources for later challenges successfully deployed. Template deployment must show no errors.
 + App registration created in Azure Active Directory for use with Postman and your FHIR service.
 + Postman set up and able to connect with your FHIR service.
   + Capability Statement from your FHIR service - received.
