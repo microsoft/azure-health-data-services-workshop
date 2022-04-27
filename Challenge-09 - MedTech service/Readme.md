@@ -23,7 +23,7 @@ By the end of this challenge you will be able to
 + Azure Health Data Services workspace deployed (completed in Challenge-01)
 + FHIR service deployed (completed in Challenge-01)
 + A [GitHub account](https://github.com/signup) (for cloning a repo in Step 5)
-+ A command line environment for installing packages and running CLI tools in Step 5 (see about using [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview))  
++ A command line environment for installing packages and running CLI tools in Step 5 ([Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview) or a local Bash environment)  
 
 
 ## Getting Started 
