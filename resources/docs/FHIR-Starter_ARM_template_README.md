@@ -95,7 +95,7 @@ Further configuration is required to define **App Roles and Permissions**.
 2. Click on **Manifest**.
 <img src="./images/FHIR-PROXY-AUTH8.png" height="410">
 
-3. Update the **appRoles** element using the data in the [app roles json](./fhirproxyroles.json) file.
+3. Update the **appRoles** element using the data in the [app roles json](../deploy/fhirproxyroles.json) file.
 <img src="./images/FHIR-PROXY-AUTH9.png" height="410">
 
 4. The **appRoles** element should look something like shown below. Click **Save**.
