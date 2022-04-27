@@ -76,9 +76,7 @@ __Note:__ When creating a new mapping, you must click the 'Confirm' button. Pres
 
 ## Step 7 -BONUS
 
-Import your newly created sample mappings into the MedTech service via the Azure Portal.
-
-Follow the same process in Step 3 of this challenge to import your custom mappings into MedTech service.
+Import your newly created sample mappings into the MedTech service via the Azure Portal. You can follow the same process in Step 3 of this challenge to import your custom mappings into MedTech service.
 
 ## Step 8 - BONUS
 
