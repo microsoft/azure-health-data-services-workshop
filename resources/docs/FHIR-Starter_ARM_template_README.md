@@ -101,7 +101,7 @@ Further configuration is required to define **App Roles and Permissions**.
 4. The **appRoles** element should look something like shown below. Click **Save**.
 <img src="./images/FHIR-PROXY-AUTH10.png" height="410">
 
-5. Select **API permissions** and **Add a Permission**.
+5. Select the **API permissions** blade. Then click **Add a Permission**.
 <img src="./images/FHIR-PROXY-AUTH11.png" height="410">
 
 6. Select **APIs my organization uses**.
