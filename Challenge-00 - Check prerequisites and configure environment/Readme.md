@@ -35,7 +35,7 @@ Familiarity with these concepts will be necessary for completing the challenges 
 
 ## Environment Prerequisites
 
-Please make sure you have the following before moving on to Challenge-01.
+Please make sure to have the following items ready before moving on to Challenge-01.
 
 + [Azure Subscription](https://azure.microsoft.com/) with [Owner rights](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner).
 + [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#all-roles) role in your [Azure Active Directory (AAD) tenant](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#:~:text=Azure%20tenant,tenant%20represents%20a%20single%20organization).
