@@ -53,7 +53,7 @@ Name              | Type                 |  Purpose
 [prefix]**ldrai** | Application Insights | Monitors FHIR Loader
 [prefix]**pxyai** | Application Insights | Monitors FHIR-Proxy application
 [prefix]**synai** | Application Insights | Monitors FHIR Synapse Link application
-[prefix]**ldrtopic** | Event Grid System Topic | Triggers processing of FHIR bundles placed in the impsa storage account
+[prefix]**ldrtopic** | Event Grid System Topic | Triggers processing of FHIR bundles placed in the **"impsa"** storage account
 [prefix]**rc**    | Redis Cache  | Required by FHIR-Proxy modules, Consent Opt Out
 
 ### Data Flow
@@ -65,7 +65,7 @@ __Note:__ [Postman](https://www.getpostman.com/) is shown as an example REST cli
 ## Step 2 - Complete FHIR-Proxy Authentication 
 Once initial deployment is finished, additional steps are necessary to complete the authentication configuration of the FHIR-Proxy function app. 
 
-1. In the Azure Portal, navigate to the FHIR-Proxy function app that was deployed by the resource manager template. 
+1. In the Azure Portal, navigate to the FHIR-Proxy function app that was deployed by the ARM template. The name of the FHIR-Proxy function app ends with **"pxyfa"**.
 <img src="./images/FHIR-PROXY-AUTH1.png" height="410">
 
 2. Select the function app and select **Authentication**.
