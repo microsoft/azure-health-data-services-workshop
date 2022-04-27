@@ -117,11 +117,11 @@ Now you will make another API request similar to the one above, except this time
 
 4. You will need to format the C-CDA data payload so that it sits correctly in the JSON request body.
 
-    __Hint:__ The JSON spec requires all keys and values to be surrounded by double quotes. Any double quotes *within* the JSON data payload must be `\` escaped, however. Look at the `"` quotation marks in the C-CDA data string. These `"` quotes all need to be `\` escaped in order for the `$convert-data` request to work. This [online tool](https://www.freeformatter.com/json-escape.html) is helpful for adding the `\` escape characters. Alternatively, you could use a text editor and do a "find and replace".
+    __Hint:__ The JSON spec requires all keys and values to be surrounded by double quotes. Any double quotes *within* the JSON data payload must be `\` escaped, however. Look at the `"` quotation marks in the C-CDA data string. These `"` quotes all need to be `\` escaped in order for the `$convert-data` request to work. This [online tool](https://www.freeformatter.com/json-escape.html) is helpful for adding the `\` escape characters. Alternatively, you could use a text editor and do a "find and replace". Whatever method works best for you is fine.
 
-5. When ready, copy and paste the JSON-formatted request parameters with the C-CDA payload into the `Body` of the `Convert Data - CCDA` request in Postman.
+5. When ready, copy and paste the JSON-formatted request parameters with the C-CDA payload into the **Body** of the `Convert Data - CCDA` request in Postman.
 
-6. Select the `raw` button and choose `JSON` from the dropdown menu on the right.
+6. Select the **raw** button and choose `JSON` from the dropdown menu on the right.
 
 7. Make sure to `Save` the `Convert Data - CCDA` request.
 
