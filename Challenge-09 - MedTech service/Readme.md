@@ -80,7 +80,7 @@ Import your newly created sample mappings into the MedTech service via the Azure
 
 ## Step 8 - BONUS
 
-Use the IoT mapper tool that you obtained in Step 5 to create maps for the sample messages in the `SampleData` folder (accessible at the top of the page). You will find that the `SampleData` folder has two files. Both files are the same data, but the `Three-Sample-Message-Types-with-labels.json` has messages with data descriptions and/or units of measure. There are three sample messages in each file - `vitals`, `BP`, and `weight`. The `vitals` message is an array of data. `BP` and `weight` are single-entry messages. 
+Use the IoT mapper tool that you obtained in Step 5 to create maps for the sample messages in the `SampleData` folder (accessible at the top of the page). You will find that the `SampleData` folder has two files. Both files are the same data, but the `Three-Sample-Message-Types-with-labels.json` has messages with data descriptions and/or units of measure. There are three sample messages in each file - `VITALS`, `BP`, and `WEIGHT`. The `VITALS` message is an array of data. `BP` and `WEIGHT` are single-entry messages. 
 
 When you begin the FHIR mapping, you can make up values for the 'Code'. For example - `Code: A1235, System: https://loinc.org, Text: Heart Rate`.
 
