@@ -63,7 +63,7 @@ In the first part of this challenge, you will
 
 <img src="../resources/docs/images/ARM_template_config2.png" height="420"> 
 
-> **Note:** This deployment typically takes 20 minutes. You can work on Step 2 during the deployment.
+> **Note:** This deployment typically takes 20 minutes. During the deployment, you can read the instructions linked in Step 2 below. When the deployment finishes, go ahead and proceed with those instructions.
 
 Review [Step 1 in these instructions](../resources/docs/FHIR-Starter_ARM_template_README.md#step-1---initial-deployment) to learn more about the resources deployed with this ARM template.
 
