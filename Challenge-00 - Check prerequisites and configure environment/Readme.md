@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this preliminary challenge, you will be checking your Azure environment and other prerequisites of the workshop to ensure you are ready for Challenge-01 and beyond.
+In this preliminary challenge, you will be checking your Azure environment and the prerequisites for this workshop to ensure you are ready for Challenge-01 and beyond.
  
 ## Learning Objectives for Challenge-00
 
