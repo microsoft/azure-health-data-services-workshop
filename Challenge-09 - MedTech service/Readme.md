@@ -68,19 +68,19 @@ When you launch the tool on your machine, the app will be at this address when r
 
 ## Step 6 - Make sample maps
 
-Now you can explore making a sample set of IoT Maps which can be used with the FHIR service and MedTech service. Follow the instructions [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings).
+Now you can explore making a sample set of IoT Maps which can be used with the FHIR service and MedTech service. Follow the instructions [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings) and return when finished.
 
 For more information on IoT Mappings, visit [this page](https://github.com/microsoft/iomt-fhir/blob/master/docs/Configuration.md).
 
 __Note:__ When creating a new mapping, you must click the 'Confirm' button. Pressing ENTER after typing will not work.
 
-## Step 7 (Optional)
+## Step 7 -BONUS
 
 Import your newly created sample mappings to the MedTech service via the Azure Portal.
 
 Follow the same process in Step 3 of this challenge to import your custom mappings into MedTech service.
 
-## Step 8 (Optional)
+## Step 8 - BONUS
 
 Use the IoT mapper tool that you obtained in Step 5 to create maps for the sample messages in the `SampleData` folder within this challenge folder (see the folder contents towards the top of the page). There are three sample messages in one file - `vitals`, `BP`, and `weight`. The `vitals` message is an array of data, while `BP` and `weight` are single-entry messages. You will find that the `SampleData` folder has two files. Both files are the same data. `Three-Sample-Message-Types-with-labels.json` is the message data with data descriptions and/or units of measure.
 
