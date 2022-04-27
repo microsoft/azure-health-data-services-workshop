@@ -22,7 +22,9 @@ By the end of this challenge you will be able to
 ## Prerequisites 
 + Azure Health Data Services workspace deployed (completed in Challenge-01)
 + FHIR service deployed (completed in Challenge-01)
-+ Postman installed (completed in Challenge-01)
++ A [GitHub account](https://github.com/signup) (for cloning a repo in Step 5)
++ A command line environment for installing packages and running CLI tools in Step 5 (see about using [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview))  
+
 
 ## Getting Started 
 In this challenge, you will be deploying MedTech service within your Azure Health Data Services workspace configured to receive and transform medical IoT data for persistence in FHIR. The steps in this challenge are outlined below.
