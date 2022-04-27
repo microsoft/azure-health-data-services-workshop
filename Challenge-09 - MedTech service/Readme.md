@@ -45,7 +45,7 @@ In the first part of this challenge, you will use the Azure Portal to deploy an 
 
     [Create an Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)
 
-## Step 2 - Deploy MedTech service in your AHDS workspace 
+## Step 2 - Deploy MedTech service in your Azure Health Data Services workspace 
 Now you will use Azure Portal to deploy and configure MedTech service within your Azure Health Data Services workspace.
 
 1. Open the instructions to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure) in a new browser tab. 
