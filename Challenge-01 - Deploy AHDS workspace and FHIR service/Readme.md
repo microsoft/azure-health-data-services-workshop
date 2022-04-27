@@ -65,7 +65,7 @@ In the first part of this challenge, you will
 
 > **Note:** This deployment typically takes 20 minutes. During the deployment, you can read the instructions linked in Step 2 below. When the deployment finishes, go ahead and proceed with those instructions.
 
-Review [Step 1 in these instructions](../resources/docs/FHIR-Starter_ARM_template_README.md#step-1---initial-deployment) to learn more about the resources deployed with this ARM template.
+Review [Step 1 in these instructions](../resources/docs/FHIR-Starter_ARM_template_README.md##deployed-components) to learn more about the resources deployed with this ARM template.
 
 ## Step 2 - Set up Postman and test FHIR service
 
