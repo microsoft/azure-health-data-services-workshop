@@ -74,7 +74,7 @@ You can follow the provided articles that go over how to programmatically commun
 You already installed Postman in Challenge-01 of this workshop. Now you will configure Postman to connect with DICOM service. 
 
 Import the `conformance-as-postman-collection`:
-- Copy the raw content of the `conformance-as-postman-collection` available [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json).
+- Go [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and copy the raw text of the `conformance-as-postman-collection`.
 - Import the copied raw content into Postman via the **Import** button - click on the **Raw text** tab and paste where it says **Paste raw text**.
 
 Create a new Postman environment called `DICOM-service` and add the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` in your new Postman environment.
