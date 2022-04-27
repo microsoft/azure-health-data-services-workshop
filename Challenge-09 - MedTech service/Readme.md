@@ -72,7 +72,7 @@ Once you have gone through the instructions and installed the packages, when you
 
 ## Step 6 - Make sample maps
 
-Now you can get started making a set of custom IoT maps which can be used with the FHIR service and MedTech service. Follow the instructions [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#how-to-make-mappings) and return when finished. For more information on IoT Mappings, visit [this page](https://github.com/microsoft/iomt-fhir/blob/master/docs/Configuration.md).
+Now you can get started making a set of custom IoT maps which can be used with the FHIR service and MedTech service. Follow the instructions [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started) to get started with the IoT mapper tool. For more information on IoT Mappings, visit [this page](https://github.com/microsoft/iomt-fhir/blob/master/docs/Configuration.md).
 
 __Note:__ When creating a new mapping, you must click the 'Confirm' button. Pressing ENTER after typing will not work.
 
