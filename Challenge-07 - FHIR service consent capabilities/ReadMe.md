@@ -29,7 +29,7 @@ By the end of this challenge you will be able to
 ## Getting Started 
 In this challenge, you will be setting up FHIR-Proxy to perform Consent Opt Out Filtering for the FHIR service. Additionally, you will be creating a new Postman environment to call the FHIR-Proxy endpoint. 
 
-> Note: Within the 2023 fiscal year, the FHIR-Proxy Function App in its current form will be deprecated. The app’s features and functionality will be integrated into AHDS FHIR service and other Azure resources. 
+> Note: Within the 2023 fiscal year, the FHIR-Proxy Function App in its current form will be deprecated. The app’s features and functionality will be integrated into Azure Health Data Services FHIR service and other Azure resources. 
 
 ### FHIR-Proxy and FHIR service overview
 In the Azure health data platform, FHIR service and FHIR-Proxy operate as a team. FHIR service is at the center of activity, and FHIR-Proxy acts as a pre- and post-processor, selectively filtering FHIR data on the way into and out of the FHIR service. Admins can set up FHIR-Proxy to listen to the stream of I/O data and trigger custom workflows based on specific FHIR events. FHIR-Proxy also brings enhanced Role-Based Access Control (RBAC) to FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (i.e., patients) can authorize or deny access to certain FHIR data.
