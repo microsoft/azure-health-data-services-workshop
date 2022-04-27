@@ -35,7 +35,7 @@ By the end of this challenge you will be able to
 ## Initial Setup
 
 ### Step 1 - Find your Azure Health Data Services workspace using Azure Portal
-In Challenge-01 of this workshop, you deployed an Azure Health Data Services workspace in your resource group. You can view your Azure Health Data Services workspace settings by navigating to **Portal** -> **Resource Group** and finding the resource with a name ending in "ws" (see image below).
+In Challenge-01 of this workshop, you deployed an Azure Health Data Services workspace in your resource group. You can view your Azure Health Data Services workspace settings by navigating to **Portal** -> **Resource Group** and finding the resource with a name ending in **"ws"** (see image below).
 
 <img src="./images/Screenshot 2022-04-25 110347.png" height="420">
 
