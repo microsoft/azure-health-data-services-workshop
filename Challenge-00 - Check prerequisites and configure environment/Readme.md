@@ -58,7 +58,7 @@ Microsoft Azure is a cloud computing platform that enables on-demand, highly sca
 
 ### FHIR
 
-FHIR® (Fast Healthcare Interoperability Resources) is a data standard created by HL7 (Health Level Seven) for ingesting, managing, and persisting health data.
+FHIR® (Fast Healthcare Interoperability Resources) is a data standard created by HL7 (Health Level Seven) for ingesting, managing, and persisting data generated in healthcare scenarios.
 
 + [HL7 FHIR Introduction](https://www.hl7.org/fhir/summary.html)
 + [FHIR Architect's Introduction](https://www.hl7.org/fhir/overview-arch.html)
