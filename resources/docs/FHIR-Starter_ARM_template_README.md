@@ -89,7 +89,7 @@ At this point, the FHIR-Proxy application registration is complete.
 
 Further configuration is required to define **App Roles and Permissions**. 
 
-1. Click on the link next to the Microsoft identity provider, which will open the Azure AD blade.
+1. Click on the link next to the Microsoft identity provider. This will open the Azure AD blade.
 <img src="./images/FHIR-PROXY-AUTH7.png" height="410">
 
 2. Click on **Manifest**.
