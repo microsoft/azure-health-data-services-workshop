@@ -73,16 +73,16 @@ You can follow the provided articles that go over how to programmatically commun
 
 You already installed Postman in Challenge-01 of this workshop. Now you will configure Postman to connect with DICOM service. 
 
-Import the `Conformance-as-Postman` collection:
-- Go [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and copy the raw text of the `Conformance-as-Postman` collection JSON file.
-- Import the copied raw text into Postman via the **Import** button - click on the **Raw text** tab and paste where it says **Paste raw text**.
-- Alternatively, you could access the `Conformance-as-Postman.postman_collection.json` [file](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and download it to your local environment. Then choose **Upload Files** in the Postman import window.  
+1. Import the `Conformance-as-Postman` collection:
+  - Go [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and copy the raw text of the `Conformance-as-Postman` collection JSON file.
+  - Import the copied raw text into Postman via the **Import** button - click on the **Raw text** tab and paste where it says **Paste raw text**.
+  - Alternatively, you could access the `Conformance-as-Postman.postman_collection.json` [file](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and download it to your local environment. Then choose **Upload Files** in the Postman import window.  
 
-Create a new Postman environment called `DICOM-service` and add the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` in your new Postman environment.
+2. Create a new Postman environment called `DICOM-service` and add the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` in your new Postman environment.
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
-Once Postman is set up with the `Conformance-as-Postman` collection and a `DICOM-service` environment, follow the steps to download DICOM instances (.dcm) as samples from the [dicom-server repository](https://github.com/microsoft/dicom-server/tree/main/docs/dcms). You can save these samples in your local desktop environment.
+Now, follow the steps to download DICOM instances (.dcm) as samples from the [dicom-server repository](https://github.com/microsoft/dicom-server/tree/main/docs/dcms). You can save these samples in your local desktop environment.
 
 The `Conformance-as-Postman` collection has a complete set of API calls that you can execute one by one. See the list below for details. Be sure to create a `service-url` parameter in your `DICOM-service` Postman environment for storing the Service URL: `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. When ready to start making API calls, put the `{{service-url}}` placeholder in the Postman URL address field for each call in the `Conformance-as-Postman` collection.
 
