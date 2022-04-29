@@ -38,10 +38,10 @@ When the deployment finishes, you should see these components in your resource g
 
 Name              | Type                 |  Purpose                               
 ------------------|----------------------|----------------------------------------
-[prefix]**hdsws**  | PaaS | **AHDS Workspace** - managed FHIR service
+[prefix]**hdsws**  | PaaS | **AHDS Workspace** - managed PaaS
 [prefix]**hdsws/fhirtrn**  | PaaS | **FHIR service** - managed FHIR service
 [prefix]**pxyfa** | Function App | **FHIR-Proxy** - filters FHIR data input/output 
-[prefix]**ldrfa** | Function App | **FHIR Loader** - bulk ingest FHIR data
+[prefix]**ldrfa** | Function App | **FHIR Loader** - ingest FHIR data
 [prefix]**synfa** | Function App | **FHIR Synapse Link** - export FHIR data to ADLS Gen2 every 5 minutes
 [prefix]**asp**   | App Service Plan | Shared by FHIR-Proxy and FHIR Loader function apps
 [prefix]**cr**    | Container Registry   | Supports FHIR service `$convert-data` operation
