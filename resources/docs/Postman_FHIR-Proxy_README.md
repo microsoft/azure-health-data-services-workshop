@@ -153,7 +153,7 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 <img src="./images/Screenshot_2022-02-17_101224_edit2.png" height="328">
 
-4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored on the FHIR server. This means your setup with FHIR-Proxy connected to FHIR service is fully functional.
+4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored in the FHIR service's database. This means your setup with FHIR-Proxy connected to FHIR service is fully functional.
 
 <img src="./images/Screenshot_2022-02-17_101255_edit2.png" height="328">
 
