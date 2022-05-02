@@ -90,7 +90,7 @@ GET {{fhirurl}}/Patient/123
 ```
 
 ## Step 1 - Save Sample Resources
-To begin, you are going to populate your FHIR service with different FHIR Resources.
+To begin, you are going to populate your FHIR service with sample FHIR Resources.
 
 ### Exercise Task
 
