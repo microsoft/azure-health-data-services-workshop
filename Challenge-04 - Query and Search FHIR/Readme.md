@@ -12,7 +12,9 @@ The FHIR specification defines a RESTful API framework with a set of operations 
 
 When a client app is looking for FHIR Resource instances per some filter criteria (e.g., on behalf of a patient or care provider), the app queries the FHIR server, and if the app has the required permissions, the server carries out the search and returns the results in a [FHIR Resource Bundle](http://hl7.org/fhir/bundle.html). The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the FHIR service. 
 
-Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding multiple Resource instances (in this case, `Encounter` instances) in a single request. 
+Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding multiple Resource instances* (in this case, `Encounter` instances) in a single request. 
+
+*In this challenge, at times we will use the term "Resource" to mean a Resource instance - without explicitly saying "Resource instance". This is the way "Resource" is used in the [FHIR literature](https://www.hl7.org/fhir/resourcelist.html) - to mean either "Resource type" or "Resource instance" - depending on context. 
 
 ## Learning Objectives for Challenge-04
 
@@ -49,7 +51,7 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 When doing a search on a FHIR server, the initial target for the query can be any of the following:
 
 + Resource instance level interaction for a single Resource
-+ Resource type level interaction for a set of Resources
++ Resource type level interaction for a set of Resource instances
 + A specified Resource [Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions  (e.g., querying against a search parameter shared by all Resources)
 
@@ -59,7 +61,7 @@ The simplest way to execute a search in FHIR is to send a `GET` API request. For
 GET {{fhirurl}}/Patient
 ```
 
-If you want to retrieve Patient Resources that were updated last on a certain day, you can narrow your search with the `_lastUpdated` search parameter.
+If you want to retrieve `Patient` Resource instances that were updated last on a certain day, you can narrow your search with the `_lastUpdated` search parameter.
 
 ```http
 GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
@@ -81,7 +83,7 @@ The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fh
 
 This search returns the `Patient` Resource instance inside a bundle with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server).
 
-Compare this to a resource instance query, which uses the RESTful API pattern of putting the Resource `id` in the URL path instead of search query parameters with `_id`. This will return only a single Resource as the result versus a single Resource inside of a bundle.
+Compare this to a Resource instance query, which uses the RESTful API pattern of putting the Resource `id` in the URL path instead of as the value of the `_id` search parameter. This will return only a single Resource as the result versus a single Resource inside of a bundle.
 
 ```http
 GET {{fhirurl}}/Patient/123
