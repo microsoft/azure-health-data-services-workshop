@@ -81,7 +81,7 @@ The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fh
 
 This search returns the `Patient` Resource instance inside a bundle with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server).
 
-Compare this to a resource instance query, which uses the RESTful API pattern of putting the Resource `id` in the URL path instead of search query parameters with `_id`. This will return only single Resource as the result versus a single Resource inside of a bundle.
+Compare this to a resource instance query, which uses the RESTful API pattern of putting the Resource `id` in the URL path instead of search query parameters with `_id`. This will return only a single Resource as the result versus a single Resource inside of a bundle.
 
 ```http
 GET {{fhirurl}}/Patient/123
