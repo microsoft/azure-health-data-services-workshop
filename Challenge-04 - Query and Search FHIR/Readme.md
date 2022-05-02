@@ -51,7 +51,7 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 When doing a search on a FHIR server, the initial target for the query can be any of the following:
 
 + Resource instance level interaction for a single Resource
-+ Resource type level interaction for a set of Resource instances (returned as a Bundle)
++ Resource type level interaction for a set of Resource instances (returned as a bundle)
 + A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions  (e.g., querying against a search parameter shared by all Resources)
 
@@ -69,7 +69,7 @@ GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 
 You can also call the FHIR search API with `POST`, which is useful if the query string is too long. To search using `POST`, the search parameters are delivered in JSON format in the body of the request.
 
-Whenever a search request is successful, you’ll receive a FHIR Bundle response as JSON with a `"type": "searchset"` entry followed by the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
+Whenever a search request is successful, you’ll receive a FHIR bundle response as JSON with a `"type": "searchset"` entry followed by the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
 ## Common Search Parameters 
 
@@ -81,9 +81,9 @@ The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fh
  GET {{fhirurl}}/Patient?_id=123
 ```
 
-This search returns the `Patient` Resource instance inside a bundle with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server).
+This search returns the `Patient` Resource instance with the given `id` inside a bundle (there can only be one Resource instance for a given Logical ID on a FHIR server).
 
-Compare this to a Resource instance query, which uses the RESTful API pattern of putting the Resource `id` in the URL path instead of as the value of the `_id` search parameter. This will return only a single Resource as the result versus a single Resource inside of a bundle.
+Compare this to a Resource instance query, which uses the RESTful API pattern of putting the Resource `id` in the URL path instead of the `_id` search parameter. This will return only a single Resource as the result versus a single Resource inside of a bundle.
 
 ```http
 GET {{fhirurl}}/Patient/123
