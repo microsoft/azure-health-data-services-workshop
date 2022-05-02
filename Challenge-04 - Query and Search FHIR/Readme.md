@@ -101,6 +101,8 @@ GET {{fhirurl}}/Patient/123
 
 On top of common search parameters, it's possible to add modifiers right after the element name, which makes these searches more powerful. Some examples are `:not`, `:exact`, `:contains`, `:gt`, and `:lt`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation for more details.
 
+### Exercise Task
+
 1. Go to Postman, open the FHIR Search collection provided in Challenge-01, and search for patients using the following parameters: ```_id```, ```name```, and others following the examples for Step 2.
 
 + **Q:** *What Element are you searching against when you assign a value to the* `name` *parameter in a* `Patient` *search?*
