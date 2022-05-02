@@ -14,7 +14,7 @@ When a client app is looking for FHIR Resources* per some filter criteria (e.g.,
 
 Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding multiple Resource instances (in this case, `Encounter` instances) in a single request. 
 
-> **Note:** *In this challenge, at times we will use the term "Resource" to mean a Resource instance - without explicitly saying "Resource instance". This is the way "Resource" is used in the [FHIR literature](https://www.hl7.org/fhir/resourcelist.html) - to mean either "Resource type" or "Resource instance" - depending on context. 
+> ***Note:** In this challenge, at times we will use the term "Resource" to mean a Resource instance - without explicitly saying "Resource instance". This is the way "Resource" is used in the [FHIR literature](https://www.hl7.org/fhir/resourcelist.html) - to mean either "Resource type" or "Resource instance" - depending on context. 
 
 ## Learning Objectives for Challenge-04
 
