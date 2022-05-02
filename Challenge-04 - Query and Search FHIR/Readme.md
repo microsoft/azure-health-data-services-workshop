@@ -248,6 +248,8 @@ GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:pa
 
 At some point, there will be a business use case to search by a search parameter that is not defined in the FHIR service defaults. FHIR provides a way to define your own custom search parameters. 
 
+### Exercise Task
+
 1. To create a new search parameter, you need to `POST` the `SearchParameter` Resource to the database. See the FHIR Search Postman collection provided for an example. Read through the full example at [https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search](https://docs.microsoft.com/azure/healthcare-apis/fhir/how-to-do-custom-search).
 
 ## What does success look like for Challenge-04?
