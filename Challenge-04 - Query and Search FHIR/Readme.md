@@ -90,6 +90,9 @@ GET {{fhirurl}}/Patient/123
 ```
 
 ## Step 1 - Save Sample Resources
+To begin, you are going to populate your FHIR service with different FHIR Resources.
+
+### Exercise Task
 
 1. Go to Postman, open the FHIR Search collection provided in Challenge-01. There is a request titled "Step 1 - Save Sample Resource Bundle". Send this bundle to your FHIR service using the `fhir-service` Postman environment that you created in Challenge-01. This will save some Resources that future requests in this challenge require.
 
