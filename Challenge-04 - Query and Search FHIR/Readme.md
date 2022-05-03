@@ -23,8 +23,9 @@ By the end of this challenge you will be able to
 + Explain the basic concepts of FHIR Search
 + Perform both Common and Composite Searches 
 + Use Modifiers in Search 
-+ Use Chained & Reverse Chained Search 
-+ Define a Custom Search parameter 
++ Use Chained & Reverse Chained search result parameters
++ Use Include and Reverse Include search result parameters
++ Define a custom search parameter 
 
 ## Prerequisites
 
@@ -94,7 +95,7 @@ To begin, you are going to populate your FHIR service with sample FHIR Resources
 
 ### Exercise Task
 
-1. Go to Postman, open the FHIR Search collection provided in Challenge-01. There is a request titled "Step 1 - Save Sample Resource Bundle". Send this bundle to your FHIR service using the `fhir-service` Postman environment that you created in Challenge-01. This will save some Resources that future requests in this challenge require.
+1. Go to Postman and open the FHIR Search collection provided in Challenge-01. There is a request titled "Step 1 - Save Sample Resource Bundle". Send this bundle to your FHIR service using the `fhir-service` Postman environment that you created in Challenge-01. This will save some Resources that future requests in this challenge require.
 
 **Note:** Make sure your access token is not expired.
 
@@ -249,11 +250,13 @@ GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:pa
 
 ## Step 7 - Defining a Custom Search parameter
 
-At some point, there will be a business use case to search by a search parameter that is not defined in the FHIR service defaults. FHIR provides a way to define your own custom search parameters. 
+At some point, you will find a use case in which you need to retrieve information that none of the default search parameters in FHIR are cut out for. To address this, FHIR provides a way to define your own custom search parameters so that you can perform highly specialized queries.  
 
 ### Exercise Task
 
-1. To create a new search parameter, you need to `POST` the `SearchParameter` Resource to the database. See the FHIR Search Postman collection provided for an example. Read through the full example at [https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search](https://docs.microsoft.com/azure/healthcare-apis/fhir/how-to-do-custom-search).
+1. To create a new search parameter, you need to `POST` a `SearchParameter` Resource to the FHIR service database. See the `Create New Search Parameter` call in the FHIR Search Postman collection for an example. Read through the documentation at [https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search](https://docs.microsoft.com/azure/healthcare-apis/fhir/how-to-do-custom-search) and then run the `Create New Search Parameter` call.
+
+2. Now, perform a search using the custom search parameter that you just created. Run the `Search by Custom Search Parameter` call in the FHIR Search collection in Postman.
 
 ## What does success look like for Challenge-04?
 
