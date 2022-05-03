@@ -46,11 +46,11 @@ Name              | Type                 |  Purpose
 [prefix]**asp**   | App Service Plan | Shared by FHIR-Proxy and FHIR Loader function apps
 [prefix]**cr**    | Container Registry   | Supports FHIR service `$convert-data` operation
 [prefix]**expsa** | Storage account      | Blob storage for FHIR service `$export` operation
-[prefix]**funsa** | Storage account      | Storage for FHIR-Proxy and Synapse Link Loader function apps
+[prefix]**funsa** | Storage account      | Storage for FHIR-Proxy and FHIR Synapse Link function apps
 [prefix]**impsa** | Storage account      | Storage account for FHIR Loader
 [prefix]**kv**    | Key Vault            | Stores secrets and configuration settings
 [prefix]**la**    | Log Analytics Workspace  | Logs the activity of deployed components
-[prefix]**ldrai** | Application Insights | Monitors FHIR Loader
+[prefix]**ldrai** | Application Insights | Monitors FHIR Loader application
 [prefix]**pxyai** | Application Insights | Monitors FHIR-Proxy application
 [prefix]**synai** | Application Insights | Monitors FHIR Synapse Link application
 [prefix]**ldrtopic** | Event Grid System Topic | Triggers processing of FHIR bundles placed in the **"impsa"** storage account
