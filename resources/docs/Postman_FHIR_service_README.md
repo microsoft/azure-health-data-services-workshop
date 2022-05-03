@@ -48,11 +48,8 @@ For more information on registering client applications in AAD for Azure Health 
 1. In Azure Portal, go to **Home** -> **Resource groups** and find the resource group containing your FHIR service instance. When in the resource group **Overview**, click on your FHIR service name in the list. 
 <img src="./images/Screenshot_2022-05-03_113929_edit.png" height="328">
 
-2. Go to the **Access Control (IAM)** blade. Click on the **Roles** tab.
-<img src="./images/Screenshot_2022-02-15_142519_edit2_next.png" height="328">
-
-3. Click on **+Add** -> **Add role assignment**. 
-<img src="./images/Screenshot_2022-02-15_142726_edit2.png" height="328">
+2. Go to the **Access Control (IAM)** blade. Click on **+Add** -> **Add role assignment**. 
+<img src="./images/Screenshot_2022-05-03_114155_edit.png" height="328">
 
 4. In **Add role assignment** under the **Role** tab, scroll down in the list and select **FHIR Data Contributor**. Then click **Next**. 
 <img src="./images/Screenshot_2022-02-15_143124_edit2.png" height="328">
