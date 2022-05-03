@@ -96,7 +96,7 @@ For more information on assigning user/app roles, see [Configure Azure RBAC for 
 <img src="./images/Screenshot_2022-02-16_104427_edit2.png" height="228"> 
 
 
-## Step 4 - Configure Postman environments
+## Step 4 - Configure Postman environment
 Now you will configure your Postman environment (`fhir-service`). 
 
 1. For the `fhir-service` Postman environment, you will need to retrieve the following values: 
