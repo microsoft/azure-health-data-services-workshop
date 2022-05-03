@@ -106,6 +106,7 @@ Now you will make another API request similar to the one above, except this time
     + Add `{{bearerToken}}` below **Available Tokens**.
 
     ![Request Authorization Tab](./media/request-auth.jpg)
+6. Make sure to `Save` the `Convert Data - CCDA` request.
 
 ## Step 5 - Set up Request Parameters
 
