@@ -250,7 +250,7 @@ GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:pa
 
 ## Step 7 - Defining a Custom Search Parameter
 
-At some point, you will find a use case in which you need to retrieve information that none of the default search parameters in FHIR are cut out for. To address this, FHIR provides a way to define your own custom search parameters so that you can perform specialized queries.  
+At some point, you will find a use case in which you need to retrieve information that none of the default search parameters in FHIR are cut out for. To address this, FHIR provides a way to define your own custom search parameters for specialized queries.  
 
 ### Exercise Task
 
