@@ -103,7 +103,7 @@ To begin, you are going to populate your FHIR service with sample FHIR Resources
 
 ## Step 2 - Make FHIR API Calls with Search Parameters
 
-On top of common search parameters, it's possible to add modifiers right after the element name, which makes these searches more powerful. Some examples are `:not`, `:exact`, `:contains`, `:gt`, and `:lt`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation for more details.
+On top of common search parameters, it's possible to add modifiers right after the element name, which makes these searches more powerful. Some examples are `:not`, `:exact`, and `:contains`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation for more details.
 
 ### Exercise Task
 
