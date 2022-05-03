@@ -1,4 +1,4 @@
-# Challenge-05 - Export and Anonymize Data
+l# Challenge-05 - Export and Anonymize Data
 
 ## Introduction
 
@@ -59,7 +59,7 @@ The `$export` operation has these required headers. Below there is a screenshot 
 
 + `Accept: application/fhir+json`
 + `Authorization: Bearer {{bearerToken}}`
-+ `Prefer: respond-async.`
++ `Prefer: respond-async`
 
 ![export-header](./media/Export_Headers.png)
 
