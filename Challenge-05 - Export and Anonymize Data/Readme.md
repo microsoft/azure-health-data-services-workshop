@@ -22,8 +22,8 @@ By the end of this challenge you will be able to
 ## Prerequisites
 
 + An Azure environment with a working FHIR service instance (completed in Challenge-01).
-+ FHIR data loaded into FHIR service.
-  + For a more rich experience with this and future exercises, [load this bundle](./synthea_sample_data_fhir_r4%20OpenHack.zip) into the `zip` container in your FHIR-Bulk Loader storage account (as done in Challenge-03).
++ FHIR data loaded into FHIR service (done in previous challenges).
+  + For a more rich experience with this challenge and future exercises, [load this bundle](./synthea_sample_data_fhir_r4%20OpenHack.zip) into the `zip` container in your FHIR Loader storage account (as done in Challenge-03).
 + [Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) (ADLS Gen2) deployed in your Azure environment (also completed in Challenge-01).
 
 ## Getting started
