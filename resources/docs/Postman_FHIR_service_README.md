@@ -51,25 +51,25 @@ For more information on registering client applications in AAD for Azure Health 
 2. Go to the **Access Control (IAM)** blade. Click on **+Add** -> **Add role assignment**. 
 <img src="./images/Screenshot_2022-05-03_114155_edit.png" height="328">
 
-4. In **Add role assignment** under the **Role** tab, scroll down in the list and select **FHIR Data Contributor**. Then click **Next**. 
+3. In **Add role assignment** under the **Role** tab, scroll down in the list and select **FHIR Data Contributor**. Then click **Next**. 
 <img src="./images/Screenshot_2022-02-15_143124_edit2.png" height="328">
 
-5. Under the **Members** tab, click on **+Select members**. Type in the name of your Postman client app in the **Select** field on the right. Highlight the name and click **Select**. Then click **Next**. 
+4. Under the **Members** tab, click on **+Select members**. Type in the name of your Postman client app in the **Select** field on the right. Highlight the name and click **Select**. Then click **Next**. 
 <img src="./images/Screenshot_2022-02-15_143459_edit2.png" height="328">
 
-6. Under the **Review + assign** tab, click **Review + assign**. 
+5. Under the **Review + assign** tab, click **Review + assign**. 
 <img src="./images/Screenshot_2022-02-15_143643_edit2.png" height="328">
 
-7. When back in the **Access Control (IAM)** blade, click **+Add** -> **Add role assignment** (again). 
+6. When back in the **Access Control (IAM)** blade, click **+Add** -> **Add role assignment** (again). 
 <img src="./images/Screenshot_2022-02-15_143643_edit2_next.png" height="328">
 
-8. In **Add role assignment** under the **Role** tab, select **FHIR Data Contributor** (again) and click **Next**. 
+7. In **Add role assignment** under the **Role** tab, select **FHIR Data Contributor** (again) and click **Next**. 
 <img src="./images/Screenshot_2022-02-15_143643_edit2_next2.png" height="328">
 
-9. Under the **Members** tab, click on **+Select members**. Type in your name or username in the **Select** field on the right. Highlight your name, click **Select**, and then click **Next**. 
+8. Under the **Members** tab, click on **+Select members**. Type in your name or username in the **Select** field on the right. Highlight your name, click **Select**, and then click **Next**. 
 <img src="./images/Screenshot_2022-02-15_144144_edit2.png" height="328">
 
-10. Under the **Review + assign** tab, click **Review + assign**. 
+9. Under the **Review + assign** tab, click **Review + assign**. 
 <img src="./images/Screenshot_2022-02-15_144245_edit2.png" height="328">
 
 For more information on assigning user/app roles, see [Configure Azure RBAC for Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac).
