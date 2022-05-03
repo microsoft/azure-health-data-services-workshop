@@ -61,7 +61,7 @@ For more information on registering client applications in AAD for Azure Health 
 <img src="./images/Screenshot_2022-02-15_143643_edit2.png" height="328">
 
 6. When back in the **Access Control (IAM)** blade, click **+Add** -> **Add role assignment** (again). 
-<img src="./images/Screenshot_2022-02-15_143643_edit2_next.png" height="328">
+<img src="./images/Screenshot_2022-05-03_114155_edit.png" height="328">
 
 7. In **Add role assignment** under the **Role** tab, select **FHIR Data Contributor** (again) and click **Next**. 
 <img src="./images/Screenshot_2022-02-15_143643_edit2_next2.png" height="328">
