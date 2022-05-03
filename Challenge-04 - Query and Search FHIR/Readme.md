@@ -248,7 +248,7 @@ GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:pa
 
 2. Do a search using `_revinclude` to discover all `PractitionerRole` Resources for an `Organization`. For more examples of searches with the `_include` and `_revinclude` parameters, please see the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/search-samples)** page.
 
-## Step 7 - Defining a Custom Search parameter
+## Step 7 - Defining a Custom Search Parameter
 
 At some point, you will find a use case in which you need to retrieve information that none of the default search parameters in FHIR are cut out for. To address this, FHIR provides a way to define your own custom search parameters so that you can perform specialized queries.  
 
