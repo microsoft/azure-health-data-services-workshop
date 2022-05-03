@@ -45,7 +45,7 @@ For more information on registering client applications in AAD for Azure Health 
 
 ## Step 2 - Assign FHIR Data Contributor role in Azure for Postman
 
-1. In Azure Portal, go to **Home** -> **Resource groups** and find the resource group containing your FHIR service instance. When in the resource group **Overview**, click on your FHIR service name in the list. 
+1. In Azure Portal, go to the resource group containing your FHIR service instance. When in the resource group **Overview**, click on your FHIR service name in the list. 
 <img src="./images/Screenshot_2022-05-03_113929_edit.png" height="328">
 
 2. Go to the **Access Control (IAM)** blade. Click on **+Add** -> **Add role assignment**. 
