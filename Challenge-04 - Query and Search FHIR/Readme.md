@@ -254,9 +254,9 @@ At some point, you will find a use case in which you need to retrieve informatio
 
 ### Exercise Task
 
-1. To create a new search parameter, you need to `POST` a `SearchParameter` Resource to the FHIR service database. See the `Create New Search Parameter` call in the FHIR Search Postman collection for an example. Read through the documentation at [https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search](https://docs.microsoft.com/azure/healthcare-apis/fhir/how-to-do-custom-search) and then run the `Create New Search Parameter` call.
+1. To create a new search parameter, you need to `POST` a `SearchParameter` Resource to the FHIR service database. See the `Create New Search Parameter` call in the FHIR Search Postman collection for an example. Read through the documentation at [https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search](https://docs.microsoft.com/azure/healthcare-apis/fhir/how-to-do-custom-search) and then run the `Create New Search Parameter` call in Postman.
 
-2. Now, perform a search using the custom search parameter that you just created. Run the `Search by Custom Search Parameter` call in the FHIR Search collection in Postman.
+2. Now, perform a search using the custom search parameter that you just created. Send the `Search by Custom Search Parameter` call in the FHIR Search collection in Postman and see what results you get.
 
 ## What does success look like for Challenge-04?
 
