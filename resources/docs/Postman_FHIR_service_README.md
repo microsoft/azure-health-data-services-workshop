@@ -104,8 +104,8 @@ Now you will configure your Postman environment (`fhir-service`).
 - `tenantId` - AAD tenant ID (go to **AAD** -> **Overview** -> **Tenant ID**)
 - `clientId` - Application (client) ID for Postman client app (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
 - `clientSecret` - Client secret stored for Postman (see Step 1 #6 above) 
-- `fhirurl` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.azurehealthcareapis.com` (go to **Resource Group** -> **Overview** -> **Name** -> **FHIR metadata endpoint** and copy *without* "/metadata" on the end)
-- `resource` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.azurehealthcareapis.com` (same as `fhirurl`)
+- `fhirurl` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.fhir.azurehealthcareapis.com` (go to **Resource Group** -> **Overview** -> **Name** -> **FHIR metadata endpoint** and copy *without* "/metadata" on the end)
+- `resource` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.fhir.azurehealthcareapis.com` (same as `fhirurl`)
 
 Populate the above parameter values in your `fhir-service` Postman environment as shown below. Leave `bearerToken` blank. Make sure to click `Save` to retain the `fhir-service` environment values.  
 
