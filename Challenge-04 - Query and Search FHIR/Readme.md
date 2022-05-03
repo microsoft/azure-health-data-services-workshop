@@ -25,7 +25,7 @@ By the end of this challenge you will be able to
 + Use Modifiers in Search 
 + Use Chained & Reverse Chained search result parameters
 + Use Include and Reverse Include search result parameters
-+ Define a custom search parameter 
++ Use a custom search parameter 
 
 ## Prerequisites
 
