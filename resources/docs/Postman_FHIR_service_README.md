@@ -26,22 +26,19 @@ Before you can use Postman to make API calls to FHIR service, you will need to c
 1. In Azure Portal, go to **Azure Active Directory** -> **App registrations** and click **New registration**. 
 <img src="./images/Screenshot_2022-02-11_065619_edit2.png" height="328">
 
-2. Type in a name for your Postman client app in the **Name** field. 
+2. Type in a name for your Postman client app in the **Name** field and click **Register** below. 
 <img src="./images/Screenshot_2022-02-15_141049_edit2.png" height="328">
 
-3. Scroll down, and under **Redirect URI (optional)**, select **Web** and then enter https://www.getpostman.com/oauth2/callback. Click **Register**. 
-<img src="./images/Screenshot_2022-02-15_141049_edit2_next.png" height="328"> 
-
-4. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
+3. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
 <img src="./images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
 
-5. Click on **Certificates and secrets**. Click **+New client secret**. 
+4. Click on **Certificates and secrets**. Click **+New client secret**. 
 <img src="./images/Screenshot_2022-02-15_141926_edit2.png" height="328">
 
-6. Under **Add a client secret**, enter a name for the secret in the **Description** field. Click **Add**. 
+5. Under **Add a client secret**, enter a name for the secret in the **Description** field. Click **Add**. 
 <img src="./images/Screenshot_2022-02-15_142102_edit2.png" height="328">
 
-7. Copy the secret **Value** and securely store it somewhere (you will need this when you configure your Postman environment). 
+6. Copy the secret **Value** and securely store it somewhere (you will need this when you configure your Postman environment). 
 <img src="./images/Screenshot_2022-02-15_142159_edit2.png" height="328">
 
 For more information on registering client applications in AAD for Azure Health Data Services, please see the [Authentication and Authorization for Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/authentication-authorization) documentation. 
@@ -109,7 +106,7 @@ Now you will configure your Postman environment (`fhir-service`).
 
 - `tenantId` - AAD tenant ID (go to **AAD** -> **Overview** -> **Tenant ID**)
 - `clientId` - Application (client) ID for Postman client app (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
-- `clientSecret` - Client secret stored for Postman (see Step 1 #7 above) 
+- `clientSecret` - Client secret stored for Postman (see Step 1 #6 above) 
 - `fhirurl` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.azurehealthcareapis.com` (go to **Resource Group** -> **Overview** -> **Name** -> **FHIR metadata endpoint** and copy *without* "/metadata" on the end)
 - `resource` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.azurehealthcareapis.com` (same as `fhirurl`)
 
