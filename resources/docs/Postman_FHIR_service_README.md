@@ -78,7 +78,7 @@ For more information on assigning user/app roles, see [Configure Azure RBAC for 
 
 1. Access the Postman environment template for FHIR service [here](./samples/fhir-service.postman_environment.json). Save the file locally (click on `Raw` and then do a **Save as** from your browser). 
 
-2. In Postman, create a new Workspace (or select an existing one if already created).
+2. In Postman, create a new [Workspace](https://www.postman.com/product/workspaces/) (or select an existing one if already created).
 
 3. Go to `Environments` on the left and click the ```Import``` button next to the workspace name. 
 <img src="./images/Screenshot_2022-05-03_153125_edit.png" height="228">
