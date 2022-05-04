@@ -86,7 +86,7 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
-Once Postman is set up and configured, please go to [this repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) and download the three DICOM instances (.dcm). You will need to attach these .dcm files to the `POST Store-single-instance` calls in the `Conformance-as-Postman` collection. Ror each `POST Store-single-instance` call, go to **Body** -> `Select File` and select the appropriate .dcm file.
+Once your `DICOM-service` Postman environment is set up and configured, please go to [this repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) and download the three DICOM instances (.dcm). You will need to attach these .dcm files to the `POST Store-single-instance` calls in the `Conformance-as-Postman` collection. For each `POST Store-single-instance` call, go to **Body** -> `Select File` and select the appropriate .dcm file to attach.
 
 The `Conformance-as-Postman` collection has a complete set of API calls that you can execute one by one. See the list below for details. 
 
