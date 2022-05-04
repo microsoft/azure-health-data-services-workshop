@@ -150,7 +150,7 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press `Send`. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
 
-<img src="./images/Screenshot_2022-05-03_125547_edit.png" height="328">
+<img src="./images/Screenshot_2022-05-03_125547_edit.png" height="428">
 
 4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored on the FHIR server. This means your setup is fully functional.
 
