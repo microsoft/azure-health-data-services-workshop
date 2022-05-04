@@ -116,11 +116,11 @@ Now you will make another API request similar to the one above, except this time
 
 3. Refer back to the FHIR service `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) on how to arrange the parameters in the JSON body of the request. Be aware that the parameters now need to work for C-CDA data (see the table below). 
 
-|"name" | "valueString"|
-|-------|---------------|
-|"inputDataType" | "Ccda" |
-|"templateCollectionReference" | "microsofthealth/ccdatemplates:default" |
-|"rootTemplate" | "CCD" |
+    |`"name"` | `"valueString"`|
+    |-------|---------------|
+    |`"inputDataType"` | `"Ccda"` |
+    |`"templateCollectionReference"` | `"microsofthealth/ccdatemplates:default"` |
+    |`"rootTemplate" | "CCD"` |
 
 
 4. You will need to format the C-CDA data payload so that it sits correctly in the JSON request body.
