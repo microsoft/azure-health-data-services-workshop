@@ -164,5 +164,5 @@ A tutorial for using Postman with FHIR service is available on [docs.microsoft.c
  
 ### FAQ's / Issues 
 
-- Error with ```POST AuthorizeGetToken```: Ensure you selected your environment in Postman and that you saved it.
-- 403 - Unauthorized:  Check the Azure RBAC for FHIR service ([link](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac)).
+- Error with ```POST AuthorizeGetToken```: Ensure you selected your `fhir-service` environment from the dropdown menu.
+- 403 - Unauthorized:  Check the Azure RBAC for FHIR service documentation ([link](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac)).
