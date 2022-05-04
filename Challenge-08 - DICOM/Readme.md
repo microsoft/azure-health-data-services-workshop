@@ -73,7 +73,7 @@ You can follow the provided articles that go over how to programmatically commun
 
 You already installed Postman in Challenge-01 of this workshop. Now you will configure Postman to connect with DICOM service. 
 
-1. Access the `Conformance-as-Postman.postman_collection.json` [file](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and download it to your local environment. Then choose **Upload Files** in the Postman import window. 
+1. Access the `Conformance-as-Postman.postman_collection.json` [file](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and download it to your local environment. Then go to the **Import** window -> **Upload Files** -> **Import**. 
 
 2. Open the `Conformance-as-Postman.postman_collection.json` file in a text editor and find the `"file"` object for each of the three `POST Store-single-instance` calls. Remove the value of the `"src"` for each `"file"` object so that it looks like this: 
 
