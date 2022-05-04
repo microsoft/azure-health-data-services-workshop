@@ -85,9 +85,9 @@ var fhirServiceConfig = {
   url: 'https://${healthDataServicesConfig.name}-fhirtrn.fhir.azurehealthcareapis.com'
   kind: 'fhir-R4'
   version: 'R4'
-  loginServers: [
+  loginServers: (containerRegistryConfig.enabled) ? [
     '${artifactContainerRegistry.name}.azurecr.io'
-  ]
+  ] : []
   systemIdentity: {
     type: 'SystemAssigned'
   }
@@ -124,7 +124,7 @@ var fhirSynapseLinkConfig = {
   appInsightsName: '${deploymentPrefix}${uniqueId}ldrai'
   dataLakeEndpoint: 'https://${exportStorageAccount.name}.blob.${environment().suffixes.storage}'
   dataLakeContainerName: empty(dataLakeContainerName) ? 'fhirdatalake' : toLower(dataLakeContainerName)
-  enabled: true
+  enabled: false
   dataStart: empty(dataStart) ? '' : dataStart
   dataEnd: empty(dataEnd) ? '' : dataEnd
   // fhir service configuration settings
@@ -134,14 +134,27 @@ var fhirSynapseLinkConfig = {
   useMSI: true
 }
 
+var containerRegistryConfig = {
+  name: containerRegistryName
+  enabled: false
+  skuName: 'Basic'
+  enableDiagnostics: true
+  diagnosticsSettingsName: 'defaultSettings'
+}
+
 var dataLakeSyncAppName = 'workbenchfhirsynapsesyncapp'
 
-var exportStorageContainerList = [
+var exportStorageContainerList = fhirSynapseLinkConfig.enabled ? [
   'anonymization'
   'export'
   'export-trigger'
   fhirSynapseLinkConfig.dataLakeContainerName
+] : [
+  'anonymization'
+  'export'
+  'export-trigger'
 ]
+
 var importStorageContainerList = [
   'bundles'
   'ndjson'
@@ -898,12 +911,12 @@ resource importSAQueueDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05
   }
 }
 // -- Azure Container Registry
-resource artifactContainerRegistry 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = {
-  name:containerRegistryName
+resource artifactContainerRegistry 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = if (containerRegistryConfig.enabled) {
+  name:containerRegistryConfig.name
   tags: resourceTags
   location: resourceLocation
   sku: {
-    name: 'Basic'
+    name: containerRegistryConfig.skuName
   }
   properties: {
     adminUserEnabled: false
@@ -911,9 +924,9 @@ resource artifactContainerRegistry 'Microsoft.ContainerRegistry/registries@2021-
   }
 }
 // -- enable diagnostics for container registry
-resource artifactContainerRegistryDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
+resource artifactContainerRegistryDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = if (containerRegistryConfig.enabled && containerRegistryConfig.enableDiagnostics) {
   scope: artifactContainerRegistry
-  name: 'defaultSettings'
+  name: containerRegistryConfig.diagnosticsSettingsName
   properties: {
     workspaceId: logAnalyticsWorkspace.id
     logs: [
@@ -1072,7 +1085,7 @@ module functionsStoragePermissions './assignpermissions.bicep' = {
     resourceName: functionsStorageAccount.name
   }
 }
-module registryPermissions './assignpermissions.bicep' = {
+module registryPermissions './assignpermissions.bicep' = if (containerRegistryConfig.enabled) {
   name: 'registryPermissions'
   params: {
     principalId: fhirService.identity.principalId
@@ -1673,7 +1686,7 @@ resource fhirAnalyticsSyncAppInsights 'microsoft.insights/components@2020-02-02-
 var adlsAppSettings = [
   {
     'name':'APPINSIGHTS_INSTRUMENTATIONKEY'
-    'value': (fhirSynapseLinkConfig.enabled) ? fhirAnalyticsSyncAppInsights.properties.InstrumentationKey : ''
+    'value': fhirAnalyticsSyncAppInsights.properties.InstrumentationKey
   }
   {
     'name': 'AzureWebJobsStorage'
