@@ -120,7 +120,7 @@ Now you will make another API request similar to the one above, except this time
     |-------|---------------|
     |`"inputDataType"` | `"Ccda"` |
     |`"templateCollectionReference"` | `"microsofthealth/ccdatemplates:default"` |
-    |`"rootTemplate" | "CCD"` |
+    |`"rootTemplate"` | `"CCD"` |
 
 
 4. You will need to format the C-CDA data payload so that it sits correctly in the JSON request body.
