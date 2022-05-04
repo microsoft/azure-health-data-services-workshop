@@ -80,9 +80,9 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
 
 2. Create a new Postman environment called `DICOM-service` and add the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` in your new Postman environment.
 
-3. Be sure to create a `service-url` parameter in your `DICOM-service` Postman environment for storing the Service URL: `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. 
+3. Be sure to create a `baseUrl` parameter in your `DICOM-service` Postman environment for storing the Service URL: `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. 
 
-4. When ready to start making API calls, put the `{{service-url}}` placeholder in the Postman URL address field for each call in the `Conformance-as-Postman` collection.
+4. When ready to start making API calls, put the `{{baseUrl}}` placeholder in the Postman URL address field for each call in the `Conformance-as-Postman` collection.
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
