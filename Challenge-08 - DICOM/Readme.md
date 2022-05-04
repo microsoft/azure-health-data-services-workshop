@@ -77,11 +77,10 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
 
 2. Open the `Conformance-as-Postman.postman_collection.json` file in a text editor and find the `"file"` object for each of the three `POST Store-single-instance` calls. Remove the value of the `"src"` for each `"file"` object so that it looks like this: 
 
-```
-"file": {
-  			"src": 
-  			},
-```
+
+  "file": {
+          "src": 
+          },
 
 2. Create a new Postman environment called `DICOM-service` and add the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` in your new Postman environment.
 
