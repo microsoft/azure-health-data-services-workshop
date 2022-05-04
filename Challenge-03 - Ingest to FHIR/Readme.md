@@ -80,7 +80,7 @@ Here are some points for inspecting FHIR Loader operations:
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit2.png" height="428"> 
 
-+ Click on the three dots (···) at the right-hand side of the **.response** file and then click **View/Edit**.
++ Click on the three dots (···) at the right-hand side of the **.response** file and then click **View/edit**.
 
     <img src="./media/Screenshot_2022-05-04_103831_edit2.png" height="428"> 
 
