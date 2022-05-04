@@ -78,7 +78,7 @@ Here are some points for inspecting FHIR Loader operations:
 
 + In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors in importing FHIR bundles.  
 
-    <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit2.png" height="428"> 
+    <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit3.png" height="428"> 
 
 + Click on the three dots (···) at the right-hand side of the **.response** file and then click **View/edit**.
 
