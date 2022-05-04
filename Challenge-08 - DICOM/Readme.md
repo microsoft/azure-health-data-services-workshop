@@ -80,11 +80,15 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
 
 2. Create a new Postman environment called `DICOM-service` and add the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` in your new Postman environment.
 
+3. Be sure to create a `service-url` parameter in your `DICOM-service` Postman environment for storing the Service URL: `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. 
+
+4. When ready to start making API calls, put the `{{service-url}}` placeholder in the Postman URL address field for each call in the `Conformance-as-Postman` collection.
+
 ### Step 2 - Execute Outlined Features via Postman Collection
 
-Once Postman is set up and configured, please go to [this repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) and download the DICOM instances (.dcm). You will need to attach these .dcm files for the `POST Store-single-instance` calls in the `Conformance-as-Postman` collection. Go to **Body** -> `Select File` and select the appropriate .dcm file for each `POST Store-single-instance` call.
+Once Postman is set up and configured, please go to [this repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) and download the three DICOM instances (.dcm). You will need to attach these .dcm files to the `POST Store-single-instance` calls in the `Conformance-as-Postman` collection. Ror each `POST Store-single-instance` call, go to **Body** -> `Select File` and select the appropriate .dcm file.
 
-The `Conformance-as-Postman` collection has a complete set of API calls that you can execute one by one. See the list below for details. Be sure to create a `service-url` parameter in your `DICOM-service` Postman environment for storing the Service URL: `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. When ready to start making API calls, put the `{{service-url}}` placeholder in the Postman URL address field for each call in the `Conformance-as-Postman` collection.
+The `Conformance-as-Postman` collection has a complete set of API calls that you can execute one by one. See the list below for details. 
 
 - Store DICOM files to the service 
 - Search among the flies that are stored within the DICOM service
