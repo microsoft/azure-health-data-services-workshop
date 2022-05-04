@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.5.6.12127",
-      "templateHash": "7226767830527493284"
+      "templateHash": "10234869491559545511"
     }
   },
   "parameters": {
@@ -151,9 +151,7 @@
       "url": "[format('https://{0}-fhirtrn.fhir.azurehealthcareapis.com', variables('healthDataServicesConfig').name)]",
       "kind": "fhir-R4",
       "version": "R4",
-      "loginServers": [
-        "[format('{0}.azurecr.io', variables('containerRegistryName'))]"
-      ],
+      "loginServers": "[if(variables('containerRegistryConfig').enabled, createArray(format('{0}.azurecr.io', variables('containerRegistryConfig').name)), createArray())]",
       "systemIdentity": {
         "type": "SystemAssigned"
       }
@@ -190,7 +188,7 @@
       "appInsightsName": "[format('{0}{1}ldrai', parameters('deploymentPrefix'), variables('uniqueId'))]",
       "dataLakeEndpoint": "[format('https://{0}.blob.{1}', variables('exportStorageAccountName'), environment().suffixes.storage)]",
       "dataLakeContainerName": "[if(empty(variables('dataLakeContainerName')), 'fhirdatalake', toLower(variables('dataLakeContainerName')))]",
-      "enabled": true,
+      "enabled": false,
       "dataStart": "[if(empty(variables('dataStart')), '', variables('dataStart'))]",
       "dataEnd": "[if(empty(variables('dataEnd')), '', variables('dataEnd'))]",
       "fhirServiceUrl": "[variables('fhirServiceConfig').url]",
@@ -198,13 +196,15 @@
       "packageUri": "[format('https://fhirdeploy.blob.{0}/fhir/Microsoft.Health.Fhir.Synapse.FunctionApp.zip', environment().suffixes.storage)]",
       "useMSI": true
     },
+    "containerRegistryConfig": {
+      "name": "[variables('containerRegistryName')]",
+      "enabled": false,
+      "skuName": "Basic",
+      "enableDiagnostics": true,
+      "diagnosticsSettingsName": "defaultSettings"
+    },
     "dataLakeSyncAppName": "workbenchfhirsynapsesyncapp",
-    "exportStorageContainerList": [
-      "anonymization",
-      "export",
-      "export-trigger",
-      "[variables('fhirSynapseLinkConfig').dataLakeContainerName]"
-    ],
+    "exportStorageContainerList": "[if(variables('fhirSynapseLinkConfig').enabled, createArray('anonymization', 'export', 'export-trigger', variables('fhirSynapseLinkConfig').dataLakeContainerName), createArray('anonymization', 'export', 'export-trigger'))]",
     "importStorageContainerList": [
       "bundles",
       "ndjson",
@@ -647,7 +647,7 @@
       "apiVersion": "2021-08-01",
       "name": "[format('{0}/default/{1}', variables('exportStorageAccountName'), variables('exportStorageContainerList')[copyIndex()])]",
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('exportStorageAccountName'))]"
       ]
     },
@@ -1160,13 +1160,14 @@
       ]
     },
     {
+      "condition": "[variables('containerRegistryConfig').enabled]",
       "type": "Microsoft.ContainerRegistry/registries",
       "apiVersion": "2021-06-01-preview",
-      "name": "[variables('containerRegistryName')]",
+      "name": "[variables('containerRegistryConfig').name]",
       "tags": "[parameters('resourceTags')]",
       "location": "[parameters('resourceLocation')]",
       "sku": {
-        "name": "Basic"
+        "name": "[variables('containerRegistryConfig').skuName]"
       },
       "properties": {
         "adminUserEnabled": false,
@@ -1174,10 +1175,11 @@
       }
     },
     {
+      "condition": "[and(variables('containerRegistryConfig').enabled, variables('containerRegistryConfig').enableDiagnostics)]",
       "type": "Microsoft.Insights/diagnosticSettings",
       "apiVersion": "2021-05-01-preview",
-      "scope": "[format('Microsoft.ContainerRegistry/registries/{0}', variables('containerRegistryName'))]",
-      "name": "defaultSettings",
+      "scope": "[format('Microsoft.ContainerRegistry/registries/{0}', variables('containerRegistryConfig').name)]",
+      "name": "[variables('containerRegistryConfig').diagnosticsSettingsName]",
       "properties": {
         "workspaceId": "[resourceId('Microsoft.OperationalInsights/workspaces', variables('logAnalyticsConfig').name)]",
         "logs": [
@@ -1210,7 +1212,7 @@
         ]
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.OperationalInsights/workspaces', variables('logAnalyticsConfig').name)]"
       ]
     },
@@ -1245,7 +1247,7 @@
         }
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('exportStorageAccountName'))]",
         "[resourceId('Microsoft.HealthcareApis/workspaces', variables('healthDataServicesConfig').name)]"
       ]
@@ -1291,7 +1293,7 @@
         "value": "[variables('fhirServiceConfig').url]"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultConfig').name)]"
       ]
     },
@@ -1303,7 +1305,7 @@
         "value": "[variables('fhirServiceConfig').url]"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.KeyVault/vaults', variables('keyVaultConfig').name)]"
       ]
     },
@@ -1988,7 +1990,7 @@
         "WorkspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', variables('logAnalyticsConfig').name)]"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('exportStorageAccountName'))]",
         "[resourceId('Microsoft.OperationalInsights/workspaces', variables('logAnalyticsConfig').name)]"
       ]
@@ -2017,7 +2019,7 @@
           "appSettings": [
             {
               "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-              "value": "[if(variables('fhirSynapseLinkConfig').enabled, reference(resourceId('Microsoft.Insights/components', format('{0}ai', variables('fhirSynapseLinkConfig').name)), '2020-02-02-preview').InstrumentationKey, '')]"
+              "value": "[reference(resourceId('Microsoft.Insights/components', format('{0}ai', variables('fhirSynapseLinkConfig').name)), '2020-02-02-preview').InstrumentationKey]"
             },
             {
               "name": "AzureWebJobsStorage",
@@ -2076,7 +2078,7 @@
       },
       "dependsOn": [
         "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('exportStorageAccountName'))]",
         "[resourceId('Microsoft.Insights/components', format('{0}ai', variables('fhirSynapseLinkConfig').name))]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('functionsStorageAccountName'))]"
@@ -2093,7 +2095,7 @@
         "connectionString": ""
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('exportStorageAccountName'))]",
         "[resourceId('Microsoft.Web/sites', variables('fhirSynapseLinkConfig').name)]"
       ]
@@ -2305,6 +2307,7 @@
       ]
     },
     {
+      "condition": "[variables('containerRegistryConfig').enabled]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2020-10-01",
       "name": "registryPermissions",
@@ -2324,7 +2327,7 @@
             "value": "Registry"
           },
           "resourceName": {
-            "value": "[variables('containerRegistryName')]"
+            "value": "[variables('containerRegistryConfig').name]"
           }
         },
         "template": {
@@ -2506,7 +2509,7 @@
         }
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('healthDataServicesConfig').name, variables('fhirServiceConfig').name)]"
       ]
     },
@@ -3343,7 +3346,7 @@
         }
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('exportStorageAccountName'))]",
         "[resourceId('Microsoft.Web/sites', variables('fhirSynapseLinkConfig').name)]"
       ]
@@ -3554,7 +3557,7 @@
         }
       },
       "dependsOn": [
-        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryName'))]",
+        "[resourceId('Microsoft.ContainerRegistry/registries', variables('containerRegistryConfig').name)]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('exportStorageAccountName'))]",
         "[resourceId('Microsoft.HealthcareApis/workspaces/fhirservices', variables('healthDataServicesConfig').name, variables('fhirServiceConfig').name)]",
         "[resourceId('Microsoft.Web/sites', variables('fhirSynapseLinkConfig').name)]",
