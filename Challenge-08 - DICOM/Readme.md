@@ -87,7 +87,7 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
 
 4. Then go to the Postman **Import** window -> **Upload Files** -> **Import** the `Conformance-as-Postman.postman_collection.json` file.
 
-5. Create a new Postman environment called `DICOM-service` and add a `bearerToken` parameter. Store the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` value (use CURRENT VALUE).
+5. Create a new Postman environment called `DICOM-service` and add `bearerToken` as a parameter. Store the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` value (use CURRENT VALUE).
 
 6. Create a `baseUrl` parameter in your `DICOM-service` environment and populate it with the Service URL: `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. 
 
