@@ -109,7 +109,7 @@ Now you will configure your Postman environment (`fhir-service`).
 
 Populate the above parameter values in your `fhir-service` Postman environment as shown below. Leave `bearerToken` blank. Make sure to click `Save` to retain the `fhir-service` environment values.  
 
-<img src="./images/Screenshot_2022-02-16_104920_edit2.png" height="328">
+<img src="./images/Screenshot_2022-05-04_084239_edit.png" height="328">
 
 ## Step 5 - Get an access token from AAD
 In order to connect to FHIR service, you will need to get an access token first. To obtain an access token from AAD via Postman, you can send a ```POST AuthorizeGetToken``` request. The ```POST AuthorizeGetToken``` call comes pre-configured as part of the `FHIR CALLS` collection that you imported earlier. 
