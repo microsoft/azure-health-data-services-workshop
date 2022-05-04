@@ -196,7 +196,7 @@ Below is an excerpt from an `Observation` Resource with a reference to a patient
 
 In connection with `reference` Elements, Resources also have `reference` search parameters, which allow querying Resources by scoping out any references to other Resources.
 
-For example, the following request queries a FHIR server for all `Observations` instances that reference `Patient/WDT000000002`. The `subject` parameter in the request is a `reference` type search parameter.
+For example, the following request queries a FHIR server for all `Observation` instances that reference `Patient/WDT000000002`. The `subject` parameter in the request is a `reference` type search parameter.
 
 ```http
 GET {{fhirurl}}/Observation?subject=Patient/WDT000000002
