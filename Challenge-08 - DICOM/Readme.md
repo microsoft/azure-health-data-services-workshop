@@ -62,7 +62,7 @@ From here, you will be using the DICOM service for the features outlined in the 
 **Basic Path**  
 You can use an already configured Postman collection to execute the series of tasks.
 
-Or
+-or-
 
 **Advanced Path**  
 You can follow the provided articles that go over how to programmatically communicate with the DICOM service using C#, Python, or cURL.
