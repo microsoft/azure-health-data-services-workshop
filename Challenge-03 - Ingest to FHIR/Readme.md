@@ -88,7 +88,7 @@ Here are some points for inspecting FHIR Loader operations:
 
 + In comparison, you can go to **bundlesprocessed** and look in the `.result` files for ingest operations that succeeded. For example, in the image below there is a `201` status code, meaning success. The response shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in FHIR service from the ingest operation. 
 
-    <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_Result_Edit_Edit.png" height="428">
+    <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_Result_Edit_Edit2.png" height="428">
 
 ## What does success look like for Challenge-03?
 
