@@ -82,7 +82,7 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
-Once Postman is set up and configured, download these DICOM instances (.dcm) as samples from the [dicom-server (OSS) repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms). You will need to attach them when you upload files to the DICOM service.
+Once Postman is set up and configured, please go to [this repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) and download the DICOM instances (.dcm). You will need to attach these .dcm files when you upload data to the DICOM service.
 
 The `Conformance-as-Postman` collection has a complete set of API calls that you can execute one by one. See the list below for details. Be sure to create a `service-url` parameter in your `DICOM-service` Postman environment for storing the Service URL: `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. When ready to start making API calls, put the `{{service-url}}` placeholder in the Postman URL address field for each call in the `Conformance-as-Postman` collection.
 
