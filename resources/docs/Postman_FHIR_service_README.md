@@ -116,7 +116,7 @@ In order to connect to FHIR service, you will need to get an access token first.
 
 In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select `POST AuthorizeGetToken`. Press `Send` on the right.
 
-__Important:__ Be sure to make the `fhir-service` environment active by selecting from the dropdown menu above the `Send` button. In the image below, `fhir-service` is shown as the active environment.
+__IMPORTANT:__ Be sure to make the `fhir-service` environment active by selecting from the dropdown menu above the `Send` button. In the image below, `fhir-service` is shown as the active environment.
 
 <img src="./images/Screenshot_2022-05-03_125109_edit.png" height="328">
 
