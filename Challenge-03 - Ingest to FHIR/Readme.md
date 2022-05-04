@@ -51,7 +51,7 @@ Visit the FHIR Loader (OSS) repository [here](https://github.com/microsoft/fhir-
 
 2. In the Storage account, click on the **Storage browser (preview)** blade and then click on **Blob containers**. 
 
-<img src="./media/FHIR-Bulk_Loader_Blob_Containers_edit2.png" height="428">
+<img src="./media/FHIR-Bulk_Loader_Blob_Containers_edit.png" height="428">
 
 3. Click on the **zip** container and upload the `good_bundles.zip` file downloaded in Step 1 of this challenge.
 
