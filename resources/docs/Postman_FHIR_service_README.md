@@ -142,7 +142,7 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 1. In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
 
-<img src="./images/Screenshot_2022-02-17_101024_edit2.png" height="328">
+<img src="./images/Screenshot_2022-05-03_125407_edit.png" height="328">
 
 2. Click `Send` to test that FHIR service is functioning on a basic level. The `GET List Metadata` call returns the FHIR service's [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html). If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
 
