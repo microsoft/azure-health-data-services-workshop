@@ -152,7 +152,7 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 <img src="./images/Screenshot_2022-05-03_125547_edit2.png" height="428">
 
-4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored on the FHIR server. This means your setup is fully functional.
+4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored in the database (currently only one patient). This means your setup is fully functional.
 
 <img src="./images/Screenshot_2022-05-03_125626_edit.png" height="428">
 
