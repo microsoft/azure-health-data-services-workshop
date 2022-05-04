@@ -51,11 +51,11 @@ Visit the FHIR Loader (OSS) repository [here](https://github.com/microsoft/fhir-
 
 2. In the Storage account, click on the **Storage browser (preview)** blade and then click on **Blob containers**. 
 
-<img src="./media/FHIR-Bulk_Loader_Blob_Containers_edit.png" height="428">
+<img src="./media/FHIR-Bulk_Loader_Blob_Containers_edit2.png" height="428">
 
 3. Click on the **zip** container and upload the `good_bundles.zip` file downloaded in Step 1 of this challenge.
 
-<img src="./media/FHIR-Bulk_Loader_Zip_Upload_Edit.png" height="428"> 
+<img src="./media/FHIR-Bulk_Loader_Zip_Upload_Edit2.png" height="428"> 
 
 + Once you click **Upload**, the FHIR Loader will automatically import the data from the .zip file into the FHIR service database.
 
@@ -63,7 +63,7 @@ Visit the FHIR Loader (OSS) repository [here](https://github.com/microsoft/fhir-
 
 _Note: If you upload a .zip file, the names of the bundles within the .zip file are exposed (not the .zip filename itself)._
 
-<img src="./media/FHIR-Bulk_Loader_Bundles_Processed_edit.png" height="428"> 
+<img src="./media/FHIR-Bulk_Loader_Bundles_Processed_edit2.png" height="428"> 
 
 ## Step 3 - Debug issues with importing FHIR data 
 
@@ -78,11 +78,11 @@ Here are some points for inspecting FHIR Loader operations:
 
 + In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors in importing FHIR bundles.  
 
-    <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit.png" height="428"> 
+    <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit2.png" height="428"> 
 
-+ Click on the **.response** file and then click **Edit**.
++ Click on the three dots at the right-hand side of the **.response** file and then click **Edit**.
 
-    <img src="./media/FHIR-Bulk_Loader_Error_Response_Edit.png" height="428"> 
+    <img src="./media/Screenshot_2022-05-04_103831_edit2.png" height="428"> 
 
 + What is the reason given for the error?
 
