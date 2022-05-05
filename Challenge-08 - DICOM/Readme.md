@@ -73,7 +73,7 @@ You can follow the provided articles that go over how to programmatically commun
 
 You already installed Postman in Challenge-01 of this workshop. Now you will configure Postman to connect with DICOM service. 
 
-1. Access the `Conformance-as-Postman.postman_collection.json` [file](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and download it to your local environment. 
+1. Access the `Conformance-as-Postman.postman_collection.json` file [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and download it to your local environment. 
 
 2. Open the `Conformance-as-Postman.postman_collection.json` file in a text editor and find the `"file"` object for each of the three `POST Store-single-instance` calls. Remove the value of the `"src"` for each `"file"` object so that it looks like this: 
 
@@ -83,9 +83,9 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
           },
 ```
 
-3. Save the `Conformance-as-Postman.postman_collection.json` file. 
+3. Save the `Conformance-as-Postman.postman_collection.json` file in your local environment. 
 
-4. Then go to the Postman **Import** window -> **Upload Files** -> **Import** the `Conformance-as-Postman.postman_collection.json` file.
+4. Then go to the Postman **Import** window. Click on **Upload Files** and then **Import** the `Conformance-as-Postman.postman_collection.json` file.
 
 5. Create a new Postman environment called `DICOM-service` and add `bearerToken` as a parameter. Store the access token [that you obtained earlier](#step-3---configure-azure-roles-for-access-to-dicom-data) as the `bearerToken` value (use CURRENT VALUE).
 
@@ -126,7 +126,7 @@ Python - https://docs.microsoft.com/azure/healthcare-apis/dicom/dicomweb-standar
 
 ### Step 2 - Check the logs of the changes in the DICOM service via Change Feed 
 
-The Change Feed provides logs of all the changes that occur in DICOM service. You can view instructions in this [Change Feed Overview article](https://docs.microsoft.com/azure/healthcare-apis/dicom/dicom-change-feed-overview).
+The Change Feed provides logs of all the changes that occur in your DICOM service. You can view instructions in this [Change Feed Overview article](https://docs.microsoft.com/azure/healthcare-apis/dicom/dicom-change-feed-overview).
 
 ### Step 3 - Manage Extended Query tags in your DICOM service instance
 
