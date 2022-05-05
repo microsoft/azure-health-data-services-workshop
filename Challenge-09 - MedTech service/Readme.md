@@ -58,7 +58,9 @@ Now you will use Azure Portal to deploy and configure MedTech service within you
 
 ## Step 3 - Import data mappings for converting medical IoT device data into FHIR
 
-In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-device-mapping-properties) section, you will be going to [another GitHub repository](https://github.com/microsoft/iomt-fhir/blob/main/docs/Configuration.md#device-content-mapping) and copying/pasting a sample data mapping template into the MedTech service **Device Mapping** tab in Azure Portal. Likewise, you will be copying/pasting a sample data mapping destination template into the MedTech service **Destination** tab in Azure Portal. 
+In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-device-mapping-properties) section, you will be going to [another GitHub repository](https://github.com/microsoft/iomt-fhir/blob/main/docs/Configuration.md#device-content-mapping) and copying/pasting two sample data mapping templates: one in the MedTech service **Device Mapping** tab and another in the MedTech service **Destination** tab. Read the instructions and then go [here](https://github.com/microsoft/iomt-fhir/tree/main/sample/templates/basic) to access the two sample templates. 
+
+**Note:** The instructions in the GitHub repository linked above are written for the IoMT FHIR Connector for Azure (OSS), but the same principles apply to MedTech service.
 
 ## Step 4 - Configure Azure roles for MedTech service access
 
@@ -68,7 +70,7 @@ Now you will configure permissions so that MedTech service can securely connect 
 
 Going a step further, you can visit [another GitHub repository](https://github.com/microsoft/iomt-fhir/tree/main/tools/data-mapper) and read about creating custom device mapping templates with Microsoft's OSS IoT mapper tool.
 
-After you have gone through the instructions and installed the packages, when you launch the IoT mapper tool, the web app will be running at this address: http://localhost:5000. Copy the address and paste in your browser to access the IoT mapper tool interface.
+After you have gone through the instructions and installed the packages, when you launch the IoT mapper tool, the web app will be running at this address: http://localhost:5000. Open the address in your browser to access the IoT mapper tool interface.
 
 ## Step 6 - Make sample maps
 
