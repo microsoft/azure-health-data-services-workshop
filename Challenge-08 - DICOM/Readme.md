@@ -83,7 +83,7 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
           },
 ```
 
-3. Save the `Conformance-as-Postman.postman_collection.json` file in your local environment. 
+3. Save the `Conformance-as-Postman.postman_collection.json` file. 
 
 4. Then go to the Postman **Import** window. Click on **Upload Files** and **Import** the `Conformance-as-Postman.postman_collection.json` file.
 
