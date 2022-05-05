@@ -94,7 +94,6 @@ Here are some points for inspecting FHIR Loader operations:
 
 + Successfully upload and import data from the file `good_bundles.zip`.
 + Successfully identify the problem in the `bad_bundles.zip` file. Use the Troubleshooting tips above for help. 
-+ Identify **issues to address in production** to avoid problems when ingesting FHIR data into FHIR service. 
 
 ## Next Steps
 
