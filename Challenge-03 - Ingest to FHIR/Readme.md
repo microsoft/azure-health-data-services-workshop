@@ -25,6 +25,7 @@ Below is a component view of FHIR Loader connected to the FHIR service endpoint.
 
 <img src="./media/FHIR_Loader_ARM_template_deploy_AHDS_3_PB.png" height="328">
 
+In Challenge-01 of this workshop, the ARM template automatically deployed and configured FHIR Loader in your resource group to connect with the FHIR service.
 
 ## Prerequisites
 + Successful completion of Challenge-01
