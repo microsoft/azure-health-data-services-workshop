@@ -80,7 +80,7 @@ Here are some points for inspecting FHIR Loader operations:
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit3.png" height="428"> 
 
-+ Find the **.response** file and click on the three dots (···) located on the right-hand side of the file. Then click **View/edit**.
++ Find the **.response** file and click on the three dots (···) located on the right end of the file. Then click **View/edit**.
 
     <img src="./media/Screenshot_2022-05-04_103831_edit2.png" height="428"> 
 
@@ -92,8 +92,8 @@ Here are some points for inspecting FHIR Loader operations:
 
 ## What does success look like for Challenge-03?
 
-+ Successfully upload and import data from the file `good_bundles.zip`.
-+ Successfully identify the problem in the `bad_bundles.zip` file. Use the Troubleshooting tips above for help. 
++ Successfully uploaded and imported data from the file `good_bundles.zip`.
++ Successfully identified the problem in the `bad_bundles.zip` file. Use the Troubleshooting tips above for help. 
 
 ## Next Steps
 
