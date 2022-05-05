@@ -262,7 +262,7 @@ At some point, you will find a use case where you need to retrieve information t
 
 3. Then, you will [run a re-index job](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-run-a-reindex) on your FHIR service to activate the new search parameter. You can use the `Reindex` call in the FHIR Search collection to accomplish this.
 
-_Note: Reindexing can take up to several minutes._
+    _Note: Reindexing can take up to several minutes._
 
 4. Once you have tested the new search parameter and re-indexed the FHIR service database, try the `Search by Custom Search Parameter` call in the FHIR Search collection and see what results you get.
 
