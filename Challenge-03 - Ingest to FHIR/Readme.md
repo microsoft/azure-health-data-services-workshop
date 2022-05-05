@@ -92,8 +92,8 @@ Here are some points for inspecting FHIR Loader operations:
 
 ## What does success look like for Challenge-03?
 
-+ Successfully uploaded and imported data from the file `good_bundles.zip`.
-+ Successfully identified the problem in the `bad_bundles.zip` file. Use the Troubleshooting tips above for help. 
++ Successfully upload and import data from the file `good_bundles.zip`.
++ Successfully identify the problem in the `bad_bundles.zip` file. Use the Troubleshooting tips above for help. 
 
 ## Next Steps
 
