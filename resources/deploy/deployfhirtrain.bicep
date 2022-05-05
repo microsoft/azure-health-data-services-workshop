@@ -1686,7 +1686,7 @@ resource fhirAnalyticsSyncAppInsights 'microsoft.insights/components@2020-02-02-
 var adlsAppSettings = [
   {
     'name':'APPINSIGHTS_INSTRUMENTATIONKEY'
-    'value': fhirAnalyticsSyncAppInsights.properties.InstrumentationKey
+    'value': (fhirSynapseLinkConfig.enabled) ? fhirAnalyticsSyncAppInsights.properties.InstrumentationKey : ''
   }
   {
     'name': 'AzureWebJobsStorage'
@@ -1778,7 +1778,7 @@ resource fhirSynapsSyncPackageDeploy 'Microsoft.Web/sites/extensions@2020-12-01'
   }
 }
 
-module syncAppStoragePermissions './assignpermissions.bicep' = if (fhirSynapseLinkConfig.enabled){
+module syncAppStoragePermissions './assignpermissions.bicep' = if (fhirSynapseLinkConfig.enabled) {
     name: 'synapseSyncStoragePermissions'
     params: {
       principalId: fhirSynapseSyncOperationFunction.identity.principalId
@@ -1787,7 +1787,7 @@ module syncAppStoragePermissions './assignpermissions.bicep' = if (fhirSynapseLi
       resourceName: exportStorageAccount.name
     }
 }
-module syncAppFhirPermissions './assignpermissions.bicep' = if (fhirSynapseLinkConfig.enabled){
+module syncAppFhirPermissions './assignpermissions.bicep' = if (fhirSynapseLinkConfig.enabled) {
   name: 'synapseSyncFhirPermissions'
   params: {
     principalId: fhirSynapseSyncOperationFunction.identity.principalId

@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.5.6.12127",
-      "templateHash": "10234869491559545511"
+      "templateHash": "17486552206032606614"
     }
   },
   "parameters": {
@@ -2019,7 +2019,7 @@
           "appSettings": [
             {
               "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-              "value": "[reference(resourceId('Microsoft.Insights/components', format('{0}ai', variables('fhirSynapseLinkConfig').name)), '2020-02-02-preview').InstrumentationKey]"
+              "value": "[if(variables('fhirSynapseLinkConfig').enabled, reference(resourceId('Microsoft.Insights/components', format('{0}ai', variables('fhirSynapseLinkConfig').name)), '2020-02-02-preview').InstrumentationKey, '')]"
             },
             {
               "name": "AzureWebJobsStorage",
