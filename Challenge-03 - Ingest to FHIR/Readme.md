@@ -28,7 +28,6 @@ Below is a component view of FHIR service with FHIR Loader and FHIR-Proxy.
 
 ## Prerequisites
 + Successful completion of Challenge-01
-+ Postman installed
 + Access to a text editor (e.g., [Visual Studio Code](https://code.visualstudio.com/))
 
 ## Getting Started
@@ -69,7 +68,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip file 
 
 1. Now try importing the `bad_bundles.zip` file that you downloaded in Step 1 of this challenge. Upload the file to the same container where you uploaded the `good_bundles.zip` file.
 
-2. What happens as a result?
+2. What happens as a result? Go ahead and unzip the `bad_bundles.zip` archive. Open and inspect the contained JSON bundle in a text editor (e.g., VS Code). You can compare this JSON bundle with the JSON bundles in the `good_bundles.zip` archive.
 
 > Refer to the Troubleshooting section below or the FHIR Loader [testing](https://github.com/microsoft/fhir-loader/blob/main/docs/testing.md) documentation for information on tracking issues in FHIR data ingestion. 
 
