@@ -21,7 +21,7 @@ By the end of this challenge you will be able to
 ### FHIR service and FHIR Loader Relationship 
 The open-source [FHIR Loader](https://github.com/microsoft/fhir-loader) is designed to ease the process of FHIR data import into the FHIR service. The operation simply involves uploading FHIR data files to Azure blob storage, and from there the FHIR Loader automatically transfers the data for persistence in the FHIR service database. The user may upload FHIR Bundles in regular JSON format (.zip compressed or non-compressed) or NDJSON format (non-compressed). Operationally, FHIR Loader works by making parallel asynchronous API calls to the FHIR service.
 
-Below is a component view of FHIR Loader connected to FHIR service.  
+Below is a component view of FHIR Loader connected to the FHIR service endpoint.  
 
 <img src="./media/FHIR_Loader_ARM_template_deploy_AHDS_3_PB.png" height="328">
 
