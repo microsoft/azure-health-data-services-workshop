@@ -61,7 +61,7 @@ In the first part of this challenge, you will
 
 3. Click **Review + create** when ready, and then click **Create** on the next page. 
 
-<img src="../resources/docs/images/ARM_template_config3.png" height="420"> 
+<img src="../resources/docs/images/ARM_template_config3.png" height="520"> 
 
 > **Note:** This deployment typically takes 20 minutes. During the deployment, you can read the instructions linked in Step 2 below. When the deployment finishes, go ahead and proceed with those instructions.
 
