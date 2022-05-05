@@ -91,9 +91,9 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
 
 6. Create a `baseUrl` parameter in your `DICOM-service` environment and populate it with the Service URL: `https://<workspacename-dicomservicename>.dicom.azurehealthcareapis.com`. 
 
-7. Once your `DICOM-service` Postman environment is set up and configured, please go to [this repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) and download the DICOM instance files (.dcm).  
+7. Once your `DICOM-service` Postman environment is set up and configured, please go to [this repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) and download the three DICOM instance files (.dcm).  
 
-8. Then, for each `POST Store-single-instance` call in the `Conformance-as-Postman` collection, in Postman go to **Body** -> **Select File** and select the appropriate .dcm file (downloaded in the previous step). 
+8. Then, for each of the three `POST Store-single-instance` calls in the `Conformance-as-Postman` collection, in Postman go to **Body** -> **Select File** and select the appropriate .dcm file (downloaded in the previous step). 
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
