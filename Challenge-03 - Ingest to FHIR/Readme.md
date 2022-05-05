@@ -23,7 +23,7 @@ The open-source [FHIR Loader](https://github.com/microsoft/fhir-loader) is desig
 
 Below is a component view of FHIR Loader connected to FHIR service.  
 
-<img src="./media/FHIR_Loader_ARM_template_deploy_AHDS_2_PB.png" height="328">
+<img src="./media/FHIR_Loader_ARM_template_deploy_AHDS_3_PB.png" height="328">
 
 
 ## Prerequisites
