@@ -1,4 +1,4 @@
-l# Challenge-05 - Export and Anonymize Data
+# Challenge-05 - Export and Anonymize Data
 
 ## Introduction
 
