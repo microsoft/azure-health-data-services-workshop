@@ -60,7 +60,7 @@ Visit the FHIR Loader (OSS) repository [here](https://github.com/microsoft/fhir-
 
 4. Now, when you do a refresh and click on **bundlesprocessed**, you should see six files as shown below.
 
-_Note: If you upload a .zip file, the names of the bundles within the .zip file are exposed (not the .zip filename itself)._
+_Note: If you upload a .zip file, the names of the bundles within the .zip archive are exposed (not the .zip filename itself)._
 
 <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_edit2.png" height="428"> 
 
