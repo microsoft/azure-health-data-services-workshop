@@ -28,7 +28,7 @@ Below is a component view of FHIR service with FHIR Loader and FHIR-Proxy.
 
 ## Prerequisites
 + Successful completion of Challenge-01
-+ Access to a text editor (e.g., [Visual Studio Code](https://code.visualstudio.com/))
++ A text editor (e.g., [Visual Studio Code](https://code.visualstudio.com/))
 
 ## Getting Started
 For this challenge, you will upload FHIR data bundles for import into FHIR service. You will need to examine error logs and determine what is preventing the data in one of the bundles from being ingested.
