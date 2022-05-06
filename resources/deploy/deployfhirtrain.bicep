@@ -44,7 +44,7 @@ var uniqueId  = toLower(take(uniqueString(subscription().id, resourceGroup().id,
 // -- resource names
 var fhirProxyAppName         = '${deploymentPrefix}${uniqueId}pxyfa'
 var fhirLoaderAppName        = '${deploymentPrefix}${uniqueId}ldrfa'
-var fhirSynapseAppName       = '${deploymentPrefix}${uniqueId}synfa'
+// var fhirSynapseAppName       = '${deploymentPrefix}${uniqueId}synfa'
 var redisCacheName           = '${deploymentPrefix}${uniqueId}rc'
 var appServicePlanName       = '${deploymentPrefix}${uniqueId}asp'
 var proxyAppInsightName      = '${deploymentPrefix}${uniqueId}pxyai'
@@ -54,7 +54,7 @@ var loaderEventGridTopicName = '${deploymentPrefix}${uniqueId}ldrtopic'
 // FHIR service artifact container registry name
 var containerRegistryName   = '${deploymentPrefix}${uniqueId}cr'
 // -- containers to be created in export storage account
-var dataLakeContainerName = 'fhirdatalake'
+// var dataLakeContainerName = 'fhirdatalake'
 
 // -- storage account names
 var exportStorageAccountName = '${deploymentPrefix}${uniqueId}expsa'
@@ -63,8 +63,8 @@ var importStorageAccountName = '${deploymentPrefix}${uniqueId}impsa'
 
 var tenantId = subscription().tenantId
 // -- fhir synapse link settings
-var dataStart = '1970-01-01 00:00:00 +00:00'
-var dataEnd = ''
+// var dataStart = '1970-01-01 00:00:00 +00:00'
+// var dataEnd = ''
 
 
 var logAnalyticsConfig = {
@@ -85,9 +85,9 @@ var fhirServiceConfig = {
   url: 'https://${healthDataServicesConfig.name}-fhirtrn.fhir.azurehealthcareapis.com'
   kind: 'fhir-R4'
   version: 'R4'
-  loginServers: [
+  loginServers: (containerRegistryConfig.enabled) ? [
     '${artifactContainerRegistry.name}.azurecr.io'
-  ]
+  ] : []
   systemIdentity: {
     type: 'SystemAssigned'
   }
@@ -113,6 +113,7 @@ var fhirLoaderConfig = {
   appInsightsName: '${deploymentPrefix}${uniqueId}ldrai'
   enabled: true
 }
+/*
 var fhirSynapseLinkConfig = {
   name: fhirSynapseAppName
   url: 'https://${fhirSynapseAppName}.azurewebsites.net'
@@ -124,7 +125,7 @@ var fhirSynapseLinkConfig = {
   appInsightsName: '${deploymentPrefix}${uniqueId}ldrai'
   dataLakeEndpoint: 'https://${exportStorageAccount.name}.blob.${environment().suffixes.storage}'
   dataLakeContainerName: empty(dataLakeContainerName) ? 'fhirdatalake' : toLower(dataLakeContainerName)
-  enabled: true
+  enabled: false
   dataStart: empty(dataStart) ? '' : dataStart
   dataEnd: empty(dataEnd) ? '' : dataEnd
   // fhir service configuration settings
@@ -133,15 +134,24 @@ var fhirSynapseLinkConfig = {
   packageUri:'https://fhirdeploy.blob.${environment().suffixes.storage}/fhir/Microsoft.Health.Fhir.Synapse.FunctionApp.zip'
   useMSI: true
 }
+*/
 
-var dataLakeSyncAppName = 'workbenchfhirsynapsesyncapp'
+var containerRegistryConfig = {
+  name: containerRegistryName
+  enabled: false
+  skuName: 'Basic'
+  enableDiagnostics: true
+  diagnosticsSettingsName: 'defaultSettings'
+}
+
+// var dataLakeSyncAppName = 'workbenchfhirsynapsesyncapp'
 
 var exportStorageContainerList = [
   'anonymization'
   'export'
   'export-trigger'
-  fhirSynapseLinkConfig.dataLakeContainerName
 ]
+
 var importStorageContainerList = [
   'bundles'
   'ndjson'
@@ -898,12 +908,12 @@ resource importSAQueueDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05
   }
 }
 // -- Azure Container Registry
-resource artifactContainerRegistry 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = {
-  name:containerRegistryName
+resource artifactContainerRegistry 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = if (containerRegistryConfig.enabled) {
+  name:containerRegistryConfig.name
   tags: resourceTags
   location: resourceLocation
   sku: {
-    name: 'Basic'
+    name: containerRegistryConfig.skuName
   }
   properties: {
     adminUserEnabled: false
@@ -911,9 +921,9 @@ resource artifactContainerRegistry 'Microsoft.ContainerRegistry/registries@2021-
   }
 }
 // -- enable diagnostics for container registry
-resource artifactContainerRegistryDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
+resource artifactContainerRegistryDiagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = if (containerRegistryConfig.enabled && containerRegistryConfig.enableDiagnostics) {
   scope: artifactContainerRegistry
-  name: 'defaultSettings'
+  name: containerRegistryConfig.diagnosticsSettingsName
   properties: {
     workspaceId: logAnalyticsWorkspace.id
     logs: [
@@ -1072,7 +1082,7 @@ module functionsStoragePermissions './assignpermissions.bicep' = {
     resourceName: functionsStorageAccount.name
   }
 }
-module registryPermissions './assignpermissions.bicep' = {
+module registryPermissions './assignpermissions.bicep' = if (containerRegistryConfig.enabled) {
   name: 'registryPermissions'
   params: {
     principalId: fhirService.identity.principalId
@@ -1658,7 +1668,7 @@ resource functionAppKeyVaultPermissions 'Microsoft.KeyVault/vaults/accessPolicie
 }
 
 // -- fhir Synapse Link deployment
-
+/*
 resource fhirAnalyticsSyncAppInsights 'microsoft.insights/components@2020-02-02-preview' = if (fhirSynapseLinkConfig.enabled) {
   name: '${fhirSynapseLinkConfig.name}ai'
   location: resourceLocation
@@ -1669,67 +1679,6 @@ resource fhirAnalyticsSyncAppInsights 'microsoft.insights/components@2020-02-02-
     WorkspaceResourceId: logAnalyticsWorkspace.id
   }
 }
-
-var adlsAppSettings = [
-  {
-    'name':'APPINSIGHTS_INSTRUMENTATIONKEY'
-    'value': (fhirSynapseLinkConfig.enabled) ? fhirAnalyticsSyncAppInsights.properties.InstrumentationKey : ''
-  }
-  {
-    'name': 'AzureWebJobsStorage'
-    'value': 'DefaultEndpointsProtocol=https;AccountName=${functionsStorageAccount.name};EndpointSuffix=${environment().suffixes.storage};AccountKey=${listKeys(functionsStorageAccount.id, functionsStorageAccount.apiVersion).keys[0].value}'
-  }
-  {
-    'name':'FUNCTIONS_EXTENSION_VERSION'
-    'value': '~2'
-  }
-  {
-    'name':'FUNCTIONS_WORKER_RUNTIME'
-    'value': 'dotnet-isolated'
-  }
-  {
-    'name':'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING'
-    'value': 'DefaultEndpointsProtocol=https;AccountName=${functionsStorageAccount.name};EndpointSuffix=${environment().suffixes.storage};AccountKey=${listKeys(functionsStorageAccount.id, functionsStorageAccount.apiVersion).keys[0].value}'
-  }
-  {
-    'name':'WEBSITE_CONTENTSHARE' 
-    'value': toLower(dataLakeSyncAppName)
-  }
-  {
-    'name':'WEBSITE_NODE_DEFAULT_VERSION'
-    'value': '~10'
-  }
-  {
-    'name':'job__containerName'
-    'value': fhirSynapseLinkConfig.dataLakeContainerName
-  }
-  {
-    'name':'job__startTime'
-    'value': fhirSynapseLinkConfig.dataStart
-  }
-  {
-    'name':'job__endTime'
-    'value': empty(dataEnd) ? '' : dataEnd
-  }
-  {
-    'name':'dataLakeStore__storageUrl'
-    'value': fhirSynapseLinkConfig.dataLakeEndpoint
-  }
-  {
-    'name':'fhirServer__serverUrl'
-    'value': fhirSynapseLinkConfig.fhirServiceUrl
-  }
-  {
-    'name':'fhirServer__version'
-    'value': fhirSynapseLinkConfig.fhirServiceVersion
-  }
-  {
-    'name':'fhirServer__authentication'
-    'value': fhirSynapseLinkConfig.useMSI ? 'ManagedIdentity' : 'None'
-  }
-]
-
-var fhirSynapseSyncAppServicePlanId = appServicePlan.id
 
 resource fhirSynapseSyncOperationFunction  'Microsoft.Web/sites@2021-02-01' = if(fhirSynapseLinkConfig.enabled) {
   name: fhirSynapseLinkConfig.name
@@ -1743,14 +1692,70 @@ resource fhirSynapseSyncOperationFunction  'Microsoft.Web/sites@2021-02-01' = if
     enabled: true
     httpsOnly: true
     clientAffinityEnabled: false
-    serverFarmId: fhirSynapseSyncAppServicePlanId
+    serverFarmId: appServicePlan.id
     reserved: (functionPlanOS == 'Linux') ? true : false
     siteConfig: {
       use32BitWorkerProcess: false
       ftpsState:'FtpsOnly'
       minTlsVersion: '1.2'
-      appSettings: adlsAppSettings
-      
+      appSettings: [
+        {
+          'name':'APPINSIGHTS_INSTRUMENTATIONKEY'
+          'value': fhirAnalyticsSyncAppInsights.properties.InstrumentationKey
+        }
+        {
+          'name': 'AzureWebJobsStorage'
+          'value': 'DefaultEndpointsProtocol=https;AccountName=${functionsStorageAccount.name};EndpointSuffix=${environment().suffixes.storage};AccountKey=${listKeys(functionsStorageAccount.id, functionsStorageAccount.apiVersion).keys[0].value}'
+        }
+        {
+          'name':'FUNCTIONS_EXTENSION_VERSION'
+          'value': '~2'
+        }
+        {
+          'name':'FUNCTIONS_WORKER_RUNTIME'
+          'value': 'dotnet-isolated'
+        }
+        {
+          'name':'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING'
+          'value': 'DefaultEndpointsProtocol=https;AccountName=${functionsStorageAccount.name};EndpointSuffix=${environment().suffixes.storage};AccountKey=${listKeys(functionsStorageAccount.id, functionsStorageAccount.apiVersion).keys[0].value}'
+        }
+        {
+          'name':'WEBSITE_CONTENTSHARE' 
+          'value': toLower(dataLakeSyncAppName)
+        }
+        {
+          'name':'WEBSITE_NODE_DEFAULT_VERSION'
+          'value': '~10'
+        }
+        {
+          'name':'job__containerName'
+          'value': fhirSynapseLinkConfig.dataLakeContainerName
+        }
+        {
+          'name':'job__startTime'
+          'value': fhirSynapseLinkConfig.dataStart
+        }
+        {
+          'name':'job__endTime'
+          'value': empty(dataEnd) ? '' : dataEnd
+        }
+        {
+          'name':'dataLakeStore__storageUrl'
+          'value': fhirSynapseLinkConfig.dataLakeEndpoint
+        }
+        {
+          'name':'fhirServer__serverUrl'
+          'value': fhirSynapseLinkConfig.fhirServiceUrl
+        }
+        {
+          'name':'fhirServer__version'
+          'value': fhirSynapseLinkConfig.fhirServiceVersion
+        }
+        {
+          'name':'fhirServer__authentication'
+          'value': fhirSynapseLinkConfig.useMSI ? 'ManagedIdentity' : 'None'
+        }
+      ]
     }
   }
 }
@@ -1765,7 +1770,7 @@ resource fhirSynapsSyncPackageDeploy 'Microsoft.Web/sites/extensions@2020-12-01'
   }
 }
 
-module syncAppStoragePermissions './assignpermissions.bicep' = if (fhirSynapseLinkConfig.enabled){
+module syncAppStoragePermissions './assignpermissions.bicep' = if (fhirSynapseLinkConfig.enabled) {
     name: 'synapseSyncStoragePermissions'
     params: {
       principalId: fhirSynapseSyncOperationFunction.identity.principalId
@@ -1774,7 +1779,7 @@ module syncAppStoragePermissions './assignpermissions.bicep' = if (fhirSynapseLi
       resourceName: exportStorageAccount.name
     }
 }
-module syncAppFhirPermissions './assignpermissions.bicep' = if (fhirSynapseLinkConfig.enabled){
+module syncAppFhirPermissions './assignpermissions.bicep' = if (fhirSynapseLinkConfig.enabled) {
   name: 'synapseSyncFhirPermissions'
   params: {
     principalId: fhirSynapseSyncOperationFunction.identity.principalId
@@ -1784,6 +1789,7 @@ module syncAppFhirPermissions './assignpermissions.bicep' = if (fhirSynapseLinkC
     healthDataWorkspaceName: healthDataWorkspace.name
   }
 }
+*/
 
 // -- outputs
 output deploymentUniqueId string = uniqueId
