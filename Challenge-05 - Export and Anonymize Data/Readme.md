@@ -52,7 +52,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
   The general format of the request will be:
 
-  ```http
+  ```sh
   GET {{fhirurl}}/$export?_container={{containerName}}&_anonymizationConfig={{configFileName}}
   ```
   It's recommended to add the `containerName` and `configFileName` parameters to your `fhir-service` environment in Postman. Otherwise, you will need to put these names directly in the request.
