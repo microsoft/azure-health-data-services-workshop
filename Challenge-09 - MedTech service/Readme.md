@@ -66,23 +66,13 @@ In the [Configure Device mapping properties](https://docs.microsoft.com/en-us/az
 
 Now you will configure permissions so that MedTech service can securely connect with FHIR service and the Event Hub that you deployed in Step 1 of this challenge. Continue with [the instructions for granting access](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#granting-medtech-service-access) through to the end of the page and then return here when finished.
 
-## Step 5 - Set up IoT Mapper Tool
-
-Going a step further, you can visit [another GitHub repository](https://github.com/microsoft/iomt-fhir/tree/main/tools/data-mapper) and read about creating custom device mapping templates with Microsoft's OSS IoT mapper tool.
-
-After you have gone through the instructions and installed the packages, when you launch the IoT mapper tool, the web app will be running at this address: http://localhost:5000. Open the address in your browser to access the IoT mapper tool interface.
-
-## Step 6 - Make sample maps
-
-Now you can get started making a set of custom IoT maps which can be used with the FHIR service and MedTech service. Follow the instructions [here](https://github.com/microsoft/iomt-fhir/tree/master/tools/data-mapper#getting-started) to get started with the IoT mapper tool. For in-depth information on IoT mapping, visit [this page](https://github.com/microsoft/iomt-fhir/blob/master/docs/Configuration.md).
-
 __Note:__ When creating a new mapping, you must click the 'Confirm' button. Pressing ENTER after typing will not work.
 
-## Step 7 -BONUS
+## Step 5 -BONUS
 
 Import your newly created sample mappings into the MedTech service via the Azure Portal. You can follow the same process in Step 3 of this challenge to import your custom mappings into MedTech service.
 
-## Step 8 - BONUS
+## Step 6 - BONUS
 
 Use the IoT mapper tool that you obtained in Step 5 to create maps for the sample messages in the `SampleData` folder for this challenge (accessible at the top of the page). You will find that the `SampleData` folder has two files. Both files are the same data, but the `Three-Sample-Message-Types-with-labels.json` has messages with data descriptions and/or units of measure. There are three sample messages in each file - `VITALS`, `BP`, and `WEIGHT`. The `VITALS` message is an array of data. `BP` and `WEIGHT` are single-entry messages. 
 
