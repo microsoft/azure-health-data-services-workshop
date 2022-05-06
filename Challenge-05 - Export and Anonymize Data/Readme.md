@@ -64,6 +64,8 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 ![export-header](./media/Export_Headers.png)
 
+2. Once ready, press **Send** in Postman to initiate the `$export` request.
+
 The `$export` operation uses the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). More detailed information on headers for bulk export operations in FHIR can be found [here](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers).
 
 ## Step 4: Securely transfer the file to the research team
