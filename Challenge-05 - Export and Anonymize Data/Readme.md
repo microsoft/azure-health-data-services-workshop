@@ -38,7 +38,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
   More information on HIPAA de-identification rules can be found [here](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html).
 
 ## Step 2: Configure storage account for export
-1. Follow [these instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/de-identified-export) for creating your `anonymizationConfig.json` file and placing it inside the `anonymization` container within your "**expsa**" storage account.-
+1. Follow [these instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/de-identified-export) for creating your `anonymizationConfig.json` file and placing it inside the `anonymization` container within your "**expsa**" storage account.
 
 2. Next, go [here](https://docs.microsoft.com/azure/healthcare-apis/fhir/configure-export-data) and follow the instructions for configuring a storage account for the `$export` operation. Read the note below about the FHIR service managed identity.
 
