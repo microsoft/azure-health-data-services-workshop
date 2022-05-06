@@ -28,7 +28,7 @@ The ARM/Bicep template will deploy the following components:
 
 2. Click **Review + create** when ready, and then click **Create** on the next page. 
 
-<img src="./images/ARM_template_config3.png" height="420"> 
+<img src="./images/ARM_template_config4.png" height="420"> 
 
 __Note:__ Deployment of **FHIR service**, **FHIR-Proxy**, and **FHIR Loader** typically takes 20 minutes.
 
