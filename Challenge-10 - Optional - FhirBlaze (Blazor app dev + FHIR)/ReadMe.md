@@ -95,7 +95,7 @@ A quick tour of FhirBlaze:
 
 **Note:** FhirBlaze out of the box is set up to interact with the Patient, Practitioner, and Questionnaire FHIR Resources. As you build solutions, you will likely need to add Resource types.
 
-## Step 3 – Create a new module
+## Step 4 – Create a new module
 
 Let's see how to add a new module. This will add a new FHIR Resource type that we can create or delete using FhirBlaze.
 
@@ -176,7 +176,7 @@ Let's see how to add a new module. This will add a new FHIR Resource type that w
 
 17. You have now set up the front end of the application for the new FHIR Resource. Our last step is to set up the backend to interact with the FHIR service.
 
-## Step 4 – Implement the code to get, create, edit, and delete a FHIR Resource
+## Step 5 – Implement the code to get, create, edit, and delete a FHIR Resource
 
 1. In **Solution Explorer**, expand the **FhirBlaze.PractitionerModule** project.
 
