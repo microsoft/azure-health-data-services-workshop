@@ -71,6 +71,8 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 The `$export` operation uses the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). More detailed information on headers for bulk export operations in FHIR can be found [here](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers).
 
+4. Now if you go to your "**expsa**" storage account, there should be a new folder within the `anonymization` container. Go to this folder to access the de-identified FHIR data. You will notice that the [18 HIPAA Safe Harbor Identifiers](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html#safeharborguidance) are missing from the patients' FHIR records. 
+
 ## Step 4: Securely transfer the file to the research team
 
 Researchers from outside organizations cannot have direct access to healthcare or payer organizations' Azure tenants. You will need to find a way to securely transfer the anonymized datasets to these external groups.
