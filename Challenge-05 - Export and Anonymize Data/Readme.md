@@ -55,7 +55,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
   ```http
   GET {{fhirurl}}/$export?_container={{containerName}}&_anonymizationConfig={{configFileName}}
   ```
-  It's recommended to add the {{containerName}} and {{configFileName}} parameters to your `fhir-service` environment in Postman. Otherwise, you will need to add these names directly in the request.
+  It's recommended to add the `containerName` and `configFileName` parameters to your `fhir-service` environment in Postman. Otherwise, you will need to put these names directly in the request.
 
 2. Go to the **Authorization** tab in Postman and select `OAuth 2.0` as the **Type**.
 
