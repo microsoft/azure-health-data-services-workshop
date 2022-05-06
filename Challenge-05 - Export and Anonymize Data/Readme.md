@@ -50,7 +50,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 1. Prepare a request in Postman for a de-identified `$export` from the FHIR service to the "**expsa**" storage account which you configured in the previous step. If you get stuck, refer to the documentation in Step 2.
 
-  The general format of the query will be:
+  The general format of the request will be:
 
   ```http
   GET {{fhirurl}}/$export?_container={{containerName}}&_anonymizationConfig={{configFileName}}
