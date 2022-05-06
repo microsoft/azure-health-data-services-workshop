@@ -58,13 +58,13 @@ When doing a search on a FHIR server, the initial target for the query can be an
 
 The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you query for the `Patient` Resource with no search parameters specified, you will retrieve all `Patient` Resource instances in the FHIR service.
 
-```http
+```sh
 GET {{fhirurl}}/Patient
 ```
 
 If you want to retrieve `Patient` Resource instances that were updated last on a certain day, you can narrow your search with the `_lastUpdated` search parameter.
 
-```http
+```sh
 GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 ```
 
@@ -78,7 +78,7 @@ The following parameters apply to all FHIR Resources: ```_content```, ```_id```,
 
 The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance and can be used when the query specifies a Resource type (`Patient` is used as an example here):
 
-```http
+```sh
  GET {{fhirurl}}/Patient?_id=123
 ```
 
@@ -86,7 +86,7 @@ This search returns a bundle containing the `Patient` Resource instance with the
 
 Compare this to a Resource instance query, which uses the RESTful API pattern of putting the Resource `id` in the URL path instead of the value of the `_id` search parameter. This will return only a single Resource as the result versus a single Resource inside of a bundle.
 
-```http
+```sh
 GET {{fhirurl}}/Patient/123
 ```
 
@@ -121,7 +121,7 @@ On top of common search parameters, it's possible to add modifiers right after t
 
 In cases where you perform searches with more than one parameter, the most obvious way of doing this is with the logical AND (`&`) operator.
 
-```http
+```sh
 GET {{fhirurl}}/Patient?_lastUpdated=gt2021-10-01&gender=female
 ```
 
@@ -129,7 +129,7 @@ In the example above, the query is for `Patient` Resources that were updated aft
 
 This method with `&` works as expected when the queried Elements are single attributes (e.g., `gender`). But in situations where Resource attributes are defined across *pairs* of Elements, the `&` operator may return incorrect results if it cannot distinguish which Elements are paired together vs which ones are separate from each other. 
 
-```http
+```sh
 GET {{fhirurl}}/Group?characteristic=gender&value=mixed
 ```
 
@@ -137,7 +137,7 @@ In the above example, we are searching for `Group` Resource instances with `char
 
 To remedy this shortcoming of the `&` operator, some Resources are defined with composite search parameters, which make it possible to search against Element pairs as logically inter-related units. The example below demonstrates how to perform a composite search for `Group` Resource instances that contain `"characteristic" : "gender"` paired with `"value": "mixed"`. Note the use of the `$` operator to specify the value of the paired search parameter.
 
-```http
+```sh
 GET {{fhirurl}}/Group?characteristic-value=gender$mixed
 ```
 
@@ -200,13 +200,13 @@ In connection with `reference` Elements, Resources also have `reference` search 
 
 For example, the following request queries a FHIR server for all `Observation` instances that reference `Patient/WDT000000002`. The `subject` parameter in the request is a `reference` type search parameter.
 
-```http
+```sh
 GET {{fhirurl}}/Observation?subject=Patient/WDT000000002
 ```
 
 To simplify using multiple search parameters in a reference-based query, FHIR also specifies syntax for chaining parameters with `.` to refine results. Below is a chained search for all `Observation` instances that reference a `subject` (i.e., `Patient`) with the name of `Ron Stoppable` (note the `:` after `subject`, which makes `Patient` into a [type modifier](https://www.hl7.org/fhir/codesystem-search-modifier-code.html#search-modifier-code-type)).
 
-```http
+```sh
 GET {{fhirurl}}/Observation?subject:Patient.name=Ron Stoppable
 ```
 
@@ -214,7 +214,7 @@ The FHIR data model's `reference` associations are one-directional, meaning that
 
 Despite this, the FHIR specification does make room for reverse-chained searching with the `_has` parameter. The `_has` parameter effectively allows searching for a "child" Resource as referenced by a "parent" Resource. This is demonstrated in the reverse-chained search request below, which queries a FHIR server for any `Patient` referenced by an `Observation` containing the code `55284-4`. Note that the `patient` search parameter towards the end functions as a shortened form of `subject:Patient`.
 
-```http
+```sh
 GET {{fhirurl}}/Patient?_has:Observation:patient:code=55284-4
 ```
 
@@ -232,13 +232,13 @@ To illustrate, let's imagine you are interested in retrieving all `AllergyIntole
 
 But it would be more efficient to retrieve all of this information in a single query. This capability is provided in the `_include` and `_revinclude` parameters. The example below illustrates how `_include` expands the main search (`AllergyIntolerance?_code=`) to return the referenced Resource instances as well (`patient` at the end is short for `subject:Patient`). 
 
-```http
+```sh
 GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
 ```
 
 Likewise but in the opposite direction, you can use `_revinclude` to retrieve Resources along with other Resources that refer to them. Below is an example where `Patient` instances are retrieved along with `MedicationRequest` instances that reference the `Patient` instances. The `Patient` search is limited to patients who live in the city specified in the `_address-city` parameter.
 
-```http
+```sh
 GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:patient:medication.code=1234567
 ```
 
