@@ -40,7 +40,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 ## Step 2: Configure storage account for export
 1. Follow [these instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/de-identified-export) for creating your `anonymizationConfig.json` file and placing it inside the `anonymization` container within your "**expsa**" storage account.
 
-2. Next, go [here](https://docs.microsoft.com/azure/healthcare-apis/fhir/configure-export-data) and follow the instructions for configuring a storage account for the `$export` operation. Read the note below about the FHIR service managed identity.
+2. Next, go [here](https://docs.microsoft.com/azure/healthcare-apis/fhir/configure-export-data) and follow the instructions for configuring your "**expsa**" storage account for the `$export` operation. Read the note below about the FHIR service managed identity.
 
   **Note:** When you deployed FHIR service in Challenge-01, a [managed identity](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) was automatically enabled on the FHIR service resource. That managed identity is what needs to be added to the ADLS Gen2 storage account with the **Storage Blob Data Contributor** role. The storage account (also deployed in Challenge-01) is in your resource group and has a name ending with "**expsa**". Keep in mind that you are configuring the storage account in this step (not the FHIR service). In the storage account, be careful not to add a role assignment to a service client or a service principal by mistake!
 
