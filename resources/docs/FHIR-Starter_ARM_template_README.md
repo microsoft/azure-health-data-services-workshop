@@ -50,7 +50,6 @@ Name              | Type                 |  Purpose
 [prefix]**la**    | Log Analytics Workspace  | Logs the activity of deployed components
 [prefix]**ldrai** | Application Insights | Monitors FHIR Loader application
 [prefix]**pxyai** | Application Insights | Monitors FHIR-Proxy application
-[prefix]**synai** | Application Insights | Monitors FHIR Synapse Link application
 [prefix]**ldrtopic** | Event Grid System Topic | Triggers processing of FHIR bundles placed in the **"impsa"** storage account
 [prefix]**rc**    | Redis Cache  | Required by FHIR-Proxy modules, Consent Opt Out
 
