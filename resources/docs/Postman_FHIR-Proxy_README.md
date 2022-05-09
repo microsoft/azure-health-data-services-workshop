@@ -108,7 +108,7 @@ Now you will configure your Postman environment for FHIR-Proxy (`fhir-proxy`).
 <img src="./images/Screenshot_2022-05-09_104810_edit.png" height="328">
 
 - `clientSecret` - Client secret stored in your existing `fhir-service` Postman environment (obtained previously when you [set up Postman to connect with FHIR service](Postman_FHIR_service_README.md#step-4---configure-postman-environments)) 
-- `resource` - Application (client) ID in the AAD client app for FHIR-Proxy (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
+- `resource` - Application (client) ID in the AAD client app for FHIR-Proxy (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) (same as `clientId` above) 
 - `fhirurl` - FHIR-Proxy endpoint appended with `/fhir` - e.g. `https://<fhir_proxy_app_name>.azurewebsites.net/fhir` (go to **Resource Group** -> **Overview** -> **Name** -> **URL**; make sure to append `/fhir` on the end when inputting into the Postman environment)
 
 <img src="./images/Screenshot_2022-05-09_105012_edit.png" height="328">
