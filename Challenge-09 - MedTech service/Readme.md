@@ -76,8 +76,8 @@ Use the IoT mapper tool that you obtained in Step 5 to create maps for the sampl
 When you begin the FHIR mapping, you can make up values for the 'Code'. For example - `Code: A1235, System: https://loinc.org, Text: Heart Rate`.
 
 ## What does success look like for Challenge-09?
-+ Map IoT medical device data to FHIR
-+ Output a JSON file with mapped data
++ Map IoT medical device data to FHIR.
++ Output a JSON file with mapped data.
 
 ## Next Steps
 
