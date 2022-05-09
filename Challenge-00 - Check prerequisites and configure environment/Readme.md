@@ -49,22 +49,22 @@ Please make sure to have the following items ready before moving on to Challenge
 
 Below is a list of Azure components deployed in Challenge-01 of this workshop. 
 
-Component             |  Purpose                               
-----------------------|----------------------------------------
+Component | Purpose                               
+----------|--------------------------------------------
 **Azure Health Data Services workspace** | managed PaaS
 **FHIR service** | managed FHIR server
 **FHIR-Proxy** Function App | filters FHIR data input/output 
 **FHIR Loader** Function App | ingests FHIR data
 App Service Plan | Shared by FHIR-Proxy and FHIR Loader function apps
-Storage account      | Blob storage for FHIR service `$export` operation
-Storage account      | Storage for FHIR-Proxy function app
-Storage account      | Storage account for FHIR Loader
-Key Vault            | Stores secrets and configuration settings
-Log Analytics Workspace  | Logs the activity of deployed components
+Storage account | Blob storage for FHIR service `$export` operation
+Storage account | Storage for FHIR-Proxy function app
+Storage account | Storage account for FHIR Loader
+Key Vault | Stores secrets and configuration settings
+Log Analytics Workspace | Logs the activity of deployed components
 Application Insights | Monitors FHIR Loader application
 Application Insights | Monitors FHIR-Proxy application
 Event Grid System Topic | Triggers processing of FHIR bundles placed in the **"impsa"** storage account
-Redis Cache  | Required by FHIR-Proxy modules, Consent Opt Out
+Redis Cache | Required by FHIR-Proxy modules, Consent Opt Out
 
 
 ## More Resources 
