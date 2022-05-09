@@ -119,7 +119,7 @@ In Postman, click on `Collections` on the left, select the `FHIR CALLS` collecti
 
 __Important:__ Be sure to make the `fhir-proxy` environment active by selecting from the dropdown menu above the `Send` button. In the image below, `fhir-proxy` is shown as the active environment.
 
-<img src="./images/Screenshot_2022-02-16_171631_edit2.png" height="328">
+<img src="./images/Screenshot_2022-02-16_171631_edit3.png" height="328">
 
 On clicking ```Send```, you should receive a response in the **Body** tab like shown below. The `access_token` value is automatically saved to the ```bearerToken``` variable in the Postman environment. 
 
