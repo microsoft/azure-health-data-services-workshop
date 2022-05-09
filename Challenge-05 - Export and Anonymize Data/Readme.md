@@ -83,8 +83,8 @@ Researchers from outside organizations cannot have direct access to healthcare o
 
 ## What does success look like for Challenge-05?
 
-+ Successfully use an anonymization configuration file and the `$export` operator to export an anonymized dataset from the FHIR service
-+ Successfully set up a SAS token to allow access to the anonymized dataset
++ Successfully use an anonymization configuration file and the `$export` operator to export an anonymized dataset from the FHIR service.
++ Successfully set up a SAS token to allow access to the anonymized dataset.
 
 ## Next Steps
 
