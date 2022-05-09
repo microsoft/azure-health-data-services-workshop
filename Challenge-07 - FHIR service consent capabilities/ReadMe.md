@@ -23,7 +23,8 @@ By the end of this challenge you will be able to
 
 + Azure Health Data Services FHIR service instance with patient data (completed in previous challenges)
 + FHIR-Proxy deployed (completed in Challenge-01)
-+ Postman installed (completed in Challenge-01)
++ Postman installed (completed in Challenge-01) 
++ A text editor (e.g., [Visual Studio Code](https://code.visualstudio.com/)) 
 + Multiple Azure AD users to simulate user and/or administrator access to the FHIR service 
 
 ## Getting Started 
