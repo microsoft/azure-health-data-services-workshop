@@ -95,4 +95,4 @@ Press **Send** and you should receive a bundle as shown below.
 
 ## Next Steps
 
-Click [here](<../Challenge-08 - DICOM/Readme.md>) to proceed to the next challenge.
+Click [here](<../Challenge-08 - DICOM service/Readme.md>) to proceed to the next challenge.
