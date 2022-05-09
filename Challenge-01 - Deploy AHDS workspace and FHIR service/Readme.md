@@ -1,4 +1,4 @@
-# Challenge-01 - Deploy FHIR Service and Azure Health Data Services Workspace
+# Challenge-01 - Deploy Azure Health Data Services workspace and FHIR service
 
 ## Introduction
 
