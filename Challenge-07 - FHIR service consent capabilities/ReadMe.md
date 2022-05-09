@@ -64,7 +64,7 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 GET {{fhirurl}}/Patient?_summary=count
 ```
 
-Press **Send** and you should receive a bundle as shown below.
+Press **Send** and you should receive a bundle as shown below (the number of patients might be different from what is show in the image).
 
 ![Patient Resources](./images/patient-count-postman.png) 
 
