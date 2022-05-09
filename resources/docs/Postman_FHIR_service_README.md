@@ -30,7 +30,7 @@ Before you can use Postman to make API calls to FHIR service, you will need to c
 <img src="./images/Screenshot_2022-02-15_141049_edit2.png" height="328">
 
 3. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
-<img src="./images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
+<img src="./images/Screenshot_2022-05-09_100457_edit.png" height="328">  
 
 4. Click on **Certificates and secrets**. Click **+New client secret**. 
 <img src="./images/Screenshot_2022-02-15_141926_edit2.png" height="328">
