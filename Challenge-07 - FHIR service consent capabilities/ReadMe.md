@@ -70,7 +70,7 @@ Press **Send** and you should receive a bundle as shown below (the number of pat
 
 2. Select a Patient Resource of your choosing and record the [patient identifier](https://www.hl7.org/fhir/patient.html#ids). This will be used to create the Consent Resource.
 
-## Step 4 - Post Consent Record to FHIR Service
+## Step 4 - Post Consent Record to FHIR service
 
 1. Review and update (as needed) the sample Consent Resource, which may be found [here](./sample-data/consent-resource.json). Be sure to use the Patient Resource obtained in Step 3.
 2. Create a new request in Postman and post the Consent Resource. 
