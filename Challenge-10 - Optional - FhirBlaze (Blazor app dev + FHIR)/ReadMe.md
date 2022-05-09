@@ -202,9 +202,9 @@ Let's see how to add a new module. This will add a new FHIR Resource type that w
 
 ## What does success look like for Challenge-10?
 
-+ Run the FhirBlaze application without errors
-+ Navigate to your selected FHIR Resource’s list page
-+ Retrieve and search your selected FHIR Resources
-+ Create and save a new Resource to your FHIR repository
-+ Edit and save a new Resource in your FHIR repository
-+ Delete a Resource from your FHIR repository
++ Run the FhirBlaze application without errors.
++ Navigate to your selected FHIR Resource’s list page.
++ Retrieve and search your selected FHIR Resources.
++ Create and save a new Resource to your FHIR repository.
++ Edit and save a new Resource in your FHIR repository.
++ Delete a Resource from your FHIR repository.
