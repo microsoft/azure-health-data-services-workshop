@@ -84,8 +84,8 @@ Press **Send** and you should receive a bundle as shown below (the number of pat
 
 ## What does success look like for Challenge-07?
 
-+ Successfully POST a consent record to the Azure Health Data Services FHIR service
-+ Verify that Consent Opt-Out properly filters Resources
++ Successfully `POST` a consent record to the FHIR service.
++ Verify that Consent Opt-Out properly filters Resources.
 
 ## Next Steps
 
