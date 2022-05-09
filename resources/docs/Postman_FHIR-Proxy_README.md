@@ -25,7 +25,7 @@ To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through th
 ## Step 1 - Configure API permissions for Postman
  
 1. Navigate to the **Overview** blade for your Postman service client app in Azure Active Directory (go to **Azure Portal** -> **AAD** -> **App registrations** -> **Postman**).  
-<img src="./images/Screenshot_2022-02-15_141337_edit2.png" height="328">  
+<img src="./images/Screenshot_2022-05-09_100457_edit.png" height="328">  
 
 2. Click on **API Permissions** and then click **+Add a permission**.  
 <img src="./images/Screenshot_2022-02-15_141418_edit2.png" height="328">
