@@ -73,15 +73,9 @@ Press **Send** and you should receive a bundle as shown below.
 ## Step 4 - Post Consent Record to FHIR Service
 
 1. Review and update (as needed) the sample Consent Resource, which may be found [here](./sample-data/consent-resource.json). Be sure to use the Patient Resource obtained in Step 3.
-2. Create a new request in Postman and post the Consent Resource.
+2. Create a new request in Postman and post the Consent Resource. 
 
-## Step 5 - Configure Secure FHIR Consent Opt-Out
-
-1. Refer to the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md) for additional details.
-2. [Configure the Consent Opt Filter](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md). The FP-POST-PROCESSOR-TYPES must be updated to include FHIRProxy.postprocessors.ConsentOptOutFilter.
-3. Additionally the FP-MOD-CONSENT-OPTOUT-CATEGORY setting with a value of `http://loinc.org|59284-0` must be added if it does not exist.
-
-## Step 6 - Verify Consent Opt-Out filtering
+## Step 5 - Verify Consent Opt-Out filtering
 
 1. Link a user to an appropriate FHIR resource. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md) for additional details. Ensure that the linked user is not assigned to the FHIR-Proxy administrator role.
 
