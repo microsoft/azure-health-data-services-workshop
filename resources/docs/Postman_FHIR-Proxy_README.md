@@ -114,7 +114,7 @@ Now you will configure your Postman environment for FHIR-Proxy (`fhir-proxy`).
 <img src="./images/Screenshot_2022-05-09_105012_edit.png" height="328">
 
 
-Populate the above parameter values in your `fhir-proxy` Postman environment as shown below. Leave `bearerToken` blank. Make sure to click `Save` to retain the `fhir-proxy` environment values.  
+Populate the above parameter values in your `fhir-proxy` Postman environment as shown below. Leave `bearerToken` blank. **Make sure to click** `Save` **to retain the** `fhir-proxy` **environment values**.  
 
 <img src="./images/Screenshot_2022-02-16_105208_edit2.png" height="328"> 
 
