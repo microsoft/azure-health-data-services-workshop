@@ -58,7 +58,7 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 
 1. Make sure to select `fhir-proxy` as your active Postman environment (upper right-hand corner). 
 
-2. Now you will confirm that the FHIR service contains `Patient` Resources (it should if you have completed the previous challenges). Go ahead and enter this API call into Postman.
+2. Now you will confirm that the FHIR service contains `Patient` Resources (it should if you have completed the previous challenges). Go ahead and run the `Count All Patients` request in your FHIR Search collection in Postman.
 
 ```
 GET {{fhirurl}}/Patient?_summary=count
