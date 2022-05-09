@@ -45,6 +45,28 @@ Please make sure to have the following items ready before moving on to Challenge
 
 **Note:** Free Postman cloud accounts require a login via email or a Google account. Additionally, Postman recommends that if you choose to use the web client, you should also download the desktop application. You can read more and download the Postman desktop client [here](https://www.postman.com/downloads).
 
+## Azure Components Deployed
+
+Below is a list of Azure components deployed in Challenge-01 of this workshop. 
+
+Component             |  Purpose                               
+----------------------|----------------------------------------
+**Azure Health Data Services workspace** | managed PaaS
+**FHIR service** | managed FHIR server
+**FHIR-Proxy** Function App | filters FHIR data input/output 
+**FHIR Loader** Function App | ingests FHIR data
+App Service Plan | Shared by FHIR-Proxy and FHIR Loader function apps
+Storage account      | Blob storage for FHIR service `$export` operation
+Storage account      | Storage for FHIR-Proxy function app
+Storage account      | Storage account for FHIR Loader
+Key Vault            | Stores secrets and configuration settings
+Log Analytics Workspace  | Logs the activity of deployed components
+Application Insights | Monitors FHIR Loader application
+Application Insights | Monitors FHIR-Proxy application
+Event Grid System Topic | Triggers processing of FHIR bundles placed in the **"impsa"** storage account
+Redis Cache  | Required by FHIR-Proxy modules, Consent Opt Out
+
+
 ## More Resources 
 
 If you are unfamiliar with any of the above concepts, have a look at the resources below. These are starting points to help you get the most out of this workshop.
