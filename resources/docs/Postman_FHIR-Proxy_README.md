@@ -145,7 +145,7 @@ You now have a valid access token in your Postman environment and can use the to
 
 __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simply make another ```POST AuthorizeGetToken``` call and you will receive a new token valid for another 60 minutes.
 
-## Step 6 - Test FHIR service with Postman 
+## Step 6 - Test FHIR service with Postman via FHIR-Proxy 
 
 1. In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
 
