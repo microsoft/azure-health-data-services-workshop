@@ -268,11 +268,11 @@ At some point, you will find a use case where you need to retrieve information t
 
 ## What does success look like for Challenge-04?
 
-+ Developed a basic understanding of how to perform FHIR search operations in FHIR service
-+ Performed several FHIR search queries using paired/multiple parameters for Common and Composite Search
-+ Completed at least one Chained and one Reverse Chained FHIR search query
-+ Completed at least one Include and one Reverse Include FHIR search query
-+ Performed at least one query using a custom search parameter
++ Develop a basic understanding of how to perform FHIR search operations in FHIR service.
++ Perform several FHIR search queries using paired/multiple parameters for Common and Composite Search.
++ Complete at least one Chained and one Reverse Chained FHIR search query.
++ Complete at least one Include and one Reverse Include FHIR search query.
++ Perform at least one query using a custom search parameter.
 
 ## Next Steps
 
