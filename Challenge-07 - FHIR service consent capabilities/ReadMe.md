@@ -16,7 +16,7 @@ By the end of this challenge you will be able to
 + Configure FHIR-Proxy authentication for connecting to FHIR service
 + Configure Postman to connect with FHIR service via FHIR-Proxy
 + Configure Consent Opt-Out filtering in FHIR-Proxy
-+ Add a Consent Resource to the Azure Health Data Services FHIR service
++ Add a Consent Resource to the FHIR service
 + Verify that Consent Opt-Out filtering performs as expected
 
 ## Prerequisites
