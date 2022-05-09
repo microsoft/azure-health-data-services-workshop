@@ -78,7 +78,7 @@ Press **Send** and you should receive a bundle as shown below (the number of pat
 
 ## Step 5 - Verify Consent Opt-Out filtering
 
-1. Link a user to an appropriate FHIR resource. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md) for additional details. Ensure that the linked user is not assigned to the FHIR-Proxy administrator role.
+1. Link a user to an appropriate FHIR resource. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details. Ensure that the linked user is not assigned to the FHIR-Proxy administrator role.
 
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
 
