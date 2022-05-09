@@ -63,7 +63,7 @@ Key Vault | Stores secrets and configuration settings
 Log Analytics Workspace | Logs the activity of deployed components
 Application Insights | Monitors FHIR Loader application
 Application Insights | Monitors FHIR-Proxy application
-Event Grid System Topic | Triggers processing of FHIR bundles placed in the **"impsa"** storage account
+Event Grid System Topic | Triggers processing of FHIR bundles placed in the FHIR Loader storage account
 Redis Cache | Required by FHIR-Proxy modules, Consent Opt Out
 
 
