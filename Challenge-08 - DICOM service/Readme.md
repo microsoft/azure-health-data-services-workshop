@@ -133,10 +133,10 @@ By default, the DICOM service supports querying on the DICOM tags specified in t
 You can follow the instructions given in this [Extended Query Tag Overview article](https://docs.microsoft.com/azure/healthcare-apis/dicom/dicom-extended-query-tags-overview) to manage query tags.
 
 ## What does success look like for Challenge-08?
-+ Provisoning and configuring DICOM service for ingestion and storage of DICOM studies
-+ Use DICOM service to upload, search, and retrieve DICOM studies
-+ Check changes log (Change Feed)
-+ Add/remove additional query tags
++ Provison and configure DICOM service for ingestion and storage of DICOM studies.
++ Use DICOM service to upload, search, and retrieve DICOM studies.
++ Check changes log (Change Feed).
++ Add/remove additional query tags.
 
 ## Next Steps
 
