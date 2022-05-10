@@ -104,7 +104,7 @@ To configure Consent Opt-Out, you must first create a FHIR Participant role for 
     - In the **Profile** blade, find the **Object ID**.
 
 2. In Postman, create a new request in the FHIR CALLS collection called `GET Link Roles`.
-3. In the URL field for the request, input this query string:
+3. In the URL field for the request, input this query string (set the HTTP operation to `GET`):
     - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>`
 4. Press **Send**.
 
