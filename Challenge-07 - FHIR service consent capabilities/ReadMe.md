@@ -79,7 +79,7 @@ You should receive a `200 OK` response for each of these requests. If not, you w
 
 ## Step 4 - Post Consent Record to FHIR service
 
-1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). In this `Consent` Resource file, you will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
+1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). In this file, you will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
 
 2. Now you will create a new request in Postman for adding the `consent-resource.json` as a `Consent` Resource to your FHIR service. 
     - Go to the FHIR CALLS collection in Postman and click **Add request**.
