@@ -59,7 +59,7 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 
 1. Be sure to select `fhir-proxy` as your active Postman environment (upper right-hand corner). 
 
-2. Check to make sure that you can access `Patient` Resources on the FHIR service (with Postman connected to the FHIR-Proxy endpoint). Go ahead and run the `Count All Patients` request in your FHIR Search collection in Postman.
+2. Check to make sure that you can access `Patient` Resources on the FHIR service with Postman connected to the FHIR-Proxy endpoint. Go ahead and run the `Count All Patients` request in your FHIR Search collection in Postman.
 
 ```
 GET {{fhirurl}}/Patient?_summary=count
