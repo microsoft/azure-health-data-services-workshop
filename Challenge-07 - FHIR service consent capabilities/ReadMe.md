@@ -26,7 +26,7 @@ By the end of this challenge you will be able to
 + Postman installed (completed in Challenge-01) 
 
 ## Getting Started 
-In this challenge, you will be setting up FHIR-Proxy to perform Consent Opt Out Filtering for the FHIR service. Additionally, you will be creating a new Postman environment to call the FHIR-Proxy endpoint. 
+In this challenge, you will be setting up FHIR-Proxy to perform Consent Opt-Out Filtering for the FHIR service. Additionally, you will be creating a new Postman environment to call the FHIR-Proxy endpoint. 
 
 > Note: Within the 2023 fiscal year, the FHIR-Proxy Function App in its current form will be deprecated. The app’s features and functionality will be integrated into Azure Health Data Services FHIR service and other Azure resources. 
 
