@@ -75,7 +75,7 @@ To make sure you have the correct `Patient` and `Practitioner` Resources that we
 
 `GET {{fhirurl}}/Practitioner/WDT000000003`
 
-You should get a `200 OK` response for each of these Resources. If not, you will need to run the `Save Sample Resources` request in the FHIR Search collection in Postman again (this step was covered in Challenge-04).
+You should receive a `200 OK` response for each of these requests. If not, you will need to run the `Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
 
 ## Step 4 - Post Consent Record to FHIR service
 
