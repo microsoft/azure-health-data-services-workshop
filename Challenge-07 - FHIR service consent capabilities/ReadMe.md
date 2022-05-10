@@ -82,7 +82,7 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 
 1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). You will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
 
-2. Now you will create a new request in Postman for adding the `consent-resource.json` file to FHIR service as a `Consent` Resource. 
+2. Now you will create a new request in Postman for adding the `consent-resource.json` file to your FHIR service as a `Consent` Resource. 
     - Go to the FHIR CALLS collection in Postman and click **Add request**.
     - Name the new request `POST Consent Resource`.
     - In the URL field for the request, enter `{{fhirurl}}/Consent`.
