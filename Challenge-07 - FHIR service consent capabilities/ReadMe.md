@@ -106,18 +106,17 @@ To configure Consent Opt-Out, you must first create a FHIR Participant role for 
     - In the **Profile** blade, find the **Object ID**.
 
 2. In Postman, create a new request in the FHIR CALLS collection called `GET Link Roles`.
-3. In the URL field for the request, input this query string (set the HTTP operation to `GET`):
+3. In the URL field for the request, input this string (set the HTTP operation to `GET`):
     - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>`
 4. Press **Send**.
+
+See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
 ## Step 7 - Confirm Consent Opt Out is working
 
 1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt Out is operational.
 
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
-
-See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
-
 
 ## What does success look like for Challenge-07?
 
