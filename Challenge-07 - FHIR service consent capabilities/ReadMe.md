@@ -69,13 +69,13 @@ Press **Send** and you should receive a bundle as shown below (the number of pat
 
 ![Patient Resources](./images/patient-count-postman.png) 
 
-Just to make sure you have the `Patient` and `Practitioner` Resources needed for this challenge, send the following requests in Postman:
+To make sure you have the correct `Patient` and `Practitioner` Resources we will be using in this challenge, send the following requests in Postman:
 
 `GET {{fhirurl}}/Patient/WDT000000001`
 
 `GET {{fhirurl}}/Practitioner/WDT000000003`
 
-You should get a `200 OK` response for both of these Resources. If not, you will need to run the `Save Sample Resources` request in your FHIR Search collection (this step was covered in Challenge-04).
+You should get a `200 OK` response for each of these Resources. If not, you will need to run the `Save Sample Resources` request in the FHIR Search collection in Postman (this step was covered in Challenge-04).
 
 ## Step 4 - Post Consent Record to FHIR service
 
