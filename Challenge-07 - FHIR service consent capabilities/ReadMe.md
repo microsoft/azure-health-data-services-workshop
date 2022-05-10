@@ -65,16 +65,23 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 GET {{fhirurl}}/Patient?_summary=count
 ```
 
-Press **Send** and you should receive a bundle as shown below (the number of patients might be different from what is show in the image).
+Press **Send** and you should receive a bundle as shown below (the number of patients will likely be different from what is show in the image).
 
 ![Patient Resources](./images/patient-count-postman.png) 
 
-2. Select a Patient Resource of your choosing and record the [patient identifier](https://www.hl7.org/fhir/patient.html#ids). This will be used to create the Consent Resource.
+Just to make sure you have the `Patient` and `Practitioner` Resources needed for this challenge, use Postman to make these requests:
+
+`GET {{fhirurl}}/Patient/WDT000000001`
+
+`GET {{fhirurl}}/Practitioner/WDT000000003`
+
+You should get a `200 OK` responses for both of these Resources. If not, you will need to run the `Save Sample Resources` request in your FHIR Search collection in Postman (this step was covered in Challenge-04).
 
 ## Step 4 - Post Consent Record to FHIR service
 
-1. Review and update (as needed) the sample Consent Resource, which may be found [here](./sample-data/consent-resource.json). Be sure to use the Patient Resource obtained in Step 3.
-2. Create a new request in Postman and post the Consent Resource. 
+1. Review the sample Consent Resource in the [consent-resource.json](./sample-data/consent-resource.json) file. Take a look and you will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
+
+2. Now you will use the `consent-resource.json` to create a new Consent Resource in your FHIR service. 
 
 ## Step 5 - Verify Consent Opt-Out filtering
 
