@@ -69,7 +69,7 @@ Press **Send** and you should receive a bundle as shown below (the number of pat
 
 ![Patient Resources](./images/patient-count-postman.png) 
 
-To make sure you have the correct `Patient` and `Practitioner` Resources we will be using in this challenge, send the following requests in Postman:
+To make sure you have the correct `Patient` and `Practitioner` Resources that we will be using in this challenge, send the following requests in Postman:
 
 `GET {{fhirurl}}/Patient/WDT000000001`
 
