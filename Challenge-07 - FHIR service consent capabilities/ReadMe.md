@@ -114,7 +114,7 @@ See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.
 
 ## Step 7 - Confirm Consent Opt-Out is working
 
-1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is operational.
+1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
 
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
 
