@@ -81,7 +81,10 @@ You should get a `200 OK` response for each of these Resources. If not, you will
 
 1. Review the sample `Consent` Resource in the [consent-resource.json](./sample-data/consent-resource.json) file. Take a look at the entries and you will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
 
-2. Now you will use the `consent-resource.json` to create a new Consent Resource in your FHIR service. 
+2. Now you will create a new request in Postman for adding a `Consent` Resource to your FHIR service. 
+    - Go to the FHIR CALLS collection in Postman and click **Add request**.
+    - Call the new request `POST Consent Resource` (or whatever name you prefer).
+    - Use the `consent-resource.json` file and either copy/paste or import the file into the **Body** of your new `POST Consent Resource` request in Postman.
 
 ## Step 5 - Verify Consent Opt-Out filtering
 
