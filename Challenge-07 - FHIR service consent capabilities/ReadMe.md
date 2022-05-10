@@ -49,7 +49,7 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 [FHIR-Proxy Authentication Setup Instructions](../resources/docs/FHIR-Starter_ARM_template_README.md#step-2---complete-fhir-proxy-authentication)
 
 ## Step 2 - Configure Postman to connect with the FHIR-Proxy endpoint
-In the next part of this challenge, you will be setting up Postman so that API calls made from Postman go to the FHIR-Proxy endpoint rather than directly to the FHIR service endpoint.
+In the next part of this challenge, you will be setting up your environment so that API calls made from Postman go to the FHIR-Proxy endpoint rather than directly to the FHIR service endpoint.
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the Postman setup instructions for FHIR-Proxy in a new browser tab. Follow the instructions and return here when finished.
 
