@@ -85,6 +85,8 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 2. Now you will create a new request in Postman for adding the `consent-resource.json` file to FHIR service as a `Consent` Resource. 
     - Go to the FHIR CALLS collection in Postman and click **Add request**.
     - Name the new request `POST Consent Resource`.
+    - In the URL field for the request, enter `{{fhirurl}}/Consent`.
+    - Set the HTTP operation to `POST`.
     - Either copy/paste or import the `consent-resource.json` file into the **Body** of your new `POST Consent Resource` request in Postman.
     - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**). 
 
