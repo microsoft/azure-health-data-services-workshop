@@ -85,7 +85,7 @@ You should receive a `200 OK` response for each of these requests. If not, you w
     - Go to the FHIR CALLS collection in Postman and click **Add request**.
     - Name the new request `POST Consent Resource` (or whatever name you prefer).
     - Either copy/paste or import the `consent-resource.json` file into the **Body** of your new `POST Consent Resource` request in Postman.
-    - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive and a `201 Created` code and the Resource in the **Body** of the response.
+    - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive a `201 Created` code in response.
 
 ## Step 5 - Verify Consent Opt-Out filtering
 
