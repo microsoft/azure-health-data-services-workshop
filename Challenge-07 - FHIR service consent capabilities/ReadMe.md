@@ -83,7 +83,7 @@ You should receive a `200 OK` response for each of these requests. If not, you w
 
 2. Now you will create a new request in Postman for adding the `consent-resource.json` as a `Consent` Resource to your FHIR service. 
     - Go to the FHIR CALLS collection in Postman and click **Add request**.
-    - Name the new request `POST Consent Resource` (or whatever you prefer).
+    - Name the new request `POST Consent Resource` (or whatever name you prefer).
     - Either copy/paste or import the `consent-resource.json` file into the **Body** of your new `POST Consent Resource` request in Postman.
     - When ready, press `Send` to populate your FHIR service with the `Consent` Resource. You should receive a `201 Created` code along with the Resource in the **Body** of the response. 
 
