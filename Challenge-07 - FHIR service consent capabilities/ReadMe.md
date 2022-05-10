@@ -94,9 +94,9 @@ You should receive a `200 OK` response for each of these requests (in addition t
 
 
 
-## Step 6 - Link your AAD Object ID to a FHIR Practitioner Resource ID
+## Step 6 - Link your AAD User Object ID to a FHIR Practitioner Resource ID
 
-1. Link a user to an appropriate FHIR resource. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details. Ensure that the linked user is not assigned to the FHIR-Proxy administrator role.
+1. Link yourself as a user to the `Practitioner/WDT000000003` resource. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details. 
 
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
 
