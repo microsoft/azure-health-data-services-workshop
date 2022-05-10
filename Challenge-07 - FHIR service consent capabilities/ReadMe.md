@@ -89,7 +89,7 @@ You should receive a `200 OK` response for each of these requests (in addition t
 
 ## Step 5 - Create a Practitioner role for yourself in FHIR-Proxy
 
-1. Go to **Portal** -> **AAD** -> **Enterprise Applications** -> **<FHIR-Proxy name>** -> **Users and groups** and click on **+Add user/group**.
+1. Go to **Portal** -> **AAD** -> **Enterprise Applications** -> **FHIR-Proxy App** -> **Users and groups** and click on **+Add user/group**.
 
 
 
