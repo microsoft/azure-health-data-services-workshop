@@ -75,7 +75,7 @@ To confirm you have the correct `Patient` and `Practitioner` Resources needed fo
 
 `GET {{fhirurl}}/Practitioner/WDT000000003`
 
-You should receive a `200 OK` response for each of these requests (in addition to the Resource in each response **Body**). If not, you will need to run the `Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
+You should receive a `200 OK` response for each of these requests (in addition to each Resource in the response **Body**). If not, you will need to run the `Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
 
 ## Step 4 - Post Consent Record to FHIR service
 Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html) to enable the [Consent Opt-Out filter](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) in FHIR-Proxy.
