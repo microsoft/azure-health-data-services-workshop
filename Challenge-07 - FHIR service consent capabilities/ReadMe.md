@@ -59,7 +59,7 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 
 1. Make sure to select `fhir-proxy` as your active Postman environment (upper right-hand corner). 
 
-2. Now you will confirm that the FHIR service contains `Patient` Resources. Go ahead and run the `Count All Patients` request in your FHIR Search collection in Postman.
+2. Now you will check to make sure that the FHIR service contains `Patient` Resources. Go ahead and run the `Count All Patients` request in your FHIR Search collection in Postman.
 
 ```
 GET {{fhirurl}}/Patient?_summary=count
@@ -69,7 +69,7 @@ You should receive a bundle as shown below (the number of patients will be diffe
 
 ![Patient Resources](./images/patient-count-postman.png) 
 
-To make sure you have the correct `Patient` and `Practitioner` Resources that we will be using in this challenge, send the following requests in Postman:
+To confirm you have the correct `Patient` and `Practitioner` Resources that you will be using in this challenge, send the following requests in Postman:
 
 `GET {{fhirurl}}/Patient/WDT000000001`
 
