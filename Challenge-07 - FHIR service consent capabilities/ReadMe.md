@@ -100,6 +100,10 @@ To configure Consent Opt-Out, you must first create a FHIR Participant role for 
 
 1. Now you will be linking the `Practitioner/WDT000000003` Resource to your own **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details. 
 
+## Step 7 - Confirm Consent Opt Out is working
+
+1. Now send the `GET {{fhirurl}}/Patient/WDT000000001` request again. You should receive an `"access-denied"` response as shown below. This indicates that Consent Opt Out is working.
+
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
 
 
