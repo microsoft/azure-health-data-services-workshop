@@ -119,7 +119,7 @@ See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.
 ## What does success look like for Challenge-07?
 
 + Successfully `POST` a consent record to the FHIR service.
-+ Verify that Consent Opt-Out properly filters Resources.
++ Verify that Consent Opt-Out properly filters a `Patient` Resource from view.
 
 ## Next Steps
 
