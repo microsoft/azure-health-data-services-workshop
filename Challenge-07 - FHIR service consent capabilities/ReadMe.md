@@ -87,7 +87,14 @@ You should receive a `200 OK` response for each of these requests (in addition t
     - Either copy/paste or import the `consent-resource.json` file into the **Body** of your new `POST Consent Resource` request in Postman.
     - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**).
 
-## Step 5 - Verify Consent Opt-Out filtering
+## Step 5 - Create a Practitioner role for yourself in FHIR-Proxy
+
+1. Go to **Portal** -> **AAD** -> **Enterprise Applications** -> **<FHIR-Proxy name>** -> **Users and groups** and click on **+Add user/group**.
+
+
+
+
+## Step 6 - Link your AAD Object ID to a FHIR Practitioner Resource ID
 
 1. Link a user to an appropriate FHIR resource. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details. Ensure that the linked user is not assigned to the FHIR-Proxy administrator role.
 
