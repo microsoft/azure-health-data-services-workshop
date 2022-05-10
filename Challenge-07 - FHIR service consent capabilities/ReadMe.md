@@ -78,6 +78,7 @@ To confirm you have the correct `Patient` and `Practitioner` Resources that you 
 You should receive a `200 OK` response for each of these requests (in addition to the Resource in each response **Body**). If not, you will need to run the `Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
 
 ## Step 4 - Post Consent Record to FHIR service
+Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html) to enable the [Consent Opt-Out filter](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) in FHIR-Proxy.
 
 1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). You will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
 
@@ -85,7 +86,7 @@ You should receive a `200 OK` response for each of these requests (in addition t
     - Go to the FHIR CALLS collection in Postman and click **Add request**.
     - Name the new request `POST Consent Resource`.
     - Either copy/paste or import the `consent-resource.json` file into the **Body** of your new `POST Consent Resource` request in Postman.
-    - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**).
+    - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**). 
 
 ## Step 5 - Add a Practitioner role for yourself in FHIR-Proxy
 To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from accessing a patient's FHIR data. You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing FHIR data belonging to `Patient/WDT000000001`. For the sake of this challenge, you are going to be adding yourself as a Practitioner in FHIR-Proxy and then linking this Practitioner role (i.e., yourself) to `Practitioner/WDT000000003`. Information about configuring FHIR Participant roles in FHIR-Proxy is available [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#configuring-participant-authorization-roles-for-users).
