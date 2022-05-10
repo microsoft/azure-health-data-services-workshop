@@ -88,7 +88,7 @@ You should receive a `200 OK` response for each of these requests (in addition t
     - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**).
 
 ## Step 5 - Add a Practitioner role for yourself in FHIR-Proxy
-To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from accessing a patient's FHIR data. You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing FHIR data belonging to `Patient/WDT000000001`. For the sake of this challenge, you are going to be adding yourself as a Practitioner in FHIR-Proxy and then linking this Practitioner role (i.e., yourself) to `Practitioner/WDT000000003`. 
+To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from accessing a patient's FHIR data. You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing FHIR data belonging to `Patient/WDT000000001`. For the sake of this challenge, you are going to be adding yourself as a Practitioner in FHIR-Proxy and then linking this Practitioner role (i.e., yourself) to `Practitioner/WDT000000003`. Information about configuring FHIR Participant roles in FHIR-Proxy is available [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#configuring-participant-authorization-roles-for-users).
 
 1. Go to **Portal** -> **AAD** -> **Enterprise Applications** -> **FHIR-Proxy App** -> **Users and groups** and click on **+Add user/group**.
 
@@ -99,12 +99,21 @@ To configure Consent Opt-Out, you must first create a FHIR Participant role for 
 ## Step 6 - Link your AAD User Object ID to a FHIR Practitioner Resource ID
 
 1. Now you will be linking the `Practitioner/WDT000000003` Resource to your own **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details. 
+    - Go to **Portal** -> **AAD** -> **Enterprise Applications** -> **FHIR-Proxy App** -> **Users and groups** and click on your name in the **Display Name** column.
+    - In the **Profile** blade, find the **Object ID**.
+
+2. In Postman, create a new request in the FHIR CALLS collection called `GET Link Roles`.
+3. In the Postman URL field, input this query string:
+    - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>`
+4. Press **Send**.
 
 ## Step 7 - Confirm Consent Opt Out is working
 
-1. Now send the `GET {{fhirurl}}/Patient/WDT000000001` request again. You should receive an `"access-denied"` response as shown below. This indicates that Consent Opt Out is working.
+1. Now, if you send the `GET {{fhirurl}}/Patient/WDT000000001` request again, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt Out is operational.
 
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
+
+See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
 
 ## What does success look like for Challenge-07?
