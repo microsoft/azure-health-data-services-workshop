@@ -7,7 +7,7 @@
     },
     "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient wishes to withhold disclosure of all data from a timeframe to any provider.\n</p>\n</div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient wishes to withhold disclosure of data to a provider.\n</p>\n</div>"
     },
     "status": "active",
     "scope": {
@@ -29,16 +29,16 @@
         }
     ],
     "patient": {
-        "reference": "Patient/9ec3be2f-342c-4cb6-b2dd-c124747ef1bb"
+        "reference": "Patient/WDT000000001"
     },
     "dateTime": "2020-05-18",
     "organization": [
         {
-            "reference": "Organization/66fa407d-d890-43a5-a6e3-eb82d3bfa393"
+            "reference": "Practitioner/WDT000000003"
         }
     ],
     "sourceAttachment": {
-        "title": "Withhold records for time frame"
+        "title": "Withhold records"
     },
     "policyRule": {
         "coding": [
@@ -50,10 +50,6 @@
     },
     "provision": {
         "type": "deny",
-        "period": {
-            "start": "2020-04-20T00:00:00.0000+05:00",
-            "end": "2020-12-31T23:59:00.0000+05:00"
-        },
         "actor": [
             {
                 "role": {
@@ -65,7 +61,7 @@
                     ]
                 },
                 "reference": {
-                    "reference": "Organization/66fa407d-d890-43a5-a6e3-eb82d3bfa393"
+                    "reference": "Practitioner/WDT000000003"
                 }
             }
         ]
