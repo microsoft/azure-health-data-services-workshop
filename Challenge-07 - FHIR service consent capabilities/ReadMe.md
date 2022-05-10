@@ -88,7 +88,7 @@ You should receive a `200 OK` response for each of these requests (in addition t
     - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**).
 
 ## Step 5 - Add a Practitioner role for yourself in FHIR-Proxy
-To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from accessing a patient's FHIR data. You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing FHIR data belonging to `Patient/WDT000000001`. For the sake of this challenge, you are going to be adding yourself as a Practitioner in FHIR-Proxy and then linking this Practitioner role to `Practitioner/WDT000000003`. 
+To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from accessing a patient's FHIR data. You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing FHIR data belonging to `Patient/WDT000000001`. For the sake of this challenge, you are going to be adding yourself as a Practitioner in FHIR-Proxy and then linking this Practitioner role (i.e., yourself) to `Practitioner/WDT000000003`. 
 
 1. Go to **Portal** -> **AAD** -> **Enterprise Applications** -> **FHIR-Proxy App** -> **Users and groups** and click on **+Add user/group**.
 
