@@ -59,7 +59,7 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 
 1. Make sure to select `fhir-proxy` as your active Postman environment (upper right-hand corner). 
 
-2. Now you will check to make sure that you can access `Patient` Resources on the FHIR service (with Postman connected to the FHIR-Proxy endpoint). Go ahead and run the `Count All Patients` request in your FHIR Search collection in Postman.
+2. Check to make sure that you can access `Patient` Resources on the FHIR service (with Postman connected to the FHIR-Proxy endpoint). Go ahead and run the `Count All Patients` request in your FHIR Search collection in Postman.
 
 ```
 GET {{fhirurl}}/Patient?_summary=count
@@ -85,7 +85,7 @@ You should receive a `200 OK` response for each of these requests. If not, you w
     - Go to the FHIR CALLS collection in Postman and click **Add request**.
     - Name the new request `POST Consent Resource` (or whatever name you prefer).
     - Either copy/paste or import the `consent-resource.json` file into the **Body** of your new `POST Consent Resource` request in Postman.
-    - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive a `201 Created` code in response.
+    - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response.
 
 ## Step 5 - Verify Consent Opt-Out filtering
 
