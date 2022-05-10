@@ -69,7 +69,7 @@ You should receive a bundle as shown below (the number of patients will be diffe
 
 ![Patient Resources](./images/patient-count-postman.png) 
 
-To confirm you have the correct `Patient` and `Practitioner` Resources that you will be using in this challenge, send the following requests in Postman:
+To confirm you have the correct `Patient` and `Practitioner` Resources needed for this challenge, send the following requests in Postman:
 
 `GET {{fhirurl}}/Patient/WDT000000001`
 
