@@ -110,7 +110,7 @@ To configure Consent Opt-Out, you must first create a FHIR Participant role for 
 
 ## Step 7 - Confirm Consent Opt Out is working
 
-1. Now, if you send the `GET {{fhirurl}}/Patient/WDT000000001` request again, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt Out is operational.
+1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt Out is operational.
 
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
 
