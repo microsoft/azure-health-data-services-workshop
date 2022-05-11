@@ -113,7 +113,7 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 2. In Postman, create a new request in the FHIR CALLS collection called `GET Link Roles`.
 3. In the URL field for the request, input this string (set the HTTP operation to `GET`):
     - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>`
-4. Press **Send**. You will get back text saying the link has been established with the response code is 200.
+4. Press **Send**. You will get back text saying the link has been established with a response code of `200`.
 
 See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
