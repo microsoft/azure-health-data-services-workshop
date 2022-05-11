@@ -103,7 +103,7 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 
 4. Click **Grant admin consent** for these new permissions. 
 
-## Step 6 - Link your AAD User Object ID to a FHIR Practitioner Resource ID
+## Step 6 - Link the Postman AAD Object ID to a FHIR Practitioner Resource ID
 
 1. Now you will be linking the `Practitioner/WDT000000003` Resource to the Postman service client's **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details on how this works. 
 
