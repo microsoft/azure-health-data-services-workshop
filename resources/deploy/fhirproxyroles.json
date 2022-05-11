@@ -27,7 +27,8 @@
     },
     {
         "allowedMemberTypes": [
-            "User"
+            "User",
+            "Application"
         ],
         "description": "DataScientist Role with de-id access to all resources",
         "displayName": "DataScientist",
@@ -39,7 +40,8 @@
     },
     {
         "allowedMemberTypes": [
-            "User"
+            "User",
+            "Application"
         ],
         "description": "RelatedPerson Access to FHIR Resources",
         "displayName": "RelatedPerson",
@@ -51,7 +53,8 @@
     },
     {
         "allowedMemberTypes": [
-            "User"
+            "User",
+            "Application"
         ],
         "description": "Patient Access to FHIR resources",
         "displayName": "Patient",
@@ -63,7 +66,8 @@
     },
     {
         "allowedMemberTypes": [
-            "User"
+            "User",
+            "Application"
         ],
         "description": "Practitioner Access to FHIR resources",
         "displayName": "Practitioner",
@@ -75,7 +79,8 @@
     },
     {
         "allowedMemberTypes": [
-            "User"
+            "User",
+            "Application"
         ],
         "description": "Administrator of the FHIR Server",
         "displayName": "Administrator",

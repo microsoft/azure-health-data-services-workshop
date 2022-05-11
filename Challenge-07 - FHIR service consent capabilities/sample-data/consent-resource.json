@@ -1,14 +1,5 @@
 {
     "resourceType": "Consent",
-    "id": "7d044901-068e-470d-ac98-8f3889144476",
-    "meta": {
-        "versionId": "2",
-        "lastUpdated": "2020-07-24T16:02:42.802+00:00"
-    },
-    "text": {
-        "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient wishes to withhold disclosure of data to a provider.\n</p>\n</div>"
-    },
     "status": "active",
     "scope": {
         "coding": [

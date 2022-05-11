@@ -23,21 +23,20 @@ By the end of this challenge you will be able to
 
 + Azure Health Data Services FHIR service instance with patient data (completed in previous challenges)
 + FHIR-Proxy deployed (completed in Challenge-01)
-+ Postman installed (completed in Challenge-01) 
++ Postman installed (completed in Challenge-01)
++ Test data in your FHIR service (completed in Challenge-04, Step 1)
 
 ## Getting Started 
-In this challenge, you will be setting up FHIR-Proxy to perform Consent Opt-Out Filtering for the FHIR service. Additionally, you will be creating a new Postman environment to call the FHIR-Proxy endpoint. 
-
-> Note: Within the 2023 fiscal year, the FHIR-Proxy Function App in its current form will be deprecated. The app’s features and functionality will be integrated into Azure Health Data Services FHIR service and other Azure resources. 
+In this challenge, you will be setting up FHIR-Proxy as a FHIR gateway to perform Consent Opt-Out Filtering for the FHIR service. This is an example of advanced authorization. Additionally, you will be creating a new Postman environment to call the FHIR-Proxy endpoint.
 
 ### FHIR-Proxy and FHIR service overview
-In the Azure health data platform, FHIR service and FHIR-Proxy operate as a team. FHIR service is at the center of activity, and FHIR-Proxy acts as a pre- and post-processor, selectively filtering FHIR data on the way into and out of the FHIR service. Admins can set up FHIR-Proxy to listen to the stream of I/O data and trigger custom workflows based on specific FHIR events. FHIR-Proxy also brings enhanced Role-Based Access Control (RBAC) to FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (i.e., patients) can authorize or deny access to certain FHIR data.
+In the Azure health data platform, FHIR-Proxy acts as a gateway for calls to the FHIR service. The FHIR-Proxy is an example of an add-on gateway which enables pre- and post-processors on requests, selectively filtering FHIR data on the way into and out of the FHIR service. You can setup FHIR-Proxy as an example to intercept FHIR calls and trigger custom workflows based on specific FHIR requests. FHIR-Proxy also enables attribute based access control (ABAC) on top of the FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (e.g. patients) can authorize or deny access to certain FHIR data.
 
 Component View of FHIR-Proxy and FHIR service with Postman set up to call the FHIR-Proxy endpoint.
 
 <img src="./images/Postman_FHIR-Proxy_ARM_template_deploy_AHDS.png" height="528">
 
-FHIR-Proxy asserts control over I/O data only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled and configured. Otherwise, with no special configuration, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back unfiltered to the remote client app (e.g., Postman). 
+FHIR-Proxy asserts control over FHIR requests only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled and configured. Otherwise, with no special configuration, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back unfiltered to the client app (like Postman in our case).
 
 ## Step 1 - Configure FHIR-Proxy authentication settings
 Before setting up FHIR-Proxy for Consent Opt-Out filtering, you will need to configure FHIR-Proxy authentication to securely connect with the FHIR service.
@@ -80,39 +79,47 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 
 1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). You will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
 
-2. Now you will create a new request in Postman for adding this `Consent` Resource to your FHIR service. 
-    - Go to the FHIR CALLS collection in Postman and click **Add request**.
-    - Name the new request `POST Consent Resource`.
-    - In the URL field for the request, enter `{{fhirurl}}/Consent`.
-    - Set the HTTP operation to `POST`.
-    - Either copy/paste or import the `consent-resource.json` [file]((./sample-data/consent-resource.json)) into the **Body** of your new `POST Consent Resource` request in Postman.
-    - When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**). 
+2. Now you will create a new request in Postman for adding this `Consent` Resource to your FHIR service.
 
-## Step 5 - Add a Practitioner role for yourself in FHIR-Proxy
-To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from accessing a patient's FHIR data. You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing FHIR data belonging to `Patient/WDT000000001`. For the sake of this challenge, you are going to be adding yourself as a Practitioner in FHIR-Proxy and then linking this Practitioner role (i.e., yourself) to `Practitioner/WDT000000003`. Review [this information](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#configuring-participant-authorization-roles-for-users) about configuring FHIR Participant roles for FHIR-Proxy and then return here when finished.
++ Go to the FHIR CALLS collection in Postman and click **Add request**.
++ Name the new request `POST Consent Resource`.
++ In the URL field for the request, enter `{{fhirurl}}/Consent`.
++ Set the HTTP operation to `POST`.
++ Either copy/paste or import the `consent-resource.json` [file]((./sample-data/consent-resource.json)) into the **Body** of your new `POST Consent Resource` request in Postman.
++ When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**).
 
-1. Go to **Portal** -> **AAD** -> **Enterprise Applications** -> **FHIR-Proxy App** -> **Users and groups** and click on **+Add user/group**.
+## Step 5 - Add a Practitioner and Anministrator role in FHIR-Proxy
+ To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from accessing a patient's FHIR data. In our example, we are acting on a consent opt-out resources for a certain provider. In the real world, you would be associating a FHIR Participant role with a provider. In this example, we will add it to your Postman client for simplicity (in this case `Practitioner/WDT000000003`).
 
-2. Under **Users**, select your AAD username.
+ You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing FHIR data belonging to `Patient/WDT000000001`. Review [this information](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#configuring-participant-authorization-roles-for-users) about configuring FHIR Participant roles for FHIR-Proxy and then return here when finished.
 
-3. Under **Select a role**, chose **Practitioner** for yourself.
+1. Go to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions**.
+
+*Note: In the above, Postman Client will be whatever you named the App Registration you've been using for Postman.*
+
+2. Add a permission, choose **My APIs**, and select your Proxy Function App Registration.
+
+3. Choose **Application permissions**,  and ensure **Practitioner** and **Administator** is selected and added.
+
+4. Grant Admin Consent for this new permission. 
 
 ## Step 6 - Link your AAD User Object ID to a FHIR Practitioner Resource ID
 
-1. Now you will be linking the `Practitioner/WDT000000003` Resource to your own **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details. 
-    - Go to **Portal** -> **AAD** -> **Enterprise Applications** -> **FHIR-Proxy App** -> **Users and groups** and click on your name in the **Display Name** column.
-    - In the **Profile** blade, find the **Object ID**.
+1. Now you will be linking the `Practitioner/WDT000000003` Resource to the Postman App's **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details.
+
++ Go to **Portal** -> **AAD** -> **App Registrations** -> **Postman Client**.
++ Copy the **Object ID** from the Overview blade.
 
 2. In Postman, create a new request in the FHIR CALLS collection called `GET Link Roles`.
 3. In the URL field for the request, input this string (set the HTTP operation to `GET`):
     - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>`
-4. Press **Send**.
+4. Press **Send**. You will get back text saying the link has been established with the response code is 200.
 
 See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
 ## Step 7 - Confirm Consent Opt-Out is working
 
-1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
+1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001    ` request again using the Postman Client, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
 
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
 
