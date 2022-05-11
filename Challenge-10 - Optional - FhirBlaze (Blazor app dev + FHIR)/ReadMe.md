@@ -16,12 +16,12 @@ With health data systems built on the FHIR standard API, organizations can use t
 By the end of this challenge you will be able to 
 
 + Use FHIR Resources like Patient, Practitioner, and more for real world applications
-+ Use Firely SDK to accelerate FHIR application development
++ Use the Firely SDK to accelerate FHIR application development
 + Use Blazor for web development
 
 ## Prerequisites
 
-+ [Visual Studio](https://visualstudio.microsoft.com/) or [Visual Studio Code](https://code.visualstudio.com/) installed on your local machine. The instructions are written for Visual Studio so you will have to map the equivalent in Visual Studio Code yourself.
++ [Visual Studio](https://visualstudio.microsoft.com/) or [Visual Studio Code](https://code.visualstudio.com/) installed on your local machine. Because the instructions are written for Visual Studio, you will have to map the equivalent in Visual Studio Code yourself.
 + Working FHIR service instance (deployed in Challenge-01)
 
 ## Step 1 – Configure service and client application
