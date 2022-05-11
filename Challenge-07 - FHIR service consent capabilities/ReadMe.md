@@ -64,7 +64,7 @@ GET {{fhirurl}}/Patient?_summary=count
 
 You should receive a bundle as shown below (the number of patients will be different from what is shown in the image). 
 
-<img src="./images/patient-count-postman.png" height="328"> 
+<img src="./images/patient-count-postman.png" height="528"> 
 
 To confirm you have the `Patient` and `Practitioner` Resources needed for this challenge, send the following requests in Postman:
 
@@ -122,7 +122,7 @@ See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.
 1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again using Postman, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
 
 2. Sample query patient result. 
-<img src="./images/ConsentOptOut-Withheld-2.png" height="328"> 
+<img src="./images/ConsentOptOut-Withheld-2.png" height="528"> 
 
 ## What does success look like for Challenge-07?
 
