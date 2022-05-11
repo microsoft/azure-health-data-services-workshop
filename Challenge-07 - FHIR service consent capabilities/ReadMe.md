@@ -88,24 +88,24 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 + Either copy/paste or import the `consent-resource.json` [file]((./sample-data/consent-resource.json)) into the **Body** of your new `POST Consent Resource` request in Postman.
 + When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**).
 
-## Step 5 - Add a Practitioner and Anministrator role in FHIR-Proxy
- To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from accessing a patient's FHIR data. In our example, we are acting on a consent opt-out resources for a certain provider. In the real world, you would be associating a FHIR Participant role with a provider. In this example, we will add it to your Postman client for simplicity (in this case `Practitioner/WDT000000003`).
+## Step 5 - Add a Practitioner and Administrator role in FHIR-Proxy
+ To configure Consent Opt-Out, you must first create a FHIR Participant role for the individual (or organization) being blocked from access to a patient's FHIR data. In the real world, you would be associating a FHIR Participant role with a provider (or organization), and you would be activating the `Consent` Resource on behalf of a patient to block said provider (or organization) from accessing the patient's FHIR records. In this example, for simplicity you are not going to be blocking an individual (or organization), but rather you will add the FHIR Participant role to your Postman client as though Postman is the provider (i.e., `Practitioner/WDT000000003`) who is not allowed to access FHIR data belonging to `Patient/WDT000000001`. Just imagine that the Postman service client is an individual (or organization) trying to access this patient's data on your FHIR service.  
 
  You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing FHIR data belonging to `Patient/WDT000000001`. Review [this information](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#configuring-participant-authorization-roles-for-users) about configuring FHIR Participant roles for FHIR-Proxy and then return here when finished.
 
 1. Go to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions**.
 
-*Note: In the above, Postman Client will be whatever you named the App Registration you've been using for Postman.*
+*Note: In the above, "Postman Client" will be whatever you named the App Registration for Postman.*
 
-2. Add a permission, choose **My APIs**, and select your Proxy Function App Registration.
+2. Click on **+Add a permission**, choose **My APIs**, and select your Proxy Function App Registration.
 
-3. Choose **Application permissions**,  and ensure **Practitioner** and **Administator** is selected and added.
+3. Choose **Application permissions**,  and ensure **Practitioner** and **Administrator** are selected and added.
 
 4. Grant Admin Consent for this new permission. 
 
 ## Step 6 - Link your AAD User Object ID to a FHIR Practitioner Resource ID
 
-1. Now you will be linking the `Practitioner/WDT000000003` Resource to the Postman App's **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details.
+1. Now you will be linking the `Practitioner/WDT000000003` Resource to the Postman service client's **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details on how this works. 
 
 + Go to **Portal** -> **AAD** -> **App Registrations** -> **Postman Client**.
 + Copy the **Object ID** from the Overview blade.
@@ -119,14 +119,14 @@ See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.
 
 ## Step 7 - Confirm Consent Opt-Out is working
 
-1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001    ` request again using the Postman Client, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
+1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again using Postman, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
 
 2. Sample query patient result.![Query patient](./images/ConsentOptOut-Withheld-2.png) 
 
 ## What does success look like for Challenge-07?
 
 + Successfully `POST` a consent record to the FHIR service.
-+ Verify that Consent Opt-Out properly filters a `Patient` Resource from view.
++ Verify that Consent Opt-Out properly filters a `Patient` Resource.
 
 ## Next Steps
 
