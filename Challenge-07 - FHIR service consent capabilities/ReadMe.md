@@ -101,7 +101,7 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 
 3. Choose **Application permissions**,  and ensure **Practitioner** and **Administrator** are selected and added.
 
-4. Grant Admin Consent for this new permission. 
+4. Click **Grant admin consent** for these new permissions. 
 
 ## Step 6 - Link your AAD User Object ID to a FHIR Practitioner Resource ID
 
