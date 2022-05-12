@@ -79,7 +79,7 @@ You already installed Postman in Challenge-01 of this workshop. Now you will con
 
 ```
   "file": {
-          "src": 
+          "src": ""
           },
 ```
 
