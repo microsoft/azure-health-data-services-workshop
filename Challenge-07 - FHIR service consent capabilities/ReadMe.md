@@ -118,8 +118,11 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
 ## Step 7 - Confirm Consent Opt-Out is working
+You will now need to configure your Postman client to remove the **Administrator** role and act as a **Practitioner** only (i.e., `Practitioner/WDT000000003`).
 
-1. You will now need to configure your Postman client to act as a Practitioner. Go back to 1. Go to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions**. Remove **Administrator** and add **Practitioner** to your permissions.
+1. Go back to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions** and remove **Administrator** from the permissions.
+
+<img src="./images/Screenshot_2022-05-12_072504_edit.png" height="528"> 
 
 2. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again using Postman, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
 
