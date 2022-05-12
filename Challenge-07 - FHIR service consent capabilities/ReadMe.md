@@ -120,7 +120,7 @@ See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.
 ## Step 7 - Confirm Consent Opt-Out is working
 You will now need to remove the **Administrator** role from your Postman service client. In doing this, your Postman service client will act as a **Practitioner** only (i.e., `Practitioner/WDT000000003`).
 
-1. Go back to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions** and remove **Administrator** from the permissions.
+1. Go back to **Portal** -> **AAD** -> **App Registrations** -> **Postman Client** -> **API permissions** and remove **Administrator** from the permissions.
 
 <img src="./images/Screenshot_2022-05-12_072504_edit.png" height="428"> 
 
