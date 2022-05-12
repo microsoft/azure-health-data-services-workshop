@@ -100,6 +100,7 @@ A quick tour of FhirBlaze:
 Let's see how to add a new module. This will add a new FHIR Resource type that we can create or delete using FhirBlaze.
 
 1. Select a resource from [FHIR.org](https://www.hl7.org/fhir/resourcelist.html) that is not already included as a module in the FhirBlaze solution. Choose one that you have data for in your FHIR service. It's recommended to use a patient centric resource that exists in your FHIR service like encounter or immunization. Query you FHIR service so confirm you have resources to match the resource you are extended.
+  - It's highly recommended to choose a resource that already exists in your FHIR service. Check to see what data you have in your FHIR service before choosing a resource type. If you want to use a resource type where you don't have data, please find sample data online and add it to your FHIR service.
 
 2. In **Solution Explorer**, right-click the **FhirBlaze** solution, select **Add**, and then select **New Project**.
 
@@ -197,6 +198,9 @@ Let's see how to add a new module. This will add a new FHIR Resource type that w
 8. Expand the **Practitioners** region, copy all of the code within that region, and paste into a new region named after your selected FHIR Resource.
 
 9. Modify the method names and parameter names to be the name of your selected FHIR Resource. This will require going through every file in your new project to ensure it matches your resource.
+ - **This step contains most of the work for this challenge.**
+ - Start by removing all unneeded parts from your project - for example you may not need the `Address` display logic.
+ - It's recommended that you strip out your new project to the bare minimum - start with just the id of the resource and then add more items once you get this end to end scenario to work.
 
 10. We have not setup the entire app to handle a new FHIR service Resource type!
 
