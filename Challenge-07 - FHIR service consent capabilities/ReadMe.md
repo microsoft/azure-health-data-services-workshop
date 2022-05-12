@@ -122,7 +122,7 @@ You will now need to configure your Postman client to remove the **Administrator
 
 1. Go back to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions** and remove **Administrator** from the permissions.
 
-<img src="./images/Screenshot_2022-05-12_072504_edit.png" height="528"> 
+<img src="./images/Screenshot_2022-05-12_072504_edit.png" height="428"> 
 
 2. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again using Postman, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
 
