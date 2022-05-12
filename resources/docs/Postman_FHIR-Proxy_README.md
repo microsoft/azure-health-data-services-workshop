@@ -102,7 +102,7 @@ Now you will configure your Postman environment for FHIR-Proxy (`fhir-proxy`).
 
 1. For the `fhir-proxy` Postman environment, you will need to retrieve the following values: 
 
-*From your previous Postman Client - this is stored in your `fhir-service` Postman environment:*
+*From your existing Postman Client - this is stored in your `fhir-service` Postman environment:*
 - `tenantId` - AAD tenant ID (you also can find it in **AAD** -> **Overview** -> **Tenant ID**).
 - `clientId` - Application (client) ID for Postman client app you used previously.
 - `clientSecret` - Client secret for your Postman app.
