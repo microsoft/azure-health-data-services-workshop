@@ -113,7 +113,7 @@ Further configuration is required to define **App Roles and Permissions**.
 9. Verify the **API permissions**.
 <img src="./images/FHIR-PROXY-AUTH15.png" height="310">
 
-10. Click **Grant admin consent**
+10. Click **Grant admin consent**.
 
 11. Verify that the **App roles** were created successfully.
 <img src="./images/FHIR-PROXY-AUTH16.png" height="310">
