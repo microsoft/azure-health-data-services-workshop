@@ -119,9 +119,11 @@ See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.
 
 ## Step 7 - Confirm Consent Opt-Out is working
 
-1. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again using Postman, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
+1. You will now need to configure your Postman client to act as a Practitioner. Go back to 1. Go to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions**. Remove **Administrator** and add **Practitioner** to your permissions.
 
-2. Sample query patient result. 
+2. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again using Postman, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
+
+3. Sample query patient result. 
 <img src="./images/Screenshot_2022-05-10_112711_edit.png" height="528"> 
 
 ## What does success look like for Challenge-07?
