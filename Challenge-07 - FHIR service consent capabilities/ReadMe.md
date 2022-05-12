@@ -124,6 +124,8 @@ You will now need to remove the **Administrator** role from your Postman service
 
 <img src="./images/Screenshot_2022-05-12_072504_edit.png" height="428"> 
 
+Make sure to **Confirm** that you have revoked the **Administrator** role, and then click **Grant admin consent**. 
+
 2. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again using Postman, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
 
 3. Sample query patient result. 
