@@ -1,4 +1,4 @@
-# Challenge-08 - DICOM
+# Challenge-08 - DICOM service
 
 ## Introduction
 
