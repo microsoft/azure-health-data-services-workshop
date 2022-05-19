@@ -108,7 +108,7 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 1. Now you will be linking the `Practitioner/WDT000000003` Resource to the Postman service client's **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details on how this works. 
 
 + Go to **Portal** -> **AAD** -> **App Registrations** -> **Postman Client**.
-+ Copy the **Object ID** from the Overview blade.
++ Copy the **Object ID** from the **Overview** blade.
 
 2. In Postman, create a new request in the FHIR CALLS collection called `GET Link Roles`.
 3. In the URL field for the request, input this string (set the HTTP operation to `GET`):
