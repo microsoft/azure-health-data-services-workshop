@@ -16,10 +16,10 @@ The Azure Health Data Services Workshop presents a series of challenges to help 
 
 ## What do we want learners to gain from the Azure Health Data Services Workshop?
 
-In general, we want learners to walk away with a sense of confidence in deploying, configuring, and implementing Microsoft's health data solutions.
+In general, we want learners to walk away with a sense of confidence in **deploying**, **configuring**, and **implementing** Microsoft's health data solutions.
 
 + In completing this workshop, learners will know the capabilities of Microsoft's health data services.
-+ Learners will know how to **deploy**, **ingest**, **transform**, and **connect health data** using the Azure health data platform.
++ Learners will know how to **ingest**, **transform**, and **connect health data** using the Azure health data platform.
 + The tasks require learners to locate information in technical documentation and **resolve issues independently**. This workshop is meant to give learners practice retrieving information from Microsoft documentation resources.
 + Working on the challenges will give learners a strong concept of how the components fit together. With this knowledge, learners will be prepared to **use Microsoft Health & Life Sciences (HLS) tools in real-world solutions**.
 
