@@ -140,7 +140,7 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 ## Step 6 - Test FHIR service with Postman 
 
-1. In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
+1. In Postman, click on **Collections** on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
 
 <img src="./images/Screenshot_2022-05-03_125407_edit.png" height="328">
 
