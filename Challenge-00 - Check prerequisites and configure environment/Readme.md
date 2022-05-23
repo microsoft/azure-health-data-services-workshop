@@ -87,7 +87,7 @@ FHIR® (Fast Healthcare Interoperability Resources) is a data standard created b
 
 ### REST APIs
 
-REST (Representational State Transfer) APIs (Application Programming Interfaces) or web APIs are a software architectural style created for internet services. Every internet user makes thousands of REST API requests a day, usually without knowing this since requests are handled by applications and generally not seen by users.
+REST (Representational State Transfer) APIs (Application Programming Interfaces) or web APIs are a software architectural style created for internet services. Every internet user makes thousands of REST API requests a day, usually without knowing it since requests are handled by applications and generally not seen by users.
 
 + [RESTful Web API design](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
 + [Representational state transfer](https://wikipedia.org/wiki/Representational_state_transfer)
