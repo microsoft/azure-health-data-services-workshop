@@ -13,7 +13,7 @@ When testing data connectivity between [FHIR service](https://docs.microsoft.com
 To set up Postman for testing FHIR service, we'll walk through these steps:
 
 **Step 1:** Create an App Registration for Postman in AAD  
-**Step 2:** Assign FHIR Data Contributor role in Azure for Postman  
+**Step 2:** Assign FHIR Data Contributor role in Azure for Postman service client  
 **Step 3:** Import environment template and collection files into Postman  
 **Step 4:** Enter parameter values for the Postman environment  
 **Step 5:** Get an authorization token from AAD  
@@ -43,7 +43,7 @@ Before you can use Postman to make API calls to FHIR service, you will need to c
 
 For more information on registering client applications in AAD for Azure Health Data Services, please see the [Authentication and Authorization for Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/authentication-authorization) documentation. 
 
-## Step 2 - Assign FHIR Data Contributor role in Azure for Postman
+## Step 2 - Assign FHIR Data Contributor role in Azure for Postman service client
 
 1. In Azure Portal, go to the resource group containing your FHIR service instance. When in the resource group **Overview**, click on your FHIR service name in the list. 
 <img src="./images/Screenshot_2022-05-03_113929_edit.png" height="328">
@@ -54,7 +54,7 @@ For more information on registering client applications in AAD for Azure Health 
 3. In **Add role assignment** under the **Role** tab, scroll down in the list and select **FHIR Data Contributor**. Then click **Next**. 
 <img src="./images/Screenshot_2022-02-15_143124_edit2.png" height="328">
 
-4. Under the **Members** tab, click on **+Select members**. Type in the name of your Postman client app in the **Select** field on the right. Highlight the name and click **Select**. Then click **Next**. 
+4. Under the **Members** tab, click on **+Select members**. Type in the name of your Postman service client app in the **Select** field on the right. Highlight the name and click **Select**. Then click **Next**. 
 <img src="./images/Screenshot_2022-02-15_143459_edit2.png" height="328">
 
 5. Under the **Review + assign** tab, click **Review + assign**. 
@@ -102,25 +102,25 @@ Now you will configure your Postman environment (`fhir-service`).
 1. For the `fhir-service` Postman environment, you will need to retrieve the following values: 
 
 - `tenantId` - AAD tenant ID (go to **AAD** -> **Overview** -> **Tenant ID**)
-- `clientId` - Application (client) ID for Postman client app (go to **AAD** -> **App registrations** -> **Name** -> **Overview** -> **Application (client) ID**) 
+- `clientId` - Application (client) ID for Postman service client app (go to **AAD** -> **App registrations** -> **<postman-service-client-name>** -> **Overview** -> **Application (client) ID**) 
 - `clientSecret` - Client secret stored for Postman (see Step 1 #6 above) 
-- `fhirurl` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.fhir.azurehealthcareapis.com` (go to **Resource Group** -> **Overview** -> **Name** -> **FHIR metadata endpoint** and copy *without* "/metadata" on the end)
+- `fhirurl` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.fhir.azurehealthcareapis.com` (go to **Resource Group** -> **Overview** -> **<fhir-service-name>** -> **FHIR metadata endpoint** and copy *without* "/metadata" on the end)
 - `resource` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.fhir.azurehealthcareapis.com` (same as `fhirurl`)
 
-Populate the above parameter values in your `fhir-service` Postman environment as shown below. Input the values in the **CURRENT VALUE** column. Leave `bearerToken` blank. Make sure to click `Save` to retain the `fhir-service` environment values.  
+Populate the above parameter values in your `fhir-service` Postman environment as shown below. Input the values in the **CURRENT VALUE** column. Leave `bearerToken` blank. Make sure to click **Save** to retain the `fhir-service` environment values.  
 
 <img src="./images/Screenshot_2022-05-04_084239_edit3.png" height="328">
 
 ## Step 5 - Get an access token from AAD
 In order to connect to FHIR service, you will need to get an access token first. To obtain an access token from AAD via Postman, you can send a ```POST AuthorizeGetToken``` request. The ```POST AuthorizeGetToken``` call comes pre-configured as part of the `FHIR CALLS` collection that you imported earlier. 
 
-In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select `POST AuthorizeGetToken`. Press `Send` on the right.
+In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select `POST AuthorizeGetToken`. Press **Send** on the right.
 
-__IMPORTANT:__ Be sure to make the `fhir-service` environment active by selecting from the dropdown menu above the `Send` button. In the image below, `fhir-service` is shown as the active environment.
+__IMPORTANT:__ Be sure to make the `fhir-service` environment active by selecting from the dropdown menu above the **Send** button. In the image below, `fhir-service` is shown as the active environment.
 
 <img src="./images/Screenshot_2022-05-03_125109_edit.png" height="428">
 
-On clicking ```Send```, you should receive a response in the **Body** tab like shown below. The `access_token` value is automatically saved to the ```bearerToken``` variable in the Postman environment. 
+On clicking **Send**, you should receive a response in the **Body** tab like shown below. The `access_token` value is automatically saved to the ```bearerToken``` variable in the Postman environment. 
 
 ```
 {
@@ -144,15 +144,15 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 <img src="./images/Screenshot_2022-05-03_125407_edit.png" height="328">
 
-2. Click `Send` to test that FHIR service is functioning on a basic level. The `GET List Metadata` call returns the FHIR service's [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html). If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
+2. Click **Send** to test that FHIR service is functioning on a basic level. The `GET List Metadata` call returns the FHIR service's [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html). If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
 
 <img src="./images/Screenshot_2022-05-03_125457_edit.png" height="428">
 
-3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press `Send`. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
+3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press **Send**. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
 
 <img src="./images/Screenshot_2022-05-03_125547_edit2.png" height="428">
 
-4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored in the database (currently only one patient). This means your setup is fully functional.
+4. Try `GET List Patients` in the `FHIR CALLS` collection and press **Send**. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored in the database (currently only one patient). This means your setup is fully functional.
 
 <img src="./images/Screenshot_2022-05-03_125626_edit.png" height="428">
 
