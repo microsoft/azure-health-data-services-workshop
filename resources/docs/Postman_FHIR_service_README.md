@@ -84,7 +84,7 @@ For more information on assigning user/app roles, see [Configure Azure RBAC for 
 <img src="./images/Screenshot_2022-05-03_153125_edit.png" height="228">
 
 4. Import the ```fhir-service.postman_environment.json``` file that you just saved locally.
-    + Add the file to Postman using the ****Upload Files** button. Then click **Import**. 
+    + Add the file to Postman using the **Upload Files** button. Then click **Import**. 
 <img src="./images/Screenshot_2022-05-03_115519_edit.png" height="228">
 
 5. Now, access the ```FHIR-CALLS.postman-collection.json``` file available in this repo [here](./samples/FHIR-CALLS.postman_collection.json) and save the file locally. Then import the file into Postman.
