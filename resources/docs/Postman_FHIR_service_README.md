@@ -76,23 +76,23 @@ For more information on assigning user/app roles, see [Configure Azure RBAC for 
 
 ## Step 3 - Import environment and collection files into Postman
 
-1. Access the Postman environment template for FHIR service [here](./samples/fhir-service.postman_environment.json). Save the file locally (click on `Raw` and then do a **Save as** from your browser). 
+1. Access the Postman environment template for FHIR service [here](./samples/fhir-service.postman_environment.json). Save the file locally (click on **Raw** and then do a **Save as** from your browser). 
 
 2. In Postman, create a new [Workspace](https://www.postman.com/product/workspaces/) (or select an existing one if already created).
 
-3. Find the `Environments` tab on the left and click the ```Import``` button next to the workspace name. 
+3. Find the **Environments** tab on the left and click the **Import** button next to the workspace name. 
 <img src="./images/Screenshot_2022-05-03_153125_edit.png" height="228">
 
 4. Import the ```fhir-service.postman_environment.json``` file that you just saved locally.
-    + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
+    + Add the file to Postman using the ****Upload Files** button. Then click **Import**. 
 <img src="./images/Screenshot_2022-05-03_115519_edit.png" height="228">
 
 5. Now, access the ```FHIR-CALLS.postman-collection.json``` file available in this repo [here](./samples/FHIR-CALLS.postman_collection.json) and save the file locally. Then import the file into Postman.
-    + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
+    + Add the file to Postman using the **Upload Files** button. Then click **Import**. 
 <img src="./images/Screenshot_2022-02-16_104345_edit2.png" height="228">
 
 6. Access the ```FHIR_Search.postman_collection.json``` file available in this repo [here](./samples/FHIR_Search.postman_collection.json) and save the file locally. Then import the file into Postman.
-    + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
+    + Add the file to Postman using the **Upload Files** button. Then click **Import**. 
 <img src="./images/Screenshot_2022-02-16_104427_edit2.png" height="228"> 
 
 
