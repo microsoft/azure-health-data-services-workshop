@@ -53,8 +53,8 @@ Component | Purpose
 ----------|--------------------------------------------
 **Azure Health Data Services workspace** | managed PaaS
 **FHIR service** | managed FHIR server
-**FHIR-Proxy (OSS)** Function App | for filtering FHIR data input/output 
-**FHIR Loader (OSS)** Function App | for ingesting FHIR data
+**FHIR-Proxy (OSS)** Function App | for filtering FHIR data input/output in Challenge-07
+**FHIR Loader (OSS)** Function App | for ingesting FHIR data in Challenge-03
 App Service Plan | Shared by FHIR-Proxy and FHIR Loader function apps
 Storage account | Blob storage for FHIR service `$export` operation
 Storage account | Storage for FHIR-Proxy function app
