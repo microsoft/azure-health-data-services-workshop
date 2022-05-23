@@ -31,7 +31,7 @@ Familiarity with these concepts will be necessary for completing the challenges 
 + Familiarity with **FHIR®** and the solutions it provides versus legacy health data formats
 + Experience with making **REST API** requests using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing tool (like cURL or Fiddler)
 
-**Note:** For the rest of the workshop, instructions will be geared towards using Postman as your API testing tool. Please use Postman unless you have a strong preference for another tool.
+**Note:** For the rest of the workshop, we will assume that you are using Postman as your API testing tool. Please use Postman unless you have a strong preference for another tool.
 
 ## Environment Prerequisites
 
