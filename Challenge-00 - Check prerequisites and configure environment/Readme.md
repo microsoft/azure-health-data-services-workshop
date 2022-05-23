@@ -12,7 +12,7 @@ In this preliminary challenge, you will be checking your Azure environment plus 
 
 ## Background
 
-The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-overview), including the FHIR, DICOM, and MedTech services. This workshop features solutions that Microsoft has observed a need for in real-world health data production environments. After this workshop, you will have a better understanding of how to build your own solutions using the latest healthcare-focused tools from Microsoft.
+The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-overview), including the FHIR, DICOM, and MedTech services. This workshop features solutions for use in real-world health data production environments. After this workshop, you will have a better understanding of how to build your own solutions using the latest healthcare-focused tools from Microsoft.
 
 ## What do we want learners to gain from the Azure Health Data Services Workshop?
 
