@@ -91,10 +91,10 @@ To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through th
 
 ## Step 3 - Import the FHIR-Proxy environment template into Postman
 
-1. Access the Postman environment template for FHIR-Proxy [here](./samples/fhir-proxy.postman_environment.json). Save the file locally (click on `Raw` and then do a **Save as** from your browser).
+1. Access the Postman environment template for FHIR-Proxy [here](./samples/fhir-proxy.postman_environment.json). Save the file locally (click on **Raw** and then do a **Save as** from your browser).
 
 2. Import the ```fhir-proxy.postman_environment.json``` file that you just saved locally.
-    + Add the file to Postman using the ```Upload Files``` button. Then click `Import`. 
+    + Add the file to Postman using the **Upload Files** button. Then click **Import**. 
 <img src="./images/Screenshot_2022-02-16_095625_edit2.png" height="228">
 
 ## Step 4 - Configure Postman FHIR-Proxy environment
@@ -104,32 +104,32 @@ Now you will configure your Postman environment for FHIR-Proxy (`fhir-proxy`).
 
 *From your existing Postman Service Client - this is stored in your `fhir-service` Postman environment:*
 - `tenantId` - AAD tenant ID (you also can find it in **AAD** -> **Overview** -> **Tenant ID**).
-- `clientId` - Application (client) ID for Postman client app.
+- `clientId` - Application (client) ID for Postman service client app.
 - `clientSecret` - Client secret for your Postman app.
 
 *New values you need to find:*
-- `resource` - `api://<app-id>` where `app-id` is the Application (client) ID in the AAD client app for FHIR-Proxy (go to **AAD** -> **App registrations** -> **<fhir_proxy_app_name>** -> **Overview** -> **Application (client) ID**) 
-- `fhirurl` - FHIR-Proxy endpoint appended with `/fhir` - e.g. `https://<fhir_proxy_app_name>.azurewebsites.net/fhir` (go to **Resource Group** -> **Overview** -> **<fhir_proxy_app_name>** -> **URL**; make sure to append `/fhir` on the end when you input into the Postman environment)
+- `resource` - `api://<app-id>` where `app-id` is the Application (client) ID in the AAD client app for FHIR-Proxy (go to **AAD** -> **App registrations** -> `<fhir_proxy_app_name>` -> **Overview** -> **Application (client) ID**) 
+- `fhirurl` - FHIR-Proxy endpoint appended with `/fhir` - e.g. `https://<fhir_proxy_app_name>.azurewebsites.net/fhir` (go to **Resource Group** -> **Overview** -> `<fhir_proxy_app_name>` -> **URL**; make sure to append `/fhir` on the end when you input into the Postman environment)
 
 <img src="./images/Screenshot_2022-05-09_104810_edit.png" height="328">
 
 <img src="./images/Screenshot_2022-05-09_105012_edit.png" height="328">
 
 
-Populate the above parameter values in your `fhir-proxy` Postman environment as shown below. Leave `bearerToken` blank. **Be sure to click** `Save` **to retain the** `fhir-proxy` **environment values**.  
+Populate the above parameter values in your `fhir-proxy` Postman environment as shown below. Leave `bearerToken` blank. Be sure to click **Save** to retain the `fhir-proxy` environment values.  
 
 <img src="./images/Screenshot_2022-02-16_105208_edit2.png" height="328"> 
 
 ## Step 5 - Get an access token from AAD
 In order to connect to FHIR service, you will need to get an access token first. To obtain an access token from AAD via Postman, you can send a ```POST AuthorizeGetToken``` request. The ```POST AuthorizeGetToken``` call comes pre-configured as part of the `FHIR CALLS` collection that you imported earlier. 
 
-In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select `POST AuthorizeGetToken`. Press `Send` on the right.
+In Postman, click on **Collections** on the left, select the `FHIR CALLS` collection, and then select `POST AuthorizeGetToken`. Press **Send** on the right.
 
-__IMPORTANT:__ Be sure to make the `fhir-proxy` environment active by selecting from the dropdown menu above the `Send` button. In the image below, `fhir-proxy` is shown as the active environment.
+__IMPORTANT:__ Be sure to make the `fhir-proxy` environment active by selecting from the dropdown menu above the **Send** button. In the image below, `fhir-proxy` is shown as the active environment.
 
 <img src="./images/Screenshot_2022-02-16_171631_edit3.png" height="328">
 
-On clicking ```Send```, you should receive a response in the **Body** tab like shown below. The `access_token` value is automatically saved to the ```bearerToken``` variable in the Postman environment. 
+On clicking **Send**, you should receive a response in the **Body** tab like shown below. The `access_token` value is automatically saved to the ```bearerToken``` variable in the Postman environment. 
 
 ```
 {
@@ -149,19 +149,19 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 ## Step 6 - Test FHIR service with Postman via FHIR-Proxy 
 
-1. In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
+1. In Postman, click on **Collections** on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
 
 <img src="./images/Screenshot_2022-02-17_101024_edit3.png" height="328">
 
-2. Click `Send` to test that FHIR service and FHIR-Proxy are functioning on a basic level. The `GET List Metadata` call returns the FHIR service's [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html). If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
+2. Click **Send** to test that FHIR service and FHIR-Proxy are functioning on a basic level. The `GET List Metadata` call returns the FHIR service's [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html). If you receive an error, there should be information in the response indicating the cause of the error. If you receive a response like shown below, this means your setup has passed the first test. 
 
 <img src="./images/Screenshot_2022-02-17_101116_edit2.png" height="328">
 
-3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press `Send`. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
+3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press **Send**. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
 
 <img src="./images/Screenshot_2022-02-17_101224_edit2.png" height="328">
 
-4. Try `GET List Patients` in the `FHIR CALLS` collection and press `Send`. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored in the FHIR service's database. This means your setup with FHIR-Proxy connected to FHIR service is fully functional.
+4. Try `GET List Patients` in the `FHIR CALLS` collection and press **Send**. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored in the FHIR service's database. This means your setup with FHIR-Proxy connected to FHIR service is fully functional.
 
 <img src="./images/Screenshot_2022-02-17_101255_edit2.png" height="328">
 
