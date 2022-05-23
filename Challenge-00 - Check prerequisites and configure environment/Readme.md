@@ -56,7 +56,7 @@ Component | Purpose
 **FHIR-Proxy (OSS)** Function App | for filtering FHIR data input/output in Challenge-07
 **FHIR Loader (OSS)** Function App | for ingesting FHIR data in Challenge-03
 App Service Plan | Shared by FHIR-Proxy and FHIR Loader function apps
-Storage account | Blob storage for FHIR service `$export` operation
+Storage account | Blob storage for FHIR service `$export` operation in Challenge-05
 Storage account | Storage for FHIR-Proxy function app
 Storage account | Storage account for FHIR Loader
 Key Vault | Stores secrets and configuration settings
