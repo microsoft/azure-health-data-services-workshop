@@ -17,11 +17,11 @@ By the end of this challenge you will be able to
 
 ## Background
 
-**FHIR service** is the core component for reading, writing, and querying structured health data in [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-overview). You may have also heard of the predecessor to FHIR service – Azure API for FHIR (Microsoft's first generally available FHIR PaaS solution). For this training, we will be focusing on the new Azure Health Data Services FHIR service, which has some big advantages over its predecessor (like transaction bundles, workspace level configuration, and performance improvements for search, import, and export). 
+**FHIR service** is the core component for reading, writing, and querying structured health data in [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-overview). You may have also heard of the predecessor to FHIR service – called Azure API for FHIR (Microsoft's first generally available FHIR PaaS solution). For this training, we will be focusing on the new Azure Health Data Services FHIR service, which has some big advantages over its predecessor (like transaction bundles, workspace level configuration, and performance improvements for search, import, and export). 
 
 ### Azure Health Data Services Workspace relationship with FHIR, DICOM, and MedTech Services
 
-In the Azure health ecosystem, the Azure Health Data Services workspace is a logical container for associated healthcare service instances such as FHIR services, DICOM (Digital Imaging and Communications in Medicine) services, and MedTech services. You can provision multiple data services in a single workspace - as in, you can have multiple FHIR, DICOM, and MedTech services in a single workspace to meet your solution needs.
+In the Azure health ecosystem, the Azure Health Data Services workspace is a logical container for associated healthcare service instances such as [FHIR](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview), [DICOM (Digital Imaging and Communications in Medicine)](https://docs.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-services-overview), and [MedTech](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/iot-connector-overview) services. You can provision multiple FHIR, DICOM, and MedTech services in a single workspace to meet your solution needs.
 
 ![Relationship between resource groups, Azure Health Data Services, and child services](./media/azure-health-data-services-workspace-overview.png)
 
