@@ -2,17 +2,17 @@
 
 ## Introduction
 
-In this preliminary challenge, you will be checking your Azure environment plus the general prerequisites for this workshop to ensure you are ready for Challenge-01 and beyond.
+In this preliminary challenge, you will be checking the general prerequisites for this workshop to ensure you are ready for Challenge-01 and beyond.
  
 ## Learning Objectives for Challenge-00
 
-+ Understand the general learner goals of this workshop.
-+ Check the knowledge prerequisites for this workshop.
++ Understand the learner goals in this workshop.
++ Review the knowledge prerequisites for this workshop.
 + Check that your Azure environment is ready for this workshop.
 
 ## Background
 
-The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-overview), including the FHIR, DICOM, and MedTech services. This workshop features solutions for use in real-world health data production environments. After this workshop, you will have a better understanding of how to build your own solutions using the latest healthcare-focused tools from Microsoft.
+The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-overview). This workshop features solutions for use in real-world health data production environments. After this workshop, learners will have a better understanding of how to build their own solutions using the latest healthcare-focused tools from Microsoft.
 
 ## What do we want learners to gain from the Azure Health Data Services Workshop?
 
@@ -73,14 +73,14 @@ If you are unfamiliar with any of the above concepts, have a look at the resourc
 
 ### Azure
 
-Microsoft Azure is a cloud computing platform that enables on-demand, highly scalable computing for organizations and individuals all over the world. It is the core of every challenge and step in this workshop.
+Microsoft Azure is a cloud computing platform that enables on-demand, highly scalable computing for organizations and individuals all over the world. It is the core of every challenge in this workshop.
 
 + [Azure Cloud Concepts](https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/)
 + [Azure Active Directory App Registrations and Auth Tokens](https://docs.microsoft.com/learn/modules/implement-app-registration/)
 
 ### FHIR
 
-FHIR® (Fast Healthcare Interoperability Resources) is a data standard created by HL7 (Health Level Seven) for ingesting, managing, and persisting data generated in healthcare scenarios.
+FHIR® (Fast Healthcare Interoperability Resources) is a data standard created by HL7 (Health Level Seven) for ingesting, persisting, and querying data generated in healthcare scenarios.
 
 + [HL7 FHIR Introduction](https://www.hl7.org/fhir/summary.html)
 + [FHIR Architect's Introduction](https://www.hl7.org/fhir/overview-arch.html)
