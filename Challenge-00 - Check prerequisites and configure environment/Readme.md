@@ -6,7 +6,7 @@ In this preliminary challenge, you will be checking the general prerequisites fo
  
 ## Learning Objectives for Challenge-00
 
-+ Understand the learner goals in this workshop.
++ Understand the goals for learners in this workshop.
 + Review the knowledge prerequisites for this workshop.
 + Check that your Azure environment is ready for this workshop.
 
