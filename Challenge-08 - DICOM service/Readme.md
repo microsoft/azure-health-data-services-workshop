@@ -31,7 +31,7 @@ By the end of this challenge you will be able to
 
 ## Prerequisites
 - Azure Health Data Services workspace (deployed in Challenge-01)  
-- Postman installed (completed in Challenge-01)
+- Postman installed and registered in AAD (completed in Challenge-01)
 
 ## Initial Setup
 
