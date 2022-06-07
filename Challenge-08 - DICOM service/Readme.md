@@ -134,6 +134,12 @@ By default, the DICOM service supports querying on the DICOM tags specified in t
 
 You can follow the instructions given in this [Extended Query Tag Overview article](https://docs.microsoft.com/azure/healthcare-apis/dicom/dicom-extended-query-tags-overview) to manage query tags.
 
+## BONUS - Set up a DICOM viewer for use with DICOM service
+
+As an added challenge, go to [this repo](https://github.com/microsoft/dicom-ohif) and follow the instructions to set up an [Open Health Imaging Foundation DICOM viewer](https://ohif.org/) for your DICOM service.
+
+Once you have configured your DICOM viewer, you can experiment with viewing the three DICOM instance files (.dcm) that you downloaded earlier.
+
 ## What does success look like for Challenge-08?
 + Provison and configure DICOM service for ingestion and storage of DICOM studies.
 + Use DICOM service to upload, search, and retrieve DICOM studies.
