@@ -27,6 +27,7 @@ By the end of this challenge you will be able to
   - Get extended query tags
   - Update extended query tags
   - Delete extended query tags
+- Use a DICOM viewer to view DICOM images
 
 ## Prerequisites
 - Azure Health Data Services workspace (deployed in Challenge-01)  
