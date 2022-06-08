@@ -46,6 +46,8 @@ Click on the item in the list. Then, scroll down and click on the **DICOM servic
 
 Now you will visit another page and follow the instructions to [Deploy DICOM service using the Azure portal](https://docs.microsoft.com/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure). Go directly to #3 in the instructions and begin from there. Then return here when finished.
 
+*Note: DICOM service deployment typically takes several minutes.*
+
 ### Step 3 - Configure Azure roles for access to DICOM data
 
 You will need to add the **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as for the Postman service client that you created in Challenge-01 ([documentation available here](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)).
