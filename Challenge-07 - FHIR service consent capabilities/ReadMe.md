@@ -79,7 +79,7 @@ Here you will send a [Consent Resource](https://www.hl7.org/fhir/consent.html) t
 
 1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). You will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
 2. Go to the FHIR CALLS collection in Postman and click on the `POST Consent Resource` call.
-3. Inspect the **Body** of the request, and you will see that it is the same Consent Resource that you just reviewed above.
+3. Inspect the **Body** of the request, and you will see that it contains the same Consent Resource that you just reviewed above.
 4. Click **Send** to populate your FHIR service with the Consent Resource.
 
 ## Step 5 - Add a Practitioner role in FHIR-Proxy
