@@ -123,7 +123,7 @@ You now need to authenticate yourself as the caller trying to access `Patient/WD
 3. Scroll down and click **Get New Access Token**.
 4. You will be prompted to "Authenticate via browser". Click **Proceed**.
 5. You will be taken to your web browser, and you should see a message: "Your call is authenticated".
-    - Make sure to turn off pop-up window blocking for the page if you need to.
+    - **Important**: Make sure to turn off pop-up window blocking for the "Your call is authenticated" page.
 6. Then you'll return to Postman and you'll see "Authentication complete". Click **Proceed**.
 
 ## Step 8 - Confirm Consent Opt-Out is working
