@@ -79,19 +79,15 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
 
 1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). You will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
 
-2. Now you will create a new request in Postman for adding this `Consent` Resource to your FHIR service.
+2. Populate your FHIR service with the `Consent` Resource.
++ Go to the FHIR CALLS collection in Postman and click on the `POST Consent Resource` call.
++ Inspect the **Body** of the request, and you will see that it is the same Consent Resource that you just reviewed above.
++ Click **Send** to populate your FHIR service with the Consent Resource.
 
-+ Go to the FHIR CALLS collection in Postman and click **Add request**.
-+ Name the new request `POST Consent Resource`.
-+ In the URL field for the request, enter `{{fhirurl}}/Consent`.
-+ Set the HTTP operation to `POST`.
-+ Either copy/paste or import the `consent-resource.json` [file]((./sample-data/consent-resource.json)) into the **Body** of your new `POST Consent Resource` request in Postman.
-+ When ready, press `Send` to populate your FHIR service with the new `Consent` Resource. You should receive `201 Created` in response (in addition to the `Consent` Resource in the response **Body**).
-
-## Step 5 - Add a Practitioner and Administrator role in FHIR-Proxy
- To configure Consent Opt-Out, you must create a [FHIR Participant](http://hl7.org/fhir/2020Feb/participant.html) role for the individual (or organization) being blocked from access to a patient's FHIR data. In the real world, you would be associating a FHIR Participant role with a provider (or organization), and you would be activating the `Consent` Resource on behalf of a patient to block said provider from accessing the patient's FHIR records. In this example, for simplicity you are not going to be blocking a real individual, but rather you will add the FHIR Participant role to your *Postman service client* as though Postman is the provider (i.e., `Practitioner/WDT000000003`) who is not allowed to access FHIR data belonging to `Patient/WDT000000001`. Just imagine that the Postman service client is an individual trying to access this patient's data on your FHIR service.  
-
- You will be configuring FHIR-Proxy to block `Practitioner/WDT000000003` from accessing a patient's FHIR data (`Patient/WDT000000001`). Review [this information](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#configuring-participant-authorization-roles-for-users) about configuring FHIR Participant roles for FHIR-Proxy and then return here when finished.
+## Step 5 - Add a Practitioner role in FHIR-Proxy
+ To configure Consent Opt-Out, you must create a [FHIR Participant](http://hl7.org/fhir/2020Feb/participant.html) role for the individual (or organization) being blocked from access to a patient's FHIR data. In the real world, you would be associating a FHIR Participant role with a provider (or organization), and you would be activating the `Consent` Resource on behalf of a patient to block said provider from accessing the patient's FHIR records. In this example, you are going to be adding the FHIR Participant role to *your own Azure account* - as though you are the provider (i.e., `Practitioner/WDT000000003`) who is not allowed to access FHIR data belonging to `Patient/WDT000000001`. 
+ 
+ Review [this information](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#configuring-participant-authorization-roles-for-users) about configuring FHIR Participant roles for FHIR-Proxy and then return here when finished.
 
 1. Go to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions**.
 
