@@ -102,7 +102,7 @@ Now you will be linking the `Practitioner/WDT000000003` Resource to your user ac
 
 1. Go to **Portal** -> **AAD** -> **Users**.
 2. Do a search for yourself and click on your name in the list.
-3. In the **Profile** blade, copy the **Object ID**.
+3. In the **Profile** blade, copy the **Object ID** for your account.
 
 4. In Postman, go to the FHIR CALLS collection and click on the `GET Link Roles` call.
 5. In the URL field for the request, you will see this string:
