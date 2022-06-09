@@ -65,7 +65,7 @@ You will need to add the **DICOM Data Owner** role for yourself (i.e., your user
     + Add the file to Postman using the **Upload Files** button. Then click **Import**.
 
 ### Step 5 - Configure Postman environment
-You already installed Postman in Challenge-01 of this workshop. Now you will configure a new Postman environment for DICOM service (`dicom-service`). 
+Now you will configure a new Postman environment for DICOM service (`dicom-service`). 
 
 1. For the `dicom-service` Postman environment, you will need to retrieve the following values: 
 
