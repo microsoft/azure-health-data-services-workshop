@@ -89,40 +89,47 @@ Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html
  
  Review [this information](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#configuring-participant-authorization-roles-for-users) about configuring FHIR Participant roles for FHIR-Proxy and then return here when finished.
 
-1. Go to **Portal** -> **AAD** -> **App Registration** -> **Postman Client** -> **API permissions**.
+1. Go to **Portal** -> **AAD** -> **Enterprise Applications** -> `<fhir_proxy_app_name>` -> **Users and groups**.
 
-*Note: In the above, "Postman Client" will be whatever you named the App Registration for Postman.*
+2. Click on **Add user/group**.
 
-2. Click on **+Add a permission**, choose **My APIs**, and select your Proxy Function App Registration.
+3. Under **Users** click **None Selected**. Type in your name or Azure login name. Click **Resource Reader**, and then click **Select** and **Assign**.
 
-3. Choose **Application permissions**,  and ensure **Practitioner** and **Administrator** are selected and added.
+4. Click on **Add user/group** (again).
 
-4. Click **Grant admin consent** for these new permissions. 
+5. Under **Users** click **None Selected**. Type in your name or Azure login name. Click **Practitioner**, and then click **Select** and **Assign**.
 
-## Step 6 - Link the Postman Object ID to a FHIR Practitioner Resource ID
+## Step 6 - Link your Object ID to a FHIR Practitioner Resource ID
 
-1. Now you will be linking the `Practitioner/WDT000000003` Resource to the Postman service client's **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details on how this works. 
+1. Now you will be linking the `Practitioner/WDT000000003` Resource to your user account's **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details on how this works. 
 
-+ Go to **Portal** -> **AAD** -> **App Registrations** -> **Postman Client**.
-+ Copy the **Object ID** from the **Overview** blade.
++ Go to **Portal** -> **AAD** -> **Users**.
++ Do a search for yourself and click on your name in the list.
++ In the **Profile** blade, copy the **Object ID**.
 
-2. In Postman, create a new request in the FHIR CALLS collection called `GET Link Roles`.
-3. In the URL field for the request, input this string (set the HTTP operation to `GET`):
+2. In Postman, go to the FHIR CALLS collection and click on the `GET Link Roles` call.
+3. In the URL field for the request, you will see this string:
+    - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003`
+4. Paste your `<object-id>` at the end of the string:
     - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>`
-4. Press **Send**. You will get back a message saying the link has been established with a response code of `200`.
+5. Press **Send**. You will get back a message saying the link has been established with a response code of `200`.
 
 See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
-## Step 7 - Confirm Consent Opt-Out is working
-You will now need to remove the **Administrator** role from your Postman service client. In doing this, you will make your Postman service client act as a **Practitioner** (i.e., `Practitioner/WDT000000003`) when it tries to access data.
+## Step 7 Authenticate yourself using auth code flow in Postman
+You now need to authenticate yourself as `Practitioner/WDT000000003` so that FHIR-Proxy knows to block your access to `Patient/WDT000000001`.
 
-1. Go back to **Portal** -> **AAD** -> **App Registrations** -> **Postman Client** -> **API permissions** and remove **Administrator** from the permissions.
+1. Go to the FHIR CALLS collection in Postman and click on the `GET Patient Consent Opt Out` call.
++ Click on the **Authorization** tab.
++ Scroll down and click **Get New Access Token**.
++ You will be prompted to "Authenticate via browser". Click **Proceed**.
++ You will be taken to your web browser, and you should see a message: "Your call is authenticated".
+    - Make sure to turn off pop-up window blocking for the page if you need to.
++ Then you'll return to Postman and you'll see "Authentication complete". Click **Proceed**.
 
-<img src="./images/Screenshot_2022-05-12_072504_edit.png" height="428"> 
+## Step 8 - Confirm Consent Opt-Out is working
 
-**IMPORTANT:** In the **Other permissions granted** section at the bottom, click on the three dots (···) for the **Administrator** row and then click **Revoke admin consent**. Click **Yes, remove**. Then go back up to the main list of permissions and click **Grant admin consent** (blue checkmark). Confirm if prompted.
-
-2. Now, if you send a `GET {{fhirurl}}/Patient/WDT000000001` request again using Postman, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
+2. Now, if you press **Send** in the `GET Patient Consent Opt Out` call, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
 <img src="./images/Screenshot_2022-05-10_112711_edit.png" height="528"> 
 
 ## What does success look like for Challenge-07?
