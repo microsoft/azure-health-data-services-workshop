@@ -26,8 +26,10 @@ Before you can use Postman to make API calls to FHIR service, you will need to c
 1. In Azure Portal, go to **Azure Active Directory** -> **App registrations** and click **New registration**. 
 <img src="./images/Screenshot_2022-02-11_065619_edit2.png" height="328">
 
-2. Type in a name for your Postman client app in the **Name** field and click **Register** below. 
-<img src="./images/Screenshot_2022-02-15_141049_edit2.png" height="328">
+2. Type in a name for your Postman service client app in the **Name** field.
+
+3. Scroll down to **Redirect URI (optional)**, select **Web**, and enter `https://oauth.pstmn.io/v1/callback` as shown. Then click **Register**. 
+<img src="./images/Screenshot_2022-02-15_141049_edit2_next_next.png" height="328">
 
 3. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
 <img src="./images/Screenshot_2022-05-09_100457_edit.png" height="328">  
