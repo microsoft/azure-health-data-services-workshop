@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "c597062b-475e-44ab-b5cc-fc5c4a301577",
+		"_postman_id": "97acba03-6e59-458a-9df0-41acffb5c0b5",
 		"name": "FHIR CALLS",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15998620"
 	},
 	"item": [
 		{
@@ -39,24 +40,7 @@
 			],
 			"request": {
 				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "accessToken",
-							"value": "{{bearerToken}}",
-							"type": "string"
-						},
-						{
-							"key": "tokenType",
-							"value": "Bearer",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "POST",
 				"header": [
@@ -130,7 +114,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Harold Busmeyer</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"M\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"system\": \"http://va.gov/fhir/NamingSystem/identifier\",\r\n            \"value\": \"VA-103\"\r\n        },\r\n        {\r\n            \"system\": \"http://fhirbot.org\",\r\n            \"value\": \"555121\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Harold Busmeyer\",\r\n            \"family\": \"Busmeyer\",\r\n            \"given\": [\r\n                \"Harold\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"hb@busmeyerinc.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1966-10-07\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Valencia Drive\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
+					"raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Donald Duck</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\r\n                        \"code\": \"2106-3\",\r\n                        \"display\": \"White\"\r\n                    }\r\n                ],\r\n                \"text\": \"race\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\r\n            \"valueCodeableConcept\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\r\n                        \"code\": \"2186-5\",\r\n                        \"display\": \"Nonhispanic\"\r\n                    }\r\n                ],\r\n                \"text\": \"ethnicity\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\",\r\n            \"valueCode\": \"M\"\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"system\": \"http://va.gov/fhir/NamingSystem/identifier\",\r\n            \"value\": \"VA-103\"\r\n        },\r\n        {\r\n            \"system\": \"http://fhirbot.org\",\r\n            \"value\": \"555121\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"text\": \"Donald Duck\",\r\n            \"family\": \"Duck\",\r\n            \"given\": [\r\n                \"Donald\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"615-871-6779\",\r\n            \"use\": \"mobile\"\r\n        },\r\n        {\r\n            \"system\": \"email\",\r\n            \"value\": \"dd@disney.com\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1966-10-07\",\r\n    \"address\": [\r\n        {\r\n            \"use\": \"home\",\r\n            \"line\": [\r\n                \"1500 Epcot Resorts Blvd\"\r\n            ],\r\n            \"city\": \"Bay Lake\",\r\n            \"state\": \"FL\",\r\n            \"postalCode\": \"32830\",\r\n            \"country\": \"USA\"\r\n        }\r\n    ]\r\n}"
 				},
 				"url": {
 					"raw": "{{fhirurl}}/Patient",
@@ -139,6 +123,43 @@
 					],
 					"path": [
 						"Patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consent Resource",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceType\": \"Consent\",\r\n    \"id\": \"7d044901-068e-470d-ac98-8f3889144476\",\r\n    \"meta\": {\r\n        \"versionId\": \"2\",\r\n        \"lastUpdated\": \"2020-07-24T16:02:42.802+00:00\"\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\"><p>Patient wishes to withhold disclosure of all data from a timeframe to any provider.\\n</p>\\n</div>\"\r\n    },\r\n    \"status\": \"active\",\r\n    \"scope\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/consentscope\",\r\n                \"code\": \"patient-privacy\"\r\n            }\r\n        ]\r\n    },\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://loinc.org\",\r\n                    \"code\": \"59284-0\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"patient\": {\r\n        \"reference\": \"Patient/9ec3be2f-342c-4cb6-b2dd-c124747ef1bb\"\r\n    },\r\n    \"dateTime\": \"2020-05-18\",\r\n    \"organization\": [\r\n        {\r\n            \"reference\": \"Organization/66fa407d-d890-43a5-a6e3-eb82d3bfa393\"\r\n        }\r\n    ],\r\n    \"sourceAttachment\": {\r\n        \"title\": \"Withhold records for time frame\"\r\n    },\r\n    \"policyRule\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/consentpolicycodes\",\r\n                \"code\": \"hipaa-restrictions\"\r\n            }\r\n        ]\r\n    },\r\n    \"provision\": {\r\n        \"type\": \"deny\",\r\n        \"period\": {\r\n            \"start\": \"2020-04-20T00:00:00.0000+05:00\",\r\n            \"end\": \"2020-12-31T23:59:00.0000+05:00\"\r\n        },\r\n        \"actor\": [\r\n            {\r\n                \"role\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n                            \"code\": \"CST\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"reference\": {\r\n                    \"reference\": \"Organization/66fa407d-d890-43a5-a6e3-eb82d3bfa393\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Consent",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Consent"
 					]
 				}
 			},
@@ -186,6 +207,106 @@
 					],
 					"path": [
 						"Patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Consent Opt Out",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "resource",
+							"value": {
+								"9a7f6c14-4442-4843-9ce0-f70e147a42cc": "{{resource}}"
+							},
+							"type": "any"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/authorize",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "{{clientSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{clientId}}",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "proxyToken",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
+						"value": "Dale",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient/WDT000000001",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient",
+						"WDT000000001"
 					]
 				}
 			},
@@ -393,6 +514,30 @@
 					],
 					"path": [
 						"$validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Link Roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://train7aaqegcpxyfa.azurewebsites.net/manage/link/Practitioner/WDT000000003/",
+					"protocol": "https",
+					"host": [
+						"train7aaqegcpxyfa",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"manage",
+						"link",
+						"Practitioner",
+						"WDT000000003",
+						""
 					]
 				}
 			},
