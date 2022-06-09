@@ -31,16 +31,16 @@ Before you can use Postman to make API calls to FHIR service, you will need to c
 3. Scroll down to **Redirect URI (optional)**, select **Web**, and enter `https://oauth.pstmn.io/v1/callback` as shown. Then click **Register**. 
 <img src="./images/Screenshot_2022-02-15_141049_edit2_next_next.png" height="328">
 
-3. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
+4. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
 <img src="./images/Screenshot_2022-05-09_100457_edit.png" height="328">  
 
-4. Click on **Certificates and secrets**. Click **+New client secret**. 
+5. Click on **Certificates and secrets**. Click **+New client secret**. 
 <img src="./images/Screenshot_2022-02-15_141926_edit2.png" height="328">
 
-5. Under **Add a client secret**, enter a name for the secret in the **Description** field. Click **Add**. 
+6. Under **Add a client secret**, enter a name for the secret in the **Description** field. Click **Add**. 
 <img src="./images/Screenshot_2022-02-15_142102_edit2.png" height="328">
 
-6. Copy the secret **Value** and securely store it somewhere (you will need this when you configure your Postman environment). 
+7. Copy the secret **Value** and securely store it somewhere (you will need this when you configure your Postman environment). 
 <img src="./images/Screenshot_2022-02-15_142159_edit2.png" height="328">
 
 For more information on registering client applications in AAD for Azure Health Data Services, please see the [Authentication and Authorization for Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/authentication-authorization) documentation. 
