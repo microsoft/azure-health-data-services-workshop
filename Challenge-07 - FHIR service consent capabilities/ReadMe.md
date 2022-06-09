@@ -75,14 +75,12 @@ To confirm you have the `Patient` and `Practitioner` Resources needed for this c
 You should receive a `200 OK` response for each of these requests (with the Resource in the response **Body**). If not, you will need to run the `Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
 
 ## Step 4 - Post Consent Record to FHIR service
-Here you will prepare a [Consent Resource](https://www.hl7.org/fhir/consent.html) to enable the [Consent Opt-Out filter](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) in FHIR-Proxy.
+Here you will send a [Consent Resource](https://www.hl7.org/fhir/consent.html) to enable the [Consent Opt-Out filter](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) in FHIR-Proxy.
 
 1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). You will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
-
-2. Populate your FHIR service with the `Consent` Resource.
-3. Go to the FHIR CALLS collection in Postman and click on the `POST Consent Resource` call.
-4. Inspect the **Body** of the request, and you will see that it is the same Consent Resource that you just reviewed above.
-5. Click **Send** to populate your FHIR service with the Consent Resource.
+2. Go to the FHIR CALLS collection in Postman and click on the `POST Consent Resource` call.
+3. Inspect the **Body** of the request, and you will see that it is the same Consent Resource that you just reviewed above.
+4. Click **Send** to populate your FHIR service with the Consent Resource.
 
 ## Step 5 - Add a Practitioner role in FHIR-Proxy
  To configure Consent Opt-Out, you must create a [FHIR Participant](http://hl7.org/fhir/2020Feb/participant.html) role for the individual (or organization) being blocked from access to a patient's FHIR data. In the real world, you would be associating a FHIR Participant role with a provider (or organization), and you would be activating the `Consent` Resource on behalf of a patient to block said provider from accessing the patient's FHIR records. In this example, you are going to be adding the FHIR Participant role to *your own Azure account* - as though you are the provider (i.e., `Practitioner/WDT000000003`) who is not allowed to access FHIR data belonging to `Patient/WDT000000001`. 
