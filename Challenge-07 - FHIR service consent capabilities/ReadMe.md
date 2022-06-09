@@ -116,7 +116,7 @@ Now you will be linking the `Practitioner/WDT000000003` Resource to your user ac
 See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
 ## Step 7 Authenticate yourself using auth code flow in Postman
-You now need to authenticate yourself as `Practitioner/WDT000000003` so that FHIR-Proxy knows to block your access to `Patient/WDT000000001`.
+You now need to authenticate yourself as the caller trying to access `Patient/WDT000000001`. This way, FHIR-Proxy will know to block your call - because you associated your Azure account with the `Practitioner/WDT000000003` FHIR Participant role.
 
 1. Go to the FHIR CALLS collection in Postman and click on the `GET Patient Consent Opt Out` call.
 2. Click on the **Authorization** tab.
