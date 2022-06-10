@@ -21,10 +21,10 @@ By the end of this challenge you will be able to
 
 ## Prerequisites
 
-+ Azure Health Data Services FHIR service instance with patient data (completed in previous challenges)
++ Azure Health Data Services FHIR service deployed (completed in Challenge-01)
 + FHIR-Proxy deployed (completed in Challenge-01)
-+ Postman installed (completed in Challenge-01)
-+ Test data in your FHIR service (completed in Challenge-04, Step 1)
++ Postman installed and registered in AAD (completed in Challenge-01)
++ Patient data in your FHIR service (completed in Challenge-04, Step 1)
 
 ## Getting Started 
 In this challenge, you will be setting up FHIR-Proxy as a FHIR gateway to perform Consent Opt-Out Filtering for the FHIR service. You will be modifying authorization settings to control access to a patient's FHIR data. For Consent Opt-Out configuration and testing, you will be creating a new Postman environment to call the FHIR-Proxy endpoint.
