@@ -119,9 +119,10 @@ You now need to authenticate yourself as the caller trying to access `Patient/WD
 2. Click on the **Authorization** tab.
 3. Scroll down and click **Get New Access Token**.
 4. You will be prompted to "Authenticate via browser". Click **Proceed**.
-5. You will be taken to your web browser, and you should see a message: "Your call is authenticated".
-    - **Important**: Make sure to turn off pop-up window blocking for the "Your call is authenticated" page.
-6. Then you'll return to Postman and you'll see "Authentication complete". Click **Proceed**.
+5. You will be taken to a new tab in your web browser, and if you are already logged into Azure Portal in your browser session, you should see a message: "Your call is authenticated". 
+    - If you are not logged into Azure Portal, you will be prompted to authenticate with your Azure login credentials. 
+    - **Important**: Make sure to disable pop-up window blocking for the Postman auth code page opened in the new tab.
+6. After authenticating in your browser, you'll return to Postman and you'll see "Authentication complete". Click **Proceed**.
 
 ## Step 8 - Confirm Consent Opt-Out is working
 Now, if you press **Send** in the `GET Patient Consent Opt Out` call, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
