@@ -72,7 +72,7 @@ To confirm you have the `Patient` and `Practitioner` Resources needed for this c
 
 `GET {{fhirurl}}/Practitioner/WDT000000003`
 
-You should receive a `200 OK` response for each of these requests (with the Resource in the response **Body**). If not, you will need to run the `Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
+You should receive a `200 OK` response for each of these requests (with the Resource in the response **Body**). If not, you will need to run the `POST Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
 
 ## Step 4 - Post a Consent Resource to FHIR service
 Here you will send a [Consent Resource](https://www.hl7.org/fhir/consent.html) to enable the [Consent Opt-Out filter](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) in FHIR-Proxy.
@@ -103,18 +103,17 @@ Now you will be linking the `Practitioner/WDT000000003` Resource to your user ac
 1. Go to **Portal** -> **AAD** -> **Users**.
 2. Do a search for yourself and click on your name in the list.
 3. In the **Profile** blade, copy the **Object ID** for your account.
-
-4. In Postman, go to the FHIR CALLS collection and click on the `GET Link Roles` call.
-5. In the URL field for the request, you will see this string:
-    - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003`
-6. Paste your `<object-id>` at the end of the string:
+4. You will also need your `<fhir_proxy_app_name>` (**Portal** -> **Resource Group**).
+5. In Postman, go to the FHIR CALLS collection and click on the `GET Link Roles` call.
+6. In the URL field for the request, you will see this string:
     - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>`
-7. Press **Send**. You will get back a message saying the link has been established with a response code of `200`.
+7. Paste your `<fhir_proxy_app_name>` and `<object-id>` into the appropriate places in the string.
+8. Press **Send**. You will get back a message saying the link has been established with a response code of `200`.
 
 See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
 ## Step 7 Authenticate yourself using auth code flow in Postman
-You now need to authenticate yourself as the caller trying to access `Patient/WDT000000001`. This way, FHIR-Proxy will know to block your request. Your Azure account is associated with the `Practitioner/WDT000000003` FHIR Participant role, and `Patient/WDT000000001` has opted out of sharing FHIR records with `Practitioner/WDT000000003`.
+You now need to authenticate yourself as the caller trying to access `Patient/WDT000000001`. This way, FHIR-Proxy will know to block your access to `Patient/WDT000000001` because your Azure account is associated with `Practitioner/WDT000000003`.
 
 1. Go to the FHIR CALLS collection in Postman and click on the `GET Patient Consent Opt Out` call.
 2. Click on the **Authorization** tab.
