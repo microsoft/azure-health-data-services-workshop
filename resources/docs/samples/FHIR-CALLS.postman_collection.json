@@ -525,10 +525,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://train7aaqegcpxyfa.azurewebsites.net/manage/link/Practitioner/WDT000000003/",
+					"raw": "https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>",
 					"protocol": "https",
 					"host": [
-						"train7aaqegcpxyfa",
+						"",
 						"azurewebsites",
 						"net"
 					],
