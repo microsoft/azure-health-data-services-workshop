@@ -101,7 +101,7 @@ You can follow the provided articles that go over how to programmatically commun
 
 2. Click on the Conformance-as-Postman collection.
 
-3. Click on the `POST AuthorizeGetToken` request and click **Send**. You should receive a `200 OK` message in response. Your access token is now saved to the `bearerToken` environment variable in your `dicom-service` Postman environment. You will need to refresh the token after 60 minutes.
+3. Click on the `POST AuthorizeGetToken` request and click **Send**. You should receive a `200 OK` message in response. Your access token is now saved to the `bearerToken` environment variable in your `dicom-service` Postman environment. Access tokens expire after 60 minutes. A refresh can be obtained by sending the `POST AuthorizeGetToken` request again.
 
 ### Step 2 - Populate DICOM service with single instance images
 
