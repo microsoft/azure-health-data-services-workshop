@@ -65,7 +65,7 @@ You will need to add the **DICOM Data Owner** role for yourself (i.e., your user
     + Add the file to Postman using the **Upload Files** button. Then click **Import**.
 
 ### Step 5 - Configure Postman environment
-Now you will configure a new Postman environment for DICOM service (`dicom-service`). 
+You will now configure a new Postman environment for DICOM service (`dicom-service`). 
 
 1. For the `dicom-service` Postman environment, you will need to retrieve the following values: 
 
@@ -77,7 +77,7 @@ Now you will configure a new Postman environment for DICOM service (`dicom-servi
 *New values you need to input:*
 
 - `resource` - `https://dicom.healthcareapis.azure.com`
-- `baseUrl` - Service URL appended with `/v1`. Go to **Portal** -> **Resource Group** -> **DICOM service** -> **Service URL**. Copy and paste into the `baseUrl` value and add `/v1` on the end: `https://<workspace-name>-<dicom-service-name>.dicom.azurehealthcareapis.com/v1`.
+- `baseUrl` - Service URL appended with `/v1`. Go to **Portal** -> **Resource Group** -> **DICOM service** -> **Service URL**. Copy and paste as the `baseUrl` and add `/v1` on the end: `https://<workspace-name>-<dicom-service-name>.dicom.azurehealthcareapis.com/v1`.
 
 Populate the above parameter values in your `dicom-service` Postman environment. Input the values in the **CURRENT VALUE** column. Leave `bearerToken` blank. Make sure to click **Save** to retain the `dicom-service` environment values.  
 
@@ -113,7 +113,7 @@ You can follow the provided articles that go over how to programmatically commun
 
 ### Step 2 - Execute Outlined Features via Postman Collection
 
-The `Conformance-as-Postman` collection has a complete set of API calls that you can execute one by one. See the list below for details. 
+The Conformance-as-Postman collection has a complete set of API calls that you can execute one by one. See the list below for details. 
 
 - Store DICOM files to the service 
 - Search among the flies that are stored within the DICOM service
