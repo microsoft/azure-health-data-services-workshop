@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "97acba03-6e59-458a-9df0-41acffb5c0b5",
+		"_postman_id": "0ec99d20-56aa-4d49-9aa7-c721f30d9885",
 		"name": "FHIR CALLS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15998620"
+		"_exporter_id": "4953538"
 	},
 	"item": [
 		{
@@ -12,12 +12,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{fhirurl}}/Metadata",
+					"raw": "{{fhirurl}}/metadata",
 					"host": [
 						"{{fhirurl}}"
 					],
 					"path": [
-						"Metadata"
+						"metadata"
 					]
 				}
 			},
@@ -129,43 +129,6 @@
 			"response": []
 		},
 		{
-			"name": "Consent Resource",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"resourceType\": \"Consent\",\r\n    \"id\": \"7d044901-068e-470d-ac98-8f3889144476\",\r\n    \"meta\": {\r\n        \"versionId\": \"2\",\r\n        \"lastUpdated\": \"2020-07-24T16:02:42.802+00:00\"\r\n    },\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\"><p>Patient wishes to withhold disclosure of all data from a timeframe to any provider.\\n</p>\\n</div>\"\r\n    },\r\n    \"status\": \"active\",\r\n    \"scope\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/consentscope\",\r\n                \"code\": \"patient-privacy\"\r\n            }\r\n        ]\r\n    },\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://loinc.org\",\r\n                    \"code\": \"59284-0\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"patient\": {\r\n        \"reference\": \"Patient/9ec3be2f-342c-4cb6-b2dd-c124747ef1bb\"\r\n    },\r\n    \"dateTime\": \"2020-05-18\",\r\n    \"organization\": [\r\n        {\r\n            \"reference\": \"Organization/66fa407d-d890-43a5-a6e3-eb82d3bfa393\"\r\n        }\r\n    ],\r\n    \"sourceAttachment\": {\r\n        \"title\": \"Withhold records for time frame\"\r\n    },\r\n    \"policyRule\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/consentpolicycodes\",\r\n                \"code\": \"hipaa-restrictions\"\r\n            }\r\n        ]\r\n    },\r\n    \"provision\": {\r\n        \"type\": \"deny\",\r\n        \"period\": {\r\n            \"start\": \"2020-04-20T00:00:00.0000+05:00\",\r\n            \"end\": \"2020-12-31T23:59:00.0000+05:00\"\r\n        },\r\n        \"actor\": [\r\n            {\r\n                \"role\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n                            \"code\": \"CST\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"reference\": {\r\n                    \"reference\": \"Organization/66fa407d-d890-43a5-a6e3-eb82d3bfa393\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Consent",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Consent"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "List Patients",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -188,12 +151,6 @@
 						"name": "Content-Type",
 						"value": "application/json",
 						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
 					}
 				],
 				"body": {
@@ -207,106 +164,6 @@
 					],
 					"path": [
 						"Patient"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Patient Consent Opt Out",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "resource",
-							"value": {
-								"9a7f6c14-4442-4843-9ce0-f70e147a42cc": "{{resource}}"
-							},
-							"type": "any"
-						},
-						{
-							"key": "accessTokenUrl",
-							"value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/token",
-							"type": "string"
-						},
-						{
-							"key": "authUrl",
-							"value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/authorize",
-							"type": "string"
-						},
-						{
-							"key": "clientSecret",
-							"value": "{{clientSecret}}",
-							"type": "string"
-						},
-						{
-							"key": "clientId",
-							"value": "{{clientId}}",
-							"type": "string"
-						},
-						{
-							"key": "state",
-							"value": "1234",
-							"type": "string"
-						},
-						{
-							"key": "useBrowser",
-							"value": true,
-							"type": "boolean"
-						},
-						{
-							"key": "tokenName",
-							"value": "proxyToken",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{bearerToken}}",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "X-MS-AZUREFHIR-AUDIT-USERID",
-						"value": "Dale",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{fhirurl}}/Patient/WDT000000001",
-					"host": [
-						"{{fhirurl}}"
-					],
-					"path": [
-						"Patient",
-						"WDT000000001"
 					]
 				}
 			},
@@ -520,15 +377,161 @@
 			"response": []
 		},
 		{
+			"name": "Consent Resource",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceType\": \"Consent\",\r\n    \"status\": \"active\",\r\n    \"scope\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/consentscope\",\r\n                \"code\": \"patient-privacy\"\r\n            }\r\n        ]\r\n    },\r\n    \"category\": [\r\n        {\r\n            \"coding\": [\r\n                {\r\n                    \"system\": \"http://loinc.org\",\r\n                    \"code\": \"59284-0\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"patient\": {\r\n        \"reference\": \"Patient/WDT000000001\"\r\n    },\r\n    \"dateTime\": \"2020-05-18\",\r\n    \"organization\": [\r\n        {\r\n            \"reference\": \"Practitioner/WDT000000003\"\r\n        }\r\n    ],\r\n    \"sourceAttachment\": {\r\n        \"title\": \"Withhold records\"\r\n    },\r\n    \"policyRule\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/consentpolicycodes\",\r\n                \"code\": \"hipaa-restrictions\"\r\n            }\r\n        ]\r\n    },\r\n    \"provision\": {\r\n        \"type\": \"deny\",\r\n        \"actor\": [\r\n            {\r\n                \"role\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n                            \"code\": \"CST\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"reference\": {\r\n                    \"reference\": \"Practitioner/WDT000000003\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Consent",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Consent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient to Test Consent Opt Out",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "resource",
+							"value": {
+								"9a7f6c14-4442-4843-9ce0-f70e147a42cc": "{{resource}}"
+							},
+							"type": "any"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/authorize",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "{{clientSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{clientId}}",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "proxyToken",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{fhirurl}}/Patient/WDT000000001",
+					"host": [
+						"{{fhirurl}}"
+					],
+					"path": [
+						"Patient",
+						"WDT000000001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Link Roles",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>",
+					"raw": "https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<your-user-object-id>",
 					"protocol": "https",
 					"host": [
-						"",
+						"<fhir_proxy_app_name>",
 						"azurewebsites",
 						"net"
 					],
@@ -537,7 +540,7 @@
 						"link",
 						"Practitioner",
 						"WDT000000003",
-						""
+						"<your-user-object-id>"
 					]
 				}
 			},
