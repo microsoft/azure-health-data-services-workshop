@@ -114,7 +114,7 @@ Now you will be linking the `Practitioner/WDT000000003` Resource to your user ac
 See [here](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) for more information about the Consent Opt-Out filter in FHIR-Proxy. 
 
 ## Step 7 Authenticate yourself using auth code flow in Postman
-You now need to authenticate yourself as the caller trying to access `Patient/WDT000000001`. This way, FHIR-Proxy will know to block your access to `Patient/WDT000000001` because your Azure account is associated with `Practitioner/WDT000000003`.
+You now need to authenticate yourself as the caller trying to access `Patient/WDT000000001`. This way, FHIR-Proxy will know to block your access to `Patient/WDT000000001` - because your Azure account is associated with `Practitioner/WDT000000003`.
 
 1. Go to the FHIR CALLS collection in Postman and click on the `GET Patient Consent Opt Out` call.
 2. Click on the **Authorization** tab.
@@ -122,11 +122,11 @@ You now need to authenticate yourself as the caller trying to access `Patient/WD
 4. You will be prompted to "Authenticate via browser". Click **Proceed**.
 5. You will be taken to a new tab in your web browser, and if you are already logged into Azure Portal in your browser session, you should see a message: "Your call is authenticated". 
     - If you are not logged into Azure Portal, you will be prompted to authenticate with your Azure login credentials. 
-    - **Important**: Make sure to disable pop-up window blocking for the Postman auth code page opened in the new tab.
+    - **Important**: Make sure to disable pop-up window blocking for the Postman auth code page in your browser.
 6. After authenticating in your browser, you'll return to Postman and you'll see "Authentication complete". Click **Proceed**.
 7. Then click **Use Token** in the **MANAGE ACCESS TOKENS** window in Postman.
 
-> Note: To check that your Azure user account is correctly linked with the `Practitioner` role, copy the new **Access Token** from the **MANAGE ACCESS TOKENS** window and paste it into the JSON Web Token viewer at https://jwt.io/. Under `"roles"` you should see the `"Writer"`, `"Practitioner"`, and `"Reader"` roles for yourself.
+> Note: To check that your Azure user account is correctly linked to the `Practitioner` role, copy the new **Access Token** from the **MANAGE ACCESS TOKENS** window and paste it into the JSON Web Token viewer at https://jwt.io/. Under `"roles"` you should see the `"Writer"`, `"Practitioner"`, and `"Reader"` roles for yourself.
 
 ## Step 8 - Confirm Consent Opt-Out is working
 Now, if you press **Send** in the `GET Patient Consent Opt Out` call, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
