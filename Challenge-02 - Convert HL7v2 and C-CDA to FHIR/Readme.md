@@ -59,7 +59,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
 5.	You will need to make some changes in the HL7v2 payload so that the formatting follows the sample request given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request). 
 
-    __Hint:__ In the sample request in the documentation (link above), look at how the `\` escape character is used to escape the `\&` in the HL7v2 payload. Also pay attention to the way `\n` newline characters are used. You will need to add at least one `\` escape character and several `\n` newline characters in the HL7v2 message in the `Convert Data - HL7` request. 
+    __Hint:__ In the sample request in the documentation (link above), look at how the `\` escape character is used to escape the `\&` in the HL7v2 payload. Also pay attention to the way `\n` newline characters are used. You will need to add at least one `\` escape character and several `\n` newline characters in the HL7v2 message in the `Convert Data - HL7` request. Use this [online tool](https://www.freeformatter.com/json-escape.html) for automatically escaping JSON if you would prefer not to do this manually. 
 
     *Optional – prepare the JSON request parameters and HL7v2 payload in VS Code (with the HL7 extension installed) first before pasting into the body of the Postman request.
 
