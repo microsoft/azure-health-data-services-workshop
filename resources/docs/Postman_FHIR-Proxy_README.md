@@ -51,7 +51,7 @@ To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through th
 9. Under **Request API permissions**, click on the **Application permissions** box on the right. 
 <img src="./images/Screenshot_2022-02-15_141828_edit2_next.png" height="328">
 
-10. Select **Resource Administrator**, **Resource Reader**, and **Resource Writer**. Click **Add permissions**. 
+10. Select **Administrator**, **Resource Reader**, and **Resource Writer**. Click **Add permissions**. 
 <img src="./images/Screenshot_2022-06-13_144017_edit2.png" height="328">
 
 11. When back in the **API permissions** blade, make sure to click **Grant admin consent** again (blue checkmark).
