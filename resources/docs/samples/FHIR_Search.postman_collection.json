@@ -1161,7 +1161,7 @@
 			"response": []
 		},
 		{
-			"name": "Step 5 - List Patient by Encounter",
+			"name": "Step 5 - List Encounter by Patient",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1214,7 +1214,7 @@
 			"response": []
 		},
 		{
-			"name": "Step 5 - List Patient by Encounter Chained Search",
+			"name": "Step 5 - List Encounter by Patient Chained Search",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
