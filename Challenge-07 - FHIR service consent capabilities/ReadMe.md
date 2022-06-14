@@ -130,7 +130,7 @@ You now need to authenticate yourself as the caller trying to access `Patient/WD
 
 ## Step 8 - Confirm Consent Opt-Out is working
 Now, if you press **Send** in the `GET Patient Consent Opt Out` call, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
-<img src="./images/Screenshot_2022-05-10_112711_edit.png" height="528"> 
+<img src="./images/Screenshot_2022-06-14_110400.png" height="528"> 
 
 ## What does success look like for Challenge-07?
 
