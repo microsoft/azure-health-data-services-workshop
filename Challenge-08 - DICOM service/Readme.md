@@ -107,7 +107,9 @@ You can follow the provided articles that go over how to programmatically commun
 
 1. Once your `dicom-service` Postman environment is set up and you have obtained an access token, please go to [this repo](https://github.com/microsoft/dicom-server/tree/main/docs/dcms) and download the three DICOM instance files (.dcm).  
 
-2. Then, for each of the three `POST Store-single-instance` calls in the Conformance-as-Postman collection, go to **Body** -> **Select File** and choose the appropriate .dcm file (downloaded in the previous step). 
+2. Then, for each of the three `POST Store-single-instance` calls in the Conformance-as-Postman collection, go to **Body** -> **Select File** and choose the appropriate .dcm file (downloaded in the previous step).
+
+<img src="./images/Screenshot_2022-06-15_084830_edit.png" height="420">
 
 3. Press **Send** for each call and you will populate your DICOM service with the three .dcm single instance files.
 
