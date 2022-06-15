@@ -111,7 +111,7 @@ You can follow the provided articles that go over how to programmatically commun
 
 3. Press **Send** for each call and you will populate your DICOM service with the three .dcm single instance files.
 
-### Step 2 - Execute Outlined Features via Postman Collection
+### Step 3 - Execute Outlined Features via Postman Collection
 
 The Conformance-as-Postman collection has a complete set of API calls that you can execute one by one. See the list below for details. 
 
