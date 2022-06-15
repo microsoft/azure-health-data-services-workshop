@@ -52,7 +52,7 @@ Now you will visit another page and follow the instructions to [Deploy DICOM ser
 
 You will need to add the **DICOM Data Owner** role for yourself (i.e., your username in Azure) as well as for the Postman service client that you created in Challenge-01 ([documentation available here](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac#assign-roles-for-the-dicom-service)).
 
-### Step 4 - Import Postman environment and collection files for DICOM service
+### Step 4 - Import Postman environment and collection files to connect with DICOM service
 
 1. Access the Postman environment template for DICOM service [here](./postman/dicom-service.postman_environment.json). Save the file locally (click on **Raw** and then do a **Save as** from your browser). 
 
