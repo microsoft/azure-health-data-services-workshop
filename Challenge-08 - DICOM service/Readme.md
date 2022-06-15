@@ -18,7 +18,7 @@ By the end of this challenge you will be able to
   - Add role assignment
   - Obtain an access token
 - Ingest DICOM files into the service 
-- Search among the flies that are stored within the DICOM service
+- Search among the files that are stored within the DICOM service
 - Retrieve DICOM files 
 - Check logs of changes in DICOM service via Change Feed
 - Manage supported tags in your DICOM service instance
@@ -116,7 +116,7 @@ You can follow the provided articles that go over how to programmatically commun
 The Conformance-as-Postman collection has a complete set of API calls that you can execute one by one. See the list below for details. 
 
 - Store DICOM files to the service 
-- Search among the flies that are stored within the DICOM service
+- Search among the files that are stored within the DICOM service
 - Retrieve DICOM instance 
 - Check logs of changes in DICOM service via Change Feed
 - Manage extended query tags in your DICOM service instance
