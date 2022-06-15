@@ -77,7 +77,7 @@ You will now configure a new Postman environment for DICOM service (`dicom-servi
 *New values you need to input:*
 
 - `resource` - `https://dicom.healthcareapis.azure.com`
-- `baseUrl` - Service URL appended with `/v1`. Go to **Portal** -> **Resource Group** -> **DICOM service** -> **Service URL**. Copy and paste as the `baseUrl` and add `/v1` on the end: `https://<workspace-name>-<dicom-service-name>.dicom.azurehealthcareapis.com/v1`.
+- `baseUrl` - Service URL appended with `/v1`. Go to **Portal** -> **Resource Group** -> **DICOM service** -> **Service URL**. Copy and add `/v1` on the end: `https://<workspace-name>-<dicom-service-name>.dicom.azurehealthcareapis.com/v1`.
 
 Populate the above parameter values in your `dicom-service` Postman environment. Input the values in the **CURRENT VALUE** column. Leave `bearerToken` blank. Make sure to click **Save** to retain the `dicom-service` environment values.  
 
