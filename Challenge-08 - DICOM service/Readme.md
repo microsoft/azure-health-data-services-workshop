@@ -111,7 +111,7 @@ You can follow the provided articles that go over how to programmatically commun
 
 <img src="./images/Screenshot_2022-06-15_084830_edit.png" height="420">
 
-3. Press **Send** for each call and you will populate your DICOM service with the three .dcm single instance files.
+3. Press **Send** for each `POST Store-single-instance` call and you will populate your DICOM service with the three .dcm single instance files.
 
 ### Step 3 - Execute Outlined Features via Postman Collection
 
