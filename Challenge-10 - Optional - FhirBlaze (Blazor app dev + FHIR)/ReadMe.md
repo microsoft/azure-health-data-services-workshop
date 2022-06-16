@@ -30,7 +30,7 @@ By the end of this challenge you will be able to
  
 2. Ensure your personal Azure Active Directory user account has the **FHIR Data Contributor** role assigned for your FHIR service.
 
-3. In the Azure AD, **App Registration** for the **Postman** application, under **Authentication**, **Add a platform** of type **Single-page application** with redirect URI set to `https://localhost:44321/authentication/login-callback`. 
+3. In the Azure AD **App Registration** for the **Postman** application, under **Authentication**, **Add a platform** of type **Single-page application** with redirect URI set to `https://localhost:44321/authentication/login-callback`. 
  
 4. In your same **Postman App Registration**, under **API Permissions**, click **Add a permission**. If you do not see the `user_impersonation` permission for Azure Healthcare APIs, follow the instructions in the line below.
     + Go to the **APIs my organization uses** tab and find **Azure Healthcare APIs**. Add the `user_impersonation` permission.
