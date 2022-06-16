@@ -29,7 +29,7 @@ Before you can use Postman to make API calls to FHIR service, you will need to c
 2. Type in a name for your Postman service client app in the **Name** field.
 
 3. Scroll down to **Redirect URI (optional)**, select **Web**, and enter `https://oauth.pstmn.io/v1/callback` as shown. Then click **Register**. 
-+ Note: this redirect URI is needed for the FHIR service Consent Opt-Out auth flow in Challenge-07.
+    + Note: this redirect URI is needed for the FHIR service Consent Opt-Out auth flow in Challenge-07.
 <img src="./images/Screenshot_2022-02-15_141049_edit2_next_next.png" height="328">
 
 4. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
