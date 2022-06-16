@@ -28,7 +28,7 @@ By the end of this challenge you will be able to
 
 1. Change the CORS configuration of FHIR service as per the first screenshot in [this documentation](https://docs.microsoft.com/azure/healthcare-apis/fhir/configure-cross-origin-resource-sharing).
  
-2.Ensure your personal Azure Active Directory user account has the **FHIR Data Contributor** role assigned for your FHIR service.
+2. Ensure your personal Azure Active Directory user account has the **FHIR Data Contributor** role assigned for your FHIR service.
 
 3. In the Azure AD, **App Registration** for the **Postman** application, under **Authentication**, **Add a platform** of type **Single-page application** with redirect URI set to `https://localhost:44321/authentication/login-callback`. 
  
