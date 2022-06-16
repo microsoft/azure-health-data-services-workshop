@@ -65,19 +65,19 @@ Now you will configure permissions so that MedTech service can securely connect 
 
 __Note:__ When creating a new mapping, you must click the 'Confirm' button. Pressing ENTER after typing will not work.
 
-## Step 5 -BONUS
-
-Import your newly created sample mappings into the MedTech service via the Azure Portal. You can follow the same process in Step 3 of this challenge to import your custom mappings into MedTech service.
-
-## Step 6 - BONUS
+## Step 5 - BONUS
 
 Use this [IoT mapper tool](https://github.com/microsoft/iomt-fhir/tree/main/tools/data-mapper) to create maps for the sample messages in the `SampleData` folder for this challenge (accessible at the top of the page). You will find that the `SampleData` folder has two files. Both files are the same data, but the `Three-Sample-Message-Types-with-labels.json` has messages with data descriptions and/or units of measure. There are three sample messages in each file - `VITALS`, `BP`, and `WEIGHT`. The `VITALS` message is an array of data. `BP` and `WEIGHT` are single-entry messages. 
 
 When you begin the FHIR mapping, you can make up values for the 'Code'. For example - `Code: A1235, System: https://loinc.org, Text: Heart Rate`.
 
+## Step 6 -BONUS
+
+Import your newly created sample mappings into the MedTech service via the Azure Portal. You can follow the same process in Step 3 of this challenge to import your custom mappings into MedTech service.
+
 ## What does success look like for Challenge-09?
-+ Map IoT medical device data to FHIR.
-+ Output a JSON file with mapped data.
++ Configure MedTech service for mapping medical IoT device data to FHIR.
++ Generate a custom mapping for medical IoT device data into FHIR.
 
 ## Next Steps
 
