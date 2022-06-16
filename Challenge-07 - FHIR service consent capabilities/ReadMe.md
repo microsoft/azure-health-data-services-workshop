@@ -129,7 +129,7 @@ You now need to authenticate yourself as the caller trying to access `Patient/WD
 > Note: To check that your Azure user account is correctly linked to the `Practitioner` role, copy the new **Access Token** from the **MANAGE ACCESS TOKENS** window and paste it into the JSON Web Token viewer at https://jwt.io/. Under `"roles"` you should see the `"Writer"`, `"Practitioner"`, and `"Reader"` roles for yourself.
 
 ## Step 8 - Confirm Consent Opt-Out is working
-Now, if you press **Send** in the `GET Patient Consent Opt Out` call, you should receive an `"access-denied"` response as shown below. This indicates that Consent Opt-Out is working properly.
+Now, if you press **Send** in the `GET Patient Consent Opt Out` call, you should receive an `"access-denied"` response with a `401 Unauthorized` code as shown below. This indicates that Consent Opt-Out is working properly.
 <img src="./images/Screenshot_2022-06-14_110400.png" height="528"> 
 
 ## What does success look like for Challenge-07?
