@@ -646,7 +646,7 @@
 			"response": []
 		},
 		{
-			"name": "Step 3: List Patient by First and Last Name",
+			"name": "Step 3 - List Patient by First and Last Name",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
