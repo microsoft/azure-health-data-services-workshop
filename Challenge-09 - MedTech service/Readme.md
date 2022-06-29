@@ -24,7 +24,7 @@ By the end of this challenge you will be able to
 + FHIR service deployed (completed in Challenge-01) 
 
 ## Getting Started 
-In this challenge, you will be deploying MedTech service within your Azure Health Data Services workspace, and you will configure the service to receive and transform medical IoT data for persistence in FHIR. The steps in this challenge are outlined below.
+In this challenge, you will be deploying MedTech service within your Azure Health Data Services workspace, and you will be configuring the service to receive and transform medical IoT data for persistence in FHIR. The steps in this challenge are outlined below.
 
 **Step 1** - Deploy and configure [Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).  
 **Step 2** - Deploy a MedTech service instance in your Azure Health Data Services workspace.  
