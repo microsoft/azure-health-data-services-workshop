@@ -1,7 +1,7 @@
 # Postman setup for FHIR service + sample Postman collections 
 
 ## Overview 
-When testing data connectivity between [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) and a remote client app, it is useful to have an API testing utility to send requests, view responses, and debug issues. One of the most popular API testing tools is [Postman](https://www.postman.com/), and in this guide we provide instructions plus a set of sample data files to help you get up and running with Postman for testing FHIR service in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview).
+When testing data connectivity between [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) and a remote client app, it is useful to have an API testing utility to send requests, view responses, and debug issues. One of the most popular API testing tools is [Postman](https://www.postman.com/), and in this guide we provide instructions plus a set of sample data files to help you get up and running with Postman to test the FHIR service in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview).
 
 ## Prerequisites
 + [User Access Administrator](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator) role in your FHIR service resource group or Azure subscription
