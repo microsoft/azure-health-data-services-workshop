@@ -60,7 +60,7 @@ The simplest way to execute a search in FHIR is to send a `GET` API request. For
 GET {{fhirurl}}/Patient
 ```
 
-As another example, if you want to retrieve `Patient` Resource instances that were updated last on a certain day, you can narrow your search with the `_lastUpdated` search parameter.
+If you wanted to narrow this down to `Patient` Resource instances that were updated last on a certain day, you could achieve this with the `_lastUpdated` search parameter.
 
 ```sh
 GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
