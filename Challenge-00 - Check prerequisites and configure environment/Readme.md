@@ -25,11 +25,11 @@ In general, we want learners to walk away with a sense of confidence in **deploy
 
 ## Prerequisite Knowledge for the Azure Health Data Services Workshop
 
-Knowledge in the areas listed below will be necessary for completing the workshop challenges. If you feel uncertain about any of these topics, please review the [More Resources section](#more-resources). Time spent building some basic knowledge about the technologies will help you gain *actionable experience* as you prep for real-world health data scenarios.
+Knowledge in the areas listed below will be necessary for completing the workshop challenges. If you feel uncertain about any of these topics, please review the [More Resources section](#more-resources). Time spent building some basic knowledge about the technologies used in this workshop will help you gain *actionable experience* as you prep for real-world health data scenarios.
 
 + A solid foundation in **Azure fundamentals** and basic knowledge of **Azure Active Directory**
 + Familiarity with **FHIR®** and the solutions it provides versus legacy health data formats
-+ Experience with making **REST API** requests using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing tool (like cURL or Fiddler)
++ Experience with making **RESTful API** requests using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing tool (like cURL or Fiddler)
 
 **Note:** For the rest of the workshop, we will assume that you are using Postman as your API testing tool. Please use Postman unless you have a strong preference for another tool.
 
@@ -85,16 +85,16 @@ FHIR® (Fast Healthcare Interoperability Resources) is a data standard created b
 + [HL7 FHIR Introduction](https://www.hl7.org/fhir/summary.html)
 + [FHIR Architect's Introduction](https://www.hl7.org/fhir/overview-arch.html)
 
-### REST APIs
+### RESTful APIs
 
-REST (Representational State Transfer) APIs (Application Programming Interfaces) or web APIs are a software architectural style created for internet services. Every internet user makes thousands of REST API requests a day, usually without knowing it since requests are handled by applications and generally not seen by users.
+REST (Representational State Transfer) APIs (Application Programming Interfaces) or web APIs are a software architectural style created for internet services. Every internet user makes thousands of RESTful API requests a day, usually without knowing it since requests are handled by applications and generally not seen by users.
 
 + [RESTful Web API design](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
 + [Representational state transfer](https://wikipedia.org/wiki/Representational_state_transfer)
 
 ### API Testing Tools (Postman)
 
-Since REST API requests and responses are abstracted from users, developers use an API testing tool to interact with web services prior to building applications and integrations. Postman is one of the most popular and approachable of these types of tools. If you are new to Postman, review these resources below to install and get familiar with the application. FHIR must be tested with an API testing tool, and in this workshop, you will need to know how to craft REST requests in Postman and interpret the results.
+Since RESTful API requests and responses are abstracted from users, developers use an API testing tool to interact with web services prior to building applications and integrations. Postman is one of the most popular and approachable of these types of tools. If you are new to Postman, review these resources below to install and get familiar with the application. FHIR must be tested with an API testing tool, and in this workshop, you will need to know how to craft RESTful requests in Postman and interpret the results.
 
 + [Installing and updating Postman](https://learning.postman.com/docs/getting-started/installation-and-updates/)
 + [Navigating Postman](https://learning.postman.com/docs/getting-started/navigating-postman/)
