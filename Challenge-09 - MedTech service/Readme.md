@@ -13,11 +13,11 @@ With the rise of wearables and other connected sensor technologies, IoT devices 
 ## Learning Objectives for Challenge-09
 By the end of this challenge you will be able to
 
-- Deploy and configure the MedTech service via Azure portal
-- Deploy and configure additional Azure services required for the MedTech service
-- Connect the MedTech service to FHIR service
-- Import a data mapping file for transforming incoming device data into FHIR
-- Inspect medical IoT data flow
+- deploy and configure the MedTech service via Azure portal
+- deploy and configure additional Azure services required for the MedTech service
+- connect the MedTech service to FHIR service
+- import a data mapping file for transforming incoming device data into FHIR
+- inspect medical IoT data flow
 
 ## Prerequisites 
 + Azure Health Data Services workspace deployed (completed in Challenge-01)
