@@ -13,21 +13,21 @@ The [DICOMweb™](https://www.dicomstandard.org/using/dicomweb) standard is the 
 ## Learning Objectives for Challenge-08
 By the end of this challenge you will be able to 
 
-- Set up a DICOM service instance within an Azure Health Data Services workspace
-- Configure DICOM service settings for usage
-  - Add role assignment
-  - Obtain an access token
-- Ingest DICOM files into the service 
-- Search among the files that are stored within the DICOM service
-- Retrieve DICOM files 
-- Check logs of changes in DICOM service via Change Feed
-- Manage supported tags in your DICOM service instance
-  - Add extended query tags
-  - List extended query tags
-  - Get extended query tags
-  - Update extended query tags
-  - Delete extended query tags
-- Use a DICOM viewer to view DICOM images
+- set up a DICOM service instance within an Azure Health Data Services workspace
+- configure DICOM service settings for usage
+  - add role assignment
+  - obtain an access token
+- ingest DICOM files into the service 
+- search among the files that are stored within the DICOM service
+- retrieve DICOM files 
+- check logs of changes in DICOM service via Change Feed
+- manage supported tags in your DICOM service instance
+  - add extended query tags
+  - list extended query tags
+  - get extended query tags
+  - update extended query tags
+  - delete extended query tags
+- use a DICOM viewer to view DICOM images
 
 ## Prerequisites
 - Azure Health Data Services workspace (deployed in Challenge-01)  
