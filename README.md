@@ -10,7 +10,7 @@ This workshop is intended for **healthcare system integrators**, **independent h
 
 + A solid foundation in Microsoft Azure and Azure Active Directory
 + Some basic knowledge of healthcare data, especially FHIR
-+ Familiarity working with REST API requests and responses
++ Familiarity working with RESTful API requests and responses
 
 ## What topics are covered?
 
