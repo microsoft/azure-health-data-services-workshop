@@ -13,10 +13,10 @@ Data ingestion into FHIR is a vital capability for a healthcare organization's i
 ## Learning Objectives for Challenge-03
 By the end of this challenge you will be able to 
 
-+ Ingest FHIR data into FHIR service with FHIR Loader
-+ Identify issues in loading FHIR bundles
-+ Recognize data constraints with FHIR Loader
-+ Track and compare FHIR Loader operations
++ ingest FHIR data into FHIR service with FHIR Loader
++ identify issues in loading FHIR bundles
++ recognize data constraints with FHIR Loader
++ track and compare FHIR Loader operations
 
 ### FHIR service and FHIR Loader Relationship 
 The open-source [FHIR Loader](https://github.com/microsoft/fhir-loader) is designed to ease the process of FHIR data import into the FHIR service. The operation simply involves uploading FHIR data files to Azure blob storage, and from there the FHIR Loader automatically transfers the data for persistence in the FHIR service database. The user may upload FHIR Bundles in regular JSON format (.zip compressed or non-compressed) or NDJSON format (non-compressed). Operationally, FHIR Loader works by making parallel asynchronous API calls to the FHIR service.
@@ -32,7 +32,7 @@ In Challenge-01 of this workshop, the ARM template automatically deployed and co
 + A text editor (e.g., [Visual Studio Code](https://code.visualstudio.com/))
 
 ## Getting Started
-For this challenge, you will upload FHIR data bundles for import into FHIR service. You will need to examine error logs and determine what is preventing the data in one of the bundles from being ingested.
+For this challenge, you will upload FHIR data bundles for import into the FHIR service. You will need to examine error logs and determine what is preventing the data in one of the bundles from being ingested.
 
 
 ## Step 1 - Download Sample Data
