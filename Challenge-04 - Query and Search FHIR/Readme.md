@@ -8,11 +8,9 @@ In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/f
 
 ## Background
 
-The FHIR specification defines a RESTful API framework with a set of operations for Resources either on the **Resource instance** level or the **Resource type** level. Resource instance interactions are focused on reading or modifying a specific, single Resource while Resource type interactions are focused on *searching for* Resource instances based on some filter criteria. 
+The FHIR specification defines a RESTful API framework for accessing Resources on a FHIR server. When a remote client app queries a FHIR server, the app makes a request for a Resource or set of Resources, and if the app has the required permissions, the server carries out a search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the FHIR service in Azure Health Data Services. 
 
-When a client app is looking for FHIR Resources* per some filter criteria (e.g., on behalf of a patient or care provider), the app queries the FHIR server, and if the app has the required permissions, the server carries out the search and returns the results in a [FHIR Resource Bundle](http://hl7.org/fhir/bundle.html). The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the FHIR service. 
-
-Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding multiple Resource instances (in this case, `Encounter` instances) in a single request. 
+Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding multiple Resource instances* (in this case, `Encounter` instances) in a single request. 
 
 > __*Note:__ In this challenge, at times we will use the term "Resource" to mean "Resource instance" - without explicitly saying "Resource instance". This is the way "Resource" is used in the [FHIR literature](https://www.hl7.org/fhir/resourcelist.html) - to mean either "Resource type" or "Resource instance" - depending on context. 
 
