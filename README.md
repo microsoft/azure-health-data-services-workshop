@@ -6,7 +6,7 @@ Hello and welcome to the Azure Health Data Services Workshop! In this workshop, 
 
 ## Who is the Azure Health Data Services Workshop for?
 
-This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Before beginning the workshop challenges, you should have some experience in the areas listed below. If you need to brush up in any of these areas, there are resources at the bottom of [Challenge-00](<./Challenge-00 - Check prerequisites and configure environment#more-resources>) to help you get started. The general expectation is that learners will come to this workshop with the following:
+This workshop is intended for **healthcare system integrators**, **independent healthcare software vendors**, and other **healthcare IT professionals**. Before beginning the workshop challenges, check the knowledge prerequisites listed below. If you need to brush up in any of these areas, there are resources at the bottom of [Challenge-00](<./Challenge-00 - Check prerequisites and configure environment#more-resources>) to help you get started. The general expectation is that learners will come to this workshop with the following:
 
 + A solid foundation in Microsoft Azure and Azure Active Directory
 + Some basic knowledge of healthcare data, especially FHIR
@@ -40,8 +40,4 @@ Best of luck in your learning journey ahead! Click [here](<./Challenge-00 - Chec
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.
