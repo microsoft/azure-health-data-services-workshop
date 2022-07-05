@@ -15,9 +15,9 @@ With health data systems built on the FHIR standard API, organizations can use t
 
 By the end of this challenge you will be able to 
 
-+ Use FHIR Resources like Patient, Practitioner, and more for real world applications
-+ Use the Firely SDK to accelerate FHIR application development
-+ Use Blazor for web development
++ use FHIR Resources like Patient, Practitioner, and more for real world applications
++ use the Firely SDK to accelerate FHIR application development
++ use Blazor for web development
 
 ## Prerequisites
 
