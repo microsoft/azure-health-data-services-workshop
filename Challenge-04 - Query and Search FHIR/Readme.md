@@ -20,12 +20,12 @@ Think of these FHIR searches in user terms – a doctor may want to find all enc
 
 By the end of this challenge you will be able to 
 
-+ Explain the basic concepts of FHIR Search
-+ Perform both Common and Composite searches 
-+ Use Modifiers in searches 
-+ Use Chained and Reverse Chained search result parameters
-+ Use Include and Reverse Include search result parameters
-+ Use a custom search parameter 
++ explain the basic concepts of FHIR Search
++ perform both Common and Composite searches 
++ use Modifiers in searches 
++ use Chained and Reverse Chained search result parameters
++ use Include and Reverse Include search result parameters
++ use a custom search parameter 
 
 ## Prerequisites
 
