@@ -95,7 +95,7 @@ After making the `$convert-data` request, you should receive a JSON FHIR bundle 
 ## Step 4 - Prepare a request to convert C-CDA data into FHIR
 Now you will make another API request similar to the one above, except this time you will be converting C-CDA data into FHIR.
 
-1. In Postman, click on `Add request` again to create another API request in the `FHIR CALLS` collection imported in Challenge-01. 
+1. In Postman, click on **Add request** again to create another API request in the `FHIR CALLS` collection imported in Challenge-01. 
 <img src="./media/Postman_Add_Request.png" height="328"> 
 
 2. Rename the new request to `Convert Data - CCDA`. 
