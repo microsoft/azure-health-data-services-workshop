@@ -82,7 +82,7 @@ The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fh
 
 This query returns a `Bundle` containing the `Patient` Resource instance with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server).
 
-**Response:**
+**Response (excerpt):**
 ```sh
 {
     "resourceType": "Bundle",
@@ -117,7 +117,7 @@ Compare the above to a single Resource instance request, which uses the RESTful 
     GET {{fhirurl}}/Patient/123
 ```
 
-**Response:**
+**Response (excerpt):**
 ```sh
 {
     "resourceType": "Patient",
