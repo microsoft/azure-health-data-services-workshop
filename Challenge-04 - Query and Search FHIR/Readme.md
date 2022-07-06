@@ -105,7 +105,7 @@ This query returns a `Bundle` containing the `Patient` Resource instance with th
                 "id": "123"
                 }
         }
-    ]
+    ],
 ...}
 ```
 
