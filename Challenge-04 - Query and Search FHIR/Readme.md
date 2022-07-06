@@ -20,7 +20,7 @@ By the end of this challenge you will be able to
 
 + explain the basic concepts of FHIR Search
 + perform both Common and Composite searches 
-+ use Modifiers in searches 
++ use Modifiers in FHIR searches 
 + use Chained and Reverse Chained search result parameters
 + use Include and Reverse Include search result parameters
 + use a custom search parameter 
