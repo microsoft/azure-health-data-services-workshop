@@ -50,7 +50,7 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 When doing a search on a FHIR server, the initial target for the query can be any of the following:
 
 + Resource instance level interaction (returned as a single Resource instance)
-+ Resource type level interaction for a set of Resource instances (returned as a `searchset` `Bundle`)
++ Resource type level interaction for a set of Resource instances (returned as a `Bundle`)
 + A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions (e.g., querying against a search parameter shared by all Resources)
 
@@ -111,7 +111,7 @@ This query returns a `Bundle` containing the `Patient` Resource instance with th
 
 ## Single Resource Instance Search Request
 
-Compare the above to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the path (rather than using the `_id` search parameter). With the request below, the Resource instance is returned in response, but not inside a `searchset` `Bundle`.
+Compare the above to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the path (rather than using the `_id` search parameter). With the request below, the Resource instance is returned in response, but not inside a `Bundle`.
 
 ```sh
     GET {{fhirurl}}/Patient/123
