@@ -232,7 +232,7 @@ Below is an excerpt from an `Observation` Resource with a reference to a patient
     ...
     "subject": {
         "reference": "Patient/WDT000000002",
-        "display": "Ron Stoppable"
+        "display": "Nathan Adunosh"
     },
     ...
 }
@@ -246,10 +246,10 @@ For example, the following request queries a FHIR server for all `Observation` i
 GET {{fhirurl}}/Observation?subject=Patient/WDT000000002
 ```
 
-To simplify using multiple search parameters in a reference-based query, FHIR also specifies syntax for chaining parameters with `.` to refine results. Below is a chained search for all `Observation` instances that reference a `subject` (i.e., `Patient`) with the name of `Ron Stoppable` (note the `:` after `subject`, which makes `Patient` into a [type modifier](https://www.hl7.org/fhir/codesystem-search-modifier-code.html#search-modifier-code-type)).
+To simplify using multiple search parameters in a reference-based query, FHIR also specifies syntax for chaining parameters with `.` to refine results. Below is a chained search for all `Observation` instances that reference a `subject` (i.e., `Patient`) with the name of `Nathan Adunosh` (note the `:` after `subject`, which makes `Patient` into a [type modifier](https://www.hl7.org/fhir/codesystem-search-modifier-code.html#search-modifier-code-type)).
 
 ```sh
-GET {{fhirurl}}/Observation?subject:Patient.name=Ron Stoppable
+GET {{fhirurl}}/Observation?subject:Patient.name=Nathan Adunosh
 ```
 
 The FHIR data model's `reference` associations are one-directional, meaning that structurally, references are always from "parent" Resource to "child" Resource (without a reference pointing in the opposite direction). As demonstrated in the chained search above, `Patient` is the "child" with `Observation` as the "parent" Resource.
