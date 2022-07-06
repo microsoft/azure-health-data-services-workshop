@@ -94,9 +94,18 @@ This query returns a `Bundle` containing the `Patient` Resource instance with th
     "link": [
         {
             "relation": "self",
-            "url": "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+            "url": "https://{{fhirurl}}/Patient?_id=123"
         }
     ],
+    "entry": [
+        {
+            "fullUrl": "https://{{fhirurl}}/Patient/123",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "123"
+                }
+        }
+    ]
 ...}
 ```
 
