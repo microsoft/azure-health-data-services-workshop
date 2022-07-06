@@ -68,7 +68,7 @@ GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 
 You can also call the FHIR search API with `POST`, which is useful if the query string is too long or if the query must be hidden to conceal PHI. To search using `POST`, the search parameters are delivered to the FHIR server in JSON in the body of the request.
 
-When a search request is successful, if it's a single-instance search (e.g., `GET {{fhirurl}}/Patient/123`), you'll receive a JSON-formatted Resource instance in return. If it's a request for more than one Resource instance or a query formed with search parameters, you’ll receive a FHIR `Bundle` response in JSON with a `"type": "searchset"` entry followed by the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
+When a search request is successful, if it's a single-instance search (e.g., `GET {{fhirurl}}/Patient/123`), you'll receive a JSON-formatted Resource instance in return. If it's a request for more than one Resource instance or a query formed with search parameters, you’ll receive a JSON-formatted FHIR `Bundle` response containing the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
 ## Common Search Parameters 
 
