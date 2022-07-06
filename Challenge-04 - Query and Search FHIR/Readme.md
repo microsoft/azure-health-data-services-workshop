@@ -89,7 +89,7 @@ Compare this to a single Resource instance request, which uses the RESTful API p
 ```
 
 ## Step 1 - Save Sample Resources
-To begin, you are going to populate your FHIR service with sample FHIR Resources.
+To begin, you are going to populate your FHIR service with more sample FHIR Resources.
 
 ### Exercise Task
 
