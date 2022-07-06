@@ -82,10 +82,45 @@ The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fh
 
 This query returns a `Bundle` containing the `Patient` Resource instance with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server).
 
-Compare this to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the path (rather than using the `_id` search parameter). With the request below, only a single Resource instance is returned in the response (i.e., the Resource instance is not returned inside a `searchset` `Bundle`).
+**Response:**
+```sh
+{
+    "resourceType": "Bundle",
+    "id": "XXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "meta": {
+        "lastUpdated": "2022-07-06T13:23:05.1216075+00:00"
+    },
+    "type": "searchset",
+    "link": [
+        {
+            "relation": "self",
+            "url": "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+    ],
+...}
+```
+
+## Single Resource Instance Search Request
+
+Compare the above to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the path (rather than using the `_id` search parameter). With the request below, only a single Resource instance is returned in the response (i.e., the Resource instance is not returned inside a `searchset` `Bundle`).
 
 ```sh
     GET {{fhirurl}}/Patient/123
+```
+
+**Response:**
+```sh
+{
+    "resourceType": "Patient",
+    "id": "D000000001",
+    "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-05-09T20:53:22.981+00:00",
+        "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+        ]
+    },
+...}
 ```
 
 ## Step 1 - Save Sample Resources
