@@ -54,7 +54,7 @@ When doing a search on a FHIR server, the initial target for the query can be an
 + A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions (e.g., querying against a search parameter shared by all Resources)
 
-The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you send a request for the `Patient` Resource with no `id` or search parameters specified, you will retrieve all `Patient` Resource instances in the FHIR service.
+The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you send a request for `Patient` with no `id` or search parameters specified, you will retrieve all `Patient` Resource instances in the FHIR service.
 
 ```sh
 GET {{fhirurl}}/Patient
@@ -66,7 +66,7 @@ If you wanted to narrow this search down to `Patient` Resource instances that we
 GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 ```
 
-You can also call the FHIR search API with `POST`, which is useful if the query string is too long or if the query must be hidden to conceal PHI. To search using `POST`, the search parameters must be delivered to the FHIR server in JSON in the body of the request.
+You can also call the FHIR search API with `POST`, which is useful if the query string is too long or if the query must be hidden to conceal PHI. To search using `POST`, the search parameters are delivered to the FHIR server in JSON in the body of the request.
 
 When a search request is successful, if it's a single-instance search (e.g., `GET {{fhirurl}}/Patient/123`), you'll receive a JSON-formatted Resource instance in return. If it's a request for more than one Resource instance or a query formed with search parameters, you’ll receive a FHIR `Bundle` response in JSON with a `"type": "searchset"` entry followed by the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
