@@ -8,11 +8,11 @@ In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/f
 
 ## Background
 
-The FHIR specification defines a RESTful API framework for accessing Resources on a FHIR server. When an authenticated client app queries a FHIR server for a Resource or set of Resources, the server checks for authorization, and if the request is within the scope of the client app's permissions, the server carries out a search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the FHIR service in Azure Health Data Services. 
+The FHIR specification defines a RESTful API framework for accessing Resources on a FHIR server. In real-world implementations, when an authenticated client app queries a FHIR server for a Resource or set of Resources, the server checks for authorization, and if the request is within the client app's permissions, the server carries out a search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the FHIR service in Azure Health Data Services. 
 
-Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding multiple Resource instances* on a FHIR server (in this case, `Encounter` instances). 
+Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding Resource instances* on a FHIR server (in this case, `Encounter` instances). 
 
-> __*Note:__ In this challenge, at times we will use the term "Resource" to mean "Resource instance" - without explicitly saying "Resource instance". This is the way "Resource" is used in the [FHIR literature](https://www.hl7.org/fhir/resourcelist.html) - to mean either "Resource type" or "Resource instance" - depending on context. 
+> Note: A Resource instance on a FHIR server has a unique, server-wide Resource `id`. This `id` is also referred to as the Resource instance's [Logical ID](https://www.hl7.org/fhir/resource.html#id). 
 
 ## Learning Objectives for Challenge-04
 
