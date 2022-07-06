@@ -112,7 +112,7 @@ Compare the above to a single Resource instance request, which uses the RESTful 
 ```sh
 {
     "resourceType": "Patient",
-    "id": "D000000001",
+    "id": "123",
     "meta": {
         "versionId": "1",
         "lastUpdated": "2022-05-09T20:53:22.981+00:00",
