@@ -11,7 +11,7 @@ In this challenge, you will deploy an **[Azure Health Data Services workspace](h
 By the end of this challenge you will be able to
 
 + explain the difference between workspaces and services in Azure Health Data Services
-+ use a template to deploy FHIR service inside an Azure Health Data Services workspace
++ use a template to deploy a FHIR service instance inside an Azure Health Data Services workspace
 + create an AAD service client for Postman and grant it access to your FHIR service
 + configure and use Postman for sending web API requests to your FHIR service
 
