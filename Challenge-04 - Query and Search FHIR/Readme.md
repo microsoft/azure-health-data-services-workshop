@@ -284,7 +284,7 @@ Likewise but in the opposite direction, you can use `_revinclude` to retrieve Re
 GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:patient:medication.code=1234567
 ```
 
-**Note:** Because of the potential for "open-ended" searches with `_include` and `_revinclude`, the number of returned results with these search parameters is limited to 100 items on the FHIR service. 
+**Note:** Because of the potential for "open-ended" searches with `_include` and `_revinclude`, the number of returned results with these search parameters is capped to an arbitrary limit on the FHIR service in Azure Health Data Services. 
 
 ### Exercise Task
 
