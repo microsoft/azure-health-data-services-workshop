@@ -10,7 +10,7 @@ In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/f
 
 The FHIR specification defines a RESTful API framework for accessing Resources on a FHIR server. In real-world implementations, when an authenticated client app queries a FHIR server for a Resource or set of Resources, the server checks for authorization, and if the request is within the client app's permissions, the server carries out a search and returns the results. The FHIR standard offers a variety of options for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the FHIR service in Azure Health Data Services. 
 
-Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding Resource instances* per some filter criteria on a FHIR server (in this case, `Encounter` instances filtered by the `Condition` of interest). 
+Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding Resource instances* per some filter criteria (in this case, `Encounter` instances filtered by the `Condition` of interest). 
 
 > Note: A Resource instance on a FHIR server has a unique, server-wide Resource `id`. This `id` is also referred to as the Resource instance's [Logical ID](https://www.hl7.org/fhir/resource.html#id). 
 
