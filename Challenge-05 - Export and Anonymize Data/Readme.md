@@ -48,7 +48,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 ## Step 3: Export anonymized data to a storage account
 
-1. Now you will go to the `FHIR CALLS` collection in Postman and prepare a new request for a de-identified `$export`. This API call will cause the FHIR service to de-identify all resources and export them to the `anonymization` container in the "**expsa**" storage account. 
+1. Now you will go to the `FHIR CALLS` collection in Postman and prepare a new request for a de-identified `$export`. This API call will cause the FHIR service to export all resources in de-identified form to the `anonymization` container in the "**expsa**" storage account. 
 
 > You can create a new request in Postman by clicking on the existing `GET List Patients` request and selecting **Duplicate** from the **View more actions** menu. Select **Rename** and name the new request `GET Export Anonymized FHIR Data` (the `GET` should already be present on the left). 
 
