@@ -55,9 +55,9 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
   The general form of the request string will be:
 
   ```sh
-  GET {{fhirurl}}/$export?_container={{containerName}}&_anonymizationConfig={{configFileName}}
+  GET {{fhirurl}}/$export?_container={{containerName}}&_anonymizationConfig={{configFilename}}
   ```
-  It's recommended to add the `containerName` and `configFileName` parameters to your `fhir-service` environment in Postman. Otherwise, you will need to put these names directly in the request string.
+  It's recommended to add the `containerName` and `configFilename` parameters to your `fhir-service` environment in Postman. Otherwise, you will need to put these names directly in the request string.
 
 2. In Postman, go to the **Authorization** tab for the new request and make sure that **Inherit auth from parent** is selected. 
 
