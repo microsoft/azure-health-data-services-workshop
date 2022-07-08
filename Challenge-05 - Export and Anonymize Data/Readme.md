@@ -44,7 +44,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
   **Note:** When you deployed FHIR service in Challenge-01, a [managed identity](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) was automatically enabled on the FHIR service resource. That managed identity is what needs to be added to the ADLS Gen2 storage account with the **Storage Blob Data Contributor** role. The storage account (also deployed in Challenge-01) is in your resource group and has a name ending with "**expsa**". Keep in mind that you are configuring the storage account in this step (not the FHIR service). In the storage account, be careful not to add a role assignment to a service client or a service principal by mistake!
 
-  For additional information on bulk export from the FHIR service, review [How to export FHIR data](https://docs.microsoft.com/azure/healthcare-apis/fhir/export-data).
+  For information on bulk export from the FHIR service, review [How to export FHIR data](https://docs.microsoft.com/azure/healthcare-apis/fhir/export-data).
 
 ## Step 3: Export anonymized data to a storage account
 
