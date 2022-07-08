@@ -69,13 +69,15 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 ![export-header](./media/Export_Headers.png)
 
-4. Refresh your access token if necessary.
+4. Be sure to **Save** your `GET Export Anonymized FHIR Data` request.
 
-5. Once everything is set up and ready to go, press **Send** in Postman to initiate the `$export` request.
+5. Refresh your access token if necessary.
+
+6. Once everything is set up and ready to go, press **Send** in Postman to initiate the `$export` request.
 
 The `$export` operation uses the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). Detailed information on headers for bulk export operations in FHIR can be found [here](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers).
 
-6. Now if you go to your "**expsa**" storage account, there should be a new folder within the `anonymization` container. Go to this folder to access the de-identified FHIR data that you just exported (inside the folder, each row will have three dots on the right side - click these three dots and select **View/Edit**). You will notice that information has been removed/redacted from the FHIR records per the anonymization rules defined in the `anonymizationConfig.json` file. 
+7. Now if you go to your "**expsa**" storage account, there should be a new folder within the `anonymization` container. Go to this folder to access the de-identified FHIR data that you just exported (inside the folder, each row will have three dots on the right side - click these three dots and select **View/Edit**). You will notice that information has been removed/redacted from the FHIR records per the anonymization rules defined in the `anonymizationConfig.json` file. 
 
 ## Step 4: Securely transfer the file to the research team
 
