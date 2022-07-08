@@ -48,7 +48,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 ## Step 3: Export anonymized data to a storage account
 
-1. Now you will go to the `FHIR CALLS` collection in Postman and prepare a new request for a de-identified `$export`. This call will cause the FHIR service to de-identify and export all resources to the "**expsa**" storage account you configured in the previous step. 
+1. Now you will go to the `FHIR CALLS` collection in Postman and prepare a new request for a de-identified `$export`. This API call will cause the FHIR service to de-identify and export all resources to the `anonymization` container in the "**expsa**" storage account. 
 
 > You can create a new request in Postman by clicking on the existing `GET List Patients` request and selecting **Duplicate** from the **View more actions** menu. Select **Rename** and name the new request `GET Export Anonymized FHIR Data` (the `GET` should already be present on the left). 
 
@@ -73,9 +73,9 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 5. Once everything is set up and ready to go, press **Send** in Postman to initiate the `$export` request.
 
-The `$export` operation uses the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). More detailed information on headers for bulk export operations in FHIR can be found [here](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers).
+The `$export` operation uses the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). Detailed information on headers for bulk export operations in FHIR can be found [here](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers).
 
-6. Now if you go to your "**expsa**" storage account, there should be a new folder within the `anonymization` container. Go to this folder to access the de-identified FHIR data that you just exported (click on the three dots on the right side of a row and select **View/Edit**). You will notice that information has been hashed or redacted from the FHIR records per the anonymization rules defined in the `anonymizationConfig.json` file. 
+6. Now if you go to your "**expsa**" storage account, there should be a new folder within the `anonymization` container. Go to this folder to access the de-identified FHIR data that you just exported (click on the three dots on the right side of a row and select **View/Edit**). You will notice that information has been removed/redacted from the FHIR records per the anonymization rules defined in the `anonymizationConfig.json` file. 
 
 ## Step 4: Securely transfer the file to the research team
 
