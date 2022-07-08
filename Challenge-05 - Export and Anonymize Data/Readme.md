@@ -71,7 +71,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 The `$export` operation uses the [FHIR Asynchronous Request Pattern](https://hl7.org/fhir/R4/async.html). More detailed information on headers for bulk export operations in FHIR can be found [here](https://hl7.org/Fhir/uv/bulkdata/export/index.html#headers).
 
-4. Now if you go to your "**expsa**" storage account, there should be a new folder within the `anonymization` container. Go to this folder to access the de-identified FHIR data that you just exported. You will notice that the [18 HIPAA Safe Harbor Identifiers](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html#safeharborguidance) have been removed from the information per the anonymization rules defined in the `anonymizationConfig.json` file. 
+4. Now if you go to your "**expsa**" storage account, there should be a new folder within the `anonymization` container. Go to this folder to access the de-identified FHIR data that you just exported (click on the three dots on the right side of a row and select **View/Edit**). You will notice that information has been hashed or redacted from the FHIR records per the anonymization rules defined in the `anonymizationConfig.json` file. 
 
 ## Step 4: Securely transfer the file to the research team
 
