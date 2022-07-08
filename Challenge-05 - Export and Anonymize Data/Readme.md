@@ -81,11 +81,11 @@ The `$export` operation uses the [FHIR Asynchronous Request Pattern](https://hl7
 
 8. Now if you go to your "**expsa**" storage account, there should be a new folder within the `anonymization` container. Go to this folder to access the de-identified FHIR data that you just exported (inside the folder, each row will have three dots on the right side - click these three dots and select **View/Edit**). You will notice that information has been removed/redacted from the FHIR records per the anonymization rules defined in the `anonymizationConfig.json` file. 
 
-## Step 4: Securely transfer the file to the research team
+## Step 4: Securely transfer the files to the research team
 
-Researchers from outside organizations cannot have direct access to healthcare or payer organizations' Azure tenants. You will need to find a way to securely transfer the anonymized datasets to these external groups.
+Researchers from outside organizations cannot have direct access to healthcare or payer organizations' Azure tenants. You will need to find a way to securely transfer the anonymized data to these external groups.
 
-1. Review the [Create SAS Tokens](https://docs.microsoft.com/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers) documentation for setting up a Shared Access Signature (SAS) token. Then, generate a SAS token to allow a research team to access the anonymized datasets that you exported.
+1. Review the [Create SAS Tokens](https://docs.microsoft.com/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers) documentation for setting up a Shared Access Signature (SAS) token. Then, generate a SAS token to allow a research team to access the anonymized data that you exported.
 
 **Note**: Pay special attention to the "Permissions" section of the above documentation. **Reading** files and **listing** files in a container are two different permissions.
 
