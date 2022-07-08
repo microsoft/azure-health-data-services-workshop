@@ -52,7 +52,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 > You can create a new request in Postman by clicking on the existing `GET List Patients` request and selecting **Duplicate** from the **View more actions** menu. Select **Rename** and name the new request `GET Export Anonymized FHIR Data` (the `GET` should already be present on the left). 
 
-  The general format of the request string will be:
+  The general form of the request string will be:
 
   ```sh
   GET {{fhirurl}}/$export?_container={{containerName}}&_anonymizationConfig={{configFileName}}
