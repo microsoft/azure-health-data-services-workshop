@@ -59,9 +59,9 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
   ```
   It's recommended to add the `containerName` and `configFilename` parameters to your `fhir-service` environment in Postman. Otherwise, you will need to put these names directly in the request string.
 
-2. In Postman, go to the **Authorization** tab for the new request and make sure that **Inherit auth from parent** is selected. 
+2. In Postman, go to the **Authorization** tab for the `GET Export Anonymized FHIR Data` request and make sure that **Inherit auth from parent** is selected. 
 
-3. The `$export` operation has these required headers. Below there is a screenshot of the **Headers** tab in Postman.
+3. Under the **Headers** tab for the `GET Export Anonymized FHIR Data` request in Postman, add/modify the three headers as shown below. A screenshot of the **Headers** tab in Postman is provided for reference.
 
 + `Accept: application/fhir+json`
 + `Authorization: Bearer {{bearerToken}}`
