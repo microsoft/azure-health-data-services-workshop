@@ -81,7 +81,7 @@ The `$export` operation uses the [FHIR Asynchronous Request Pattern](https://hl7
 
 Researchers from outside organizations cannot have direct access to healthcare or payer organizations' Azure tenants. You will need to find a way to securely transfer the anonymized datasets to these external groups.
 
-1. Review the [Create SAS Tokens](https://docs.microsoft.com/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers) documentation for setting up a Shared Access Signature (SAS) token. Then, generate an SAS token to allow a research team to access the anonymized datasets that you exported.
+1. Review the [Create SAS Tokens](https://docs.microsoft.com/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers) documentation for setting up a Shared Access Signature (SAS) token. Then, generate a SAS token to allow a research team to access the anonymized datasets that you exported.
 
 **Note**: Pay special attention to the "Permissions" section of the above documentation. **Reading** files and **listing** files in a container are two different permissions.
 
