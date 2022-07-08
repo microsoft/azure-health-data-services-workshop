@@ -69,7 +69,7 @@ In this challenge, you will be using the `$export` command in FHIR service to ex
 
 ![export-header](./media/Export_Headers.png)
 
-4. Get a new access token if necessary.
+4. Refresh your access token if necessary.
 
 5. Once everything is set up and ready to go, press **Send** in Postman to initiate the `$export` request.
 
