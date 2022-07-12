@@ -71,7 +71,7 @@ In this challenge, you will be using the `$export` operation in FHIR service to 
 
 4. Be sure to **Save** your `GET Export Anonymized FHIR Data` request.
 
-5. Refresh your access token if necessary.
+5. Refresh your access token if necessary (use `POST AuthorizeGetToken`).
 
 6. Once everything is set up and ready to go, press **Send** in Postman to initiate the `$export` request.
 
