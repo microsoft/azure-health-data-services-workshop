@@ -31,7 +31,7 @@ By the end of this challenge you will be able to
 
 In this challenge, you will be using the `$export` command in FHIR service to export de-identified FHIR data into an ADLS Gen2 blob storage container. The `$export` command in FHIR service is an implementation of the bulk export function detailed in the [FHIR Bulk Data Access specification](https://hl7.org/fhir/uv/bulkdata/export/index.html). To familiarize yourself with the FHIR service `$export` operation, please read [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data) and return here when finished. 
 
-## Step 1: Review sample anonymization configuration and customize if needed
+## Step 1: Review sample anonymization configuration and customize as needed
 
 1. Microsoft provides a [sample configuration file](https://docs.microsoft.com/azure/healthcare-apis/fhir/de-identified-export#configuration-file) to demonstrate how de-identification works between the FHIR service and an ADLS Gen2 account. In real-world use, you would need to review the HIPAA Safe Harbor guidelines and customize the configuration file with additional anonymization rules (e.g., rules for redacting/transforming patient names).
 
