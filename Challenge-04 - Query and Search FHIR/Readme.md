@@ -54,7 +54,7 @@ When doing a search on a FHIR server, the initial target for the query can be an
 + A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions (e.g., querying against a search parameter shared by all Resources)
 
-The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you send a request for `Patient` with no `id` or search parameters specified, you will retrieve all `Patient` Resource instances in the FHIR service.
+The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you send a request for `Patient` with no `id` or search parameters specified, you will retrieve all `Patient` Resource instances stored in the FHIR server database.
 
 ```sh
 GET {{fhirurl}}/Patient
@@ -137,11 +137,9 @@ To begin, you are going to populate your FHIR service with more sample FHIR Reso
 
 ### Exercise Task
 
-1. Go to Postman and open the FHIR Search collection provided in Challenge-01. Make sure that the `fhir-service` environment is active and that your access token is still valid.  
+1. Go to Postman and open the FHIR Search collection provided in Challenge-01. Make sure that the `fhir-service` environment is active and that you have a valid access token (use `POST AuthorizeGetToken` to get a token refresh).  
 
 2. There is a request titled `Step 1 - Save Sample Resource Bundle`. Click on this request, and then click **Send** to deliver the request to your FHIR service. This will save some Resources that future requests in this challenge require.
-
-**Note:** If you need to refresh your access token, just send another `POST AuthorizeGetToken` request.
 
 **Note:** The FHIR Search collection has sample requests to demonstrate many different FHIR searches. They aren't always specified by name in these instructions, but they will start with "Step # -" for reference.
 
