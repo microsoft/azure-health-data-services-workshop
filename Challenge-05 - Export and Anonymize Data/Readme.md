@@ -17,7 +17,7 @@ By the end of this challenge you will be able to
 + configure bulk export of FHIR data from FHIR service
 + use a sample anonymization config file to de-identify FHIR data on export
 + export anonymized data to an [Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) account
-+ share anonymized data with a group not affiliated with your organization
++ securely share anonymized data with a group not affiliated with your organization
 
 ## Prerequisites
 
