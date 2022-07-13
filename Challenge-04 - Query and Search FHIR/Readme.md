@@ -133,7 +133,7 @@ Compare the above to a single Resource instance request, which uses the RESTful 
 ```
 
 ## Step 1 - Save Sample Resources
-To begin, you are going to populate your FHIR service with more sample FHIR Resources.
+To begin, you are going to populate your FHIR service with some sample FHIR Resources.
 
 ### Exercise Task
 
