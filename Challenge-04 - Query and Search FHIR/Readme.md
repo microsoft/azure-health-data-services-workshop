@@ -74,13 +74,13 @@ When a search request is successful, if it's a single-instance search (e.g., `GE
 
 The following search parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
 
-The search parameter ```_id``` refers to the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server and can be used when the query specifies a Resource type (`Patient` is used as an example here):
+The search parameter ```_id``` is used to specify the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server (`Patient` is used as an example here):
 
 ```sh
  GET {{fhirurl}}/Patient?_id=123
 ```
 
-This query returns a `Bundle` containing the `Patient` Resource instance with the given `id` (there can only be one Resource instance for a given Logical ID on a FHIR server).
+This query returns a `Bundle` containing the `Patient` Resource instance with the given `id`.
 
 **Response (excerpt):**
 ```sh
