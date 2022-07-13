@@ -304,7 +304,7 @@ At some point, you will find a use case where you need to retrieve information t
 
     _Note: Reindexing can take up to several minutes._
 
-4. Once you have tested the new search parameter and re-indexed the FHIR service database, try the `Search by Custom Search Parameter` call in the FHIR Search collection and see what results you get.
+4. Once you have tested the new search parameter and re-indexed the FHIR service database, try the `Search by Custom Search Parameter` call in the FHIR Search collection and see what comes back in return.
 
 ## What does success look like for Challenge-04?
 
