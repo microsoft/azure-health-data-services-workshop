@@ -72,9 +72,9 @@ When a search request is successful, if it's a single-instance search (e.g., `GE
 
 ## Common Search Parameters 
 
-The following search parameters apply to all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  In addition, the search parameters ```_text``` and ```_filter``` also apply to all Resources (as do the [search result parameters](https://www.hl7.org/fhir/search.html#Summary)).
+The following search parameters are available for all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  Moreover, the ```_text```, ```_filter```, and [search result parameters](https://www.hl7.org/fhir/search.html#Summary) work with all Resources.
 
-The search parameter ```_id``` is used to specify the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server (`Patient` is used as an example here):
+The search parameter ```_id``` is used to specify the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server (the `Patient` Resource type is used as an example here):
 
 ```sh
  GET {{fhirurl}}/Patient?_id=123
