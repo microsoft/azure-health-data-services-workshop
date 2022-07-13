@@ -8,21 +8,20 @@ In this challenge, you will learn how to use the FHIR service's custom `$convert
 
 ## Background
 
-In today's health industry, the FHIR R4 format has become the standard medium for storage and exchange of health data. As FHIR interoperability spreads throughout the industry, health IT operations are deploying conversion pipelines for ingesting and transforming legacy data formats into FHIR. Two of the most common legacy formats in use are [HL7v2](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) and [C-CDA](https://www.healthit.gov/topic/standards-technology/consolidated-cda-overview). In this challenge, we will explore how to convert data from these formats for persistence in FHIR using the Microsoft health data platform.
+In today's health industry, the FHIR R4 format has become the new standard medium for storage and exchange of health data. As FHIR interoperability spreads throughout the industry, health IT operations are deploying conversion pipelines for ingesting and transforming legacy data formats into FHIR. Two of the most common legacy formats in use are [HL7v2](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) and [C-CDA](https://www.healthit.gov/topic/standards-technology/consolidated-cda-overview). In this challenge, we will explore how to convert data from these formats for persistence in FHIR using the Microsoft health data platform.
 
 ## Learning Objectives for Challenge-02
 By the end of this challenge you will be able to 
 
-+ convert HL7v2 and C-CDA data into FHIR
 + specify API request parameters for converting data into FHIR
 + prepare/clean data for conversion into FHIR
-+ make API calls using the `$convert-data` operation
++ make API calls to convert HL7v2 and C-CDA data into FHIR
 
 ## Prerequisites
 
 + Successful completion of Challenge-01
-+ Postman installed
-+ A text editor - [Visual Studio Code](https://code.visualstudio.com/) or [7Edit](http://7edit.com/home/)
++ Postman installed and registered in AAD (completed in Challenge-01)
++ A text editor ([Visual Studio Code](https://code.visualstudio.com/) or [7Edit](http://7edit.com/home/) recommended)
 + [VS Code HL7 Language Support](https://marketplace.visualstudio.com/items?itemName=pbrooks.hl7) (optional)
 
 ---
