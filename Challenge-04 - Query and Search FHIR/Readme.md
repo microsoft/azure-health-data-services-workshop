@@ -111,7 +111,7 @@ This query returns a `Bundle` containing the `Patient` Resource instance with th
 
 ## Single Resource Instance Search Request
 
-Compare the above to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the path (rather than using the `_id` search parameter). With the request below, the Resource instance is returned in response, but not inside a `Bundle`.
+Compare the above to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the URL path (rather than using the `_id` search parameter). With the request below, the Resource instance is returned in response, but not inside a `Bundle`.
 
 ```sh
     GET {{fhirurl}}/Patient/123
