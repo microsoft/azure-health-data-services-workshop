@@ -20,7 +20,7 @@ By the end of this challenge you will be able to
 
 + explain the basic concepts of FHIR Search
 + perform both Common and Composite searches 
-+ use Modifiers in FHIR searches 
++ use modifiers in FHIR searches 
 + use Chained and Reverse Chained search result parameters
 + use Include and Reverse Include search result parameters
 + use a custom search parameter 
@@ -137,7 +137,7 @@ To begin, you are going to populate your FHIR service with some sample FHIR Reso
 
 ### Exercise Task
 
-1. Go to Postman and open the FHIR Search collection provided in Challenge-01. Make sure that the `fhir-service` environment is active and that you have a valid access token (use `POST AuthorizeGetToken` to get a token refresh).  
+1. Go to Postman and access the FHIR Search collection provided in Challenge-01. Make sure that the `fhir-service` environment is active and that you have a valid access token (use `POST AuthorizeGetToken` to get a token refresh).  
 
 2. There is a request titled `Step 1 - Save Sample Resource Bundle`. Click on this request, and then click **Send** to deliver the request to your FHIR service. This will save some Resources that future requests in this challenge require.
 
@@ -145,7 +145,7 @@ To begin, you are going to populate your FHIR service with some sample FHIR Reso
 
 ## Step 2 - Make FHIR API Calls with Search Parameters
 
-On top of common search parameters, it's possible to add modifiers right after the element name, which makes these searches more powerful. Some examples are `:not`, `:exact`, and `:contains`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation for more details.
+On top of common search parameters, it's possible to add modifiers right after a parameter value to sharpen search results. Some example modifiers are `:not`, `:exact`, and `:contains`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation for more details.
 
 ### Exercise Task
 
