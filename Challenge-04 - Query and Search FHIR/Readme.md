@@ -8,9 +8,9 @@ In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/f
 
 ## Background
 
-The FHIR specification defines a RESTful API framework for accessing Resources stored in a FHIR server database. In real-world implementations, when a client app queries a FHIR server, the server carries out a search through the database and returns the results. The FHIR standard offers a rich set of parameters for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
+The FHIR specification defines a RESTful API framework for Creating, Reading, Updating, and Deleting Resources stored in a FHIR server database. In real-world use, by far the most common type of FHIR API interaction is a remote client querying a FHIR server for data. The FHIR standard offers a rich set of parameters for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
 
-Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding Resource instances* per some filter criteria (in this case, `Encounter` instances filtered by the `Condition` of interest). 
+Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding Resource instances* per some filter criteria (in this example, `Encounter` instances filtered by reference to a type of `Condition`). 
 
 > *Note: A Resource instance on a FHIR server has a unique, server-wide Resource `id`. This `id` is also referred to as the Resource instance's [Logical ID](https://www.hl7.org/fhir/resource.html#id). 
 
