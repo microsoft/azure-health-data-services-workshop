@@ -8,7 +8,7 @@ In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/f
 
 ## Background
 
-The FHIR specification defines a RESTful API framework for Creating, Reading, Updating, and Deleting Resources stored in a FHIR server database. In real-world use, the most common types of FHIR API interactions are those that involve a remote client querying a FHIR server for data. The FHIR standard offers a rich set of parameters for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
+The FHIR specification defines a RESTful API framework for accessing Resources stored in a FHIR server database. In real-world use, the most common type of FHIR API interaction is one in which a remote client queries a FHIR server for data. The FHIR standard offers a rich set of parameters for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
 
 Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding Resource instances* per some filter criteria (in this example, `Encounter` instances filtered by reference to a type of `Condition`). 
 
