@@ -4,7 +4,7 @@
 
 Welcome to Challenge-04!
 
-In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/fhir/search.html) operations to query data in your FHIR service.
+In this challenge, you will learn how to use [FHIR search](https://www.hl7.org/fhir/search.html) operations to query data in your FHIR service.
 
 ## Background
 
@@ -18,7 +18,7 @@ Think of these FHIR searches in user terms – a doctor may want to find all enc
 
 By the end of this challenge you will be able to 
 
-+ explain the basic concepts of FHIR Search
++ explain the basic concepts of FHIR search
 + perform both Common and Composite searches 
 + use modifiers in FHIR searches 
 + use Chained and Reverse Chained search result parameters
@@ -33,7 +33,7 @@ By the end of this challenge you will be able to
 
 ---
 
-## FHIR Search basics
+## FHIR search basics
 
 At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities tied to healthcare activities. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Encounter`, `Observation`, `Procedure`, etc.), and many other aspects to do with healthcare scenarios.
 
@@ -45,7 +45,7 @@ Along with Elements, each FHIR Resource is defined with a set of search paramete
 + [Patient Resource-specific Search Parameters](https://www.hl7.org/fhir/patient.html#search) (note that Resource-specific search parameters are always listed at the bottom of the "Content" tab in FHIR R4 Resource documentation)
 + [Defining Custom Search Parameters](https://docs.microsoft.com/azure/healthcare-apis/fhir/how-to-do-custom-search)
 
-## FHIR Search methods
+## FHIR search methods
 
 When doing a search on a FHIR server, the initial target for the query can be any of the following:
 
@@ -69,9 +69,9 @@ GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 
 ### Searching with `POST`
 
-You can also make FHIR Search API calls with `POST`, which is useful if the query string is too long for a single line or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try sending `POST Step 2 - List Patient by ID using POST` in the FHIR Search collection.
+You can also make FHIR search API calls with `POST`, which is useful if the query string is too long for a single line or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try sending `POST Step 2 - List Patient by ID using POST` in the FHIR Search collection.
 
-### FHIR Search responses
+### FHIR search responses
 
 When a search request is successful, you’ll receive a JSON FHIR `Bundle` response containing the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
@@ -146,7 +146,7 @@ To begin, you are going to populate your FHIR service with some sample FHIR Reso
 
 2. There is a request titled `Step 1 - Save Sample Resource Bundle`. Click on this request, and then click **Send** to deliver the request to your FHIR service. This will save some Resources that future requests in this challenge require.
 
-**Note:** The FHIR Search collection has sample requests to demonstrate many different FHIR searches. They aren't always specified by name in these instructions, but in Postman they will start with "Step # -" for reference.
+**Note:** The FHIR Search collection has sample requests to demonstrate many different FHIR searches. They aren't always specified by name in these instructions, but in Postman they will start with "Step #" for reference.
 
 ## Step 2 - Make FHIR API Calls with Search Parameters
 
@@ -218,7 +218,7 @@ FHIR specifies a set of parameters for filtering search results. Below are sever
 
 ### Exercise Task
 
-1. Using the FHIR Search collection in Postman, perform several Patient queries with the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```, `_sort=gender`.  
+1. Using the FHIR Search collection in Postman, perform several `Patient` queries with the following search result parameters: ```_summary=true```, `_summary=count`, ```_total=accurate```, `_sort=gender`.  
   
 ## Step 5 - Use the Chained & Reverse Chained Search Result Parameters
 
@@ -273,9 +273,9 @@ GET {{fhirurl}}/Patient?_has:Observation:patient:code=55284-4
 
 As discussed in Step 5, a `reference` in FHIR forms a connection from one Resource to another. FHIR enables querying for and traversing `reference` connections in order to narrow search results. In some situations, you may also want to use `reference` associations between Resources to cast a wider net for exploratory searches in a FHIR server's database.
 
-To illustrate, let's imagine you are interested in retrieving all `AllergyIntolerance` instances with a specific code, and you would also like to retrieve all `Patient` instances on the FHIR server that are referenced by this type of `AllergyIntolerance`. You could do this in two searches by first querying with `AllergyIntolerance?_code=` and then searching for referenced `Patient` instances using `_has:AllergyIntolerance:patient:code=`.
+To illustrate, let's imagine you are interested in retrieving all `AllergyIntolerance` instances with a specific code. Additionally, you would like to retrieve all `Patient` instances on the FHIR server that are referenced by this type of `AllergyIntolerance`. You could do this in two searches by first querying with `AllergyIntolerance?_code=` and then searching for referenced `Patient` instances using `_has:AllergyIntolerance:patient:code=`.
 
-But it would be more efficient to retrieve all of this information in a single query. This capability is provided in the `_include` and `_revinclude` parameters. The example below illustrates how `_include` expands the main search (`AllergyIntolerance?_code=`) to return the referenced Resource instances as well (`patient` at the end is short for `subject:Patient`). 
+But it would be more efficient to retrieve all of this information in a single query. This is made possible with the `_include` and `_revinclude` parameters. The example below illustrates how `_include` expands the main search (`AllergyIntolerance?_code=`) to return the referenced Resource instances as well (`patient` at the end is short for `subject:Patient`). 
 
 ```sh
 GET {{fhirurl}}/AllergyIntolerance?_code=123456789&_include=AllergyIntolerance:patient
@@ -287,7 +287,7 @@ Likewise but in the opposite direction, you can use `_revinclude` to retrieve Re
 GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:patient:medication.code=1234567
 ```
 
-**Note:** Because of the potential for "open-ended" searches with `_include` and `_revinclude`, the number of returned results with these search parameters is capped to an arbitrary limit on the FHIR service in Azure Health Data Services. 
+**Note:** Because of the potential for "open-ended" searches with `_include` and `_revinclude`, the number of results returned from these searches is capped to an arbitrary limit on the FHIR service in Azure Health Data Services. 
 
 ### Exercise Task
 
@@ -314,7 +314,7 @@ At some point, you will find a use case where you need to retrieve information t
 ## What does success look like for Challenge-04?
 
 + Develop a basic understanding of how to perform FHIR search operations in FHIR service.
-+ Perform several FHIR search queries using paired/multiple parameters for Common and Composite Search.
++ Perform several queries using paired/multiple parameters for Common and Composite Search.
 + Complete at least one Chained and one Reverse Chained FHIR search query.
 + Complete at least one Include and one Reverse Include FHIR search query.
 + Perform at least one query using a custom search parameter.
