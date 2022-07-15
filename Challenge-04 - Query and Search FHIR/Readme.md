@@ -54,6 +54,8 @@ When doing a search on a FHIR server, the initial target for the query can be an
 + A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions (e.g., querying against a search parameter shared by all Resources)
 
+### Searching with `GET`
+
 The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you send a request for `Patient` with no `id` or search parameters specified, you will retrieve all `Patient` Resource instances stored in the FHIR server database.
 
 ```sh
@@ -66,7 +68,11 @@ If you wanted to narrow this search down to `Patient` Resource instances that we
 GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 ```
 
-You can also call the FHIR search API with `POST`, which is useful if the query string is too long or if the query contains Personal Health Information (PHI) that must be concealed. To search using `POST`, the search parameters are delivered in JSON in the body of the request.
+### Searching with `POST`
+
+You can also call the FHIR search API with `POST`, which is useful if the query string is too long or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try the `POST Step 2 - List Patient by ID using POST` call in the FHIR Search collection.
+
+### FHIR Search responses
 
 When a search request is successful, if it's a single-instance search (e.g., `GET {{fhirurl}}/Patient/123`), you'll receive a Resource instance in return (formatted in JSON). If it's a request for more than one Resource instance or a query formed with search parameters, you’ll receive a FHIR `Bundle` response containing the search results (also formatted in JSON). If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
