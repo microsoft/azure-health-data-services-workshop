@@ -15,7 +15,7 @@ By the end of this challenge you will be able to
 
 + configure FHIR-Proxy authentication for connecting to FHIR service
 + configure Postman to connect with FHIR service via FHIR-Proxy
-+ add a Consent Resource to the FHIR service
++ add a `Consent` Resource to the FHIR service
 + configure Consent Opt-Out filtering in FHIR-Proxy
 + verify that Consent Opt-Out filtering performs as expected
 
@@ -79,8 +79,8 @@ Here you will populate your FHIR service with a [Consent Resource](https://www.h
 
 1. Review the sample `Consent` Resource in the `consent-resource.json` file located [here](./sample-data/consent-resource.json). You will see that `Patient/WDT000000001` is opting out of sharing records with `Practitioner/WDT000000003`.
 2. Go to the FHIR CALLS collection in Postman and click on the `POST Consent Resource` call.
-3. Inspect the **Body** of the request, and you will see that it contains the same Consent Resource that you just reviewed above.
-4. Click **Send** to populate your FHIR service with the Consent Resource.
+3. Inspect the **Body** of the request, and you will see that it contains the same `Consent` Resource that you just reviewed above.
+4. Click **Send** to populate your FHIR service with the `Consent` Resource.
 
 ## Step 5 - Add a Practitioner role in FHIR-Proxy
  To configure Consent Opt-Out, you must create a [FHIR Participant](http://hl7.org/fhir/2020Feb/participant.html) role for the individual (or organization) being blocked from access to a patient's FHIR data. In the real world, you would be associating a FHIR Participant role with a provider (or organization), and you would be activating the `Consent` Resource on behalf of a patient to block said provider from accessing the patient's FHIR records. In this example, you are going to be adding the FHIR Participant role to *your own Azure account* - as though you are the provider (i.e., `Practitioner/WDT000000003`) who is being blocked from accessing FHIR data belonging to `Patient/WDT000000001`. 
@@ -134,7 +134,7 @@ Now, if you press **Send** in the `GET Patient Consent Opt Out` call, you should
 
 ## What does success look like for Challenge-07?
 
-+ Successfully `POST` a consent record to the FHIR service.
++ Successfully `POST` a `Consent` Resource to the FHIR service.
 + Verify that Consent Opt-Out properly filters a `Patient` Resource.
 
 ## Next Steps
