@@ -62,7 +62,7 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 GET {{fhirurl}}/Patient?_summary=count
 ```
 
-You should receive a bundle as shown below (the number of patients will be different from what is shown in the image). 
+You should receive a `Bundle` as shown below (the number of patients will be different from what is shown in the image). 
 
 <img src="./images/Screenshot_2022-05-11_111728_edit.png" height="528"> 
 
@@ -72,7 +72,7 @@ To confirm you have the `Patient` and `Practitioner` Resources needed for this c
 
 `GET {{fhirurl}}/Practitioner/WDT000000003`
 
-You should receive a `200 OK` response for each of these requests (with the Resource in the response **Body**). If not, you will need to run the `POST Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
+You should receive a `200 OK` response for each of these requests (with the Resource instance in the response **Body**). If not, you will need to run the `POST Save Sample Resources` request again in the FHIR Search collection in Postman (this step was covered in Challenge-04).
 
 ## Step 4 - Post a Consent Resource to FHIR service
 Here you will populate your FHIR service with a [Consent Resource](https://www.hl7.org/fhir/consent.html) to enable the [Consent Opt-Out filter](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#consent-opt-out-filter) in FHIR-Proxy.
