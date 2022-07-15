@@ -35,7 +35,7 @@ By the end of this challenge you will be able to
 
 ## FHIR search basics
 
-At the top level, the FHIR data model is made up of a collection of Resources for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities tied to healthcare activities. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Encounter`, `Observation`, `Procedure`, etc.), and many other aspects to do with healthcare scenarios.
+At the top level, the [FHIR](https://hl7.org/FHIR/) data model is made up of a collection of [Resources](https://www.hl7.org/fhir/resourcelist.html) for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities tied to healthcare activities. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Encounter`, `Observation`, `Procedure`, etc.), and many other aspects connected with healthcare scenarios.
 
 Within every Resource, FHIR defines a set of Elements for storing details that uniquely identify each Resource *instance* on a FHIR server. Elements such as `id` and `meta` apply to all Resource types in FHIR, while other Elements are attached to specific Resource types (e.g., the `gender` Element is only found in `Patient`, `Person`, `Practitioner`, and `RelatedPerson` Resources). Furthermore, the FHIR model is designed to allow users to add Elements to Resources through extensions.
 
