@@ -4,11 +4,11 @@
 
 Welcome to Challenge-07!
 
-In this challenge, you will learn how to configure Consent Opt-Out filtering for the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) using [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) (OSS).
+In this challenge, you will learn how to enable Consent Opt-Out filtering for the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) using [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) (OSS).
 
 ## Background
 
-The wide adoption of FHIR R4 has given patients more control over what happens to their health data. With a patient's data stored in FHIR, mechanisms are available to block certain providers and/or organizations from access to the data if the patient elects to withhold records. One way these data access restrictions are configured in FHIR is through the [Consent Resource](https://build.fhir.org/consent.html). In this challenge, we will be exploring capabilities in the Azure health data platform that make it possible for patients to opt out of sharing their FHIR records with certain parties.
+The wide adoption of [FHIR R4](https://hl7.org/FHIR/) has given patients more control over their health data. With a patient's data stored in FHIR, mechanisms are available to block certain providers and/or organizations from accessing the data if the patient elects to withhold records. One way these data access restrictions are configured in FHIR is through the [Consent Resource](https://build.fhir.org/consent.html). In this challenge, we will be exploring capabilities in the Azure health data platform that make it possible for patients to opt out of sharing their FHIR records with certain parties.
 
 ## Learning Objectives for Challenge-07
 By the end of this challenge you will be able to 
@@ -27,10 +27,10 @@ By the end of this challenge you will be able to
 + Patient data in your FHIR service (completed in Challenge-04, Step 1)
 
 ## Getting Started 
-In this challenge, you will be setting up FHIR-Proxy as a FHIR gateway to perform Consent Opt-Out Filtering for the FHIR service. You will be modifying authorization settings to control access to a patient's FHIR data. For Consent Opt-Out configuration and testing, you will be creating a new Postman environment to call the FHIR-Proxy endpoint.
+In this challenge, you will be setting up [FHIR-Proxy](https://github.com/microsoft/fhir-proxy) (OSS) as a gateway to perform Consent Opt-Out filtering of FHIR data. You will be modifying authorization settings to control access to a patient's FHIR records stored in the FHIR service. To configure and test Consent Opt-Out filtering, you will be setting up a new Postman environment for making API calls directly to the FHIR-Proxy endpoint.
 
 ### FHIR-Proxy and FHIR service overview
-In the Azure health data platform, FHIR-Proxy acts as a gateway for API calls to the FHIR service. The FHIR-Proxy is an example of an add-on gateway which enables pre- and post-processing of requests and responses, selectively filtering FHIR data on the way into and out of the FHIR service. As an example, you can set up FHIR-Proxy to intercept FHIR calls and trigger custom workflows based on specific FHIR requests. FHIR-Proxy also enables attribute based access control (ABAC) on top of the FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (e.g. patients) can authorize or deny access to certain FHIR data.
+In the Azure health data platform, FHIR-Proxy (OSS) acts as a gateway for API calls to the FHIR service. The FHIR-Proxy enables pre-processing of API requests and post-processing of responses, selectively filtering FHIR data on the way into and out of the FHIR service. As an example, you can set up FHIR-Proxy to intercept FHIR API calls and trigger custom workflows based on specific FHIR requests. FHIR-Proxy also enables enhanced Role Based Access Control (RBAC) for the FHIR service, allowing fine-grained authorization for REST API actions at the FHIR Resource level. This also provides a means of Role-Based Consent so that users (e.g. patients) can authorize or deny access to certain FHIR data.
 
 Component View of FHIR-Proxy and FHIR service with Postman set up to call the FHIR-Proxy endpoint.
 
