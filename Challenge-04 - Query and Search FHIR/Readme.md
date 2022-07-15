@@ -73,7 +73,7 @@ You can also make FHIR Search API calls with `POST`, which is useful if the quer
 
 ### FHIR Search responses
 
-When a search request is successful, you’ll receive a FHIR `Bundle` response containing the search results (also formatted in JSON). If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
+When a search request is successful, you’ll receive a JSON FHIR `Bundle` response containing the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
 ## Common Search Parameters 
 
