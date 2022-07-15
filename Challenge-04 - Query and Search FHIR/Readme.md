@@ -70,7 +70,7 @@ GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 
 ### Searching with `POST`
 
-You can also call the FHIR search API with `POST`, which is useful if the query string is too long or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try the `POST Step 2 - List Patient by ID using POST` call in the FHIR Search collection.
+You can also make FHIR Search API calls with `POST`, which is useful if the query string is impractically long or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try the `POST Step 2 - List Patient by ID using POST` call in the FHIR Search collection.
 
 ### FHIR Search responses
 
