@@ -8,7 +8,7 @@ In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/f
 
 ## Background
 
-The FHIR specification defines a RESTful API framework for Creating, Reading, Updating, and Deleting Resources stored in a FHIR server database. In real-world use, the majority of FHIR API interactions involve a remote client requesting to Read or search for data on a FHIR server. The FHIR standard offers a rich set of parameters for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
+The FHIR specification defines a RESTful API framework for interacting with Resources stored in a FHIR server database. In real-world use, the majority of FHIR API interactions involve a remote client seeking data from a FHIR server. The FHIR standard offers a RESTful syntax and a rich set of parameters for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
 
 Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding Resource instances* per some filter criteria (in this example, `Encounter` instances filtered by their reference to a type of `Condition`). 
 
@@ -70,11 +70,11 @@ GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 
 ### Searching with `POST`
 
-You can also make FHIR Search API calls with `POST`, which is useful if the query string is impractically long or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try the `POST Step 2 - List Patient by ID using POST` call in the FHIR Search collection.
+You can also make FHIR Search API calls with `POST`, which is useful if the query string is too long for a single line or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try sending `POST Step 2 - List Patient by ID using POST` in the FHIR Search collection.
 
 ### FHIR Search responses
 
-When a search request is successful, if it's a single-instance search (e.g., `GET {{fhirurl}}/Patient/123`), you'll receive a Resource instance in return (formatted in JSON). If it's a request for more than one Resource instance or a query formed with search parameters, you’ll receive a FHIR `Bundle` response containing the search results (also formatted in JSON). If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
+When a search request is successful, you’ll receive a FHIR `Bundle` response containing the search results (also formatted in JSON). If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
 ## Common Search Parameters 
 
@@ -115,9 +115,9 @@ This query returns a `Bundle` containing the `Patient` Resource instance with th
 ...}
 ```
 
-## Single Resource Instance Search Request
+## Single Resource Instance Request
 
-Compare the above to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the URL path (rather than using the `_id` search parameter). With the request below, the Resource instance is returned in response, but not inside a `Bundle`.
+Compare the above to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the URL path (rather than using the `_id` search parameter). With the request below, the Resource instance is returned in response, but not inside a `Bundle`. This is technically a [read](https://www.hl7.org/fhir/http.html#read) interaction (and not a [search](https://www.hl7.org/fhir/http.html#search) interaction, as defined by HL7).
 
 ```sh
     GET {{fhirurl}}/Patient/123
