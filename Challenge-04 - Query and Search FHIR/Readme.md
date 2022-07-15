@@ -144,7 +144,7 @@ To begin, you are going to populate your FHIR service with some sample FHIR Reso
 
 1. Go to Postman and access the FHIR Search collection provided in Challenge-01. Make sure that the `fhir-service` environment is active and that you have a valid access token (use `POST AuthorizeGetToken` to get a token refresh).  
 
-2. There is a request titled `Step 1 - Save Sample Resource Bundle`. Click on this request, and then click **Send** to deliver the request to your FHIR service. This will save some Resources that future requests in this challenge require.
+2. There is a request titled `Step 1 - Save Sample Resource Bundle`. Click on this request, and then click **Send** to deliver the `Bundle` to your FHIR service. This will save some Resources that future requests in this challenge require.
 
 **Note:** The FHIR Search collection has sample requests to demonstrate many different FHIR searches. They aren't always specified by name in these instructions, but in Postman they will start with "Step #" for reference.
 
