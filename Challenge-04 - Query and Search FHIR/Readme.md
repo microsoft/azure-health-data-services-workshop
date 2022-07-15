@@ -149,7 +149,7 @@ On top of common search parameters, it's possible to add modifiers right after a
 
 ### Exercise Task
 
-1. Go to Postman, access the FHIR Search collection provided in Challenge-01, and search for patients using the following parameters: ```_id```, ```name```, and others following the examples for Step 2.
+1. Go to Postman, access the FHIR Search collection, and search for patients using the following parameters: ```_id```, ```name```, and others following the examples for Step 2.
 
 + **Q:** *What Element(s) are you searching against when you assign a value to the* `name` *parameter in a* `Patient` *search?*
 
