@@ -74,17 +74,17 @@ Once the ARM template finishes the initial deployment, additional steps are nece
 4. Select **Microsoft**.
 <img src="./images/FHIR-PROXY-AUTH4.png" height="410">
 
-5. Configure basic settings as follows. The **Allow unauthenticated access** button should remain checked as this will make the FHIR service Capability Statement generally available. Click **Next Permissions**. 
+5. Configure basic settings as follows. The **Allow unauthenticated access** button should remain checked as this will make the FHIR service [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html) generally available. Click **Next Permissions**. 
 <img src="./images/FHIR-PROXY-AUTH5a.png" height="410">
 
-6. Click **Add**.
+6. Once in the **Permissions** tab, click **Add**.
 <img src="./images/FHIR-PROXY-AUTH6.png" height="410">
 
 At this point, the FHIR-Proxy application registration is complete. 
 
 ## Step 3 - Configure App Roles and API Permissions 
 
-Further configuration is required to define **App Roles and Permissions**. 
+Further configuration is required to define **App Roles and API Permissions** for FHIR-Proxy. 
 
 1. Click on the link next to the Microsoft identity provider. This will open the Azure AD blade.
 <img src="./images/FHIR-PROXY-AUTH7.png" height="410">
@@ -92,10 +92,10 @@ Further configuration is required to define **App Roles and Permissions**.
 2. Click on **Manifest**.
 <img src="./images/FHIR-PROXY-AUTH8.png" height="410">
 
-3. Update the **appRoles** element using the data in the [app roles json](../deploy/fhirproxyroles.json) file.
+3. Update the **appRoles** element using the data in the `fhirproxyroles.json` file available [here](../deploy/fhirproxyroles.json).
 <img src="./images/FHIR-PROXY-AUTH9.png" height="410">
 
-4. The **appRoles** element should look something like shown below. Click **Save**.
+4. After pasting the contents of the `fhirproxyroles.json` file into the **appRoles** value, the **appRoles** element should look something like shown below. Click **Save**.
 <img src="./images/FHIR-PROXY-AUTH10.png" height="410">
 
 5. Select the **API permissions** blade. Then click **Add a Permission**.
@@ -113,7 +113,7 @@ Further configuration is required to define **App Roles and Permissions**.
 9. Verify the **API permissions**.
 <img src="./images/FHIR-PROXY-AUTH15.png" height="310">
 
-10. Click **Grant admin consent**.
+10. Click **Grant admin consent** (blue checkmark).
 
 11. Verify that the **App roles** were created successfully.
 <img src="./images/FHIR-PROXY-AUTH16.png" height="310">
