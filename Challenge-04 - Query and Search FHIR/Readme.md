@@ -10,7 +10,7 @@ In this challenge, you will learn how to use [FHIR Search](https://www.hl7.org/f
 
 The FHIR specification defines a RESTful API framework for interacting with Resources stored in a FHIR server database. In real-world use, the majority of FHIR API interactions involve a remote client seeking data from a FHIR server. The FHIR standard offers a RESTful syntax and a rich set of parameters for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
 
-Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on finding Resource instances* per some filter criteria (in this example, `Encounter` instances filtered by their reference to a type of `Condition`). 
+Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on retrieving Resource instances* per some filter criteria (in this example, `Encounter` instances filtered by their reference to a type of `Condition`). 
 
 > *Note: A Resource instance on a FHIR server has a unique, server-wide Resource `id`. This `id` is also referred to as the Resource instance's [Logical ID](https://www.hl7.org/fhir/resource.html#id). 
 
