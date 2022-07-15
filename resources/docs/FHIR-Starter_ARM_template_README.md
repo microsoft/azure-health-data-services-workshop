@@ -74,7 +74,7 @@ Once the ARM template finishes the initial deployment, additional steps are nece
 4. Select **Microsoft**.
 <img src="./images/FHIR-PROXY-AUTH4.png" height="410">
 
-5. Configure basic settings as follows. The **Allow unauthenticated access** button should remain checked as this will make the FHIR service [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html) generally available. Click **Next Permissions**. 
+5. Configure basic settings as follows. The **Allow unauthenticated access** button should remain checked as this will make the FHIR service [Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html) generally available. Click **Next Permissions** at the bottom. 
 <img src="./images/FHIR-PROXY-AUTH5a.png" height="410">
 
 6. Once in the **Permissions** tab, click **Add**.
