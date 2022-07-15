@@ -95,7 +95,7 @@ Further configuration is required to define **App Roles and API Permissions** fo
 3. Update the **appRoles** element using the data in the `fhirproxyroles.json` file available [here](../deploy/fhirproxyroles.json).
 <img src="./images/FHIR-PROXY-AUTH9.png" height="410">
 
-4. After pasting the contents of the `fhirproxyroles.json` file into the **appRoles** value, the **appRoles** element should look something like shown below. Click **Save**.
+4. After pasting the contents of the `fhirproxyroles.json` file, the **appRoles** element should look something like shown below. Click **Save**.
 <img src="./images/FHIR-PROXY-AUTH10.png" height="410">
 
 5. Select the **API permissions** blade. Then click **Add a Permission**.
