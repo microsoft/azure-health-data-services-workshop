@@ -41,7 +41,7 @@ FHIR-Proxy asserts control over FHIR data interactions only if its [pre- and/or 
 ## Step 1 - Configure FHIR-Proxy authentication settings
 Before setting up FHIR-Proxy for Consent Opt-Out filtering, you will need to configure FHIR-Proxy authentication to securely connect with the FHIR service.
 
-To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Proxy authentication setup instructions in a new browser tab. When you go to the page, follow the instructions in Step 2 and Step 3 (you already completed the instructions in Step 1 when you deployed resources in Challenge-01). Please return here when finished. 
+To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open the FHIR-Proxy authentication setup instructions in a new browser tab. When you go to the page, follow the instructions in Step 2 and Step 3 (you already completed the instructions in Step 1 when you deployed components in Challenge-01). Please return here when finished. 
 
 [FHIR-Proxy Authentication Setup Instructions](../resources/docs/FHIR-Starter_ARM_template_README.md#step-2---complete-fhir-proxy-authentication)
 
