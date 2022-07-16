@@ -85,7 +85,7 @@ The search parameter `_id` is used to specify the [Logical ID](https://www.hl7.o
  GET {{fhirurl}}/Patient?_id=123
 ```
 
-This query returns a `Bundle` containing the `Patient` Resource instance with the given `id`. The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods for managing search results.
+This query returns a `Bundle` containing the `Patient` Resource instance with the given `id`. The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods of managing search results.
 
 **Response (excerpt):**
 ```sh
