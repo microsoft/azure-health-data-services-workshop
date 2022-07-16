@@ -10,9 +10,7 @@ In this challenge, you will learn how to use [FHIR search](https://www.hl7.org/f
 
 The FHIR specification defines a RESTful API framework for interacting with Resources stored in a FHIR server database. In real-world use, the majority of FHIR API interactions involve a remote client seeking data from a FHIR server. The FHIR standard offers a RESTful syntax and a rich set of parameters for fine tuning search criteria, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
 
-Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on retrieving Resource instances* per some filter criteria (in this example, `Encounter` instances filtered by their reference to a type of `Condition`). 
-
-> *Note: A Resource instance on a FHIR server has a unique, server-wide Resource `id`. This `id` is also referred to as the Resource instance's [Logical ID](https://www.hl7.org/fhir/resource.html#id). 
+Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on retrieving Resource instances per some filter criteria (in this example, `Encounter` instances filtered by their reference to a type of `Condition`). 
 
 ## Learning Objectives for Challenge-04
 
@@ -37,13 +35,15 @@ By the end of this challenge you will be able to
 
 At the top level, the [FHIR](https://hl7.org/FHIR/) data model is made up of a collection of [Resources](https://www.hl7.org/fhir/resourcelist.html) for structuring information generated in real-world healthcare settings. Resources in FHIR represent the different entities tied to healthcare activities. There are Resources for the people involved (`Patient`, `Practitioner`, etc.), the events that occur (`Encounter`, `Observation`, `Procedure`, etc.), and many other aspects connected with healthcare scenarios.
 
-Within every Resource, FHIR defines a set of Elements for storing details that uniquely identify each Resource *instance* on a FHIR server. Elements such as `id` and `meta` apply to all Resource types in FHIR, while other Elements are attached to specific Resource types (e.g., the `gender` Element is only found in `Patient`, `Person`, `Practitioner`, and `RelatedPerson` Resources). Furthermore, the FHIR model is designed to allow users to add Elements to Resources through extensions.
+Within every Resource, FHIR defines a set of Elements for storing details that uniquely identify each Resource _instance_* on a FHIR server. Elements such as `id` and `meta` apply to all Resource types in FHIR, while other Elements are attached to specific Resource types (e.g., the `gender` Element is only found in `Patient`, `Person`, `Practitioner`, and `RelatedPerson` Resources). Furthermore, the FHIR model is designed to allow users to add Elements to Resources through extensions.
 
 Along with Elements, each FHIR Resource is defined with a set of search parameters. When a remote client app makes a FHIR search API call, search parameters are used to focus the data retrieved from the FHIR server. There are standard search parameters that apply to all Resource types (e.g., `_id`, `_lastUpdated`), and there are search parameters specific to certain Resource types (e.g., `gender` is a search parameter defined for `Patient`). Additionally, FHIR provides a framework for creating custom search parameters. See the links below for more information. 
 
 + [Standard Search Parameters](https://www.hl7.org/fhir/search.html#all)
 + [Patient Resource-specific Search Parameters](https://www.hl7.org/fhir/patient.html#search) (note that Resource-specific search parameters are always listed at the bottom of the "Content" tab in FHIR R4 Resource documentation)
 + [Defining Custom Search Parameters](https://docs.microsoft.com/azure/healthcare-apis/fhir/how-to-do-custom-search)
+
+> *Note: A Resource instance on a FHIR server has a unique, server-wide Resource `id`. This `id` is also referred to as the Resource instance's [Logical ID](https://www.hl7.org/fhir/resource.html#id). 
 
 ## FHIR search methods
 
