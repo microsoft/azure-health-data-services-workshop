@@ -8,7 +8,7 @@ In this challenge, you will learn how to use [FHIR search](https://www.hl7.org/f
 
 ## Background
 
-The FHIR specification defines a RESTful API framework for interacting with Resources stored in a FHIR server database. In real-world use, the majority of FHIR API interactions involve a remote client seeking Resources from a FHIR server. The FHIR standard offers a RESTful syntax and a rich set of search parameters for remote clients seeking data, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
+The FHIR specification defines a RESTful API framework for interacting with Resources stored in a FHIR server database. For remote clients, the FHIR standard offers a RESTful syntax and a rich set of search parameters for seeking data from a FHIR server, and in this challenge, we will get practice with different methods of querying the [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview). 
 
 Think of these FHIR searches in user terms – a doctor may want to find all encounters for patients with a certain condition. Queries like this are focused on retrieving Resource instances according to some filter criteria (in this example, `Encounter` instances filtered by their reference to a type of `Condition`). 
 
@@ -79,13 +79,13 @@ When a search request is successful, you’ll receive a JSON FHIR `Bundle` respo
 
 The following search parameters are available for all FHIR Resources: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  Moreover, the ```_text```, ```_filter```, and [search result parameters](https://www.hl7.org/fhir/search.html#Summary) also work with all Resources.
 
-The search parameter ```_id``` is used to specify the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server.
+The search parameter `_id` is used to specify the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server. 
 
 ```sh
  GET {{fhirurl}}/Patient?_id=123
 ```
 
-This query returns a `Bundle` containing the `Patient` Resource instance with the given `id`.
+This query returns a `Bundle` containing the `Patient` Resource instance with the given `id`. The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods for managing search results.
 
 **Response (excerpt):**
 ```sh
@@ -116,7 +116,7 @@ This query returns a `Bundle` containing the `Patient` Resource instance with th
 
 ## Single Resource Instance Request
 
-Compare the above to a single Resource instance request, which uses the RESTful API pattern of putting the Resource `id` directly in the URL path (rather than using the `_id` search parameter). With the request below, the Resource instance is returned in response, but not inside a `Bundle`. This is technically a [read](https://www.hl7.org/fhir/http.html#read) interaction (and not a [search](https://www.hl7.org/fhir/http.html#search) interaction, as defined by HL7).
+Compare the above to a single Resource instance request*, which uses the RESTful API pattern of putting the Resource `id` directly in the URL path (rather than using the `_id` search parameter). With the request below, the Resource instance is returned in response, but not inside a `Bundle`. 
 
 ```sh
     GET {{fhirurl}}/Patient/123
@@ -136,6 +136,8 @@ Compare the above to a single Resource instance request, which uses the RESTful 
     },
 ...}
 ```
+
+> *Note: The `GET {{fhirurl}}/<Resource>/<id>` pattern is technically a [read](https://www.hl7.org/fhir/http.html#read) interaction (and not a [search](https://www.hl7.org/fhir/http.html#search) interaction, as defined by HL7). 
 
 ## Step 1 - Save Sample Resources
 To begin, you are going to populate your FHIR service with some sample FHIR Resources.
