@@ -73,7 +73,7 @@ You can also make FHIR search API calls with `POST`, which is useful if the quer
 
 ### FHIR search responses
 
-When a search request is successful, you’ll receive a JSON FHIR `Bundle` response containing the search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
+When a search request is successful, you’ll receive a JSON FHIR `Bundle` response containing the Resource(s) with a positive match. The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods of managing search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` part of the response.
 
 ## Common Search Parameters 
 
@@ -85,7 +85,7 @@ The search parameter `_id` is used to specify the [Logical ID](https://www.hl7.o
  GET {{fhirurl}}/Patient?_id=123
 ```
 
-This query returns a `Bundle` containing the `Patient` Resource instance with the given `id`. The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods of managing search results.
+This query returns a `Bundle` containing the `Patient` Resource instance with the given `id`. 
 
 **Response (excerpt):**
 ```sh
