@@ -36,7 +36,9 @@ Component View of FHIR-Proxy and FHIR service with Postman set up to call the FH
 
 <img src="./images/Postman_FHIR-Proxy_ARM_template_deploy_AHDS.png" height="528">
 
-FHIR-Proxy asserts control over FHIR data interactions only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled and configured. Otherwise, with no special configuration, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back unfiltered to the remote client app (such as Postman in our case). In Challenge-01, you enabled the Consent Opt-Out filter when you deployed FHIR-Proxy, but now you'll need to do some configuration for the filter to take effect.
+FHIR-Proxy asserts control over FHIR data interactions only if its [pre- and/or post-processing modules](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#date-sort-post-processor) have been enabled and configured. Otherwise, with no special configuration, API calls made to the FHIR-Proxy endpoint go straight through to the FHIR service, and responses are sent back unfiltered to the remote client app (such as Postman in our case). 
+
+In Challenge-01, you enabled the Consent Opt-Out filter when you deployed FHIR-Proxy. Now you'll need to do some configuration for the filter to take effect.
 
 ## Step 1 - Configure FHIR-Proxy authentication settings
 Before setting up FHIR-Proxy for Consent Opt-Out filtering, you must first configure FHIR-Proxy authentication to securely connect with the FHIR service.
