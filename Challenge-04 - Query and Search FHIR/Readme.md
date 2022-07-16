@@ -73,7 +73,7 @@ You can also make FHIR search API calls with `POST`, which is useful if the quer
 
 ### FHIR search responses
 
-When a search request is successful, you’ll receive a JSON FHIR `Bundle` response containing the Resource(s) returned from the search (if no Resources matched the search criteria, then the `Bundle` will be empty). The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods of managing search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` field inside the `Bundle`.
+When a search request is successful, you’ll receive a JSON FHIR `Bundle` response containing the Resource instance(s) returned from the search (if no Resource instances matched the search criteria, then the `Bundle` will be empty). The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods of managing search results. If the search request fails, you’ll find the error details in the `"OperationOutcome"` field inside the `Bundle`.
 
 ## Common Search Parameters 
 
