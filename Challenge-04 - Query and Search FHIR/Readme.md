@@ -166,7 +166,7 @@ On top of the common search parameters in FHIR, it's possible to add modifiers r
 
 ### Overview
 
-In cases where you perform searches with more than one parameter, the most obvious way of doing this is with the logical AND (`&`) operator.
+In cases where you perform searches with more than one parameter, the most immediate way of doing this is with the logical AND (`&`) operator.
 
 ```sh
 GET {{fhirurl}}/Patient?_lastUpdated=gt2021-10-01&gender=female
