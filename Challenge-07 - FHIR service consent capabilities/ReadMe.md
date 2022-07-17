@@ -97,7 +97,7 @@ Here you will populate your FHIR service with a [Consent Resource](https://www.h
 
 4. Under **Select a role**, click **None Selected**. Click **Resource Reader**, and then click **Select** and **Assign**.
 
-<img src="./images/Screenshot_2022-06-08_111335_edit1.png" height="428">
+<img src="./images/Screenshot_2022-06-08_111335_edit1.png" height="328">
 
 5. Click on **+Add user/group** (again).
 
@@ -105,7 +105,7 @@ Here you will populate your FHIR service with a [Consent Resource](https://www.h
 
 7. Under **Select a role**, click **None Selected** (again). Click **Practitioner**, and then click **Select** and **Assign** (again).
 
-<img src="./images/Screenshot_2022-06-08_111335_edit2.png" height="428">
+<img src="./images/Screenshot_2022-06-08_111335_edit2.png" height="328">
 
 ## Step 6 - Link your Object ID to a FHIR Practitioner Resource ID
 Now you will be linking the `Practitioner/WDT000000003` Resource to your user account's **Object ID** in AAD. See the FHIR-Proxy configuration [documentation](https://github.com/microsoft/fhir-proxy/blob/main/docs/configuration.md#linking-users-in-participant-roles-to-fhir-resources) for details on how this works. 
