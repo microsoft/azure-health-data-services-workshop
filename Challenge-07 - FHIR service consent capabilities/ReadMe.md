@@ -91,7 +91,7 @@ Here you will populate your FHIR service with a [Consent Resource](https://www.h
 
 1. Go to **Portal** -> **AAD** -> **Enterprise Applications** -> `<fhir_proxy_app_name>` -> **Users and groups**.
 
-2. Click on **Add user/group**.
+2. Click on **+Add user/group**.
 
 3. Under **Users** click **None Selected**. Type in your name or Azure login name and press **Select**.
 
@@ -99,7 +99,7 @@ Here you will populate your FHIR service with a [Consent Resource](https://www.h
 
 <img src="./images/Screenshot_2022-06-08_111335_edit1.png" height="428">
 
-5. Click on **Add user/group** (again).
+5. Click on **+Add user/group** (again).
 
 6. Under **Users** click **None Selected** (again). Type in your name or Azure login name and press **Select** (again).
 
