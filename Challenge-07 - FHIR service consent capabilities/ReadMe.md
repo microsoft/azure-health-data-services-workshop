@@ -120,7 +120,7 @@ Now you will be linking the `Practitioner/WDT000000003` Resource to your user ac
 6. Then go to the FHIR CALLS collection and click on the `GET Link Roles` call.
 7. In the URL field for the request, you will see this string:
     - `https://<fhir_proxy_app_name>.azurewebsites.net/manage/link/Practitioner/WDT000000003/<object-id>`
-8. Paste your `<fhir_proxy_app_name>` and `<object-id>` into the appropriate places in the string.
+8. Paste your `<fhir_proxy_app_name>` and `<object-id>` in the appropriate places in the string.
 9. Press **Send**. You will get back a message saying the link has been established with a response code of `200`.
 
 ## Step 7 Authenticate yourself using auth code flow in Postman
