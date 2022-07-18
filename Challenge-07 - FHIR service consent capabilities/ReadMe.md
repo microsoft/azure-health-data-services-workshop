@@ -13,8 +13,8 @@ The wide adoption of [FHIR R4](https://hl7.org/FHIR/) has given patients a new m
 ## Learning Objectives for Challenge-07
 By the end of this challenge you will be able to 
 
-+ configure FHIR-Proxy authentication for connecting to FHIR service
-+ configure Postman to connect with FHIR service via FHIR-Proxy
++ configure FHIR-Proxy authentication for connecting to the FHIR service
++ configure Postman to connect with the FHIR service via FHIR-Proxy
 + add a `Consent` Resource to the FHIR service
 + configure Consent Opt-Out filtering in FHIR-Proxy
 + verify that Consent Opt-Out filtering performs as expected
