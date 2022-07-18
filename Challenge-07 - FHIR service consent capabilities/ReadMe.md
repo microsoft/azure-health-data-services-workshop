@@ -103,7 +103,7 @@ Here you will populate your FHIR service with a [Consent Resource](https://www.h
 
 6. Under **Users** click **None Selected** (again). Type in your name or Azure login name and press **Select** (again).
 
-7. Under **Select a role**, click **None Selected** (again). Click **Practitioner**, and then click **Select** and **Assign** (again).
+7. Under **Select a role**, click **None Selected** (again). Click **Practitioner**, and then click **Select** and **Assign**.
 
 <img src="./images/Screenshot_2022-06-08_111335_edit2.png" height="368">
 
