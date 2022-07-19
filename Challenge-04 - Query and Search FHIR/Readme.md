@@ -151,7 +151,7 @@ To begin, you are going to populate your FHIR service with some sample Resources
 **Note:** The FHIR Search collection has sample requests to demonstrate many different FHIR searches. They aren't always specified by name in these instructions, but in Postman they will start with "Step #" for reference.
 
 ## Step 2 - Make FHIR API Calls with Search Parameters
-You will now get started using search parameters to query for Resources in FHIR.
+You will now get started using search parameters to query data in FHIR.
 
 On top of the common search parameters, it's possible to add modifiers right after a parameter value to sharpen search results. Some example modifiers are `:not`, `:exact`, and `:contains`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation to get a sense of how these are used.
 
