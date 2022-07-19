@@ -151,13 +151,13 @@ To begin, you are going to populate your FHIR service with some sample Resources
 **Note:** The FHIR Search collection has sample requests to demonstrate many different FHIR searches. They aren't always specified by name in these instructions, but in Postman they will start with "Step #" for reference.
 
 ## Step 2 - Make FHIR API Calls with Search Parameters
-Now you can start using search parameters to query data in FHIR.
+Now you can experiment with search parameters for querying data in FHIR.
 
 On top of the common search parameters, it's possible to add modifiers right after a parameter value to sharpen search results. Some example modifiers are `:not`, `:exact`, and `:contains`. Take a quick look at the [modifiers section](https://www.hl7.org/fhir/search.html#modifiers) of the official FHIR documentation to get a sense of how these are used.
 
 ### Exercise Task
 
-1. Go to Postman, access the FHIR Search collection, and search for patients using the following parameters: ```_id```, ```name```, and others following the examples for Step 2. Experiment with adding modifiers to fine-tune the results.
+1. Go to Postman, access the FHIR Search collection, and search for patients using the following parameters: ```_id```, ```name```, and others following the examples for Step 2. Try adding modifiers to fine-tune the results.
 
 + **Q:** *What Element(s) are you searching against when you assign a value to the* `name` *parameter in a* `Patient` *search?*
 
