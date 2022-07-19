@@ -26,7 +26,7 @@ By the end of this challenge you will be able to
 ## Prerequisites
 
 + Successful completion of Challenge-01
-+ Successful completion of Challenge-03 (`Patient` and other FHIR Resources should be loaded into your FHIR service)
++ Successful completion of Challenge-03 (`Patient` and other Resources should be loaded into your FHIR service)
 + In Postman, make sure that you have loaded the `FHIR_Search.postman_collection.json` from Challenge-01 ([located here](../resources/docs/samples/FHIR_Search.postman_collection.json)).
 
 ---
