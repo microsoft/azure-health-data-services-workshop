@@ -140,7 +140,7 @@ Compare the above to a single Resource instance request*, which uses the RESTful
 > *Note: The `GET {{fhirurl}}/<Resource>/<id>` pattern is technically a [read](https://www.hl7.org/fhir/http.html#read) interaction (and not a [search](https://www.hl7.org/fhir/http.html#search) interaction, as defined by HL7). 
 
 ## Step 1 - Save Sample Resources
-To begin, you are going to populate your FHIR service with some sample FHIR Resources.
+To begin, you are going to populate your FHIR service with some sample Resources.
 
 ### Exercise Task
 
