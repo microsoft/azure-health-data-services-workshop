@@ -89,7 +89,7 @@ To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through th
 <img src="./images/Screenshot_2022-02-15_151738_edit2.png" height="328">
 
 
-## Step 3 - Import the FHIR-Proxy environment template into Postman
+## Step 3 - Import a FHIR-Proxy environment template into Postman
 
 1. Access the Postman environment template for FHIR-Proxy [here](./samples/fhir-proxy.postman_environment.json). Save the file locally (click on **Raw** and then do a **Save as** from your browser).
 
