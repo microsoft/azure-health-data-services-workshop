@@ -19,7 +19,7 @@ To set up Postman for testing FHIR service via FHIR-Proxy, we'll walk through th
 **Step 3:** Import an environment template into Postman  
 **Step 4:** Enter parameter values for the Postman environment  
 **Step 5:** Get an access token from AAD  
-**Step 6:** Test FHIR service with Postman connected to the FHIR-Proxy endpoint
+**Step 6:** Test the FHIR service with Postman connected to the FHIR-Proxy endpoint
 
 
 ## Step 1 - Configure API permissions for Postman
