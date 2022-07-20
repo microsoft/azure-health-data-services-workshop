@@ -148,7 +148,7 @@ You now have a valid access token in your Postman environment and can use the to
 
 __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simply make another ```POST AuthorizeGetToken``` call and you will receive a new token valid for another 60 minutes.
 
-## Step 6 - Test FHIR service with Postman via FHIR-Proxy 
+## Step 6 - Test the FHIR service with Postman via FHIR-Proxy 
 
 1. In Postman, click on **Collections** on the left, select the `FHIR CALLS` collection, and then select the `GET List Metadata` call. Your Postman interface should look something like this: 
 
@@ -158,11 +158,11 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 <img src="./images/Screenshot_2022-02-17_101116_edit2.png" height="328">
 
-3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press **Send**. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
+3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press **Send**. If you get a response like shown below, this means you succeeded in populating FHIR service with a `Patient` Resource. This indicates that your setup is functioning properly. 
 
 <img src="./images/Screenshot_2022-02-17_101224_edit2.png" height="328">
 
-4. Try `GET List Patients` in the `FHIR CALLS` collection and press **Send**. If the response is as shown below, this means you successfully queried FHIR service for a list of every Patient Resource stored in the FHIR service's database. This means your setup with FHIR-Proxy connected to FHIR service is fully functional.
+4. Try `GET List Patients` in the `FHIR CALLS` collection and press **Send**. If the response is as shown below, this means you successfully queried your FHIR service for a list of every `Patient` Resource stored in the FHIR service's database. This means your setup with FHIR-Proxy connected to the FHIR service is fully functional.
 
 <img src="./images/Screenshot_2022-02-17_101255_edit2.png" height="328">
 
