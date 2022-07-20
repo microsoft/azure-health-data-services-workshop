@@ -65,7 +65,7 @@ Once the ARM template finishes the initial deployment, additional steps are nece
 1. In the Azure Portal, navigate to the FHIR-Proxy function app in your resource group. The name of the FHIR-Proxy function app ends with **"pxyfa"**.
 <img src="./images/FHIR-PROXY-AUTH1.png" height="410">
 
-2. Select the function app and select **Authentication**.
+2. Click on the function app and select **Authentication**.
 <img src="./images/FHIR-PROXY-AUTH2.png" height="410">
 
 3. Click **Add identity provider**.
