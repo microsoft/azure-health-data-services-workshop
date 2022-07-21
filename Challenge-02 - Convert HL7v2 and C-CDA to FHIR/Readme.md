@@ -69,7 +69,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 1. In Postman, get a new AAD access token using the `POST AuthorizeGetToken` call.
 2. Go to the `Convert Data - HL7` request and press **Send** to initiate the `$convert-data` operation.
 
-After making the `$convert-data` request, you should receive a JSON FHIR bundle response containing the HL7v2 message converted into FHIR R4. The top of the response should be as shown below. 
+After making the `$convert-data` request, you should receive a JSON FHIR `Bundle` response containing the HL7v2 message converted into FHIR R4. The top of the response should be as shown below. 
 
     {
     "resourceType": "Bundle",
@@ -137,7 +137,7 @@ Now you will make another API request similar to the one above, except this time
 1. Get a new access token from AAD with `POST AuthorizeGetToken` (this is not strictly necessary unless it has been over 60 minutes since the last access token was issued).
 2. Go to the `Convert Data - CCDA` request and press **Send**.
 
-After making the `$convert-data` request, you should receive a FHIR bundle response containing the C-CDA data converted into FHIR R4. The top of the response will be as shown below. 
+After making the `$convert-data` request, you should receive a FHIR `Bundle` response containing the C-CDA data converted into FHIR R4. The top of the response will be as shown below. 
 
     {
     "resourceType": "Bundle",
