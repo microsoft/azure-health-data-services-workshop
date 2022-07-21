@@ -73,7 +73,7 @@ You can also make FHIR search API calls with `POST`, which is useful if the quer
 
 ### FHIR search responses
 
-When a search request is successful, you’ll receive a JSON FHIR `Bundle` response containing the Resource instance(s) returned from the search (if no Resource instances matched the search criteria, then the `Bundle` will be empty). The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods of managing search results. If the search request fails, you’ll find the error details in an `"OperationOutcome"` Resource returned from the FHIR server.
+When a search request is successful, you’ll receive a JSON FHIR `Bundle` response containing the Resource instance(s) returned from the search (if no Resource instances matched the search criteria, then the `Bundle` will be empty). The `Bundle` Resource in FHIR supports [paging](https://hl7.org/fhir/bundle.html#notes) and many other methods of managing search results. If the search request fails, you’ll find the error details in an `OperationOutcome` Resource returned from the FHIR server.
 
 ## Common Search Parameters 
 
@@ -214,9 +214,9 @@ FHIR specifies a set of parameters for filtering search results. Below are sever
 
 |Parameter| Functionality|
 ----------|--------------------------------------------------------------------------------------------------------------------
-|`_elements`| For limiting the information returned to a list of Elements. For example, `_elements=identifier,birthdate,language` for a `Patient` Resource.
-|`_summary`| For returning pre-selected Elements when querying a Resource. For example, searching with the `_summary=true` parameter causes the server to only return Elements marked with `ElementDefinition.isSummary` in their base definition.
-|`_total` | For returning the number of Resources that match the given search criteria. For example, `_total=accurate` returns the exact number of Resources found.
+|`_elements`| For limiting the information returned to a list of Elements. For example, `_elements=identifier,birthdate,language` for the `Patient` Resource.
+|`_summary`| For returning pre-selected Elements when querying a Resource. For example, searching with the `_summary=true` parameter causes the server to only return Elements marked with `ElementDefinition.isSummary` in their [base definition](http://www.hl7.org/fhir/elementdefinition.html).
+|`_total` | For returning the number of Resource instances that match the given search criteria. For example, `_total=accurate` returns the exact number of Resource instances found.
 |`_sort`  | For setting the sorting hierarchy of search parameter results. For example, `_sort=status,date,category`.
 
 ### Exercise Task
