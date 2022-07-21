@@ -159,7 +159,7 @@ On top of the common search parameters, it's possible to add modifiers right aft
 
 1. Go to Postman, access the FHIR Search collection, and search for patients using ```_id```, ```name```, and other parameters following the examples for Step 2. Try adding modifiers to fine-tune the results.
 
-+ **Q:** *What Element(s) are you searching against when you assign a value to the* `name` *parameter in a* `Patient` *search?*
++ **Q:** *What Element(s) are you searching against when you assign a value to the `name` parameter in a `Patient` search?*
 
 **Note:** The FHIR service in Azure Health Data Services supports most Resource-specific search parameters defined in the FHIR specification. The Resource-specific search parameters that are not supported are listed here: [FHIR R4 Unsupported Search Parameters](https://github.com/microsoft/fhir-server/blob/main/src/Microsoft.Health.Fhir.Core/Data/R4/unsupported-search-parameters.json).
   
