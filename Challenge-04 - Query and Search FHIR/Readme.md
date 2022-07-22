@@ -229,7 +229,7 @@ FHIR specifies a set of parameters for filtering search results. Below are sever
 
 Resources in FHIR are equipped with `reference` Elements for capturing relationships between the people, activities, and items associated in real-world healthcare scenarios. To create a reference between Resources in FHIR, a `reference` Element in one Resource must be populated with another Resource's [Logical ID](https://www.hl7.org/fhir/resource.html#id), [Business Identifier](https://www.hl7.org/fhir/resource.html#identifiers), or [Canonical URL](https://www.hl7.org/fhir/resource.html#canonical).
 
-Below is an excerpt from an `Observation` Resource with a reference to a patient. Notice how `Patient/WDT000000002` is referenced as the `subject` of the observation.
+Below is an excerpt from an `Observation` Resource instance with a reference to a `Patient` Resource instance. Notice how `Patient/WDT000000002` is referenced as the `subject` of the observation.
 
 ```json
 {
