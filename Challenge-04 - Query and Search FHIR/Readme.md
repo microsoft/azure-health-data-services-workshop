@@ -212,7 +212,7 @@ To learn more about composite searches in FHIR, please visit [here](https://buil
 
 FHIR specifies a set of parameters for filtering search results. Below are several examples.
 
-|Parameter| Functionality|
+|Parameter| Purpose|
 ----------|--------------------------------------------------------------------------------------------------------------------
 |`_elements`| For limiting the information returned to a list of Elements. For example, `_elements=identifier,birthdate,language` for the `Patient` Resource.
 |`_summary`| For returning pre-selected Elements when querying a Resource. For example, searching with the `_summary=true` parameter causes the server to only return Elements marked with `ElementDefinition.isSummary` in their [base definition](http://www.hl7.org/fhir/elementdefinition.html).
