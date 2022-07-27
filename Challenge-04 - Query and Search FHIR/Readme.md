@@ -57,7 +57,7 @@ In this challenge, we will be using Resource-type level interactions to query da
 
 ### Searching with `GET`
 
-The simplest way to execute a search in FHIR is to send a `GET` API request. As an example, if you send a request for the `Patient` Resource type without specifying any search parameters, you will retrieve all `Patient` Resource instances stored in the FHIR server database.
+The simplest way to execute a search in FHIR is to send a `GET` API request. As an example, if you send a request for the `Patient` Resource type without specifying any search parameters, you will receive a `Bundle` containing all `Patient` Resource instances stored in the FHIR server database.
 
 ```sh
 GET {{fhirurl}}/Patient
@@ -71,7 +71,7 @@ GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
 
 ### Searching with `POST`
 
-You can also make FHIR search API calls with `POST`, which is useful if the query string is too long for a single line or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try sending `POST Step 2 - List Patient by ID using POST` in the FHIR Search collection.
+You can also make FHIR search API calls with `POST`. This is useful if the query string is too long for a single line or if the query contains Personal Health Information (PHI). To search using `POST`, the search parameters are formatted in JSON in the body of the request. In this challenge, we will not be using `POST` API calls for searches, but we have included a sample API call in the FHIR Search collection in Postman to demonstrate how to query with `POST`. When you get to Step 2 in this challenge, try sending `POST Step 2 - List Patient by ID using POST` in the FHIR Search collection.
 
 ### FHIR search responses
 
@@ -296,7 +296,7 @@ GET {{fhirurl}}/Patient?_address-city='XXXXXXX'&_revinclude=MedicationRequest:pa
 
 ### Exercise Task
 
-1. Using the FHIR Search collection imported into Postman in Challenge-01, search for `PractitionerRole` Resources and include the associated `Practitioner` Resources in the results.
+1. Using the FHIR Search collection in Postman, search for `PractitionerRole` Resources and include the associated `Practitioner` Resources in the results.
 
 2. Do a search using `_revinclude` to discover all `PractitionerRole` Resources for an `Organization`. For more examples of searches with the `_include` and `_revinclude` parameters, please see the **[FHIR search examples](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/search-samples)** page.
 
