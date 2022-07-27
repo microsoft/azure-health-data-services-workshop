@@ -212,7 +212,7 @@ To learn more about composite searches in FHIR, please visit [here](https://buil
 
 ### Overview
 
-FHIR specifies a set of parameters for filtering search results. Below are several examples.
+FHIR specifies a set of parameters for aggregating search results. Below are several examples.
 
 |Parameter| Purpose|
 ----------|--------------------------------------------------------------------------------------------------------------------
