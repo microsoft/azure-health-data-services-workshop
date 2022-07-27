@@ -53,7 +53,7 @@ When doing a search on a FHIR server, the initial target for the query can be an
 + A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions (e.g., querying against a search parameter shared by all Resources)
 
-In this challenge, we will be using Resource-type level interactions to query for data in the FHIR service in Azure Health Data Services.
+In this challenge, we will be using Resource-type level interactions to query data in the FHIR service in Azure Health Data Services.
 
 ### Searching with `GET`
 
