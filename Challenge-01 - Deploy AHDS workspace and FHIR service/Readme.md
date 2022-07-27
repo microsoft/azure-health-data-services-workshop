@@ -102,9 +102,9 @@ Follow the instructions and return here when finished.
     }
     ```
 
-  + `POST AuthorizeGetToken` call in Postman to obtain an AAD access token - succeeded.
-  + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource - succeeded.
-  + `GET List Patients` call in Postman to retrieve a bundle with at least one Patient Resource from your FHIR service - succeeded.
+  + `POST AuthorizeGetToken` call in Postman to obtain an AAD access token – succeeded.
+  + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource – succeeded.
+  + `GET List Patients` call in Postman to retrieve a bundle with at least one Patient Resource from your FHIR service – succeeded.
 
 ## More Resources
 
