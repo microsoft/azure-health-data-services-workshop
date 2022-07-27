@@ -79,7 +79,7 @@ When a search request is successful, you’ll receive a JSON FHIR `Bundle` respo
 
 ## Common Search Parameters 
 
-The following search parameters are available for all Resources in FHIR: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, and ```_tag```.  Moreover, the ```_text```, ```_filter```, and [search result parameters](https://www.hl7.org/fhir/search.html#Summary) also work with all Resources.
+The following search parameters are available for all Resources in FHIR: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, ```_tag```, and ```_type```.  Moreover, the ```_text```, ```_filter```, and [search result parameters](https://www.hl7.org/fhir/search.html#Summary) also work with all Resources.
 
 The search parameter `_id` is used to specify the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server. 
 
