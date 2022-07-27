@@ -49,21 +49,21 @@ Along with Elements, each Resource in FHIR is defined with a set of search param
 
 When doing a search on a FHIR server, the initial target for the query can be any of the following:
 
-+ Resource-type level interaction for a set of Resource instances (returned as a `Bundle` of Resource instances)
++ Resource-type level interaction for a set of Resource instances (returned as a `Bundle`)
 + A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
 + Whole system interactions (e.g., querying against a search parameter shared by all Resources)
 
-In this challenge, we will be querying for data using Resource-type level interactions.
+In this challenge, we will be using Resource-type level interactions to query for data in the FHIR service in Azure Health Data Services.
 
 ### Searching with `GET`
 
-The simplest way to execute a search in FHIR is to send a `GET` API request. For example, if you send a request for the `Patient` Resource type and you do not specify any `id` or search parameters, you will retrieve all `Patient` Resource instances stored in the FHIR server database.
+The simplest way to execute a search in FHIR is to send a `GET` API request. As an example, if you send a request for the `Patient` Resource type without specifying any search parameters, you will retrieve all `Patient` Resource instances stored in the FHIR server database.
 
 ```sh
 GET {{fhirurl}}/Patient
 ```
 
-If you wanted to narrow this search down to `Patient` Resource instances that were last updated on a specific day, you could include the `_lastUpdated` search parameter.
+If you wanted to narrow this search down to `Patient` Resource instances that were last updated on a certain day, you could include the `_lastUpdated` search parameter.
 
 ```sh
 GET {{fhirurl}}/Patient?_lastUpdated=2022-04-21
