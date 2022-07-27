@@ -86,7 +86,7 @@ Follow the instructions and return here when finished.
 + Other Azure resources for later challenges successfully deployed. Template deployment must show no errors.
 + App registration created in Azure Active Directory for use with Postman and your FHIR service.
 + Postman set up and able to connect with your FHIR service.
-  + Capability Statement from your FHIR service - received.
+  + Capability Statement from your FHIR service – received.
 
     ```json
     {
