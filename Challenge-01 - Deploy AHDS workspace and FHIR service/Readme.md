@@ -25,7 +25,7 @@ In the Azure health ecosystem, the Azure Health Data Services workspace is a log
 
 ![Relationship between resource groups, Azure Health Data Services, and child services](./media/azure-health-data-services-workspace-overview.png)
 
-The workspace also creates a compliance boundary (HIPAA, HITRUST) within which protected health information can travel. This means that [Role-Based Access Control (RBAC)](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac), private network data transit with [Private Link](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-configure-private-link), and [event messages](https://docs.microsoft.com/azure/healthcare-apis/events/events-deploy-portal) can all be configured at the workspace level - reducing your system management complexity.
+The workspace also creates a compliance boundary (HIPAA, HITRUST) within which protected health information can travel. This means that [Role-Based Access Control (RBAC)](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac), private network data transit with [Private Link](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-configure-private-link), and [event messages](https://docs.microsoft.com/azure/healthcare-apis/events/events-deploy-portal) can all be configured at the workspace level – reducing your system management complexity.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ Before deploying to your Azure environment, please make sure that you have the f
 
 + **Azure Active Directory (AAD):** You must have [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure subscription.
 
-You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
+You will also need to have [Postman](https://www.getpostman.com/) installed – either the desktop or web client.
 
 ## Step 1: Deploy Azure Health Data Services workspace and FHIR service to your Azure environment
 
