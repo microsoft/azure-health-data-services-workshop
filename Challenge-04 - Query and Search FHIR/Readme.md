@@ -212,14 +212,14 @@ To learn more about composite searches in FHIR, please visit [here](https://buil
 
 ### Overview
 
-FHIR specifies a set of parameters for aggregating search results. Below are several examples.
+FHIR specifies a set of parameters for organizing and aggregating search results. Below are several examples.
 
 |Parameter| Purpose|
 ----------|--------------------------------------------------------------------------------------------------------------------
 |`_elements`| For limiting the information returned to a list of Elements. For example, `_elements=identifier,birthdate,language` for the `Patient` Resource.
-|`_summary`| For returning pre-selected Elements when querying a Resource. For example, searching with the `_summary=true` parameter causes the server to only return Elements marked with `ElementDefinition.isSummary` in their [base definition](http://www.hl7.org/fhir/elementdefinition.html).
+|`_summary`| For returning pre-selected Elements within a Resource type. For example, searching with the `_summary=true` parameter causes the server to only return Elements marked with `ElementDefinition.isSummary` in their [base definition](http://www.hl7.org/fhir/elementdefinition.html).
 |`_total` | For returning the number of Resource instances that match the given search criteria. For example, `_total=accurate` returns the exact number of Resource instances found.
-|`_sort`  | For setting the sorting hierarchy of search parameter results. For example, `_sort=status,date,category`.
+|`_sort`  | For setting the sorting hierarchy of results according to a comma-separated list of search parameters. For example, `_sort=status,date,category`.
 
 ### Exercise Task
 
