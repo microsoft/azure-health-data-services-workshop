@@ -55,7 +55,7 @@ When doing a search on a FHIR server, the initial target for the query can be an
     <li>Whole system interactions (e.g., querying against a search parameter shared by all Resources)</li> 
 </ol>
 
-In this challenge, we will be querying for Resource instances using Resource-type level interactions (A above). 
+In this challenge, we will be querying for Resource instances using Resource-type level interactions (a). 
 
 ### Searching with `GET`
 
