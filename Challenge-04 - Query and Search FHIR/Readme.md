@@ -310,7 +310,7 @@ At some point, you will find a use case where you need to retrieve information t
 
 2. To perform a search using the custom search parameter that you just created, first [follow these instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search#test-search-parameters) to test the search parameter. Return here when you have finished the process. 
 
-3. Then, you will [run a re-index job](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-run-a-reindex) on your FHIR service to activate the new search parameter. You can use the `Reindex` call in the FHIR Search collection to accomplish this.
+3. Then, [run a re-index job](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-run-a-reindex) on your FHIR service to activate the new search parameter. You can use the `Reindex` call in the FHIR Search collection to accomplish this.
 
     _Note: Reindexing can take up to several minutes._
 
