@@ -49,13 +49,11 @@ Along with Elements, each Resource in FHIR is defined with a set of search param
 
 When doing a search on a FHIR server, the initial target for the query can be any of the following:
 
-<ol type="A">
-    <li>Resource-type level interaction for a set of Resource instances (returned as a `Bundle`)</li> 
-    <li>A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)</li> 
-    <li>Whole system interactions (e.g., querying against a search parameter shared by all Resources)</li> 
-</ol>
+1. Resource-type level interaction for a set of Resource instances (returned as a `Bundle`)
+2. A specified [Resource Compartment](https://www.hl7.org/fhir/compartmentdefinition.html)
+3. Whole system interactions (e.g., querying against a search parameter shared by all Resources)
 
-In this challenge, we will be querying for Resource instances using Resource-type level interactions (a). 
+In this challenge, we will be querying for Resource instances using Resource-type level interactions (1). 
 
 ### Searching with `GET`
 
