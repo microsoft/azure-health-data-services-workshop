@@ -4,7 +4,7 @@
 
 Welcome to Challenge-02!
 
-In this challenge, you will learn how to use the FHIR service's custom `$convert-data` operation to convert HL7v2 and C-CDA files into FHIR.
+In this challenge, you will learn how to use the FHIR service's custom `$convert-data` operation to convert HL7v2 messages and C-CDA documents into FHIR.
 
 ## Background
 
