@@ -124,7 +124,7 @@ Now you will be linking the `Practitioner/WDT000000003` Resource to your user ac
 9. Press **Send**. You will get back a message saying the link has been established with a response code of `200`.
 
 ## Step 7 Authenticate yourself using auth code flow in Postman
-You now need to authenticate yourself as the caller trying to access `Patient/WDT000000001`. This way, FHIR-Proxy will know to block your access to `Patient/WDT000000001` - because your Azure account is associated with `Practitioner/WDT000000003`.
+You now need to authenticate yourself as the caller trying to access `Patient/WDT000000001`. This way, FHIR-Proxy will know to block your access to `Patient/WDT000000001` – because your Azure account is associated with `Practitioner/WDT000000003`.
 
 1. Go to the FHIR CALLS collection in Postman and click on the `GET Patient Consent Opt Out` call.
 2. Click on the **Authorization** tab.
