@@ -14,7 +14,7 @@ Healthcare organizations frequently conduct research studies with patient medica
 
 By the end of this challenge you will be able to 
 
-+ configure bulk export of FHIR data from FHIR service
++ configure bulk export of FHIR data from the FHIR service
 + use a sample anonymization config file to de-identify FHIR data on export
 + export anonymized data to an [Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) account
 + securely share anonymized data with a group not affiliated with your organization
@@ -29,7 +29,7 @@ By the end of this challenge you will be able to
 
 ## Getting started
 
-In this challenge, you will be using the `$export` command in FHIR service to export de-identified FHIR data into an ADLS Gen2 blob storage container. The `$export` command in FHIR service is an implementation of the bulk export function detailed in the [FHIR Bulk Data Access specification](https://hl7.org/fhir/uv/bulkdata/export/index.html). To familiarize yourself with the FHIR service `$export` operation, please read [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data) and return here when finished. 
+In this challenge, you will be using the `$export` operator in FHIR service to export de-identified FHIR data into an ADLS Gen2 blob storage container. The `$export` operation in FHIR service is an implementation of the bulk export function detailed in the [FHIR Bulk Data Access specification](https://hl7.org/fhir/uv/bulkdata/export/index.html). To familiarize yourself with the FHIR service `$export` operation, please read [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data) and return here when finished. 
 
 ## Step 1: Review sample anonymization configuration and customize as needed
 
@@ -87,7 +87,7 @@ Researchers from outside organizations cannot have direct access to healthcare o
 
 1. Review the [Create SAS Tokens](https://docs.microsoft.com/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers) documentation for setting up a Shared Access Signature (SAS) token. Then, generate a SAS token to allow a research team to access the anonymized data that you exported.
 
-**Note**: Pay special attention to the "Permissions" section of the above documentation. **Reading** files and **listing** files in a container are two different permissions.
+**Note**: Pay special attention to the "Permissions" section of the above documentation. The permission to **Read** files is different from the permission to **List** files in a container.
 
 ## What does success look like for Challenge-05?
 
