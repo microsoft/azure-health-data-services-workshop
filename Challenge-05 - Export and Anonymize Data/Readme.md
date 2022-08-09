@@ -23,13 +23,13 @@ By the end of this challenge you will be able to
 
 + An Azure environment with a working FHIR service instance (completed in Challenge-01) 
 + [Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) (ADLS Gen2) deployed in your Azure environment (completed in Challenge-01) 
-+ Postman installed and configured to make API calls to your FHIR service (completed in Challenge-01) 
-+ FHIR data loaded into FHIR service (completed in previous challenges).
-  + For a more rich experience with this challenge (and future challenges), [load this bundle](./synthea_sample_data_fhir_r4%20OpenHack.zip) into the `zip` container in your FHIR Loader storage account (as done in Challenge-03) 
++ Postman installed and configured to make API calls to the FHIR service (completed in Challenge-01) 
++ FHIR data loaded into the FHIR service (completed in previous challenges).
+  + For a more rich experience with this challenge (and future challenges), [load this bundle](./synthea_sample_data_fhir_r4%20OpenHack.zip) into the `zip` container in your FHIR Loader storage account (as done in Challenge-03). 
 
 ## Getting started
 
-In this challenge, you will be using the `$export` operator in FHIR service to export de-identified FHIR data into an ADLS Gen2 blob storage container. The `$export` operation in FHIR service is an implementation of the bulk export function detailed in the [FHIR Bulk Data Access specification](https://hl7.org/fhir/uv/bulkdata/export/index.html). To familiarize yourself with the FHIR service `$export` operation, please read [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data) and return here when finished. 
+In this challenge, you will be using the `$export` command in the FHIR service to export de-identified FHIR data into an ADLS Gen2 blob storage container. The `$export` operation in FHIR service is an implementation of the bulk export function detailed in the [FHIR Bulk Data Access specification](https://hl7.org/fhir/uv/bulkdata/export/index.html). To familiarize yourself with the FHIR service `$export` operation, please read [this documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/export-data) and return here when finished. 
 
 ## Step 1: Review sample anonymization configuration and customize as needed
 
