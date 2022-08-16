@@ -55,7 +55,7 @@ Once your app is important see if you can find the following attributes in the P
 ## Step 2 - Configure the FHIRBase connector
 You will have noticed that the sample app is showing a number of exceptions and is not showing any data. In this step you will add those data sources using the FHIRBase connector and adding the core queryies.
 
-**Note:** The FHIRBase and FHIRClinical connectors are (at time of writing) still in preview!
+**Note:** The FHIRBase and FHIRClinical connectors are (at time of writing) in preview!
 
 1. Add a new FHIRBase datasource and connect it to the FHIR service you deployed in [Challenge-01](<../Challenge-01 - Deploy AHDS workspace and FHIR service/Readme.md>)
 2. On the "homeScreen" screen you need to add the code to fetch all patients and display them in the gallery component.
@@ -77,6 +77,10 @@ When creating a custom connector you need to implement the following methods:
 
 You can reuse the client id and secret you've used for postman or create a new App Registration for the Power Platform.
 
+When creating the operations for this custom connector make sure to use the right request and response bodies as seen in Postman.
+The UI for the custom connector will then prepopulate the payload and help with the references in the object that your Power Platform sees.
+**Note:** you might get double references to objects like 'reference', 'system', 'code'; For these object you can update the description or name so it's easier to map.
+
 
 ## Step 4 - Validate the full functionality of the app
 
@@ -97,6 +101,7 @@ You should be able to:
 - FHIR resources used: [patient](https://www.hl7.org/fhir/patient.html), [DiagnosticReport](https://www.hl7.org/fhir/diagnosticreport.html), [Observation]https://www.hl7.org/fhir/observation.html) 
 - Sample [Diagnostic Report](https://www.hl7.org/fhir/diagnosticreport-example.html) used as inspiration.
 - [Customer connectors](https://docs.microsoft.com/en-us/connectors/custom-connectors/) and [creating a custom](https://docs.microsoft.com/en-us/connectors/custom-connectors/define-blank)
+- [Authenticate to FHIR API from Power App](https://docs.microsoft.com/en-us/power-query/connectors/fhir/fhir-authentication)
 
 ## What does success look like for Challenge-11?
 + Import the sample app and connect it to your AHDS FHIR service.
