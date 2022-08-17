@@ -79,7 +79,7 @@ When a search request is successful, you’ll receive a JSON FHIR `Bundle` respo
 
 ## Common Search Parameters 
 
-The following search parameters are available for all Resources in FHIR: ```_content```, ```_id```, ```_lastUpdated```, ```_profile```, ```_query```, ```_security```, ```_source```, ```_tag```, and ```_type```.  Moreover, the ```_text```, ```_filter```, and [search result parameters](https://www.hl7.org/fhir/search.html#Summary) also work with all Resources.
+FHIR defines hundreds of search parameters for querying Resources in a FHIR server database. A select few of these search parameters apply to *all* Resource types. The FHIR service in Azure Health Data Services supports the following search parameters for all Resource types in FHIR: ```_id```, ```_lastUpdated```, ```_profile```, ```_security``` ```_tag```, and ```_type```. 
 
 The search parameter `_id` is used to specify the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server. 
 
@@ -306,7 +306,7 @@ At some point, you will find a use case where you need to retrieve information t
 
 ### Exercise Task
 
-1. To create a new search parameter, you need to `POST` a `SearchParameter` Resource to the FHIR service database. See the `Create New Search Parameter` call in the FHIR Search Postman collection for an example. When ready, go ahead and run the `Create New Search Parameter` call in Postman.
+1. To create a new search parameter, you need to `POST` a `SearchParameter` Resource to the FHIR service database. See the `Create New Search Parameter` call in the FHIR Search Postman collection for an example. When ready, go ahead and run the `Create New Search Parameter` call in Postman. You should receive a `201 Created` response code from the FHIR service.
 
 2. To perform a search using the custom search parameter that you just created, first [follow these instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/how-to-do-custom-search#test-search-parameters) to test the search parameter. Return here when you have finished the process. 
 
