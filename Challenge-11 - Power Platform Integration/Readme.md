@@ -55,7 +55,7 @@ Once your app is important see if you can find the following attributes in the P
 ## Step 2 - Configure the FHIRBase connector
 You will have noticed that the sample app is showing a number of exceptions and is not showing any data. In this step you will add those data sources using the FHIRBase connector and adding the core queryies.
 
-**Note:** The FHIRBase and FHIRClinical connectors are (at time of writing) in preview!
+**Note:** The FHIRBase connectors are (at time of writing) in preview!
 
 1. Add a new FHIRBase datasource and connect it to the FHIR service you deployed in [Challenge-01](<../Challenge-01 - Deploy AHDS workspace and FHIR service/Readme.md>)
 2. On the "homeScreen" screen you need to add the code to fetch all patients and display them in the gallery component.
@@ -76,6 +76,8 @@ When creating a custom connector you need to implement the following methods:
 - POST Observation
 
 You can reuse the client id and secret you've used for postman or create a new App Registration for the Power Platform.
+Do verify the resources with some more information on how the Power Platform connects with your FHIR API.
+Alternatively, and a best practice, is that you can create a new App Registration dedicated to you Power App.
 
 When creating the operations for this custom connector make sure to use the right request and response bodies as seen in Postman.
 The UI for the custom connector will then prepopulate the payload and help with the references in the object that your Power Platform sees.
