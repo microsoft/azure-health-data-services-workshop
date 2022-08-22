@@ -10,7 +10,7 @@ In this challenge, you will experiment with some possibilities for integration b
 
 In today's health data production environments, low-code and no-code solutions are on the rise, and the Microsoft Power Platform is one of the most prominent solutions in this space. Low-code solutions increase the speed of development and give non-professional developers the ability to create their own enterprise-ready apps. Enabling healthcare workers to build their own apps encourages people with clinical backgrounds to get involved in the digital transformation of the organisation. 
 
-Having health-related apps built by the people who use the apps will accelerate your organisation's adoption of health data standards. A tool like the Power Platform allows your core developers to focus on the backend services and manage the data structures – giving end users controlled flexibility to build their own front end UIs to suit their needs.
+Having health-related apps built by the people who use the apps will accelerate your organisation's adoption of health data standards. A tool like the Power Platform allows your core developers to focus on the backend services and manage the data structures – giving end users the controlled flexibility to build their own front end UIs to suit their needs.
 
 
 ## Learning Objectives for Challenge-11
