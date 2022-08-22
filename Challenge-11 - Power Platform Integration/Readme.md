@@ -78,7 +78,7 @@ You can reuse the client id and secret you've used for Postman or you can create
 Do verify the resources with some more information on how the Power Platform connects with your FHIR service API.
 Alternatively, as a best practice, you can create a new App Registration dedicated to your Power App.
 
-When creating the operations for this custom connector make sure to use the right request and response bodies as seen in Postman.
+When creating the operations for this custom connector, make sure to use the right request and response bodies as seen in Postman.
 The UI for the custom connector will then pre-populate the payload and help with the references in the object that your Power Platform sees.
 **Note:** You might get double references to objects like 'reference', 'system', 'code', etc. For these objects you can update the description or name so they are easier to map.
 
@@ -88,7 +88,7 @@ The UI for the custom connector will then pre-populate the payload and help with
 Now that you've added both the FHIRBase and your own custom connector to connect with your FHIR service instance, the app should be fully functional.
 Run trough the app with your coach and demonstrate the different screens.
 You should be able to:
-- show a list of all patients
+- Show a list of all patients
 - (optional) Filter the patient list
 - Create a new "Complete blood count" diagnostic report and store the Observations in your FHIR service.
 - Show results from the last "Complete blood count" diagnostic report
