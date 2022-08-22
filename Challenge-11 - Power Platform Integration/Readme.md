@@ -4,7 +4,7 @@
 
 Welcome to Challenge-11!
 
-In this challenge, you will experiment with integration between the Power Platform and the FHIR service in Azure Health Data Services.
+In this challenge, you will experiment with some possibilities for integration between the Power Platform and the FHIR service in Azure Health Data Services.
 
 ## Background
 
