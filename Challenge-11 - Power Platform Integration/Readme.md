@@ -90,7 +90,7 @@ Run trough the app with your coach and demonstrate the different screens.
 You should be able to:
 - Show a list of all patients
 - (optional) Filter the patient list
-- Create a new "Complete blood count" diagnostic report and store the Observations in your FHIR service.
+- Create a new "Complete blood count" diagnostic report and store the Observations in your FHIR service
 - Show results from the last "Complete blood count" diagnostic report
 
 
