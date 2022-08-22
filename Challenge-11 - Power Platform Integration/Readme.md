@@ -60,7 +60,7 @@ You will have noticed that the sample app is returning a number of exceptions an
 2. On the "homeScreen", you need to add the code to fetch all patients and display them in the gallery component.
 3. Add the code to fetch the patient's first and lastname in the "lblName" label. 
 4. The Patient ID field is not populated, so add the code to display the Synthea-generated patient identifier. 
-5. (optional) Implement the patient search button. You can either use a filter on the patient dataset or do a new request to your FHIR service to fetch a subset of the stored data.
+5. (optional) Implement the patient search button. You can either use a filter on the patient dataset or make a new request to your FHIR service to fetch a subset of the stored data.
 
 
 ## Step 3 - Create a custom connector for FHIR
