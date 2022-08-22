@@ -40,7 +40,7 @@ In this challenge, you will be finalising a pre-built Power App and connecting t
 
 Have a look at the [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](https://docs.microsoft.com/en-us/connectors/fhirclinical/) connector pages to get familiar with the methods, parameters, and responses supported by these tools.
 
-## Step 1 - Import the sample app from the sample folder of this Challenge into the Power Portal
+## Step 1 - Import the sample app from the `./SampleData` folder using the Power Portal
 In the first step of this challenge, you will use the [Power Portal](https://make.powerapps.com/) to import the sample app and explore the app's functionality.
 
 You can find how to import a Power App in the [Export and import canvas app packages](https://docs.microsoft.com/en-us/power-apps/maker/canvas-apps/export-import-app) documentation.
