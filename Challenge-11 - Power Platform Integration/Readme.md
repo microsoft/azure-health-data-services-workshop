@@ -68,7 +68,7 @@ You will have noticed that the sample app is returning a number of exceptions an
 In this step you will create a custom connector to expose a set of FHIR resources to your app.
 For this exercise, you could look into using the FHIRClinical connector rather than creating your own connector, but the FHIRClinical connector has some limitations.
 
-When creating your custom connector, you need to implement the following FHIR API methods:
+When creating your custom connector, you will need to implement the following FHIR API methods:
 - GET DiagnosticReport
 - POST DiagnosticReport
 - GET Observation
