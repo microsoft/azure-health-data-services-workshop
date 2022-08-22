@@ -27,7 +27,7 @@ By the end of this challenge you will be able to
 + Bulk data ingested (completed in Challenge-03)
 
 ## Getting Started 
-In this challenge, you will be finalising a pre-built Power App and connect the app with your Azure Health Data Services workspace. You will be configuring the app to query and store data in the FHIR service.
+In this challenge, you will be finalising a pre-built Power App and connecting the app with your Azure Health Data Services workspace. You will be configuring the app to query and store data in the FHIR service.
 
 **Step 1** - Import the sample app from the `./SampleData` folder using the Power Portal
 
