@@ -29,7 +29,7 @@ By the end of this challenge you will be able to
 ## Getting Started 
 In this challenge, you will be finalising a pre-built Power App and connecting the app with your Azure Health Data Services workspace. You will be configuring the app to query and store data in the FHIR service.
 
-**Step 1** - Import the sample app from the `./SampleData` folder using the Power Portal
+**Step 1** - Import the sample app from the `./SampleData` folder in this challenge using the Power Portal
 
 **Step 2** - Configure the FHIRBase connector
 
