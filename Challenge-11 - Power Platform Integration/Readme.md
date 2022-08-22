@@ -76,7 +76,7 @@ When creating your custom connector, you will need to implement the following FH
 
 You can reuse the client id and secret you've used for Postman or you can create a new App Registration for the Power Platform.
 Do verify the resources with some more information on how the Power Platform connects with your FHIR service API.
-Alternatively, as a best practice, you can create a new App Registration dedicated to you Power App.
+Alternatively, as a best practice, you can create a new App Registration dedicated to your Power App.
 
 When creating the operations for this custom connector make sure to use the right request and response bodies as seen in Postman.
 The UI for the custom connector will then pre-populate the payload and help with the references in the object that your Power Platform sees.
