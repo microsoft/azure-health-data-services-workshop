@@ -80,7 +80,7 @@ Alternatively, as a best practice, you can create a new App Registration dedicat
 
 When creating the operations for this custom connector make sure to use the right request and response bodies as seen in Postman.
 The UI for the custom connector will then pre-populate the payload and help with the references in the object that your Power Platform sees.
-**Note:** You might get double references to objects like 'reference', 'system', 'code', etc. For these objects you can update the description or name so it's easier to map.
+**Note:** You might get double references to objects like 'reference', 'system', 'code', etc. For these objects you can update the description or name so they are easier to map.
 
 
 ## Step 4 - Validate the full functionality of the app
