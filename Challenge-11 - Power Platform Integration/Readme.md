@@ -29,7 +29,7 @@ By the end of this challenge you will be able to
 ## Getting Started 
 In this challenge, you will be finalising a pre-built Power App and connecting the app with your Azure Health Data Services workspace. You will be configuring the app to query and store data in the FHIR service.
 
-**Step 1** - Import the sample app from the `./SampleData` folder in this challenge using the Power Portal
+**Step 1** - Import the sample app from the `./samples` folder in this challenge using the Power Portal
 
 **Step 2** - Configure the FHIRBase connector
 
@@ -40,19 +40,22 @@ In this challenge, you will be finalising a pre-built Power App and connecting t
 
 Have a look at the [FHIRBase](https://docs.microsoft.com/en-us/connectors/fhirbase/) and [FHIRClinical](https://docs.microsoft.com/en-us/connectors/fhirclinical/) connector pages to get familiar with the methods, parameters, and responses supported by these tools.
 
-## Step 1 - Import the sample app from the `./SampleData` folder using the Power Portal
-In the first step of this challenge, you will use the [Power Portal](https://make.powerapps.com/) to import the sample app and explore the app's functionality.
+## Step 1 - Import the sample app from the `./samples` folder using the Power Portal
+In the first step of this challenge, you will use the [Power Portal](https://make.powerapps.com/) to import the sample app, `./samples/Lab-Samples-Starter.zip`, and explore the app's functionality.
 
 You can find how to import a Power App in the [Export and import canvas app packages](https://docs.microsoft.com/en-us/power-apps/maker/canvas-apps/export-import-app) documentation.
 
 Once your app is imported, see if you can find the following attributes in the Power App.
-- location where the default dataset is loaded to populate the gallery
+The first time you open the app it will want to connect to your FHIR server. Use the full FHIR server URL to connect to your API and make sure your AAD user has `FHIR Data Contributor` permissions.
+Also note that a number of errors will appear, we will fix this in the next step.
+
+- location where the default dataset will be loaded to populate the gallery
 - Patient Search query location
 - Results view screen
 - Screen to submit new results
 
 ## Step 2 - Configure the FHIRBase connector
-You will have noticed that the sample app is returning a number of exceptions and is not showing any data. In this step you will add those data sources using the FHIRBase connector for making the core queries in the FHIR service.
+You will have noticed that the Lab-Samples-Starter app is returning a number of exceptions and is not showing any data. In this step you will add those data sources using the FHIRBase connector for making the core queries in the FHIR service.
 
 **Note:** The FHIRBase and FHIRClinical connectors are (at time of this writing) in preview!
 
@@ -60,8 +63,10 @@ You will have noticed that the sample app is returning a number of exceptions an
 2. On the "homeScreen", you need to add the code to fetch all patients and display them in the gallery component.
 3. Add the code to fetch the patient's first and lastname in the "lblName" label. 
 4. The Patient ID field is not populated, so add the code to display the Synthea-generated patient identifier. 
-5. (optional) Implement the patient search button. You can either use a filter on the patient dataset or make a new request to your FHIR service to fetch a subset of the stored data.
+5. (Optional) Implement the patient search button. You can either use a filter on the patient dataset or make a new request to your FHIR service to fetch a subset of the stored data.
+6. (Optional) Add the code to the scrnPatient to create a new patients based on the provided fields.
 
+Having completed the above steps the homeScreen of your app should be working now.
 
 ## Step 3 - Create a custom connector for FHIR
 
@@ -77,11 +82,15 @@ When creating your custom connector, you will need to implement the following FH
 You can reuse the client id and secret you've used for Postman or you can create a new App Registration for the Power Platform.
 Do verify the resources with some more information on how the Power Platform connects with your FHIR service API.
 Alternatively, as a best practice, you can create a new App Registration dedicated to your Power App.
+Make sure to read the reference material closely as you need to make sure your Power App has the right permissions.
 
-When creating the operations for this custom connector, make sure to use the right request and response bodies as seen in Postman.
+When creating the operations for this custom connector, use the right request and response bodies as seen in Postman.
 The UI for the custom connector will then pre-populate the payload and help with the references in the object that your Power Platform sees.
 **Note:** You might get double references to objects like 'reference', 'system', 'code', etc. For these objects you can update the description or name so they are easier to map.
 
+Now that you have a custom connector that can create and retreive the relevant resources you can continue to implement the functions in the scrnResults and scrnParameters.
+
+**Note:** Consider with your team how the creation of this custom connector can simplify or complicate the app development process and the role a backend developer can play in this.
 
 ## Step 4 - Validate the full functionality of the app
 
