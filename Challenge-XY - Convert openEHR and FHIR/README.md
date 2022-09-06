@@ -155,10 +155,7 @@ We now have covered all components and the basic usage of each. Let's use that n
 3. Prepare the *FHIR Connect Core* with this Model Mapping and its Context Mapping by sending the first two requests.
 4. Have a look at the payload of the `03 - Core - Directly translate FHIR content` request. It contains a [typical *FHIR* example of a blood pressure Observation](http://hl7.org/fhir/observation-example-bloodpressure.json.html). Using the Model Mapping from the previous step, identify the target "component" node in the input and take note of that value.
 5. Execute the request and check if the *openEHR* mapping result has the expected value.
-6. Now we will alter the existing Model Mapping to also map the *other* clinical concept. Look into the body of request `04 - Core - Update Model Mapping Blood Pressure to v2`, which contains the unmodified Model Mapping. Copy over the one mapping inside of the YAML and alter it to address the other core clinical data point of blood pressure. 
-<!-- (Internal note: this is fairly easy, once the idea is clear. 
-The attendees basically only have to copy the systolic mapping, replace the "systolic" with "diastolic" at like three places and done.
-The shared Postman collection will probably already contain the solution, which needs to be removed for release.) -->
+6. Now we will alter the existing Model Mapping to also map the *other* clinical concept. Look into the body of request `04 - Core - Update Model Mapping Blood Pressure to v2`, which contains the unmodified Model Mapping. Copy over the one mapping inside of the YAML and alter it to address the other core clinical data point of blood pressure.
 7. Submit your Model Mapping via the PUT request and test it with the `05 - Core - Directly translate FHIR content again to see difference` request. Check the Postman test result (see below) to see if you succeeded. 
 8. Finally run the last request to see the resulting *FHIR* data, from your latest result as input. Note how the result is not 100% equal to the original *FHIR* input we started with, but contains all the data we actually covered in the mapping.
 
