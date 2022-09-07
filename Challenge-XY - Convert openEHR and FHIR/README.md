@@ -34,8 +34,10 @@ The other one is the use-case specific composition of such building block concep
 
 > Illustration: 
 > 1. Imagine how small basic Lego pieces (lowest level technical specification types) 
-> 2. are used to assemble functional building block of real world objects (for instance, in the context of cars: door, hood, engine, tires),
-> 3. which in turn are used to compose the actual object (here, the car itself).
+> 2. are used to assemble functional building block of real world objects (for instance, in the context of vehicles: door, hood, engine, tires),
+> 3. which in turn are used to compose different actual objects (here, a car or bus).
+
+<img src="./images/lego-illustration.png" width="800">
 
 To ensure a high level of data-richness and the reusability of the *Archetypes* they are build with the *maximum modeling paradigm* in mind. This entitles to represent concepts with the highest possible coverage of clinical use-cases possible.
 For instance, the blood pressure *Archetype* was created by clinical experts in a way it covers simpler use-cases (like a GP observation) as well as the most complex ones (cardiology specialists).
@@ -52,6 +54,7 @@ If you want to learn more on openEHR check the technical resources [3] or read m
 - [2] https://medium.com/@alastairallen/fhir-openehr-2022-53716f837340
 - [3] https://www.openehr.org/about/what_is_openehr or in more technical detail: https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html
 - [4] https://medium.com/@alastairallen/why-openehr-is-eating-healthcare-e28bd792c50c
+- Additional resources for the big-picture: https://better.care/webinar/digital-health-platform-webinars/
 
 ## Learning Objectives
 
@@ -83,7 +86,7 @@ The *FHIR* Connect mappings are divided in Model and Context mappings:
 **Model Mappings** are attached to the lower level of the modeling process. They connect two universally matching data points.
 For instance, a *FHIR* Observation resource matching a systolic blood pressure reading AND its matching *openEHR* blood pressure Archetype.
 Due to the maximum modeling paradigm of *openEHR* the matching *openEHR* Archetype covers more data points in almost any case.
-This results in Model Mappings being bound to one of the many available specific *openEHR* Archetypes, while on the other side having one of the *FHIR* general purpose Resource type abstractions (Observation, Medication, …).
+This results in Model Mappings being bound to one of the many available specific *openEHR* Archetypes, while on the other side having one of the *FHIR* general purpose Resource type abstractions (Observation, Medication, … or their *Profile* specification).
 
 Example : A *FHIR* Observation with a LOINC code for a systolic blood pressure has its value and unit data point mapped over to the value and magnitude data points in the matching *openEHR* Archetype.
 
@@ -123,7 +126,9 @@ This means, submitting this output to a *FHIR* or *openEHR* server works, but in
 
 ## Step 2 - Adapter
 
-As illustrated above, the *FHIR* Connect Core shall be wrapped and utilized by an Adapter app. In this example a simple *FHIR* forwarder Adapter is used to demonstrate pushing *openEHR* data into a *FHIR* repository.
+<img src="./images/adapter-component.png" width="700">
+
+As illustrated above, the *FHIR* Connect Core shall be wrapped and utilized by an Adapter app. In this example a simple *FHIR* forwarder Adapter is used to demonstrate pushing *openEHR* data into a *FHIR* repository. In practice, any kind of Adapter app can be build, depending on the project's requirements.
 
 > Note: To keep this module's content focused on the *FHIR* Connect key concepts the Adapter used here will lack any handling of demographics.
 > For instance, project specific implementations might want to resolve the *openEHR* subject ID with an external demographics server to get the matching *FHIR* patient ID.
