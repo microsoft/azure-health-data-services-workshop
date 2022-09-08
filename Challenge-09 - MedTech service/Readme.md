@@ -50,23 +50,19 @@ In the first part of this challenge, you will use the Azure Portal to create an 
 
 <img src="./images/Screenshot_2022-08-10_101751_edit.png" height="280">
 
-5. Enter a unique name in the **Namespace name** field. Then click **Next: Advanced >**.
-
-<img src="./images/Screenshot_2022-08-10_101827_edit.png" height="420">
-
-6. Confirm that the **Namespace name**, **Location**, and **Pricing tier** are correct. Then click **Next: Advanced >**.
+5. Enter a unique **Namespace name**. Confirm that the **Location** and **Pricing tier** are correct. Then click **Next: Advanced >**.
 
 <img src="./images/Screenshot_2022-08-10_102312_edit.png" height="420">
 
-7. Confirm that your **Advanced** settings are correct and click **Next: Networking >**.
+6. Confirm that your **Advanced** settings are correct and click **Next: Networking >**.
 
-8. Confirm that your **Networking** settings are correct and click **Next: Tags >**.
+7. Confirm that your **Networking** settings are correct and click **Next: Tags >**.
 
-9. Add any tags as needed and click **Next: Review + create >**.
+8. Add any tags as needed and click **Next: Review + create >**.
 
-10. Click **Create**.
+9. Click **Create**.
 
-11. Now open the [Create an Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) instructions in a new browser tab and complete the steps for setting up your new Event Hub. Return here when finished.
+10. Now open the [Create an Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) instructions in a new browser tab and complete the steps for setting up your new Event Hub. Return here when finished.
 
 ## Step 2 - Deploy MedTech service in your Azure Health Data Services workspace 
 Now you will use Azure Portal to deploy and configure MedTech service within your Azure Health Data Services workspace.
