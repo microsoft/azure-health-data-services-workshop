@@ -48,7 +48,7 @@ In the first part of this challenge, you will use the Azure Portal to create an 
 
 4. Click on **+Create**.
 
-<img src="./images/Screenshot_2022-08-10_101751_edit.png" height="320">
+<img src="./images/Screenshot_2022-08-10_101751_edit.png" height="280">
 
 5. Enter a unique name in the **Namespace name** field. Then click **Next: Advanced >**.
 
