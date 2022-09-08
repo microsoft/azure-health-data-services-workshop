@@ -29,7 +29,7 @@ In this challenge, you will be deploying MedTech service within your Azure Healt
 **Step 1** - Deploy and configure [Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).  
 **Step 2** - Deploy a MedTech service instance in your Azure Health Data Services workspace.  
 **Step 3** - Import data mappings for converting medical IoT device data into FHIR.  
-**Step 4** - Configure Azure Roles for MedTech Service to securely connect to the FHIR service.  
+**Step 4** - Configure Azure Roles for MedTech service to securely connect to the FHIR service.  
 **Step 5** - Install tools for creating custom IoT data mappings for storing IoT data in FHIR.  
 **Step 6** - Import custom IoT data maps into MedTech service.
 
