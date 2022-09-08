@@ -40,7 +40,7 @@ In the first part of this challenge, you will use the Azure Portal to create an 
 
 1. Go to **Portal** -> **Create a resource** and then click on **See more in All services**.
 
-2. Scroll down to **Analytics** (or click **Analytics** on the left).
+2. Scroll down to **Analytics** (or select **Analytics** on the left).
 
 3. Select **Event Hubs**.
 
