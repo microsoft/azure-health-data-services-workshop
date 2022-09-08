@@ -36,7 +36,7 @@ In this challenge, you will be deploying MedTech service within your Azure Healt
 Have a look at [this document](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/get-started-with-iot) for an overview of the MedTech service deployment and configuration process (you already deployed an Azure Health Data Services workspace and FHIR service in Challenge-01).
 
 ## Step 1 - Deploy and configure Azure Event Hubs
-In the first part of this challenge, you will use the Azure Portal to create an Event Hubs namespace and your own Event Hub.
+In the first part of this challenge, you will use the Azure Portal to create an Event Hubs instance in preparation for deploying your MedTech service.
 
 1. Go to **Portal** -> **Create a resource** and then click on **See more in All services**.
 
