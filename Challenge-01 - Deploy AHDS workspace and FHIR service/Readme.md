@@ -57,7 +57,7 @@ In the first part of this challenge, you will use a template to deploy resources
 
     + Make sure to select the "true" values as shown.
 
-<img src="../resources/docs/images/ARM_template_config4.png" height="520"> 
+    <img src="../resources/docs/images/ARM_template_config4.png" height="520"> 
 
 3. Click **Review + create** when ready, and then click **Create** on the next page. 
 
