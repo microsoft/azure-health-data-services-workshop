@@ -65,7 +65,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip archi
 
 <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_edit2.png" height="428"> 
 
-## Step 3 - Debug issues with importing FHIR data 
+## Step 3 - Debug FHIR data import issues 
 
 1. Now try importing the `bad_bundles.zip` file that you downloaded in Step 1 of this challenge. Upload the file to the same container where you uploaded the `good_bundles.zip` file.
 
