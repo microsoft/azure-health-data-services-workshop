@@ -108,7 +108,7 @@ Now you will configure your Postman environment for FHIR-Proxy (`fhir-proxy`).
 - `clientSecret` - Client secret for your Postman app.
 
 *New values you need to find:*
-- `resource` - `api://<app-id>` where `app-id` is the Application (client) ID in the AAD client app for FHIR-Proxy (go to **AAD** -> **App registrations** -> `<fhir_proxy_app_name>` -> **Overview** -> **Application (client) ID**) 
+- `resource` - `api://<app-id>` where `<app-id>` is the Application (client) ID in the AAD client app for FHIR-Proxy (go to **AAD** -> **App registrations** -> `<fhir_proxy_app_name>` -> **Overview** -> **Application (client) ID**) 
 
 <img src="./images/Screenshot_2022-05-09_104810_edit.png" height="328">
 
@@ -122,7 +122,7 @@ Populate the above parameter values in your `fhir-proxy` Postman environment as 
 <img src="./images/Screenshot_2022-02-16_105208_edit2.png" height="328"> 
 
 ## Step 5 - Get an access token from AAD
-In order to connect to FHIR service, you will need to get an access token first. To obtain an access token from AAD via Postman, you can send a ```POST AuthorizeGetToken``` request. The ```POST AuthorizeGetToken``` call comes pre-configured as part of the `FHIR CALLS` collection that you imported earlier. 
+In order to connect to FHIR service through FHIR-Proxy, you will need to get an access token first. To obtain an access token from AAD via Postman, you can send a ```POST AuthorizeGetToken``` request. The ```POST AuthorizeGetToken``` call comes pre-configured as part of the `FHIR CALLS` collection that you imported earlier. 
 
 In Postman, click on **Collections** on the left, select the `FHIR CALLS` collection, and then select `POST AuthorizeGetToken`. Press **Send** on the right.
 
