@@ -39,7 +39,7 @@ Within every Resource, FHIR defines a set of Elements for storing details that u
 
 Along with Elements, each Resource in FHIR is defined with a set of search parameters. When a remote client app makes a FHIR search API call, search parameters are used to focus the data retrieved from the FHIR server. There are standard search parameters that apply to all Resource types (e.g., `_id`, `_lastUpdated`), and there are search parameters specific to certain Resource types (e.g., `gender` is a search parameter defined for `Patient`). Additionally, FHIR provides a framework for creating custom search parameters. See the links below for more information. 
 
-> *Note: A Resource instance on a FHIR server has a unique, server-wide Resource `id`. This `id` is also referred to as the Resource instance's [Logical ID](https://www.hl7.org/fhir/resource.html#id). 
+> *Note: A Resource instance on a FHIR server has a unique, server-wide Resource `id`. This `id` is also known as the Resource instance's [Logical ID](https://www.hl7.org/fhir/resource.html#id). 
 
 + [Standard Search Parameters](https://www.hl7.org/fhir/search.html#all)
 + [Patient Resource-specific Search Parameters](https://www.hl7.org/fhir/patient.html#search) (note that Resource-specific search parameters are always listed at the bottom of the "Content" tab in FHIR R4 Resource documentation)
