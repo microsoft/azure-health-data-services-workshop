@@ -71,7 +71,7 @@ To learn more about the resources deployed with this ARM template, view [here](.
 
 In the next part of this challenge, you will
 
-+ Visit another page and follow the instructions on setting up Postman.
++ Visit another page and follow the instructions for setting up Postman.
 + Make API calls to test FHIR service using Postman.
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
@@ -83,8 +83,8 @@ Follow the instructions and return here when finished.
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace and FHIR service deployed and available in Azure.
-+ Other Azure resources for later challenges successfully deployed. Template deployment must show no errors.
-+ App registration created in Azure Active Directory for use with Postman and your FHIR service.
++ Other Azure resources for later challenges successfully deployed. ARM template deployment must show no errors.
++ App registration created in Azure Active Directory for use with Postman.
 + Postman set up and able to connect with your FHIR service.
   + Capability Statement from your FHIR service – received.
 
