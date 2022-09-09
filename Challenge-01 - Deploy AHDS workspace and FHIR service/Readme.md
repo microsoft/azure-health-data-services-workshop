@@ -74,7 +74,7 @@ In the next part of this challenge, you will
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
 
-[Postman Setup Tutorial](../resources/docs/Postman_FHIR_service_README.md)
+    [Postman Setup Tutorial](../resources/docs/Postman_FHIR_service_README.md)
 
 Follow the instructions and return here when finished.
 
