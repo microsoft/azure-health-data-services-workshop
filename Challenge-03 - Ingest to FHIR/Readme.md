@@ -45,7 +45,7 @@ Start by downloading these two .zip files to your local environment (when you cl
 
 Visit the FHIR Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on the operating principles of the function app. 
 
-1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR Loader in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name of the Storage account will end in **"impsa"**).
+1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR Loader in Challenge-01. Go to **Portal** -> **Resource Group** -> **Storage account** (the name of the Storage account will end in **"impsa"**).
 
 <img src="./media/Screenshot_2022-05-04_103120_edit.png" height="428">
 
@@ -76,7 +76,7 @@ _Note: If you upload a .zip file, the names of the bundles within the .zip archi
 ## Troubleshooting 
 Here are some points for inspecting FHIR Loader operations:
 
-+ In **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors in importing FHIR bundles.  
++ In the storage account's **Storage browser (preview)**, go to **Container** -> **bundleserr** to view info about errors in importing FHIR bundles.  
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Error_edit3.png" height="428"> 
 
@@ -86,7 +86,7 @@ Here are some points for inspecting FHIR Loader operations:
 
 + What is the reason given for the error?
 
-+ In comparison, you can go to **bundlesprocessed** and look in the `.result` files for ingest operations that succeeded. For example, in the image below there is a `201` status code, meaning success. The response shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in FHIR service from the ingest operation. 
++ In comparison, you can go to **bundlesprocessed** and look in the `.result` files for ingest operations that succeeded. For example, in the image below there is a `201` status code, meaning success. The response shows an endpoint for a FHIR Resource `ExplanationOfBenefit/<resourceId>`, indicating that this Resource (`ExplanationOfBenefit/<resourceId>`) has been successfully persisted in the FHIR service from the ingest operation. 
 
     <img src="./media/FHIR-Bulk_Loader_Bundles_Processed_Result_Edit_Edit2.png" height="428">
 
