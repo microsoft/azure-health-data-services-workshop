@@ -43,7 +43,7 @@ Start by downloading these two .zip files to your local environment (when you cl
 
 ## Step 2 - Use FHIR Loader to upload data
 
-Visit the FHIR Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on the operating principles of the application. 
+Visit the FHIR Loader (OSS) repository [here](https://github.com/microsoft/fhir-loader) and read the documentation for more info on the operating principles of the function app. 
 
 1. In Azure Portal, navigate to the Blob Storage account that was created for FHIR Loader in Challenge-01. Go to **Portal -> Resource Group -> Storage account** (the name of the Storage account will end in **"impsa"**).
 
