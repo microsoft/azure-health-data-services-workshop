@@ -94,7 +94,7 @@ REST (Representational State Transfer) APIs (Application Programming Interfaces)
 
 ### API Testing Tools (Postman)
 
-Developers use API testing tools to inspect the call and response behavior between remote client applications and web services. Postman is one of the most popular and approachable of these types of tools. If you are new to Postman, review the resources below to install and get familiar with the application. FHIR must be tested with an API testing tool, and in this workshop, you will need to know how to craft RESTful requests in Postman and interpret the results.
+Developers use API testing tools to inspect the call and response behavior of remote client applications and web services. Postman is one of the most popular and approachable of these types of tools. If you are new to Postman, review the resources below to install and get familiar with the application. FHIR must be tested with an API testing tool, and in this workshop, you will need to know how to craft RESTful requests in Postman and interpret the results.
 
 + [Installing and updating Postman](https://learning.postman.com/docs/getting-started/installation-and-updates/)
 + [Navigating Postman](https://learning.postman.com/docs/getting-started/navigating-postman/)
