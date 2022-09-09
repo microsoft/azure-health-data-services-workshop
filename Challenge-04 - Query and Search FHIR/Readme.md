@@ -81,7 +81,7 @@ When a search request is successful, you’ll receive a JSON FHIR `Bundle` respo
 
 There are a select few search parameters in FHIR that apply to *all* Resource types. The FHIR service in Azure Health Data Services supports the following search parameters for all Resource types: ```_id```, ```_lastUpdated```, ```_profile```, ```_security```, ```_tag```, and ```_type```. 
 
-The search parameter `_id` is used to specify the [Logical ID](https://www.hl7.org/fhir/resource.html#id) of a Resource instance on a FHIR server. 
+The search parameter `_id` is used to query for a Resource instance with a given [Logical ID](https://www.hl7.org/fhir/resource.html#id) on a FHIR server. 
 
 ```sh
  GET {{fhirurl}}/Patient?_id=123
