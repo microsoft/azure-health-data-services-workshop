@@ -4,7 +4,7 @@
 
 Welcome to Challenge-01!
 
-In this challenge, you will deploy an **[Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview)** containing a **[FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)** instance. In addition, you will set up **[Postman](https://www.postman.com/)** as your application for testing the FHIR service API.
+In this challenge, you will deploy an [Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview) containing a [FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview) instance. In addition, you will set up [Postman](https://www.postman.com/) as your application for testing the FHIR service API.
 
 ## Learning Objectives for Challenge-01
 
@@ -74,7 +74,7 @@ In the next part of this challenge, you will
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
 
-  **[Postman Setup Tutorial](../resources/docs/Postman_FHIR_service_README.md)**
+  [Postman Setup Tutorial](../resources/docs/Postman_FHIR_service_README.md)
 
 Follow the instructions and return here when finished.
 
