@@ -29,13 +29,13 @@ The workspace also creates a compliance boundary (HIPAA, HITRUST) within which p
 
 ## Prerequisites
 
-Before deploying to your Azure environment, please make sure that you have the following permissions.
++ Before deploying to your Azure environment, please make sure that you have the following permissions.
 
-+ **Azure Subscription:** You must have rights to deploy resources at the resource group scope in your Azure subscription (i.e. [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) role).
+    + **Azure Subscription:** You must have rights to deploy resources at the resource group scope in your Azure subscription (i.e. [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) role).
 
-+ **Azure Active Directory (AAD):** For configuring app settings in Challenge-07, you must have [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure subscription.
+    + **Azure Active Directory (AAD):** For configuring app settings in Challenge-07, you must have [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure subscription.
 
-You will also need to have [Postman](https://www.getpostman.com/) installed – either the desktop or web client.
++ You will also need to have [Postman](https://www.getpostman.com/) installed – either the desktop or web client.
 
 ## Step 1: Deploy Azure Health Data Services workspace and FHIR service to your Azure environment
 
