@@ -39,7 +39,7 @@ The workspace also creates a compliance boundary (HIPAA, HITRUST) within which p
 
 ## Step 1: Deploy Azure Health Data Services workspace and FHIR service to your Azure environment
 
-In the first part of this challenge, you will go to the Azure Portal and use an Azure Resource Manager (ARM) template to deploy components used in this workshop. This template will deploy
+In the first part of this challenge, you will use an Azure Resource Manager (ARM) template to deploy components used in this workshop. This template will deploy
   + [Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview)
   + [FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)
   + [FHIR Loader](https://github.com/microsoft/fhir-loader) (for Challenge-03)
