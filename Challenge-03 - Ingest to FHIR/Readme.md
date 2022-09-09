@@ -37,7 +37,7 @@ For this challenge, you will upload FHIR data bundles for import into the FHIR s
 
 ## Step 1 - Download Sample Data
 
-Start by downloading these two .zip files to your local environment (when you click the links, you will see a **Download** button on the right). 
+Start by downloading these two .zip files to your local environment (when you click on the links, you will see a **Download** button on the right). 
 + [good_bundles.zip](./samples/good_bundles.zip) 
 + [bad_bundles.zip](./samples/bad_bundles.zip) 
 
