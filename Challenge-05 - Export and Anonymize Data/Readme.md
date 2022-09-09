@@ -38,13 +38,13 @@ In this challenge, you will be using the `$export` command in the FHIR service t
   More information on HIPAA de-identification rules can be found [here](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html).
 
 ## Step 2: Configure storage account for export
-1. Follow [these instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/de-identified-export) for creating your `anonymizationConfig.json` file and placing it inside the `anonymization` container within your "**expsa**" storage account.
-
-2. Next, go [here](https://docs.microsoft.com/azure/healthcare-apis/fhir/configure-export-data) and follow the instructions for configuring your "**expsa**" storage account for the `$export` operation. Read the note below about the FHIR service managed identity.
+1. Go [here](https://docs.microsoft.com/azure/healthcare-apis/fhir/configure-export-data) and follow the instructions for configuring your "**expsa**" storage account for the `$export` operation. Read the note below about the FHIR service managed identity.
 
   **Note:** When you deployed Azure components in Challenge-01, a [managed identity](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) was automatically enabled for your FHIR service. That managed identity is what needs to be assigned the **Storage Blob Data Contributor** role in one of the ADLS Gen2 storage accounts in your resource group. The name of this storage account ends with "**expsa**". Keep in mind that you are configuring the storage account in this step (and not the FHIR service!). In the storage account, be careful not to add a role assignment to a service client or a service principal by mistake!
 
   Review [How to export FHIR data](https://docs.microsoft.com/azure/healthcare-apis/fhir/export-data) for more information.
+
+2. Follow [these instructions](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/de-identified-export) for creating your `anonymizationConfig.json` file and placing it inside an `anonymization` container within your "**expsa**" storage account.
 
 ## Step 3: Export anonymized data
 
