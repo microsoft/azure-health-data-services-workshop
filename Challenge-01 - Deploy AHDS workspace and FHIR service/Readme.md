@@ -39,9 +39,7 @@ You will also need to have [Postman](https://www.getpostman.com/) installed – 
 
 ## Step 1: Deploy Azure Health Data Services workspace and FHIR service to your Azure environment
 
-In the first part of this challenge, you will
-
-+ Use a template to deploy resources with the Azure Portal. This template will deploy
+In the first part of this challenge, you will use a template to deploy resources with the Azure Portal. This template will deploy
   + [Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview)
   + [FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)
   + [FHIR Loader](https://github.com/microsoft/fhir-loader) (for Challenge-03)
