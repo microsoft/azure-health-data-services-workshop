@@ -35,7 +35,7 @@ In this challenge, you will be using the `$export` command in the FHIR service t
 
 1. Microsoft provides a [sample configuration file](https://docs.microsoft.com/azure/healthcare-apis/fhir/de-identified-export#configuration-file) to demonstrate how de-identification works between the FHIR service and an ADLS Gen2 account. In real-world use, you would need to review the HIPAA guidelines and customize the configuration file with additional anonymization rules (e.g., rules for redacting/transforming patient names).
 
-  More information on HIPAA de-identification rules can be found [here](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html).
+      More information on HIPAA de-identification rules can be found [here](https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html).
 
 ## Step 2: Configure storage account for export
 1. Go [here](https://docs.microsoft.com/azure/healthcare-apis/fhir/configure-export-data) and follow the instructions for configuring your "**expsa**" storage account for the `$export` operation. Read the note below about the FHIR service managed identity.
