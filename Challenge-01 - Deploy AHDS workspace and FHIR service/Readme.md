@@ -59,7 +59,7 @@ In the first part of this challenge, you will use an Azure Resource Manager (ARM
 
     <img src="../resources/docs/images/ARM_template_config4.png" height="520"> 
 
-3. Click **Review + create** when ready, and then click **Create** on the next page. 
+3. When ready, click **Review + create**, and then click **Create** on the next page. 
 
 > **Note:** This deployment typically takes 20 minutes. During the deployment, you can read the instructions linked in Step 2 below. When the deployment finishes, go ahead and proceed with the Step 2 instructions.
 
