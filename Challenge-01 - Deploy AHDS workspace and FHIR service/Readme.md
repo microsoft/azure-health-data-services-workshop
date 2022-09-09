@@ -39,7 +39,7 @@ The workspace also creates a compliance boundary (HIPAA, HITRUST) within which p
 
 ## Step 1: Deploy Azure Health Data Services workspace and FHIR service to your Azure environment
 
-In the first part of this challenge, you will use a template to deploy resources with the Azure Portal. This template will deploy
+In the first part of this challenge, you will go to the Azure Portal and use an Azure Resource Manager (ARM) template to deploy components used in this workshop. This template will deploy
   + [Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview)
   + [FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)
   + [FHIR Loader](https://github.com/microsoft/fhir-loader) (for Challenge-03)
@@ -51,9 +51,9 @@ In the first part of this challenge, you will use a template to deploy resources
 
 2. Select or fill in the parameter values (see image below).
 
-    > __Important:__ In order to successfully deploy resources with this ARM template, the user must have [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) rights for the [Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal) where the components are deployed. Before running the ARM template, it is recommended to create a new resource group first and check that you have Owner permissions. Once you confirm that you have Owner rights, then select that resource group in the dropdown menu when you fill out the deployment form (see below).
+    > __Important:__ In order to successfully deploy components with this ARM template, the user must have [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) rights for the [Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal) where the components are deployed. Before running the ARM template, it is recommended to create a new resource group first and check that you have Owner permissions. Once you confirm that you have Owner rights, then select that resource group in the dropdown menu when you fill out the deployment form (see below).
 
-    + Enter a custom **Deployment Prefix**. This prefix will be prepended to the names of all created resources ("trn05" is shown as an example prefix).
+    + Enter a custom **Deployment Prefix**. This prefix will be prepended to the names of all deployed components ("trn05" is shown as an example prefix).
 
     + Make sure to select the "true" values as shown.
 
@@ -63,7 +63,7 @@ In the first part of this challenge, you will use a template to deploy resources
 
 > **Note:** This deployment typically takes 20 minutes. During the deployment, you can read the instructions linked in Step 2 below. When the deployment finishes, go ahead and proceed with the Step 2 instructions.
 
-> To learn more about the resources deployed with this ARM template, view [here](../resources/docs/FHIR-Starter_ARM_template_README.md#deployed-components).
+> To learn more about the components deployed with this ARM template, view [here](../resources/docs/FHIR-Starter_ARM_template_README.md#deployed-components).
 
 ## Step 2 - Set up Postman and test FHIR service
 
