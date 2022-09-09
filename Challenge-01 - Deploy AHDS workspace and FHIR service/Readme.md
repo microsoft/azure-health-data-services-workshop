@@ -71,8 +71,8 @@ In the first part of this challenge, you will
 
 In the next part of this challenge, you will
 
-+ visit another page and follow the instructions for setting up Postman.
-+ make API calls to test FHIR service using Postman.
++ visit another page and follow the instructions for setting up Postman
++ make API calls to test FHIR service using Postman
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
 
