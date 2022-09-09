@@ -8,7 +8,7 @@ In this challenge, you will learn how to use the [FHIR Loader](https://github.co
 
 ## Background
 
-Data ingestion into FHIR is a vital capability for a healthcare organization's integration with multiple health data systems. While the FHIR service does features a custom `$import` operation for data ingestion, it is only recommended for the *initial* transfer of data into the FHIR service (data loading at high speeds). There are alternate approaches that can be used with the FHIR service for the ongoing, transactional loading of FHIR data. In this challenge, we will be using Microsoft's FHIR Loader (OSS) utility, which is an Azure Function App built for importing data into the FHIR service. 
+Data ingestion into FHIR is a vital capability for a healthcare organization's integration with multiple health data systems. While the FHIR service does features a custom `$import` operation for data ingestion, it is only recommended for the *initial* transfer of data into the FHIR service (data loading at high speeds). There are alternate approaches that can be used with the FHIR service for the ongoing, transactional loading of FHIR data. In this challenge, we will be using Microsoft's [FHIR Loader](https://github.com/microsoft/fhir-loader) (OSS) utility, which is an Azure Function App built for importing data into the FHIR service. 
 
 ## Learning Objectives for Challenge-03
 By the end of this challenge you will be able to 
