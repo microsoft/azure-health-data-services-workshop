@@ -49,7 +49,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
 1.	Review the FHIR service [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) for an overview of the ```$convert-data``` operation.  
 
-2. 	Click on [ADT_A01.hl7](./samples/ADT_A01.hl7) to view a sample HL7v2 message (you may want to click on the `Raw` button on the right for ease of viewing). 
+2. 	Click on [ADT_A01.hl7](./samples/ADT_A01.hl7) to view a sample HL7v2 message (you may want to click on the **Raw** button on the right for ease of viewing). 
 
 3.	Copy and paste the HL7v2 message into the **Body** of the `Convert Data – HL7` request in Postman. Format the JSON request parameters following the example given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request).
 
@@ -109,7 +109,7 @@ Now you will make another API request similar to the one above, except this time
 
 ## Step 5 - Set up Request Parameters
 
-1. Click on [CCDA_Ford_Elaine.xml](./samples/CCDA_Ford_Elaine.xml) to view a sample C-CDA data file (click on `Raw` on the right side to view the entire data string in your browser window).
+1. Click on [CCDA_Ford_Elaine.xml](./samples/CCDA_Ford_Elaine.xml) to view a sample C-CDA data file (click on **Raw** on the right side to view the entire data string in your browser window).
 
 2. Copy and paste the C-CDA data into VS Code or a text editor of your choice. 
 
