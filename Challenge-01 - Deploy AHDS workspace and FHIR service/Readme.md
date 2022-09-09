@@ -82,7 +82,7 @@ Follow the instructions and return here when finished.
 
 + Azure Health Data Services workspace and FHIR service deployed and available in Azure.
 + Other Azure resources for later challenges successfully deployed. ARM template deployment must show no errors.
-+ App registration created in Azure Active Directory for use with Postman.
++ App registration created in Azure Active Directory for Postman.
 + Postman set up and able to connect with your FHIR service.
   + Capability Statement from your FHIR service – received.
 
