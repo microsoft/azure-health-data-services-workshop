@@ -53,7 +53,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
 3.	Copy and paste the HL7v2 message into the **Body** of the `Convert Data – HL7` request in Postman. Format the JSON request parameters following the example given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request).
 
-4.  In the **Body** tab in Postman, select the **raw** button and choose `JSON` from the dropdown menu on the right.
+4.  In the **Body** tab in Postman, select the **raw** button and choose **JSON** from the dropdown menu on the right.
 <img src="./media/Postman_JSON_Body.png" height="328"> 
 
 5.	You will need to make some changes in the HL7v2 payload so that the formatting follows the sample request given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request). 
@@ -128,7 +128,7 @@ Now you will make another API request similar to the one above, except this time
 
 5. When ready, copy and paste the JSON-formatted request parameters with the C-CDA payload into the **Body** of the `Convert Data - CCDA` request in Postman.
 
-6. Select the **raw** button and choose `JSON` from the dropdown menu on the right.
+6. Select the **raw** button and choose **JSON** from the dropdown menu on the right.
 
 7. Make sure to **Save** the `Convert Data - CCDA` request.
 
