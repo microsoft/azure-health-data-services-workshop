@@ -2,61 +2,59 @@
 
 ## Introduction
 
-In this challenge, you will learn to use [Better's](https://better.care) converter tool **FHIR Connect** to convert from openEHR to FHIR and vice versa. [1]
+In this challenge, you will learn to use [Better's](https://better.care) converter tool **FHIR Connect** to convert from openEHR to FHIR and vice versa.
 
-## Background
+This section is structured in three parts, as follows: 
+1. **Introduction and overview of openEHR** – an overview of openEHR, the problems it can solve and associated benefits.   
+2. **Use case introduction** – this challenge is based on a use-case for a patient on an endocrinology pathway.  This section presents an overview of the use-case and the supporting architecture to provide context for the technical challenge 
+3. **Challenge details** – we will look at a subset of the use case and walk through a series of steps to complete the mapping required to integrate a defined data set with Azure Health Data Services. 
 
-Next to standards and data formats like *FHIR*, *openEHR* is common in Europe.
-*FHIR* and *openEHR* have many similarities at first, but looking deeper into it shows differences.
-Without going into detailed comparison, recent projects and developments have shown several use-cases can benefit the most from combining *FHIR* and *openEHR* (see [2] for more details).
-Doing that requires the ability to convert data from one format into the other, and vice versa.
+## Introduction and overview of openEHR (owner: Better author, edit and review by MSFT) 
 
-### openEHR
+Please refer to the link below 
 
-As the other modules were covering *FHIR* already, the following introduction into *openEHR* will help to get a general overview for newcomers.
+**to-do** insert medium link 
 
-From a bird's eye view, *openEHR* is essentially a framework, a set of specifications on how to build components of open and interoperable healthcare IT systems. 
+## Use case introduction
 
-The *two layered architecture* is one of *openEHR's* core principles. It describes the separation of *data representation* and *domain content*. 
+Our use case centres on Jane, an otherwise healthy 17-year-old girl, with no history of chronic diseases.  Jane has always been of healthy height, but in the past year has dropped below the third percentile on population-based growth charts. 
+ 
+Jane’s pathway follows several care settings and healthcare providers, each of whom work for different organisations.  At each step of the pathway existing data needs to be accessed and new data is created.  An overview of the users in this pathway are outlined below. 
 
-**Data representation**: *openEHR* doesn't provide users and developers with a set of data types or classes, which represent clinical concepts.
-The specification instead provides basic building block types, much like primitive data types in programming languages.
-This means there's a common understanding of concepts like texts, numbers, scales and so on. Other details, like how data instances might be linked, organized and much more is also defined as a common ground.
+<img src="./images/use-case-actors.png" width="500">
 
-The separated data layer also allows to create applications with complete independency of the clinical models itself (see below).  
-Models are only processed at run-time, resulting in built-once run-everything applications.
+The pathway is comprised of the following steps.
 
-**Clinical domain content**: Conceptually speaking, the actual domain (the clinical world) is not touching the data layer.
-The clinical modeling is the process of assembling representations of clinical concepts from the basic data types provided by the specification.
-The modeling results in two different artifacts.
-One is, the general reusable concept, called **Archetype**.
-The other one is the use-case specific composition of such building block concepts, called **Template**.
+1. Patrick (our GP) will open his primary care EHR to view Jane’s record.  From here Patrick will launch the Better Portal in the context of Jane’s record, where he will view Jane’s record, document some observations, and complete a referral form.  The screen shot below illustrates how this appears within the Better platform.
 
-> Illustration: 
-> 1. Imagine how small basic Lego pieces (lowest level technical specification types) 
-> 2. are used to assemble functional building block of real world objects (for instance, in the context of vehicles: door, hood, engine, tires),
-> 3. which in turn are used to compose different actual objects (here, a car or bus).
+<img src="./images/better-forms1.png" width="800">
 
-<img src="./images/lego-illustration.png" width="800">
+<img src="./images/better-forms2.png" width="800">
 
-To ensure a high level of data-richness and the reusability of the *Archetypes* they are build with the *maximum modeling paradigm* in mind. This entitles to represent concepts with the highest possible coverage of clinical use-cases possible.
-For instance, the blood pressure *Archetype* was created by clinical experts in a way it covers simpler use-cases (like a GP observation) as well as the most complex ones (cardiology specialists).
+Note - all data capture forms are built using Better’s lowcode technology so are configurable based on a customer’s local needs.  The screenshot below illustrates how a low-code form can be designed.
 
-Most of the *openEHR* modeling work happens in either the [international modeling community](http://ckm.openehr.org/) or in open, yet separated, nation/region/project-specific communities.
+<img src="./images/better-forms3.png" width="1200">
 
-**Summary**: *openEHR* offers a set of specifications to build robust and open healthcare IT systems/components.
+2. The data collected will be stored in the openEHR data repository from Better.  This data can also be integrated back into the GP EHR, so it is available natively within that system 
 
-If you want to learn more on openEHR check the technical resources [3] or read more on the highlights from a user's/organization's perspective [4].
+3. An event will be triggered which FHIR Connect has subscribed to.  This event will initiate the data mapping process, with the openEHR data being mapped to FHIR.  The FHIR payload will subsequently be stored in Azure Health Data Services
+4. The data collected in openEHR format can now be viewed using any FHIR compatible application.  In this scenario a Growth Charts App from the Smart on FHIR App Store is used.
 
-## Further Content and Sources
+This flow is summarised in the diagram below.
 
-- [1] https://news.better.care/introducing-fhir-connect
-- [2] https://medium.com/@alastairallen/fhir-openehr-2022-53716f837340
-- [3] https://www.openehr.org/about/what_is_openehr or in more technical detail: https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html
-- [4] https://medium.com/@alastairallen/why-openehr-is-eating-healthcare-e28bd792c50c
-- Additional resources for the big-picture: https://better.care/webinar/digital-health-platform-webinars/
+<img src="./images/arch-overview.png" width="800">
 
-## Learning Objectives
+**Note** – the flow outlined above, and the approach adopted for this challenge utilises a sync agent to connect the Better Platform with Azure Health Data Services.  This is just one of the deployment patterns supported by FHIR Connect.  Alternative patterns are also supported as shown in the diagram below.
+
+<img src="./images/patterns.png" width="800">
+
+## Challenge details
+
+In the interests of creating a challenge that is focussed we will look at one part of the pathway outlined.   In Step 3 above, once the event has been triggered the process that is subscribing to that event will have a handle on the openEHR payload.  We pick up the challenge at this point and end once the data is stored in Azure Health Data Services. 
+
+The examples provided below include pre-defined openEHR payloads so you will not need to launch the Better Portal or complete any eForms.
+
+### Learning Objectives
 
 By the end of this challenge you will be able to
 
@@ -67,13 +65,13 @@ By the end of this challenge you will be able to
 - utilize *adapter* apps on top of the FHIR Connect Core, here to commit openEHR data as FHIR to the Azure FHIR service
 - write and alter mappings yourself
 
-## Prerequisites
+### Prerequisites
 
 ... **TODO** basically the same Postman setup like the rest of the workshop uses, but either add steps here to add `core_server` and `adapter_server` values in the Postman environment OR add that directly to the original setup in the general Postman setup tutorial.
 
 ---
 
-## Step 1 - Learn the basics
+### Step 1 - Learn the basics
 
 To convert between *FHIR* and *openEHR* it is important to understand both the similarities and differences. One important property of both formats is the variability.
 *FHIR* can utilize a broad set of pre-defined definitions and structures to represent any clinical data point.
@@ -96,7 +94,7 @@ Example : A *FHIR* Observation with a LOINC code for a systolic blood pressure h
 
 Example: An *openEHR* growth-chart *Template*, consisting of *Archetypes* for height, weight, BMI and head circumference will utilize the Model Mappings of those *Archetypes*, when processing the conversation to and from FHIR.
 
-### Architecture overview
+#### Architecture overview
 
 <img src="./images/ms-hds-workshop-module-arch.drawio.png" width="800">
 <!-- TODO: why is the image quality not sharp? -->
@@ -106,7 +104,7 @@ In the following introductory steps you will interact with the Core component, a
 In practice, direct communication between a client and the Core is not the usual use-case.
 Usually, an adapter app will be put on top of the Core to handle the project specific requirements and demographics. Here we interact with the Core for educational purposes.
 
-### Tasks
+#### Tasks
 
 Interacting with the *FHIR* Connect Core component and running your first translation:
 
@@ -124,7 +122,7 @@ On the *FHIR* side this results in a Bundle with the matching Resources, for eac
 > Note: All output from the Core - as a component which is not usually directly interacted with - is the "raw" translation engine output.
 This means, submitting this output to a *FHIR* or *openEHR* server works, but in some cases it makes sense to supplement the payload with additional data on the Adapter level.
 
-## Step 2 - Adapter
+### Step 2 - Adapter
 
 <img src="./images/adapter-component.png" width="700">
 
@@ -134,7 +132,7 @@ As illustrated above, the *FHIR* Connect Core shall be wrapped and utilized by a
 > For instance, project specific implementations might want to resolve the *openEHR* subject ID with an external demographics server to get the matching *FHIR* patient ID.
 > The resulting *FHIR* Resources will have limited real world use, without linking them to patients.
 
-### Tasks
+#### Tasks
 
 1. Open the `02 - Adapter - FHIR Forwarder` collection in Postman
 2. Run the `00 - Get Auth Token` request, to be able to talk to the *FHIR* Service (**TODO**: see Challenge 04? for more info)
@@ -145,7 +143,7 @@ To get better insight, the `02 - Get logs` request gets a list of log entries. T
 5. Copy on of the UUIDs from the logs and paste it in the `03 - Get FHIR Resource` request's path. (Format: `{{FHIR_service}}/Observation/YOUR_UUID`)
 6. Run the request with the custom UUID and get one of the four matching Resources back, directly from the *FHIR service*.
 
-## Step 3 - Alter Mapping
+### Step 3 - Alter Mapping
 
 We now have covered all components and the basic usage of each. Let's use that new knowledge to go a bit further: In this step we will start with a rather simple blood pressure mapping.
 
