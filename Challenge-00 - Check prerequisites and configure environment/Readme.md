@@ -3,11 +3,7 @@
 ## Introduction
 
 In this preliminary challenge, you will be checking the general prerequisites for this workshop to ensure you are ready for Challenge-01 and beyond.
-!! TODO: WHY is this specific to EU
-!! TODO: Explain what is sequencial and what is optional
-!! TODO: make sure each challenge has CONTEXT!
-
-
+ 
 ## Learning Objectives for Challenge-00
 
 + Understand the goals for learners in this workshop.

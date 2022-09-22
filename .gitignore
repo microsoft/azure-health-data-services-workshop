@@ -351,7 +351,3 @@ MigrationBackup/
 
 # Ignore Mac OS filesystem files
 *.DS_Store
-
-# Diagrams.net / draw.io temporary files
-*.bkp
-*.dtmp
