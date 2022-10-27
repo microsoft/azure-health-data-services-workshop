@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.5.6.12127",
-      "templateHash": "9136659142091953670"
+      "version": "0.11.1.770",
+      "templateHash": "676768291152371635"
     }
   },
   "parameters": {
@@ -1210,7 +1210,9 @@
       "name": "[format('{0}/{1}', variables('healthDataServicesConfig').name, variables('fhirServiceConfig').name)]",
       "tags": "[parameters('resourceTags')]",
       "location": "[parameters('resourceLocation')]",
-      "identity": "[variables('fhirServiceConfig').systemIdentity]",
+      "identity": {
+        "type": "SystemAssigned"
+      },
       "kind": "[variables('fhirServiceConfig').kind]",
       "properties": {
         "exportConfiguration": {
@@ -1721,7 +1723,7 @@
       "apiVersion": "2021-02-01",
       "name": "[format('{0}/{1}', variables('fhirLoaderAppName'), 'appsettings')]",
       "properties": {
-        "FUNCTIONS_EXTENSION_VERSION": "~3",
+        "FUNCTIONS_EXTENSION_VERSION": "~4",
         "FUNCTIONS_WORKER_RUNTIME": "dotnet",
         "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', variables('loaderAppInsightName'))).InstrumentationKey]",
         "AzureWebJobsStorage": "[format('DefaultEndpointsProtocol=https;AccountName={0};EndpointSuffix={1};AccountKey={2}', variables('functionsStorageAccountName'), environment().suffixes.storage, listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('functionsStorageAccountName')), '2021-04-01').keys[0].value)]",
@@ -1984,8 +1986,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.5.6.12127",
-              "templateHash": "732080587006144038"
+              "version": "0.11.1.770",
+              "templateHash": "14133763602633607791"
             }
           },
           "parameters": {
@@ -2191,8 +2193,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.5.6.12127",
-              "templateHash": "732080587006144038"
+              "version": "0.11.1.770",
+              "templateHash": "14133763602633607791"
             }
           },
           "parameters": {
@@ -2400,8 +2402,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.5.6.12127",
-              "templateHash": "732080587006144038"
+              "version": "0.11.1.770",
+              "templateHash": "14133763602633607791"
             }
           },
           "parameters": {
@@ -2610,8 +2612,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.5.6.12127",
-              "templateHash": "732080587006144038"
+              "version": "0.11.1.770",
+              "templateHash": "14133763602633607791"
             }
           },
           "parameters": {
@@ -2820,8 +2822,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.5.6.12127",
-              "templateHash": "732080587006144038"
+              "version": "0.11.1.770",
+              "templateHash": "14133763602633607791"
             }
           },
           "parameters": {

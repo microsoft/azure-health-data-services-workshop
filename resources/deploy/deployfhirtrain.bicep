@@ -973,7 +973,9 @@ resource fhirService 'Microsoft.HealthcareApis/workspaces/fhirservices@2021-11-0
   tags: resourceTags
   location: resourceLocation
   parent: healthDataWorkspace
-  identity: fhirServiceConfig.systemIdentity
+  identity: {
+    type:'SystemAssigned'
+  }
   kind: fhirServiceConfig.kind
   properties:{
     exportConfiguration:{
@@ -1459,7 +1461,7 @@ resource fhirLoaderAppSettings 'Microsoft.Web/sites/config@2021-02-01' = {
   name: 'appsettings'
   parent: fhirLoaderFunctionApp
   properties: {
-    'FUNCTIONS_EXTENSION_VERSION': '~3'
+    'FUNCTIONS_EXTENSION_VERSION': '~4'
     'FUNCTIONS_WORKER_RUNTIME': 'dotnet'
     'APPINSIGHTS_INSTRUMENTATIONKEY': loaderAppInsights.properties.InstrumentationKey
     'AzureWebJobsStorage': 'DefaultEndpointsProtocol=https;AccountName=${functionsStorageAccount.name};EndpointSuffix=${environment().suffixes.storage};AccountKey=${listKeys(functionsStorageAccount.id, functionsStorageAccount.apiVersion).keys[0].value}'
