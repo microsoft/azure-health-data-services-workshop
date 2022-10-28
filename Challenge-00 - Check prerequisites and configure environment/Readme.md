@@ -16,7 +16,7 @@ In this preliminary challenge, you will be checking the general prerequisites fo
 
 ## Background
 
-The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-overview). This workshop features solutions for use in real-world health data production environments. After going through the challenges, learners will have a better understanding of how to build their own solutions using the latest health data tools from Microsoft.
+The Azure Health Data Services Workshop presents a series of challenges to help learners build knowledge, experience, and skills in working with [Azure Health Data Services](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-overview). This workshop features solutions for use in real-world health data production environments. After working through the challenges, learners will have a better understanding of how to build their own solutions using the latest health data tools from Microsoft.
 
 ## What do we want learners to gain from the Azure Health Data Services Workshop?
 
@@ -32,7 +32,7 @@ In general, we want learners to walk away with a sense of confidence in **deploy
 Knowledge in the areas listed below will be necessary for completing the workshop challenges. If you feel uncertain about any of these topics, please review the [More Resources section](#more-resources). Time spent building some basic knowledge about the technologies used in this workshop will help you gain *actionable experience* as you prep for real-world health data scenarios.
 
 + A solid foundation in **Azure fundamentals** and basic knowledge of **Azure Active Directory**
-+ Familiarity with **FHIR®** and the solutions it provides versus legacy health data formats
++ Familiarity with **FHIR®** and the solutions it provides versus other health data formats
 + Experience with making **RESTful API** requests using [Postman](https://www.postman.com/api-platform/api-testing/) or a similar API testing tool (like cURL or Fiddler)
 
 **Note:** For the rest of the workshop, we will assume that you are using Postman as your API testing tool. Please use Postman unless you have a strong preference for another tool.
@@ -42,7 +42,7 @@ Knowledge in the areas listed below will be necessary for completing the worksho
 Please make sure to have the following items ready before moving on to Challenge-01.
 
 + [Azure Subscription](https://azure.microsoft.com/) with [Owner rights](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner)
-+ [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#all-roles) role in your [Azure Active Directory (AAD) tenant](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#:~:text=Azure%20tenant,tenant%20represents%20a%20single%20organization)
++ [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#all-roles) role in your [Azure Active Directory (AAD) tenant](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis#:~:text=Azure%20tenant,tenant%20represents%20a%20single%20organization) (for app configuration in Challenge-07)
 + [Postman](https://www.postman.com/) installed - either desktop or web client ([link](https://www.getpostman.com/))
 + GitHub account ([link](https://github.com/))
 + A text editor (e.g., [Visual Studio Code](https://code.visualstudio.com/))
@@ -98,7 +98,7 @@ REST (Representational State Transfer) APIs (Application Programming Interfaces)
 
 ### API Testing Tools (Postman)
 
-Developers use API testing tools to inspect the call and response behavior between remote client applications and web services. Postman is one of the most popular and approachable of these types of tools. If you are new to Postman, review the resources below to install and get familiar with the application. FHIR must be tested with an API testing tool, and in this workshop, you will need to know how to craft RESTful requests in Postman and interpret the results.
+Developers use API testing tools to inspect the call and response behavior of remote client applications and web services. Postman is one of the most popular and approachable of these types of tools. If you are new to Postman, review the resources below to install and get familiar with the application. FHIR must be tested with an API testing tool, and in this workshop you will need to know how to craft RESTful requests in Postman and interpret the results.
 
 + [Installing and updating Postman](https://learning.postman.com/docs/getting-started/installation-and-updates/)
 + [Navigating Postman](https://learning.postman.com/docs/getting-started/navigating-postman/)

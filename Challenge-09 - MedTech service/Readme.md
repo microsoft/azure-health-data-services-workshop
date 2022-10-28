@@ -29,29 +29,47 @@ In this challenge, you will be deploying MedTech service within your Azure Healt
 **Step 1** - Deploy and configure [Azure Event Hubs](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about).  
 **Step 2** - Deploy a MedTech service instance in your Azure Health Data Services workspace.  
 **Step 3** - Import data mappings for converting medical IoT device data into FHIR.  
-**Step 4** - Configure Azure Roles for MedTech Service to securely connect to the FHIR service.  
+**Step 4** - Configure Azure Roles for MedTech service to securely connect to the FHIR service.  
 **Step 5** - Install tools for creating custom IoT data mappings for storing IoT data in FHIR.  
 **Step 6** - Import custom IoT data maps into MedTech service.
 
 Have a look at [this document](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/get-started-with-iot) for an overview of the MedTech service deployment and configuration process (you already deployed an Azure Health Data Services workspace and FHIR service in Challenge-01).
 
 ## Step 1 - Deploy and configure Azure Event Hubs
-In the first part of this challenge, you will use the Azure Portal to deploy an Event Hubs namespace in preparation to create your own Event Hub.
+In the first part of this challenge, you will use the Azure Portal to create an Event Hubs instance in preparation for deploying your MedTech service.
 
-1. To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below and follow the instructions for creating an Event Hubs namespace.
+1. Go to **Portal** -> **Create a resource** and then click on **See more in All services**.
 
-    [Create an Event Hubs namespace](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hubs-namespace)
+2. Scroll down to **Analytics** (or select **Analytics** on the left).
 
-2. Continue on to the next section in the link below to create your own Event Hub.
+3. Select **Event Hubs**.
 
-    [Create an Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub)
+<img src="./images/Screenshot_2022-08-10_101314_edit.png" height="420">
+
+4. Click on **+Create**.
+
+<img src="./images/Screenshot_2022-08-10_101751_edit.png" height="280">
+
+5. Enter a unique **Namespace name**. Confirm that the **Location** and **Pricing tier** are correct. Then click **Next: Advanced >**.
+
+<img src="./images/Screenshot_2022-08-10_102312_edit.png" height="420">
+
+6. Confirm that your **Advanced** settings are correct and click **Next: Networking >**.
+
+7. Confirm that your **Networking** settings are correct and click **Next: Tags >**.
+
+8. Add any tags as needed and click **Next: Review + create >**.
+
+9. Click **Create**.
+
+10. Now open the [Create an Event Hub](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create#create-an-event-hub) instructions in a new browser tab and complete the steps for setting up your new Event Hub. Return here when finished.
 
 ## Step 2 - Deploy MedTech service in your Azure Health Data Services workspace 
 Now you will use Azure Portal to deploy and configure MedTech service within your Azure Health Data Services workspace.
 
-1. Open the instructions to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure) in a new browser tab. 
+1. Open the instructions to [Deploy MedTech service in the Azure Portal](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#deploy-the-medtech-service-manually) in a new browser tab. 
 
-2. When you get to the part of the instructions to [Configure MedTech service to ingest data](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-medtech-service-to-ingest-data), for this training it is recommended to use the default [Consumer group](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#consumer-groups) that was assigned when you deployed your Event Hub in the previous step. 
+2. When you get to the part of the instructions to [Configure MedTech service to ingest data](https://docs.microsoft.com/en-us/azure/healthcare-apis/iot/deploy-iot-connector-in-azure#configure-medtech-service-to-ingest-data), for this training it is recommended to use the default [Consumer group](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-features#consumer-groups) that was assigned when you created your Event Hub in the previous step. 
 
 ## Step 3 - Import data mappings for converting medical IoT device data into FHIR
 

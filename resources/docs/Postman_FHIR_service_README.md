@@ -1,11 +1,10 @@
 # Postman setup for FHIR service + sample Postman collections 
 
 ## Overview 
-When testing data connectivity between [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) and a remote client app, it is useful to have an API testing utility to send requests, view responses, and debug issues. One of the most popular API testing tools is [Postman](https://www.postman.com/), and in this guide we provide instructions plus a set of sample data files to help you get up and running with Postman to test the FHIR service in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview).
+When testing data connectivity between [FHIR service](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview) and a remote client app, it is useful to have an API testing utility to send requests, view responses, and debug issues. One of the most popular API testing tools is [Postman](https://www.postman.com/), and in this guide we provide instructions plus a set of sample data files to help you get up and running with Postman for testing the FHIR service in [Azure Health Data Services](https://docs.microsoft.com/en-us/azure/healthcare-apis/healthcare-apis-overview).
 
 ## Prerequisites
-+ [User Access Administrator](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator) role in your FHIR service resource group or Azure subscription
-+ [Application Administrator](https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference#all-roles) role in your Azure Active Directory (AAD) tenant
++ [User Access Administrator](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator) role in your FHIR service resource group or Azure subscription 
 + **FHIR service** deployed. Information about FHIR service can be found [here](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/overview).
 + **Postman** installed - desktop or web client. Information about installing Postman is available [here](https://www.getpostman.com/). 
 
@@ -29,7 +28,7 @@ Before you can use Postman to make API calls to FHIR service, you will need to c
 2. Type in a name for your Postman service client app in the **Name** field.
 
 3. Scroll down to **Redirect URI (optional)**, select **Web**, and enter `https://oauth.pstmn.io/v1/callback` as shown. Then click **Register**. 
-    + **Note:** this redirect URI is needed for the FHIR service Consent Opt-Out auth flow in Challenge-07.
+    + **Note:** this redirect URI is needed for the Consent Opt-Out auth flow in Challenge-07.
 <img src="./images/Screenshot_2022-02-15_141049_edit2_next_next.png" height="328">
 
 4. Now you will be taken to the **Overview** blade for your Postman client app in AAD.  
@@ -106,7 +105,7 @@ Now you will configure your Postman environment (`fhir-service`).
 
 - `tenantId` - AAD tenant ID (go to **AAD** -> **Overview** -> **Tenant ID**)
 - `clientId` - Application (client) ID for Postman service client app (go to **AAD** -> **App registrations** -> `<postman-service-client-name>` -> **Overview** -> **Application (client) ID**) 
-- `clientSecret` - Client secret stored for Postman (see Step 1 #6 above) 
+- `clientSecret` - Client secret stored for Postman (see Step 1 #7 above) 
 - `fhirurl` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.fhir.azurehealthcareapis.com` (go to **Resource Group** -> **Overview** -> `<fhir-service-name>` -> **FHIR metadata endpoint** and copy *without* "/metadata" on the end)
 - `resource` - FHIR service endpoint - e.g. `https://<workspace-name>-<fhir-service-name>.fhir.azurehealthcareapis.com` (same as `fhirurl`)
 
@@ -117,7 +116,7 @@ Populate the above parameter values in your `fhir-service` Postman environment a
 ## Step 5 - Get an access token from AAD
 In order to connect to FHIR service, you will need to get an access token first. To obtain an access token from AAD via Postman, you can send a ```POST AuthorizeGetToken``` request. The ```POST AuthorizeGetToken``` call comes pre-configured as part of the `FHIR CALLS` collection that you imported earlier. 
 
-In Postman, click on `Collections` on the left, select the `FHIR CALLS` collection, and then select `POST AuthorizeGetToken`. Press **Send** on the right.
+In Postman, click on **Collections** on the left, select the `FHIR CALLS` collection, and then select `POST AuthorizeGetToken`. Press **Send** on the right.
 
 __IMPORTANT:__ Be sure to make the `fhir-service` environment active by selecting from the dropdown menu above the **Send** button. In the image below, `fhir-service` is shown as the active environment.
 
@@ -137,7 +136,7 @@ On clicking **Send**, you should receive a response in the **Body** tab like sho
 }
 ```
 
-You now have a valid access token in your Postman environment and can use the token in subsequent API calls to FHIR service. For more information about access tokens in AAD, see [Microsoft identity platform access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens).
+You now have a valid access token in your Postman environment and can use the token in subsequent API calls to your FHIR service. For more information about access tokens in AAD, see [Microsoft identity platform access tokens](https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens).
 
 __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simply make another ```POST AuthorizeGetToken``` call and you will receive a new token valid for another 60 minutes.
 
@@ -151,11 +150,11 @@ __Note:__ Access tokens expire after 60 minutes. To obtain a token refresh, simp
 
 <img src="./images/Screenshot_2022-05-03_125457_edit.png" height="428">
 
-3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press **Send**. If you get a response like shown below, this means you succeeded in populating FHIR service with a Patient Resource. This indicates that your setup is functioning properly. 
+3. Click on `POST Save Patient` in the `FHIR CALLS` collection and press **Send**. If you get a response like shown below, this means you succeeded in populating FHIR service with a `Patient` Resource. This indicates that your setup is functioning properly. 
 
 <img src="./images/Screenshot_2022-05-03_125547_edit2.png" height="428">
 
-4. Try `GET List Patients` in the `FHIR CALLS` collection and press **Send**. If the response is as shown below, this means you successfully obtained a list of every Patient Resource stored in the FHIR service database (currently only one patient). This means your setup is fully functional.
+4. Try `GET List Patients` in the `FHIR CALLS` collection and press **Send**. If the response is as shown below, this means you successfully obtained a list of every `Patient` Resource stored in the FHIR service database (currently only one patient). This means your setup is fully functional.
 
 <img src="./images/Screenshot_2022-05-03_125626_edit.png" height="428">
 

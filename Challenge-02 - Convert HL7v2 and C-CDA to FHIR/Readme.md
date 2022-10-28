@@ -4,11 +4,11 @@
 
 Welcome to Challenge-02!
 
-In this challenge, you will learn how to use the FHIR service's custom `$convert-data` operation to convert HL7v2 and C-CDA files into FHIR.
+In this challenge, you will learn how to use the FHIR service's custom `$convert-data` operation to convert HL7v2 messages and C-CDA documents into FHIR.
 
 ## Background
 
-In today's health industry, the FHIR R4 format has become the standard medium for storage and exchange of health data. As FHIR interoperability spreads throughout the industry, health IT operations are deploying conversion pipelines for ingesting and transforming legacy data formats into FHIR. Two of the most common legacy formats in use are [HL7v2](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) and [C-CDA](https://www.healthit.gov/topic/standards-technology/consolidated-cda-overview). In this challenge, we will explore how to convert data from these formats for persistence in FHIR using the Microsoft health data platform.
+In today's health industry, the FHIR R4 format has become the standard medium for storage and exchange of health data. As FHIR interoperability spreads throughout the industry, health IT operations are deploying conversion pipelines for ingesting and transforming other data formats into FHIR. Two of the most common pre-FHIR health data formats in use are [HL7v2](https://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) and [C-CDA](https://www.healthit.gov/topic/standards-technology/consolidated-cda-overview). In this challenge, we will explore how to convert data from these formats into FHIR using the Microsoft health data platform.
 
 ## Learning Objectives for Challenge-02
 By the end of this challenge you will be able to 
@@ -49,11 +49,11 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 
 1.	Review the FHIR service [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data) for an overview of the ```$convert-data``` operation.  
 
-2. 	Click on [ADT_A01.hl7](./samples/ADT_A01.hl7) to view a sample HL7v2 message (you may want to click on the `Raw` button on the right for ease of viewing). 
+2. 	Click on [ADT_A01.hl7](./samples/ADT_A01.hl7) to view a sample HL7v2 message (you may want to click on the **Raw** button on the right for ease of viewing). 
 
 3.	Copy and paste the HL7v2 message into the **Body** of the `Convert Data – HL7` request in Postman. Format the JSON request parameters following the example given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request).
 
-4.  In the **Body** tab in Postman, select the **raw** button and choose `JSON` from the dropdown menu on the right.
+4.  In the **Body** tab in Postman, select the **raw** button and choose **JSON** from the dropdown menu on the right.
 <img src="./media/Postman_JSON_Body.png" height="328"> 
 
 5.	You will need to make some changes in the HL7v2 payload so that the formatting follows the sample request given in the `$convert-data` [documentation](https://docs.microsoft.com/en-us/azure/healthcare-apis/fhir/convert-data#sample-request). 
@@ -69,7 +69,7 @@ To convert HL7v2 data into FHIR, first you must prepare a `$convert-data` API re
 1. In Postman, get a new AAD access token using the `POST AuthorizeGetToken` call.
 2. Go to the `Convert Data - HL7` request and press **Send** to initiate the `$convert-data` operation.
 
-After making the `$convert-data` request, you should receive a JSON FHIR bundle response containing the HL7v2 message converted into FHIR R4. The top of the response should be as shown below. 
+After making the `$convert-data` request, you should receive a JSON FHIR `Bundle` response containing the HL7v2 message converted into FHIR R4. The top of the response should be as shown below. 
 
     {
     "resourceType": "Bundle",
@@ -109,7 +109,7 @@ Now you will make another API request similar to the one above, except this time
 
 ## Step 5 - Set up Request Parameters
 
-1. Click on [CCDA_Ford_Elaine.xml](./samples/CCDA_Ford_Elaine.xml) to view a sample C-CDA data file (click on `Raw` on the right side to view the entire data string in your browser window).
+1. Click on [CCDA_Ford_Elaine.xml](./samples/CCDA_Ford_Elaine.xml) to view a sample C-CDA document (click on **Raw** on the right side to view the entire data string in your browser window).
 
 2. Copy and paste the C-CDA data into VS Code or a text editor of your choice. 
 
@@ -124,11 +124,11 @@ Now you will make another API request similar to the one above, except this time
 
 4. You will need to format the C-CDA data payload so that it sits correctly in the JSON request body.
 
-    __Hint:__ The JSON spec requires all keys and values to be surrounded by double quotes. Any double quotes *within* the JSON data payload must be `\` escaped, however. Look at the `"` quotation marks in the C-CDA data string. These `"` quotes all need to be `\` escaped in order for the `$convert-data` request to work. This [online tool](https://www.freeformatter.com/json-escape.html) is helpful for adding `\` escape characters to JSON where needed. Alternatively, you could use a text editor and do a "find and replace". Whatever method works best for you is fine.
+    __Hint:__ The JSON spec requires all strings to be surrounded by double quotes. Any double quotes *within* a JSON data string must be `\` escaped, however. Look at the `"` quotation marks in the C-CDA data string. These `"` quotes all need to be `\` escaped in order for the `$convert-data` request to work. This [online tool](https://www.freeformatter.com/json-escape.html) is helpful for adding `\` escape characters to JSON where needed. Alternatively, you could use a text editor and do a "find and replace". Whatever method works best for you is fine.
 
 5. When ready, copy and paste the JSON-formatted request parameters with the C-CDA payload into the **Body** of the `Convert Data - CCDA` request in Postman.
 
-6. Select the **raw** button and choose `JSON` from the dropdown menu on the right.
+6. Select the **raw** button and choose **JSON** from the dropdown menu on the right.
 
 7. Make sure to **Save** the `Convert Data - CCDA` request.
 
@@ -137,7 +137,7 @@ Now you will make another API request similar to the one above, except this time
 1. Get a new access token from AAD with `POST AuthorizeGetToken` (this is not strictly necessary unless it has been over 60 minutes since the last access token was issued).
 2. Go to the `Convert Data - CCDA` request and press **Send**.
 
-After making the `$convert-data` request, you should receive a FHIR bundle response containing the C-CDA data converted into FHIR R4. The top of the response will be as shown below. 
+After making the `$convert-data` request, you should receive a FHIR `Bundle` response containing the C-CDA data converted into FHIR R4. The top of the response will be as shown below. 
 
     {
     "resourceType": "Bundle",

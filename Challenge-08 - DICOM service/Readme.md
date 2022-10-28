@@ -61,7 +61,7 @@ You will need to add the **DICOM Data Owner** role for yourself (i.e., your user
 3. Import the ```dicom-service.postman_environment.json``` file that you just saved locally.
     + Add the file to Postman using the **Upload Files** button. Then click **Import**. 
 
-4. Now, access the ```Conformance-as-Postman.postman_collection.json``` file available [here](https://github.com/microsoft/dicom-server/blob/main/docs/resources/Conformance-as-Postman.postman_collection.json) and save the file locally. Then import the file into Postman.
+4. Now, access the ```Conformance-as-Postman.postman_collection.json``` file available [here](./postman/Conformance-as-Postman.postman_collection.json) and save the file locally. Then import the file into Postman.
     + Add the file to Postman using the **Upload Files** button. Then click **Import**.
 
 ### Step 5 - Configure Postman environment

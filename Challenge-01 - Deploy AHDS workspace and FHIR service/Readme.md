@@ -4,7 +4,7 @@
 
 Welcome to Challenge-01!
 
-In this challenge, you will deploy an **[Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview)** containing a **[FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)** instance. In addition, you will set up **[Postman](https://www.postman.com/)** as your application for testing the FHIR service API.
+In this challenge, you will deploy an [Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview) containing a [FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview) instance. In addition, you will set up [Postman](https://www.postman.com/) as your application for testing the FHIR service API.
 
 ## Learning Objectives for Challenge-01
 
@@ -25,23 +25,21 @@ In the Azure health ecosystem, the Azure Health Data Services workspace is a log
 
 ![Relationship between resource groups, Azure Health Data Services, and child services](./media/azure-health-data-services-workspace-overview.png)
 
-The workspace also creates a compliance boundary (HIPAA, HITRUST) within which protected health information can travel. This means that [Role-Based Access Control (RBAC)](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac), private network data transit with [Private Link](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-configure-private-link), and [event messages](https://docs.microsoft.com/azure/healthcare-apis/events/events-deploy-portal) can all be configured at the workspace level, reducing your system management complexity.
+The workspace also creates a compliance boundary (HIPAA, HITRUST) within which protected health information can travel. This means that [Role-Based Access Control (RBAC)](https://docs.microsoft.com/azure/healthcare-apis/configure-azure-rbac), private network data transit with [Private Link](https://docs.microsoft.com/azure/healthcare-apis/healthcare-apis-configure-private-link), and [event messages](https://docs.microsoft.com/azure/healthcare-apis/events/events-deploy-portal) can all be configured at the workspace level – reducing your system management complexity.
 
 ## Prerequisites
 
-Before deploying to your Azure environment, please make sure that you have the following permissions.
++ Before deploying to your Azure environment, please make sure that you have the following permissions.
 
-+ **Azure Subscription:** You must have rights to deploy resources at the resource group scope in your Azure subscription (i.e. [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) role).
+    + **Azure Subscription:** You must have rights to deploy resources at the resource group scope in your Azure subscription (i.e. [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) role).
 
-+ **Azure Active Directory (AAD):** You must have [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure subscription.
+    + **Azure Active Directory (AAD):** For configuring app settings in Challenge-07, you must have [Application Administrator](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference#application-administrator) rights for the AAD tenant attached to the Azure subscription.
 
-You will also need to have [Postman](https://www.getpostman.com/) installed - either the desktop or web client.
++ You will also need to have [Postman](https://www.getpostman.com/) installed – either the desktop or web client.
 
 ## Step 1: Deploy Azure Health Data Services workspace and FHIR service to your Azure environment
 
-In the first part of this challenge, you will
-
-+ Use a template to deploy resources with the Azure Portal. This template will deploy
+In the first part of this challenge, you will use an Azure Resource Manager (ARM) template to deploy components used in this workshop. This template will deploy
   + [Azure Health Data Services workspace](https://docs.microsoft.com/azure/healthcare-apis/workspace-overview)
   + [FHIR service](https://docs.microsoft.com/azure/healthcare-apis/fhir/overview)
   + [FHIR Loader](https://github.com/microsoft/fhir-loader) (for Challenge-03)
@@ -49,44 +47,44 @@ In the first part of this challenge, you will
 
 1. To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the **Deploy to Azure** button below to open the deployment form in a new browser tab.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmain%2Fresources%2Fdeploy%2Fdeployfhirtrain.json)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Fazure-health-data-services-workshop%2Fmain%2Fresources%2Fdeploy%2Fdeployfhirtrain.json)
 
 2. Select or fill in the parameter values (see image below).
 
-    > __Important:__ In order to successfully deploy resources with this ARM template, the user must have [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) rights for the [Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal) where the components are deployed. Before running the ARM template, it is recommended to create a new resource group first and check that you have Owner permissions. Once you confirm that you have Owner rights, then select that resource group in the dropdown menu when you fill out the deployment form (see #3 below).
+    > __Important:__ In order to successfully deploy components with this ARM template, the user must have [Owner](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) rights for the [Resource Group](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal) where the components are deployed. Before running the ARM template, it is recommended to create a new resource group first and check that you have Owner permissions. Once you confirm that you have Owner rights, then select that resource group in the dropdown menu when you fill out the deployment form (see below).
 
-    + Enter a custom **Deployment Prefix**. This prefix will be prepended to the names of all created resources ("trn05" is shown as an example prefix).
+    + Enter a custom **Deployment Prefix**. This prefix will be prepended to the names of all deployed components ("trn05" is shown as an example prefix).
 
     + Make sure to select the "true" values as shown.
 
-3. Click **Review + create** when ready, and then click **Create** on the next page. 
+    <img src="../resources/docs/images/ARM_template_config4.png" height="520"> 
 
-<img src="../resources/docs/images/ARM_template_config4.png" height="520"> 
+3. When ready, click **Review + create**, and then click **Create** on the next page. 
 
-> **Note:** This deployment typically takes 20 minutes. During the deployment, you can read the instructions linked in Step 2 below. When the deployment finishes, go ahead and proceed with those instructions.
+> **Note:** This deployment typically takes 20 minutes. During the deployment, you can read the instructions linked in Step 2 below. When the deployment finishes, go ahead and proceed with the Step 2 instructions.
 
-To learn more about the resources deployed with this ARM template, view [here](../resources/docs/FHIR-Starter_ARM_template_README.md#deployed-components).
+> To learn more about the components deployed with this ARM template, view [here](../resources/docs/FHIR-Starter_ARM_template_README.md#deployed-components).
 
 ## Step 2 - Set up Postman and test FHIR service
 
 In the next part of this challenge, you will
 
-+ Visit another page and follow the instructions on setting up Postman.
-+ Make API calls to test FHIR service using Postman.
++ visit another page and follow the instructions for setting up Postman
++ make API calls to test FHIR service using Postman
 
 To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link below to open a Postman tutorial in a new browser tab.
 
-[Postman Setup Tutorial](../resources/docs/Postman_FHIR_service_README.md)
+  [Postman Setup Tutorial](../resources/docs/Postman_FHIR_service_README.md)
 
 Follow the instructions and return here when finished.
 
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace and FHIR service deployed and available in Azure.
-+ Other Azure resources for later challenges successfully deployed. Template deployment must show no errors.
-+ App registration created in Azure Active Directory for use with Postman and your FHIR service.
++ Other Azure resources for later challenges successfully deployed. ARM template deployment must show no errors.
++ App registration created in Azure Active Directory for Postman.
 + Postman set up and able to connect with your FHIR service.
-  + Capability Statement from your FHIR service - received.
+  + Capability Statement from your FHIR service – received.
 
     ```json
     {
@@ -102,9 +100,9 @@ Follow the instructions and return here when finished.
     }
     ```
 
-  + `POST AuthorizeGetToken` call in Postman to obtain an AAD access token - succeeded.
-  + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource - succeeded.
-  + `GET List Patients` call in Postman to retrieve a bundle with at least one Patient Resource from your FHIR service - succeeded.
+  + `POST AuthorizeGetToken` call in Postman to obtain an AAD access token – succeeded.
+  + `POST Save Patient` call in Postman to populate FHIR service with a Patient Resource – succeeded.
+  + `GET List Patients` call in Postman to retrieve a bundle with at least one Patient Resource from your FHIR service – succeeded.
 
 ## More Resources
 
