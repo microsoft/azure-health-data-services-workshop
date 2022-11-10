@@ -1,0 +1,836 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "LabResults",
+    "description": "Create and retreive Lab Results reports",
+    "version": "1.0"
+  },
+  "host": "healthapi31cst-demo.fhir.azurehealthcareapis.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/DiagnosticRepor": {},
+    "/Observation": {},
+    "/DiagnosticReport/fc65f246-1003-4d3a-bf2d-45f9868dca3e": {},
+    "/DiagnosticReport/": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceType": {
+                  "type": "string",
+                  "description": "resourceType"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "lastUpdated": {
+                      "type": "string",
+                      "description": "lastUpdated"
+                    }
+                  },
+                  "description": "meta"
+                },
+                "type": {
+                  "type": "string",
+                  "description": "type"
+                },
+                "link": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "relation": {
+                        "type": "string",
+                        "description": "relation"
+                      },
+                      "url": {
+                        "type": "string",
+                        "description": "url"
+                      }
+                    }
+                  },
+                  "description": "link"
+                },
+                "entry": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "fullUrl": {
+                        "type": "string",
+                        "description": "fullUrl"
+                      },
+                      "resource": {
+                        "type": "object",
+                        "properties": {
+                          "resourceType": {
+                            "type": "string",
+                            "description": "resourceType"
+                          },
+                          "id": {
+                            "type": "string",
+                            "description": "id"
+                          },
+                          "meta": {
+                            "type": "object",
+                            "properties": {
+                              "versionId": {
+                                "type": "string",
+                                "description": "versionId"
+                              },
+                              "lastUpdated": {
+                                "type": "string",
+                                "description": "lastUpdated"
+                              },
+                              "profile": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "description": "profile"
+                              }
+                            },
+                            "description": "meta"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "status"
+                          },
+                          "category": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "coding": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "system": {
+                                        "type": "string",
+                                        "description": "system"
+                                      },
+                                      "code": {
+                                        "type": "string",
+                                        "description": "code"
+                                      },
+                                      "display": {
+                                        "type": "string",
+                                        "description": "display"
+                                      }
+                                    }
+                                  },
+                                  "description": "coding"
+                                }
+                              }
+                            },
+                            "description": "category"
+                          },
+                          "code": {
+                            "type": "object",
+                            "properties": {
+                              "coding": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "system": {
+                                      "type": "string",
+                                      "description": "system"
+                                    },
+                                    "code": {
+                                      "type": "string",
+                                      "description": "code"
+                                    },
+                                    "display": {
+                                      "type": "string",
+                                      "description": "display"
+                                    }
+                                  }
+                                },
+                                "description": "coding"
+                              },
+                              "text": {
+                                "type": "string",
+                                "description": "text"
+                              }
+                            },
+                            "description": "code"
+                          },
+                          "subject": {
+                            "type": "object",
+                            "properties": {
+                              "reference": {
+                                "type": "string",
+                                "description": "reference"
+                              }
+                            },
+                            "description": "subject"
+                          },
+                          "encounter": {
+                            "type": "object",
+                            "properties": {
+                              "reference": {
+                                "type": "string",
+                                "description": "reference"
+                              }
+                            },
+                            "description": "encounter"
+                          },
+                          "effectiveDateTime": {
+                            "type": "string",
+                            "description": "effectiveDateTime"
+                          },
+                          "issued": {
+                            "type": "string",
+                            "description": "issued"
+                          },
+                          "performer": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "reference": {
+                                  "type": "string",
+                                  "description": "reference"
+                                },
+                                "display": {
+                                  "type": "string",
+                                  "description": "display"
+                                }
+                              }
+                            },
+                            "description": "performer"
+                          },
+                          "presentedForm": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "contentType": {
+                                  "type": "string",
+                                  "description": "contentType"
+                                },
+                                "data": {
+                                  "type": "string",
+                                  "description": "data"
+                                }
+                              }
+                            },
+                            "description": "presentedForm"
+                          },
+                          "result": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "reference": {
+                                  "type": "string",
+                                  "description": "reference"
+                                },
+                                "display": {
+                                  "type": "string",
+                                  "description": "display"
+                                }
+                              }
+                            },
+                            "description": "result"
+                          }
+                        },
+                        "description": "resource"
+                      },
+                      "search": {
+                        "type": "object",
+                        "properties": {
+                          "mode": {
+                            "type": "string",
+                            "description": "mode"
+                          }
+                        },
+                        "description": "search"
+                      }
+                    }
+                  },
+                  "description": "entry"
+                }
+              }
+            }
+          }
+        },
+        "summary": "GET Diagnostic Report",
+        "operationId": "GETDiagnosticReport",
+        "parameters": [
+          {
+            "name": "subject",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/Observation/{observationID}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceType": {
+                  "type": "string",
+                  "description": "resourceType"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "versionId": {
+                      "type": "string",
+                      "description": "versionId"
+                    },
+                    "lastUpdated": {
+                      "type": "string",
+                      "description": "lastUpdated"
+                    }
+                  },
+                  "description": "meta"
+                },
+                "status": {
+                  "type": "string",
+                  "description": "status"
+                },
+                "code": {
+                  "type": "object",
+                  "properties": {
+                    "coding": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "system": {
+                            "type": "string",
+                            "description": "system"
+                          },
+                          "code": {
+                            "type": "string",
+                            "description": "code"
+                          },
+                          "display": {
+                            "type": "string",
+                            "description": "display"
+                          }
+                        }
+                      },
+                      "description": "coding"
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "text"
+                    }
+                  },
+                  "description": "code"
+                },
+                "subject": {
+                  "type": "object",
+                  "properties": {
+                    "reference": {
+                      "type": "string",
+                      "description": "subjectReference"
+                    },
+                    "display": {
+                      "type": "string",
+                      "description": "display"
+                    }
+                  },
+                  "description": "subject"
+                },
+                "valueQuantity": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "value"
+                    },
+                    "unit": {
+                      "type": "string",
+                      "description": "unit"
+                    },
+                    "system": {
+                      "type": "string",
+                      "description": "system"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "code"
+                    }
+                  },
+                  "description": "valueQuantity"
+                },
+                "referenceRange": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "high": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "integer",
+                            "format": "int32",
+                            "description": "value"
+                          },
+                          "unit": {
+                            "type": "string",
+                            "description": "unit"
+                          }
+                        },
+                        "description": "high"
+                      }
+                    }
+                  },
+                  "description": "referenceRange"
+                }
+              }
+            }
+          }
+        },
+        "summary": "GET Observation",
+        "operationId": "GETObservation",
+        "parameters": [
+          {
+            "name": "observationID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/Observations": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "POSTObservation",
+        "operationId": "POSTObservation",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceType": {
+                  "type": "string",
+                  "description": "resourceType"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "text": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "status"
+                    },
+                    "div": {
+                      "type": "string",
+                      "description": "div"
+                    }
+                  },
+                  "description": "text"
+                },
+                "status": {
+                  "type": "string",
+                  "description": "status"
+                },
+                "code": {
+                  "type": "object",
+                  "properties": {
+                    "coding": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "system": {
+                            "type": "string",
+                            "description": "system"
+                          },
+                          "code": {
+                            "type": "string",
+                            "description": "code"
+                          },
+                          "display": {
+                            "type": "string",
+                            "description": "display"
+                          }
+                        }
+                      },
+                      "description": "coding"
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "text"
+                    }
+                  },
+                  "description": "code"
+                },
+                "subject": {
+                  "type": "object",
+                  "properties": {
+                    "reference": {
+                      "type": "string",
+                      "description": "subjectReference"
+                    }
+                  },
+                  "description": "subject"
+                },
+                "performer": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "reference": {
+                        "type": "string",
+                        "description": "performerReference"
+                      },
+                      "display": {
+                        "type": "string",
+                        "description": "display"
+                      }
+                    }
+                  },
+                  "description": "performer"
+                },
+                "valueQuantity": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "value"
+                    },
+                    "unit": {
+                      "type": "string",
+                      "description": "unit"
+                    },
+                    "system": {
+                      "type": "string",
+                      "description": "system"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "code"
+                    }
+                  },
+                  "description": "valueQuantity"
+                },
+                "referenceRange": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "low": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "number",
+                            "format": "float",
+                            "description": "value"
+                          },
+                          "unit": {
+                            "type": "string",
+                            "description": "unit"
+                          },
+                          "system": {
+                            "type": "string",
+                            "description": "system"
+                          },
+                          "code": {
+                            "type": "string",
+                            "description": "code"
+                          }
+                        },
+                        "description": "low"
+                      },
+                      "high": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "integer",
+                            "format": "int32",
+                            "description": "value"
+                          },
+                          "unit": {
+                            "type": "string",
+                            "description": "unit"
+                          },
+                          "system": {
+                            "type": "string",
+                            "description": "system"
+                          },
+                          "code": {
+                            "type": "string",
+                            "description": "code"
+                          }
+                        },
+                        "description": "high"
+                      }
+                    }
+                  },
+                  "description": "referenceRange"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/DiagnosticReport": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Post DiagnosticReport",
+        "operationId": "POSTDiagnosticReport",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "resourceType": {
+                  "type": "string",
+                  "description": "resourceType"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "meta": {
+                  "type": "object",
+                  "properties": {
+                    "tag": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "system": {
+                            "type": "string",
+                            "description": "system"
+                          },
+                          "code": {
+                            "type": "string",
+                            "description": "code"
+                          },
+                          "display": {
+                            "type": "string",
+                            "description": "display"
+                          }
+                        }
+                      },
+                      "description": "tag"
+                    }
+                  },
+                  "description": "meta"
+                },
+                "identifier": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "system": {
+                        "type": "string",
+                        "description": "system"
+                      },
+                      "value": {
+                        "type": "string",
+                        "description": "value"
+                      }
+                    }
+                  },
+                  "description": "identifier"
+                },
+                "status": {
+                  "type": "string",
+                  "description": "status"
+                },
+                "category": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "coding": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "system": {
+                              "type": "string",
+                              "description": "system"
+                            },
+                            "code": {
+                              "type": "string",
+                              "description": "code"
+                            }
+                          }
+                        },
+                        "description": "coding"
+                      }
+                    }
+                  },
+                  "description": "category"
+                },
+                "code": {
+                  "type": "object",
+                  "properties": {
+                    "coding": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "system": {
+                            "type": "string",
+                            "description": "system"
+                          },
+                          "code": {
+                            "type": "string",
+                            "description": "code"
+                          },
+                          "display": {
+                            "type": "string",
+                            "description": "display"
+                          }
+                        }
+                      },
+                      "description": "coding"
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "text"
+                    }
+                  },
+                  "description": "code"
+                },
+                "subject": {
+                  "type": "object",
+                  "properties": {
+                    "reference": {
+                      "type": "string",
+                      "description": "subjectReference"
+                    }
+                  },
+                  "description": "subject"
+                },
+                "encounter": {
+                  "type": "object",
+                  "properties": {
+                    "reference": {
+                      "type": "string",
+                      "description": "encounterReference"
+                    }
+                  },
+                  "description": "encounter"
+                },
+                "effectiveDateTime": {
+                  "type": "string",
+                  "description": "effectiveDateTime"
+                },
+                "issued": {
+                  "type": "string",
+                  "description": "issued"
+                },
+                "performer": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "reference": {
+                        "type": "string",
+                        "description": "performerReference"
+                      },
+                      "display": {
+                        "type": "string",
+                        "description": "display"
+                      }
+                    }
+                  },
+                  "description": "performer"
+                },
+                "result": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "reference": {
+                        "type": "string",
+                        "description": "resultReference"
+                      }
+                    }
+                  },
+                  "description": "result"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {
+        "api://de4e41a8-7d7b-4289-b649-e784f8923c1d/PowerAppScope": "api://de4e41a8-7d7b-4289-b649-e784f8923c1d/PowerAppScope"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": [
+        "api://de4e41a8-7d7b-4289-b649-e784f8923c1d/PowerAppScope"
+      ]
+    }
+  ],
+  "tags": []
+}
