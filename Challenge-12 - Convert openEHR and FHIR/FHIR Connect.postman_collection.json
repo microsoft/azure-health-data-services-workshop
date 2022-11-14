@@ -1,0 +1,668 @@
+{
+	"info": {
+		"_postman_id": "bd906821-54d0-432e-8168-cbfaba82eb2a",
+		"name": "FHIR Connect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22647485"
+	},
+	"item": [
+		{
+			"name": "01 - Connect Core",
+			"item": [
+				{
+					"name": "Provision initial mappings",
+					"item": [
+						{
+							"name": "Commit Model Mapping Height",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/yaml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "format: \"0.0.3\"\nversion: \"0.0.1\"\n\nfhirConfig:\n  # For this Resource: https://www.hl7.org/fhir/observation-example-body-height.json.html\n  resource: \"Observation\"\nopenEhrConfig:\n  # For this Archetype: https://ckm.openehr.org/ckm/archetypes/1013.1.3210\n  archetype: \"openEHR-EHR-OBSERVATION.height.v2\"\n\nmappings:\n  - name: \"height\"\n    with:\n      fhir: \"$fhirResource.valueQuantity.value\"\n      openehr: \"$openEhrArchetype.height_length.any_event.height_length.magnitude\"\n      type: \"DV_QUANTITY\"\n    condition:\n      targetRoot: \"$fhirResource\"\n      targetAttribute: \"$fhirResource.code.coding.code\"\n      operator: \"one of\"\n      criteria: \"[$loinc.8302-2]\"\n      identifying: true\n  - name: \"unit\"\n    with:\n      fhir: \"$fhirResource.valueQuantity.unit\"\n      openehr: \"$openEhrArchetype.height_length.any_event.height_length.unit\"\n      type: \"DV_QUANTITY\"\n  - name: \"time\"\n    with:\n      fhir: \"$fhirResource.effective\"\n      openehr: \"$openEhrArchetype.height_length.any_event.time\"\n      type: \"DV_DATE_TIME\"",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{core_server}}/model-mappings",
+									"host": [
+										"{{core_server}}"
+									],
+									"path": [
+										"model-mappings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Commit Model Mapping BMI",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/yaml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "format: \"0.0.3\"\nversion: \"0.0.1\"\n\nfhirConfig:\n  # For this Resource: https://www.hl7.org/fhir/observation-example.json.html\n  resource: \"Observation\"\nopenEhrConfig:\n  archetype: \"openEHR-EHR-OBSERVATION.body_mass_index.v2\"\n\nmappings:\n  - name: \"bmi\"\n    with:\n      fhir: \"$fhirResource.valueQuantity.value\"\n      openehr: \"$openEhrArchetype.body_mass_index.any_event.body_mass_index.magnitude\"\n      type: \"DV_QUANTITY\"\n    condition:\n      targetRoot: \"$fhirResource\"\n      targetAttribute: \"$fhirResource.code.coding.code\"\n      operator: \"one of\"\n      criteria: \"[$loinc.39156-5]\"\n      identifying: true\n  - name: \"unit\"\n    with:\n      fhir: \"$fhirResource.valueQuantity.unit\"\n      openehr: \"$openEhrArchetype.body_mass_index.any_event.body_mass_index.unit\"\n      type: \"DV_QUANTITY\"\n  - name: \"time\"\n    with:\n      fhir: \"$fhirResource.effective\"\n      openehr: \"$openEhrArchetype.body_mass_index.any_event.time\"\n      type: \"DV_DATE_TIME\"",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{core_server}}/model-mappings",
+									"host": [
+										"{{core_server}}"
+									],
+									"path": [
+										"model-mappings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Commit Model Mapping Weight",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/yaml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "format: \"0.0.3\"\nversion: \"0.0.1\"\n\nfhirConfig:\n  # For this Resource: https://www.hl7.org/fhir/observation-example.json.html\n  resource: \"Observation\"\nopenEhrConfig:\n  # For this Archetype: https://ckm.openehr.org/ckm/archetypes/1013.1.2960\n  archetype: \"openEHR-EHR-OBSERVATION.body_weight.v2\"\n\nmappings:\n  - name: \"weight\"\n    with:\n      fhir: \"$fhirResource.valueQuantity.value\"\n      openehr: \"$openEhrArchetype.body_weight.any_event.weight.magnitude\"\n      type: \"DV_QUANTITY\"\n    condition:\n      targetRoot: \"$fhirResource\"\n      targetAttribute: \"$fhirResource.code.coding.code\"\n      operator: \"one of\"\n      criteria: \"[$loinc.29463-7, $snomed.27113001]\"\n      identifying: true\n  - name: \"unit\"\n    with:\n      fhir: \"$fhirResource.valueQuantity.unit\"\n      openehr: \"$openEhrArchetype.body_weight.any_event.weight.unit\"\n      type: \"DV_QUANTITY\"\n  - name: \"time\"\n    with:\n      fhir: \"$fhirResource.effective\"\n      openehr: \"$openEhrArchetype.body_weight.any_event.time\"\n      type: \"DV_DATE_TIME\"",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{core_server}}/model-mappings",
+									"host": [
+										"{{core_server}}"
+									],
+									"path": [
+										"model-mappings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Commit Model Mapping Head",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/yaml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "format: \"0.0.3\"\nversion: \"0.0.1\"\n\nfhirConfig:\n  # For this Resource: https://www.hl7.org/fhir/observation-example.json.html\n  resource: \"Observation\"\nopenEhrConfig:\n  archetype: \"openEHR-EHR-OBSERVATION.head_circumference.v1\"\n\nmappings:\n  - name: \"head-circumference\"\n    with:\n      fhir: \"$fhirResource.valueQuantity.value\"\n      openehr: \"$openEhrArchetype.head_circumference.any_event.head_circumference.magnitude\"\n      type: \"DV_QUANTITY\"\n    condition:\n      targetRoot: \"$fhirResource\"\n      targetAttribute: \"$fhirResource.code.coding.code\"\n      operator: \"one of\"\n      criteria: \"[$loinc.8287-5]\"\n      identifying: true\n  - name: \"unit\"\n    with:\n      fhir: \"$fhirResource.valueQuantity.unit\"\n      openehr: \"$openEhrArchetype.head_circumference.any_event.head_circumference.unit\"\n      type: \"DV_QUANTITY\"\n  - name: \"time\"\n    with:\n      fhir: \"$fhirResource.effective\"\n      openehr: \"$openEhrArchetype.head_circumference.any_event.time\"\n      type: \"DV_DATE_TIME\"",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{core_server}}/model-mappings",
+									"host": [
+										"{{core_server}}"
+									],
+									"path": [
+										"model-mappings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Commit Context Mapping",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/yaml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "format: \"0.0.2\"\n\nopenEHR:\n  templateId: \"CATTEDRA JDM Growth chart\"\n  archetypes:\n    - \"openEHR-EHR-OBSERVATION.body_weight.v2\"\n    - \"openEHR-EHR-OBSERVATION.height.v2\"\n    - \"openEHR-EHR-OBSERVATION.body_mass_index.v2\"\n    - \"openEHR-EHR-OBSERVATION.head_circumference.v1\"\n\nfhir:\n  resourceType: \"Bundle\"",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{core_server}}/context-mappings",
+									"host": [
+										"{{core_server}}"
+									],
+									"path": [
+										"context-mappings"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "01 - Directly translate openEHR content",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "templateId",
+								"value": "CATTEDRA JDM Growth chart",
+								"type": "text"
+							},
+							{
+								"key": "$ehr",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"jdm_-_growth_chart/_uid\": \"9bdcc696-82bd-4585-ab0c-724995255b94::default::1\",\n\t\"jdm_-_growth_chart/_feeder_audit/originating_system_audit|system_id\": \"FormRenderer\",\n\t\"jdm_-_growth_chart/_feeder_audit/original_content\": \"{\\\"/generic-quantity-9242245\\\":[{\\\"|magnitude\\\":\\\"2\\\",\\\"|unit\\\":\\\"sec\\\"}],\\\"/generic-fieldset-7698897/generic-boolean-2878896\\\":[{\\\"|value\\\":true}],\\\"/generic-quantity-1088999\\\":[{\\\"|magnitude\\\":213.5,\\\"|unit\\\":\\\"cm\\\"}]}\",\n\t\"jdm_-_growth_chart/_feeder_audit/original_content|formalism\": \"application/json\",\n\t\"jdm_-_growth_chart/language|code\": \"en\",\n\t\"jdm_-_growth_chart/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/territory|code\": \"en\",\n\t\"jdm_-_growth_chart/territory|terminology\": \"ISO_3166-1\",\n\t\"jdm_-_growth_chart/context/start_time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/context/setting|code\": \"238\",\n\t\"jdm_-_growth_chart/context/setting|value\": \"other care\",\n\t\"jdm_-_growth_chart/context/setting|terminology\": \"openehr\",\n\t\"jdm_-_growth_chart/body_weight/any_event:0/weight|magnitude\": 10.0,\n\t\"jdm_-_growth_chart/body_weight/any_event:0/weight|unit\": \"kg\",\n\t\"jdm_-_growth_chart/body_weight/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/body_weight/language|code\": \"en\",\n\t\"jdm_-_growth_chart/body_weight/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/body_weight/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/body_weight/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/height_length/any_event:0/height_length|magnitude\": 200.0,\n\t\"jdm_-_growth_chart/height_length/any_event:0/height_length|unit\": \"cm\",\n\t\"jdm_-_growth_chart/height_length/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/height_length/language|code\": \"en\",\n\t\"jdm_-_growth_chart/height_length/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/height_length/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/height_length/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/body_mass_index|magnitude\": 2.5,\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/body_mass_index|unit\": \"kg/m2\",\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/body_mass_index/language|code\": \"en\",\n\t\"jdm_-_growth_chart/body_mass_index/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/body_mass_index/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/body_mass_index/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/head_circumference|magnitude\": 21.0,\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/head_circumference|unit\": \"cm\",\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/time\": \"2022-06-10T12:35:23.429Z\",\n\t\"jdm_-_growth_chart/head_circumference/language|code\": \"en\",\n\t\"jdm_-_growth_chart/head_circumference/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/head_circumference/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/head_circumference/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/height|magnitude\": 210.0,\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/height|unit\": \"cm\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/language|code\": \"en\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/height|magnitude\": 230.0,\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/height|unit\": \"cm\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/language|code\": \"en\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/category|code\": \"433\",\n\t\"jdm_-_growth_chart/category|value\": \"event\",\n\t\"jdm_-_growth_chart/category|terminology\": \"openehr\",\n\t\"jdm_-_growth_chart/composer|name\": \"Test User Better\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{core_server}}/combined/openehr",
+							"host": [
+								"{{core_server}}"
+							],
+							"path": [
+								"combined",
+								"openehr"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Directly translate FHIR content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"resourceType\": \"Bundle\",\n    \"type\": \"transaction\",\n    \"entry\": [\n        {\n            \"resource\": {\n                \"resourceType\": \"Observation\",\n                \"status\": \"final\",\n                \"code\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://loinc.org\",\n                            \"code\": \"29463-7\"\n                        },\n                        {\n                            \"system\": \"http://snomed.info/sct\",\n                            \"code\": \"27113001\"\n                        }\n                    ]\n                },\n                \"effectiveDateTime\": \"2022-06-10T13:34:00+01:00\",\n                \"valueQuantity\": {\n                    \"value\": 10.0,\n                    \"unit\": \"kg\"\n                }\n            },\n            \"request\": {\n                \"method\": \"POST\",\n                \"url\": \"Observation\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Observation\",\n                \"status\": \"final\",\n                \"code\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://loinc.org\",\n                            \"code\": \"8302-2\"\n                        }\n                    ]\n                },\n                \"effectiveDateTime\": \"2022-06-10T13:34:00+01:00\",\n                \"valueQuantity\": {\n                    \"value\": 200.0,\n                    \"unit\": \"cm\"\n                }\n            },\n            \"request\": {\n                \"method\": \"POST\",\n                \"url\": \"Observation\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Observation\",\n                \"status\": \"final\",\n                \"code\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://loinc.org\",\n                            \"code\": \"39156-5\"\n                        }\n                    ]\n                },\n                \"effectiveDateTime\": \"2022-06-10T13:34:00+01:00\",\n                \"valueQuantity\": {\n                    \"value\": 2.5,\n                    \"unit\": \"kg/m2\"\n                }\n            },\n            \"request\": {\n                \"method\": \"POST\",\n                \"url\": \"Observation\"\n            }\n        },\n        {\n            \"resource\": {\n                \"resourceType\": \"Observation\",\n                \"status\": \"final\",\n                \"code\": {\n                    \"coding\": [\n                        {\n                            \"system\": \"http://loinc.org\",\n                            \"code\": \"8287-5\"\n                        }\n                    ]\n                },\n                \"effectiveDateTime\": \"2022-06-10T12:35:23.429Z\",\n                \"valueQuantity\": {\n                    \"value\": 21.0,\n                    \"unit\": \"cm\"\n                }\n            },\n            \"request\": {\n                \"method\": \"POST\",\n                \"url\": \"Observation\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{core_server}}/combined/fhir",
+							"host": [
+								"{{core_server}}"
+							],
+							"path": [
+								"combined",
+								"fhir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02 - Adapter - FHIR Forwarder",
+			"item": [
+				{
+					"name": "00 - Get Auth Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"bearerToken\", jsonData.access_token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{clientId}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{clientSecret}}",
+									"type": "text"
+								},
+								{
+									"key": "resource",
+									"value": "{{resource}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://login.microsoftonline.com/{{tenantId}}/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"microsoftonline",
+								"com"
+							],
+							"path": [
+								"{{tenantId}}",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "01 - Commit openEHR input",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "templateId",
+								"value": "CATTEDRA JDM Growth chart",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"jdm_-_growth_chart/_uid\": \"9bdcc696-82bd-4585-ab0c-724995255b94::default::1\",\n\t\"jdm_-_growth_chart/_feeder_audit/originating_system_audit|system_id\": \"FormRenderer\",\n\t\"jdm_-_growth_chart/_feeder_audit/original_content\": \"{\\\"/generic-quantity-9242245\\\":[{\\\"|magnitude\\\":\\\"2\\\",\\\"|unit\\\":\\\"sec\\\"}],\\\"/generic-fieldset-7698897/generic-boolean-2878896\\\":[{\\\"|value\\\":true}],\\\"/generic-quantity-1088999\\\":[{\\\"|magnitude\\\":213.5,\\\"|unit\\\":\\\"cm\\\"}]}\",\n\t\"jdm_-_growth_chart/_feeder_audit/original_content|formalism\": \"application/json\",\n\t\"jdm_-_growth_chart/language|code\": \"en\",\n\t\"jdm_-_growth_chart/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/territory|code\": \"en\",\n\t\"jdm_-_growth_chart/territory|terminology\": \"ISO_3166-1\",\n\t\"jdm_-_growth_chart/context/start_time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/context/setting|code\": \"238\",\n\t\"jdm_-_growth_chart/context/setting|value\": \"other care\",\n\t\"jdm_-_growth_chart/context/setting|terminology\": \"openehr\",\n\t\"jdm_-_growth_chart/body_weight/any_event:0/weight|magnitude\": 10.0,\n\t\"jdm_-_growth_chart/body_weight/any_event:0/weight|unit\": \"kg\",\n\t\"jdm_-_growth_chart/body_weight/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/body_weight/language|code\": \"en\",\n\t\"jdm_-_growth_chart/body_weight/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/body_weight/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/body_weight/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/height_length/any_event:0/height_length|magnitude\": 200.0,\n\t\"jdm_-_growth_chart/height_length/any_event:0/height_length|unit\": \"cm\",\n\t\"jdm_-_growth_chart/height_length/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/height_length/language|code\": \"en\",\n\t\"jdm_-_growth_chart/height_length/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/height_length/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/height_length/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/body_mass_index|magnitude\": 2.5,\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/body_mass_index|unit\": \"kg/m2\",\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/body_mass_index/language|code\": \"en\",\n\t\"jdm_-_growth_chart/body_mass_index/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/body_mass_index/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/body_mass_index/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/head_circumference|magnitude\": 21.0,\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/head_circumference|unit\": \"cm\",\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/time\": \"2022-06-10T12:35:23.429Z\",\n\t\"jdm_-_growth_chart/head_circumference/language|code\": \"en\",\n\t\"jdm_-_growth_chart/head_circumference/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/head_circumference/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/head_circumference/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/height|magnitude\": 210.0,\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/height|unit\": \"cm\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/language|code\": \"en\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/height|magnitude\": 230.0,\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/height|unit\": \"cm\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/language|code\": \"en\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/category|code\": \"433\",\n\t\"jdm_-_growth_chart/category|value\": \"event\",\n\t\"jdm_-_growth_chart/category|terminology\": \"openehr\",\n\t\"jdm_-_growth_chart/composer|name\": \"Test User Better\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adapter_server}}/openehr-input",
+							"host": [
+								"{{adapter_server}}"
+							],
+							"path": [
+								"openehr-input"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Get logs (copy one Location ID)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "templateId",
+								"value": "CATTEDRA JDM Growth chart",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"jdm_-_growth_chart/_uid\": \"9bdcc696-82bd-4585-ab0c-724995255b94::default::1\",\n\t\"jdm_-_growth_chart/_feeder_audit/originating_system_audit|system_id\": \"FormRenderer\",\n\t\"jdm_-_growth_chart/_feeder_audit/original_content\": \"{\\\"/generic-quantity-9242245\\\":[{\\\"|magnitude\\\":\\\"2\\\",\\\"|unit\\\":\\\"sec\\\"}],\\\"/generic-fieldset-7698897/generic-boolean-2878896\\\":[{\\\"|value\\\":true}],\\\"/generic-quantity-1088999\\\":[{\\\"|magnitude\\\":213.5,\\\"|unit\\\":\\\"cm\\\"}]}\",\n\t\"jdm_-_growth_chart/_feeder_audit/original_content|formalism\": \"application/json\",\n\t\"jdm_-_growth_chart/language|code\": \"en\",\n\t\"jdm_-_growth_chart/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/territory|code\": \"en\",\n\t\"jdm_-_growth_chart/territory|terminology\": \"ISO_3166-1\",\n\t\"jdm_-_growth_chart/context/start_time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/context/setting|code\": \"238\",\n\t\"jdm_-_growth_chart/context/setting|value\": \"other care\",\n\t\"jdm_-_growth_chart/context/setting|terminology\": \"openehr\",\n\t\"jdm_-_growth_chart/body_weight/any_event:0/weight|magnitude\": 10.0,\n\t\"jdm_-_growth_chart/body_weight/any_event:0/weight|unit\": \"kg\",\n\t\"jdm_-_growth_chart/body_weight/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/body_weight/language|code\": \"en\",\n\t\"jdm_-_growth_chart/body_weight/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/body_weight/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/body_weight/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/height_length/any_event:0/height_length|magnitude\": 200.0,\n\t\"jdm_-_growth_chart/height_length/any_event:0/height_length|unit\": \"cm\",\n\t\"jdm_-_growth_chart/height_length/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/height_length/language|code\": \"en\",\n\t\"jdm_-_growth_chart/height_length/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/height_length/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/height_length/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/body_mass_index|magnitude\": 2.5,\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/body_mass_index|unit\": \"kg/m2\",\n\t\"jdm_-_growth_chart/body_mass_index/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/body_mass_index/language|code\": \"en\",\n\t\"jdm_-_growth_chart/body_mass_index/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/body_mass_index/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/body_mass_index/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/head_circumference|magnitude\": 21.0,\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/head_circumference|unit\": \"cm\",\n\t\"jdm_-_growth_chart/head_circumference/any_event:0/time\": \"2022-06-10T12:35:23.429Z\",\n\t\"jdm_-_growth_chart/head_circumference/language|code\": \"en\",\n\t\"jdm_-_growth_chart/head_circumference/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/head_circumference/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/head_circumference/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/height|magnitude\": 210.0,\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/height|unit\": \"cm\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/language|code\": \"en\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_mother/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/height|magnitude\": 230.0,\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/height|unit\": \"cm\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/any_event:0/time\": \"2022-06-10T13:34:00+01:00\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/language|code\": \"en\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/language|terminology\": \"ISO_639-1\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/encoding|code\": \"UTF-8\",\n\t\"jdm_-_growth_chart/parent_height_comparator_-_father/encoding|terminology\": \"IANA_character-sets\",\n\t\"jdm_-_growth_chart/category|code\": \"433\",\n\t\"jdm_-_growth_chart/category|value\": \"event\",\n\t\"jdm_-_growth_chart/category|terminology\": \"openehr\",\n\t\"jdm_-_growth_chart/composer|name\": \"Test User Better\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{adapter_server}}/logs",
+							"host": [
+								"{{adapter_server}}"
+							],
+							"path": [
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Get FHIR Resource (paste one ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{fhir_service}}/Observation/d59a59f1-e422-480b-9f5f-218464e30dd7/",
+							"host": [
+								"{{fhir_service}}"
+							],
+							"path": [
+								"Observation",
+								"d59a59f1-e422-480b-9f5f-218464e30dd7",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03 - Alter Mapping",
+			"item": [
+				{
+					"name": "01 - Core - Commit Model Mapping Blood Pressure v1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yaml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "# Listing of one bi-directional model mapping.\n\n# General philosophy: The reading direction of those mappings is FHIR->openEHR, because\n# openEHR is more descriptive, due to its \"maximal modeling\" approach. All ambiguities\n# regarding the bi-directionality will be handled by the program/code.\n\nversion: \"0.0.2\"\nformat: \"0.0.3\"\n\n# Configuration of contexts.\nfhirConfig:\n  # For this example: http://hl7.org/fhir/observation-example-bloodpressure.json.html\n  resource: \"Observation\"\nopenEhrConfig:\n  # For this example: https://ckm.openehr.org/ckm/archetypes/1013.1.3574\n  archetype: \"openEHR-EHR-OBSERVATION.blood_pressure.v2\"\n\n# Actual mapping points:\nmappings:\n  # Each mapping has a unique (self documenting) name.\n  - name: \"patient\"\n    # A simple mapping, which maps one attribute to another.\n    with:\n      # Access the FHIR resource, either in input or output direction.\n      fhir: \"$fhirResource.subject.reference\"\n      # Some context variable are necessary to be accessible from the mapping.\n      openehr: \"$openEhrContext.$ehr\"\n      type: \"NONE\"\n\n  # Another mapping which maps on a met condition. This condition is used to identify\n  # the correct \"component\" in the FHIR resource (array).\n  - name: \"systolic\"\n    with:\n      fhir: \"$fhirResource.component.valueQuantity.value\"\n      openehr: \"$openEhrArchetype.blood_pressure.any_event.systolic.magnitude\"\n      type: \"DV_QUANTITY\"\n    condition:\n      # One of the codings has to be the matching LOINC or SNOMED code.\n      # incl. implicit handling of arrays, as \".coding\" is a set of codings.\n      # -> Here the backwards direction is ambiguous. The program will interpret \"one of\"\n      # as \"put those in the target resource\" if the direction is openEHR->FHIR.\n      targetRoot: \"$fhirResource.component\"                       # Scope of object for 'condition'\n      targetAttribute: \"$fhirResource.component.code.coding.code\" # Actual attribute to check for 'condition'\n      operator: \"one of\"\n      criteria: \"[$loinc.8480-6, $snomed.271649006]\"\n      identifying: true                                           # The *one* condition able to identify FHIR input to match this mapping\n    # The next step allows a mapping to have a list of succeeding mappings, which\n    # are executed in the same scope of the parent mapping.\n    followedBy:\n      mappings:\n        - name: \"unit\"\n          with:\n            fhir: \"$fhirResource.component.valueQuantity.unit\"\n            openehr: \"$openEhrArchetype.blood_pressure.any_event.systolic.unit\"\n            # Implicit handling of array/single object conversion.\n            type: \"DV_QUANTITY\"\n\n# The real mapping would continue to map:\n# - performer\n# - diastolic\n# - clinical interpretation\n# - body site\n# Unsure about \"code\" on top level of FHIR resource. Archetype has SNOMED already attached. Yet\n# \"code\" carries some information...",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{core_server}}/model-mappings",
+							"host": [
+								"{{core_server}}"
+							],
+							"path": [
+								"model-mappings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Core - Commit Context Mapping BP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/yaml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "format: \"0.0.2\"\n\nopenEHR:\n  templateId: \"simple-encounter-blood-pressure.v0\"\n  archetypes:\n    - \"openEHR-EHR-OBSERVATION.blood_pressure.v2\"\n\nfhir:\n  resourceType: \"Observation\"",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{core_server}}/context-mappings",
+							"host": [
+								"{{core_server}}"
+							],
+							"path": [
+								"context-mappings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Core - Directly translate FHIR content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Observation\",\n  \"id\": \"blood-pressure\",\n  \"meta\": {\n    \"profile\": [\n      \"http://hl7.org/fhir/StructureDefinition/vitalsigns\"\n    ]\n  },\n  \"text\": {\n    \"status\": \"generated\",\n    \"div\": \"&lt;div xmlns=\\\"http://www.w3.org/1999/xhtml\\\";&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: blood-pressure&lt;/p&gt;&lt;p&gt;&lt;b&gt;meta&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: urn:uuid:187e0c12-8dd2-67e2-99b2-bf273c878281&lt;/p&gt;&lt;p&gt;&lt;b&gt;basedOn&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Vital Signs &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'vital-signs' = 'Vital Signs', given as 'Vital Signs'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Blood pressure systolic &amp;amp; diastolic &lt;span&gt;(Details : {LOINC code '85354-9' = 'Blood pressure panel with all children optional', given as 'Blood pressure panel with all children optional'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 17/09/2012&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Practitioner/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Below low normal &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'L' = 'Low', given as 'low'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: Right arm &lt;span&gt;(Details : {SNOMED CT code '368209003' = 'Right upper arm', given as 'Right arm'})&lt;/span&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Systolic blood pressure &lt;span&gt;(Details : {LOINC code '8480-6' = 'Systolic blood pressure', given as 'Systolic blood pressure'}; {SNOMED CT code '271649006' = 'Systolic blood pressure', given as 'Systolic blood pressure'}; {http://acme.org/devices/clinical-codes code 'bp-s' = 'bp-s', given as 'Systolic Blood pressure'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 107 mmHg&lt;span&gt; (Details: UCUM code mm[Hg] = 'mmHg')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Normal &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'N' = 'Normal', given as 'normal'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Diastolic blood pressure &lt;span&gt;(Details : {LOINC code '8462-4' = 'Diastolic blood pressure', given as 'Diastolic blood pressure'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 60 mmHg&lt;span&gt; (Details: UCUM code mm[Hg] = 'mmHg')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Below low normal &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'L' = 'Low', given as 'low'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;\"\n  },\n  \"identifier\": [\n    {\n      \"system\": \"urn:ietf:rfc:3986\",\n      \"value\": \"urn:uuid:187e0c12-8dd2-67e2-99b2-bf273c878281\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"identifier\": {\n        \"system\": \"https://acme.org/identifiers\",\n        \"value\": \"1234\"\n      }\n    }\n  ],\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"85354-9\",\n        \"display\": \"Blood pressure panel with all children optional\"\n      }\n    ],\n    \"text\": \"Blood pressure systolic &amp; diastolic\"\n  },\n  \"subject\": {\n    \"reference\": \"Patient/example\"\n  },\n  \"effectiveDateTime\": \"2012-09-17\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/example\"\n    }\n  ],\n  \"interpretation\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"L\",\n          \"display\": \"low\"\n        }\n      ],\n      \"text\": \"Below low normal\"\n    }\n  ],\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"368209003\",\n        \"display\": \"Right arm\"\n      }\n    ]\n  },\n  \"component\": [\n    {\n      \"code\": {\n        \"coding\": [\n          {\n            \"system\": \"http://loinc.org\",\n            \"code\": \"8480-6\",\n            \"display\": \"Systolic blood pressure\"\n          },\n          {\n            \"system\": \"http://snomed.info/sct\",\n            \"code\": \"271649006\",\n            \"display\": \"Systolic blood pressure\"\n          },\n          {\n            \"system\": \"http://acme.org/devices/clinical-codes\",\n            \"code\": \"bp-s\",\n            \"display\": \"Systolic Blood pressure\"\n          }\n        ]\n      },\n      \"valueQuantity\": {\n        \"value\": 107,\n        \"unit\": \"mmHg\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"code\": \"mm[Hg]\"\n      },\n      \"interpretation\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n              \"code\": \"N\",\n              \"display\": \"normal\"\n            }\n          ],\n          \"text\": \"Normal\"\n        }\n      ]\n    },\n    {\n      \"code\": {\n        \"coding\": [\n          {\n            \"system\": \"http://loinc.org\",\n            \"code\": \"8462-4\",\n            \"display\": \"Diastolic blood pressure\"\n          }\n        ]\n      },\n      \"valueQuantity\": {\n        \"value\": 60,\n        \"unit\": \"mmHg\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"code\": \"mm[Hg]\"\n      },\n      \"interpretation\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n              \"code\": \"L\",\n              \"display\": \"low\"\n            }\n          ],\n          \"text\": \"Below low normal\"\n        }\n      ]\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{core_server}}/combined/fhir",
+							"host": [
+								"{{core_server}}"
+							],
+							"path": [
+								"combined",
+								"fhir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04 - Core - Update Model Mapping Blood Pressure to v2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/yaml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "# Listing of one bi-directional model mapping.\n\n# General philosophy: The reading direction of those mappings is FHIR->openEHR, because\n# openEHR is more descriptive, due to its \"maximal modeling\" approach. All ambiguities\n# regarding the bi-directionality will be handled by the program/code.\n\nversion: \"0.0.2\"\nformat: \"0.0.3\"\n\n# Configuration of contexts.\nfhirConfig:\n  # For this example: http://hl7.org/fhir/observation-example-bloodpressure.json.html\n  resource: \"Observation\"\nopenEhrConfig:\n  # For this example: https://ckm.openehr.org/ckm/archetypes/1013.1.3574\n  archetype: \"openEHR-EHR-OBSERVATION.blood_pressure.v2\"\n\n# Actual mapping points:\nmappings:\n  # Each mapping has a unique (self documenting) name.\n  - name: \"patient\"\n    # A simple mapping, which maps one attribute to another.\n    with:\n      # Access the FHIR resource, either in input or output direction.\n      fhir: \"$fhirResource.subject.reference\"\n      # Some context variable are necessary to be accessible from the mapping.\n      openehr: \"$openEhrContext.$ehr\"\n      type: \"NONE\"\n\n  # Another mapping which maps on a met condition. This condition is used to identify\n  # the correct \"component\" in the FHIR resource (array).\n  - name: \"systolic\"\n    with:\n      fhir: \"$fhirResource.component.valueQuantity.value\"\n      openehr: \"$openEhrArchetype.blood_pressure.any_event.systolic.magnitude\"\n      type: \"DV_QUANTITY\"\n    condition:\n      # One of the codings has to be the matching LOINC or SNOMED code.\n      # incl. implicit handling of arrays, as \".coding\" is a set of codings.\n      # -> Here the backwards direction is ambiguous. The program will interpret \"one of\"\n      # as \"put those in the target resource\" if the direction is openEHR->FHIR.\n      targetRoot: \"$fhirResource.component\"                       # Scope of object for 'condition'\n      targetAttribute: \"$fhirResource.component.code.coding.code\" # Actual attribute to check for 'condition'\n      operator: \"one of\"\n      criteria: \"[$loinc.8480-6, $snomed.271649006]\"\n      identifying: true                                           # The *one* condition able to identify FHIR input to match this mapping\n    # The next step allows a mapping to have a list of succeeding mappings, which\n    # are executed in the same scope of the parent mapping.\n    followedBy:\n      mappings:\n        - name: \"unit\"\n          with:\n            fhir: \"$fhirResource.component.valueQuantity.unit\"\n            openehr: \"$openEhrArchetype.blood_pressure.any_event.systolic.unit\"\n            # Implicit handling of array/single object conversion.\n            type: \"DV_QUANTITY\"",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{core_server}}/model-mappings",
+							"host": [
+								"{{core_server}}"
+							],
+							"path": [
+								"model-mappings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05 - Core - Directly translate FHIR content again to see difference",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Mapping altered correctly, value as expected\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData[\"simple-encounter-blood-pressure.v0/blood_pressure/any_event:0/diastolic|magnitude\"]).to.eql(\"60\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Observation\",\n  \"id\": \"blood-pressure\",\n  \"meta\": {\n    \"profile\": [\n      \"http://hl7.org/fhir/StructureDefinition/vitalsigns\"\n    ]\n  },\n  \"text\": {\n    \"status\": \"generated\",\n    \"div\": \"&lt;div xmlns=\\\"http://www.w3.org/1999/xhtml\\\";&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: blood-pressure&lt;/p&gt;&lt;p&gt;&lt;b&gt;meta&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: urn:uuid:187e0c12-8dd2-67e2-99b2-bf273c878281&lt;/p&gt;&lt;p&gt;&lt;b&gt;basedOn&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Vital Signs &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'vital-signs' = 'Vital Signs', given as 'Vital Signs'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Blood pressure systolic &amp;amp; diastolic &lt;span&gt;(Details : {LOINC code '85354-9' = 'Blood pressure panel with all children optional', given as 'Blood pressure panel with all children optional'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a&gt;Patient/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 17/09/2012&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a&gt;Practitioner/example&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Below low normal &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'L' = 'Low', given as 'low'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: Right arm &lt;span&gt;(Details : {SNOMED CT code '368209003' = 'Right upper arm', given as 'Right arm'})&lt;/span&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Systolic blood pressure &lt;span&gt;(Details : {LOINC code '8480-6' = 'Systolic blood pressure', given as 'Systolic blood pressure'}; {SNOMED CT code '271649006' = 'Systolic blood pressure', given as 'Systolic blood pressure'}; {http://acme.org/devices/clinical-codes code 'bp-s' = 'bp-s', given as 'Systolic Blood pressure'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 107 mmHg&lt;span&gt; (Details: UCUM code mm[Hg] = 'mmHg')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Normal &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'N' = 'Normal', given as 'normal'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;component&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Diastolic blood pressure &lt;span&gt;(Details : {LOINC code '8462-4' = 'Diastolic blood pressure', given as 'Diastolic blood pressure'})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 60 mmHg&lt;span&gt; (Details: UCUM code mm[Hg] = 'mmHg')&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;interpretation&lt;/b&gt;: Below low normal &lt;span&gt;(Details : {http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation code 'L' = 'Low', given as 'low'})&lt;/span&gt;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;\"\n  },\n  \"identifier\": [\n    {\n      \"system\": \"urn:ietf:rfc:3986\",\n      \"value\": \"urn:uuid:187e0c12-8dd2-67e2-99b2-bf273c878281\"\n    }\n  ],\n  \"basedOn\": [\n    {\n      \"identifier\": {\n        \"system\": \"https://acme.org/identifiers\",\n        \"value\": \"1234\"\n      }\n    }\n  ],\n  \"status\": \"final\",\n  \"category\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\n          \"code\": \"vital-signs\",\n          \"display\": \"Vital Signs\"\n        }\n      ]\n    }\n  ],\n  \"code\": {\n    \"coding\": [\n      {\n        \"system\": \"http://loinc.org\",\n        \"code\": \"85354-9\",\n        \"display\": \"Blood pressure panel with all children optional\"\n      }\n    ],\n    \"text\": \"Blood pressure systolic &amp; diastolic\"\n  },\n  \"subject\": {\n    \"reference\": \"Patient/example\"\n  },\n  \"effectiveDateTime\": \"2012-09-17\",\n  \"performer\": [\n    {\n      \"reference\": \"Practitioner/example\"\n    }\n  ],\n  \"interpretation\": [\n    {\n      \"coding\": [\n        {\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n          \"code\": \"L\",\n          \"display\": \"low\"\n        }\n      ],\n      \"text\": \"Below low normal\"\n    }\n  ],\n  \"bodySite\": {\n    \"coding\": [\n      {\n        \"system\": \"http://snomed.info/sct\",\n        \"code\": \"368209003\",\n        \"display\": \"Right arm\"\n      }\n    ]\n  },\n  \"component\": [\n    {\n      \"code\": {\n        \"coding\": [\n          {\n            \"system\": \"http://loinc.org\",\n            \"code\": \"8480-6\",\n            \"display\": \"Systolic blood pressure\"\n          },\n          {\n            \"system\": \"http://snomed.info/sct\",\n            \"code\": \"271649006\",\n            \"display\": \"Systolic blood pressure\"\n          },\n          {\n            \"system\": \"http://acme.org/devices/clinical-codes\",\n            \"code\": \"bp-s\",\n            \"display\": \"Systolic Blood pressure\"\n          }\n        ]\n      },\n      \"valueQuantity\": {\n        \"value\": 107,\n        \"unit\": \"mmHg\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"code\": \"mm[Hg]\"\n      },\n      \"interpretation\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n              \"code\": \"N\",\n              \"display\": \"normal\"\n            }\n          ],\n          \"text\": \"Normal\"\n        }\n      ]\n    },\n    {\n      \"code\": {\n        \"coding\": [\n          {\n            \"system\": \"http://loinc.org\",\n            \"code\": \"8462-4\",\n            \"display\": \"Diastolic blood pressure\"\n          }\n        ]\n      },\n      \"valueQuantity\": {\n        \"value\": 60,\n        \"unit\": \"mmHg\",\n        \"system\": \"http://unitsofmeasure.org\",\n        \"code\": \"mm[Hg]\"\n      },\n      \"interpretation\": [\n        {\n          \"coding\": [\n            {\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\n              \"code\": \"L\",\n              \"display\": \"low\"\n            }\n          ],\n          \"text\": \"Below low normal\"\n        }\n      ]\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{core_server}}/combined/fhir",
+							"host": [
+								"{{core_server}}"
+							],
+							"path": [
+								"combined",
+								"fhir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06 - Core - Directly translate openEHR result back to FHIR to see difference",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "templateId",
+								"value": "simple-encounter-blood-pressure.v0",
+								"type": "text"
+							},
+							{
+								"key": "$ehr",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"simple-encounter-blood-pressure.v0/blood_pressure/any_event:0/systolic|magnitude\": \"107\",\n    \"simple-encounter-blood-pressure.v0/blood_pressure/any_event:0/systolic|unit\": \"mm[Hg]\",\n    \"simple-encounter-blood-pressure.v0/blood_pressure/any_event:0/diastolic|magnitude\": \"60\",\n    \"simple-encounter-blood-pressure.v0/blood_pressure/any_event:0/diastolic|unit\": \"mm[Hg]\",\n    \"ctx/language\": \"en\",\n    \"ctx/territory\": \"US\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{core_server}}/combined/openehr",
+							"host": [
+								"{{core_server}}"
+							],
+							"path": [
+								"combined",
+								"openehr"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
