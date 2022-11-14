@@ -3,7 +3,7 @@
 ## Introduction
 
 In this preliminary challenge, you will be checking the general prerequisites for this workshop to ensure you are ready for Challenge-01 and beyond.
- 
+
 ## Learning Objectives for Challenge-00
 
 + Understand the goals for learners in this workshop.
@@ -49,7 +49,7 @@ Please make sure to have the following items ready before moving on to Challenge
 
 Below is a list of Azure and OSS components deployed in Challenge-01 of this workshop. 
 
-Component | Purpose                               
+Component | Purpose
 ----------|--------------------------------------------
 **Azure Health Data Services workspace** | managed PaaS
 **FHIR service** | managed FHIR server
@@ -66,8 +66,7 @@ Application Insights | Monitors FHIR-Proxy application
 Event Grid System Topic | Triggers processing of FHIR bundles placed in the FHIR Loader storage account
 Redis Cache | Required by FHIR-Proxy modules, Consent Opt Out
 
-
-## More Resources 
+## More Resources
 
 If you are unfamiliar with any of the above concepts, have a look at the resources below. These are starting points to help you get the most out of this workshop.
 
