@@ -78,6 +78,10 @@ To begin, **CTRL+click** (Windows or Linux) or **CMD+click** (Mac) on the link b
 
 Follow the instructions and return here when finished.
 
+## Make a note of your Azure identiy for Challenge-05!
+
+A managed identity was automatically enabled for your FHIR service. That managed identity is what needs to be assigned the Storage Blob Data Contributor role in one of the ADLS Gen2 storage accounts in your resource group in future challenges. The name of this storage account ends with "expsa". 
+
 ## What does success look like for Challenge-01?
 
 + Azure Health Data Services workspace and FHIR service deployed and available in Azure.
